@@ -3,7 +3,7 @@
   "problem": "muse_bf16_proj",
   "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
   "maximum_new_experiments": 10,
-  "remaining_authorized": 10,
+  "remaining_authorized": 9,
   "max_active_jobs": 2,
   "max_spend_usd": 0,
   "mode": "check",
@@ -25,6 +25,66 @@
       "local_record": "experiments/015-pooler-layout-local.md"
     }
   },
-  "requests": [],
-  "publication": "New work remains local; no push authorized"
+  "requests": [
+    {
+      "experiment": "P2-01-pooler-layout",
+      "candidate": "candidates/projection_pooler_layout.py",
+      "source_commit": "0229137d871df93f09c83f86dacc15a95d1b6722",
+      "submission_sha256": "b3346d5359602c098735e80dda5b38ab22f069fb19abd777fda5dc988f6a7571",
+      "mode": "check",
+      "created_utc": "2026-10-24T17:53:51.877957+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 11,
+          "left": 9
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "eeec05d897ef4946",
+      "hypothesis": "Only pooler m>1 uses pretransposed contiguous[K,N] BF16 library GEMM; retain R10 m1/router",
+      "control_job_id": "02e099c3724e4a05",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_layout.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T17:53:52.109168+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T17:56:07.856006+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      },
+      "passed": true,
+      "speedup": 1.1290207051231784,
+      "speedup_ci": [
+        1.1120853945463307,
+        1.145956015700026
+      ]
+    }
+  ],
+  "publication": "New work remains local; no push authorized",
+  "admission_paused": {
+    "at_utc": "2026-10-24T17:54:02.225263+00:00",
+    "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
+    "scope": "No new official checks; monitor accepted jobs only. No Modal uploads/GPU/auth actions approved yet."
+  }
 }
