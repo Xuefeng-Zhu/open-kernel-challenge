@@ -424,7 +424,7 @@
       "job_id": "02e099c3724e4a05",
       "mode": "check",
       "status": "done",
-      "result_commit": "b8379aa0a41dda51583160210214fa136de6af62",
+      "result_commit": "9de4fabdaddb51e8870f6458a7bcdf80974744a0",
       "record": "experiments/remote-R10-final-composition.md",
       "results": "results/remote-R10-final-composition.json",
       "timings": "results/remote-R10-final-composition.csv"
