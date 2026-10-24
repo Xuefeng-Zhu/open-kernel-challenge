@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 def make_modal_entry():
     # Local function is serialized by value. Its code is in this allowlisted
     # worker; it captures no host globals, credentials or project directory.
-    def execute(candidate_name):
+    def execute(candidate_name, repeats=6, seed_offset=200000):
         import json
         import os
         from pathlib import Path
@@ -36,7 +36,8 @@ def make_modal_entry():
         started = time.monotonic()
         command = [sys.executable, str(root / "modal_gpu_worker.py"),
                    "--candidate", str(root / "candidates" / candidate_name),
-                   "--output-dir", str(output), "--repeats", "6"]
+                   "--output-dir", str(output), "--repeats", str(repeats),
+                   "--seed-offset", str(seed_offset)]
         with Path("/tmp/okc-smoke-worker.log").open("w") as log:
             child = subprocess.Popen(command, cwd=root, stdout=log, stderr=subprocess.STDOUT,
                                      start_new_session=True)
@@ -59,13 +60,13 @@ def save(path, report):
     Path(path).write_text(json.dumps(report, indent=2) + "\n")
 
 
-def benchmark(candidate, output, repeats):
+def benchmark(candidate, output, repeats, seed_offset=200000):
     import torch
     from benchmark import capture, replay_us
     from harness import contract, environment, load_module
     report = dict(kind="Modal H200 diagnostic, NOT official score", cases=[],
                   timing="gross CUDA-event times around graph replays; 256MiB cold-L2 read outside events; no subtraction",
-                  environment=environment(torch, "cuda", candidate), stages={}, repeats=repeats)
+                  environment=environment(torch, "cuda", candidate), stages={}, repeats=repeats, seed_offset=seed_offset)
     if not torch.cuda.is_available() or "H200" not in torch.cuda.get_device_name():
         report["blocked"] = "Explicit H200 required; no fallback GPU"
         save(output, report)
@@ -97,7 +98,7 @@ def benchmark(candidate, output, repeats):
             setup_seconds = time.monotonic() - started
             samples = []
             for repeat in range(repeats):
-                seed = case["seed"] + 200000 + repeat
+                seed = case["seed"] + seed_offset + repeat
                 fresh = reference.generate_input(**{**case, "seed": seed}, device="cuda")
                 data["x"].copy_(fresh["x"])
                 order = orders[repeat % len(orders)]
@@ -120,7 +121,7 @@ def benchmark(candidate, output, repeats):
     return 0
 
 
-def supervise(candidate, output_dir, repeats):
+def supervise(candidate, output_dir, repeats, seed_offset=200000):
     output_dir.mkdir(parents=True, exist_ok=False)
     import torch
     if not torch.cuda.is_available() or "H200" not in torch.cuda.get_device_name():
@@ -134,14 +135,16 @@ def supervise(candidate, output_dir, repeats):
             raise ValueError(f"Bundle integrity failed: {name}")
     deadline = time.monotonic() + 540
     report = dict(kind="bounded GPU preflight; no official upload", source_commit=manifest["source_commit"],
-                  candidate=manifest["candidate"], stages=[], deadline_seconds=540)
+                  candidate=manifest["candidate"], stages=[], deadline_seconds=540, seed_offset=seed_offset)
     steps = [("correctness-" + name, ["check.py", "--device", "cuda", "--suite", "all",
-              "--submission", str(source), "--output", str(output_dir / (name + "-correctness.json"))])
+              "--submission", str(source), "--seed-offset", str(seed_offset),
+              "--output", str(output_dir / (name + "-correctness.json"))])
              for name, source in [("candidate", candidate),
                                   ("r10", ROOT / "candidates/router_pooler_hybrid.py"),
                                   ("sglang", ROOT / "official/baseline.py")]]
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
-                                     "--output-dir", str(output_dir), "--repeats", str(repeats)]))
+                                     "--output-dir", str(output_dir), "--repeats", str(repeats),
+                                     "--seed-offset", str(seed_offset)]))
     for name, command in steps:
         started = time.monotonic()
         remaining = deadline - started
@@ -175,13 +178,14 @@ def main():
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--repeats", type=int, default=6)
+    parser.add_argument("--seed-offset", type=int, default=200000)
     args = parser.parse_args()
     if args.repeats < 6 or args.repeats % 6:
         parser.error("Use a positive multiple of six for balanced three-runner orders")
     candidate = args.candidate.resolve()
     if args.phase == "benchmark":
-        return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats)
-    return supervise(candidate, args.output_dir, args.repeats)
+        return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats, args.seed_offset)
+    return supervise(candidate, args.output_dir, args.repeats, args.seed_offset)
 
 
 if __name__ == "__main__":
