@@ -71,13 +71,59 @@
           "left": 18
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "89fe00c5034a4198",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:02:53.374629+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:16:29.732608+00:00"
+      "last_checked_utc": "2026-10-24T08:29:24.847148+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "passed": true,
+      "speedup": 1.0476946230623665,
+      "speedup_ci": [
+        1.031979203716431,
+        1.063410042408302
+      ]
+    },
+    {
+      "experiment": "R03-router-dispatch",
+      "candidate": "candidates/router_split_after1.py",
+      "source_commit": "25cfb05d081ad25f691f96a3dd2d90da331ee808",
+      "submission_sha256": "5945aa3b214cece1363641a86b7cae2827cdd9d7af956fa42eab4af91994fdb8",
+      "mode": "check",
+      "created_utc": "2026-10-24T08:19:00.085473+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "718e0730e1bd4c30",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T08:19:00.281385+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T08:29:25.549253+00:00"
     }
-  ]
+  ],
+  "rules_version": "2026-10-22.1"
 }
