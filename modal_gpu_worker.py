@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 def make_modal_entry():
     # Local function is serialized by value. Its code is in this allowlisted
     # worker; it captures no host globals, credentials or project directory.
-    def execute(candidate_name, repeats=6, seed_offset=200000, protocol="three-runner-v1"):
+    def execute(candidate_name, repeats=6, seed_offset=200000, protocol="three-runner-v1", deadline_seconds=540):
         import json
         import os
         from pathlib import Path
@@ -37,12 +37,13 @@ def make_modal_entry():
         command = [sys.executable, str(root / "modal_gpu_worker.py"),
                    "--candidate", str(root / "candidates" / candidate_name),
                    "--output-dir", str(output), "--repeats", str(repeats),
-                   "--seed-offset", str(seed_offset), "--protocol", protocol]
+                   "--seed-offset", str(seed_offset), "--protocol", protocol,
+                   "--deadline-seconds", str(deadline_seconds)]
         with Path("/tmp/okc-smoke-worker.log").open("w") as log:
             child = subprocess.Popen(command, cwd=root, stdout=log, stderr=subprocess.STDOUT,
                                      start_new_session=True)
             try:
-                code = child.wait(timeout=555)
+                code = child.wait(timeout=deadline_seconds+15)
                 state = "completed"
             except subprocess.TimeoutExpired:
                 os.killpg(child.pid, signal.SIGKILL)
@@ -61,6 +62,9 @@ def save(path, report):
 
 
 def runner_specs(candidate, protocol):
+    if protocol == "screen-v1":
+        return [("candidate",candidate),("best",ROOT / "candidates/projection_full_composition.py"),
+                ("sglang",ROOT / "official/baseline.py")]
     if protocol == "composition-v1":
         return [("candidate",candidate),
                 ("native_combo",ROOT / "candidates/projection_native_composition.py"),
@@ -103,7 +107,7 @@ def benchmark(candidate, output, repeats, seed_offset=200000, protocol="three-ru
     orders = balanced_orders(list(modules),protocol)
     if repeats % len(orders):
         raise ValueError("A complete predefined order block is required")
-    warmup_count = 6 if protocol == "composition-v1" else 0
+    warmup_count = 6 if protocol in {"composition-v1","screen-v1"} else 0
     report["execution_orders"] = orders
     report["warmup_graph_replays_per_runner"] = warmup_count
     properties=torch.cuda.get_device_properties(0)
@@ -166,7 +170,7 @@ def benchmark(candidate, output, repeats, seed_offset=200000, protocol="three-ru
     return 0
 
 
-def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="three-runner-v1"):
+def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="three-runner-v1", deadline_seconds=540):
     output_dir.mkdir(parents=True, exist_ok=False)
     import torch
     if not torch.cuda.is_available() or "H200" not in torch.cuda.get_device_name():
@@ -178,16 +182,16 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
     for name, expected in manifest["files"].items():
         if hashlib.sha256((ROOT / name).read_bytes()).hexdigest() != expected["sha256"]:
             raise ValueError(f"Bundle integrity failed: {name}")
-    deadline = time.monotonic() + 540
+    deadline = time.monotonic() + deadline_seconds
     report = dict(kind="bounded GPU preflight; no official upload", source_commit=manifest["source_commit"],
-                  candidate=manifest["candidate"], stages=[], deadline_seconds=540, seed_offset=seed_offset, protocol=protocol)
+                  candidate=manifest["candidate"], stages=[], deadline_seconds=deadline_seconds, seed_offset=seed_offset, protocol=protocol)
     steps = [("correctness-" + name, ["check.py", "--device", "cuda", "--suite", "all",
               "--submission", str(source), "--seed-offset", str(seed_offset),
               "--output", str(output_dir / (name + "-correctness.json"))])
              for name, source in runner_specs(candidate,protocol)]
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
                                      "--output-dir", str(output_dir), "--repeats", str(repeats),
-                                     "--seed-offset", str(seed_offset), "--protocol", protocol]))
+                                     "--seed-offset", str(seed_offset), "--protocol", protocol, "--deadline-seconds", str(deadline_seconds)]))
     for name, command in steps:
         started = time.monotonic()
         remaining = deadline - started
@@ -222,15 +226,17 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--repeats", type=int, default=6)
     parser.add_argument("--seed-offset", type=int, default=200000)
-    parser.add_argument("--protocol",choices=["three-runner-v1","composition-v1"],default="three-runner-v1")
+    parser.add_argument("--protocol",choices=["three-runner-v1","composition-v1","screen-v1"],default="three-runner-v1")
+    parser.add_argument("--deadline-seconds",type=int,default=540)
     args = parser.parse_args()
+    if not 60<=args.deadline_seconds<=540:parser.error("Bounded internal deadline required")
     period=10 if args.protocol=="composition-v1" else 6
     if args.repeats < period or args.repeats % period:
         parser.error("Use complete predefined execution-order blocks")
     candidate = args.candidate.resolve()
     if args.phase == "benchmark":
         return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats, args.seed_offset, args.protocol)
-    return supervise(candidate, args.output_dir, args.repeats, args.seed_offset, args.protocol)
+    return supervise(candidate, args.output_dir, args.repeats, args.seed_offset, args.protocol, args.deadline_seconds)
 
 
 if __name__ == "__main__":

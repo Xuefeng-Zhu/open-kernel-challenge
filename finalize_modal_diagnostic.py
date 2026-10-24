@@ -15,7 +15,7 @@ from modal_diagnostics import ROOT,LEDGER,now,read_cli,write
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition"])
+    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition","M26-qkv-layout"])
     args=parser.parse_args()
     os.environ["MODAL_CONFIG_PATH"]=str(ROOT/"local-notes/modal-auth.toml")
     ledger=json.loads(LEDGER.read_text())
@@ -49,7 +49,8 @@ def main():
     write(ledger)
     evidence=dict(kind="Modal H200 diagnostic, no official score/CI",experiment=args.experiment,
                   attempt=entry,app=app,result={k:v for k,v in raw.items() if k!="logs"},
-                  summaries=summaries,aggregate=aggregate_graph(graph) if graph.get("protocol")=="composition-v1" else None,
+                  failure_logs=raw.get("logs") if raw["exit_code"] else None,
+                  summaries=summaries,aggregate=aggregate_graph(graph) if graph.get("protocol") in {"composition-v1","screen-v1"} else None,
                   billing_snapshot=billing,billing_observed_utc=now(),
                   qualifications=["All samples retained; no outlier exclusion or overhead subtraction",
                                   "Stage upper bound is a conservative budget guard, not actual billed cost",

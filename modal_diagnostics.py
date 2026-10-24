@@ -31,7 +31,7 @@ def read_cli(*command):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition"], required=True)
+    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition", "M26-qkv-layout"], required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     ledger = json.loads(LEDGER.read_text())
@@ -51,15 +51,20 @@ def main():
         raise ValueError("Use only explicit ignored bundle")
     manifest = json.loads((bundle / "bundle-manifest.json").read_text())
     actual = {p.relative_to(bundle).as_posix() for p in bundle.rglob("*") if p.is_file()}
-    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (19 if args.experiment=="M23-composition" else 17):
+    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (19 if args.experiment=="M23-composition" else (18 if args.experiment.startswith("M26-") else 17)):
         raise ValueError("Expected reviewed source/license files and manifest")
     candidate, repeats, seed, protocol = {
         "M19-unpooler": ("candidates/projection_unpooler_m1_simt.py", 12, 400000, "three-runner-v1"),
         "M20-qkv-repeat": ("candidates/projection_qkv_m1_simt.py", 30, 700000, "three-runner-v1"),
         "M23-composition": ("candidates/projection_full_composition.py", 30, 1000000, "composition-v1"),
+        "M26-qkv-layout": ("candidates/projection_qkv_layout.py", 30, 1300000, "screen-v1"),
     }[args.experiment]
     if manifest["candidate"] != candidate:
         raise ValueError("Wrong candidate for this preplanned experiment")
+    if args.experiment=="M26-qkv-layout":
+        cpu=json.loads((ROOT/"results/router-cycle2-qkv-layout-cpu.json").read_text())
+        if not cpu.get("passed") or cpu["environment"]["submission_sha256"]!=manifest["files"][candidate]["sha256"]:
+            raise ValueError("Missing exact-source CPU gate")
     for name, expected in manifest["files"].items():
         p = bundle / name
         if p.is_symlink() or hashlib.sha256(p.read_bytes()).hexdigest() != expected["sha256"]:
@@ -79,7 +84,9 @@ def main():
                    sum((Decimal(v) for v in billing["metered_cost_breakdown"].values()), Decimal(0)))
     observed_highwater = max(Decimal(str(ledger["observed_gross_high_water_usd"])), observed)
     highwater = max(observed_highwater,Decimal(str(ledger.get("conservative_stage_spent_usd",0))))
-    reserve = Decimal("1.00")
+    screen = protocol=="screen-v1"
+    timeout,startup,deadline=(300,90,240) if screen else (600,120,540)
+    reserve = Decimal("0.60") if screen else Decimal("1.00")
     if highwater + reserve > Decimal(str(ledger["cumulative_gross_ceiling_usd"])):
         raise RuntimeError("Conservative credit reserve exceeds USD2 stage ceiling")
     ledger["observed_gross_high_water_usd"] = str(observed_highwater)
@@ -92,7 +99,7 @@ def main():
                    billing_before=billing, conservative_reserve_usd=str(reserve),
                    resource_limits=dict(gpu="H200", cpu_request_limit=[2,2], memory_mib_request_limit=[8192,8192],
                                         max_containers=1, min_containers=0, buffer_containers=0, scaledown_window=2,
-                                        timeout=600, startup_timeout=120, retries=0, internal_deadline=540),
+                                        timeout=timeout, startup_timeout=startup, retries=0, internal_deadline=deadline),
                    base_image_id=ledger["reused_image_id"])
     ledger["attempts"].append(attempt)
     write(ledger)
@@ -101,14 +108,14 @@ def main():
     app = modal.App("okc-"+args.experiment.lower(),include_source=False)
     execute = app.function(image=image,gpu="H200",cpu=(2,2),memory=(8192,8192),
                            max_containers=1,min_containers=0,buffer_containers=0,scaledown_window=2,
-                           timeout=600,startup_timeout=120,retries=0,serialized=True,include_source=False,
+                           timeout=timeout,startup_timeout=startup,retries=0,serialized=True,include_source=False,
                            block_network=True,restrict_modal_access=True,name="projection-diagnostic")(make_modal_entry())
     try:
         with app.run(detach=False,environment_name="main"):
             attempt.update(state="accepted",app_id=app.app_id,accepted_utc=now(),setup_seconds=time.monotonic()-started)
             write(ledger)
             print(args.experiment,"accepted",app.app_id,flush=True)
-            result=execute.remote(Path(candidate).name,repeats,seed,protocol)
+            result=execute.remote(Path(candidate).name,repeats,seed,protocol,deadline)
             (ROOT / f"local-notes/modal-{args.experiment}-result.local.json").write_text(json.dumps(result,indent=2)+"\n")
             attempt.update(state="function-terminal",exit_code=result["exit_code"],worker_wall_seconds=result["worker_wall_seconds"])
     except Exception as error:
