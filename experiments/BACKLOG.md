@@ -1,10 +1,10 @@
 # Evidence-based experiment backlog
 
 This is a plan, **not an experiment result or permission for a run**. The only approved
-remote check is baseline job `e5a5b2d20da54187`; do not submit another. Its source is
+remote check is baseline job `e5a5b2d20da54187`; do not submit another. It finished with correctness passing and speedup **0.9076×**. Its source is
 commit `fde8a042944c742c20b76f27fcc030d767fd0058`, SHA256
 `78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e`.
-Do not modify that submitted baseline while its result is pending.
+The baseline remains unchanged and preserved; additional runs need fresh approval.
 
 ## What the contract establishes
 
@@ -30,7 +30,18 @@ Sources: preserved [TASK.md](../TASK.md), [baseline](../official/baseline.py),
 [oracle](../official/reference.py), [API snapshot](../official/muse_bf16_proj.json),
 [technical rules](https://openkernelchallenge.dev/rules).
 
-## Ordered hypotheses — choose after the real profile arrives
+## First measured evidence (job e5a5b2d20da54187)
+
+The first profile is now available. The unchanged starter passes 9/9 prerequisites and
+30/30 scored-shape checks, but its speedup is **0.9076×**, 95% interval
+**[0.8940, 0.9212]**. Router m=16/32/128/256 takes **25.90/19.48/28.57/45.53 µs**
+versus SGLang's **14.69/14.94/16.26/17.34 µs**. The BF16 projections are mostly near
+parity. This makes hypothesis 1 the clearest first controlled change; it does not
+establish that a custom GEMV, split-K or layout change will help. Full evidence:
+[experiment 001](001-offboard-baseline.md), [JSON](../results/h200-check.json),
+[all 30 shape timings](../results/h200-per-shape.csv).
+
+## Ordered hypotheses — use the real profile
 
 | Priority | One-variable experiment | Hypothesis / evidence needed | Correctness risk and required coverage |
 |---|---|---|---|

@@ -2,7 +2,8 @@
 
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
 baseline and reproducible correctness/diagnostic harness. **No optimized candidate
-exists yet.** CPU checks pass; the first off-board H200 check is pending.
+exists yet.** CPU checks and the first off-board H200 check pass correctness. The measured starter
+is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
 
 ## Reproduce locally
 
@@ -28,7 +29,17 @@ and FP32 for the router. `prepare` retains original weights. The unpooler uses i
 
 ## GPU validation
 
-Only one off-board hosted check is authorized, with a strict $0 spending limit.
+Completed off-board job **`e5a5b2d20da54187`**: **9/9 prerequisite tests and 30/30
+scored-shape correctness checks passed** on NVIDIA H200. The judge reports speedup
+`0.9076063758`, 95% interval `[0.8939922801, 0.9212204714]`, and normalized `score_us`
+`5322.5716885` (not a directly measured single-load latency). No optimization is claimed.
+The main measured gap is the FP32 router for m>8; at m=256 it takes 45.53 µs versus
+SGLang's 17.34 µs. See [experiment 001](experiments/001-offboard-baseline.md),
+[full sanitized records](results/h200-check.json) and [per-shape CSV](results/h200-per-shape.csv).
+
+
+The one authorized off-board hosted check is now consumed, with no paid resource used.
+The spending limit was $0.
 Any further run requires additional user approval. Human CLI login and rules acceptance
 were verified before sending anything.
 

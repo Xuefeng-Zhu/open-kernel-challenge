@@ -31,4 +31,5 @@ results/*
 !results/gpu-blocked.json
 !results/unit-tests.txt
 !results/h200-check.json
+!results/h200-per-shape.csv
 NEXT-STEP.md
