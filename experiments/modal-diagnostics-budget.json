@@ -4,7 +4,7 @@
   "cumulative_gross_ceiling_usd": 2,
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
   "observed_gross_high_water_usd": "0.87077815",
-  "conservative_stage_spent_usd": "0.964253594",
+  "conservative_stage_spent_usd": "0.991479066",
   "billing_ui_verified_utc": "2026-10-24T20:09:25.680785+00:00",
   "verified_credit_balance_usd": 29.34,
   "verified_net_spend_cap_usd": 0,
@@ -568,9 +568,89 @@
       },
       "app_lifetime_seconds": 90.0,
       "conservative_cost_upper_usd": "0.146368320"
+    },
+    {
+      "experiment": "M33-resource-probe",
+      "created_utc": "2026-10-24T20:09:49.219152+00:00",
+      "state": "terminal",
+      "app_id": "ap-vd8ZPjum8f0SpBMhBTTYDE",
+      "source_commit": "eebf4a3444f94b7452a4232668e3b95c7bdb418a",
+      "candidate": "candidates/projection_pooler_grouped.py",
+      "submission_sha256": "573f2f9e0e196c0c098ca9f9ca5a48e610df5482bc981933b1119d29fda75f3c",
+      "repeats": 0,
+      "seed_offset": 2600000,
+      "protocol": "resource-v1",
+      "bundle_sha256": "0d2548573f46e1e5e337bb26686bc64750bc3e078524f496dbfea01e9384cbb6",
+      "billing_before": {
+        "metered_cost": "0.73000000",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "plan_cost": "0E-8",
+          "credits": "-0.73000000",
+          "reservation_adjustment": "-0E-8",
+          "network_egress_allowance": "0E-8",
+          "free_storage": "-0E-8"
+        },
+        "metered_cost_breakdown": {
+          "ephemeral_apps": "0.73243025",
+          "llm_tokens": "0E-8",
+          "network_egress": "0E-8",
+          "volumes": "0E-8"
+        }
+      },
+      "conservative_reserve_usd": "0.45",
+      "resource_limits": {
+        "gpu": "H200",
+        "cpu_request_limit": [
+          2,
+          2
+        ],
+        "memory_mib_request_limit": [
+          8192,
+          8192
+        ],
+        "max_containers": 1,
+        "min_containers": 0,
+        "buffer_containers": 0,
+        "scaledown_window": 2,
+        "timeout": 180,
+        "startup_timeout": 60,
+        "retries": 0,
+        "internal_deadline": 150
+      },
+      "base_image_id": "im-cPTbGpNiX3RarKResPgX7h",
+      "accepted_utc": "2026-10-24T20:09:51.138883+00:00",
+      "setup_seconds": 1.9191999160684645,
+      "exit_code": 2,
+      "worker_wall_seconds": 0.21832606599999993,
+      "client_finished_utc": "2026-10-24T20:09:56.071605+00:00",
+      "client_wall_seconds": 6.8518899159971625,
+      "platform_state": "stopped",
+      "tasks": 0,
+      "termination_verified_utc": "2026-10-24T20:10:14.539784+00:00",
+      "correctness_and_graph_passed": false,
+      "billing_after": {
+        "metered_cost": "0.73000000",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "plan_cost": "0E-8",
+          "credits": "-0.73000000",
+          "free_storage": "-0E-8",
+          "reservation_adjustment": "-0E-8",
+          "network_egress_allowance": "0E-8"
+        },
+        "metered_cost_breakdown": {
+          "ephemeral_apps": "0.73243025",
+          "llm_tokens": "0E-8",
+          "volumes": "0E-8",
+          "network_egress": "0E-8"
+        }
+      },
+      "app_lifetime_seconds": 7.0,
+      "conservative_cost_upper_usd": "0.027225472"
     }
   ],
-  "latest_billing_observed_utc": "2026-10-24T20:01:24.393966+00:00",
+  "latest_billing_observed_utc": "2026-10-24T20:10:14.539999+00:00",
   "stage_completed": false,
   "report_before_expanding": false,
   "final_app_states": [

@@ -45,3 +45,12 @@ payment/cap/push. No official check; secondcycle2/10used unchanged.
 Local syntax pass; CPU parser/traffic interpretation tests are not GPU measurements.
 GPU diagnostic pending at preparation commit. At most two concrete hypotheses will
 be proposed from results, with benefits/risks before any later algorithm benchmark.
+
+FAILED before diagnostic: app ap-vd8ZPjum8f0SpBMhBTTYDE accepted/stopped/tasks0,
+worker0.218s/app7s,exit2. Worker argparse omitted resource-v1 and rejected it;
+no compiled metadata, CUDA timeline or correctness evidence obtained. Ordinary
+profiler was never attempted. This is a local implementation error, not permission
+or GPUaccess denial. Full failure logs retained in results/remote-modal-M33-resource-probe.json.
+Conservative stageguard$0.991479066,net$0. Fix CLI whitelist and zero-repetition
+resource-only route, add regression tests, then new diagnosticM34. No duplicate
+uncertain request; M33terminal. No official budget consumed.

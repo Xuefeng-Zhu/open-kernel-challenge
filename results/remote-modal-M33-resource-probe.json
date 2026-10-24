@@ -1,0 +1,129 @@
+{
+  "kind": "Modal H200 diagnostic, no official score/CI",
+  "experiment": "M33-resource-probe",
+  "attempt": {
+    "experiment": "M33-resource-probe",
+    "created_utc": "2026-10-24T20:09:49.219152+00:00",
+    "state": "terminal",
+    "app_id": "ap-vd8ZPjum8f0SpBMhBTTYDE",
+    "source_commit": "eebf4a3444f94b7452a4232668e3b95c7bdb418a",
+    "candidate": "candidates/projection_pooler_grouped.py",
+    "submission_sha256": "573f2f9e0e196c0c098ca9f9ca5a48e610df5482bc981933b1119d29fda75f3c",
+    "repeats": 0,
+    "seed_offset": 2600000,
+    "protocol": "resource-v1",
+    "bundle_sha256": "0d2548573f46e1e5e337bb26686bc64750bc3e078524f496dbfea01e9384cbb6",
+    "billing_before": {
+      "metered_cost": "0.73000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "credits": "-0.73000000",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "0E-8",
+        "free_storage": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "0.73243025",
+        "llm_tokens": "0E-8",
+        "network_egress": "0E-8",
+        "volumes": "0E-8"
+      }
+    },
+    "conservative_reserve_usd": "0.45",
+    "resource_limits": {
+      "gpu": "H200",
+      "cpu_request_limit": [
+        2,
+        2
+      ],
+      "memory_mib_request_limit": [
+        8192,
+        8192
+      ],
+      "max_containers": 1,
+      "min_containers": 0,
+      "buffer_containers": 0,
+      "scaledown_window": 2,
+      "timeout": 180,
+      "startup_timeout": 60,
+      "retries": 0,
+      "internal_deadline": 150
+    },
+    "base_image_id": "im-cPTbGpNiX3RarKResPgX7h",
+    "accepted_utc": "2026-10-24T20:09:51.138883+00:00",
+    "setup_seconds": 1.9191999160684645,
+    "exit_code": 2,
+    "worker_wall_seconds": 0.21832606599999993,
+    "client_finished_utc": "2026-10-24T20:09:56.071605+00:00",
+    "client_wall_seconds": 6.8518899159971625,
+    "platform_state": "stopped",
+    "tasks": 0,
+    "termination_verified_utc": "2026-10-24T20:10:14.539784+00:00",
+    "correctness_and_graph_passed": false,
+    "billing_after": {
+      "metered_cost": "0.73000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "credits": "-0.73000000",
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8",
+        "network_egress_allowance": "0E-8"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "0.73243025",
+        "llm_tokens": "0E-8",
+        "volumes": "0E-8",
+        "network_egress": "0E-8"
+      }
+    },
+    "app_lifetime_seconds": 7.0,
+    "conservative_cost_upper_usd": "0.027225472"
+  },
+  "app": {
+    "app_id": "ap-vd8ZPjum8f0SpBMhBTTYDE",
+    "description": "okc-m33-resource-probe",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-24 13:09:49-07:00",
+    "stopped_at": "2026-10-24 13:09:56-07:00"
+  },
+  "result": {
+    "exit_code": 2,
+    "state": "completed",
+    "worker_wall_seconds": 0.21832606599999993,
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "python_executable": "/opt/sglang/bin/python",
+    "records": {}
+  },
+  "failure_logs": {
+    "worker.log": "usage: modal_gpu_worker.py [-h] [--phase {supervise,benchmark,nearby}]\n                           --candidate CANDIDATE --output-dir OUTPUT_DIR\n                           [--repeats REPEATS] [--seed-offset SEED_OFFSET]\n                           [--protocol {three-runner-v1,composition-v1,screen-v1}]\n                           [--deadline-seconds DEADLINE_SECONDS]\nmodal_gpu_worker.py: error: argument --protocol: invalid choice: 'resource-v1' (choose from 'three-runner-v1', 'composition-v1', 'screen-v1')\n"
+  },
+  "summaries": [],
+  "aggregate": null,
+  "billing_snapshot": {
+    "metered_cost": "0.73000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "credits": "-0.73000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "0.73243025",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "billing_observed_utc": "2026-10-24T20:10:14.540741+00:00",
+  "qualifications": [
+    "All samples retained; no outlier exclusion or overhead subtraction",
+    "Stage upper bound is a conservative budget guard, not actual billed cost",
+    "Billing API counters may settle asynchronously",
+    "App lifetime/worker wall time are not GPU busy time"
+  ]
+}
