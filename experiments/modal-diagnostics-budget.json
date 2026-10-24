@@ -5,8 +5,8 @@
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
   "observed_gross_high_water_usd": "0.87077815",
   "conservative_stage_spent_usd": "0.964253594",
-  "billing_ui_verified_utc": "2026-10-24T19:58:19.886250+00:00",
-  "verified_credit_balance_usd": 29.45,
+  "billing_ui_verified_utc": "2026-10-24T20:09:25.680785+00:00",
+  "verified_credit_balance_usd": 29.34,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
   "max_active_apps": 1,
@@ -571,7 +571,7 @@
     }
   ],
   "latest_billing_observed_utc": "2026-10-24T20:01:24.393966+00:00",
-  "stage_completed": true,
+  "stage_completed": false,
   "report_before_expanding": false,
   "final_app_states": [
     {
@@ -657,5 +657,6 @@
       "volumes": "0E-8",
       "network_egress": "0E-8"
     }
-  }
+  },
+  "current_diagnostic": "M33 unchanged-kernel metadata and ordinary CUDA activity; no algorithm benchmark or official check"
 }

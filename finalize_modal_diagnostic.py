@@ -15,7 +15,7 @@ from modal_diagnostics import ROOT,LEDGER,now,read_cli,write
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition","M26-qkv-layout","M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow"])
+    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition","M26-qkv-layout","M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow", "M33-resource-probe"])
     args=parser.parse_args()
     os.environ["MODAL_CONFIG_PATH"]=str(ROOT/"local-notes/modal-auth.toml")
     ledger=json.loads(LEDGER.read_text())
@@ -32,6 +32,8 @@ def main():
     passed=(raw["exit_code"]==0 and raw["records"].get("stages.json",{}).get("passed",False)
             and len(summaries)==30 and all(raw["records"][n+"-correctness.json"]["passed"]
                                            for n in runner_names))
+    if entry.get("protocol")=="resource-v1":
+        passed=raw["exit_code"]==0 and raw["records"].get("resource-probe.json",{}).get("passed",False)
     elapsed=(datetime.fromisoformat(app["stopped_at"])-datetime.fromisoformat(app["created_at"])).total_seconds()
     # Conservative bound covers the entire app lifetime (including non-GPU setup),
     # plus5s and10%margin, not just worker time. No extra resource is provisioned.

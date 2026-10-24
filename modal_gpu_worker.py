@@ -234,6 +234,9 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
                                      "--output-dir", str(output_dir), "--repeats", str(repeats),
                                      "--seed-offset", str(seed_offset), "--protocol", protocol, "--deadline-seconds", str(deadline_seconds)]))
+    if protocol=="resource-v1":
+        steps=[("resource-probe",["projection_resource_probe.py","--output",str(output_dir/"resource-probe.json"),
+                                  "--deadline-seconds",str(deadline_seconds-10)])]
     for name, command in steps:
         started = time.monotonic()
         remaining = deadline - started

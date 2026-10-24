@@ -17,7 +17,7 @@ FIXED = (
 )
 
 
-def describe(candidate):
+def describe(candidate, resource_probe=False):
     candidate = Path(candidate)
     if candidate.is_absolute() or candidate.parent != Path("candidates"):
         raise ValueError("Select one project-relative candidates/projection_*.py file")
@@ -28,6 +28,11 @@ def describe(candidate):
         extra=("candidates/projection_native_composition.py","candidates/projection_pooler_layout.py")
     if candidate.name in {"projection_qkv_layout.py","projection_unpooler_layout.py","projection_pooler_grouped.py","projection_pooler_narrow.py"}:
         extra=("candidates/projection_full_composition.py",)
+    if resource_probe:
+        if candidate.name != "projection_pooler_grouped.py":
+            raise ValueError("Resource probe inspects only the existing pooler controls")
+        extra=("candidates/projection_full_composition.py","candidates/projection_pooler_narrow.py",
+               "projection_resource_probe.py")
     files = {}
     for relative in sorted(set(FIXED + extra + (candidate.as_posix(),))):
         source = ROOT / relative
@@ -75,8 +80,9 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--candidate", required=True)
     parser.add_argument("--build", type=Path, help="Optional NEW ignored local destination; never uploads")
+    parser.add_argument("--resource-probe",action="store_true",help="Explicit unchanged-kernel diagnostic bundle")
     args = parser.parse_args()
-    plan = describe(args.candidate)
+    plan = describe(args.candidate,args.resource_probe)
     if args.build:
         build(plan, args.build)
     print(json.dumps(plan, indent=2))
