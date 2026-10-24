@@ -26,3 +26,14 @@ for simultaneous invocations; sequential graph replay passed.
 Official check `7edded086c8a47f2` was accepted from the new six-check attention
 budget. Use `check_cycle.py poll E2` and the durable ledger for current status.
 Performance decisions wait for the actual terminal receipt. Preserve E0 unchanged.
+
+## Official outcome
+
+Passed all 16 prerequisite tests and 12 scored shapes: 0.7958818006× SGLang,
+95% CI [0.7839435736, 0.8078200276]. E0 was 0.7224690513×; score ratio
+1.101613694×. Separate official runs, not directly paired candidates. Target
+reference-normalized shape improvements versus E0: full decode B16 +13.04%,
+B32 +38.59%, full verify B16 +11.88%, B32 +15.52%. All twelve timings and
+raw samples remain in E2-official-result.json. No >5% control regression;
+sliding decode B1 changed -3.36%, so preserve cross-run noise caveat.
+E2 is selected as E3 parent. It is still slower overall than SGLang.

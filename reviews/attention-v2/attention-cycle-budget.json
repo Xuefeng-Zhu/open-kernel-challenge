@@ -70,8 +70,8 @@
     {
       "experiment": "E2",
       "mode": "check",
-      "state": "accepted",
-      "status": "running",
+      "state": "terminal",
+      "status": "done",
       "job_id": "7edded086c8a47f2",
       "candidate": "reviews/attention-v2/fixed_chunks.py",
       "source_commit": "2613417dcd806d64e3744be9e3d8773396692765",
@@ -100,7 +100,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T22:35:13.152229+00:00",
-      "last_checked_utc": "2026-10-24T22:35:48.814546+00:00"
+      "last_checked_utc": "2026-10-24T22:40:57.743705+00:00",
+      "passed": true,
+      "speedup": 0.7958818005959276,
+      "speedup_ci": [
+        0.7839435735869887,
+        0.8078200276048665
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      }
     }
   ],
   "remaining": 4,
