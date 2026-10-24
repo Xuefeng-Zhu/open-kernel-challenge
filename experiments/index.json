@@ -13,6 +13,91 @@
       "record": "experiments/001-offboard-baseline.md",
       "results": "results/h200-check.json",
       "per_shape_timings": "results/h200-per-shape.csv"
+    },
+    {
+      "id": "002-router-split-after8",
+      "control": "001-offboard-baseline",
+      "source_commit": "4fb8e81fba03a2b9eedbdbdb9ce671d1be4ea4f5",
+      "result_commit": "4fb8e81fba03a2b9eedbdbdb9ce671d1be4ea4f5",
+      "configuration_file": "candidates/router_split_after8.py",
+      "configuration": {
+        "threshold": 8,
+        "products": 2,
+        "layout": "contiguous K,N"
+      },
+      "submission_sha256": "6b1b66e2875ad4a755e98e41235243c5f0b5131c32f5f6b08e49d2f4f7d5c352",
+      "record": "experiments/002-router-split-after8.md",
+      "results": "results/router-after8-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_run_id": null,
+      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+    },
+    {
+      "id": "003-router-split-after1",
+      "control": "002-router-split-after8",
+      "source_commit": "25cfb05d081ad25f691f96a3dd2d90da331ee808",
+      "result_commit": "25cfb05d081ad25f691f96a3dd2d90da331ee808",
+      "configuration_file": "candidates/router_split_after1.py",
+      "configuration": {
+        "threshold": 1,
+        "products": 2,
+        "layout": "contiguous K,N"
+      },
+      "submission_sha256": "5945aa3b214cece1363641a86b7cae2827cdd9d7af956fa42eab4af91994fdb8",
+      "record": "experiments/003-router-split-after1.md",
+      "results": "results/router-after1-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_run_id": null,
+      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+    },
+    {
+      "id": "004-router-fused-wide",
+      "control": "002-router-split-after8",
+      "source_commit": "2d7f55d150ea4ca266bbc95fa70c3555c1d75cd9",
+      "result_commit": "2d7f55d150ea4ca266bbc95fa70c3555c1d75cd9",
+      "configuration_file": "candidates/router_fused_wide.py",
+      "configuration": {
+        "threshold": 8,
+        "products": 1,
+        "layout": "contiguous K,2N plus FP32 half sum"
+      },
+      "submission_sha256": "016dbc6828bbf85dd6479a119b0b6f4b06cdb13fdc486fa1df16a09139537ccd",
+      "record": "experiments/004-router-fused-wide.md",
+      "results": "results/router-fused-wide-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_run_id": null,
+      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+    },
+    {
+      "id": "005-router-transpose-view",
+      "control": "002-router-split-after8",
+      "source_commit": "bff6dec6baf6f819f931f6a47c8b8f06600043f0",
+      "result_commit": "bff6dec6baf6f819f931f6a47c8b8f06600043f0",
+      "configuration_file": "candidates/router_transpose_view.py",
+      "configuration": {
+        "threshold": 8,
+        "products": 2,
+        "layout": "transpose views of contiguous N,K"
+      },
+      "submission_sha256": "7215c300f268694f3f96df10801e07cb55e786b003e4939972a78f107df0dff0",
+      "record": "experiments/005-router-transpose-view.md",
+      "results": "results/router-transpose-view-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_run_id": null,
+      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
     }
-  ]
+  ],
+  "final_local_verification": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests_passed": 17,
+    "tests_total": 17,
+    "python_compilation_command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py candidates tests",
+    "python_compilation_passed": true,
+    "candidate_case_count_each": 39,
+    "candidate_gpu_tests": 0
+  }
 }

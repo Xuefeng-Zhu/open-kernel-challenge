@@ -16,3 +16,8 @@
   `results/h200-per-shape.csv` for source/configuration/job/per-shape evidence.
 - A separate user attention draft is under local review only; it is ignored by Git,
   has not replaced this baseline and has not been uploaded or run on the judge.
+- Attention contract review is complete in local-only notes. Four isolated router
+  candidates are committed separately, each with 39/39 CPU oracle cases and 3 focused
+  tests passing. Combined regression suite: 17/17. Their GPU paths are unverified.
+- Ranked shortlist and a one-check approval plan are in `candidates/README.md`;
+  exact candidate source/result commits and configurations are in `experiments/index.json`.

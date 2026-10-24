@@ -112,6 +112,10 @@ See [EXPERIMENTS.md](EXPERIMENTS.md) for one-commit-per-experiment rules and
 source hashes and remote run IDs. Failed experiments must also be recorded.
 The [experiment backlog](experiments/BACKLOG.md) explains how to choose one-variable
 changes from actual profiles while preserving correctness and quota discipline.
+Four [isolated local router candidates](candidates/README.md) each pass 39/39 CPU
+oracle cases and focused edge tests; the combined regression suite passes 17/17.
+They have separate experiment commits and explicit CUDA/H200 limitations. Their
+GPU correctness, capture and performance remain unverified; none was uploaded.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,
 SGLang and GPU MODE attribution and license scope. Only selected task material and

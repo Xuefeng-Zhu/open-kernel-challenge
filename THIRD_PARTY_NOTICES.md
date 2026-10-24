@@ -15,6 +15,8 @@ Meta and Andromeda. It does not claim endorsement by those organizations or GPU 
   `a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f`:
   https://github.com/sgl-project/sglang/tree/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f.
   SGLang is Apache License 2.0; its license text is preserved in `LICENSE`.
+  The isolated router candidates adapt its documented BF16 hi+lo router technique;
+  each file/experiment identifies its own threshold, layout or fusion modification.
 - The challenge's [official credits](https://openkernelchallenge.dev/rules#credits)
   identify **GPU MODE reference-kernels** and **kernelbot** as foundations for its
   judge, problem format, harness and evaluator:
