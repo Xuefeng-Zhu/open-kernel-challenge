@@ -47,5 +47,13 @@ both compositions in one app to avoid spending another run on layout ambiguity.
 Local92unit tests pass, including position-balanced pairing, exact-once sample
 use, no outlier deletion, weighted sums and equal-load aggregation. Each composed
 source passed39CPU+9focused cases and static/syntax. GPU result pending at source
-commit. Follow the exact accepted app to stopped and reconcile costs; never
-replace an uncertain request. Report stability and best composition before expansion.
+commit. Actual app ap-XxzsrPfRejsEpPVQCxIqzJ completed/passed, verified stopped/tasks0
+at19:14:31UTC. Five39-case CUDA suites,30shapes x6warmups x5runners and30shapes x30
+steady replays x5runners all pass. Worker61.223s, client68.667s, app70s, no timeout.
+Full/R10 gross weighted aggregate1.022014, full/P2-01 1.010889, full/native1.007073;
+no official score/CI. Pooler m8/16/32/128 isolated layout comparisons all15/15pairs
+win; m256 inconclusive (7/15, median0.99693). QKV40us spike appears in declared
+warmup; full steady30samples max17.952us. All data retained.
+Current cumulative billing$0.29credits/net$0; conservative stage bound$0.44625<$2.
+Detailed results/limits in MODAL_COMPOSITION_RESULTS.md and
+results/remote-modal-M23-composition.json. Stop/report before expansion.

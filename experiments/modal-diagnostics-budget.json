@@ -3,10 +3,10 @@
   "workspace": "xuefeng-zhu",
   "cumulative_gross_ceiling_usd": 2,
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
-  "observed_gross_high_water_usd": "0.21000000",
-  "conservative_stage_spent_usd": "0.328587546",
-  "billing_ui_verified_utc": "2026-10-24T19:13:02.203627+00:00",
-  "verified_credit_balance_usd": 29.79,
+  "observed_gross_high_water_usd": "0.29000000",
+  "conservative_stage_spent_usd": "0.446246746",
+  "billing_ui_verified_utc": "2026-10-24T19:21:32.983691+00:00",
+  "verified_credit_balance_usd": 29.71,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
   "max_active_apps": 1,
@@ -168,12 +168,100 @@
       },
       "app_lifetime_seconds": 65.0,
       "conservative_cost_upper_usd": "0.110481920"
+    },
+    {
+      "experiment": "M23-composition",
+      "created_utc": "2026-10-24T19:13:21.489467+00:00",
+      "state": "terminal",
+      "app_id": "ap-XxzsrPfRejsEpPVQCxIqzJ",
+      "source_commit": "a50ae6c45e409e6e628c2d6cea61919c3d5785b5",
+      "candidate": "candidates/projection_full_composition.py",
+      "submission_sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+      "repeats": 30,
+      "seed_offset": 1000000,
+      "protocol": "composition-v1",
+      "bundle_sha256": "a44cffefebb1ecd2e349335798774ad1622c1a0560edac08ef3228006b86f06d",
+      "billing_before": {
+        "metered_cost": "0.21000000",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "free_storage": "-0E-8",
+          "credits": "-0.21000000",
+          "reservation_adjustment": "-0E-8",
+          "network_egress_allowance": "0E-8",
+          "plan_cost": "0E-8"
+        },
+        "metered_cost_breakdown": {
+          "network_egress": "0E-8",
+          "volumes": "0E-8",
+          "ephemeral_apps": "0.20879646",
+          "llm_tokens": "0E-8"
+        }
+      },
+      "conservative_reserve_usd": "1.00",
+      "resource_limits": {
+        "gpu": "H200",
+        "cpu_request_limit": [
+          2,
+          2
+        ],
+        "memory_mib_request_limit": [
+          8192,
+          8192
+        ],
+        "max_containers": 1,
+        "min_containers": 0,
+        "buffer_containers": 0,
+        "scaledown_window": 2,
+        "timeout": 600,
+        "startup_timeout": 120,
+        "retries": 0,
+        "internal_deadline": 540
+      },
+      "base_image_id": "im-cPTbGpNiX3RarKResPgX7h",
+      "accepted_utc": "2026-10-24T19:13:23.646710+00:00",
+      "setup_seconds": 2.1565315001644194,
+      "exit_code": 0,
+      "worker_wall_seconds": 61.222890254999996,
+      "client_finished_utc": "2026-10-24T19:14:30.157632+00:00",
+      "client_wall_seconds": 68.66746508399956,
+      "platform_state": "stopped",
+      "tasks": 0,
+      "termination_verified_utc": "2026-10-24T19:16:50.429858+00:00",
+      "correctness_and_graph_passed": true,
+      "billing_after": {
+        "metered_cost": "0.29000000",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "plan_cost": "0E-8",
+          "reservation_adjustment": "-0E-8",
+          "network_egress_allowance": "0E-8",
+          "credits": "-0.29000000",
+          "free_storage": "-0E-8"
+        },
+        "metered_cost_breakdown": {
+          "ephemeral_apps": "0.28971725",
+          "volumes": "0E-8",
+          "network_egress": "0E-8",
+          "llm_tokens": "0E-8"
+        }
+      },
+      "app_lifetime_seconds": 70.0,
+      "conservative_cost_upper_usd": "0.117659200"
     }
   ],
-  "latest_billing_observed_utc": "2026-10-24T18:59:10.027492+00:00",
-  "stage_completed": false,
+  "latest_billing_observed_utc": "2026-10-24T19:16:50.430098+00:00",
+  "stage_completed": true,
   "report_before_expanding": true,
   "final_app_states": [
+    {
+      "app_id": "ap-XxzsrPfRejsEpPVQCxIqzJ",
+      "description": "okc-m23-composition",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-24 12:13:21-07:00",
+      "stopped_at": "2026-10-24 12:14:31-07:00"
+    },
     {
       "app_id": "ap-8GLNIGgfFD2naewj9oD2vD",
       "description": "okc-m20-qkv-repeat",

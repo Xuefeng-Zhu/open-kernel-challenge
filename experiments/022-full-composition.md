@@ -23,3 +23,10 @@ Actual39/39CPU oracle +9focused tests pass, syntax/static pass. Focused tests co
 fresh inputs, probes/zero rows, N/K tails, real widths and unchanged router/o paths.
 M2/macOS26.6.2, Python3.12.13, Torch2.14.1; no CPU performance claim. Combined GPU
 correctness, graph behavior and performance pending experiment023. No OKC/push.
+
+## Subsequent native validation, experiment023
+
+Exact source bytes preserved. App ap-XxzsrPfRejsEpPVQCxIqzJ passed39CUDA cases for
+this runner and all30shapes x6declared warmups +30steady fresh-input repetitions,
+then verified stopped/tasks0. Comparison and limitations: MODAL_COMPOSITION_RESULTS.md;
+all raw samples in results/remote-modal-M23-composition.json. No official score/CI.

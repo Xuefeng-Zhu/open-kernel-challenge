@@ -1,5 +1,15 @@
 # First Modal H200 smoke — completed, stopped, no official entry
 
+Latest composition: MODAL_COMPOSITION_RESULTS.md. Full source
+candidates/projection_full_composition.py (c34c497b...) is best observed Modal
+point estimate: weighted gross1.022014x over R10,1.010889x over P2-01; no official
+score/CI. App ap-XxzsrPfRejsEpPVQCxIqzJ passed all five39-case CUDA suites and all
+warmup/steady outputs, now stopped/tasks0. QKV steady max17.952us after declared
+six warmups;40us warmup sample retained. Pooler m8/16/32/128 gains supported,
+m256 unresolved. All4apps stopped, cumulative credits$0.29/net$0, remaining$29.71,
+conservative stage bound$0.44625<$2. Source/protocol/result commits separate;
+no push/OKC call. Report before expanding; preserve earlier evidence below.
+
 Current continuation: see MODAL_STAGE2_RESULTS.md. Unpooler019 and independent
 QKV020 both completed/passed and stopped; all native correctness checks pass.
 Latest cumulative Modal billing$0.21credits/net$0, conservative bound$0.3286below

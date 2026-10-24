@@ -22,3 +22,10 @@ This combined source still needs its own GPU check; component results alone are
 not combined correctness/performance evidence. Planned Modal factorial stability
 comparison with full composition, pooler-layout control, R10 and SGLang; no OKC
 dispatch or push, no new credential, within the existing$2credit/$0paid stage.
+
+## Subsequent native validation, experiment023
+
+Exact source bytes preserved. App ap-XxzsrPfRejsEpPVQCxIqzJ passed39CUDA cases for
+this runner and all30shapes x6declared warmups +30steady fresh-input repetitions,
+then verified stopped/tasks0. Comparison and limitations: MODAL_COMPOSITION_RESULTS.md;
+all raw samples in results/remote-modal-M23-composition.json. No official score/CI.
