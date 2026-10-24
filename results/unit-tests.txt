@@ -1,0 +1,10 @@
+test_fresh_inputs_and_unpooler_slice (test_contract.ContractTests.test_fresh_inputs_and_unpooler_slice) ... ok
+test_official_shape_inventory (test_contract.ContractTests.test_official_shape_inventory) ... ok
+test_per_row_check_rejects_small_global_error (test_contract.ContractTests.test_per_row_check_rejects_small_global_error) ... ok
+test_probe_rejects_error_below_general_tolerance (test_contract.ContractTests.test_probe_rejects_error_below_general_tolerance) ... ok
+test_router_precision_and_negative_controls (test_contract.ContractTests.test_router_precision_and_negative_controls) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.542s
+
+OK

@@ -1,0 +1,34 @@
+.venv/
+__pycache__/
+*.pyc
+profiles/
+bin/
+.DS_Store
+local-notes/
+*.local.json
+*.local.txt
+.okc/
+.config/
+config.json
+.env
+.env.*
+*.pem
+*.key
+# Only selected task material needed for offline reproduction.
+official/*
+!official/AGENTS.md
+!official/TASK.md
+!official/baseline.py
+!official/checks.py
+!official/reference.py
+!official/template.py
+!official/muse_bf16_proj.json
+!official/manifest.json
+# Explicitly selected sanitized evidence only.
+results/*
+!results/cpu-correctness.json
+!results/verification.json
+!results/gpu-blocked.json
+!results/unit-tests.txt
+!results/h200-check.json
+NEXT-STEP.md

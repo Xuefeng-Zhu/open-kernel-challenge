@@ -1,0 +1,98 @@
+# Open Kernel Challenge — dense projections
+
+Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
+baseline and reproducible correctness/diagnostic harness. **No optimized candidate
+exists yet.** CPU checks pass; the first off-board H200 check is pending.
+
+## Reproduce locally
+
+Python 3.12 is used. The Mac environment is pinned in `requirements-macos.lock`.
+
+```sh
+python3.12 -m venv .venv
+uv pip install --python .venv/bin/python -r requirements-macos.lock
+.venv/bin/python -m unittest discover -s tests -v
+.venv/bin/python static_check.py
+.venv/bin/python check.py --device cpu --suite all --output results/cpu-correctness.json
+```
+
+The full-size suite covers the nine official prerequisite shapes plus all 30 scored
+shapes using the unmodified official FP64 reference, per-row limits and weight-column
+probe checks. Observed: **39/39 CPU cases and 5/5 focused tests pass**. The local
+Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
+The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
+
+`submission.py` retains the starter algorithm: `x @ W[:n].T`, BF16 for the dense layers
+and FP32 for the router. `prepare` retains original weights. The unpooler uses its first
+1024 output rows for `m<=8` and all 8192 above that boundary.
+
+## GPU validation
+
+Only one off-board hosted check is authorized, with a strict $0 spending limit.
+Any further run requires additional user approval. Human CLI login and rules acceptance
+were verified before sending anything.
+
+```sh
+# One-time approved remote experiment; do not run this automatically.
+okc check submission.py --no-wait --json
+okc status <accepted-job-id> --wait --json
+```
+
+On an independently approved Linux H200 SXM host in the official SGLang image:
+
+```sh
+python check.py --device cuda --suite all --output results/h200-correctness.json
+python benchmark.py --repeats 12 --output results/h200-diagnostic.json
+```
+
+Do not install the Mac lock into the GPU image. The official environment is
+`lmsysorg/sglang:dev-muse-spark-open`; the inspected image digest was
+`sha256:8cfc5a72cb296771f5f8a4a4688cb6d05685610a830cbb616fa4ab0eb7bb2b0a`.
+Refresh official metadata before provisioning; no rental is authorized here.
+
+The local diagnostic captures candidate and SGLang CUDA graphs, alternates order,
+uses fresh paired inputs, reads 256 MiB before each replay, and checks both outputs.
+It reports gross CUDA-event times without guessing replay-overhead subtraction or
+claiming an official score/confidence interval. Its GPU branch remains untested until
+run on appropriate hardware; the hosted judge is authoritative.
+
+## Official contract and scoring
+
+[Selected task](https://openkernelchallenge.dev/problems/muse_bf16_proj),
+[API/agent guide](https://openkernelchallenge.dev/llms.txt),
+[technical rules](https://openkernelchallenge.dev/rules),
+[official terms](https://openkernelchallenge.dev/terms.pdf).
+Selected source files and SHA256 provenance are in `official/`; see [TASK.md](TASK.md)
+for dimensions, tolerances, nine prerequisite cases and 30 scored shapes.
+
+Kernel timing is on one NVIDIA H200 SXM using alternating cold-L2 CUDA graph replays.
+Per-load time sums each shape's latency times its weight; the problem speedup is the
+geometric mean of SGLang/candidate load-time ratios over six loads. Published SGLang
+reference values in the snapshot are not measurements made by this project.
+
+At inspection, this task permits 20 off-board checks and 10 scored runs per day,
+resetting at 00:00 UTC. A check uploads the source to the contest service, stays off the
+leaderboard, and has no confidentiality guarantee. Terms say no purchase or payment
+is necessary to participate; no separate hosted-check fee is published. Stop if a
+charge appears. No scored submission is authorized.
+
+2026 kernel deadline: **November 4, 11:59 p.m. Pacific**. Serving has a discrepancy:
+the site/API says November 19, while the terms PDF says November 18, both 11:59 p.m.
+Pacific. Plan for the earlier date pending organizer clarification. Prizes are on the
+later serving track; kernel standings determine serving-queue priority.
+
+Eligibility: individual age 18+, one account, legal/location/export-control requirements
+and sponsor/family/household exclusions. The human must review and accept agreements
+personally. Submitted contributions require appropriate rights and Apache-2.0 licensing;
+terms include sponsor use/publicity rights and arbitration provisions.
+
+## Experiment history and attribution
+
+See [EXPERIMENTS.md](EXPERIMENTS.md) for one-commit-per-experiment rules and
+[experiments/](experiments/) for hypotheses, exact commands, environments, outcomes,
+source hashes and remote run IDs. Failed experiments must also be recorded.
+
+See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,
+SGLang and GPU MODE attribution and license scope. Only selected task material and
+sanitized evidence are tracked. Credentials, CLI binaries, private account records,
+caches, unrelated downloaded tasks and machine-specific notes are excluded.

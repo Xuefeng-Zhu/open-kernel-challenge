@@ -1,0 +1,19 @@
+{
+  "kind": "local H200 diagnostic; not official timing or score",
+  "environment": {
+    "python": "3.12.13 (main, Mar 25 2026, 03:16:06) [Clang 22.1.1 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "device": "cuda",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "submission_sha256": "78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "repeats": 12,
+  "seed_offset": 100000,
+  "eviction_bytes": 268435456,
+  "timing": "CUDA events around one CUDA graph replay, cold L2, gross time; no fixed-cost subtraction",
+  "cases": [],
+  "blocked": "CUDA unavailable; requires H200 SXM and the official SGLang image"
+}

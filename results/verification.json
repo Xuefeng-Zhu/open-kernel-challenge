@@ -1,0 +1,35 @@
+{
+  "date_utc": "2026-10-24",
+  "commands": [
+    {
+      "command": ".venv/bin/python check.py --device cpu --suite all --output results/cpu-correctness.json",
+      "exit_code": 0,
+      "result": "39/39 full-size CPU cases passed official oracle; inputs and weights unchanged"
+    },
+    {
+      "command": ".venv/bin/python -m unittest discover -s tests -v",
+      "exit_code": 0,
+      "result": "5 tests passed: shape inventory/boundary, fresh inputs/slicing, router negative controls, per-row limit, and stricter probe limit"
+    },
+    {
+      "command": ".venv/bin/python static_check.py",
+      "exit_code": 0,
+      "result": "AST, entrypoints, basic import/sync sanity and official snapshot SHA256 checks passed"
+    },
+    {
+      "command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py tests",
+      "exit_code": 0,
+      "result": "Python compilation passed"
+    },
+    {
+      "command": ".venv/bin/python benchmark.py --output results/gpu-blocked.json",
+      "exit_code": 2,
+      "result": "CUDA unavailable; guard stopped before capture or timing"
+    }
+  ],
+  "gpu_correctness_tested": false,
+  "gpu_timing_tested": false,
+  "official_jobs_started": 0,
+  "paid_compute_used": false,
+  "terms_accepted": false
+}
