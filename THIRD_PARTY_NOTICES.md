@@ -32,3 +32,11 @@ also govern any code uploaded to the challenge; an off-board check is still an u
 Official terms and technical rules must be reviewed at their original URLs before
 participation. No legal PDF, unrelated task bundle, CLI binary, account configuration,
 credential or private authentication record is included in this repository.
+
+
+Attention testing scope: reviews/attention-v2/official contains unmodified public
+muse_attention_decode files verified against the official API on2026-10-24.
+The user's transcribed attention v2 source and its recorded minimal compiler fix
+are preserved separately from the projection project. The Modal harness uses only
+these official files, our local source and the existing authorized SGLang image.
+No third-party competitor repository source is copied or executed in this cycle.
