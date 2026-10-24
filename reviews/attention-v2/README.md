@@ -1,3 +1,6 @@
+Current approval/admission status: **REMOTE_CHECK.md** and remote-policy.json.
+The earlier pending-approval paragraph below is the original preflight history.
+
 # Local-only attention v2 preflight
 
 Read REVIEW.md first. The user's algorithm is unchanged; submission.py only restores
