@@ -25,3 +25,13 @@ net paid cap$0. No credentials/cap/payment/terms/push changes.
 
 Preparation:39CPU+3focused checks, static/syntax pass. Modal pending. No official
 admission for this source at preparation commit.
+
+Terminal: app ap-cjt62CgauSmkFmLcwhlgPT stopped/tasks0, worker69.756s/app80s.
+Full117official CUDA checks +30nearby fresh graph checks +all30timed shapes pass.
+Rejected performance: aggregate best/candidate0.9003443; pooler m1280.4118493
+(67.264us vs27.712),m2560.4621926(74.496vs34.448),0/15pairedwins each.
+No official request. All samples preserved results/remote-modal-M30-pooler-grouped.
+Billing snapshot$0.73gross/$0net; stageconservative$0.817885. No new credential.
+One plausible bottleneck is low grid parallelism: BM32/BN128 gives128CTAs at
+m128, below132SM. This does not prove the cause. Next controlled BN32 yields512
+CTAs at sameM and keeps all other source/loop/precision choices unchanged.
