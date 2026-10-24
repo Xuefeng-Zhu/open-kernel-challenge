@@ -30,8 +30,16 @@
       "results": "results/router-after8-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_run_id": null,
-      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+      "gpu_run_id": "59abe5825690427c",
+      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_runs": [
+        {
+          "experiment": "R01-router-control",
+          "job_id": "59abe5825690427c",
+          "status": "done",
+          "passed": true
+        }
+      ]
     },
     {
       "id": "003-router-split-after1",
@@ -49,8 +57,16 @@
       "results": "results/router-after1-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_run_id": null,
-      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+      "gpu_run_id": "718e0730e1bd4c30",
+      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_runs": [
+        {
+          "experiment": "R03-router-dispatch",
+          "job_id": "718e0730e1bd4c30",
+          "status": "done",
+          "passed": true
+        }
+      ]
     },
     {
       "id": "004-router-fused-wide",
@@ -68,8 +84,16 @@
       "results": "results/router-fused-wide-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_run_id": null,
-      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+      "gpu_run_id": "89fe00c5034a4198",
+      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_runs": [
+        {
+          "experiment": "R02-router-wide",
+          "job_id": "89fe00c5034a4198",
+          "status": "done",
+          "passed": true
+        }
+      ]
     },
     {
       "id": "005-router-transpose-view",
@@ -88,18 +112,91 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": null,
-      "gpu_compilation_correctness_capture_performance": "unverified; no remote request approved or sent"
+      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only",
+      "gpu_validation": "not run; CPU numerical model only"
+    },
+    {
+      "id": "006-triton-router-local",
+      "configuration_file": "candidates/router_triton_split16.py",
+      "source_commit": "129969fc2ba10836f25664df8f13f0734d8001dc",
+      "result_commit": "129969fc2ba10836f25664df8f13f0734d8001dc",
+      "submission_sha256": "64aeef36775c050908dd5ddcbd9125a10083ea0d6a2bdbaad704b348debb7725",
+      "record": "experiments/006-triton-router-local.md",
+      "results": "results/router-triton-split16-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 4,
+      "gpu_runs": [
+        {
+          "experiment": "R04-router-triton16",
+          "job_id": "e3bc1481851f4a23",
+          "status": "done",
+          "passed": true
+        }
+      ],
+      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_run_id": "e3bc1481851f4a23"
+    },
+    {
+      "id": "007-triton-pooler-local",
+      "configuration_file": "candidates/pooler_triton_split8.py",
+      "source_commit": "971ade4100cc5621c2baa4d3b87be346f1eeaae2",
+      "result_commit": "971ade4100cc5621c2baa4d3b87be346f1eeaae2",
+      "submission_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+      "record": "experiments/007-triton-pooler-local.md",
+      "results": "results/router-pooler-split8-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_validation": "not run; CPU numerical model only",
+      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
+    },
+    {
+      "id": "008-wide-layout-local",
+      "configuration_file": "candidates/router_fused_view.py",
+      "source_commit": "b5f6eddf6f7e6ec59692aaefb2f3600d8f4738a4",
+      "result_commit": "b5f6eddf6f7e6ec59692aaefb2f3600d8f4738a4",
+      "submission_sha256": "a7ba4be49f33c4eae5eba30a4b16950fcb867091cb662a9ef1ad57448a47c53c",
+      "record": "experiments/008-wide-layout-local.md",
+      "results": "results/router-fused-view-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 4,
+      "gpu_runs": [
+        {
+          "experiment": "R05-wide-layout",
+          "job_id": "1631810d19af4af4",
+          "status": "done",
+          "passed": true
+        }
+      ],
+      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_run_id": "1631810d19af4af4"
+    },
+    {
+      "id": "009-library-hybrid-local",
+      "configuration_file": "candidates/router_hybrid_library.py",
+      "source_commit": "0d84832023f8fd0d4dd09f1663c87467c80de5f0",
+      "result_commit": "0d84832023f8fd0d4dd09f1663c87467c80de5f0",
+      "submission_sha256": "a53b2957a311d90d26e8d69c02b79ef0973b2a83cc99c26e8daf4ef3ef208f19",
+      "record": "experiments/009-library-hybrid-local.md",
+      "results": "results/router-hybrid-library-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 4,
+      "gpu_validation": "not run; CPU numerical model only",
+      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
+    },
+    {
+      "id": "010-router-split32-local",
+      "configuration_file": "candidates/router_triton_split32.py",
+      "source_commit": "7a826459b20a71076dc465681621c8928ffea813",
+      "result_commit": "7a826459b20a71076dc465681621c8928ffea813",
+      "submission_sha256": "3f269bf18100c8dbe111dfe6f4380ab323f684a23855e9a0fee5379bc451adf9",
+      "record": "experiments/010-router-split32-local.md",
+      "results": "results/router-triton-split32-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 4,
+      "gpu_validation": "not run; CPU numerical model only",
+      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
     }
   ],
-  "final_local_verification": {
-    "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "tests_passed": 17,
-    "tests_total": 17,
-    "python_compilation_command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py candidates tests",
-    "python_compilation_passed": true,
-    "candidate_case_count_each": 39,
-    "candidate_gpu_tests": 0
-  },
   "remote_experiments": [
     {
       "id": "R01-router-control",
@@ -147,11 +244,11 @@
       "candidate": "candidates/router_triton_split16.py",
       "job_id": "e3bc1481851f4a23",
       "mode": "check",
-      "status": "queued",
-      "result_commit": null,
+      "status": "done",
+      "result_commit": "444ee41fb168f0c3d9dc8a73ba3dd9e4f86a0ca5",
       "record": "experiments/remote-R04-router-triton16.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R04-router-triton16.json",
+      "timings": "results/remote-R04-router-triton16.csv"
     },
     {
       "id": "R05-wide-layout",
@@ -160,11 +257,11 @@
       "candidate": "candidates/router_fused_view.py",
       "job_id": "1631810d19af4af4",
       "mode": "check",
-      "status": "queued",
-      "result_commit": null,
+      "status": "done",
+      "result_commit": "82f68cc7c2a50aa4580b2fc7df464b322ac3e8a9",
       "record": "experiments/remote-R05-wide-layout.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R05-wide-layout.json",
+      "timings": "results/remote-R05-wide-layout.csv"
     }
   ],
   "remote_budget": {
@@ -172,5 +269,34 @@
     "admitted_or_reserved": 5,
     "remaining": 5,
     "prior_baseline_excluded": "e5a5b2d20da54187"
+  },
+  "current_local_verification": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "passed": 40,
+    "total": 40,
+    "python_compilation_passed": true,
+    "gpu_admissions": 5,
+    "uncertain_requests": 0,
+    "admission_paused": "Automatic approval rejection of unexecuted R06; see DENIED_R06.md",
+    "environment": {
+      "python": "3.12.13",
+      "pytorch": "2.14.1",
+      "system": "Darwin",
+      "machine": "arm64",
+      "cuda_available": false
+    },
+    "verified_utc": "2026-10-24T09:15:51.152217+00:00",
+    "python_compilation_command": ".venv/bin/python -m compileall -q harness.py check.py benchmark.py static_check.py remote_check.py summarize_check.py update_progress.py candidates tests",
+    "static_check_command": ".venv/bin/python static_check.py",
+    "static_check_passed": true
+  },
+  "historical_local_verification_before_remote_budget": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests_passed": 17,
+    "tests_total": 17,
+    "python_compilation_command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py candidates tests",
+    "python_compilation_passed": true,
+    "candidate_case_count_each": 39,
+    "candidate_gpu_tests": 0
   }
 }

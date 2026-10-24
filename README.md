@@ -4,7 +4,7 @@ Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed c
 These current records supersede the historical first-baseline and local-only summaries below.
 
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
-baseline and reproducible correctness/diagnostic harness. **No candidate has a verified GPU speedup yet.** CPU checks and the first off-board H200 check pass correctness. The measured starter
+baseline and reproducible correctness/diagnostic harness. The original starter remains preserved; subsequent verified GPU improvements are listed above. CPU checks and the first off-board H200 check pass correctness. The measured starter
 is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
 
 ## Reproduce locally
@@ -42,9 +42,9 @@ SGLang's 17.34 µs. See [experiment 001](experiments/001-offboard-baseline.md),
 
 The original one-check authorization is complete. The user subsequently approved up to
 **10 NEW off-board experiments**, $0 maximum; the prior baseline is excluded.
-The admission ledger is [remote-budget.json](experiments/remote-budget.json). Checks
-within that budget proceed autonomously, with at most two immutable independent jobs
-active; no scored submission, paid resource or new agreement is authorized. Human CLI login and rules acceptance
+The admission ledger is [remote-budget.json](experiments/remote-budget.json). All five admitted checks are now terminal. Further uploads are paused by automatic
+approval review of R06; see [the exact blocker](DENIED_R06.md). Once that specific block
+is resolved, budgeted checks use at most two immutable independent jobs active; no scored submission, paid resource or new agreement is authorized. Human CLI login and rules acceptance
 were verified before sending anything.
 
 ```sh
@@ -92,8 +92,8 @@ is necessary to participate; no separate hosted-check fee is published. Stop if 
 charge appears. No scored submission is authorized.
 
 The **once-per-day scored submission limit belongs to the serving track**, whose
-separate check cap is 3/day. Current account-specific kernel limits were rechecked
-after the accepted baseline check: 1/20 checks used, 0/10 scored runs used. Other kernel
+separate check cap is 3/day. Latest account-specific limits are 6/20 checks used (baseline plus five new checks),
+0/10 scored runs used; exact timestamp is recorded in the admission ledger. Other kernel
 tasks can have different check caps. API requests are also limited to 6 submissions/minute
 per token and 10/minute per account; these are distinct from the per-day caps. There is
 no separately documented final-upload allowance: final placement uses organizer review
@@ -116,10 +116,10 @@ See [EXPERIMENTS.md](EXPERIMENTS.md) for one-commit-per-experiment rules and
 source hashes and remote run IDs. Failed experiments must also be recorded.
 The [experiment backlog](experiments/BACKLOG.md) explains how to choose one-variable
 changes from actual profiles while preserving correctness and quota discipline.
-Four [isolated local router candidates](candidates/README.md) each pass 39/39 CPU
-oracle cases and focused edge tests; the combined regression suite passes 17/17.
-They have separate experiment commits and explicit CUDA/H200 limitations. Their
-GPU correctness, capture and performance remain unverified; none was uploaded.
+[Isolated candidates](candidates/README.md) have separate experiment commits and CPU
+gates. Five now have completed H200 check evidence; unadmitted local variants remain
+GPU-unverified. The latest combined local regression suite passes 40/40 tests.
+Current remote states and the automatic-review admission pause are in the ledger.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,
 SGLang and GPU MODE attribution and license scope. Only selected task material and

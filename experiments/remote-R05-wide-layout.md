@@ -31,3 +31,13 @@ and companion CSV. Admission 5/10; zero scored entries or paid resources. All fi
 admitted new jobs are now terminal. The distinct planned R06 pooler POST was rejected
 before process creation by automatic approval review, not executed or charged to this
 budget; no workaround/retry was attempted. See the budget ledger's admission pause.
+
+## Regression qualification
+
+The layout change is **not established as a better router implementation than R02**.
+R05's m=128/256 router is **11.66/12.63 µs**, versus R02's **10.06/11.30 µs**;
+the corresponding normalized router ratios also favor R02 at those larger batches.
+The aggregate point score is only about 0.3% higher and its interval overlaps R02's.
+Untouched projection ratios vary across runs; do not attribute all aggregate variation
+to the layout change. Keep R02 as the more convincing large-M component for a future
+controlled composition with R04's measured low-M path. That composition is not yet GPU-validated.

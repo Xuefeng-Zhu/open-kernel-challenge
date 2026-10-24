@@ -1,65 +1,50 @@
-# Continue the same task — no new approval needed inside the granted budget
+# Resume this same task after the exact admission block is resolved
 
-This is a coordinator checkpoint, not completion of the autonomous iteration.
-The new budget permits **10 off-board dense-projection checks**, $0; five are admitted
-and five remain. Prior baseline e5a5b2d20da54187 is excluded. Scored/final submission,
-new grants/credentials, new material agreements and paid compute are not authorized.
+All admitted jobs are terminal; do not resubmit any of them. Read `STATUS.md`,
+`BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json` first.
+The user granted ten new off-board checks at $0, excluding baseline
+`e5a5b2d20da54187`; five are used, five remain. Zero pending/uncertain requests,
+zero scored entries. Existing private repo and original baseline are preserved.
 
-## First: follow the two already admitted jobs
+## Exact blocker
+
+Automatic approval review denied this command before process creation:
 
 ```sh
-python3 remote_check.py poll R04-router-triton16
-python3 remote_check.py poll R05-wide-layout
-python3 remote_check.py quota
+python3 remote_check.py send R06-pooler-triton8 candidates/pooler_triton_split8.py
 ```
 
-R04 **e3bc1481851f4a23**: `candidates/router_triton_split16.py`, source commit
-129969fc2ba10836f25664df8f13f0734d8001dc, SHA256
-64aeef36775c050908dd5ddcbd9125a10083ea0d6a2bdbaad704b348debb7725.
-R05 **1631810d19af4af4**: `candidates/router_fused_view.py`, source commit
-b5f6eddf6f7e6ec59692aaefb2f3600d8f4738a4, SHA256
-a7ba4be49f33c4eae5eba30a4b16950fcb867091cb662a9ef1ad57448a47c53c.
-Both were confirmed queued at 08:44 UTC. CLI background monitors also read these
-same jobs; no request outcome is uncertain. Never POST these experiments again.
-If a wait process is unavailable, resume read-only status by the exact accepted ID.
-Bounded status calls work; no approval/tool blockage exists.
+No POST/job/reservation exists. See `DENIED_R06.md` and the ledger's
+`admission_paused` metadata. Do not bypass the block via another command, API,
+browser or candidate. The wrapper refuses all new admissions while paused.
+Only materially new relevant trusted authorization for the specific complete
+pooler source transfer to the official judge, one off-board H200 check at $0,
+permits a single retry of this known-not-executed operation. Do not append
+transcript evidence to tool arguments. If still denied, stop and report.
+No new credentials, material agreement, paid resource, scored or public/final
+entry is authorized. Review source hashes and service quota before any newly
+permitted POST, then journal its sole accepted ID and monitor it to terminal.
 
-For each terminal result, run `python3 summarize_check.py <experiment>`, inspect the
-actual correctness, all shape times/profiles, interval and error/log if failed. Record
-and commit that experiment independently; preserve failures. Then `python3 update_progress.py`
-refreshes derived files/index without a network call. Push sanitized commits to the
-existing private repository. The admission wrapper enforces check mode, source commit
-hashes, 10-request ceiling, at most two active jobs, rules-version guard and no POST retries.
-An uncertain POST stays reserved until own jobs/status reconcile it.
+## Evidence-based next plan, only once admission is permitted
 
-## Completed evidence and next hypotheses
+1. R06 isolated pooler split8 candidate is committed and passed 39 CPU cases
+   plus 3 focused tests, but has no native GPU result. It retains BF16 weights;
+   validate compilation/capture and every correctness gate before interpreting time.
+2. R04's split16 native router passed H200 and improved m=1/8; local experiment
+   010 changes only split count 16→32 based on the partial-kernel profile. It is
+   CPU-only so far, with no claim that higher CTA count will improve H200 latency.
+3. R02's wide contiguous large-M router is better supported than R05 for m128/256.
+   A future native-R04/large-R02 hybrid should isolate composition, preserve both
+   component sources and receive its own correctness check. It is not yet created.
+   The existing library-only hybrid combines R03/R02 and is GPU-unverified.
 
-- R01 59abe5825690427c: correctness pass, 1.0012943× SGLang, parity. Result commit a05080e.
-- R02 89fe00c5034a4198: correctness pass, **1.0476946×** [1.0319792,1.0634100]. Result commit 6e3115e.
-  Router m=16/32/128/256 is 9.60/9.82/10.06/11.30 µs versus 14.93/15.28/16.13/17.73.
-- R03 718e0730e1bd4c30: correctness pass, **1.0267804×** [1.0113787,1.0421821]. Result commit 34db70b.
-  Its m=8 router is **14.54 µs versus SGLang 26.30**; larger-M paths are R01 control.
-- R04 isolates a new low-batch fused hi+lo split-K Triton router; larger-M path stays R01.
-- R05 changes only R02's packed-weight memory layout. R02 remains best completed source.
+Use at most two active jobs, review results before filling slots, stop early when
+there is no justified next hypothesis. Never spend checks merely to use the budget.
+Uncertain outcomes reserve an allowance and require read-only reconciliation, not
+blind POST retries. Every experiment needs separate source/result commits, actual
+commands, environment, outcomes and run ID; push only sanitized tracked content to
+the existing private repo. Do not amend or fabricate historical results.
 
-Once R04 demonstrates usable Triton compilation/correctness, a separate pooler candidate
-is ready: `candidates/pooler_triton_split8.py`, local record 007, source commit 971ade4.
-It passed 39 CPU cases + 3 focused model tests, but **no GPU validation**. It changes
-only low-batch BF16 pooler atop R01; original weights remain BF16. Check R04's errors
-before sending it so shared compiler mistakes are not knowingly repeated.
-
-After pending results, combine only measured winning shape regions (for example R02
-large-M wide GEMM with R03 or R04's validated low-M path, and a pooler change only if
-its own run wins). Preserve single-file submissions and root baseline; create a new
-candidate, CPU/static gates, source commit, then one admitted check. Do not modify
-pending sources. Additional tiling/split experiments need an actual profile-driven
-hypothesis; do not use all ten merely to exhaust the budget. No scored entry.
-
-All new admissions go through `python3 remote_check.py send <new-ID> candidates/<file>.py`.
-Use IDs R06 onward; the wrapper refuses existing IDs. Review results before filling a
-free slot, keep at most two active jobs and respect stricter server limits. The shared
-queue has caused 13–26 minute waits; do not guess an ETA or launch replacement requests.
-
-Attention review is finished, local-only under `local-notes/attention-review/REVIEW.md`.
-Its attachment was never committed/uploaded and must stay separate. The kernel project,
-private repo, original baseline and all numerical/provenance records are preserved.
+The attention attachment review is completed under ignored
+`local-notes/attention-review/REVIEW.md`; its source was never committed/uploaded.
+Keep that separate review-only file out of dense projection experiments.

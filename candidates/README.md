@@ -1,47 +1,31 @@
-# Local candidates — ranked by validation priority, not measured speed
+# Isolated candidates and actual validation
 
-The proven baseline remains `../submission.py`, source commit
-`fde8a042944c742c20b76f27fcc030d767fd0058`. Its sole H200 check passed correctness at
-0.9076× SGLang. **Remote status is now tracked in `../experiments/remote-budget.json`: R01 validated
-router_split_after8 at SGLang parity; wide fusion and the earlier dispatch have been
-admitted. Other candidates remain unverified until their own completed result.** CPU branches explicitly model
-BF16 operands using FP32 products; they do not exercise the CUDA `out_dtype` path.
+The original `../submission.py` remains unchanged: baseline H200 check passed at
+0.9076064× SGLang. Current source/result commits, SHA256s, configurations and CPU
+reports are in `../experiments/index.json`; all actual H200 results are in
+`../REMOTE_RESULTS.md`. The latest combined Mac regression suite passes 40/40 tests.
+CPU branches explicitly model BF16 products with FP32 accumulation and do not test
+CUDA `out_dtype`, Triton compilation or graph capture.
 
-| Priority | Candidate / isolated hypothesis | Actual local result | What target validation must resolve |
-|---|---|---|---|
-| 1 | [router_split_after8.py](router_split_after8.py): reproduce SGLang's allowed two-product hi+lo router above 8 tokens | 39/39 full-size CPU cases, 3 focused tests, static checks pass | CUDA BF16→FP32 GEMM/capture correctness, all 30 shape times and six-load aggregate; establish a faithful control for the measured large-M deficit |
-| 2 | [router_split_after1.py](router_split_after1.py): change only the dispatch boundary, preserving m=1 FP32 | Same CPU gates pass | Does the m=8 router improve without regression? No small-M threshold is inferred from CPU timing |
-| 3 | [router_fused_wide.py](router_fused_wide.py): one wide-N GEMM produces hi/lo halves, then sums in FP32 | Same CPU gates pass | Does one fewer GEMM launch and wider N outweigh extra output traffic/tactic changes? Validate every accuracy case, not only the fastest shape |
-| 4 | [router_transpose_view.py](router_transpose_view.py): change only weight layout to transpose views | Same CPU gates pass | Strided CUDA `out_dtype` behavior, internal copies/tactic choice and cold-L2 latency; lower priority because a layout bottleneck is not established |
+| Candidate | Remote evidence / status |
+|---|---|
+| `router_split_after8.py` | R01 passed, 1.0012943×: faithful control, parity |
+| `router_split_after1.py` | R03 passed, 1.0267804×; m8 router improved |
+| `router_fused_wide.py` | R02 passed, 1.0476946×; strongest measured large-M router component |
+| `router_triton_split16.py` | R04 passed, 1.0459769×; native low-M router compilation/correctness verified |
+| `router_fused_view.py` | R05 passed, highest observed aggregate 1.0509508×; larger-router regression versus R02, overlapping score intervals |
+| `router_transpose_view.py` | Local-only two-product layout control; no GPU validation |
+| `pooler_triton_split8.py` | Local-only BF16 pooler; planned R06 denied before execution |
+| `router_hybrid_library.py` | Local-only composition of R03 small-M and R02 large-M paths |
+| `router_triton_split32.py` | Local-only split-count alternative motivated by R04 profile |
 
-Each candidate has a separate commit and experiment record. See
-[the history index](../experiments/index.json) for exact source/result commits, SHA256s,
-configuration, commands and actual CPU evidence. Combined local regression suite:
-**17/17 tests pass**. Maximum router relative L2 in each full CPU suite is 2.729e-6
-against a 1e-4 limit. No CPU performance ranking or GPU speedup is claimed.
+Every local candidate passed 39 full-size CPU contract cases and focused boundary,
+probe/negative tests recorded separately. There is no CPU speed ranking. R05 has
+the highest observed overall point score but is not statistically resolved above
+R02/R04; preserve their sources and per-shape evidence when choosing future variants.
+A native R04 + wide R02 composition has not yet been implemented or tested.
 
-## Historical first-check plan (superseded by the 10-new-check budget)
-
-Approve **one** off-board check of priority 1, then stop and review its result:
-
-```sh
-okc problems --json
-okc check candidates/router_split_after8.py --no-wait --json
-okc status <accepted-job-id> --wait --json
-```
-
-Before the POST, verify the committed candidate hash and current quota, confirm the
-user's $0 cap and source-upload authorization, then save the returned job ID. Do not
-repeat an uncertain POST: inspect jobs/status first. A check uploads the complete
-single source file and is not a confidentiality guarantee. This plan itself grants
-no permission, and it was **not executed**.
-
-Compare with baseline job `e5a5b2d20da54187`, keeping its complete per-shape and load
-data. Judge each new variant by correctness first, then all six weighted loads and
-the official confidence interval. Review priority 2/3 only after that control is
-established. Each distinct candidate needs its own separately authorized validation;
-do not bundle four methods into an opaque submission to circumvent that limit.
-
-The current 10-new-check authorization supersedes the older per-run approval language
-above. No paid rental, scored entry, new material agreement or work beyond that budget
-is authorized. See the admission ledger and completed remote experiment records.
+Five new checks were admitted and all are terminal; five allowances remain at $0.
+Further source uploads are paused by automatic approval review, see `../DENIED_R06.md`.
+Do not retry denied R06 or upload another candidate as a workaround. No scored or
+public/final entry, paid rental, new credential or material agreement is authorized.

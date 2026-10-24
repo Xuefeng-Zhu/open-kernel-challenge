@@ -23,6 +23,9 @@ def main():
              "no scored/final submission, new credentials or material agreement.", "",
              "| Experiment | Job | State | Correctness | Speedup vs SGLang (95% interval) | vs original, normalized |",
              "|---|---|---|---|---|---|"]
+    if ledger.get("admission_paused"):
+        lines.insert(4, "**New uploads are paused by automatic approval review.** Planned R06 was denied before process creation; no POST or budget reservation occurred. See `DENIED_R06.md`. Existing-job monitoring remained allowed.")
+        lines.insert(5, "")
     best = None
     remotes = []
     for entry in admitted:
@@ -81,10 +84,30 @@ Reference-normalized ratio over our original starter: **{best['speedup_over_orig
 that is a cross-run comparison. Exact timings/environment/risks are in
 `results/remote-{entry['experiment']}.json` and its CSV/experiment record.
 
-The original `submission.py` remains unchanged and separately preserved. Pending jobs
+The original `submission.py` remains unchanged and separately preserved. Job states
 and the authorized remaining budget are in `REMOTE_RESULTS.md`; no scored entry or
 paid resource is authorized.
 """)
+        if entry['experiment'] == 'R05-wide-layout':
+            with (ROOT / "BEST.md").open("a") as handle:
+                handle.write("""
+## Candidate comparison and remaining risk
+
+This is the highest observed aggregate point score, not a statistically established
+winner over R02 or R04: their intervals overlap. R05 router m=128/256 is 11.66/12.63 µs
+versus R02's 10.06/11.30 µs, so the new layout regresses those targeted cases despite
+its slightly higher whole-workload score. Untouched projection ratios vary across runs.
+R02's contiguous larger-M path and R04's low-M native path are the better-supported
+components for a future controlled hybrid; that native/wide combination has not been
+GPU-tested. The prepared library-only hybrid, pooler and split32 variants also lack
+their own GPU results.
+""")
+        if ledger.get("admission_paused"):
+            with (ROOT / "BEST.md").open("a") as handle:
+                handle.write(f"\n{len(admitted)} new checks were admitted; {len(terminal)} are terminal. "
+                             f"{remaining} allowances remain, but further uploads are paused because automatic "
+                             "approval review denied R06 before its command ran. No uncertain request "
+                             "or budget use resulted; see `DENIED_R06.md`.\n")
     print(f"Updated progress: {len(admitted)}/10 admitted, {len(terminal)} terminal, {remaining} remaining")
 
 
