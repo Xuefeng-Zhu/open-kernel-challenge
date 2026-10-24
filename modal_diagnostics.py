@@ -31,7 +31,7 @@ def read_cli(*command):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition", "M26-qkv-layout", "M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow", "M33-resource-probe", "M34-resource-probe-fixed"], required=True)
+    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition", "M26-qkv-layout", "M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow", "M33-resource-probe", "M34-resource-probe-fixed", "M36-qkv-m128-singlepass"], required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     ledger = json.loads(LEDGER.read_text())
@@ -51,7 +51,7 @@ def main():
         raise ValueError("Use only explicit ignored bundle")
     manifest = json.loads((bundle / "bundle-manifest.json").read_text())
     actual = {p.relative_to(bundle).as_posix() for p in bundle.rglob("*") if p.is_file()}
-    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (20 if args.experiment in {"M33-resource-probe","M34-resource-probe-fixed"} else 19 if args.experiment=="M23-composition" else (18 if args.experiment in {"M26-qkv-layout","M28-unpooler-layout","M30-pooler-grouped","M32-pooler-narrow"} else 17)):
+    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (20 if args.experiment in {"M33-resource-probe","M34-resource-probe-fixed"} else 19 if args.experiment=="M23-composition" else (18 if args.experiment in {"M26-qkv-layout","M28-unpooler-layout","M30-pooler-grouped","M32-pooler-narrow","M36-qkv-m128-singlepass"} else 17)):
         raise ValueError("Expected reviewed source/license files and manifest")
     candidate, repeats, seed, protocol = {
         "M19-unpooler": ("candidates/projection_unpooler_m1_simt.py", 12, 400000, "three-runner-v1"),
@@ -63,10 +63,11 @@ def main():
         "M32-pooler-narrow": ("candidates/projection_pooler_narrow.py", 30, 2200000, "screen-v1"),
         "M33-resource-probe": ("candidates/projection_pooler_grouped.py", 0, 2600000, "resource-v1"),
         "M34-resource-probe-fixed": ("candidates/projection_pooler_grouped.py", 0, 2600000, "resource-v1"),
+        "M36-qkv-m128-singlepass": ("candidates/projection_qkv_m128_singlepass.py", 30, 3000000, "screen-v1"),
     }[args.experiment]
     if manifest["candidate"] != candidate:
         raise ValueError("Wrong candidate for this preplanned experiment")
-    cpu_reports={"M26-qkv-layout":"results/router-cycle2-qkv-layout-cpu.json", "M28-unpooler-layout":"results/router-cycle2-unpooler-layout-cpu.json", "M30-pooler-grouped":"results/router-cycle2-pooler-grouped-cpu.json", "M32-pooler-narrow":"results/router-cycle2-pooler-narrow-cpu.json", "M33-resource-probe":"results/router-cycle2-pooler-grouped-cpu.json", "M34-resource-probe-fixed":"results/router-cycle2-pooler-grouped-cpu.json"}
+    cpu_reports={"M26-qkv-layout":"results/router-cycle2-qkv-layout-cpu.json", "M28-unpooler-layout":"results/router-cycle2-unpooler-layout-cpu.json", "M30-pooler-grouped":"results/router-cycle2-pooler-grouped-cpu.json", "M32-pooler-narrow":"results/router-cycle2-pooler-narrow-cpu.json", "M33-resource-probe":"results/router-cycle2-pooler-grouped-cpu.json", "M34-resource-probe-fixed":"results/router-cycle2-pooler-grouped-cpu.json", "M36-qkv-m128-singlepass":"results/router-cycle2-qkv-m128-singlepass-cpu.json"}
     if args.experiment in cpu_reports:
         cpu=json.loads((ROOT/cpu_reports[args.experiment]).read_text())
         if not cpu.get("passed") or cpu["environment"]["submission_sha256"]!=manifest["files"][candidate]["sha256"]:

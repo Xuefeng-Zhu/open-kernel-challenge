@@ -5,8 +5,8 @@
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
   "observed_gross_high_water_usd": "0.87077815",
   "conservative_stage_spent_usd": "1.034494554",
-  "billing_ui_verified_utc": "2026-10-24T20:09:25.680785+00:00",
-  "verified_credit_balance_usd": 29.34,
+  "billing_ui_verified_utc": "2026-10-24T20:23:47.301615+00:00",
+  "verified_credit_balance_usd": 29.33,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
   "max_active_apps": 1,
@@ -731,7 +731,7 @@
     }
   ],
   "latest_billing_observed_utc": "2026-10-24T20:14:34.619888+00:00",
-  "stage_completed": true,
+  "stage_completed": false,
   "report_before_expanding": false,
   "final_app_states": [
     {
@@ -834,5 +834,5 @@
       "llm_tokens": "0E-8"
     }
   },
-  "current_diagnostic": "M34 terminal success; hypotheses reported, no algorithm benchmark"
+  "current_diagnostic": "M36 QKV m128 single-pass screening; one bounded concrete hypothesis"
 }

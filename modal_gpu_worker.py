@@ -174,8 +174,10 @@ def nearby_check(candidate, output, seed_offset, protocol):
     import torch
     from benchmark import capture
     from harness import environment,load_module
-    layer="unpooler" if "unpooler_layout" in candidate.name else "pooler"
-    settings=([(8,1021),(9,8189),(16,8192),(129,8189),(257,8189)] if layer=="unpooler"
+    layer=("qkv_gate" if candidate.name=="projection_qkv_m128_singlepass.py" else
+           ("unpooler" if "unpooler_layout" in candidate.name else "pooler"))
+    settings=([(127,2301),(128,2304),(128,2301),(129,2301),(256,2301)] if layer=="qkv_gate" else
+              [(8,1021),(9,8189),(16,8192),(129,8189),(257,8189)] if layer=="unpooler"
               else [(127,4093),(128,4096),(129,4093),(255,4096),(257,4093)])
     report=dict(kind="additional nearby-shape CUDA graph correctness, not performance",
                 environment=environment(torch,"cuda",candidate),cases=[])
@@ -203,6 +205,35 @@ def nearby_check(candidate, output, seed_offset, protocol):
                     report["cases"].append(dict(layer=layer,m=m,n=n,runner=name,seed=seed,passed=ok,message=message))
                     save(output,report)
                     if not ok:return 1
+    if layer=="qkv_gate":
+        import triton
+        data=reference.generate_input(m=128,layer=layer,seed=seed_offset+5000000,device="cuda")
+        n,k=data["config"]["n"],data["config"]["k"]
+        out=torch.empty((128,n),device="cuda",dtype=torch.bfloat16)
+        compiled=modules["candidate"]._qkv_full_k.warmup(data["x"],states["candidate"][layer],out,
+            128,n,k,64,32,64,8,num_warps=4,num_stages=3,grid=(2*triton.cdiv(n,32),))
+        compiled._init_handles()
+        ptx=compiled.asm.get("ptx","")
+        report["candidate_compiled"]=dict(n_regs=compiled.n_regs,n_spills_driver_raw=compiled.n_spills,
+            shared_bytes=compiled.metadata.shared,grid_ctas=2*triton.cdiv(n,32),
+            ptx_has_mma_sync="mma.sync" in ptx,ptx_has_wgmma="wgmma.mma_async" in ptx,
+            ptx_has_tma="cp.async.bulk" in ptx,ptx=ptx)
+        # One noncontiguous-layout robustness case: shape-based fallback, no timing.
+        for name,module in modules.items():
+            backing=torch.empty((128,2*k),device="cuda",dtype=torch.bfloat16)
+            data["x"]=backing[:,::2]
+            data["x"].copy_(reference.generate_input(m=128,layer=layer,seed=seed_offset+5000001,device="cuda")["x"])
+            graph,out=capture(module.kernel_fn,data,states[name])
+            for repeat in range(2):
+                seed=seed_offset+5000002+repeat
+                data["x"].copy_(reference.generate_input(m=128,layer=layer,seed=seed,device="cuda")["x"])
+                before=data["x"].clone();graph.replay()
+                ok,message=reference.check_implementation(data,out,weights)
+                ok=ok and torch.equal(data["x"],before)
+                report["cases"].append(dict(layer=layer,m=128,n=n,runner=name,seed=seed,
+                    layout="stride1=2 fallback",passed=ok,message=message))
+                save(output,report)
+                if not ok:return 1
     report["weights_unchanged"]=all(torch.equal(weights[n],v) for n,v in snapshots.items())
     report["passed"]=report["weights_unchanged"] and all(c["passed"] for c in report["cases"])
     save(output,report)
@@ -228,7 +259,7 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
               "--submission", str(source), "--seed-offset", str(seed_offset),
               "--output", str(output_dir / (name + "-correctness.json"))])
              for name, source in runner_specs(candidate,protocol)]
-    if candidate.name in {"projection_unpooler_layout.py","projection_pooler_grouped.py","projection_pooler_narrow.py"}:
+    if candidate.name in {"projection_unpooler_layout.py","projection_pooler_grouped.py","projection_pooler_narrow.py","projection_qkv_m128_singlepass.py"}:
         steps.append(("nearby-correctness",[__file__,"--phase","nearby","--candidate",str(candidate),
                       "--output-dir",str(output_dir),"--seed-offset",str(seed_offset),"--protocol",protocol]))
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
