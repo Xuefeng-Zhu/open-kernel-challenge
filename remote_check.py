@@ -47,9 +47,16 @@ def main():
     send.add_argument("candidate", type=Path)
     poll = sub.add_parser("poll")
     poll.add_argument("experiment")
+    sub.add_parser("quota")
     args = parser.parse_args()
     ledger = json.loads(LEDGER.read_text())
     entries = ledger["requests"]
+    if args.action == "quota":
+        ledger["last_account_quota"] = quota()
+        ledger["last_account_quota_utc"] = now()
+        save(LEDGER, ledger)
+        print(json.dumps(ledger["last_account_quota"]))
+        return 0
     if args.action == "send":
         if any(x["experiment"] == args.experiment for x in entries):
             raise RuntimeError("Experiment already journaled; reconcile it, never blindly resend")
@@ -70,6 +77,11 @@ def main():
         source = path.read_bytes()
         if source != committed:
             raise RuntimeError("Candidate differs from its source commit; commit before admitting it")
+        rules_reply = subprocess.run(
+            ["curl", "-fsSL", "https://openkernelchallenge.dev/api/v1/rules"],
+            capture_output=True, text=True)
+        if rules_reply.returncode or json.loads(rules_reply.stdout).get("version") != ledger["rules_version"]:
+            raise RuntimeError("Rules version changed/unavailable; no POST or new agreement")
         before = quota()
         if before["checks"]["left"] < 1:
             raise RuntimeError("Official check quota exhausted")

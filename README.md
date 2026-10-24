@@ -1,5 +1,8 @@
 # Open Kernel Challenge — dense projections
 
+Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed candidate](BEST.md).
+These current records supersede the historical first-baseline and local-only summaries below.
+
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
 baseline and reproducible correctness/diagnostic harness. **No candidate has a verified GPU speedup yet.** CPU checks and the first off-board H200 check pass correctness. The measured starter
 is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
@@ -37,13 +40,15 @@ SGLang's 17.34 µs. See [experiment 001](experiments/001-offboard-baseline.md),
 [full sanitized records](results/h200-check.json) and [per-shape CSV](results/h200-per-shape.csv).
 
 
-The one authorized off-board hosted check is now consumed, with no paid resource used.
-The spending limit was $0.
-Any further run requires additional user approval. Human CLI login and rules acceptance
+The original one-check authorization is complete. The user subsequently approved up to
+**10 NEW off-board experiments**, $0 maximum; the prior baseline is excluded.
+The admission ledger is [remote-budget.json](experiments/remote-budget.json). Checks
+within that budget proceed autonomously, with at most two immutable independent jobs
+active; no scored submission, paid resource or new agreement is authorized. Human CLI login and rules acceptance
 were verified before sending anything.
 
 ```sh
-# One-time approved remote experiment; do not run this automatically.
+# Historical baseline command; use the admission ledger for the new budget.
 okc check submission.py --no-wait --json
 okc status <accepted-job-id> --wait --json
 ```

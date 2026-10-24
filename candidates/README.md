@@ -2,8 +2,9 @@
 
 The proven baseline remains `../submission.py`, source commit
 `fde8a042944c742c20b76f27fcc030d767fd0058`. Its sole H200 check passed correctness at
-0.9076× SGLang. **None of the candidates below has been uploaded, compiled/executed
-on CUDA, captured in a CUDA graph or timed on H200.** CPU branches explicitly model
+0.9076× SGLang. **Remote status is now tracked in `../experiments/remote-budget.json`: R01 validated
+router_split_after8 at SGLang parity; wide fusion and the earlier dispatch have been
+admitted. Other candidates remain unverified until their own completed result.** CPU branches explicitly model
 BF16 operands using FP32 products; they do not exercise the CUDA `out_dtype` path.
 
 | Priority | Candidate / isolated hypothesis | Actual local result | What target validation must resolve |
@@ -19,7 +20,7 @@ configuration, commands and actual CPU evidence. Combined local regression suite
 **17/17 tests pass**. Maximum router relative L2 in each full CPU suite is 2.729e-6
 against a 1e-4 limit. No CPU performance ranking or GPU speedup is claimed.
 
-## Smallest next H200 validation plan — requires approval
+## Historical first-check plan (superseded by the 10-new-check budget)
 
 Approve **one** off-board check of priority 1, then stop and review its result:
 
@@ -41,4 +42,6 @@ the official confidence interval. Review priority 2/3 only after that control is
 established. Each distinct candidate needs its own separately authorized validation;
 do not bundle four methods into an opaque submission to circumvent that limit.
 
-No paid rental, scored submission or additional remote check is currently authorized.
+The current 10-new-check authorization supersedes the older per-run approval language
+above. No paid rental, scored entry, new material agreement or work beyond that budget
+is authorized. See the admission ledger and completed remote experiment records.

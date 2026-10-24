@@ -66,8 +66,9 @@ def main():
                 case = row["case"]
                 w.writerow(dict(job_id=job["id"], load=case.get("load"), m=case["m"], layer=case["layer"],
                                 weight=case.get("weight"), status=row.get("status"),
-                                sglang_us=row.get("baseline_ns", 0) / 1000,
-                                candidate_us=row.get("median_ns", 0) / 1000, speedup=row.get("speedup")))
+                                sglang_us=row["baseline_ns"] / 1000 if row.get("baseline_ns") is not None else None,
+                                candidate_us=row["median_ns"] / 1000 if row.get("median_ns") is not None else None,
+                                speedup=row.get("speedup")))
     print(json.dumps(dict(experiment=args.experiment, job_id=job["id"], status=job["status"],
                           passed=result.get("passed"), speedup=result.get("speedup"),
                           speedup_ci=result.get("speedup_ci"), tests=out["prerequisite_tests"],

@@ -18,3 +18,13 @@ No extra GPU check, scored submission, paid compute or kernel tuning run is auth
 
 See [the evidence-based backlog](experiments/BACKLOG.md) for conditional hypotheses,
 correctness gates and the source/configuration/job/result-commit evidence chain.
+
+## Current remote authorization
+
+The user now authorizes up to **10 NEW** meaningful off-board dense-projection checks,
+$0 spend, with the prior baseline excluded. This supersedes the older one-check-only
+restriction. Each admission reserves one allowance before its POST, and an uncertain
+outcome stays reserved until reconciled. At most two independent jobs are active.
+Use `remote_check.py`; it never creates a scored entry or retries a POST automatically.
+No new material terms or credential changes are authorized. Current statuses, exact
+source hashes/commits and quota snapshots live in `experiments/remote-budget.json`.

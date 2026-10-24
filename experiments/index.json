@@ -99,5 +99,65 @@
     "python_compilation_passed": true,
     "candidate_case_count_each": 39,
     "candidate_gpu_tests": 0
+  },
+  "remote_experiments": [
+    {
+      "id": "R01-router-control",
+      "source_commit": "4fb8e81fba03a2b9eedbdbdb9ce671d1be4ea4f5",
+      "submission_sha256": "6b1b66e2875ad4a755e98e41235243c5f0b5131c32f5f6b08e49d2f4f7d5c352",
+      "candidate": "candidates/router_split_after8.py",
+      "job_id": "59abe5825690427c",
+      "mode": "check",
+      "status": "done",
+      "result_commit": "a05080e7669007397a403d7a96dc5ecf499d24bb",
+      "record": "experiments/remote-R01-router-control.md",
+      "results": "results/remote-R01-router-control.json",
+      "timings": "results/remote-R01-router-control.csv"
+    },
+    {
+      "id": "R02-router-wide",
+      "source_commit": "2d7f55d150ea4ca266bbc95fa70c3555c1d75cd9",
+      "submission_sha256": "016dbc6828bbf85dd6479a119b0b6f4b06cdb13fdc486fa1df16a09139537ccd",
+      "candidate": "candidates/router_fused_wide.py",
+      "job_id": "89fe00c5034a4198",
+      "mode": "check",
+      "status": "done",
+      "result_commit": "6e3115ed27ac8fcb32a18d81cb17ba74f4e9a9a9",
+      "record": "experiments/remote-R02-router-wide.md",
+      "results": "results/remote-R02-router-wide.json",
+      "timings": "results/remote-R02-router-wide.csv"
+    },
+    {
+      "id": "R03-router-dispatch",
+      "source_commit": "25cfb05d081ad25f691f96a3dd2d90da331ee808",
+      "submission_sha256": "5945aa3b214cece1363641a86b7cae2827cdd9d7af956fa42eab4af91994fdb8",
+      "candidate": "candidates/router_split_after1.py",
+      "job_id": "718e0730e1bd4c30",
+      "mode": "check",
+      "status": "queued",
+      "result_commit": null,
+      "record": "experiments/remote-R03-router-dispatch.md",
+      "results": null,
+      "timings": null
+    },
+    {
+      "id": "R04-router-triton16",
+      "source_commit": "129969fc2ba10836f25664df8f13f0734d8001dc",
+      "submission_sha256": "64aeef36775c050908dd5ddcbd9125a10083ea0d6a2bdbaad704b348debb7725",
+      "candidate": "candidates/router_triton_split16.py",
+      "job_id": "e3bc1481851f4a23",
+      "mode": "check",
+      "status": "queued",
+      "result_commit": null,
+      "record": "experiments/remote-R04-router-triton16.md",
+      "results": null,
+      "timings": null
+    }
+  ],
+  "remote_budget": {
+    "maximum": 10,
+    "admitted_or_reserved": 4,
+    "remaining": 6,
+    "prior_baseline_excluded": "e5a5b2d20da54187"
   }
 }
