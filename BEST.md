@@ -1,19 +1,40 @@
 # Best completed, correctness-passing observed candidate
 
-Candidate: `candidates/router_hybrid_native.py`; source commit `90032a97994ad51e7779793000946545a76ba86d`.
-SHA256: `d8e29be3b47aa9ad248f7e068edfe24c3432a2c138b6b464cdfe7cddbf58cace`. Job `26ea99ee0869482a`, mode check.
+Candidate: `candidates/router_pooler_hybrid.py`; source commit `5f491a34d52449f5d0c5c7985b4a0d4ecd17217d`.
+SHA256: `891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee`. Job `02e099c3724e4a05`, mode check.
 
-Official speedup **1.099197× SGLang**, 95% interval
-**[1.082709, 1.115685]**.
+Official speedup **1.120732× SGLang**, 95% interval
+**[1.103921, 1.137543]**.
 The interval is above 1; this off-board trial measured an improvement over SGLang.
 9/9 prerequisites and 30/30 scored-shape correctness checks pass. This is the highest
 observed passing score so far, not a claim that every difference between candidates
 is statistically resolved or that it is a final leaderboard placement.
 
-Reference-normalized ratio over our original starter: **1.211094×**;
+Reference-normalized ratio over our original starter: **1.234822×**;
 that is a cross-run comparison. Exact timings/environment/risks are in
-`results/remote-R07-router-native-wide.json` and its CSV/experiment record.
+`results/remote-R10-final-composition.json` and its CSV/experiment record.
 
 The original `submission.py` remains unchanged and separately preserved. Job states
 and the authorized remaining budget are in `REMOTE_RESULTS.md`; no scored entry or
 paid resource is authorized.
+
+## What this source changes
+
+Router m<=8 uses the measured split32 native path; larger-M router uses the
+contiguous wide hi+lo GEMM; pooler m==1 uses the measured SIMT GEMV. Other BF16
+paths remain the original starter. All component sources and failed experiments
+are preserved. No persistent input-derived state or reduced BF16 weight precision.
+
+## Confidence and regression limits
+
+The interval overlaps R07's [1.0827090, 1.1156850]; this highest point score is not
+a statistically resolved optimum. R10 m8 router 7.4584µs is slower than isolated
+R08's 6.8717µs, including the within-run SGLang-normalized comparison, despite
+identical native kernel bodies. Decode32's paired load ratio is 1.0705 versus
+R07's 1.0833. Preserve full shape/load evidence instead of attributing every change
+to the targeted code. Controls remain available for future repeated validation.
+
+No held-out/nearby-shape GPU rerun or final leaderboard placement is claimed. The
+Mac's 57-test suite and 39-case CPU models do not establish those properties. All
+ten new off-board checks are terminal; user budget is exhausted, zero uncertain,
+$0 and zero scored entries. No further check is authorized by leftover service quota.

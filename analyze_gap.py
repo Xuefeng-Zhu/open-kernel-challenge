@@ -70,14 +70,20 @@ def main():
     print(f'\nEven the impossible zero-time router scenario gives only {free_router:.4f}× further '
           f'speedup, or {speedup*free_router:.4f}× SGLang—below the leader snapshot. '
           'The gap therefore cannot be closed by router-only work on these measured loads.')
-    print('\nR07 changes only router: native split16 at m<=8 and wide hi+lo GEMM above8. '
-          'All BF16 families remain the original starter. R06 pooler split8 regressed despite '
-          'passing correctness; retain that failure. R08 isolates router split count; R09 '
-          'tests a distinct single-row SIMT pooler. QKV split8 stays CPU-only after the related '
-          'R06 regression. Further BF16 GEMM/GEMV layout, tile and shape-dispatch work must '
-          'start from profiles and preserve BF16 weights/activations; library presence '
-          'alone does not justify a port or precision reduction. No unsupported cross-layer '
-          'fusion: this contract supplies one layer/call, so caching activations is forbidden.')
+    if report['admission']['candidate'] == 'candidates/router_pooler_hybrid.py':
+        print('\nThe final verified composition uses split32 native router at m<=8, wide hi+lo '
+              'router above8, and single-row SIMT pooler. Other BF16 paths remain original. '
+              'R06 pooler split8 regressed despite passing correctness; retain that failure. '
+              'R08 validated router split32 and R09 validated the one-row SIMT pooler component; '
+              'R10 checks their composition. QKV split8 stays CPU-only after the related R06 '
+              'regression. Further BF16 GEMM/GEMV layout, tile and shape-dispatch work must '
+              'start from profiles and preserve BF16 weights/activations. No unsupported '
+              'cross-layer fusion: this contract supplies one layer/call, so caching '
+              'activations is forbidden. All10 new checks are terminal; no further quota '
+              'is authorized. A future GPU experiment needs a new explicit budget.')
+    else:
+        print('\nOptimization coverage is experiment-specific; inspect the exact committed source '
+              'and remote experiment record. Do not infer competitors or other variants from these shares.')
     print('\nPublic-source limits: the official board returns participant aggregate score, '
           'attempts and a job ID, not code/per-shape records. The documented GET /jobs/{id} '
           'route is own-jobs-only. An unauthenticated read of leader job5987bf672867464e '

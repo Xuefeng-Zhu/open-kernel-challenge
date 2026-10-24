@@ -6,13 +6,7 @@ Never resend admitted experiments. At most two active jobs; inspect terminal res
 
 **The ten-new-check budget is exhausted. Send no further check requests.** Finish monitoring/recording accepted jobs, tests and private push only. Any new GPU experiment requires additional explicit user authorization before changing the ceiling.
 
-## Already accepted — monitor to terminal
-
-```sh
-python3 remote_check.py poll R10-final-composition  # 02e099c3724e4a05
-```
-
-Official CLI `status <exact-ID> --wait --json` monitors may also be running; these are read-only, not replacement jobs. Do not end iteration merely because jobs queue.
+All admitted jobs are terminal. Choose further work only from actual evidence and the remaining authorization; stop early if no meaningful hypothesis or a real blocker exists.
 
 For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness and timing/profile records, record failures too, then independently commit sanitized evidence. `python3 update_progress.py` refreshes derived status offline. Push only sanitized files to the existing private repository; preserve original baseline and immutable experiment sources.
 

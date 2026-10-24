@@ -129,7 +129,9 @@ def main():
         local['gpu_runs'] = [dict(experiment=e['experiment'], job_id=e.get('job_id'),
                                   status=e['status'], passed=e.get('passed')) for e in matching]
         local['gpu_run_id'] = matching[-1].get('job_id')
-        local['gpu_validation'] = 'See exact remote records; pending states are not GPU validation'
+        local['gpu_validation'] = ('Official H200 checks complete; see exact correctness and timing records'
+                                   if all(e['state'] == 'terminal' for e in matching)
+                                   else 'Pending actual H200 result; CPU models are not GPU validation')
         local['gpu_compilation_correctness_capture_performance'] = 'See actual per-run result/interval; no generalized performance guarantee'
     current = index.get('current_local_verification', {})
     current.update(gpu_admissions=len(admitted), uncertain_requests=len(uncertain),
@@ -172,6 +174,30 @@ R02's contiguous larger-M path and R04's low-M native path are the better-suppor
 components for a future controlled hybrid; that native/wide combination has not been
 GPU-tested. The prepared library-only hybrid, pooler and split32 variants also lack
 their own GPU results.
+""")
+        if entry['experiment'] == 'R10-final-composition':
+            with (ROOT / "BEST.md").open("a") as handle:
+                handle.write("""
+## What this source changes
+
+Router m<=8 uses the measured split32 native path; larger-M router uses the
+contiguous wide hi+lo GEMM; pooler m==1 uses the measured SIMT GEMV. Other BF16
+paths remain the original starter. All component sources and failed experiments
+are preserved. No persistent input-derived state or reduced BF16 weight precision.
+
+## Confidence and regression limits
+
+The interval overlaps R07's [1.0827090, 1.1156850]; this highest point score is not
+a statistically resolved optimum. R10 m8 router 7.4584µs is slower than isolated
+R08's 6.8717µs, including the within-run SGLang-normalized comparison, despite
+identical native kernel bodies. Decode32's paired load ratio is 1.0705 versus
+R07's 1.0833. Preserve full shape/load evidence instead of attributing every change
+to the targeted code. Controls remain available for future repeated validation.
+
+No held-out/nearby-shape GPU rerun or final leaderboard placement is claimed. The
+Mac's 57-test suite and 39-case CPU models do not establish those properties. All
+ten new off-board checks are terminal; user budget is exhausted, zero uncertain,
+$0 and zero scored entries. No further check is authorized by leftover service quota.
 """)
         if ledger.get("admission_paused"):
             with (ROOT / "BEST.md").open("a") as handle:

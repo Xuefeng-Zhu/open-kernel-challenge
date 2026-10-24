@@ -3,6 +3,12 @@
 Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed candidate](BEST.md).
 These current records supersede the historical first-baseline and local-only summaries below.
 
+The ten-check cycle is complete: **1.120732× SGLang**,95% interval
+**[1.103921,1.137543]**, from [router_pooler_hybrid.py](candidates/router_pooler_hybrid.py),
+job `02e099c3724e4a05`. All ten new H200 checks pass9+30 correctness gates. The
+57-test Mac suite is separate CPU/static evidence. Budget10/10used,$0,zero scored
+entries; no further check is authorized. See BEST.md for overlap/regression limits.
+
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
 baseline and reproducible correctness/diagnostic harness. The original starter remains preserved; subsequent verified GPU improvements are listed above. CPU checks and the first off-board H200 check pass correctness. The measured starter
 is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.

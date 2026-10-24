@@ -1,6 +1,6 @@
 # Remote experiment results and budget
 
-**10/10 new requests admitted/reserved; 0 remain.** 9 terminal, 1 pending, 0 uncertain.
+**10/10 new requests admitted/reserved; 0 remain.** 10 terminal, 0 pending, 0 uncertain.
 Prior baseline job `e5a5b2d20da54187` is excluded. Only off-board checks and $0 spend are authorized; no scored/final submission, new credentials or material agreement.
 
 | Experiment | Job | State | Correctness | Speedup vs SGLang (95% interval) | vs original, normalized |
@@ -14,10 +14,10 @@ Prior baseline job `e5a5b2d20da54187` is excluded. Only off-board checks and $0 
 | R07-router-native-wide | `26ea99ee0869482a` | done | 9/9 + 30/30 | 1.0992× [1.0827, 1.1157] | 1.2111× |
 | R08-router-split32 | `ab74f25caa2e46a8` | done | 9/9 + 30/30 | 1.0617× [1.0458, 1.0776] | 1.1698× |
 | R09-pooler-simt | `97aa5690ff134369` | done | 9/9 + 30/30 | 1.0076× [0.9925, 1.0227] | 1.1102× |
-| R10-final-composition | `02e099c3724e4a05` | running | pending | — | — |
+| R10-final-composition | `02e099c3724e4a05` | done | 9/9 + 30/30 | 1.1207× [1.1039, 1.1375] | 1.2348× |
 
 The original starter scored 0.9076063758×. Comparisons to it are reference-normalized across separate runs, not paired same-input measurements. Official within-run SGLang pairings and their intervals are authoritative. Missing results/timings are not inferred from CPU models.
 
 Ledger: `experiments/remote-budget.json`. Exact source/result commits and per-shape evidence: `experiments/index.json`. Uncertain requests stay reserved until reconciled; never blindly retry a POST.
 
-Latest account quota (distinct from this authorization), read 2026-10-24T16:35:09.571881+00:00: `{"scored": {"per_day": 10, "used": 0, "left": 10}, "checks": {"per_day": 20, "used": 11, "left": 9}}`.
+Latest account quota (distinct from this authorization), read 2026-10-24T16:40:26.967388+00:00: `{"scored": {"per_day": 10, "used": 0, "left": 10}, "checks": {"per_day": 20, "used": 11, "left": 9}}`.
