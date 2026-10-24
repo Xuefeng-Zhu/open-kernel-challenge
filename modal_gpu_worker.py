@@ -170,6 +170,45 @@ def benchmark(candidate, output, repeats, seed_offset=200000, protocol="three-ru
     return 0
 
 
+def nearby_check(candidate, output, seed_offset, protocol):
+    import torch
+    from benchmark import capture
+    from harness import environment,load_module
+    layer="unpooler" if "unpooler_layout" in candidate.name else "pooler"
+    settings=([(8,1021),(9,8189),(16,8192),(129,8189),(257,8189)] if layer=="unpooler"
+              else [(127,4093),(128,4096),(129,4093),(255,4096),(257,4093)])
+    report=dict(kind="additional nearby-shape CUDA graph correctness, not performance",
+                environment=environment(torch,"cuda",candidate),cases=[])
+    if not torch.cuda.is_available():
+        report["blocked"]="CUDA required";save(output,report);return 2
+    reference=load_module(ROOT/"official/reference.py","nearby_reference")
+    weights=reference.generate_weights(reference.WEIGHTS_SEED,device="cuda")
+    snapshots={n:w.clone() for n,w in weights.items()}
+    modules={n:load_module(p,"nearby_"+n) for n,p in runner_specs(candidate,protocol)}
+    states={n:m.prepare(weights) for n,m in modules.items()}
+    with torch.inference_mode():
+        for i,(m,n) in enumerate(settings):
+            data=reference.generate_input(m=m,layer=layer,seed=seed_offset+3000000+i,device="cuda")
+            data["config"]["n"]=n
+            for name,module in modules.items():
+                graph,out=capture(module.kernel_fn,data,states[name])
+                for repeat in range(2):
+                    seed=seed_offset+4000000+i*10+repeat
+                    fresh=reference.generate_input(m=m,layer=layer,seed=seed,device="cuda")
+                    data["x"].copy_(fresh["x"])
+                    before=data["x"].clone()
+                    graph.replay()
+                    ok,message=reference.check_implementation(data,out,weights)
+                    ok=ok and torch.equal(data["x"],before)
+                    report["cases"].append(dict(layer=layer,m=m,n=n,runner=name,seed=seed,passed=ok,message=message))
+                    save(output,report)
+                    if not ok:return 1
+    report["weights_unchanged"]=all(torch.equal(weights[n],v) for n,v in snapshots.items())
+    report["passed"]=report["weights_unchanged"] and all(c["passed"] for c in report["cases"])
+    save(output,report)
+    return 0 if report["passed"] else 1
+
+
 def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="three-runner-v1", deadline_seconds=540):
     output_dir.mkdir(parents=True, exist_ok=False)
     import torch
@@ -189,6 +228,9 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
               "--submission", str(source), "--seed-offset", str(seed_offset),
               "--output", str(output_dir / (name + "-correctness.json"))])
              for name, source in runner_specs(candidate,protocol)]
+    if candidate.name in {"projection_unpooler_layout.py","projection_pooler_grouped.py"}:
+        steps.append(("nearby-correctness",[__file__,"--phase","nearby","--candidate",str(candidate),
+                      "--output-dir",str(output_dir),"--seed-offset",str(seed_offset),"--protocol",protocol]))
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
                                      "--output-dir", str(output_dir), "--repeats", str(repeats),
                                      "--seed-offset", str(seed_offset), "--protocol", protocol, "--deadline-seconds", str(deadline_seconds)]))
@@ -214,14 +256,14 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
         if code:
             report["blocked"] = f"{name}: {state}, exit {code}; no retries"
             break
-    report["passed"] = len(report["stages"]) == len(runner_specs(candidate,protocol))+1 and "blocked" not in report
+    report["passed"] = len(report["stages"]) == len(steps) and "blocked" not in report
     save(output_dir / "stages.json", report)
     return 0 if report["passed"] else 1
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--phase", choices=["supervise", "benchmark"], default="supervise")
+    parser.add_argument("--phase", choices=["supervise", "benchmark", "nearby"], default="supervise")
     parser.add_argument("--candidate", type=Path, required=True)
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--repeats", type=int, default=6)
@@ -234,6 +276,8 @@ def main():
     if args.repeats < period or args.repeats % period:
         parser.error("Use complete predefined execution-order blocks")
     candidate = args.candidate.resolve()
+    if args.phase == "nearby":
+        return nearby_check(candidate,args.output_dir/"nearby-correctness.json",args.seed_offset,args.protocol)
     if args.phase == "benchmark":
         return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats, args.seed_offset, args.protocol)
     return supervise(candidate, args.output_dir, args.repeats, args.seed_offset, args.protocol, args.deadline_seconds)
