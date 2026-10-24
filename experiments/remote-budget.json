@@ -116,13 +116,31 @@
           "left": 17
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "718e0730e1bd4c30",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:19:00.281385+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:36:47.265249+00:00"
+      "last_checked_utc": "2026-10-24T08:40:54.220361+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "passed": true,
+      "speedup": 1.026780384205936,
+      "speedup_ci": [
+        1.011378678442847,
+        1.0421820899690248
+      ]
     },
     {
       "experiment": "R04-router-triton16",
@@ -149,7 +167,7 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:31:39.324941+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:36:47.502771+00:00"
+      "last_checked_utc": "2026-10-24T08:40:54.948398+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",
@@ -165,5 +183,5 @@
       "left": 15
     }
   },
-  "last_account_quota_utc": "2026-10-24T08:39:33.684705+00:00"
+  "last_account_quota_utc": "2026-10-24T08:40:55.196605+00:00"
 }
