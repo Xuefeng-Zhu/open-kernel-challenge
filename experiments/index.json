@@ -1,0 +1,18 @@
+{
+  "baseline_commit": "fde8a042944c742c20b76f27fcc030d767fd0058",
+  "experiments": [
+    {
+      "id": "001-offboard-baseline",
+      "source_commit": "fde8a042944c742c20b76f27fcc030d767fd0058",
+      "result_commit": "b1efc105bf9eb5c4b08e1684e12812eff979ea74",
+      "configuration_file": "submission.py",
+      "submission_sha256": "78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e",
+      "job_id": "e5a5b2d20da54187",
+      "mode": "check",
+      "status": "done",
+      "record": "experiments/001-offboard-baseline.md",
+      "results": "results/h200-check.json",
+      "per_shape_timings": "results/h200-per-shape.csv"
+    }
+  ]
+}

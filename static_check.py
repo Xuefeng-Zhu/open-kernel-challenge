@@ -1,12 +1,17 @@
 """Small auditable sanity check, not the challenge's submission validator."""
 import ast
+import argparse
 import json
+from pathlib import Path
 
 from harness import ROOT, file_hash
 
 
 def main():
-    source = (ROOT / "submission.py").read_text()
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--submission", type=Path, default=ROOT / "submission.py")
+    args = parser.parse_args()
+    source = args.submission.read_text()
     assert source.splitlines()[0] == "# okc: problem=muse_bf16_proj"
     tree = ast.parse(source)
     functions = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}

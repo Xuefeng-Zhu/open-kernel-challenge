@@ -12,6 +12,7 @@ from harness import ROOT, cases_for, environment, load_module
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--device", choices=["cpu", "cuda"], default="cpu")
+    parser.add_argument("--submission", type=Path, default=ROOT / "submission.py")
     parser.add_argument("--suite", choices=["prerequisites", "scored", "all"], default="all")
     parser.add_argument("--weight-seed", type=int, default=5151)
     parser.add_argument("--seed-offset", type=int, default=0)
@@ -19,7 +20,7 @@ def main():
     parser.add_argument("--output", type=Path)
     args = parser.parse_args()
     torch.set_num_threads(args.threads)
-    report = dict(kind="local correctness only", environment=environment(torch, args.device),
+    report = dict(kind="local correctness only", environment=environment(torch, args.device, args.submission),
                   weight_seed=args.weight_seed, seed_offset=args.seed_offset, cases=[])
     if args.device == "cuda" and not torch.cuda.is_available():
         report["blocked"] = "CUDA unavailable: requires an NVIDIA CUDA host; challenge measurements require H200 SXM"
@@ -28,7 +29,7 @@ def main():
         print(report["blocked"])
         return 2
     reference = load_module(ROOT / "official/reference.py", "official_reference")
-    submission = load_module(ROOT / "submission.py", "candidate")
+    submission = load_module(args.submission.resolve(), "candidate")
     weights = reference.generate_weights(args.weight_seed, device=args.device)
     snapshots = {name: w.clone() for name, w in weights.items()}
     state = submission.prepare(weights)

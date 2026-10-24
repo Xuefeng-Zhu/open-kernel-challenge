@@ -41,6 +41,7 @@ def replay_us(graph, eviction):
 @torch.inference_mode()
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--submission", type=Path, default=ROOT / "submission.py")
     parser.add_argument("--repeats", type=int, default=12, help="even count, alternating first runner")
     parser.add_argument("--seed-offset", type=int, default=100000)
     parser.add_argument("--output", type=Path, required=True)
@@ -48,7 +49,7 @@ def main():
     if args.repeats < 4 or args.repeats % 2:
         parser.error("--repeats must be even and at least 4")
     report = dict(kind="local H200 diagnostic; not official timing or score",
-                  environment=environment(torch, "cuda"), repeats=args.repeats,
+                  environment=environment(torch, "cuda", args.submission), repeats=args.repeats,
                   seed_offset=args.seed_offset, eviction_bytes=256 * 1024 * 1024,
                   timing="CUDA events around one CUDA graph replay, cold L2, gross time; no fixed-cost subtraction",
                   cases=[])
@@ -62,7 +63,7 @@ def main():
         return 2
 
     reference = load_module(ROOT / "official/reference.py", "benchmark_reference")
-    candidate = load_module(ROOT / "submission.py", "benchmark_candidate")
+    candidate = load_module(args.submission.resolve(), "benchmark_candidate")
     baseline = load_module(ROOT / "official/baseline.py", "sglang_baseline")
     weights = reference.generate_weights(reference.WEIGHTS_SEED, device="cuda")
     states = dict(candidate=candidate.prepare(weights), baseline=baseline.prepare(weights))

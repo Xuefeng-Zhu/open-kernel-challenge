@@ -53,10 +53,16 @@ def file_hash(path):
     return hashlib.sha256(Path(path).read_bytes()).hexdigest()
 
 
-def environment(torch, device):
+def environment(torch, device, submission_path=None):
+    submission_path = Path(submission_path or ROOT / "submission.py").resolve()
+    try:
+        implementation = submission_path.relative_to(ROOT).as_posix()
+    except ValueError:
+        implementation = submission_path.name
     info = dict(python=sys.version, platform=platform.platform(), torch=torch.__version__,
                 device=device, cuda_runtime=torch.version.cuda,
-                cuda_available=torch.cuda.is_available(), submission_sha256=file_hash(ROOT / "submission.py"),
+                cuda_available=torch.cuda.is_available(), implementation=implementation,
+                submission_sha256=file_hash(submission_path),
                 contract_sha256=file_hash(ROOT / "official/muse_bf16_proj.json"))
     if device == "cuda" and torch.cuda.is_available():
         info["gpu"] = torch.cuda.get_device_name()
