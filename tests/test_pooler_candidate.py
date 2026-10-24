@@ -61,6 +61,7 @@ for filename, layer, width in [
     ("pooler_triton_split8.py", "pooler", 4096),
     ("qkv_triton_split8.py", "qkv_gate", 2304),
     ("pooler_simt_row.py", "pooler", 4096),
+    ("router_pooler_hybrid.py", "pooler", 4096),
 ]:
     module = load_module(ROOT / "candidates" / filename, "bf16_" + layer)
     globals()["Test_" + Path(filename).stem] = type(
