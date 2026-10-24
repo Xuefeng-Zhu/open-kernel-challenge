@@ -15,3 +15,6 @@ The first commit is a snapshot of the already-existing baseline and prior local
 verification. It is not a reconstruction of separate historical experiment commits.
 The next experiment is the **one** user-approved off-board H200 check of that baseline.
 No extra GPU check, scored submission, paid compute or kernel tuning run is authorized.
+
+See [the evidence-based backlog](experiments/BACKLOG.md) for conditional hypotheses,
+correctness gates and the source/configuration/job/result-commit evidence chain.

@@ -76,6 +76,14 @@ leaderboard, and has no confidentiality guarantee. Terms say no purchase or paym
 is necessary to participate; no separate hosted-check fee is published. Stop if a
 charge appears. No scored submission is authorized.
 
+The **once-per-day scored submission limit belongs to the serving track**, whose
+separate check cap is 3/day. Current account-specific kernel limits were rechecked
+after the accepted baseline check: 1/20 checks used, 0/10 scored runs used. Other kernel
+tasks can have different check caps. API requests are also limited to 6 submissions/minute
+per token and 10/minute per account; these are distinct from the per-day caps. There is
+no separately documented final-upload allowance: final placement uses organizer review
+and reruns of scored entries. None of these service limits authorizes an extra run here.
+
 2026 kernel deadline: **November 4, 11:59 p.m. Pacific**. Serving has a discrepancy:
 the site/API says November 19, while the terms PDF says November 18, both 11:59 p.m.
 Pacific. Plan for the earlier date pending organizer clarification. Prizes are on the
@@ -91,6 +99,8 @@ terms include sponsor use/publicity rights and arbitration provisions.
 See [EXPERIMENTS.md](EXPERIMENTS.md) for one-commit-per-experiment rules and
 [experiments/](experiments/) for hypotheses, exact commands, environments, outcomes,
 source hashes and remote run IDs. Failed experiments must also be recorded.
+The [experiment backlog](experiments/BACKLOG.md) explains how to choose one-variable
+changes from actual profiles while preserving correctness and quota discipline.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,
 SGLang and GPU MODE attribution and license scope. Only selected task material and
