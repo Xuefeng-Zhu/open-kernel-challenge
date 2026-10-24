@@ -33,4 +33,11 @@ reconciled through jobs/status, not replaced. Monitor the one accepted ID to ter
 No extra official or Modal GPU requests while pending. Local-only next-bottleneck
 analysis permitted. Modal cumulative$0.29credits/$0paid, conservative$0.44625<$2;
 all4apps stopped. Report the next meaningful isolated hypothesis before a GPU run.
-Official result pending at preparation commit; append exact job/CI/shape evidence.
+Actual job48b1357016134e52 accepted19:24:55UTC, started19:25:08UTC, completed
+19:26:10UTC. Passed9/9prerequisites and30/30scored shapes, flags[]. Official
+1.1486499523x SGLang,95%CI[1.1314202031,1.1658797016]. Best observed point score,
+CI overlaps prior controls; no statistically resolved inter-candidate claim.
+Second-cycle2/10used,8remaining,0active/uncertain; platform13/20checks used.
+Raw paired records, recomputed load aggregate, sanitized profile and cross-run
+comparisons preserved in results/remote-P2-02-* and OFFICIAL_COMPOSITION_RESULT.md.
+Single admission consumed; no further check/Modal GPU request in this stage.

@@ -3,7 +3,7 @@
   "problem": "muse_bf16_proj",
   "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
   "maximum_new_experiments": 10,
-  "remaining_authorized": 9,
+  "remaining_authorized": 8,
   "max_active_jobs": 2,
   "max_spend_usd": 0,
   "mode": "check",
@@ -86,20 +86,93 @@
         1.1120853945463307,
         1.145956015700026
       ]
+    },
+    {
+      "experiment": "P2-02-full-composition",
+      "candidate": "candidates/projection_full_composition.py",
+      "source_commit": "b9b0fd9fb0cf326b5836167ffc29d1a0d3386fa7",
+      "submission_sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+      "mode": "check",
+      "created_utc": "2026-10-24T19:24:55.699751+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "48b1357016134e52",
+      "hypothesis": "Officially validate Modal-checked composition of R10 router, QKV/unpooler m1 SIMT and BF16 pooler m>1 layout",
+      "control_job_id": "eeec05d897ef4946",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_full_composition.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T19:24:55.957829+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T19:26:48.056328+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 13,
+          "left": 7
+        }
+      },
+      "passed": true,
+      "speedup": 1.1486499523461586,
+      "speedup_ci": [
+        1.1314202030609661,
+        1.165879701631351
+      ]
     }
   ],
   "publication": "New work remains local; no push authorized",
   "admission_paused": {
     "at_utc": "2026-10-24T17:54:02.225263+00:00",
     "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
-    "scope": "No new official checks; monitor accepted jobs only. No Modal uploads/GPU/auth actions approved yet."
+    "scope": "Single composition exception consumed; all other official admissions remain paused. No new Modal GPU run until the reported next hypothesis is directed."
   },
-  "single_admission_exception": {
-    "experiment": "P2-02-full-composition",
-    "candidate": "candidates/projection_full_composition.py",
-    "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
-    "max_new_requests": 1,
-    "recorded_utc": "2026-10-24T19:24:41.142402+00:00",
-    "scope": "Only this off-board check from existing second-cycle budget after Modal stability; all other official dispatch remains paused"
-  }
+  "admission_exception_history": [
+    {
+      "experiment": "P2-02-full-composition",
+      "candidate": "candidates/projection_full_composition.py",
+      "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+      "max_new_requests": 1,
+      "recorded_utc": "2026-10-24T19:24:41.142402+00:00",
+      "scope": "Only this off-board check from existing second-cycle budget after Modal stability; all other official dispatch remains paused",
+      "consumed_job_id": "48b1357016134e52",
+      "terminal_status": "done",
+      "passed": true,
+      "closed_utc": "2026-10-24T19:32:10.784130+00:00"
+    }
+  ],
+  "last_account_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 13,
+      "left": 7
+    }
+  },
+  "last_account_quota_utc": "2026-10-24T19:26:48.056328+00:00"
 }

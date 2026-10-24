@@ -1,5 +1,10 @@
 # Composition and stability result — one stopped H200 app
 
+Subsequent official result: full composition job48b1357016134e52 passes at
+1.1486499523x SGLang,95%CI[1.1314202031,1.1658797016]. See
+OFFICIAL_COMPOSITION_RESULT.md for current budgets/profile/next hypothesis.
+The dated analysis below retains its original measurement context.
+
 Best observed composition: **candidates/projection_full_composition.py**, SHA256
 `c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7`, source commit
 `b9b0fd9`. It adds verified QKV/unpooler m1 SIMT paths to R10 and the separately

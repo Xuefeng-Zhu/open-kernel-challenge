@@ -1,61 +1,39 @@
-# Resume this same project and exact accepted jobs
+# Resume the existing projection task
 
-Latest composition: MODAL_COMPOSITION_RESULTS.md. Full source
-candidates/projection_full_composition.py (c34c497b...) is best observed Modal
-point estimate: weighted gross1.022014x over R10,1.010889x over P2-01; no official
-score/CI. App ap-XxzsrPfRejsEpPVQCxIqzJ passed all five39-case CUDA suites and all
-warmup/steady outputs, now stopped/tasks0. QKV steady max17.952us after declared
-six warmups;40us warmup sample retained. Pooler m8/16/32/128 gains supported,
-m256 unresolved. All4apps stopped, cumulative credits$0.29/net$0, remaining$29.71,
-conservative stage bound$0.44625<$2. Source/protocol/result commits separate;
-no push/OKC call. Report before expanding; preserve earlier evidence below.
+Current branch projection-bf16-local; sources/results local and unpushed. Preserve
+main, attention-v2-preflight, original submission.py and every independent control.
+Read STATUS.md, BEST.md and OFFICIAL_COMPOSITION_RESULT.md first.
 
-## Current local branch checkpoint (2026-10-24)
+Official job48b1357016134e52 is terminal/pass:1.1486499523x SGLang,
+CI[1.1314202031,1.1658797016],9+30gates,flags[]. Source
+candidates/projection_full_composition.py, b9b0fd9, SHA c34c497b….
+Second cycle2/10used,8remaining. Latest daily platform snapshot13/20checks used,
+7left; scored0. Earlier ten projection/one attention budgets are separately spent.
+**Single composition exception consumed. New official dispatch remains paused.**
+Never resend any journaled job or replace an uncertain response. Rules version,
+committed exact source and fresh quota must be rechecked before any later approval.
 
-Latest: requested Modal continuation completed, no expansion started. Read
-MODAL_STAGE2_RESULTS.md and experiments/modal-diagnostics-budget.json first.
-Experiment019 unpooler app ap-dMJsl67NMlcBiZs5KJWUFv and020 QKV repeat app
-ap-8GLNIGgfFD2naewj9oD2vD both passed and are verified stopped/tasks0. Each has
-39 CUDA cases per runner and30 graph shapes (12/30 repeats). Target paired gross
-R10/candidate medians1.38704 and1.13013. QKV first two43.904/41.600us samples
-retained; tail behavior unresolved. No official score/CI. Report before expansion.
-Cumulative actual credits about$0.21, net$0; conservative stage bound$0.328587546
-below$2 including the initial smoke. All original sources/budgets preserved.
-Existing token expires2026-10-25 06:26:47UTC; no new grant/extension. No push.
+All four Modal apps stopped/tasks0. Actual cumulative credits$0.29, paid$0,
+balance$29.71, net cap$0, conservative guard$0.44625 below$2. No new GPU run in
+this latest phase. Existing token is ignored/owner-only at local-notes/modal-auth.toml,
+expires2026-10-25 06:26:47UTC. Never print it, upload it or extend credentials without
+new specific authorization. DENIED_MODAL_TOKEN.md records resolved history; never
+repeat the original logging command. No payment/cap/plan/term changes or push.
 
-On `projection-bf16-local`, read **MODAL_PREFLIGHT.md** and
-`experiments/projection-cycle2-budget.json` first. User wants Modal experiments
-before further official checks. **New official dispatch paused.** Cycle2 has used
-1/10: `eeec05d897ef4946`, terminal/pass, 1.1290207051x; 9 remain, none active or
-uncertain. Prior first-cycle ten and attention one are separate exhausted budgets.
-No new work push authorized. Preserve `main` and `attention-v2-preflight` branches.
+Next reported hypothesis025: candidates/projection_qkv_layout.py, SHA50a76d4e…,
+only QKV m>1 uses BF16 transposed contiguous weights. CPU39+focused3 pass,
+static/syntax pass; current total95local tests pass. Official profiles show
+split-K plus1.6–3.0us reduction for QKV m8/16/32/128; extra layout may alter tactic,
+not necessarily win. **No GPU compile/capture/performance evidence for025.**
+Hold any GPU run until the next meaningful hypothesis is reviewed/directed; no
+additional official request or Modal app is authorized by this checkpoint alone.
 
-Modal web login/CLI verified workspace xuefeng-zhu, GitHub Xuefeng-Zhu. $0 net
-Spend limit remains; paid service was never resumed or upgraded. The Stripe
-pause wording did not prevent this credit-covered H200 run. Before further
-approved work recheck credits, cap and12-hour token expiry. No secrets in bundles.
-Mac Chrome billing tab is https://modal.com/settings/xuefeng-zhu/usage.
+Safe independent work: analyze saved profiles/shape evidence and exact precision
+contract. Future validation must cover all shapes and nearby inputs; preserve
+6predeclared graph warmups, all samples and balanced order if continuing the same
+protocol. No post-hoc outlier deletion/fixed-cost guess to imitate the judge.
+A queued job is not completion; monitor admitted IDs to terminal and record failures.
 
-Experiment016 QKV m1SIMT now has initial + independent H200 diagnostics;
-experiment017 unpooler has native H200 evidence via019. Preserve separate sources,
-R10 and original baseline. Do not silently combine components or change measurement
-protocol. The old initial-smoke one-run guard is historical; user authorized the
-recorded continuation stage. Stop/report here before additional experiments.
-
-## Historical first-cycle resume instructions
-
-Budget 10/10, 0 remain, 0 uncertain; $0, check mode only.
-Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
-Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
-
-**The ten-new-check budget is exhausted. Send no further check requests.** Finish monitoring/recording accepted jobs, tests and private push only. Any new GPU experiment requires additional explicit user authorization before changing the ceiling.
-
-All admitted jobs are terminal. Choose further work only from actual evidence and the remaining authorization; stop early if no meaningful hypothesis or a real blocker exists.
-
-For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness and timing/profile records, record failures too, then independently commit sanitized evidence. `python3 update_progress.py` refreshes derived status offline. Push only sanitized files to the existing private repository; preserve original baseline and immutable experiment sources.
-
-Historical R06 denial and its sole approved retry: `DENIED_R06.md`. Never retry that upload again. Any new denial must be honored without alternate transfer routes.
-
-Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. R08 validated the router split count; R09 validated the one-row SIMT pooler component; R10 is their separately committed composition with the verified wide router. Future hypotheses require remaining allowance or a new authorization; do not infer approval from this plan.
-
-The unrelated attention attachment review remains ignored/local-only under `local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project.
+Exact current commands and result evidence: experiments/024-official-full-composition.md,
+experiments/025-qkv-layout-local.md. Old read-only comparisons/history are in
+REMOTE_RESULTS.md, GAP_ANALYSIS.md and MODAL_*_RESULTS.md with their dated scope.

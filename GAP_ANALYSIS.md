@@ -1,5 +1,10 @@
 # Gap diagnosis from actual H200 evidence
 
+Subsequent official result: full composition job48b1357016134e52 passes at
+1.1486499523x SGLang,95%CI[1.1314202031,1.1658797016]. See
+OFFICIAL_COMPOSITION_RESULT.md for current budgets/profile/next hypothesis.
+The dated analysis below retains its original measurement context.
+
 Our R10-final-composition: job `02e099c3724e4a05`, 1.1207320× SGLang.
 Leader snapshot 2026-10-24 16:06 UTC: 1.5607955616× (accountforgoofystuff).
 At identical normalization, matching it requires 28.19% further latency reduction. This compares independent runs, not paired inputs/GPUs.

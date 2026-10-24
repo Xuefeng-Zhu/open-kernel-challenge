@@ -1,13 +1,18 @@
 # Open Kernel Challenge — dense projections
 
-Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed candidate](BEST.md).
-These current records supersede the historical first-baseline and local-only summaries below.
+Latest official passing composition: **1.1486499523x SGLang**, 95% interval
+**[1.1314202031,1.1658797016]**, job48b1357016134e52, off-board only.
+[Source](candidates/projection_full_composition.py), [result and limitations](OFFICIAL_COMPOSITION_RESULT.md),
+[best](BEST.md), [current budgets/status](STATUS.md).9/9prerequisites and30/30scored
+shape checks pass, no flags. Prior candidate intervals overlap, so differences
+between point scores are not declared statistically resolved.
 
-The ten-check cycle is complete: **1.120732× SGLang**,95% interval
-**[1.103921,1.137543]**, from [router_pooler_hybrid.py](candidates/router_pooler_hybrid.py),
-job `02e099c3724e4a05`. All ten new H200 checks pass9+30 correctness gates. The
-57-test Mac suite is separate CPU/static evidence. Budget10/10used,$0,zero scored
-entries; no further check is authorized. See BEST.md for overlap/regression limits.
+Second projection cycle2/10used,8remaining; all accepted jobs terminal. Today's
+last platform snapshot13/20checks used; no scored entry. Modal-first validation
+completed on H200 with all four apps stopped, cumulative$0.29credits/$0paid under
+$2stage ceiling and$0net cap. New GPU dispatch paused after the single ready check.
+Current Mac suite95/95tests pass; CPU/static and actual H200 checks are distinct.
+Historical first-cycle records remain in REMOTE_RESULTS.md and their immutable sources.
 
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
 baseline and reproducible correctness/diagnostic harness. The original starter remains preserved; subsequent verified GPU improvements are listed above. CPU checks and the first off-board H200 check pass correctness. The measured starter
@@ -27,7 +32,7 @@ uv pip install --python .venv/bin/python -r requirements-macos.lock
 
 The full-size suite covers the nine official prerequisite shapes plus all 30 scored
 shapes using the unmodified official FP64 reference, per-row limits and weight-column
-probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **57/57 tests**. The local
+probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **95/95 tests**. The local
 Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
 The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
 
