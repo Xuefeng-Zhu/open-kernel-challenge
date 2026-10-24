@@ -66,9 +66,44 @@
           "left": 18
         }
       }
+    },
+    {
+      "experiment": "E2",
+      "mode": "check",
+      "state": "accepted",
+      "status": "running",
+      "job_id": "7edded086c8a47f2",
+      "candidate": "reviews/attention-v2/fixed_chunks.py",
+      "source_commit": "2613417dcd806d64e3744be9e3d8773396692765",
+      "source_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+      "hypothesis": "Only full B16/32 fixed 8192 historical chunks; E0 parent, passes A07 same-address ABA with actual length changes",
+      "final": false,
+      "created_utc": "2026-10-24T22:35:12.880710+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/fixed_chunks.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T22:35:13.152229+00:00",
+      "last_checked_utc": "2026-10-24T22:35:48.814546+00:00"
     }
   ],
-  "remaining": 5,
+  "remaining": 4,
   "plans": {
     "E0": {
       "candidate": "submission.py",

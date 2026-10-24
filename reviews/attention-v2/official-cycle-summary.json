@@ -1,0 +1,382 @@
+{
+  "method": "Six weighted loads (46 sliding + 16 full); geometric mean over loads. Official paired adjusted times and raw times kept separate.",
+  "qualification": "Candidate comparisons across separate official runs are not directly paired. CI overlap and 0\u20132% changes are inconclusive; report any >5% regression.",
+  "checks_used": 2,
+  "checks_remaining": 4,
+  "experiments": {
+    "E0": {
+      "passed": true,
+      "speedup": 0.7224690512621683,
+      "speedup_ci": [
+        0.7116320154932357,
+        0.7373518838861473
+      ],
+      "reproduced_six_weighted_load_score": 0.7224690512621683,
+      "shapes": [
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 1",
+            "page": 1,
+            "seed": 5584331381089959650,
+            "weight": 46
+          },
+          "official_adjusted_us": 13.924053167525765,
+          "raw_median_us": 17.791999503970146,
+          "baseline_adjusted_us": 21.07200026512146,
+          "baseline_raw_us": 24.9439999461174,
+          "paired_reference_over_candidate": 1.5133524708356059,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3871.999680995941,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 1",
+            "page": 1,
+            "seed": 5584452250729792345,
+            "weight": 16
+          },
+          "official_adjusted_us": 41.224864087015035,
+          "raw_median_us": 45.20000144839287,
+          "baseline_adjusted_us": 31.407998874783516,
+          "baseline_raw_us": 35.50399839878082,
+          "paired_reference_over_candidate": 0.7618702831497357,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4095.999523997307,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 16",
+            "page": 1,
+            "seed": 5584573120369625041,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 15.658867826958394,
+          "raw_median_us": 19.519999623298645,
+          "baseline_adjusted_us": 26.880000717937946,
+          "baseline_raw_us": 30.6560005992651,
+          "paired_reference_over_candidate": 1.7165992468281255,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3775.9998813271523,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 16",
+            "page": 1,
+            "seed": 5584693990009457738,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 288.5200301116225,
+          "raw_median_us": 292.28800535202026,
+          "baseline_adjusted_us": 199.90399619564414,
+          "baseline_raw_us": 204.03199642896652,
+          "paired_reference_over_candidate": 0.6928600281869699,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4128.000233322382,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 32",
+            "page": 1,
+            "seed": 5584814859649290436,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 20.22004774521336,
+          "raw_median_us": 24.07999988645315,
+          "baseline_adjusted_us": 31.199997756630182,
+          "baseline_raw_us": 35.00799834728241,
+          "paired_reference_over_candidate": 1.5430229517641014,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3808.0005906522274,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 32",
+            "page": 1,
+            "seed": 5584935729289123135,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 510.9702503054957,
+          "raw_median_us": 515.6960189342499,
+          "baseline_adjusted_us": 384.3360017053783,
+          "baseline_raw_us": 388.2080018520355,
+          "paired_reference_over_candidate": 0.7521690381692356,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3872.0001466572285,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 1",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585056598928955835,
+            "weight": 46
+          },
+          "official_adjusted_us": 43.65424156516754,
+          "raw_median_us": 47.775998711586,
+          "baseline_adjusted_us": 22.720000240951777,
+          "baseline_raw_us": 26.72000043094158,
+          "paired_reference_over_candidate": 0.5204534410942658,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4000.000189989805,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 1",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585177468568788536,
+            "weight": 16
+          },
+          "official_adjusted_us": 76.57888930129032,
+          "raw_median_us": 80.30400052666664,
+          "baseline_adjusted_us": 36.43200034275651,
+          "baseline_raw_us": 40.24000093340874,
+          "paired_reference_over_candidate": 0.4757446951132869,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3808.0005906522274,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 16",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585298338208621238,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 37.19275524005777,
+          "raw_median_us": 40.97599908709526,
+          "baseline_adjusted_us": 29.31199874728918,
+          "baseline_raw_us": 33.055998384952545,
+          "paired_reference_over_candidate": 0.7881104413506648,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3743.9996376633644,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 16",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585419207848453941,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 377.9544279050919,
+          "raw_median_us": 380.41600584983826,
+          "baseline_adjusted_us": 205.00799966976047,
+          "baseline_raw_us": 208.78399908542633,
+          "paired_reference_over_candidate": 0.5424145995750578,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3775.999415665865,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 32",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585540077488286645,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 45.2493577281057,
+          "raw_median_us": 48.96000027656555,
+          "baseline_adjusted_us": 34.62399961426854,
+          "baseline_raw_us": 38.52799907326698,
+          "paired_reference_over_candidate": 0.7651821230771318,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3903.9994589984417,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 32",
+            "page": 1,
+            "q_len": 8,
+            "seed": 5585660947128119350,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 677.7487923081437,
+          "raw_median_us": 681.984007358551,
+          "baseline_adjusted_us": 388.4640084579587,
+          "baseline_raw_us": 392.94400811195374,
+          "paired_reference_over_candidate": 0.5731681308276542,
+          "runs": 56,
+          "raw_sample_count": 56,
+          "fixed_overhead_ns": 4479.999653995037,
+          "relative_reference_normalized_speedup_vs_E0": 1.0
+        }
+      ],
+      "loads": [
+        {
+          "load": "decode 1",
+          "baseline_us": 1471.8399941921234,
+          "candidate_us": 1300.1042710984257,
+          "speedup": 1.132093807328702
+        },
+        {
+          "load": "decode 16",
+          "baseline_us": 4434.943972155452,
+          "candidate_us": 5336.628401826046,
+          "speedup": 0.8310385580974567
+        },
+        {
+          "load": "decode 32",
+          "baseline_us": 7584.575924091041,
+          "candidate_us": 9105.646201167745,
+          "speedup": 0.8329530663203633
+        },
+        {
+          "load": "verify 1",
+          "baseline_us": 1628.0320165678859,
+          "candidate_us": 3233.357340818352,
+          "speedup": 0.5035113181012763
+        },
+        {
+          "load": "verify 16",
+          "baseline_us": 4628.47993709147,
+          "candidate_us": 7758.137587524127,
+          "speedup": 0.59659678432805
+        },
+        {
+          "load": "verify 32",
+          "baseline_us": 7808.128117583692,
+          "candidate_us": 12925.45113242316,
+          "speedup": 0.6040894076027415
+        }
+      ],
+      "tests_passed": 16,
+      "flags": [],
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 127.6,
+          "power.limit": 700,
+          "temperature.gpu": 37
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 141.32,
+          "power.limit": 700,
+          "temperature.gpu": 38
+        },
+        "node": "n-qtqz4qekgtq37epqb5xaarah6h"
+      },
+      "job_id": "5b0baa286659421a",
+      "source_commit": "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32",
+      "source_sha256": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+      "source": "reviews/attention-v2/submission.py",
+      "receipt": "E0-official-result.json",
+      "score_ratio_vs_E0": 1.0
+    }
+  }
+}
