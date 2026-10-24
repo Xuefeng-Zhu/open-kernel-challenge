@@ -14,7 +14,10 @@ SPECS=[('projection_pooler_layout.py','pooler',8192,4096),
        ('projection_unpooler_m1_simt.py','unpooler',4096,1024),
        ('projection_native_composition.py','qkv_gate',8192,2304),
        ('projection_native_composition.py','unpooler',4096,1024),
-       ('projection_native_composition.py','pooler',8192,4096)]
+       ('projection_native_composition.py','pooler',8192,4096),
+       ('projection_full_composition.py','qkv_gate',8192,2304),
+       ('projection_full_composition.py','unpooler',4096,1024),
+       ('projection_full_composition.py','pooler',8192,4096)]
 requested=os.environ.get('PROJECTION_CANDIDATE')
 
 
