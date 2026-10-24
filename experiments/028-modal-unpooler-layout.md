@@ -24,3 +24,14 @@ net cap$0. Token expiry verified06:26:47UTC Oct25. No credential/cap/payment/pus
 
 Local candidate39CPU+3focused/static/syntax gates pass. GPU pending at preparation
 commit. M26prior QKV screen rejected after m256 regression; no official quota spent.
+
+Terminal result: app ap-w7VrX6FmljUODnxXeM8wUK stopped/tasks0, worker69.010s,
+app78s. All3x39CUDA cases +30nearby fresh graph replays +30shapes with6warmup/
+30steady samples pass. Gross weighted aggregate best/candidate0.999840715.
+Unpooler m16/32/128/256 paired ratios1.02028/1.00853/1.02654/1.00601;
+winning pairs10/10/15/8 of15. m128 stable2.65%gain is one shape and too small to
+justify wholesale replacement; unchanged paths fluctuate. Reject broad layout,
+retain source and all samples; no official check. An m128-only dispatch could be
+revisited after more valuable improvements, not promoted from this aggregate.
+Actual billing snapshot$0.50gross/$0net, asynchronous; conservative stage$0.685872.
+Full raw sanitized evidence results/remote-modal-M28-unpooler-layout.json/.csv.
