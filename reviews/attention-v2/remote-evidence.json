@@ -1,0 +1,21 @@
+{
+  "created_utc": "2026-10-24T17:41:28.755779+00:00",
+  "source_commit": "7eea86ba1f63cc18a229d276eb1e917b5b20dc74",
+  "source_sha256": "b1a87afb4c428502d5066688ba784f577236b6bad4fea8879c8cd98fefb9c3dc",
+  "job_id": "bf4b49bd8bb34dae",
+  "status": "terminal compilation failure",
+  "mode": "check",
+  "allowance_used": 1,
+  "allowance_maximum": 1,
+  "uncertain": 0,
+  "publication": "local-only; no push",
+  "preflight_manifest_scope": "manifest.json hashes describe original preflight snapshot in source commit7eea86b, not later mutable remote-policy/docs",
+  "artifact_sha256": {
+    "submission.py": "b1a87afb4c428502d5066688ba784f577236b6bad4fea8879c8cd98fefb9c3dc",
+    "remote-policy.json": "2b175e903b05a02967bebb3c9bccc53fce05c482ad518705c0b96785ab75f45d",
+    "remote-result.json": "3d1fb1b81dbf96a6722f10acf098db564ba07d57ccafc84cf778c8661b85dff3",
+    "REMOTE_CHECK.md": "14d7caf14e5a14d7e3def2ece206a3a575e93e8449de65ca928c7c0034d881d2",
+    "compile-fix.proposed.diff": "748969b308c4f120a6b3cd095c4b1d7b857a4325ac414106d6c8de54b18d5b7f",
+    "remote_once.py": "c8c9292ab6c953548ef9e19e389bc59f35e7a47700c84c289dd76409c77eb744"
+  }
+}

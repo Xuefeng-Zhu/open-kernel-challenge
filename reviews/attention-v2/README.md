@@ -1,3 +1,7 @@
+**Current result:** approved attention check bf4b49bd8bb34dae is terminal, failed
+compilation on non-constexpr LOG2E (0/16 prerequisite passes, no timing). One
+additional allowance is exhausted; no resubmission/push. See REMOTE_CHECK.md.
+
 Current approval/admission status: **REMOTE_CHECK.md** and remote-policy.json.
 The earlier pending-approval paragraph below is the original preflight history.
 

@@ -35,3 +35,37 @@ status. This later approval/admission record supersedes that historical status o
 it does not alter their numerical or concurrency findings. The syntax-only source
 hash remains identical. `okc whoami --json` returns plain login text in this CLI;
 that harmless read succeeded and was handled without exposing private account data.
+
+## Terminal result — confirmed in-contract compilation blocker
+
+Job **bf4b49bd8bb34dae** is terminal **done**, but `passed=false`, returncode112.
+All **16/16 prerequisite records fail compilation** at the same source line124:
+plain module float `LOG2E` is read inside the JIT function. The target compiler
+requires `tl.constexpr(...)` instantiation, not merely a type annotation. Integrity
+checks themselves pass with no flags/rejections. No attention kernel numerical
+execution or benchmark timing succeeded; **speedup and score are null**, not zero.
+
+This is now a definite blocker in the real official H200 environment, superseding
+the preflight's earlier statement that no confirmed single-call blocker had been
+reproduced. The earlier CPU equation tests did not compile Triton and missed this
+restriction; their numerical-model results remain separate evidence.
+
+Minimal proposed fix at source63:
+
+```python
+LOG2E = tl.constexpr(1.4426950408889634)
+```
+
+`compile-fix.proposed.diff` records exactly that one-line proposal. It is **not
+applied** to submission.py, uploaded or GPU-validated. Its Python syntax passes;
+that cannot establish subsequent target compilation. Inlining the same literal in
+line124 is another source-level fix; do not set a harness environment override.
+Other previously reviewed concurrency/precision issues remain untested on GPU,
+because compilation stopped first. No claim is made that this is the only remaining
+compiler issue, nor that the candidate would pass after this single fix.
+
+Sanitized full16-case errors and evaluator/image/device provenance: remote-result.json.
+Raw reply/log remains ignored locally. The single new check is fully consumed:
+**1/1 used,0remaining,0uncertain,$0,0scored**. Attention service quota1/10checks used,
+9left; those leftover service slots grant no new user authorization. The projection
+10-check budget remains unchanged. No second check, credentials or publication.

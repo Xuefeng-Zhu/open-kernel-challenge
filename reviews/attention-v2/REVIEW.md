@@ -1,3 +1,7 @@
+**Later H200 result:** the approved formatting-only check failed compilation on LOG2E.
+See REMOTE_CHECK.md and remote-result.json. The preflight below is historical CPU-only
+evidence; it is not a claim that native compilation passed.
+
 # Attention v2 — local-only review of the user's unchanged algorithm
 
 Normalized candidate: `submission.py`, SHA256

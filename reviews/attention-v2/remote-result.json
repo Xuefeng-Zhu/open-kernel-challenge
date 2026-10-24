@@ -1,0 +1,328 @@
+{
+  "job_id": "bf4b49bd8bb34dae",
+  "mode": "check",
+  "status": "done",
+  "problem": "muse_attention_decode",
+  "source_commit": "7eea86ba1f63cc18a229d276eb1e917b5b20dc74",
+  "source_sha256": "b1a87afb4c428502d5066688ba784f577236b6bad4fea8879c8cd98fefb9c3dc",
+  "result": {
+    "checks": {
+      "flagged": [],
+      "ok": true,
+      "rejected": []
+    },
+    "error": null,
+    "flags": [],
+    "gpu": "H200",
+    "passed": false,
+    "records": [
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 10,
+          "heads": "tp8",
+          "layer": "sliding",
+          "seed": 8945297506785879678
+        },
+        "event": "test",
+        "index": 0,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 3,
+          "ctx": 2047,
+          "heads": "tp8",
+          "layer": "sliding",
+          "seed": 8945536060682710385
+        },
+        "event": "test",
+        "index": 1,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 5,
+          "ctx": 5000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "seed": 8945774614579541093,
+          "spread": "mixed"
+        },
+        "event": "test",
+        "index": 2,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 3000,
+          "heads": "tp8",
+          "layer": "full",
+          "seed": 8946013168476371802
+        },
+        "event": "test",
+        "index": 3,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 8,
+          "ctx": 8192,
+          "heads": "dp",
+          "layer": "full",
+          "seed": 8946251722373202512,
+          "spread": "mixed"
+        },
+        "event": "test",
+        "index": 4,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 2,
+          "ctx": 100000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "seed": 8946490276270033223
+        },
+        "event": "test",
+        "index": 5,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 6000,
+          "dist": "edges",
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "seed": 8946728830166863935
+        },
+        "event": "test",
+        "index": 6,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 6000,
+          "dist": "edges",
+          "heads": "tp8",
+          "layer": "full",
+          "q_len": 8,
+          "seed": 8946967384063694648
+        },
+        "event": "test",
+        "index": 7,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 1048576,
+          "heads": "tp8",
+          "layer": "full",
+          "q_len": 8,
+          "seed": 8947205937960525362
+        },
+        "event": "test",
+        "index": 8,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 3,
+          "ctx": 4000,
+          "heads": "tp8",
+          "kv_scale": 0.015625,
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "seed": 8948637261341509667
+        },
+        "event": "test",
+        "index": 9,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 2,
+          "ctx": 9000,
+          "heads": "tp8",
+          "kv_scale": 0.015625,
+          "layer": "full",
+          "seed": 8948875815238340388
+        },
+        "event": "test",
+        "index": 10,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "full",
+          "seed": 8947444491857356077,
+          "spread": "mixed"
+        },
+        "event": "test",
+        "index": 11,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 6000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "seed": 8947683045754186793
+        },
+        "event": "test",
+        "index": 12,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 2,
+          "ctx": 20000,
+          "dist": "soft",
+          "heads": "dp",
+          "layer": "full",
+          "q_len": 8,
+          "seed": 8947921599651017510
+        },
+        "event": "test",
+        "index": 13,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 4,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "seed": 8948160153547848228,
+          "spread": "mixed"
+        },
+        "event": "test",
+        "index": 14,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      },
+      {
+        "case": {
+          "batch": 2,
+          "ctx": 20000,
+          "dist": "coherent",
+          "heads": "dp",
+          "layer": "full",
+          "q_len": 8,
+          "seed": 8948398707444678947
+        },
+        "event": "test",
+        "index": 15,
+        "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+        "status": "fail"
+      }
+    ],
+    "returncode": 112,
+    "score_us": null,
+    "speedup": null,
+    "speedup_ci": null,
+    "status": "ok",
+    "evaluator": {
+      "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+      "files": {
+        "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+        "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+        "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+        "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+        "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+        "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+        "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+      },
+      "image_digest": "sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+    },
+    "machine": {
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.178.04",
+        "name": "NVIDIA H200",
+        "power.draw": 130.88,
+        "power.limit": 700,
+        "temperature.gpu": 30
+      },
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.178.04",
+        "name": "NVIDIA H200",
+        "power.draw": 122.04,
+        "power.limit": 700,
+        "temperature.gpu": 31
+      }
+    }
+  },
+  "prerequisites": {
+    "passed": 0,
+    "total": 16,
+    "classification": "native compilation failures; not numerical mismatches"
+  },
+  "benchmark_shapes_measured": 0,
+  "additional_allowance": {
+    "maximum": 1,
+    "used": 1,
+    "remaining": 0,
+    "uncertain": 0
+  },
+  "first_failure": {
+    "case": {
+      "batch": 1,
+      "ctx": 10,
+      "heads": "tp8",
+      "layer": "sliding",
+      "seed": 8945297506785879678
+    },
+    "event": "test",
+    "index": 0,
+    "message": "CompilationError: at 27:31:\n    j = tl.where(row_ok, offs_m // G, 0)\n    g = offs_m % G\n    qpos = seq + j\n    offs_d = tl.arange(0, D)\n    tok = (b * L + j).to(tl.int64)\n    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]\n    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])\n    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.\n    q = (q * qk_factor).to(tl.bfloat16).to(DOT)\n    ks = tl.load(ks_ptr)\n    vs = tl.load(vs_ptr)\n    qk_scale = sm_scale * ks * LOG2E\n                               ^\nNameError(\"Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.\")",
+    "status": "fail"
+  },
+  "redactions": "Raw log tail, account/team, server node/cluster/call identifiers, payload and local paths excluded; raw retained locally",
+  "created_at_utc": "2026-10-24T17:37:11.031429+00:00",
+  "started_at_utc": "2026-10-24T17:37:30.764564+00:00",
+  "finished_at_utc": "2026-10-24T17:38:00.563141+00:00"
+}

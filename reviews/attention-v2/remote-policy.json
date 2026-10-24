@@ -7,8 +7,8 @@
   "requests": [
     {
       "created_utc": "2026-10-24T17:37:10.680649+00:00",
-      "state": "accepted",
-      "status": "accepted",
+      "state": "terminal",
+      "status": "done",
       "job_id": "bf4b49bd8bb34dae",
       "mode": "check",
       "problem": "muse_attention_decode",
@@ -27,7 +27,24 @@
         }
       },
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-24T17:37:11.006951+00:00"
+      "accepted_utc": "2026-10-24T17:37:11.006951+00:00",
+      "last_checked_utc": "2026-10-24T17:38:45.724906+00:00",
+      "status_cli_exit_code": 0,
+      "passed": false,
+      "speedup": null,
+      "speedup_ci": null,
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 10,
+          "used": 1,
+          "left": 9
+        }
+      }
     }
   ],
   "max_spend_usd": 0,
