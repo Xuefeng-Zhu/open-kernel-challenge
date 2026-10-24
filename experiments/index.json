@@ -258,16 +258,29 @@
       "job_id": "1631810d19af4af4",
       "mode": "check",
       "status": "done",
-      "result_commit": "82f68cc7c2a50aa4580b2fc7df464b322ac3e8a9",
+      "result_commit": "e47d17877f17a158d828abcc27c8843f1d9c01fc",
       "record": "experiments/remote-R05-wide-layout.md",
       "results": "results/remote-R05-wide-layout.json",
       "timings": "results/remote-R05-wide-layout.csv"
+    },
+    {
+      "id": "R06-pooler-triton8",
+      "source_commit": "971ade4100cc5621c2baa4d3b87be346f1eeaae2",
+      "submission_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+      "candidate": "candidates/pooler_triton_split8.py",
+      "job_id": "b70d87fc51864276",
+      "mode": "check",
+      "status": "queued",
+      "result_commit": null,
+      "record": "experiments/remote-R06-pooler-triton8.md",
+      "results": null,
+      "timings": null
     }
   ],
   "remote_budget": {
     "maximum": 10,
-    "admitted_or_reserved": 5,
-    "remaining": 5,
+    "admitted_or_reserved": 6,
+    "remaining": 4,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   },
   "current_local_verification": {

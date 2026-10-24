@@ -111,6 +111,16 @@ def main():
     (ROOT / "results" / (args.experiment + "-status-reply.local.json")).write_text(p.stdout)
     if not isinstance(data, dict):
         raise RuntimeError("Read-only status failed; existing job reservation unchanged")
+    # CLI may return a minimal acknowledgement while the accepted job is dispatching.
+    # Its identity must still match; never treat this as a result or a new admission.
+    if (data.get("job_id") == entry["job_id"]
+            and data.get("status") in {"received", "queued", "running"}
+            and "result" not in data and data.get("mode", "check") == "check"):
+        entry.update(status=data["status"], status_cli_exit_code=p.returncode,
+                     last_checked_utc=now())
+        save(LEDGER, ledger)
+        print(json.dumps(entry))
+        return 0
     if data.get("mode") != "check" or data.get("id") != entry["job_id"]:
         (ROOT / "results" / (args.experiment + "-status-error.local.json")).write_text(p.stdout)
         raise RuntimeError("Job identity/mode mismatch")

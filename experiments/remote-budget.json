@@ -231,6 +231,33 @@
         1.03518654398615,
         1.0667150681684692
       ]
+    },
+    {
+      "experiment": "R06-pooler-triton8",
+      "candidate": "candidates/pooler_triton_split8.py",
+      "source_commit": "971ade4100cc5621c2baa4d3b87be346f1eeaae2",
+      "submission_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+      "mode": "check",
+      "created_utc": "2026-10-24T16:02:53.550293+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "b70d87fc51864276",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T16:02:53.798991+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T16:04:08.085279+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",
@@ -247,13 +274,21 @@
     }
   },
   "last_account_quota_utc": "2026-10-24T09:14:24.597923+00:00",
-  "admission_paused": {
-    "at_utc": "2026-10-24T08:59:05.101254+00:00",
-    "action": "python3 remote_check.py send R06-pooler-triton8 candidates/pooler_triton_split8.py",
-    "target": "https://openkernelchallenge.dev/api/v1/problems/muse_bf16_proj/submissions (mode check)",
-    "candidate_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
-    "outcome": "denied_before_process_creation; no POST executed and no allowance reserved",
-    "reason": "Automatic approval review said available trusted instructions do not authorize this specific nonpublic pooler upload or sixth experiment.",
-    "retry_policy": "No workaround or other new upload. Retry denied operation at most once only after materially new relevant trusted authorization, with known-not-executed outcome. Continue existing job reads."
-  }
+  "denied_operation_resolutions": [
+    {
+      "at_utc": "2026-10-24T08:59:05.101254+00:00",
+      "action": "python3 remote_check.py send R06-pooler-triton8 candidates/pooler_triton_split8.py",
+      "target": "https://openkernelchallenge.dev/api/v1/problems/muse_bf16_proj/submissions (mode check)",
+      "candidate_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+      "outcome": "denied_before_process_creation; no POST executed and no allowance reserved",
+      "reason": "Automatic approval review said available trusted instructions do not authorize this specific nonpublic pooler upload or sixth experiment.",
+      "retry_policy": "No workaround or other new upload. Retry denied operation at most once only after materially new relevant trusted authorization, with known-not-executed outcome. Continue existing job reads.",
+      "resolution": "Specific new human approval received; prior no-execution verified against own job history; permit exact denied operation one retry",
+      "resolved_utc": "2026-10-24T16:02:49.750926+00:00",
+      "retry_allowance": 1,
+      "retry_invocations": 1,
+      "retry_outcome": "accepted",
+      "accepted_job_id": "b70d87fc51864276"
+    }
+  ]
 }

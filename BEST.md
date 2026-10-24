@@ -28,5 +28,3 @@ R02's contiguous larger-M path and R04's low-M native path are the better-suppor
 components for a future controlled hybrid; that native/wide combination has not been
 GPU-tested. The prepared library-only hybrid, pooler and split32 variants also lack
 their own GPU results.
-
-5 new checks were admitted; 5 are terminal. 5 allowances remain, but further uploads are paused because automatic approval review denied R06 before its command ran. No uncertain request or budget use resulted; see `DENIED_R06.md`.

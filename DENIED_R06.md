@@ -37,3 +37,11 @@ be retried once. If still denied, stop that operation and report it; never blind
 All accepted jobs were still monitored to completion. Safe local work, tests, source
 preservation and sanitized private GitHub commits continued. Five allowances remain;
 the automatic-review block is distinct from the service quota and from a kernel failure.
+
+## Resolution — 2026-10-24T16:03:34.008834+00:00
+
+The human explicitly approved this exact complete pooler source transfer after the
+$0/off-board scope and non-confidentiality warning. Read-only own-job history verified
+only the original baseline plus R01–R05 before the retry. The exact denied command
+was retried once and accepted as check job `b70d87fc51864276`. No alternate route was
+used. This historical denial remains preserved; monitor the accepted job, never resend.
