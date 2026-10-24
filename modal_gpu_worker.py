@@ -271,12 +271,14 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--repeats", type=int, default=6)
     parser.add_argument("--seed-offset", type=int, default=200000)
-    parser.add_argument("--protocol",choices=["three-runner-v1","composition-v1","screen-v1"],default="three-runner-v1")
+    parser.add_argument("--protocol",choices=["three-runner-v1","composition-v1","screen-v1","resource-v1"],default="three-runner-v1")
     parser.add_argument("--deadline-seconds",type=int,default=540)
     args = parser.parse_args()
     if not 60<=args.deadline_seconds<=540:parser.error("Bounded internal deadline required")
     period=10 if args.protocol=="composition-v1" else 6
-    if args.repeats < period or args.repeats % period:
+    if args.protocol=="resource-v1" and (args.phase!="supervise" or args.repeats!=0):
+        parser.error("Resource-only protocol requires supervise and zero benchmark repetitions")
+    if args.protocol!="resource-v1" and (args.repeats < period or args.repeats % period):
         parser.error("Use complete predefined execution-order blocks")
     candidate = args.candidate.resolve()
     if args.phase == "nearby":

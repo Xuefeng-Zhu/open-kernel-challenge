@@ -1,5 +1,7 @@
 """CPU checks for diagnostic interpretation, no GPU measurements."""
 import unittest
+from unittest.mock import patch
+import modal_gpu_worker
 from projection_resource_probe import operand_requests,ptx_features
 
 
@@ -27,3 +29,20 @@ class ResourceInterpretation(unittest.TestCase):
         for key in ['ld.global','cp.async','mma.sync','wgmma.mma_async','st.local']:
             self.assertEqual(counts[key],1,key)
         self.assertEqual(counts['ld.local'],0)
+
+    def test_resource_only_cli_reaches_supervisor_without_benchmark(self):
+        argv=['worker','--candidate','candidates/projection_pooler_grouped.py',
+              '--output-dir','/tmp/unused-resource-test','--protocol','resource-v1',
+              '--repeats','0','--deadline-seconds','150']
+        with patch('sys.argv',argv),patch.object(modal_gpu_worker,'supervise',return_value=0) as run:
+            self.assertEqual(modal_gpu_worker.main(),0)
+        self.assertEqual(run.call_args.args[2],0)
+        self.assertEqual(run.call_args.args[4],'resource-v1')
+
+    def test_resource_protocol_cannot_be_used_as_algorithm_benchmark(self):
+        argv=['worker','--candidate','candidates/projection_pooler_grouped.py',
+              '--output-dir','/tmp/unused-resource-test','--protocol','resource-v1',
+              '--phase','benchmark','--repeats','0','--deadline-seconds','150']
+        with patch('sys.argv',argv),patch('sys.stderr'),self.assertRaises(SystemExit) as outcome:
+            modal_gpu_worker.main()
+        self.assertEqual(outcome.exception.code,2)

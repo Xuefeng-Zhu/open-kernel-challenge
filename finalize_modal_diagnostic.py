@@ -15,7 +15,7 @@ from modal_diagnostics import ROOT,LEDGER,now,read_cli,write
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition","M26-qkv-layout","M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow", "M33-resource-probe"])
+    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition","M26-qkv-layout","M28-unpooler-layout", "M30-pooler-grouped", "M32-pooler-narrow", "M33-resource-probe", "M34-resource-probe-fixed"])
     args=parser.parse_args()
     os.environ["MODAL_CONFIG_PATH"]=str(ROOT/"local-notes/modal-auth.toml")
     ledger=json.loads(LEDGER.read_text())
