@@ -1,5 +1,27 @@
 # Resume this same project and exact accepted jobs
 
+## Current local branch checkpoint (2026-10-24)
+
+On `projection-bf16-local`, read **MODAL_PREFLIGHT.md** and
+`experiments/projection-cycle2-budget.json` first. User wants Modal experiments
+before further official checks. **New official dispatch paused.** Cycle2 has used
+1/10: `eeec05d897ef4946`, terminal/pass, 1.1290207051x; 9 remain, none active or
+uncertain. Prior first-cycle ten and attention one are separate exhausted budgets.
+No new work push authorized. Preserve `main` and `attention-v2-preflight` branches.
+
+Modal is gated by Mac browser login, actual workspace credit/payment/cap verification,
+and specific CLI credential/source-transfer authorization. No CLI/token/config or
+web session observed. No Modal upload/image build/GPU launch. Local bundle builder
+and bounded worker are preparation only. Do not turn the public price/Starter
+credit allowance into a claim about the account. Do not add payment method or
+create a grant. Handed-off Mac Chrome tab is at `https://modal.com/login?next=%2Fapps`.
+
+Experiment016 QKV m1 SIMT and017 unpooler m1 SIMT are separate CPU/static-only
+commits, each 39+3 checks pass, no native compilation or performance validation.
+Keep them independent; do not combine unproven changes or overwrite R10/baseline.
+
+## Historical first-cycle resume instructions
+
 Budget 10/10, 0 remain, 0 uncertain; $0, check mode only.
 Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
 Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
