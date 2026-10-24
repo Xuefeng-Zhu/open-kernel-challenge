@@ -21,7 +21,7 @@ uv pip install --python .venv/bin/python -r requirements-macos.lock
 
 The full-size suite covers the nine official prerequisite shapes plus all 30 scored
 shapes using the unmodified official FP64 reference, per-row limits and weight-column
-probe checks. Observed: **39/39 CPU cases and 5/5 focused tests pass**. The local
+probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **50/50 tests**. The local
 Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
 The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
 
@@ -42,9 +42,10 @@ SGLang's 17.34 µs. See [experiment 001](experiments/001-offboard-baseline.md),
 
 The original one-check authorization is complete. The user subsequently approved up to
 **10 NEW off-board experiments**, $0 maximum; the prior baseline is excluded.
-The admission ledger is [remote-budget.json](experiments/remote-budget.json). All five admitted checks are now terminal. Further uploads are paused by automatic
-approval review of R06; see [the exact blocker](DENIED_R06.md). Once that specific block
-is resolved, budgeted checks use at most two immutable independent jobs active; no scored submission, paid resource or new agreement is authorized. Human CLI login and rules acceptance
+The admission ledger is [remote-budget.json](experiments/remote-budget.json). Current admitted jobs and remaining allowance are recorded there. The historical
+R06 automatic-review block was resolved by specific new human approval and a single
+accepted retry; see [the audit history](DENIED_R06.md). Budgeted checks use at most
+two immutable independent jobs active; no scored submission, paid resource or new agreement is authorized. Human CLI login and rules acceptance
 were verified before sending anything.
 
 ```sh
@@ -92,8 +93,8 @@ is necessary to participate; no separate hosted-check fee is published. Stop if 
 charge appears. No scored submission is authorized.
 
 The **once-per-day scored submission limit belongs to the serving track**, whose
-separate check cap is 3/day. Latest account-specific limits are 6/20 checks used (baseline plus five new checks),
-0/10 scored runs used; exact timestamp is recorded in the admission ledger. Other kernel
+separate check cap is 3/day. Account-specific usage and exact read timestamps are in the admission ledger; the
+original baseline also consumes service quota, separately from the ten-new-run budget. Other kernel
 tasks can have different check caps. API requests are also limited to 6 submissions/minute
 per token and 10/minute per account; these are distinct from the per-day caps. There is
 no separately documented final-upload allowance: final placement uses organizer review
@@ -117,11 +118,15 @@ source hashes and remote run IDs. Failed experiments must also be recorded.
 The [experiment backlog](experiments/BACKLOG.md) explains how to choose one-variable
 changes from actual profiles while preserving correctness and quota discipline.
 [Isolated candidates](candidates/README.md) have separate experiment commits and CPU
-gates. Five now have completed H200 check evidence; unadmitted local variants remain
-GPU-unverified. The latest combined local regression suite passes 40/40 tests.
-Current remote states and the automatic-review admission pause are in the ledger.
+gates. Completed H200 evidence and unadmitted CPU-only variants are distinguished there.
+The latest combined local regression suite passes 50/50 tests. Current remote states,
+remaining budget and any admission block are recorded in the ledger.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,
 SGLang and GPU MODE attribution and license scope. Only selected task material and
 sanitized evidence are tracked. Credentials, CLI binaries, private account records,
 caches, unrelated downloaded tasks and machine-specific notes are excluded.
+
+Current performance diagnosis: [GAP_ANALYSIS.md](GAP_ANALYSIS.md), reproduced from
+actual shape timings and explicitly theoretical floor bounds, without new measurements.
+Offline candidate comparisons use `compare_results.py`; they retain cross-run caveats.

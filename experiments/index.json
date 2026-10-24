@@ -31,7 +31,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "59abe5825690427c",
-      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R01-router-control",
@@ -39,7 +39,8 @@
           "status": "done",
           "passed": true
         }
-      ]
+      ],
+      "gpu_validation": "actual terminal H200 result in R01-router-control"
     },
     {
       "id": "003-router-split-after1",
@@ -58,7 +59,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "718e0730e1bd4c30",
-      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R03-router-dispatch",
@@ -66,7 +67,8 @@
           "status": "done",
           "passed": true
         }
-      ]
+      ],
+      "gpu_validation": "actual terminal H200 result in R03-router-dispatch"
     },
     {
       "id": "004-router-fused-wide",
@@ -85,7 +87,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "89fe00c5034a4198",
-      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R02-router-wide",
@@ -93,7 +95,8 @@
           "status": "done",
           "passed": true
         }
-      ]
+      ],
+      "gpu_validation": "actual terminal H200 result in R02-router-wide"
     },
     {
       "id": "005-router-transpose-view",
@@ -133,8 +136,9 @@
           "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
-      "gpu_run_id": "e3bc1481851f4a23"
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_run_id": "e3bc1481851f4a23",
+      "gpu_validation": "actual terminal H200 result in R04-router-triton16"
     },
     {
       "id": "007-triton-pooler-local",
@@ -146,8 +150,17 @@
       "results": "results/router-pooler-split8-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_validation": "not run; CPU numerical model only",
-      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
+      "gpu_validation": "actual terminal H200 result in R06-pooler-triton8",
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_run_id": "b70d87fc51864276",
+      "gpu_runs": [
+        {
+          "experiment": "R06-pooler-triton8",
+          "job_id": "b70d87fc51864276",
+          "status": "done",
+          "passed": true
+        }
+      ]
     },
     {
       "id": "008-wide-layout-local",
@@ -167,8 +180,9 @@
           "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "Actual H200 evidence in listed remote runs; performance is per recorded result/interval, not a general guarantee",
-      "gpu_run_id": "1631810d19af4af4"
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_run_id": "1631810d19af4af4",
+      "gpu_validation": "actual terminal H200 result in R05-wide-layout"
     },
     {
       "id": "009-library-hybrid-local",
@@ -193,8 +207,17 @@
       "results": "results/router-triton-split32-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 4,
-      "gpu_validation": "not run; CPU numerical model only",
-      "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
+      "gpu_validation": "actual terminal H200 result in R08-router-split32",
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_run_id": "ab74f25caa2e46a8",
+      "gpu_runs": [
+        {
+          "experiment": "R08-router-split32",
+          "job_id": "ab74f25caa2e46a8",
+          "status": "done",
+          "passed": true
+        }
+      ]
     },
     {
       "id": "011-native-hybrid-local",
@@ -206,7 +229,16 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 4,
       "gpu_run_id": "26ea99ee0869482a",
-      "gpu_validation": "pending actual official H200 check; CPU numerical model not GPU evidence"
+      "gpu_validation": "actual terminal H200 result in R07-router-native-wide",
+      "gpu_runs": [
+        {
+          "experiment": "R07-router-native-wide",
+          "job_id": "26ea99ee0869482a",
+          "status": "done",
+          "passed": true
+        }
+      ],
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee"
     },
     {
       "id": "012-qkv-split8-local",
@@ -228,7 +260,17 @@
       "results": "results/router-pooler-simt-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_validation": "not run; CPU numerical model only"
+      "gpu_validation": "pending actual H200 result in R09-pooler-simt",
+      "gpu_run_id": "97aa5690ff134369",
+      "gpu_runs": [
+        {
+          "experiment": "R09-pooler-simt",
+          "job_id": "97aa5690ff134369",
+          "status": "queued",
+          "passed": null
+        }
+      ],
+      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee"
     }
   ],
   "remote_experiments": [
@@ -331,7 +373,7 @@
       "job_id": "ab74f25caa2e46a8",
       "mode": "check",
       "status": "done",
-      "result_commit": "3a84ae002d335c2116352099781f3ec559dd9027",
+      "result_commit": "5d742b7eb6a7f1e069d3810654d479e13b62646b",
       "record": "experiments/remote-R08-router-split32.md",
       "results": "results/remote-R08-router-split32.json",
       "timings": "results/remote-R08-router-split32.csv"
@@ -361,7 +403,7 @@
     "passed": 50,
     "total": 50,
     "python_compilation_passed": true,
-    "gpu_admissions": 8,
+    "gpu_admissions": 9,
     "uncertain_requests": 0,
     "admission_paused": false,
     "environment": {

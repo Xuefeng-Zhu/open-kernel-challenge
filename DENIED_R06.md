@@ -1,4 +1,4 @@
-# Exact remaining blocker — planned R06 was not executed
+# Historical R06 denial and later approved resolution
 
 The broad user authorization was up to ten new off-board dense-projection checks at
 $0. Five were admitted and all five have now reached terminal passing results.

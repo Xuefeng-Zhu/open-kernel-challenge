@@ -23,8 +23,9 @@ FlashInfer/DeepGEMM being present does not establish that a particular API/versi
 matches this BF16/FP32-router workload. Any candidate must retain BF16 activations
 and original BF16 weights; only the router has the explicit BF16 hi+lo exception.
 Switching a BF16 projection's weights to FP8/FP4 is not an allowed optimization.
-Every new GPU validation still requires separate approval; package availability is
-not authorization for a run.
+GPU validations require user authorization; the later ten-new-off-board-check budget
+permits autonomous meaningful experiments within that ceiling, at $0. Package
+availability itself grants no additional run, scored-entry or spending permission.
 
 Update: remote R04 (`e3bc1481851f4a23`) has now actually compiled/executed the custom
 Triton kernels in the supplied H200 judge and passed 9+30 correctness cases. This
