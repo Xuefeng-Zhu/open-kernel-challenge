@@ -218,6 +218,17 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_validation": "not run; deprioritized after R06 targeted regression"
+    },
+    {
+      "id": "013-pooler-simt-local",
+      "configuration_file": "candidates/pooler_simt_row.py",
+      "source_commit": "e4a262b2f727c9f26971c4cab6e331a4dac5d46c",
+      "submission_sha256": "f78af55dfd533ec18d776752f93e9754005ec0361c4bd43f437aa072f9a04e30",
+      "record": "experiments/013-pooler-simt-local.md",
+      "results": "results/router-pooler-simt-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_validation": "not run; CPU numerical model only"
     }
   ],
   "remote_experiments": [
@@ -294,7 +305,7 @@
       "job_id": "b70d87fc51864276",
       "mode": "check",
       "status": "done",
-      "result_commit": "90032a97994ad51e7779793000946545a76ba86d",
+      "result_commit": "91f668db7ba9cf1c5b1ebb8dad51889893994c55",
       "record": "experiments/remote-R06-pooler-triton8.md",
       "results": "results/remote-R06-pooler-triton8.json",
       "timings": "results/remote-R06-pooler-triton8.csv"
@@ -306,25 +317,51 @@
       "candidate": "candidates/router_hybrid_native.py",
       "job_id": "26ea99ee0869482a",
       "mode": "check",
-      "status": "queued",
+      "status": "done",
       "result_commit": "49f2b7d77b20556b8fbecfb4f155376c8219880f",
       "record": "experiments/remote-R07-router-native-wide.md",
+      "results": "results/remote-R07-router-native-wide.json",
+      "timings": "results/remote-R07-router-native-wide.csv"
+    },
+    {
+      "id": "R08-router-split32",
+      "source_commit": "7a826459b20a71076dc465681621c8928ffea813",
+      "submission_sha256": "3f269bf18100c8dbe111dfe6f4380ab323f684a23855e9a0fee5379bc451adf9",
+      "candidate": "candidates/router_triton_split32.py",
+      "job_id": "ab74f25caa2e46a8",
+      "mode": "check",
+      "status": "queued",
+      "result_commit": null,
+      "record": "experiments/remote-R08-router-split32.md",
+      "results": null,
+      "timings": null
+    },
+    {
+      "id": "R09-pooler-simt",
+      "source_commit": "e4a262b2f727c9f26971c4cab6e331a4dac5d46c",
+      "submission_sha256": "f78af55dfd533ec18d776752f93e9754005ec0361c4bd43f437aa072f9a04e30",
+      "candidate": "candidates/pooler_simt_row.py",
+      "job_id": "97aa5690ff134369",
+      "mode": "check",
+      "status": "accepted",
+      "result_commit": null,
+      "record": "experiments/remote-R09-pooler-simt.md",
       "results": null,
       "timings": null
     }
   ],
   "remote_budget": {
     "maximum": 10,
-    "admitted_or_reserved": 7,
-    "remaining": 3,
+    "admitted_or_reserved": 9,
+    "remaining": 1,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   },
   "current_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 44,
-    "total": 44,
+    "passed": 50,
+    "total": 50,
     "python_compilation_passed": true,
-    "gpu_admissions": 7,
+    "gpu_admissions": 8,
     "uncertain_requests": 0,
     "admission_paused": false,
     "environment": {

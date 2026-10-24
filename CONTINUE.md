@@ -1,18 +1,22 @@
-# Active iteration — resume the same accepted jobs
+# Resume this same project and exact accepted jobs
 
-R06 `b70d87fc51864276` and R07 `26ea99ee0869482a` are admitted. Never resend. Five earlier experiments
-are terminal/passing. Budget7/10, three remain, zero uncertain, $0/no scored entry.
-The specific R06 denial is resolved by new human approval and its sole accepted retry;
-history retained in DENIED_R06.md and the ledger. Do not repeat that retry.
+Budget 9/10, 1 remain, 0 uncertain; $0, check mode only.
+Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
+Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
 
-Poll exact accepted jobs through `python3 remote_check.py poll <experiment>` or official
-`okc status <job> --wait --json`; read pending IDs from experiments/remote-budget.json.
-At most two active jobs; follow every admitted job to terminal. Preserve source hashes,
-record actual results separately, sanitize then push to the existing private repo.
-No paid compute, scored/final entry, new credentials or material agreement.
+## Already accepted — monitor to terminal
 
-Local experiment011 prepares native R04 small-M + R02 larger-M composition; CPU39+4
-pass, GPU unverified. R07 is now admitted; monitor its exact accepted ID. Other remaining
-hypotheses: measured R04 partial-kernel split32 alternative; isolate improvements then
-compose only actual winning paths. Stop early if there is no justified candidate.
-See STATUS.md, BEST.md and REMOTE_RESULTS.md; queue state is not completion.
+```sh
+python3 remote_check.py poll R08-router-split32  # ab74f25caa2e46a8
+python3 remote_check.py poll R09-pooler-simt  # 97aa5690ff134369
+```
+
+Official CLI `status <exact-ID> --wait --json` monitors may also be running; these are read-only, not replacement jobs. Do not end iteration merely because jobs queue.
+
+For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness and timing/profile records, record failures too, then independently commit sanitized evidence. `python3 update_progress.py` refreshes derived status offline. Push only sanitized files to the existing private repository; preserve original baseline and immutable experiment sources.
+
+Historical R06 denial and its sole approved retry: `DENIED_R06.md`. Never retry that upload again. Any new denial must be honored without alternate transfer routes.
+
+Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. Current remaining hypotheses: router split-count isolation; single-row SIMT pooler; combine only measured winning regions in a separately committed/checked final candidate if justified.
+
+The unrelated attention attachment review remains ignored/local-only under `local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project.

@@ -59,6 +59,52 @@ def main():
     if ledger.get("last_account_quota"):
         lines += ["", "Latest account quota (distinct from this authorization): `" + json.dumps(ledger["last_account_quota"]) + "`."]
     (ROOT / "REMOTE_RESULTS.md").write_text("\n".join(lines) + "\n")
+    active = [x for x in admitted if x['state'] != 'terminal']
+    status = ["# Current experiment checkpoint", "",
+              f"{len(admitted)}/10 new checks admitted/reserved; {len(terminal)} terminal, "
+              f"{len(active)} pending, {len(uncertain)} uncertain, {remaining} allowances remain.",
+              "$0; no scored/public/final entry. Original baseline is separately preserved.", "",
+              "| Experiment | Job | Status | Official speedup vs SGLang |",
+              "|---|---|---|---|"]
+    for e in admitted:
+        value = f"{e['speedup']:.7f}x" if e.get('speedup') else 'unmeasured'
+        status.append(f"| {e['experiment']} | `{e.get('job_id')}` | {e['status']} | {value} |")
+    status += ["", "Exact source/result hashes, confidence intervals, correctness, per-shape times and "
+               "experiment qualifications: `experiments/index.json`, `REMOTE_RESULTS.md`, `BEST.md`.",
+               "The ledger records each read timestamp and quota; queued jobs are not completed results."]
+    if ledger.get('admission_paused'):
+        status += ["", "New uploads paused by automatic approval review; see `DENIED_R06.md` and ledger."]
+    elif ledger.get('denied_operation_resolutions'):
+        status += ["", "The historical R06 denial was resolved by specific new human approval; its single "
+                   "retry was accepted. Do not repeat it; preserve `DENIED_R06.md` history/resolution."]
+    (ROOT / 'STATUS.md').write_text('\n'.join(status) + '\n')
+    resume = ["# Resume this same project and exact accepted jobs", "",
+              f"Budget {len(admitted)}/10, {remaining} remain, {len(uncertain)} uncertain; $0, check mode only.",
+              "Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.",
+              "Never resend admitted experiments. At most two active jobs; inspect terminal results before "
+              "choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials "
+              "or material agreement. Uncertain requests stay reserved until reconciled read-only.", ""]
+    if active:
+        resume += ["## Already accepted — monitor to terminal", "", "```sh"]
+        resume += [f"python3 remote_check.py poll {e['experiment']}  # {e.get('job_id')}" for e in active]
+        resume += ["```", "", "Official CLI `status <exact-ID> --wait --json` monitors may also be running; "
+                   "these are read-only, not replacement jobs. Do not end iteration merely because jobs queue."]
+    else:
+        resume += ["All admitted jobs are terminal. Choose further work only from actual evidence and the "
+                   "remaining authorization; stop early if no meaningful hypothesis or a real blocker exists."]
+    resume += ["", "For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness "
+               "and timing/profile records, record failures too, then independently commit sanitized evidence. "
+               "`python3 update_progress.py` refreshes derived status offline. Push only sanitized files to "
+               "the existing private repository; preserve original baseline and immutable experiment sources.", "",
+               "Historical R06 denial and its sole approved retry: `DENIED_R06.md`. Never retry that upload again. "
+               "Any new denial must be honored without alternate transfer routes.", "",
+               "Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 "
+               "regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. "
+               "Current remaining hypotheses: router split-count isolation; single-row SIMT pooler; combine only "
+               "measured winning regions in a separately committed/checked final candidate if justified.", "",
+               "The unrelated attention attachment review remains ignored/local-only under "
+               "`local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project."]
+    (ROOT / 'CONTINUE.md').write_text('\n'.join(resume) + '\n')
     index_path = ROOT / "experiments/index.json"
     index = json.loads(index_path.read_text())
     index["remote_experiments"] = remotes

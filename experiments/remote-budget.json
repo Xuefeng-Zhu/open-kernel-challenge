@@ -296,13 +296,83 @@
           "left": 13
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "26ea99ee0869482a",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:05:02.390539+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:10:19.113839+00:00"
+      "last_checked_utc": "2026-10-24T16:15:03.948473+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      },
+      "passed": true,
+      "speedup": 1.0991970008951695,
+      "speedup_ci": [
+        1.0827090458817419,
+        1.1156849559085968
+      ]
+    },
+    {
+      "experiment": "R08-router-split32",
+      "candidate": "candidates/router_triton_split32.py",
+      "source_commit": "7a826459b20a71076dc465681621c8928ffea813",
+      "submission_sha256": "3f269bf18100c8dbe111dfe6f4380ab323f684a23855e9a0fee5379bc451adf9",
+      "mode": "check",
+      "created_utc": "2026-10-24T16:12:20.765680+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 8,
+          "left": 12
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "ab74f25caa2e46a8",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T16:12:21.074398+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T16:15:04.502604+00:00"
+    },
+    {
+      "experiment": "R09-pooler-simt",
+      "candidate": "candidates/pooler_simt_row.py",
+      "source_commit": "e4a262b2f727c9f26971c4cab6e331a4dac5d46c",
+      "submission_sha256": "f78af55dfd533ec18d776752f93e9754005ec0361c4bd43f437aa072f9a04e30",
+      "mode": "check",
+      "created_utc": "2026-10-24T16:15:16.702656+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      },
+      "state": "accepted",
+      "status": "accepted",
+      "job_id": "97aa5690ff134369",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T16:15:17.023952+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",
