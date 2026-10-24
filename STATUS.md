@@ -1,5 +1,10 @@
 # Current experiment checkpoint
 
+Current continuation: see MODAL_STAGE2_RESULTS.md. Unpooler019 and independent
+QKV020 both completed/passed and stopped; all native correctness checks pass.
+Latest cumulative Modal billing$0.21credits/net$0, conservative bound$0.3286below
+$2. No new official check or push. Report before expanding experiments.
+
 ## Current local continuation
 
 Second projection cycle: P2-01 eeec05d897ef4946 passed, official1.1290207051x, 1/10used/9remain, dispatch paused. Modal first smoke completed and stopped, app ap-ukvOyTeF1ztdOLggl5xJee, all native checks pass; see MODAL_RESULTS.md. One Modal initial allowance consumed, no new runs or pushes. The table below is historical first-cycle evidence.

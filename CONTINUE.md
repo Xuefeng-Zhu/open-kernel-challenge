@@ -2,15 +2,16 @@
 
 ## Current local branch checkpoint (2026-10-24)
 
-Latest: approved12-hour Modal token successfully created after one specifically
-approved safer retry. Mode0600, ignored, expires2026-10-25 06:26:47UTC. Preserve
-DENIED_MODAL_TOKEN.md history; never repeat original logging command.
-One approved Modal H200 smoke completed/passed: app ap-ukvOyTeF1ztdOLggl5xJee,
-verified stopped/tasks0. Source/bundle8f01480, experiment018. Candidate/R10/SGLang
-39/39CUDA checks each;30graph shapes x6fresh-input repeats each pass. QKVm1gross
-median16.960us vsR10 19.152us, diagnostic only/no score/CI. See MODAL_RESULTS.md.
-Initial Modal allowance1/1used; no second run approved. Latest gross$0.12credits
--$0.12,billed$0; cap remains$0; UI counters update asynchronously.
+Latest: requested Modal continuation completed, no expansion started. Read
+MODAL_STAGE2_RESULTS.md and experiments/modal-diagnostics-budget.json first.
+Experiment019 unpooler app ap-dMJsl67NMlcBiZs5KJWUFv and020 QKV repeat app
+ap-8GLNIGgfFD2naewj9oD2vD both passed and are verified stopped/tasks0. Each has
+39 CUDA cases per runner and30 graph shapes (12/30 repeats). Target paired gross
+R10/candidate medians1.38704 and1.13013. QKV first two43.904/41.600us samples
+retained; tail behavior unresolved. No official score/CI. Report before expansion.
+Cumulative actual credits about$0.21, net$0; conservative stage bound$0.328587546
+below$2 including the initial smoke. All original sources/budgets preserved.
+Existing token expires2026-10-25 06:26:47UTC; no new grant/extension. No push.
 
 On `projection-bf16-local`, read **MODAL_PREFLIGHT.md** and
 `experiments/projection-cycle2-budget.json` first. User wants Modal experiments
@@ -25,9 +26,11 @@ pause wording did not prevent this credit-covered H200 run. Before further
 approved work recheck credits, cap and12-hour token expiry. No secrets in bundles.
 Mac Chrome billing tab is https://modal.com/settings/xuefeng-zhu/usage.
 
-Experiment016 QKV m1SIMT now has native H200 correctness and a small diagnostic
-sample, not an official check. Experiment017 unpooler remains CPU/static-only
-(39+3checks). Keep them independent, preserve R10 and original baseline. No push.
+Experiment016 QKV m1SIMT now has initial + independent H200 diagnostics;
+experiment017 unpooler has native H200 evidence via019. Preserve separate sources,
+R10 and original baseline. Do not silently combine components or change measurement
+protocol. The old initial-smoke one-run guard is historical; user authorized the
+recorded continuation stage. Stop/report here before additional experiments.
 
 ## Historical first-cycle resume instructions
 

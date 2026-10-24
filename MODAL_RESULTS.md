@@ -1,9 +1,14 @@
 # First Modal H200 smoke — completed, stopped, no official entry
 
+Current continuation: see MODAL_STAGE2_RESULTS.md. Unpooler019 and independent
+QKV020 both completed/passed and stopped; all native correctness checks pass.
+Latest cumulative Modal billing$0.21credits/net$0, conservative bound$0.3286below
+$2. No new official check or push. Report before expanding experiments.
+
 App `ap-ukvOyTeF1ztdOLggl5xJee`, created2026-10-24 18:31:07UTC,
 stopped18:40:10UTC. Supported `modal app list --json` confirms stopped, tasks0.
 Exactly one application/function invocation; no retries or persistent deployment.
-The explicitly approved single initial Modal smoke is exhausted. New official
+The initial smoke limit was a staged safety guard; continuation019/020 is recorded separately. New official
 dispatch remains paused: cycle2 1/10used,9remaining, all accepted jobs terminal.
 
 ## Actual native result

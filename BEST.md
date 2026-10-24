@@ -1,5 +1,10 @@
 # Best completed, correctness-passing observed candidate
 
+Current continuation: see MODAL_STAGE2_RESULTS.md. Unpooler019 and independent
+QKV020 both completed/passed and stopped; all native correctness checks pass.
+Latest cumulative Modal billing$0.21credits/net$0, conservative bound$0.3286below
+$2. No new official check or push. Report before expanding experiments.
+
 ## Current cycle2 point-score best
 
 candidates/projection_pooler_layout.py, job eeec05d897ef4946, official1.1290207051x, CI[1.1120853945,1.1459560157], all39checks passed. CI overlaps R10: no statistically resolved whole-workload improvement claimed. QKV m1SIMT has a passing Modal H200 diagnostic only, not an official score; see MODAL_RESULTS.md. R10 source and first-cycle evidence below remain unchanged.

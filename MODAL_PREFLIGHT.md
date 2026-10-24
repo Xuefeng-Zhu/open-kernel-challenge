@@ -1,8 +1,12 @@
 # Modal preparation and completed first H200 smoke
 
+Current continuation: see MODAL_STAGE2_RESULTS.md. Unpooler019 and independent
+QKV020 both completed/passed and stopped; all native correctness checks pass.
+Latest cumulative Modal billing$0.21credits/net$0, conservative bound$0.3286below
+$2. No new official check or push. Report before expanding experiments.
+
 Read **MODAL_RESULTS.md** for the completed native result and current budget.
-One initial smoke completed and the app is verified stopped; no second run is
-approved. New official OKC dispatch remains paused. All work stays local/unpushed.
+One initial smoke completed and the app is verified stopped; the requested continuation has now also completed. New official OKC dispatch remains paused. All work stays local/unpushed.
 
 ## Actual access and budget status
 

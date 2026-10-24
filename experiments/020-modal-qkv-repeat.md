@@ -24,5 +24,20 @@ limits. Experiment019 is stopped and costs reconciled before this launch.
 ```
 
 Local72unit tests/syntax passed for this unchanged driver. Original source and
-experiment018 evidence preserved. Native repeat outcome pending at preparation
-commit. Record exact app and terminal results; never replace an uncertain request.
+experiment018 evidence preserved. App ap-8GLNIGgfFD2naewj9oD2vD completed/passed,
+verified stopped/tasks0 at18:57:30UTC. Setup1.606s, worker55.997s, client63.842s,
+whole app65s, no timeout. Candidate/R10/SGLang39/39CUDA checks each and all30graph
+shapes x30fresh repetitions pass. Same H200/Torch2.14.1+cu130/Triton3.8.0 environment.
+
+QKV m1 gross median16.544us vs R10 18.608us vs SGLang18.816us. Fifteen reversed-
+order paired ratios vs R10 have median1.13013,13/15win. Candidate first samples
+43.904us and41.600us retained; p9016.963us, MAD0.112us. Two pairs lose because of
+these samples. Repeated median benefit, unresolved startup/tail spikes; no outlier
+removal, official score/CI or overhead subtraction. Unchanged-path paired ratios
+range0.9666–1.0166. See MODAL_STAGE2_RESULTS.md for qualifications.
+
+Latest cumulative billing$0.21metered, credits-$0.21,billed$0; unrounded apps
+$0.20879646. Conservative stage bound$0.328587546 below$2 including initial smoke.
+All apps stopped; no extra run, OKC check, credential, cap change or push.
+Raw samples/paired indices/seed/environment/oracle results:
+results/remote-modal-M20-qkv-repeat.json/.csv.
