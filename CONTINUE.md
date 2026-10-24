@@ -1,10 +1,16 @@
 # Resume this same project and exact accepted jobs
 
-Budget 9/10, 1 remain, 0 uncertain; $0, check mode only.
+Budget 10/10, 0 remain, 0 uncertain; $0, check mode only.
 Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
 Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
 
-All admitted jobs are terminal. Choose further work only from actual evidence and the remaining authorization; stop early if no meaningful hypothesis or a real blocker exists.
+## Already accepted — monitor to terminal
+
+```sh
+python3 remote_check.py poll R10-final-composition  # 02e099c3724e4a05
+```
+
+Official CLI `status <exact-ID> --wait --json` monitors may also be running; these are read-only, not replacement jobs. Do not end iteration merely because jobs queue.
 
 For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness and timing/profile records, record failures too, then independently commit sanitized evidence. `python3 update_progress.py` refreshes derived status offline. Push only sanitized files to the existing private repository; preserve original baseline and immutable experiment sources.
 

@@ -411,6 +411,31 @@
         0.9925054300746219,
         1.0227340218535443
       ]
+    },
+    {
+      "experiment": "R10-final-composition",
+      "candidate": "candidates/router_pooler_hybrid.py",
+      "source_commit": "5f491a34d52449f5d0c5c7985b4a0d4ecd17217d",
+      "submission_sha256": "891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee",
+      "mode": "check",
+      "created_utc": "2026-10-24T16:28:44.894662+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      },
+      "state": "accepted",
+      "status": "accepted",
+      "job_id": "02e099c3724e4a05",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T16:28:45.295313+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",

@@ -271,6 +271,18 @@
         }
       ],
       "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee"
+    },
+    {
+      "id": "014-final-composition-local",
+      "configuration_file": "candidates/router_pooler_hybrid.py",
+      "source_commit": "5f491a34d52449f5d0c5c7985b4a0d4ecd17217d",
+      "submission_sha256": "891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee",
+      "record": "experiments/014-final-composition-local.md",
+      "results": "results/router-final-hybrid-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 7,
+      "gpu_run_id": "02e099c3724e4a05",
+      "gpu_validation": "pending final actual H200 composition check"
     }
   ],
   "remote_experiments": [
@@ -386,24 +398,37 @@
       "job_id": "97aa5690ff134369",
       "mode": "check",
       "status": "done",
-      "result_commit": "85b8ea6f1fc7e40691c6796a9c0e735c99ad7b37",
+      "result_commit": "6c4d677720f7c5755443311bf22429e5b1a90046",
       "record": "experiments/remote-R09-pooler-simt.md",
       "results": "results/remote-R09-pooler-simt.json",
       "timings": "results/remote-R09-pooler-simt.csv"
+    },
+    {
+      "id": "R10-final-composition",
+      "source_commit": "5f491a34d52449f5d0c5c7985b4a0d4ecd17217d",
+      "submission_sha256": "891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee",
+      "candidate": "candidates/router_pooler_hybrid.py",
+      "job_id": "02e099c3724e4a05",
+      "mode": "check",
+      "status": "accepted",
+      "result_commit": null,
+      "record": "experiments/remote-R10-final-composition.md",
+      "results": null,
+      "timings": null
     }
   ],
   "remote_budget": {
     "maximum": 10,
-    "admitted_or_reserved": 9,
-    "remaining": 1,
+    "admitted_or_reserved": 10,
+    "remaining": 0,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   },
   "current_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 50,
-    "total": 50,
+    "passed": 57,
+    "total": 57,
     "python_compilation_passed": true,
-    "gpu_admissions": 9,
+    "gpu_admissions": 10,
     "uncertain_requests": 0,
     "admission_paused": false,
     "environment": {
