@@ -61,7 +61,8 @@ Modal public-image results are diagnostic, not leaderboard scores. Actual A07
 H200 environment: Torch2.14.1+cu130, Triton3.8.0,132SM; exact frozen image/manifest
 in its receipt. E0/E2 verify compiler metadata in A07:135/134 registers,0 driver-
 reported spills,24832 B shared. Metadata cases are the two A07 cases, not all12
-scored shapes. Official receipts preserve private evaluator/image hashes and GPU/
+scored shapes. Local official reference/checks/baseline SHA256 values exactly match the E2 judge
+receipt (contract-audit.json). Official receipts preserve private evaluator/image hashes and GPU/
 driver information; exact official Torch/Triton versions are not exposed there.
 
 ```sh

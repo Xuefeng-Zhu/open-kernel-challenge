@@ -30,3 +30,15 @@ The separately authorized official E3 check can independently establish
 compilation, correctness and performance of this narrow candidate. It cannot
 recover the missing compiler artifacts; that limitation remains explicit. No
 claim of pipeline overlap is made.
+
+## Official outcome
+
+Job d4e3fc9a2c234d72 passed all16 prerequisite tests and12 scored shapes.
+Score0.7978730330×,95%CI[0.7859049375,0.8098411285]. Versus E2 only+0.2502%,
+with overlapping CIs. Four modified full paths have reference-normalized changes
+of -0.03%,+0.15%,-0.20%,-0.16% (decodeB16/B32,verifyB16/B32). These are
+inconclusive and do not establish a speed gain. Unchanged slidingdecodeB1 control
+shifted+3.0%, larger than the target differences. No >5% regression. Preserve
+E3 as correct but not selected over simpler E2; compiler code/resource differences
+remain unknown because A09 report transfer failed. Official timing does not prove
+that the generated code is identical or that overlap was introduced.

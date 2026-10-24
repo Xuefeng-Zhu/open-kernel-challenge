@@ -1,8 +1,8 @@
 {
   "method": "Six weighted loads (46 sliding + 16 full); geometric mean over loads. Official paired adjusted times and raw times kept separate.",
   "qualification": "Candidate comparisons across separate official runs are not directly paired. CI overlap and 0\u20132% changes are inconclusive; report any >5% regression.",
-  "checks_used": 2,
-  "checks_remaining": 4,
+  "checks_used": 3,
+  "checks_remaining": 3,
   "experiments": {
     "E0": {
       "passed": true,
@@ -751,6 +751,380 @@
       "source": "reviews/attention-v2/fixed_chunks.py",
       "receipt": "E2-official-result.json",
       "score_ratio_vs_E0": 1.101613694324353
+    },
+    "E3": {
+      "passed": true,
+      "speedup": 0.7978730330211233,
+      "speedup_ci": [
+        0.7859049375258065,
+        0.8098411285164401
+      ],
+      "reproduced_six_weighted_load_score": 0.7978730330211233,
+      "shapes": [
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 1",
+            "page": 1,
+            "seed": 1961569536513267722,
+            "weight": 46
+          },
+          "official_adjusted_us": 13.711565097252114,
+          "raw_median_us": 18.09599995613098,
+          "baseline_adjusted_us": 20.655999891459942,
+          "baseline_raw_us": 24.911999702453613,
+          "paired_reference_over_candidate": 1.5064655088571572,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4255.999810993671,
+          "relative_reference_normalized_speedup_vs_E0": 0.9954492016161668
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 1",
+            "page": 1,
+            "seed": 1961758013840270863,
+            "weight": 16
+          },
+          "official_adjusted_us": 41.02866401598957,
+          "raw_median_us": 45.27999833226204,
+          "baseline_adjusted_us": 31.327998731285334,
+          "baseline_raw_us": 35.551998764276505,
+          "paired_reference_over_candidate": 0.7635637055858382,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4224.000032991171,
+          "relative_reference_normalized_speedup_vs_E0": 1.0022227175328344
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 16",
+            "page": 1,
+            "seed": 1961946491167274005,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 15.494508785516796,
+          "raw_median_us": 19.791999831795692,
+          "baseline_adjusted_us": 26.800000108778477,
+          "baseline_raw_us": 30.96000012010336,
+          "paired_reference_over_candidate": 1.729645029717191,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4160.0000113248825,
+          "relative_reference_normalized_speedup_vs_E0": 1.0075997836496615
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 16",
+            "page": 1,
+            "seed": 1962134968494277148,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 255.22670977835,
+          "raw_median_us": 259.5999985933304,
+          "baseline_adjusted_us": 199.84000688418746,
+          "baseline_raw_us": 204.41600680351257,
+          "paired_reference_over_candidate": 0.7829901778608408,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4575.999919325113,
+          "relative_reference_normalized_speedup_vs_E0": 1.1300842103847692
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "decode 32",
+            "page": 1,
+            "seed": 1962323445821280292,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 19.974160759426724,
+          "raw_median_us": 24.191999807953835,
+          "baseline_adjusted_us": 31.53599938377738,
+          "baseline_raw_us": 35.66399961709976,
+          "paired_reference_over_candidate": 1.5788397702213395,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4128.000233322382,
+          "relative_reference_normalized_speedup_vs_E0": 1.023212109979498
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "decode 32",
+            "page": 1,
+            "seed": 1962511923148283437,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 367.8181908846863,
+          "raw_median_us": 372.44799733161926,
+          "baseline_adjusted_us": 383.9999889023602,
+          "baseline_raw_us": 388.0319893360138,
+          "paired_reference_over_candidate": 1.0439940123101388,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4032.000433653593,
+          "relative_reference_normalized_speedup_vs_E0": 1.387977913649835
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 1",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1962700400475286583,
+            "weight": 46
+          },
+          "official_adjusted_us": 43.5592198345788,
+          "raw_median_us": 48.01600053906441,
+          "baseline_adjusted_us": 22.736000828444958,
+          "baseline_raw_us": 26.99200063943863,
+          "paired_reference_over_candidate": 0.5219561074506743,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4255.999810993671,
+          "relative_reference_normalized_speedup_vs_E0": 1.0028872253265328
+        },
+        {
+          "case": {
+            "batch": 1,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 1",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1962888877802289730,
+            "weight": 16
+          },
+          "official_adjusted_us": 75.78978399688494,
+          "raw_median_us": 80.35200089216232,
+          "baseline_adjusted_us": 35.66399961709976,
+          "baseline_raw_us": 40.0799997150898,
+          "paired_reference_over_candidate": 0.470564734932687,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4416.000097990036,
+          "relative_reference_normalized_speedup_vs_E0": 0.9891118908233619
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 16",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1963077355129292878,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 37.33819754238209,
+          "raw_median_us": 41.34400002658367,
+          "baseline_adjusted_us": 29.408001340925694,
+          "baseline_raw_us": 33.440001308918,
+          "paired_reference_over_candidate": 0.7876117026684286,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4031.9999679923058,
+          "relative_reference_normalized_speedup_vs_E0": 0.999367171583996
+        },
+        {
+          "case": {
+            "batch": 16,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 16",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1963265832456296027,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 338.86457098192045,
+          "raw_median_us": 342.44799613952637,
+          "baseline_adjusted_us": 205.23200137540698,
+          "baseline_raw_us": 209.07200127840042,
+          "paired_reference_over_candidate": 0.605646086814891,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 3839.9999029934406,
+          "relative_reference_normalized_speedup_vs_E0": 1.1165740879566488
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "soft",
+            "heads": "tp8",
+            "layer": "sliding",
+            "load": "verify 32",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1963454309783299177,
+            "spread": "agentic",
+            "weight": 46
+          },
+          "official_adjusted_us": 44.92637303230465,
+          "raw_median_us": 49.04000088572502,
+          "baseline_adjusted_us": 34.39999930560589,
+          "baseline_raw_us": 38.59199956059456,
+          "paired_reference_over_candidate": 0.7656972282376391,
+          "runs": 60,
+          "raw_sample_count": 60,
+          "fixed_overhead_ns": 4192.00025498867,
+          "relative_reference_normalized_speedup_vs_E0": 1.000673179815592
+        },
+        {
+          "case": {
+            "batch": 32,
+            "ctx": 80000,
+            "dist": "coherent",
+            "heads": "tp8",
+            "layer": "full",
+            "load": "verify 32",
+            "page": 1,
+            "q_len": 8,
+            "seed": 1963642787110302328,
+            "spread": "agentic",
+            "weight": 16
+          },
+          "official_adjusted_us": 587.7563394946152,
+          "raw_median_us": 590.5920267105103,
+          "baseline_adjusted_us": 388.5440034791827,
+          "baseline_raw_us": 392.86400377750397,
+          "paired_reference_over_candidate": 0.6610630585682392,
+          "runs": 58,
+          "raw_sample_count": 58,
+          "fixed_overhead_ns": 4320.000298321247,
+          "relative_reference_normalized_speedup_vs_E0": 1.1533492931884837
+        }
+      ],
+      "loads": [
+        {
+          "load": "decode 1",
+          "baseline_us": 1451.4239747077227,
+          "candidate_us": 1287.1906187294303,
+          "speedup": 1.1275905476536219
+        },
+        {
+          "load": "decode 16",
+          "baseline_us": 4430.240115150809,
+          "candidate_us": 4796.374760587373,
+          "speedup": 0.9236642956999203
+        },
+        {
+          "load": "decode 32",
+          "baseline_us": 7594.655794091523,
+          "candidate_us": 6803.9024490886095,
+          "speedup": 1.1162205588513157
+        },
+        {
+          "load": "verify 1",
+          "baseline_us": 1616.4800319820642,
+          "candidate_us": 3216.3606563407834,
+          "speedup": 0.5025804642882042
+        },
+        {
+          "load": "verify 16",
+          "baseline_us": 4636.480083689094,
+          "candidate_us": 7139.390222660303,
+          "speedup": 0.6494224211155996
+        },
+        {
+          "load": "verify 32",
+          "baseline_us": 7799.104023724794,
+          "candidate_us": 11470.714591399857,
+          "speedup": 0.6799143995416079
+        }
+      ],
+      "tests_passed": 16,
+      "flags": [],
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 123.91,
+          "power.limit": 700,
+          "temperature.gpu": 39
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 145.38,
+          "power.limit": 700,
+          "temperature.gpu": 40
+        },
+        "node": "n-pdvovmvyiyrqmsczyisltml3mn"
+      },
+      "job_id": "d4e3fc9a2c234d72",
+      "source_commit": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+      "source_sha256": "b917b19ec78506fe6145509a6d51c7f83a034d4b4ea0c4b1b99b88042f31771f",
+      "source": "reviews/attention-v2/pipeline.py",
+      "receipt": "E3-official-result.json",
+      "score_ratio_vs_E0": 1.1043698434240508
     }
   }
 }
