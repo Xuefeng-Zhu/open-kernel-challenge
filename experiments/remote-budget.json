@@ -5,7 +5,7 @@
   "mode": "check",
   "max_spend_usd": 0,
   "max_active_jobs": 2,
-  "bounded_concurrency_reason": "Two prevalidated, independent controls can wait through the shared queue without flooding it; inspect both before admitting more. Honor any stricter server limit.",
+  "bounded_concurrency_reason": "At most two independent jobs. Review each completed result before admitting a replacement; keep the other immutable pending source. Honor stricter server limits.",
   "requests": [
     {
       "experiment": "R01-router-control",
@@ -26,13 +26,31 @@
           "left": 19
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "59abe5825690427c",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:02:18.259654+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:06:55.761495+00:00"
+      "last_checked_utc": "2026-10-24T08:16:29.129889+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "passed": true,
+      "speedup": 1.001294301268592,
+      "speedup_ci": [
+        0.9862748867495631,
+        1.0163137157876208
+      ]
     },
     {
       "experiment": "R02-router-wide",
@@ -59,7 +77,7 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:02:53.374629+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:06:56.044807+00:00"
+      "last_checked_utc": "2026-10-24T08:16:29.732608+00:00"
     }
   ]
 }
