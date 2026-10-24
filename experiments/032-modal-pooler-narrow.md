@@ -20,3 +20,17 @@ experiments and retain original best rather than burn official budget.
 ```
 
 GPU pending at preparation. Check local CPU gate before committing/launching.
+
+Terminal: app ap-L3DFQUMb8HkSfOzpd5K953 stopped/tasks0. Worker77.232s/app90s,
+full117CUDA official cases+30nearby freshgraphchecks+alltimedreplays pass. Native
+m128 still66.272us vsbest28.336us (pairedratio0.431404,0/15wins); m256122.896us
+vs34.352us (0.277096,0/15wins). Aggregate best/candidate0.86306024. Reject; no
+new official check. Compared with separateM30 app, m128 appears similar andm256
+worse, but no paired inter-app speed ratio claimed. More CTAs alone did not recover
+performance; causal memory/occupancy diagnosis would require compiler/profiler
+measurements. Stop this basic-tile route; no justified ready official candidate.
+
+Latest billing$0.69gross/$0net, previously observed$0.73highwater demonstrates
+asynchronous/revised counters. Conservative stageguard$0.964254<$2. Allapps
+stopped, no uncertain operations, no credential/cap/payment/terms/push changes.
+Full samples/results results/remote-modal-M32-pooler-narrow.json/.csv.
