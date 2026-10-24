@@ -2,6 +2,11 @@
 
 ## Resolution
 
+Subsequent authorized single H200 smoke also completed/passed and app stopped;
+see MODAL_RESULTS.md. The portal pause wording did not prevent that credit-covered
+run. No paid-service resume or workaround occurred. The investigation below is
+historical evidence from before native execution.
+
 After new explicit user approval, performed exactly one safer retry with no output
 redirection. Official Modal browser screen requested workspace `xuefeng-zhu` and
 12 hours, matching approval; authorized successfully. Config is task-local ignored

@@ -22,3 +22,11 @@ PyTorch2.14.1, no CUDA/Triton; CPU path models FP32 products and reduction.
 **GPU compilation, numerical behavior, graph capture and performance unverified.**
 No remote request, run ID, Modal upload or measured speedup. Official dispatch is
 paused for the user's Modal-first workflow. New work remains local, unpushed.
+
+## Subsequent native H200 evidence (experiment018)
+
+One approved Modal smoke, app ap-ukvOyTeF1ztdOLggl5xJee, now verified stopped.
+Candidate passed39/39native CUDA checks and all30graph shapes x6fresh inputs.
+QKVm1gross median16.960us vs R10 19.152us; first38.176us outlier retained.
+No official score, no CI; further repetitions needed. All raw evidence in
+results/remote-modal-smoke.json and MODAL_RESULTS.md. Candidate bytes unchanged.

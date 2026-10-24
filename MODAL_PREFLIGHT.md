@@ -1,51 +1,37 @@
-# Modal preparation — local only, launch gated
+# Modal preparation and completed first H200 smoke
 
-**Latest: official Modal1.6.2 client installed after explicit approval. Token
-creation was rejected before execution because output redirection could log
-credentials. See DENIED_MODAL_TOKEN.md. Neither token config nor output log
-exists. No token/GPU run. Do not retry without materially new authorization.**
-
-Local verification 2026-10-24 18:09 UTC (before Modal installation): all **69 unittest tests passed**,
-including 3 bundle-boundary tests; syntax checks passed. Worker benchmark entry
-on this Mac correctly records `Explicit H200 required; no fallback GPU`, zero
-cases. No native CUDA, container image or Modal SDK execution has occurred.
+Read **MODAL_RESULTS.md** for the completed native result and current budget.
+One initial smoke completed and the app is verified stopped; no second run is
+approved. New official OKC dispatch remains paused. All work stays local/unpushed.
 
 ## Actual access and budget status
 
-2026-10-24 18:14 UTC: after explicit user authorization, clicked “Continue with
-GitHub” in the user's Mac Chrome. Existing session signed in successfully, with
-no new OAuth grant, explicit agreement or credential entry. Workspace
-`xuefeng-zhu`, Starter, connected GitHub `Xuefeng-Zhu`. Actual credit popover
-confirms **$30.00 left, $0.00 used** this billing period. Billing overview shows
-$0.00 spend and gross usage limit $42.50. Net Spend limit was default $12.50;
-set it to **$0** under the user's explicit constraint, saved and verified again
-after returning to the page. Local screenshots are ignored under `local-notes/`.
+Existing GitHub login completed in the user's Mac Chrome without new OAuth or
+terms. Workspace `xuefeng-zhu`, connected GitHub `Xuefeng-Zhu`, Starter. Before
+running, actual credits $30.00/$0 used and an existing payment method were verified.
+Set net Spend limit from default $12.50 to $0 under the user's express constraint;
+it persisted and was rechecked after the run. Gross usage limit remains $42.50.
 
-Existing payment method present in Stripe portal; no payment details changed.
-The portal also says **“Your service is paused.”** Modal itself shows Starter,
-credits and a GPU concurrency allowance of10/current0. Whether the portal message
-affects free-credit GPU execution is unresolved; do not silently resume service
-or add/upgrade anything. No local Modal CLI/package, `~/.modal.toml`, or Modal
-token environment variables found. No new credential, OAuth grant, code upload,
-image build, GPU launch or cost occurred.
+Official Modal CLI 1.6.2 installed. One original token command was rejected before
+execution due to logging risk. After new explicit approval, its sole safer retry
+without output redirection succeeded. Details/history: DENIED_MODAL_TOKEN.md.
+Token is in ignored task-local `local-notes/modal-auth.toml`, mode0600; supported
+read-only metadata verifies user/workspace xuefeng-zhu and expiry
+2026-10-25 06:26:47UTC. No secret is printed, logged, committed or uploaded.
+Do not create another credential or extend its lifetime automatically.
 
-User permits free-credit-only experiments with additional out-of-pocket $0.
-Before launching: reconcile any effective service pause and obtain specific CLI
-credential and intended source-upload authorization. A **spend limit** caps net usage after credits,
-whereas a **usage budget** caps gross usage before credits. Public documentation
-does not establish that this account has credits, that the UI accepts zero, or
-that enforcement guarantees zero overshoot. If the requested $0 constraint cannot
-be established, stop and report. Do not add a payment method or upgrade.
+The approved 17-file source/license bundle and generated manifest were uploaded
+only for app `ap-ukvOyTeF1ztdOLggl5xJee`. Actual H200 execution passed all checks;
+app stopped at18:40:10UTC with tasks0. The portal's unexplained “Your service is
+paused” did not prevent this credit-covered run. No resume, payment change,
+upgrade or new agreement. Latest supported billing snapshot: gross$0.12,
+credits-$0.12, billed$0; detailed ephemeral-app cost$0.12054281. UI balances lag.
 
-No CLI authorization exists. Minimal next approval request: install the official
-Modal client in the task virtualenv and authorize a **12-hour** CLI token for
-workspace `xuefeng-zhu`, using the already signed-in browser. Store it only at
-the ignored task-local `local-notes/modal-auth.toml` via documented
-`MODAL_CONFIG_PATH`, with owner-only file permissions. This grants programmatic
-workspace access rather than mere web login; inspect and disclose the actual
-authorization screen before any material expansion. The documented command is
-`modal token new --expires-in 12h`. Never paste credentials into chat. **Not yet
-approved or run.** This request does not itself authorize uploading the test bundle.
+A spend limit caps net charges after credits, whereas a usage budget caps gross
+usage before credits. Keep $0 net cap; recheck applicable credits and expiry
+before any newly authorized run. Do not promise absolute billing enforcement or
+use per-token Shared Endpoints, which the included compute credits do not cover.
+Local screenshots under local-notes are ignored and never part of a transfer.
 
 ## Local deliverables and limits
 
@@ -55,7 +41,9 @@ It excludes git history, accounts/config, caches, CLI binaries, raw logs, attent
 drafts and all unrelated projects. The manifest includes the candidate, frozen
 R10, downloaded official oracle/fixtures/baseline, harness and licenses. Review
 this manifest before separately authorized source transfer. It is not permission
-to upload. Default gates are all false; there is deliberately no launch command.
+to upload. Default manifest gates are false historical planning metadata, not authorization.
+The separate modal_smoke.py launcher has a durable one-attempt guard; its one
+approved attempt is already consumed, so do not rerun it.
 
 ```sh
 .venv/bin/python modal_preflight.py --candidate candidates/projection_qkv_m1_simt.py
@@ -70,7 +58,7 @@ schedules or volumes/secrets). Request **H200**, 2 CPU/8192MiB, max_containers=1
 min_containers=0, buffer_containers=0, scaledown_window=2, timeout=600,
 startup_timeout=120, retries=0. Clear the SGLang image entrypoint. Verify these
 options against the installed SDK before any launch, and verify app stopped after
-the client exits. No Modal SDK has been installed or tested here.
+the client exits. These options were verified against installed Modal1.6.2 and used for the completed smoke.
 
 The advertised public base is
 `lmsysorg/sglang@sha256:8cfc5a72cb296771f5f8a4a4688cb6d05685610a830cbb616fa4ab0eb7bb2b0a`,
@@ -78,8 +66,8 @@ SGLang commit `a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f`
 ([official environment](https://openkernelchallenge.dev/api/v1/serving)). This is
 **not** the private judge overlay `localhost:30500/kc/judge@sha256:9a7f…` reported
 by OKC. Do not substitute that overlay digest as a public image or seek registry
-credentials. Public-base pull, Python path, entrypoint and dependency compatibility
-remain untested. Probe actual Torch/Triton/SGLang versions and CUDA driver before
+credentials. Public-base pull and cleared entrypoint succeeded. Runtime Python was
+/opt/sglang/bin/python; Torch2.14.1+cu130/Triton3.8.0 and the baseline all executed. Probe actual Torch/Triton/SGLang versions and CUDA driver before
 tests; do not silently install a different GPU stack or use a fallback GPU.
 
 Once provisioned with separate authorization, invoke inside the frozen bundle:

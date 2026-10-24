@@ -2,10 +2,15 @@
 
 ## Current local branch checkpoint (2026-10-24)
 
-Latest: Modal CLI1.6.2 installed, but token-creation command denied BEFORE
-execution because output redirection could log credentials. Neither config nor
-log exists. Read DENIED_MODAL_TOKEN.md; no alternate route/retry without materially
-new relevant user authorization. No Modal upload/GPU/cost, and no new OKC checks.
+Latest: approved12-hour Modal token successfully created after one specifically
+approved safer retry. Mode0600, ignored, expires2026-10-25 06:26:47UTC. Preserve
+DENIED_MODAL_TOKEN.md history; never repeat original logging command.
+One approved Modal H200 smoke completed/passed: app ap-ukvOyTeF1ztdOLggl5xJee,
+verified stopped/tasks0. Source/bundle8f01480, experiment018. Candidate/R10/SGLang
+39/39CUDA checks each;30graph shapes x6fresh-input repeats each pass. QKVm1gross
+median16.960us vsR10 19.152us, diagnostic only/no score/CI. See MODAL_RESULTS.md.
+Initial Modal allowance1/1used; no second run approved. Latest gross$0.12credits
+-$0.12,billed$0; cap remains$0; UI counters update asynchronously.
 
 On `projection-bf16-local`, read **MODAL_PREFLIGHT.md** and
 `experiments/projection-cycle2-budget.json` first. User wants Modal experiments
@@ -14,19 +19,15 @@ before further official checks. **New official dispatch paused.** Cycle2 has use
 uncertain. Prior first-cycle ten and attention one are separate exhausted budgets.
 No new work push authorized. Preserve `main` and `attention-v2-preflight` branches.
 
-Modal web login is now complete through the user's expressly authorized existing
-GitHub session. Workspace xuefeng-zhu, GitHub Xuefeng-Zhu, actual credits$30left,
-usage$0, payment method present; net Spend limit set to$0 and persisted. Gross
-usage limit$42.50 differs from net spend cap. Stripe says service paused; effective
-GPU availability unresolved, do not resume/change plan. Specific CLI credential
-and source-transfer authorization still pending. No CLI/token/config or Modal
-upload/image build/GPU launch. Read MODAL_PREFLIGHT.md for the precise next request;
-do not create a grant. Handed-off Mac Chrome tab is at
-`https://modal.com/settings/xuefeng-zhu/usage`.
+Modal web login/CLI verified workspace xuefeng-zhu, GitHub Xuefeng-Zhu. $0 net
+Spend limit remains; paid service was never resumed or upgraded. The Stripe
+pause wording did not prevent this credit-covered H200 run. Before further
+approved work recheck credits, cap and12-hour token expiry. No secrets in bundles.
+Mac Chrome billing tab is https://modal.com/settings/xuefeng-zhu/usage.
 
-Experiment016 QKV m1 SIMT and017 unpooler m1 SIMT are separate CPU/static-only
-commits, each 39+3 checks pass, no native compilation or performance validation.
-Keep them independent; do not combine unproven changes or overwrite R10/baseline.
+Experiment016 QKV m1SIMT now has native H200 correctness and a small diagnostic
+sample, not an official check. Experiment017 unpooler remains CPU/static-only
+(39+3checks). Keep them independent, preserve R10 and original baseline. No push.
 
 ## Historical first-cycle resume instructions
 

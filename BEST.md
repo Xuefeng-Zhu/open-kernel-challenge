@@ -1,5 +1,11 @@
 # Best completed, correctness-passing observed candidate
 
+## Current cycle2 point-score best
+
+candidates/projection_pooler_layout.py, job eeec05d897ef4946, official1.1290207051x, CI[1.1120853945,1.1459560157], all39checks passed. CI overlaps R10: no statistically resolved whole-workload improvement claimed. QKV m1SIMT has a passing Modal H200 diagnostic only, not an official score; see MODAL_RESULTS.md. R10 source and first-cycle evidence below remain unchanged.
+
+## Preserved first-cycle evidence
+
 Candidate: `candidates/router_pooler_hybrid.py`; source commit `5f491a34d52449f5d0c5c7985b4a0d4ecd17217d`.
 SHA256: `891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee`. Job `02e099c3724e4a05`, mode check.
 

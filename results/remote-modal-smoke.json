@@ -1,0 +1,4475 @@
+{
+  "kind": "Modal H200 native correctness and gross graph diagnostic; NOT official OKC score",
+  "app_id": "ap-ukvOyTeF1ztdOLggl5xJee",
+  "source_commit": "8f0148036e19cd49ec07a529c6be373bcaea22cc",
+  "candidate": "candidates/projection_qkv_m1_simt.py",
+  "submission_sha256": "9cea9ceed1dab548368746e83540f25edff94f472e8701c05526ea9995759d55",
+  "bundle_sha256": "de30820708f61730270f5064764818fe83ee01a24b6bb9acd066d76cb00beed6",
+  "termination": {
+    "app_id": "ap-ukvOyTeF1ztdOLggl5xJee",
+    "description": "okc-projection-smoke",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-24 11:31:07-07:00",
+    "stopped_at": "2026-10-24 11:40:10-07:00"
+  },
+  "client_setup_seconds": 486.8494751669932,
+  "client_wall_seconds": 542.1202712089289,
+  "worker_wall_seconds": 48.874792172,
+  "records": {
+    "candidate-correctness.json": {
+      "kind": "local correctness only",
+      "environment": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+        "torch": "2.14.1+cu130",
+        "device": "cuda",
+        "cuda_runtime": "13.0",
+        "cuda_available": true,
+        "implementation": "candidates/projection_qkv_m1_simt.py",
+        "submission_sha256": "9cea9ceed1dab548368746e83540f25edff94f472e8701c05526ea9995759d55",
+        "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+        "gpu": "NVIDIA H200",
+        "capability": [
+          9,
+          0
+        ],
+        "tf32_allowed": false,
+        "bf16_reduced_precision_reduction": true
+      },
+      "weight_seed": 5151,
+      "seed_offset": 0,
+      "cases": [
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "dist": "normal",
+            "seed": 10001
+          },
+          "actual_seed": 10001,
+          "passed": true,
+          "message": "relative L2 error 0.000e+00 (worst row 0.000e+00)"
+        },
+        {
+          "case": {
+            "m": 7,
+            "layer": "pooler",
+            "dist": "normal",
+            "seed": 10002
+          },
+          "actual_seed": 10002,
+          "passed": true,
+          "message": "relative L2 error 1.560e-04 (worst row 2.472e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 33,
+            "layer": "o",
+            "dist": "normal",
+            "seed": 10003
+          },
+          "actual_seed": 10003,
+          "passed": true,
+          "message": "relative L2 error 5.191e-05 (worst row 1.797e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 130,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10004
+          },
+          "actual_seed": 10004,
+          "passed": true,
+          "message": "relative L2 error 1.343e-04 (worst row 2.901e-04); 20 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 5,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10005
+          },
+          "actual_seed": 10005,
+          "passed": true,
+          "message": "relative L2 error 3.435e-06 (worst row 7.884e-06)"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "dist": "normal",
+            "seed": 10006
+          },
+          "actual_seed": 10006,
+          "passed": true,
+          "message": "relative L2 error 2.566e-06 (worst row 2.838e-06); 2 probe rows exact to 2.5e-06"
+        },
+        {
+          "case": {
+            "m": 9,
+            "layer": "router",
+            "dist": "outliers",
+            "seed": 10007
+          },
+          "actual_seed": 10007,
+          "passed": true,
+          "message": "relative L2 error 2.959e-06 (worst row 3.231e-06); 1 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 512,
+            "layer": "qkv_gate",
+            "dist": "outliers",
+            "seed": 10008
+          },
+          "actual_seed": 10008,
+          "passed": true,
+          "message": "relative L2 error 2.136e-04 (worst row 4.968e-04); 59 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1000,
+            "layer": "unpooler",
+            "dist": "outliers",
+            "seed": 10009
+          },
+          "actual_seed": 10009,
+          "passed": true,
+          "message": "relative L2 error 1.509e-04 (worst row 4.145e-04); 125 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 201
+          },
+          "actual_seed": 201,
+          "passed": true,
+          "message": "relative L2 error 0.000e+00 (worst row 0.000e+00)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "o",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 202
+          },
+          "actual_seed": 202,
+          "passed": true,
+          "message": "relative L2 error 2.181e-05 (worst row 2.181e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "pooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 203
+          },
+          "actual_seed": 203,
+          "passed": true,
+          "message": "relative L2 error 6.104e-05 (worst row 6.104e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "unpooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 204
+          },
+          "actual_seed": 204,
+          "passed": true,
+          "message": "relative L2 error 1.484e-05 (worst row 1.484e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "router",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 205
+          },
+          "actual_seed": 205,
+          "passed": true,
+          "message": "relative L2 error 2.456e-06 (worst row 2.456e-06)"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "qkv_gate",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 206
+          },
+          "actual_seed": 206,
+          "passed": true,
+          "message": "relative L2 error 8.619e-05 (worst row 1.638e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "o",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 207
+          },
+          "actual_seed": 207,
+          "passed": true,
+          "message": "relative L2 error 3.589e-05 (worst row 1.774e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "pooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 208
+          },
+          "actual_seed": 208,
+          "passed": true,
+          "message": "relative L2 error 8.334e-05 (worst row 2.169e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "unpooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 209
+          },
+          "actual_seed": 209,
+          "passed": true,
+          "message": "relative L2 error 1.407e-04 (worst row 2.637e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "router",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 210
+          },
+          "actual_seed": 210,
+          "passed": true,
+          "message": "relative L2 error 2.683e-06 (worst row 3.029e-06); 3 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "qkv_gate",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 211
+          },
+          "actual_seed": 211,
+          "passed": true,
+          "message": "relative L2 error 1.546e-04 (worst row 4.597e-04); 6 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "o",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 212
+          },
+          "actual_seed": 212,
+          "passed": true,
+          "message": "relative L2 error 6.258e-05 (worst row 1.235e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "pooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 213
+          },
+          "actual_seed": 213,
+          "passed": true,
+          "message": "relative L2 error 9.031e-05 (worst row 2.083e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "unpooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 214
+          },
+          "actual_seed": 214,
+          "passed": true,
+          "message": "relative L2 error 1.255e-04 (worst row 2.203e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "router",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 215
+          },
+          "actual_seed": 215,
+          "passed": true,
+          "message": "relative L2 error 2.743e-06 (worst row 3.146e-06); 5 probe rows exact to 2.8e-06"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "qkv_gate",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 216
+          },
+          "actual_seed": 216,
+          "passed": true,
+          "message": "relative L2 error 5.261e-05 (worst row 8.451e-05); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "o",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 217
+          },
+          "actual_seed": 217,
+          "passed": true,
+          "message": "relative L2 error 8.004e-05 (worst row 1.906e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "pooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 218
+          },
+          "actual_seed": 218,
+          "passed": true,
+          "message": "relative L2 error 8.819e-05 (worst row 1.285e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "unpooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 219
+          },
+          "actual_seed": 219,
+          "passed": true,
+          "message": "relative L2 error 2.943e-06 (worst row 7.856e-06); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 220
+          },
+          "actual_seed": 220,
+          "passed": true,
+          "message": "relative L2 error 2.454e-06 (worst row 2.636e-06); 2 probe rows exact to 2.3e-06"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "qkv_gate",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 221
+          },
+          "actual_seed": 221,
+          "passed": true,
+          "message": "relative L2 error 1.547e-04 (worst row 3.668e-04); 21 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "o",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 222
+          },
+          "actual_seed": 222,
+          "passed": true,
+          "message": "relative L2 error 5.461e-05 (worst row 1.892e-04); 18 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "pooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 223
+          },
+          "actual_seed": 223,
+          "passed": true,
+          "message": "relative L2 error 2.064e-04 (worst row 4.322e-04); 16 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "unpooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 224
+          },
+          "actual_seed": 224,
+          "passed": true,
+          "message": "relative L2 error 1.374e-04 (worst row 2.785e-04); 13 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "router",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 225
+          },
+          "actual_seed": 225,
+          "passed": true,
+          "message": "relative L2 error 3.172e-06 (worst row 3.670e-06); 15 probe rows exact to 2.9e-06"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "qkv_gate",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 226
+          },
+          "actual_seed": 226,
+          "passed": true,
+          "message": "relative L2 error 2.143e-04 (worst row 5.481e-04); 44 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "o",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 227
+          },
+          "actual_seed": 227,
+          "passed": true,
+          "message": "relative L2 error 5.134e-05 (worst row 2.770e-04); 37 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "pooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 228
+          },
+          "actual_seed": 228,
+          "passed": true,
+          "message": "relative L2 error 2.138e-04 (worst row 5.056e-04); 38 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "unpooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 229
+          },
+          "actual_seed": 229,
+          "passed": true,
+          "message": "relative L2 error 1.463e-04 (worst row 3.176e-04); 28 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "router",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 230
+          },
+          "actual_seed": 230,
+          "passed": true,
+          "message": "relative L2 error 3.150e-06 (worst row 3.700e-06); 33 probe rows exact to 2.8e-06"
+        }
+      ],
+      "weights_unchanged": true,
+      "passed": true
+    },
+    "stages.json": {
+      "kind": "bounded GPU preflight; no official upload",
+      "source_commit": "8f0148036e19cd49ec07a529c6be373bcaea22cc",
+      "candidate": "candidates/projection_qkv_m1_simt.py",
+      "stages": [
+        {
+          "name": "correctness-candidate",
+          "command": [
+            "python",
+            "check.py",
+            "--device",
+            "cuda",
+            "--suite",
+            "all",
+            "--submission",
+            "/opt/okc-bundle/candidates/projection_qkv_m1_simt.py",
+            "--output",
+            "/tmp/okc-smoke-result/candidate-correctness.json"
+          ],
+          "elapsed_seconds": 5.346418,
+          "exit_code": 0,
+          "state": "completed"
+        },
+        {
+          "name": "correctness-r10",
+          "command": [
+            "python",
+            "check.py",
+            "--device",
+            "cuda",
+            "--suite",
+            "all",
+            "--submission",
+            "/opt/okc-bundle/candidates/router_pooler_hybrid.py",
+            "--output",
+            "/tmp/okc-smoke-result/r10-correctness.json"
+          ],
+          "elapsed_seconds": 4.3842228720000005,
+          "exit_code": 0,
+          "state": "completed"
+        },
+        {
+          "name": "correctness-sglang",
+          "command": [
+            "python",
+            "check.py",
+            "--device",
+            "cuda",
+            "--suite",
+            "all",
+            "--submission",
+            "/opt/okc-bundle/official/baseline.py",
+            "--output",
+            "/tmp/okc-smoke-result/sglang-correctness.json"
+          ],
+          "elapsed_seconds": 18.791528055999997,
+          "exit_code": 0,
+          "state": "completed"
+        },
+        {
+          "name": "graph-benchmark",
+          "command": [
+            "python",
+            "/opt/okc-bundle/modal_gpu_worker.py",
+            "--phase",
+            "benchmark",
+            "--candidate",
+            "/opt/okc-bundle/candidates/projection_qkv_m1_simt.py",
+            "--output-dir",
+            "/tmp/okc-smoke-result",
+            "--repeats",
+            "6"
+          ],
+          "elapsed_seconds": 17.225826706,
+          "exit_code": 0,
+          "state": "completed"
+        }
+      ],
+      "deadline_seconds": 540,
+      "passed": true
+    },
+    "r10-correctness.json": {
+      "kind": "local correctness only",
+      "environment": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+        "torch": "2.14.1+cu130",
+        "device": "cuda",
+        "cuda_runtime": "13.0",
+        "cuda_available": true,
+        "implementation": "candidates/router_pooler_hybrid.py",
+        "submission_sha256": "891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee",
+        "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+        "gpu": "NVIDIA H200",
+        "capability": [
+          9,
+          0
+        ],
+        "tf32_allowed": false,
+        "bf16_reduced_precision_reduction": true
+      },
+      "weight_seed": 5151,
+      "seed_offset": 0,
+      "cases": [
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "dist": "normal",
+            "seed": 10001
+          },
+          "actual_seed": 10001,
+          "passed": true,
+          "message": "relative L2 error 1.803e-04 (worst row 1.803e-04)"
+        },
+        {
+          "case": {
+            "m": 7,
+            "layer": "pooler",
+            "dist": "normal",
+            "seed": 10002
+          },
+          "actual_seed": 10002,
+          "passed": true,
+          "message": "relative L2 error 1.560e-04 (worst row 2.472e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 33,
+            "layer": "o",
+            "dist": "normal",
+            "seed": 10003
+          },
+          "actual_seed": 10003,
+          "passed": true,
+          "message": "relative L2 error 5.191e-05 (worst row 1.797e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 130,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10004
+          },
+          "actual_seed": 10004,
+          "passed": true,
+          "message": "relative L2 error 1.343e-04 (worst row 2.901e-04); 20 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 5,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10005
+          },
+          "actual_seed": 10005,
+          "passed": true,
+          "message": "relative L2 error 3.435e-06 (worst row 7.884e-06)"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "dist": "normal",
+            "seed": 10006
+          },
+          "actual_seed": 10006,
+          "passed": true,
+          "message": "relative L2 error 2.566e-06 (worst row 2.838e-06); 2 probe rows exact to 2.5e-06"
+        },
+        {
+          "case": {
+            "m": 9,
+            "layer": "router",
+            "dist": "outliers",
+            "seed": 10007
+          },
+          "actual_seed": 10007,
+          "passed": true,
+          "message": "relative L2 error 2.959e-06 (worst row 3.231e-06); 1 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 512,
+            "layer": "qkv_gate",
+            "dist": "outliers",
+            "seed": 10008
+          },
+          "actual_seed": 10008,
+          "passed": true,
+          "message": "relative L2 error 2.136e-04 (worst row 4.968e-04); 59 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1000,
+            "layer": "unpooler",
+            "dist": "outliers",
+            "seed": 10009
+          },
+          "actual_seed": 10009,
+          "passed": true,
+          "message": "relative L2 error 1.509e-04 (worst row 4.145e-04); 125 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 201
+          },
+          "actual_seed": 201,
+          "passed": true,
+          "message": "relative L2 error 1.629e-04 (worst row 1.629e-04)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "o",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 202
+          },
+          "actual_seed": 202,
+          "passed": true,
+          "message": "relative L2 error 2.181e-05 (worst row 2.181e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "pooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 203
+          },
+          "actual_seed": 203,
+          "passed": true,
+          "message": "relative L2 error 6.104e-05 (worst row 6.104e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "unpooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 204
+          },
+          "actual_seed": 204,
+          "passed": true,
+          "message": "relative L2 error 1.484e-05 (worst row 1.484e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "router",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 205
+          },
+          "actual_seed": 205,
+          "passed": true,
+          "message": "relative L2 error 2.456e-06 (worst row 2.456e-06)"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "qkv_gate",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 206
+          },
+          "actual_seed": 206,
+          "passed": true,
+          "message": "relative L2 error 8.619e-05 (worst row 1.638e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "o",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 207
+          },
+          "actual_seed": 207,
+          "passed": true,
+          "message": "relative L2 error 3.589e-05 (worst row 1.774e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "pooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 208
+          },
+          "actual_seed": 208,
+          "passed": true,
+          "message": "relative L2 error 8.334e-05 (worst row 2.169e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "unpooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 209
+          },
+          "actual_seed": 209,
+          "passed": true,
+          "message": "relative L2 error 1.407e-04 (worst row 2.637e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "router",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 210
+          },
+          "actual_seed": 210,
+          "passed": true,
+          "message": "relative L2 error 2.683e-06 (worst row 3.029e-06); 3 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "qkv_gate",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 211
+          },
+          "actual_seed": 211,
+          "passed": true,
+          "message": "relative L2 error 1.546e-04 (worst row 4.597e-04); 6 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "o",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 212
+          },
+          "actual_seed": 212,
+          "passed": true,
+          "message": "relative L2 error 6.258e-05 (worst row 1.235e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "pooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 213
+          },
+          "actual_seed": 213,
+          "passed": true,
+          "message": "relative L2 error 9.031e-05 (worst row 2.083e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "unpooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 214
+          },
+          "actual_seed": 214,
+          "passed": true,
+          "message": "relative L2 error 1.255e-04 (worst row 2.203e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "router",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 215
+          },
+          "actual_seed": 215,
+          "passed": true,
+          "message": "relative L2 error 2.743e-06 (worst row 3.146e-06); 5 probe rows exact to 2.8e-06"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "qkv_gate",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 216
+          },
+          "actual_seed": 216,
+          "passed": true,
+          "message": "relative L2 error 5.261e-05 (worst row 8.451e-05); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "o",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 217
+          },
+          "actual_seed": 217,
+          "passed": true,
+          "message": "relative L2 error 8.004e-05 (worst row 1.906e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "pooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 218
+          },
+          "actual_seed": 218,
+          "passed": true,
+          "message": "relative L2 error 8.819e-05 (worst row 1.285e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "unpooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 219
+          },
+          "actual_seed": 219,
+          "passed": true,
+          "message": "relative L2 error 2.943e-06 (worst row 7.856e-06); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 220
+          },
+          "actual_seed": 220,
+          "passed": true,
+          "message": "relative L2 error 2.454e-06 (worst row 2.636e-06); 2 probe rows exact to 2.3e-06"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "qkv_gate",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 221
+          },
+          "actual_seed": 221,
+          "passed": true,
+          "message": "relative L2 error 1.547e-04 (worst row 3.668e-04); 21 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "o",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 222
+          },
+          "actual_seed": 222,
+          "passed": true,
+          "message": "relative L2 error 5.461e-05 (worst row 1.892e-04); 18 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "pooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 223
+          },
+          "actual_seed": 223,
+          "passed": true,
+          "message": "relative L2 error 2.064e-04 (worst row 4.322e-04); 16 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "unpooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 224
+          },
+          "actual_seed": 224,
+          "passed": true,
+          "message": "relative L2 error 1.374e-04 (worst row 2.785e-04); 13 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "router",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 225
+          },
+          "actual_seed": 225,
+          "passed": true,
+          "message": "relative L2 error 3.172e-06 (worst row 3.670e-06); 15 probe rows exact to 2.9e-06"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "qkv_gate",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 226
+          },
+          "actual_seed": 226,
+          "passed": true,
+          "message": "relative L2 error 2.143e-04 (worst row 5.481e-04); 44 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "o",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 227
+          },
+          "actual_seed": 227,
+          "passed": true,
+          "message": "relative L2 error 5.134e-05 (worst row 2.770e-04); 37 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "pooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 228
+          },
+          "actual_seed": 228,
+          "passed": true,
+          "message": "relative L2 error 2.138e-04 (worst row 5.056e-04); 38 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "unpooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 229
+          },
+          "actual_seed": 229,
+          "passed": true,
+          "message": "relative L2 error 1.463e-04 (worst row 3.176e-04); 28 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "router",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 230
+          },
+          "actual_seed": 230,
+          "passed": true,
+          "message": "relative L2 error 3.150e-06 (worst row 3.700e-06); 33 probe rows exact to 2.8e-06"
+        }
+      ],
+      "weights_unchanged": true,
+      "passed": true
+    },
+    "sglang-correctness.json": {
+      "kind": "local correctness only",
+      "environment": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+        "torch": "2.14.1+cu130",
+        "device": "cuda",
+        "cuda_runtime": "13.0",
+        "cuda_available": true,
+        "implementation": "official/baseline.py",
+        "submission_sha256": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574",
+        "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+        "gpu": "NVIDIA H200",
+        "capability": [
+          9,
+          0
+        ],
+        "tf32_allowed": false,
+        "bf16_reduced_precision_reduction": true
+      },
+      "weight_seed": 5151,
+      "seed_offset": 0,
+      "cases": [
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "dist": "normal",
+            "seed": 10001
+          },
+          "actual_seed": 10001,
+          "passed": true,
+          "message": "relative L2 error 1.803e-04 (worst row 1.803e-04)"
+        },
+        {
+          "case": {
+            "m": 7,
+            "layer": "pooler",
+            "dist": "normal",
+            "seed": 10002
+          },
+          "actual_seed": 10002,
+          "passed": true,
+          "message": "relative L2 error 1.560e-04 (worst row 2.472e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 33,
+            "layer": "o",
+            "dist": "normal",
+            "seed": 10003
+          },
+          "actual_seed": 10003,
+          "passed": true,
+          "message": "relative L2 error 5.191e-05 (worst row 1.797e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 130,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10004
+          },
+          "actual_seed": 10004,
+          "passed": true,
+          "message": "relative L2 error 1.343e-04 (worst row 2.901e-04); 20 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 5,
+            "layer": "unpooler",
+            "dist": "normal",
+            "seed": 10005
+          },
+          "actual_seed": 10005,
+          "passed": true,
+          "message": "relative L2 error 3.435e-06 (worst row 7.884e-06)"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "dist": "normal",
+            "seed": 10006
+          },
+          "actual_seed": 10006,
+          "passed": true,
+          "message": "relative L2 error 2.949e-07 (worst row 3.344e-07); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 9,
+            "layer": "router",
+            "dist": "outliers",
+            "seed": 10007
+          },
+          "actual_seed": 10007,
+          "passed": true,
+          "message": "relative L2 error 2.959e-06 (worst row 3.231e-06); 1 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 512,
+            "layer": "qkv_gate",
+            "dist": "outliers",
+            "seed": 10008
+          },
+          "actual_seed": 10008,
+          "passed": true,
+          "message": "relative L2 error 2.136e-04 (worst row 4.968e-04); 59 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1000,
+            "layer": "unpooler",
+            "dist": "outliers",
+            "seed": 10009
+          },
+          "actual_seed": 10009,
+          "passed": true,
+          "message": "relative L2 error 1.509e-04 (worst row 4.145e-04); 125 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 201
+          },
+          "actual_seed": 201,
+          "passed": true,
+          "message": "relative L2 error 1.629e-04 (worst row 1.629e-04)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "o",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 202
+          },
+          "actual_seed": 202,
+          "passed": true,
+          "message": "relative L2 error 2.181e-05 (worst row 2.181e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "pooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 203
+          },
+          "actual_seed": 203,
+          "passed": true,
+          "message": "relative L2 error 9.907e-07 (worst row 9.907e-07)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "unpooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 204
+          },
+          "actual_seed": 204,
+          "passed": true,
+          "message": "relative L2 error 1.484e-05 (worst row 1.484e-05)"
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "router",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 205
+          },
+          "actual_seed": 205,
+          "passed": true,
+          "message": "relative L2 error 9.619e-08 (worst row 9.619e-08)"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "qkv_gate",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 206
+          },
+          "actual_seed": 206,
+          "passed": true,
+          "message": "relative L2 error 8.619e-05 (worst row 1.638e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "o",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 207
+          },
+          "actual_seed": 207,
+          "passed": true,
+          "message": "relative L2 error 3.589e-05 (worst row 1.774e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "pooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 208
+          },
+          "actual_seed": 208,
+          "passed": true,
+          "message": "relative L2 error 8.334e-05 (worst row 2.169e-04); 4 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "unpooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 209
+          },
+          "actual_seed": 209,
+          "passed": true,
+          "message": "relative L2 error 1.407e-04 (worst row 2.637e-04); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "router",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 210
+          },
+          "actual_seed": 210,
+          "passed": true,
+          "message": "relative L2 error 2.683e-06 (worst row 3.029e-06); 3 probe rows exact to 2.7e-06"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "qkv_gate",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 211
+          },
+          "actual_seed": 211,
+          "passed": true,
+          "message": "relative L2 error 1.546e-04 (worst row 4.597e-04); 6 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "o",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 212
+          },
+          "actual_seed": 212,
+          "passed": true,
+          "message": "relative L2 error 6.258e-05 (worst row 1.235e-04); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "pooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 213
+          },
+          "actual_seed": 213,
+          "passed": true,
+          "message": "relative L2 error 9.031e-05 (worst row 2.083e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "unpooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 214
+          },
+          "actual_seed": 214,
+          "passed": true,
+          "message": "relative L2 error 1.255e-04 (worst row 2.203e-04); 7 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "router",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 215
+          },
+          "actual_seed": 215,
+          "passed": true,
+          "message": "relative L2 error 2.743e-06 (worst row 3.146e-06); 5 probe rows exact to 2.8e-06"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "qkv_gate",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 216
+          },
+          "actual_seed": 216,
+          "passed": true,
+          "message": "relative L2 error 5.261e-05 (worst row 8.451e-05); 3 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "o",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 217
+          },
+          "actual_seed": 217,
+          "passed": true,
+          "message": "relative L2 error 8.004e-05 (worst row 1.906e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "pooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 218
+          },
+          "actual_seed": 218,
+          "passed": true,
+          "message": "relative L2 error 8.819e-05 (worst row 1.285e-04); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "unpooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 219
+          },
+          "actual_seed": 219,
+          "passed": true,
+          "message": "relative L2 error 2.943e-06 (worst row 7.856e-06); 1 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 220
+          },
+          "actual_seed": 220,
+          "passed": true,
+          "message": "relative L2 error 2.999e-07 (worst row 3.310e-07); 2 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "qkv_gate",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 221
+          },
+          "actual_seed": 221,
+          "passed": true,
+          "message": "relative L2 error 1.547e-04 (worst row 3.668e-04); 21 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "o",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 222
+          },
+          "actual_seed": 222,
+          "passed": true,
+          "message": "relative L2 error 5.461e-05 (worst row 1.892e-04); 18 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "pooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 223
+          },
+          "actual_seed": 223,
+          "passed": true,
+          "message": "relative L2 error 2.064e-04 (worst row 4.322e-04); 16 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "unpooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 224
+          },
+          "actual_seed": 224,
+          "passed": true,
+          "message": "relative L2 error 1.374e-04 (worst row 2.785e-04); 13 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "router",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 225
+          },
+          "actual_seed": 225,
+          "passed": true,
+          "message": "relative L2 error 2.785e-06 (worst row 3.276e-06); 15 probe rows exact to 2.9e-06"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "qkv_gate",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 226
+          },
+          "actual_seed": 226,
+          "passed": true,
+          "message": "relative L2 error 2.143e-04 (worst row 5.481e-04); 44 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "o",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 227
+          },
+          "actual_seed": 227,
+          "passed": true,
+          "message": "relative L2 error 5.134e-05 (worst row 2.770e-04); 37 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "pooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 228
+          },
+          "actual_seed": 228,
+          "passed": true,
+          "message": "relative L2 error 2.138e-04 (worst row 5.056e-04); 38 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "unpooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 229
+          },
+          "actual_seed": 229,
+          "passed": true,
+          "message": "relative L2 error 1.463e-04 (worst row 3.176e-04); 28 probe rows exact to 0.0e+00"
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "router",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 230
+          },
+          "actual_seed": 230,
+          "passed": true,
+          "message": "relative L2 error 3.150e-06 (worst row 3.700e-06); 33 probe rows exact to 2.8e-06"
+        }
+      ],
+      "weights_unchanged": true,
+      "passed": true
+    },
+    "graph-diagnostic.json": {
+      "kind": "Modal H200 diagnostic, NOT official score",
+      "cases": [
+        {
+          "case": {
+            "m": 1,
+            "layer": "qkv_gate",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 201
+          },
+          "capture_compile_warmup_seconds": 1.3349144410000022,
+          "samples": [
+            {
+              "seed": 200201,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 38.176000118255615,
+                "r10": 19.936000928282738,
+                "sglang": 19.7759997099638
+              }
+            },
+            {
+              "seed": 200202,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 17.216000705957413,
+                "sglang": 19.7759997099638,
+                "r10": 18.751999363303185
+              }
+            },
+            {
+              "seed": 200203,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 19.039999693632126,
+                "candidate": 16.16000011563301,
+                "sglang": 19.648000597953796
+              }
+            },
+            {
+              "seed": 200204,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 19.487999379634857,
+                "sglang": 19.26399953663349,
+                "candidate": 18.144000321626663
+              }
+            },
+            {
+              "seed": 200205,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 19.680000841617584,
+                "candidate": 16.51199907064438,
+                "r10": 19.26399953663349
+              }
+            },
+            {
+              "seed": 200206,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 20.096000283956528,
+                "r10": 18.848000094294548,
+                "candidate": 16.704000532627106
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 16.96000061929226,
+            "r10": 19.15199961513281,
+            "sglang": 19.72800027579069
+          }
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "o",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 202
+          },
+          "capture_compile_warmup_seconds": 0.08008058099999715,
+          "samples": [
+            {
+              "seed": 200202,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 12.512000277638435,
+                "r10": 13.248000293970108,
+                "sglang": 12.992000207304955
+              }
+            },
+            {
+              "seed": 200203,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.06399966031313,
+                "sglang": 11.071999557316303,
+                "r10": 11.04000024497509
+              }
+            },
+            {
+              "seed": 200204,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.455999687314034,
+                "candidate": 12.671999633312225,
+                "sglang": 12.480000033974648
+              }
+            },
+            {
+              "seed": 200205,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.136000044643879,
+                "sglang": 11.008000001311302,
+                "candidate": 10.912000201642513
+              }
+            },
+            {
+              "seed": 200206,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.327999643981457,
+                "candidate": 11.168000288307667,
+                "r10": 10.975999757647514
+              }
+            },
+            {
+              "seed": 200207,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 11.296000331640244,
+                "r10": 11.19999960064888,
+                "candidate": 11.296000331640244
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.679999995976686,
+            "r10": 11.16799982264638,
+            "sglang": 11.31199998781085
+          }
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "pooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 203
+          },
+          "capture_compile_warmup_seconds": 0.13937747599999994,
+          "samples": [
+            {
+              "seed": 200203,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 23.00800010561943,
+                "r10": 23.711999878287315,
+                "sglang": 27.35999971628189
+              }
+            },
+            {
+              "seed": 200204,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 23.711999878287315,
+                "sglang": 26.399999856948853,
+                "r10": 23.072000592947006
+              }
+            },
+            {
+              "seed": 200205,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 22.816000506281853,
+                "candidate": 22.752000018954277,
+                "sglang": 26.72000043094158
+              }
+            },
+            {
+              "seed": 200206,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 22.495999932289124,
+                "sglang": 26.079999282956123,
+                "candidate": 22.84800074994564
+              }
+            },
+            {
+              "seed": 200207,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 26.176000013947487,
+                "candidate": 22.52800017595291,
+                "r10": 24.383999407291412
+              }
+            },
+            {
+              "seed": 200208,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 26.367999613285065,
+                "r10": 22.816000506281853,
+                "candidate": 24.159999564290047
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 22.928000427782536,
+            "r10": 22.94400054961443,
+            "sglang": 26.38399973511696
+          }
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "unpooler",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 204
+          },
+          "capture_compile_warmup_seconds": 0.007211247000000753,
+          "samples": [
+            {
+              "seed": 200204,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 13.407999649643898,
+                "r10": 13.055999763309956,
+                "sglang": 12.256000190973282
+              }
+            },
+            {
+              "seed": 200205,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.28800043463707,
+                "sglang": 11.776000261306763,
+                "r10": 11.296000331640244
+              }
+            },
+            {
+              "seed": 200206,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.487999930977821,
+                "candidate": 11.327999643981457,
+                "sglang": 11.96799986064434
+              }
+            },
+            {
+              "seed": 200207,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 12.000000104308128,
+                "sglang": 11.648000217974186,
+                "candidate": 11.487999930977821
+              }
+            },
+            {
+              "seed": 200208,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.90400030463934,
+                "candidate": 11.455999687314034,
+                "r10": 11.42400037497282
+              }
+            },
+            {
+              "seed": 200209,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 11.872000060975552,
+                "r10": 11.552000418305397,
+                "candidate": 11.42400037497282
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.471999809145927,
+            "r10": 11.52000017464161,
+            "sglang": 11.888000182807446
+          }
+        },
+        {
+          "case": {
+            "m": 1,
+            "layer": "router",
+            "load": "decode 1",
+            "weight": 62,
+            "seed": 205
+          },
+          "capture_compile_warmup_seconds": 0.5491182170000002,
+          "samples": [
+            {
+              "seed": 200205,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 13.344000093638897,
+                "r10": 12.992000207304955,
+                "sglang": 15.839999541640282
+              }
+            },
+            {
+              "seed": 200206,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.128000147640705,
+                "sglang": 16.51199907064438,
+                "r10": 13.472000136971474
+              }
+            },
+            {
+              "seed": 200207,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 12.160000391304493,
+                "candidate": 11.807999573647976,
+                "sglang": 15.456000342965126
+              }
+            },
+            {
+              "seed": 200208,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.96799986064434,
+                "sglang": 15.552000142633915,
+                "candidate": 12.256000190973282
+              }
+            },
+            {
+              "seed": 200209,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 16.03199914097786,
+                "candidate": 12.000000104308128,
+                "r10": 11.90400030463934
+              }
+            },
+            {
+              "seed": 200210,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 15.39199985563755,
+                "r10": 12.032000347971916,
+                "candidate": 12.000000104308128
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 12.064000125974417,
+            "r10": 12.096000369638205,
+            "sglang": 15.695999842137098
+          }
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "qkv_gate",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 206
+          },
+          "capture_compile_warmup_seconds": 0.0071484469999987255,
+          "samples": [
+            {
+              "seed": 200206,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 20.320000126957893,
+                "r10": 19.26399953663349,
+                "sglang": 19.1040001809597
+              }
+            },
+            {
+              "seed": 200207,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 19.42400075495243,
+                "sglang": 18.432000651955605,
+                "r10": 19.360000267624855
+              }
+            },
+            {
+              "seed": 200208,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 19.26399953663349,
+                "candidate": 18.65600049495697,
+                "sglang": 18.751999363303185
+              }
+            },
+            {
+              "seed": 200209,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 19.328000023961067,
+                "sglang": 19.1040001809597,
+                "candidate": 18.912000581622124
+              }
+            },
+            {
+              "seed": 200210,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 18.719999119639397,
+                "candidate": 18.624000251293182,
+                "r10": 19.007999449968338
+              }
+            },
+            {
+              "seed": 200211,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 20.735999569296837,
+                "r10": 18.559999763965607,
+                "candidate": 18.559999763965607
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 18.784000538289547,
+            "r10": 19.26399953663349,
+            "sglang": 18.927999772131443
+          }
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "o",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 207
+          },
+          "capture_compile_warmup_seconds": 0.014799414000002287,
+          "samples": [
+            {
+              "seed": 200207,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 12.83199992030859,
+                "r10": 11.615999974310398,
+                "sglang": 11.52000017464161
+              }
+            },
+            {
+              "seed": 200208,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 11.935999616980553,
+                "sglang": 10.944000445306301,
+                "r10": 10.65600011497736
+              }
+            },
+            {
+              "seed": 200209,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.19999960064888,
+                "candidate": 10.879999957978725,
+                "sglang": 10.751999914646149
+              }
+            },
+            {
+              "seed": 200210,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.231999844312668,
+                "sglang": 10.847999714314938,
+                "candidate": 10.71999967098236
+              }
+            },
+            {
+              "seed": 200211,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.19999960064888,
+                "candidate": 10.847999714314938,
+                "r10": 10.816000401973724
+              }
+            },
+            {
+              "seed": 200212,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 11.103999800980091,
+                "r10": 10.816000401973724,
+                "candidate": 11.04000024497509
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 10.960000101476908,
+            "r10": 11.008000001311302,
+            "sglang": 11.024000123143196
+          }
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "pooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 208
+          },
+          "capture_compile_warmup_seconds": 0.0060098369999934675,
+          "samples": [
+            {
+              "seed": 200208,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 26.43200010061264,
+                "r10": 27.807999402284622,
+                "sglang": 25.82399919629097
+              }
+            },
+            {
+              "seed": 200209,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 27.96800062060356,
+                "sglang": 25.79200081527233,
+                "r10": 25.280000641942024
+              }
+            },
+            {
+              "seed": 200210,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 26.208000257611275,
+                "candidate": 25.82399919629097,
+                "sglang": 26.335999369621277
+              }
+            },
+            {
+              "seed": 200211,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 27.51999907195568,
+                "sglang": 25.18399991095066,
+                "candidate": 25.696000084280968
+              }
+            },
+            {
+              "seed": 200212,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 25.887999683618546,
+                "candidate": 25.696000084280968,
+                "r10": 25.599999353289604
+              }
+            },
+            {
+              "seed": 200213,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 26.91200003027916,
+                "r10": 26.399999856948853,
+                "candidate": 25.407999753952026
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 25.75999964028597,
+            "r10": 26.304000057280064,
+            "sglang": 25.855999439954758
+          }
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "unpooler",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 209
+          },
+          "capture_compile_warmup_seconds": 0.0040743019999993635,
+          "samples": [
+            {
+              "seed": 200209,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 23.80800060927868,
+                "r10": 23.520000278949738,
+                "sglang": 24.54400062561035
+              }
+            },
+            {
+              "seed": 200210,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 24.383999407291412,
+                "sglang": 22.112000733613968,
+                "r10": 22.431999444961548
+              }
+            },
+            {
+              "seed": 200211,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 23.135999217629433,
+                "candidate": 22.08000048995018,
+                "sglang": 22.336000576615334
+              }
+            },
+            {
+              "seed": 200212,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 23.104000836610794,
+                "sglang": 22.655999287962914,
+                "candidate": 24.512000381946564
+              }
+            },
+            {
+              "seed": 200213,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 24.351999163627625,
+                "candidate": 22.624000906944275,
+                "r10": 22.655999287962914
+              }
+            },
+            {
+              "seed": 200214,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 22.655999287962914,
+                "r10": 22.463999688625336,
+                "candidate": 22.752000018954277
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 23.280000314116478,
+            "r10": 22.880000062286854,
+            "sglang": 22.655999287962914
+          }
+        },
+        {
+          "case": {
+            "m": 16,
+            "layer": "router",
+            "load": "decode 16",
+            "weight": 62,
+            "seed": 210
+          },
+          "capture_compile_warmup_seconds": 0.06326638400000206,
+          "samples": [
+            {
+              "seed": 200210,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 16.575999557971954,
+                "r10": 14.720000326633453,
+                "sglang": 21.43999934196472
+              }
+            },
+            {
+              "seed": 200211,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 15.615999698638916,
+                "sglang": 21.056000143289566,
+                "r10": 14.84800036996603
+              }
+            },
+            {
+              "seed": 200212,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 14.271999709308147,
+                "candidate": 14.527999795973301,
+                "sglang": 20.927999168634415
+              }
+            },
+            {
+              "seed": 200213,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 14.399999752640724,
+                "sglang": 20.927999168634415,
+                "candidate": 14.368000440299511
+              }
+            },
+            {
+              "seed": 200214,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 21.183999255299568,
+                "candidate": 14.84800036996603,
+                "r10": 14.240000396966934
+              }
+            },
+            {
+              "seed": 200215,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 21.376000717282295,
+                "r10": 14.592000283300877,
+                "candidate": 14.4640002399683
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 14.688000082969666,
+            "r10": 14.4960000179708,
+            "sglang": 21.119999699294567
+          }
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "qkv_gate",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 211
+          },
+          "capture_compile_warmup_seconds": 0.005882914000004291,
+          "samples": [
+            {
+              "seed": 200211,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 20.896000787615776,
+                "r10": 19.45599913597107,
+                "sglang": 19.648000597953796
+              }
+            },
+            {
+              "seed": 200212,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 20.320000126957893,
+                "sglang": 18.65600049495697,
+                "r10": 18.592000007629395
+              }
+            },
+            {
+              "seed": 200213,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 20.128000527620316,
+                "candidate": 18.400000408291817,
+                "sglang": 18.688000738620758
+              }
+            },
+            {
+              "seed": 200214,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 19.071999937295914,
+                "sglang": 20.287999883294106,
+                "candidate": 18.880000337958336
+              }
+            },
+            {
+              "seed": 200215,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 19.45599913597107,
+                "candidate": 19.071999937295914,
+                "r10": 18.848000094294548
+              }
+            },
+            {
+              "seed": 200216,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 20.320000126957893,
+                "r10": 18.624000251293182,
+                "candidate": 18.65600049495697
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 18.976000137627125,
+            "r10": 18.96000001579523,
+            "sglang": 19.551999866962433
+          }
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "o",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 212
+          },
+          "capture_compile_warmup_seconds": 0.005581051000000059,
+          "samples": [
+            {
+              "seed": 200212,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 12.927999719977379,
+                "r10": 12.032000347971916,
+                "sglang": 11.776000261306763
+              }
+            },
+            {
+              "seed": 200213,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.06399966031313,
+                "sglang": 10.847999714314938,
+                "r10": 11.327999643981457
+              }
+            },
+            {
+              "seed": 200214,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.359999887645245,
+                "candidate": 11.071999557316303,
+                "sglang": 11.071999557316303
+              }
+            },
+            {
+              "seed": 200215,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 12.671999633312225,
+                "sglang": 10.944000445306301,
+                "candidate": 11.264000087976456
+              }
+            },
+            {
+              "seed": 200216,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.455999687314034,
+                "candidate": 11.231999844312668,
+                "r10": 10.912000201642513
+              }
+            },
+            {
+              "seed": 200217,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 11.648000217974186,
+                "r10": 11.04000024497509,
+                "candidate": 11.168000288307667
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.247999966144562,
+            "r10": 11.34399976581335,
+            "sglang": 11.263999622315168
+          }
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "pooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 213
+          },
+          "capture_compile_warmup_seconds": 0.00799223799999993,
+          "samples": [
+            {
+              "seed": 200213,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 27.807999402284622,
+                "r10": 28.224000707268715,
+                "sglang": 26.623999699950218
+              }
+            },
+            {
+              "seed": 200214,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 27.03999914228916,
+                "sglang": 25.79200081527233,
+                "r10": 27.424000203609467
+              }
+            },
+            {
+              "seed": 200215,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 26.75200067460537,
+                "candidate": 27.2000003606081,
+                "sglang": 25.66399984061718
+              }
+            },
+            {
+              "seed": 200216,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 26.72000043094158,
+                "sglang": 27.03999914228916,
+                "candidate": 25.95200017094612
+              }
+            },
+            {
+              "seed": 200217,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 26.559999212622643,
+                "candidate": 25.79200081527233,
+                "r10": 26.176000013947487
+              }
+            },
+            {
+              "seed": 200218,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 26.367999613285065,
+                "r10": 27.295999228954315,
+                "candidate": 25.599999353289604
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 26.49599965661764,
+            "r10": 27.023999951779842,
+            "sglang": 26.463999412953854
+          }
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "unpooler",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 214
+          },
+          "capture_compile_warmup_seconds": 0.003910197999999809,
+          "samples": [
+            {
+              "seed": 200214,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 25.21600015461445,
+                "r10": 23.264000192284584,
+                "sglang": 23.48800003528595
+              }
+            },
+            {
+              "seed": 200215,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 23.16799946129322,
+                "sglang": 22.52800017595291,
+                "r10": 22.112000733613968
+              }
+            },
+            {
+              "seed": 200216,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 22.463999688625336,
+                "candidate": 23.96799996495247,
+                "sglang": 22.463999688625336
+              }
+            },
+            {
+              "seed": 200217,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 22.624000906944275,
+                "sglang": 22.52800017595291,
+                "candidate": 22.655999287962914
+              }
+            },
+            {
+              "seed": 200218,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 22.495999932289124,
+                "candidate": 22.752000018954277,
+                "r10": 22.52800017595291
+              }
+            },
+            {
+              "seed": 200219,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 24.032000452280045,
+                "r10": 22.495999932289124,
+                "candidate": 22.752000018954277
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 22.95999974012375,
+            "r10": 22.512000054121017,
+            "sglang": 22.52800017595291
+          }
+        },
+        {
+          "case": {
+            "m": 32,
+            "layer": "router",
+            "load": "decode 32",
+            "weight": 62,
+            "seed": 215
+          },
+          "capture_compile_warmup_seconds": 0.008326103000001694,
+          "samples": [
+            {
+              "seed": 200215,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 20.35200037062168,
+                "r10": 14.911999925971031,
+                "sglang": 21.95199951529503
+              }
+            },
+            {
+              "seed": 200216,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 15.680000185966492,
+                "sglang": 21.407999098300934,
+                "r10": 15.807999297976494
+              }
+            },
+            {
+              "seed": 200217,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 14.720000326633453,
+                "candidate": 14.976000413298607,
+                "sglang": 21.15200087428093
+              }
+            },
+            {
+              "seed": 200218,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 15.039999969303608,
+                "sglang": 21.27999998629093,
+                "candidate": 14.911999925971031
+              }
+            },
+            {
+              "seed": 200219,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 21.60000056028366,
+                "candidate": 15.39199985563755,
+                "r10": 14.271999709308147
+              }
+            },
+            {
+              "seed": 200220,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 21.12000063061714,
+                "r10": 14.560000039637089,
+                "candidate": 14.688000082969666
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 15.184000134468079,
+            "r10": 14.816000126302242,
+            "sglang": 21.343999542295933
+          }
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "qkv_gate",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 216
+          },
+          "capture_compile_warmup_seconds": 0.003918983000005483,
+          "samples": [
+            {
+              "seed": 200216,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 20.06400004029274,
+                "r10": 18.97599920630455,
+                "sglang": 19.168000668287277
+              }
+            },
+            {
+              "seed": 200217,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 19.26399953663349,
+                "sglang": 18.400000408291817,
+                "r10": 18.144000321626663
+              }
+            },
+            {
+              "seed": 200218,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 19.039999693632126,
+                "candidate": 18.464000895619392,
+                "sglang": 18.65600049495697
+              }
+            },
+            {
+              "seed": 200219,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 18.719999119639397,
+                "sglang": 18.49599927663803,
+                "candidate": 19.61600035429001
+              }
+            },
+            {
+              "seed": 200220,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 19.360000267624855,
+                "candidate": 18.464000895619392,
+                "r10": 18.079999834299088
+              }
+            },
+            {
+              "seed": 200221,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 18.848000094294548,
+                "r10": 17.983999103307724,
+                "candidate": 19.26399953663349
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 19.26399953663349,
+            "r10": 18.43199972063303,
+            "sglang": 18.75200029462576
+          }
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "o",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 217
+          },
+          "capture_compile_warmup_seconds": 0.006732182999996894,
+          "samples": [
+            {
+              "seed": 200217,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 12.927999719977379,
+                "r10": 11.615999974310398,
+                "sglang": 11.487999930977821
+              }
+            },
+            {
+              "seed": 200218,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.128000147640705,
+                "sglang": 10.623999871313572,
+                "r10": 10.847999714314938
+              }
+            },
+            {
+              "seed": 200219,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.168000288307667,
+                "candidate": 11.296000331640244,
+                "sglang": 10.975999757647514
+              }
+            },
+            {
+              "seed": 200220,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.552000418305397,
+                "sglang": 10.591999627649784,
+                "candidate": 11.487999930977821
+              }
+            },
+            {
+              "seed": 200221,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.19999960064888,
+                "candidate": 11.103999800980091,
+                "r10": 10.784000158309937
+              }
+            },
+            {
+              "seed": 200222,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 11.008000001311302,
+                "r10": 10.784000158309937,
+                "candidate": 10.975999757647514
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.392000131309032,
+            "r10": 11.008000001311302,
+            "sglang": 10.991999879479408
+          }
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "pooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 218
+          },
+          "capture_compile_warmup_seconds": 0.03579765899999643,
+          "samples": [
+            {
+              "seed": 200218,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 27.39199995994568,
+                "r10": 26.240000501275063,
+                "sglang": 26.30399912595749
+              }
+            },
+            {
+              "seed": 200219,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 27.96800062060356,
+                "sglang": 25.34399926662445,
+                "r10": 25.087999179959297
+              }
+            },
+            {
+              "seed": 200220,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 26.176000013947487,
+                "candidate": 25.66399984061718,
+                "sglang": 25.248000398278236
+              }
+            },
+            {
+              "seed": 200221,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 26.464000344276428,
+                "sglang": 25.37599951028824,
+                "candidate": 25.37599951028824
+              }
+            },
+            {
+              "seed": 200222,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 26.623999699950218,
+                "candidate": 25.248000398278236,
+                "r10": 25.472000241279602
+              }
+            },
+            {
+              "seed": 200223,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 26.30399912595749,
+                "r10": 25.34399926662445,
+                "candidate": 25.439999997615814
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 25.551999919116497,
+            "r10": 25.824000127613544,
+            "sglang": 25.839999318122864
+          }
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "unpooler",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 219
+          },
+          "capture_compile_warmup_seconds": 0.0064796549999996955,
+          "samples": [
+            {
+              "seed": 200219,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 13.663999736309052,
+                "r10": 12.35199999064207,
+                "sglang": 12.512000277638435
+              }
+            },
+            {
+              "seed": 200220,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.160000391304493,
+                "sglang": 11.680000461637974,
+                "r10": 11.615999974310398
+              }
+            },
+            {
+              "seed": 200221,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.776000261306763,
+                "candidate": 11.264000087976456,
+                "sglang": 11.744000017642975
+              }
+            },
+            {
+              "seed": 200222,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.935999616980553,
+                "sglang": 11.58399973064661,
+                "candidate": 11.264000087976456
+              }
+            },
+            {
+              "seed": 200223,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.96799986064434,
+                "candidate": 11.648000217974186,
+                "r10": 11.487999930977821
+              }
+            },
+            {
+              "seed": 200224,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 12.000000104308128,
+                "r10": 11.487999930977821,
+                "candidate": 11.552000418305397
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.600000318139791,
+            "r10": 11.69600011780858,
+            "sglang": 11.855999939143658
+          }
+        },
+        {
+          "case": {
+            "m": 8,
+            "layer": "router",
+            "load": "verify 1",
+            "weight": 62,
+            "seed": 220
+          },
+          "capture_compile_warmup_seconds": 0.5553971040000008,
+          "samples": [
+            {
+              "seed": 200220,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 12.415999546647072,
+                "r10": 12.927999719977379,
+                "sglang": 31.968001276254654
+              }
+            },
+            {
+              "seed": 200221,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.415999546647072,
+                "sglang": 31.39200061559677,
+                "r10": 12.736000120639801
+              }
+            },
+            {
+              "seed": 200222,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 12.512000277638435,
+                "candidate": 12.06399966031313,
+                "sglang": 31.039999797940254
+              }
+            },
+            {
+              "seed": 200223,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 12.35199999064207,
+                "sglang": 32.19199925661087,
+                "candidate": 12.095999903976917
+              }
+            },
+            {
+              "seed": 200224,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 31.231999397277832,
+                "candidate": 12.128000147640705,
+                "r10": 12.319999746978283
+              }
+            },
+            {
+              "seed": 200225,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 31.039999797940254,
+                "r10": 12.864000163972378,
+                "candidate": 12.160000391304493
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 12.144000269472599,
+            "r10": 12.624000199139118,
+            "sglang": 31.3120000064373
+          }
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "qkv_gate",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 221
+          },
+          "capture_compile_warmup_seconds": 0.11999603299999961,
+          "samples": [
+            {
+              "seed": 200221,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 24.70399998128414,
+                "r10": 22.207999601960182,
+                "sglang": 21.95199951529503
+              }
+            },
+            {
+              "seed": 200222,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 22.272000089287758,
+                "sglang": 22.463999688625336,
+                "r10": 21.79200015962124
+              }
+            },
+            {
+              "seed": 200223,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 21.75999991595745,
+                "candidate": 21.568000316619873,
+                "sglang": 21.60000056028366
+              }
+            },
+            {
+              "seed": 200224,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 22.207999601960182,
+                "sglang": 22.975999861955643,
+                "candidate": 21.31200022995472
+              }
+            },
+            {
+              "seed": 200225,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 21.824000403285027,
+                "candidate": 21.695999428629875,
+                "r10": 21.183999255299568
+              }
+            },
+            {
+              "seed": 200226,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 21.79200015962124,
+                "r10": 21.503999829292297,
+                "candidate": 21.27999998629093
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 21.631999872624874,
+            "r10": 21.776000037789345,
+            "sglang": 21.887999959290028
+          }
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "o",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 222
+          },
+          "capture_compile_warmup_seconds": 0.013509390999999482,
+          "samples": [
+            {
+              "seed": 200222,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 13.376000337302685,
+                "r10": 12.256000190973282,
+                "sglang": 12.44799979031086
+              }
+            },
+            {
+              "seed": 200223,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 12.095999903976917,
+                "sglang": 11.711999773979187,
+                "r10": 11.648000217974186
+              }
+            },
+            {
+              "seed": 200224,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 11.935999616980553,
+                "candidate": 11.552000418305397,
+                "sglang": 11.680000461637974
+              }
+            },
+            {
+              "seed": 200225,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 11.96799986064434,
+                "sglang": 11.807999573647976,
+                "candidate": 11.42400037497282
+              }
+            },
+            {
+              "seed": 200226,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 11.839999817311764,
+                "candidate": 11.58399973064661,
+                "r10": 11.392000131309032
+              }
+            },
+            {
+              "seed": 200227,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 12.128000147640705,
+                "r10": 11.776000261306763,
+                "candidate": 11.872000060975552
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 11.727999895811081,
+            "r10": 11.855999939143658,
+            "sglang": 11.82399969547987
+          }
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "pooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 223
+          },
+          "capture_compile_warmup_seconds": 0.036056145999999956,
+          "samples": [
+            {
+              "seed": 200223,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 31.55200183391571,
+                "r10": 30.239999294281006,
+                "sglang": 30.912000685930252
+              }
+            },
+            {
+              "seed": 200224,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 30.14400042593479,
+                "sglang": 28.736000880599022,
+                "r10": 29.120000079274178
+              }
+            },
+            {
+              "seed": 200225,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 30.33600002527237,
+                "candidate": 30.30399978160858,
+                "sglang": 30.14400042593479
+              }
+            },
+            {
+              "seed": 200226,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 31.231999397277832,
+                "sglang": 29.56799976527691,
+                "candidate": 29.600000008940697
+              }
+            },
+            {
+              "seed": 200227,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 29.952000826597214,
+                "candidate": 29.823999851942062,
+                "r10": 29.600000008940697
+              }
+            },
+            {
+              "seed": 200228,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 29.184000566601753,
+                "r10": 29.440000653266907,
+                "candidate": 30.400000512599945
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 30.224000103771687,
+            "r10": 29.91999965161085,
+            "sglang": 29.76000029593706
+          }
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "unpooler",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 224
+          },
+          "capture_compile_warmup_seconds": 0.009866789000000153,
+          "samples": [
+            {
+              "seed": 200224,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 26.11199952661991,
+                "r10": 24.992000311613083,
+                "sglang": 24.992000311613083
+              }
+            },
+            {
+              "seed": 200225,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 25.02400055527687,
+                "sglang": 23.871999233961105,
+                "r10": 25.536000728607178
+              }
+            },
+            {
+              "seed": 200226,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 24.25600029528141,
+                "candidate": 24.671999737620354,
+                "sglang": 25.631999596953392
+              }
+            },
+            {
+              "seed": 200227,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 26.27200074493885,
+                "sglang": 24.12799932062626,
+                "candidate": 24.12799932062626
+              }
+            },
+            {
+              "seed": 200228,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 25.66399984061718,
+                "candidate": 24.512000381946564,
+                "r10": 24.288000538945198
+              }
+            },
+            {
+              "seed": 200229,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 25.82399919629097,
+                "r10": 23.615999147295952,
+                "candidate": 24.064000695943832
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 24.59200005978346,
+            "r10": 24.64000042527914,
+            "sglang": 25.311999954283237
+          }
+        },
+        {
+          "case": {
+            "m": 128,
+            "layer": "router",
+            "load": "verify 16",
+            "weight": 62,
+            "seed": 225
+          },
+          "capture_compile_warmup_seconds": 0.009729174000000285,
+          "samples": [
+            {
+              "seed": 200225,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 18.015999346971512,
+                "r10": 15.839999541640282,
+                "sglang": 21.91999927163124
+              }
+            },
+            {
+              "seed": 200226,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 16.575999557971954,
+                "sglang": 22.816000506281853,
+                "r10": 15.744000673294067
+              }
+            },
+            {
+              "seed": 200227,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 15.87199978530407,
+                "candidate": 15.263999812304974,
+                "sglang": 22.39999920129776
+              }
+            },
+            {
+              "seed": 200228,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 16.03199914097786,
+                "sglang": 22.207999601960182,
+                "candidate": 15.615999698638916
+              }
+            },
+            {
+              "seed": 200229,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 22.36800082027912,
+                "candidate": 16.00000075995922,
+                "r10": 15.263999812304974
+              }
+            },
+            {
+              "seed": 200230,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 22.39999920129776,
+                "r10": 15.87199978530407,
+                "candidate": 15.231999568641186
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 15.808000229299068,
+            "r10": 15.855999663472176,
+            "sglang": 22.38400001078844
+          }
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "qkv_gate",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 226
+          },
+          "capture_compile_warmup_seconds": 0.010757484999999178,
+          "samples": [
+            {
+              "seed": 200226,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 27.168000116944313,
+                "r10": 24.224000051617622,
+                "sglang": 24.671999737620354
+              }
+            },
+            {
+              "seed": 200227,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 24.159999564290047,
+                "sglang": 25.119999423623085,
+                "r10": 23.711999878287315
+              }
+            },
+            {
+              "seed": 200228,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 23.77600036561489,
+                "candidate": 23.744000121951103,
+                "sglang": 23.871999233961105
+              }
+            },
+            {
+              "seed": 200229,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 23.96799996495247,
+                "sglang": 24.960000067949295,
+                "candidate": 25.119999423623085
+              }
+            },
+            {
+              "seed": 200230,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 23.871999233961105,
+                "candidate": 24.639999493956566,
+                "r10": 23.391999304294586
+              }
+            },
+            {
+              "seed": 200231,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 24.159999564290047,
+                "r10": 23.455999791622162,
+                "candidate": 23.423999547958374
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 24.399999529123306,
+            "r10": 23.744000121951103,
+            "sglang": 24.4159996509552
+          }
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "o",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 227
+          },
+          "capture_compile_warmup_seconds": 0.0064131700000018554,
+          "samples": [
+            {
+              "seed": 200227,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 15.424000099301338,
+                "r10": 15.072000212967396,
+                "sglang": 14.271999709308147
+              }
+            },
+            {
+              "seed": 200228,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 14.495999552309513,
+                "sglang": 13.376000337302685,
+                "r10": 13.504000380635262
+              }
+            },
+            {
+              "seed": 200229,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 13.887999579310417,
+                "candidate": 13.248000293970108,
+                "sglang": 13.504000380635262
+              }
+            },
+            {
+              "seed": 200230,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 13.856000266969204,
+                "sglang": 13.376000337302685,
+                "candidate": 13.344000093638897
+              }
+            },
+            {
+              "seed": 200231,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 14.047999866306782,
+                "candidate": 13.311999849975109,
+                "r10": 13.183999806642532
+              }
+            },
+            {
+              "seed": 200232,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 13.856000266969204,
+                "r10": 13.728000223636627,
+                "candidate": 13.728000223636627
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 13.536000158637762,
+            "r10": 13.792000245302916,
+            "sglang": 13.680000323802233
+          }
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "pooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 228
+          },
+          "capture_compile_warmup_seconds": 0.008270189000000983,
+          "samples": [
+            {
+              "seed": 200228,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 37.151999771595,
+                "r10": 34.2399999499321,
+                "sglang": 36.67199984192848
+              }
+            },
+            {
+              "seed": 200229,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 35.61599925160408,
+                "sglang": 36.031998693943024,
+                "r10": 34.912001341581345
+              }
+            },
+            {
+              "seed": 200230,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 34.304000437259674,
+                "candidate": 32.86400064826012,
+                "sglang": 33.376000821590424
+              }
+            },
+            {
+              "seed": 200231,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 32.83200040459633,
+                "sglang": 35.00799834728241,
+                "candidate": 32.3840007185936
+              }
+            },
+            {
+              "seed": 200232,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 34.01599824428558,
+                "candidate": 34.623999148607254,
+                "r10": 33.1839993596077
+              }
+            },
+            {
+              "seed": 200233,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 33.88800099492073,
+                "r10": 32.6399989426136,
+                "candidate": 33.40800106525421
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 34.01600010693073,
+            "r10": 33.7119996547699,
+            "sglang": 34.511998295784
+          }
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "unpooler",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 229
+          },
+          "capture_compile_warmup_seconds": 0.0041752899999991655,
+          "samples": [
+            {
+              "seed": 200229,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 30.14400042593479,
+                "r10": 29.184000566601753,
+                "sglang": 29.983999207615852
+              }
+            },
+            {
+              "seed": 200230,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 30.46399913728237,
+                "sglang": 28.192000463604927,
+                "r10": 28.031999245285988
+              }
+            },
+            {
+              "seed": 200231,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 28.64000014960766,
+                "candidate": 28.095999732613564,
+                "sglang": 28.31999957561493
+              }
+            },
+            {
+              "seed": 200232,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 28.896000236272812,
+                "sglang": 28.063999488949776,
+                "candidate": 29.632000252604485
+              }
+            },
+            {
+              "seed": 200233,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 28.76799926161766,
+                "candidate": 27.96800062060356,
+                "r10": 28.224000707268715
+              }
+            },
+            {
+              "seed": 200234,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 29.08799983561039,
+                "r10": 28.12799997627735,
+                "candidate": 27.807999402284622
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 28.863999992609024,
+            "r10": 28.432000428438187,
+            "sglang": 28.543999418616295
+          }
+        },
+        {
+          "case": {
+            "m": 256,
+            "layer": "router",
+            "load": "verify 32",
+            "weight": 62,
+            "seed": 230
+          },
+          "capture_compile_warmup_seconds": 0.01082603999999776,
+          "samples": [
+            {
+              "seed": 200230,
+              "order": [
+                "candidate",
+                "r10",
+                "sglang"
+              ],
+              "us": {
+                "candidate": 17.664000391960144,
+                "r10": 16.416000202298164,
+                "sglang": 23.840000852942467
+              }
+            },
+            {
+              "seed": 200231,
+              "order": [
+                "candidate",
+                "sglang",
+                "r10"
+              ],
+              "us": {
+                "candidate": 17.184000462293625,
+                "sglang": 23.072000592947006,
+                "r10": 16.127999871969223
+              }
+            },
+            {
+              "seed": 200232,
+              "order": [
+                "r10",
+                "candidate",
+                "sglang"
+              ],
+              "us": {
+                "r10": 16.383999958634377,
+                "candidate": 15.615999698638916,
+                "sglang": 24.512000381946564
+              }
+            },
+            {
+              "seed": 200233,
+              "order": [
+                "r10",
+                "sglang",
+                "candidate"
+              ],
+              "us": {
+                "r10": 16.543999314308167,
+                "sglang": 23.360000923275948,
+                "candidate": 16.16000011563301
+              }
+            },
+            {
+              "seed": 200234,
+              "order": [
+                "sglang",
+                "candidate",
+                "r10"
+              ],
+              "us": {
+                "sglang": 23.584000766277313,
+                "candidate": 16.00000075995922,
+                "r10": 15.904000028967857
+              }
+            },
+            {
+              "seed": 200235,
+              "order": [
+                "sglang",
+                "r10",
+                "candidate"
+              ],
+              "us": {
+                "sglang": 23.552000522613525,
+                "r10": 17.75999926030636,
+                "candidate": 15.456000342965126
+              }
+            }
+          ],
+          "median_gross_us": {
+            "candidate": 16.080000437796116,
+            "r10": 16.40000008046627,
+            "sglang": 23.56800064444542
+          }
+        }
+      ],
+      "timing": "gross CUDA-event times around graph replays; 256MiB cold-L2 read outside events; no subtraction",
+      "environment": {
+        "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+        "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+        "torch": "2.14.1+cu130",
+        "device": "cuda",
+        "cuda_runtime": "13.0",
+        "cuda_available": true,
+        "implementation": "candidates/projection_qkv_m1_simt.py",
+        "submission_sha256": "9cea9ceed1dab548368746e83540f25edff94f472e8701c05526ea9995759d55",
+        "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+        "gpu": "NVIDIA H200",
+        "capability": [
+          9,
+          0
+        ],
+        "tf32_allowed": false,
+        "bf16_reduced_precision_reduction": true
+      },
+      "stages": {
+        "import_weights_prepare_seconds": 9.971646181000004
+      },
+      "repeats": 6,
+      "versions": {
+        "torch": "2.14.1",
+        "triton": "3.8.0",
+        "sglang": "0.0.0.dev0"
+      },
+      "source_sha256": {
+        "candidate": "9cea9ceed1dab548368746e83540f25edff94f472e8701c05526ea9995759d55",
+        "r10": "891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee",
+        "sglang": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574"
+      },
+      "passed": true
+    }
+  },
+  "billing_snapshot": {
+    "metered_cost": "0.12000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "credits": "-0.12000000",
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "0.12054281"
+    }
+  },
+  "billing_note": "Latest supported CLI account summary: metered USD0.12, credits USD-0.12, billed USD0, detailed ephemeral-app cost USD0.12054281. Earlier UI USD0.07/header29.93 lagged; not a final invoice. Net spend cap remains USD0.",
+  "limitations": [
+    "Six diagnostic repetitions per shape, no official confidence interval",
+    "Gross event times include replay overhead; no guessed subtraction",
+    "First QKV candidate replay 38.176us retained, not filtered",
+    "Public official SGLang base; private judge overlay differs",
+    "No new OKC request or leaderboard score"
+  ],
+  "billing_observed_utc": "2026-10-24T18:42:21.552969+00:00"
+}

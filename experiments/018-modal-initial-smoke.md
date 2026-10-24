@@ -1,6 +1,7 @@
 # 018 — first authorized Modal H200 diagnostic
 
-Status: prepared, no app accepted yet. One initial smoke allowance; durable ledger
+Status: completed/passed; app `ap-ukvOyTeF1ztdOLggl5xJee` verified stopped/tasks0.
+One initial smoke allowance consumed; durable ledger
 `modal-smoke-budget.json` reserves before app startup, refuses all automatic repeats.
 Official checks remain paused; this is not another OKC request.
 
@@ -26,7 +27,7 @@ network blocked and Modal workspace access restricted inside the GPU function.
 
 Public SGLang base digest and exact resource limits are in modal_preflight.py.
 Compile/correctness/capture setup and gross graph-replay timing are separate.
-Native compatibility and performance remain unverified before this run.
+Native compatibility and diagnostic graph timing are now measured; see results below.
 
 ```sh
 .venv/bin/python -m py_compile modal_smoke.py modal_gpu_worker.py
@@ -35,5 +36,12 @@ Native compatibility and performance remain unverified before this run.
 MODAL_CONFIG_PATH="$PWD/local-notes/modal-auth.toml" .venv/bin/python modal_smoke.py --bundle local-notes/modal-qkv-smoke-v1 --approved-initial-smoke
 ```
 
-Local syntax and3boundary tests passed. Actual app ID, native stages, graph times,
-cost and termination must be appended from terminal evidence; no timing result yet.
+Local syntax and3boundary tests passed; all69local tests still pass after client
+installation, `pip check` clean. Actual H200: candidate/R10/SGLang39/39correctness
+each,30graph shapes x6fresh inputs x3runners pass. App setup486.849s, worker48.875s,
+client542.120s. QKV m1 gross median16.960us vs R10 19.152us vs SGLang19.728us;
+first candidate38.176us sample retained. Smoke evidence only, no official score/CI.
+Billing snapshot$0.12metered, credits-$0.12,billed$0; breakdown$0.12054281,
+asynchronous UI counters differ. No paid activation or new official request.
+Complete raw evidence/qualifications: MODAL_RESULTS.md and results/remote-modal-smoke.json.
+Do not rerun this command without a new budget authorization.
