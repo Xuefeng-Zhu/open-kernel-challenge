@@ -16,7 +16,15 @@
     "speedup": 1.1207320490337331
   },
   "created_utc": "2026-10-24T17:50:52.192284+00:00",
-  "plans": {},
+  "plans": {
+    "P2-01-pooler-layout": {
+      "candidate": "candidates/projection_pooler_layout.py",
+      "hypothesis": "Only pooler m>1 uses pretransposed contiguous[K,N] BF16 library GEMM; retain R10 m1/router",
+      "control_job_id": "02e099c3724e4a05",
+      "cpu_report": "results/router-cycle2-pooler-layout-cpu.json",
+      "local_record": "experiments/015-pooler-layout-local.md"
+    }
+  },
   "requests": [],
   "publication": "New work remains local; no push authorized"
 }
