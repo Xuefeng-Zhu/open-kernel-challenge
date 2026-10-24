@@ -258,6 +258,31 @@
       "accepted_utc": "2026-10-24T16:02:53.798991+00:00",
       "status_cli_exit_code": 0,
       "last_checked_utc": "2026-10-24T16:04:08.085279+00:00"
+    },
+    {
+      "experiment": "R07-router-native-wide",
+      "candidate": "candidates/router_hybrid_native.py",
+      "source_commit": "90032a97994ad51e7779793000946545a76ba86d",
+      "submission_sha256": "d8e29be3b47aa9ad248f7e068edfe24c3432a2c138b6b464cdfe7cddbf58cace",
+      "mode": "check",
+      "created_utc": "2026-10-24T16:05:02.162444+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 7,
+          "left": 13
+        }
+      },
+      "state": "accepted",
+      "status": "accepted",
+      "job_id": "26ea99ee0869482a",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T16:05:02.390539+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",

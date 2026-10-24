@@ -195,6 +195,18 @@
       "focused_tests_passed": 4,
       "gpu_validation": "not run; CPU numerical model only",
       "gpu_compilation_correctness_capture_performance": "not run; CPU numerical model only"
+    },
+    {
+      "id": "011-native-hybrid-local",
+      "configuration_file": "candidates/router_hybrid_native.py",
+      "source_commit": "90032a97994ad51e7779793000946545a76ba86d",
+      "submission_sha256": "d8e29be3b47aa9ad248f7e068edfe24c3432a2c138b6b464cdfe7cddbf58cace",
+      "record": "experiments/011-native-hybrid-local.md",
+      "results": "results/router-hybrid-native-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 4,
+      "gpu_run_id": "26ea99ee0869482a",
+      "gpu_validation": "pending actual official H200 check; CPU numerical model not GPU evidence"
     }
   ],
   "remote_experiments": [
@@ -271,26 +283,39 @@
       "job_id": "b70d87fc51864276",
       "mode": "check",
       "status": "queued",
-      "result_commit": null,
+      "result_commit": "90032a97994ad51e7779793000946545a76ba86d",
       "record": "experiments/remote-R06-pooler-triton8.md",
+      "results": null,
+      "timings": null
+    },
+    {
+      "id": "R07-router-native-wide",
+      "source_commit": "90032a97994ad51e7779793000946545a76ba86d",
+      "submission_sha256": "d8e29be3b47aa9ad248f7e068edfe24c3432a2c138b6b464cdfe7cddbf58cace",
+      "candidate": "candidates/router_hybrid_native.py",
+      "job_id": "26ea99ee0869482a",
+      "mode": "check",
+      "status": "accepted",
+      "result_commit": null,
+      "record": "experiments/remote-R07-router-native-wide.md",
       "results": null,
       "timings": null
     }
   ],
   "remote_budget": {
     "maximum": 10,
-    "admitted_or_reserved": 6,
-    "remaining": 4,
+    "admitted_or_reserved": 7,
+    "remaining": 3,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   },
   "current_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 40,
-    "total": 40,
+    "passed": 44,
+    "total": 44,
     "python_compilation_passed": true,
-    "gpu_admissions": 5,
+    "gpu_admissions": 7,
     "uncertain_requests": 0,
-    "admission_paused": "Automatic approval rejection of unexecuted R06; see DENIED_R06.md",
+    "admission_paused": false,
     "environment": {
       "python": "3.12.13",
       "pytorch": "2.14.1",
