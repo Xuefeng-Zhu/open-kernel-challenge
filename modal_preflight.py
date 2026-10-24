@@ -23,8 +23,11 @@ def describe(candidate):
         raise ValueError("Select one project-relative candidates/projection_*.py file")
     if not candidate.name.startswith("projection_") or candidate.suffix != ".py":
         raise ValueError("Only isolated projection-cycle2 sources may be bundled")
+    extra = ()
+    if candidate.name == "projection_full_composition.py":
+        extra=("candidates/projection_native_composition.py","candidates/projection_pooler_layout.py")
     files = {}
-    for relative in sorted(set(FIXED + (candidate.as_posix(),))):
+    for relative in sorted(set(FIXED + extra + (candidate.as_posix(),))):
         source = ROOT / relative
         if source.is_symlink() or not source.is_file():
             raise ValueError(f"Missing or symlinked source: {relative}")

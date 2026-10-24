@@ -31,7 +31,7 @@ def read_cli(*command):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat"], required=True)
+    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition"], required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     ledger = json.loads(LEDGER.read_text())
@@ -51,11 +51,12 @@ def main():
         raise ValueError("Use only explicit ignored bundle")
     manifest = json.loads((bundle / "bundle-manifest.json").read_text())
     actual = {p.relative_to(bundle).as_posix() for p in bundle.rglob("*") if p.is_file()}
-    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != 17:
-        raise ValueError("Expected 17 source/license files and manifest")
-    candidate, repeats, seed = {
-        "M19-unpooler": ("candidates/projection_unpooler_m1_simt.py", 12, 400000),
-        "M20-qkv-repeat": ("candidates/projection_qkv_m1_simt.py", 30, 700000),
+    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (19 if args.experiment=="M23-composition" else 17):
+        raise ValueError("Expected reviewed source/license files and manifest")
+    candidate, repeats, seed, protocol = {
+        "M19-unpooler": ("candidates/projection_unpooler_m1_simt.py", 12, 400000, "three-runner-v1"),
+        "M20-qkv-repeat": ("candidates/projection_qkv_m1_simt.py", 30, 700000, "three-runner-v1"),
+        "M23-composition": ("candidates/projection_full_composition.py", 30, 1000000, "composition-v1"),
     }[args.experiment]
     if manifest["candidate"] != candidate:
         raise ValueError("Wrong candidate for this preplanned experiment")
@@ -76,17 +77,17 @@ def main():
         raise RuntimeError("Another app is active; no concurrency")
     observed = max(Decimal(billing["metered_cost"]),
                    sum((Decimal(v) for v in billing["metered_cost_breakdown"].values()), Decimal(0)))
-    highwater = max(Decimal(str(ledger["observed_gross_high_water_usd"])), observed,
-                    Decimal(str(ledger.get("conservative_stage_spent_usd",0))))
+    observed_highwater = max(Decimal(str(ledger["observed_gross_high_water_usd"])), observed)
+    highwater = max(observed_highwater,Decimal(str(ledger.get("conservative_stage_spent_usd",0))))
     reserve = Decimal("1.00")
     if highwater + reserve > Decimal(str(ledger["cumulative_gross_ceiling_usd"])):
         raise RuntimeError("Conservative credit reserve exceeds USD2 stage ceiling")
-    ledger["observed_gross_high_water_usd"] = str(highwater)
+    ledger["observed_gross_high_water_usd"] = str(observed_highwater)
     import modal
     from modal_gpu_worker import make_modal_entry
     attempt = dict(experiment=args.experiment, created_utc=now(), state="reserved", app_id=None,
                    source_commit=manifest["source_commit"], candidate=candidate,
-                   submission_sha256=manifest["files"][candidate]["sha256"], repeats=repeats, seed_offset=seed,
+                   submission_sha256=manifest["files"][candidate]["sha256"], repeats=repeats, seed_offset=seed, protocol=protocol,
                    bundle_sha256=hashlib.sha256((bundle / "bundle-manifest.json").read_bytes()).hexdigest(),
                    billing_before=billing, conservative_reserve_usd=str(reserve),
                    resource_limits=dict(gpu="H200", cpu_request_limit=[2,2], memory_mib_request_limit=[8192,8192],
@@ -107,7 +108,7 @@ def main():
             attempt.update(state="accepted",app_id=app.app_id,accepted_utc=now(),setup_seconds=time.monotonic()-started)
             write(ledger)
             print(args.experiment,"accepted",app.app_id,flush=True)
-            result=execute.remote(Path(candidate).name,repeats,seed)
+            result=execute.remote(Path(candidate).name,repeats,seed,protocol)
             (ROOT / f"local-notes/modal-{args.experiment}-result.local.json").write_text(json.dumps(result,indent=2)+"\n")
             attempt.update(state="function-terminal",exit_code=result["exit_code"],worker_wall_seconds=result["worker_wall_seconds"])
     except Exception as error:

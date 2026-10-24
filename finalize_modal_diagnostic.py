@@ -9,13 +9,13 @@ import os
 from pathlib import Path
 import re
 
-from modal_analysis import summarize_case
+from modal_analysis import summarize_case,aggregate_graph
 from modal_diagnostics import ROOT,LEDGER,now,read_cli,write
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat"])
+    parser.add_argument("experiment",choices=["M19-unpooler","M20-qkv-repeat","M23-composition"])
     args=parser.parse_args()
     os.environ["MODAL_CONFIG_PATH"]=str(ROOT/"local-notes/modal-auth.toml")
     ledger=json.loads(LEDGER.read_text())
@@ -26,10 +26,12 @@ def main():
         raise RuntimeError("Exact app not yet stopped; no subsequent launch allowed")
     billing=read_cli("billing","summary","--json")
     raw=json.loads((ROOT/f"local-notes/modal-{args.experiment}-result.local.json").read_text())
-    summaries=[summarize_case(c) for c in raw["records"].get("graph-diagnostic.json",{}).get("cases",[])]
+    graph=raw["records"].get("graph-diagnostic.json",{})
+    summaries=[summarize_case(c,graph.get("execution_orders")) for c in graph.get("cases",[])]
+    runner_names=tuple(graph.get("source_sha256",dict(candidate=None,r10=None,sglang=None)))
     passed=(raw["exit_code"]==0 and raw["records"].get("stages.json",{}).get("passed",False)
             and len(summaries)==30 and all(raw["records"][n+"-correctness.json"]["passed"]
-                                           for n in ["candidate","r10","sglang"]))
+                                           for n in runner_names))
     elapsed=(datetime.fromisoformat(app["stopped_at"])-datetime.fromisoformat(app["created_at"])).total_seconds()
     # Conservative bound covers the entire app lifetime (including non-GPU setup),
     # plus5s and10%margin, not just worker time. No extra resource is provisioned.
@@ -47,7 +49,8 @@ def main():
     write(ledger)
     evidence=dict(kind="Modal H200 diagnostic, no official score/CI",experiment=args.experiment,
                   attempt=entry,app=app,result={k:v for k,v in raw.items() if k!="logs"},
-                  summaries=summaries,billing_snapshot=billing,billing_observed_utc=now(),
+                  summaries=summaries,aggregate=aggregate_graph(graph) if graph.get("protocol")=="composition-v1" else None,
+                  billing_snapshot=billing,billing_observed_utc=now(),
                   qualifications=["All samples retained; no outlier exclusion or overhead subtraction",
                                   "Stage upper bound is a conservative budget guard, not actual billed cost",
                                   "Billing API counters may settle asynchronously",
@@ -58,12 +61,12 @@ def main():
     (ROOT/f"results/remote-modal-{args.experiment}.json").write_text(encoded)
     with (ROOT/f"results/remote-modal-{args.experiment}.csv").open('w',newline='') as f:
         writer=csv.writer(f,lineterminator='\n')
-        writer.writerow(['load','layer','m','candidate_median_us','candidate_p90_us','candidate_max_us',
-                         'r10_median_us','sglang_median_us','paired_r10_over_candidate','paired_sglang_over_candidate'])
+        writer.writerow(['load','layer','m',*[name+'_'+metric for name in runner_names for metric in ['median_us','p90_us','max_us']],
+                         *['paired_'+name+'_over_candidate' for name in runner_names[1:]]])
         for item in summaries:
             d=item['gross_us_distribution'];c=item['case'];r=item['median_paired_gross_ratio']
-            writer.writerow([c['load'],c['layer'],c['m'],d['candidate']['median'],d['candidate']['p90'],
-                             d['candidate']['maximum'],d['r10']['median'],d['sglang']['median'],r['r10'],r['sglang']])
+            writer.writerow([c['load'],c['layer'],c['m'],*[d[name][metric] for name in runner_names for metric in ['median','p90','maximum']],
+                             *[r[name] for name in runner_names[1:]]])
     print(args.experiment,'pass',passed,'stopped app',app['app_id'],'lifetime',elapsed,
           'actual cumulative metered',billing['metered_cost'],'net',billing['billed_cost'],
           'conservative stage bound',bound)

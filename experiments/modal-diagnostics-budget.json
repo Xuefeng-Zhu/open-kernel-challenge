@@ -1,11 +1,11 @@
 {
-  "authorization": "Continue existing Modal-first projection experiments, only unpooler candidate and independent QKV repeat before reporting; existing credentials, free-credit-only, net paid USD0, no new OKC checks or pushes",
+  "authorization": "Continue existing Modal-first projection experiments, only unpooler candidate and independent QKV repeat before reporting; existing credentials, free-credit-only, net paid USD0, no new OKC checks or pushes; continuation explicitly includes tightly scoped M23 composition/stability within same cumulative USD2 credit ceiling, report results before further expansion",
   "workspace": "xuefeng-zhu",
   "cumulative_gross_ceiling_usd": 2,
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
-  "observed_gross_high_water_usd": "0.218105626",
+  "observed_gross_high_water_usd": "0.21000000",
   "conservative_stage_spent_usd": "0.328587546",
-  "billing_ui_verified_utc": "2026-10-24T19:02:40.268820+00:00",
+  "billing_ui_verified_utc": "2026-10-24T19:13:02.203627+00:00",
   "verified_credit_balance_usd": 29.79,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
@@ -171,7 +171,7 @@
     }
   ],
   "latest_billing_observed_utc": "2026-10-24T18:59:10.027492+00:00",
-  "stage_completed": true,
+  "stage_completed": false,
   "report_before_expanding": true,
   "final_app_states": [
     {
@@ -198,5 +198,6 @@
       "created_at": "2026-10-24 11:31:07-07:00",
       "stopped_at": "2026-10-24 11:40:10-07:00"
     }
-  ]
+  ],
+  "legacy_high_water_note": "Earlier derived high-water field mixed in the conservative time guard; corrected to actual billing snapshots. Raw historical records preserved."
 }

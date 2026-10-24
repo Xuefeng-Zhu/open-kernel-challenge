@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parent
 def make_modal_entry():
     # Local function is serialized by value. Its code is in this allowlisted
     # worker; it captures no host globals, credentials or project directory.
-    def execute(candidate_name, repeats=6, seed_offset=200000):
+    def execute(candidate_name, repeats=6, seed_offset=200000, protocol="three-runner-v1"):
         import json
         import os
         from pathlib import Path
@@ -37,7 +37,7 @@ def make_modal_entry():
         command = [sys.executable, str(root / "modal_gpu_worker.py"),
                    "--candidate", str(root / "candidates" / candidate_name),
                    "--output-dir", str(output), "--repeats", str(repeats),
-                   "--seed-offset", str(seed_offset)]
+                   "--seed-offset", str(seed_offset), "--protocol", protocol]
         with Path("/tmp/okc-smoke-worker.log").open("w") as log:
             child = subprocess.Popen(command, cwd=root, stdout=log, stderr=subprocess.STDOUT,
                                      start_new_session=True)
@@ -60,13 +60,31 @@ def save(path, report):
     Path(path).write_text(json.dumps(report, indent=2) + "\n")
 
 
-def benchmark(candidate, output, repeats, seed_offset=200000):
+def runner_specs(candidate, protocol):
+    if protocol == "composition-v1":
+        return [("candidate",candidate),
+                ("native_combo",ROOT / "candidates/projection_native_composition.py"),
+                ("pooler_layout",ROOT / "candidates/projection_pooler_layout.py"),
+                ("r10",ROOT / "candidates/router_pooler_hybrid.py"),
+                ("sglang",ROOT / "official/baseline.py")]
+    return [("candidate",candidate),("r10",ROOT / "candidates/router_pooler_hybrid.py"),
+            ("sglang",ROOT / "official/baseline.py")]
+
+
+def balanced_orders(names, protocol):
+    if protocol != "composition-v1":
+        return list(itertools.permutations(names))
+    rotations=[tuple(names[i:]+names[:i]) for i in range(len(names))]
+    return rotations+[tuple(reversed(order)) for order in rotations]
+
+
+def benchmark(candidate, output, repeats, seed_offset=200000, protocol="three-runner-v1"):
     import torch
     from benchmark import capture, replay_us
     from harness import contract, environment, load_module
     report = dict(kind="Modal H200 diagnostic, NOT official score", cases=[],
                   timing="gross CUDA-event times around graph replays; 256MiB cold-L2 read outside events; no subtraction",
-                  environment=environment(torch, "cuda", candidate), stages={}, repeats=repeats, seed_offset=seed_offset)
+                  environment=environment(torch, "cuda", candidate), stages={}, repeats=repeats, seed_offset=seed_offset, protocol=protocol)
     if not torch.cuda.is_available() or "H200" not in torch.cuda.get_device_name():
         report["blocked"] = "Explicit H200 required; no fallback GPU"
         save(output, report)
@@ -74,11 +92,7 @@ def benchmark(candidate, output, repeats, seed_offset=200000):
     report["versions"] = {name: importlib.metadata.version(name) for name in ["torch", "triton", "sglang"]}
     reference = load_module(ROOT / "official/reference.py", "modal_reference")
     started = time.monotonic()
-    modules = {
-        "candidate": load_module(candidate, "modal_candidate"),
-        "r10": load_module(ROOT / "candidates/router_pooler_hybrid.py", "modal_r10"),
-        "sglang": load_module(ROOT / "official/baseline.py", "modal_sglang"),
-    }
+    modules = {name:load_module(source,"modal_"+name) for name,source in runner_specs(candidate,protocol)}
     report["source_sha256"] = {name: hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest()
                                for name, module in modules.items()}
     weights = reference.generate_weights(reference.WEIGHTS_SEED, device="cuda")
@@ -86,7 +100,23 @@ def benchmark(candidate, output, repeats, seed_offset=200000):
     torch.cuda.synchronize()
     report["stages"]["import_weights_prepare_seconds"] = time.monotonic() - started
     eviction = torch.ones(256 * 1024 * 1024 // 4, device="cuda", dtype=torch.float32)
-    orders = list(itertools.permutations(modules))
+    orders = balanced_orders(list(modules),protocol)
+    if repeats % len(orders):
+        raise ValueError("A complete predefined order block is required")
+    warmup_count = 6 if protocol == "composition-v1" else 0
+    report["execution_orders"] = orders
+    report["warmup_graph_replays_per_runner"] = warmup_count
+    properties=torch.cuda.get_device_properties(0)
+    report["hardware"] = dict(name=properties.name,sm_count=properties.multi_processor_count,
+                              total_memory_bytes=properties.total_memory)
+    def driver_snapshot():
+        try:
+            probe=subprocess.run(["nvidia-smi","--query-gpu=driver_version,name,memory.total,pstate,clocks.current.sm,clocks.current.memory,power.limit",
+                                  "--format=csv,noheader"],capture_output=True,text=True,timeout=10)
+            return dict(exit_code=probe.returncode,fields="driver,name,memory,pstate,sm_clock,mem_clock,power_limit",output=probe.stdout.strip())
+        except (OSError,subprocess.TimeoutExpired) as error:
+            return dict(unavailable=type(error).__name__)
+    report["driver_before"]=driver_snapshot()
     with torch.inference_mode():
         for case in contract()["benchmarks"]:
             data = reference.generate_input(**case, device="cuda")
@@ -96,6 +126,20 @@ def benchmark(candidate, output, repeats, seed_offset=200000):
                 graphs[name], outputs[name] = capture(module.kernel_fn, data, states[name])
             torch.cuda.synchronize()
             setup_seconds = time.monotonic() - started
+            warmup_samples=[]
+            for warm in range(warmup_count):
+                warm_seed=case["seed"]+seed_offset+1000000+warm
+                fresh=reference.generate_input(**{**case,"seed":warm_seed},device="cuda")
+                data["x"].copy_(fresh["x"])
+                order=orders[warm%len(orders)]
+                times={name:replay_us(graphs[name],eviction) for name in order}
+                for name,out in outputs.items():
+                    ok,message=reference.check_implementation(data,out,weights)
+                    if not ok:
+                        report["failed"]=dict(case=case,phase="predeclared warmup",runner=name,message=message)
+                        save(output,report)
+                        return 1
+                warmup_samples.append(dict(seed=warm_seed,order=order,us=times))
             samples = []
             for repeat in range(repeats):
                 seed = case["seed"] + seed_offset + repeat
@@ -111,17 +155,18 @@ def benchmark(candidate, output, repeats, seed_offset=200000):
                         return 1
                 samples.append(dict(seed=seed, order=order, us=times))
             report["cases"].append(dict(case=case, capture_compile_warmup_seconds=setup_seconds,
-                                        samples=samples,
+                                        samples=samples,warmup_samples=warmup_samples,
                                         median_gross_us={name: statistics.median(s["us"][name] for s in samples)
                                                          for name in modules}))
             save(output, report)
             del graphs, outputs
+    report["driver_after"]=driver_snapshot()
     report["passed"] = True
     save(output, report)
     return 0
 
 
-def supervise(candidate, output_dir, repeats, seed_offset=200000):
+def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="three-runner-v1"):
     output_dir.mkdir(parents=True, exist_ok=False)
     import torch
     if not torch.cuda.is_available() or "H200" not in torch.cuda.get_device_name():
@@ -135,16 +180,14 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000):
             raise ValueError(f"Bundle integrity failed: {name}")
     deadline = time.monotonic() + 540
     report = dict(kind="bounded GPU preflight; no official upload", source_commit=manifest["source_commit"],
-                  candidate=manifest["candidate"], stages=[], deadline_seconds=540, seed_offset=seed_offset)
+                  candidate=manifest["candidate"], stages=[], deadline_seconds=540, seed_offset=seed_offset, protocol=protocol)
     steps = [("correctness-" + name, ["check.py", "--device", "cuda", "--suite", "all",
               "--submission", str(source), "--seed-offset", str(seed_offset),
               "--output", str(output_dir / (name + "-correctness.json"))])
-             for name, source in [("candidate", candidate),
-                                  ("r10", ROOT / "candidates/router_pooler_hybrid.py"),
-                                  ("sglang", ROOT / "official/baseline.py")]]
+             for name, source in runner_specs(candidate,protocol)]
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
                                      "--output-dir", str(output_dir), "--repeats", str(repeats),
-                                     "--seed-offset", str(seed_offset)]))
+                                     "--seed-offset", str(seed_offset), "--protocol", protocol]))
     for name, command in steps:
         started = time.monotonic()
         remaining = deadline - started
@@ -167,7 +210,7 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000):
         if code:
             report["blocked"] = f"{name}: {state}, exit {code}; no retries"
             break
-    report["passed"] = len(report["stages"]) == 4 and "blocked" not in report
+    report["passed"] = len(report["stages"]) == len(runner_specs(candidate,protocol))+1 and "blocked" not in report
     save(output_dir / "stages.json", report)
     return 0 if report["passed"] else 1
 
@@ -179,13 +222,15 @@ def main():
     parser.add_argument("--output-dir", type=Path, required=True)
     parser.add_argument("--repeats", type=int, default=6)
     parser.add_argument("--seed-offset", type=int, default=200000)
+    parser.add_argument("--protocol",choices=["three-runner-v1","composition-v1"],default="three-runner-v1")
     args = parser.parse_args()
-    if args.repeats < 6 or args.repeats % 6:
-        parser.error("Use a positive multiple of six for balanced three-runner orders")
+    period=10 if args.protocol=="composition-v1" else 6
+    if args.repeats < period or args.repeats % period:
+        parser.error("Use complete predefined execution-order blocks")
     candidate = args.candidate.resolve()
     if args.phase == "benchmark":
-        return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats, args.seed_offset)
-    return supervise(candidate, args.output_dir, args.repeats, args.seed_offset)
+        return benchmark(candidate, args.output_dir / "graph-diagnostic.json", args.repeats, args.seed_offset, args.protocol)
+    return supervise(candidate, args.output_dir, args.repeats, args.seed_offset, args.protocol)
 
 
 if __name__ == "__main__":
