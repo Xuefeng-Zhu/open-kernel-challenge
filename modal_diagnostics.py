@@ -31,7 +31,7 @@ def read_cli(*command):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition", "M26-qkv-layout", "M28-unpooler-layout"], required=True)
+    parser.add_argument("--experiment", choices=["M19-unpooler", "M20-qkv-repeat", "M23-composition", "M26-qkv-layout", "M28-unpooler-layout", "M30-pooler-grouped"], required=True)
     parser.add_argument("--bundle", type=Path, required=True)
     args = parser.parse_args()
     ledger = json.loads(LEDGER.read_text())
@@ -51,7 +51,7 @@ def main():
         raise ValueError("Use only explicit ignored bundle")
     manifest = json.loads((bundle / "bundle-manifest.json").read_text())
     actual = {p.relative_to(bundle).as_posix() for p in bundle.rglob("*") if p.is_file()}
-    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (19 if args.experiment=="M23-composition" else (18 if args.experiment in {"M26-qkv-layout","M28-unpooler-layout"} else 17)):
+    if actual != set(manifest["files"]) | {"bundle-manifest.json"} or len(manifest["files"]) != (19 if args.experiment=="M23-composition" else (18 if args.experiment in {"M26-qkv-layout","M28-unpooler-layout","M30-pooler-grouped"} else 17)):
         raise ValueError("Expected reviewed source/license files and manifest")
     candidate, repeats, seed, protocol = {
         "M19-unpooler": ("candidates/projection_unpooler_m1_simt.py", 12, 400000, "three-runner-v1"),
@@ -59,10 +59,11 @@ def main():
         "M23-composition": ("candidates/projection_full_composition.py", 30, 1000000, "composition-v1"),
         "M26-qkv-layout": ("candidates/projection_qkv_layout.py", 30, 1300000, "screen-v1"),
         "M28-unpooler-layout": ("candidates/projection_unpooler_layout.py", 30, 1600000, "screen-v1"),
+        "M30-pooler-grouped": ("candidates/projection_pooler_grouped.py", 30, 1900000, "screen-v1"),
     }[args.experiment]
     if manifest["candidate"] != candidate:
         raise ValueError("Wrong candidate for this preplanned experiment")
-    cpu_reports={"M26-qkv-layout":"results/router-cycle2-qkv-layout-cpu.json", "M28-unpooler-layout":"results/router-cycle2-unpooler-layout-cpu.json"}
+    cpu_reports={"M26-qkv-layout":"results/router-cycle2-qkv-layout-cpu.json", "M28-unpooler-layout":"results/router-cycle2-unpooler-layout-cpu.json", "M30-pooler-grouped":"results/router-cycle2-pooler-grouped-cpu.json"}
     if args.experiment in cpu_reports:
         cpu=json.loads((ROOT/cpu_reports[args.experiment]).read_text())
         if not cpu.get("passed") or cpu["environment"]["submission_sha256"]!=manifest["files"][candidate]["sha256"]:
