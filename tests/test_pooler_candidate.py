@@ -17,7 +17,7 @@ class ProjectionCandidateMixin:
         saved = w.clone()
         weights = {self.layer: w, "router": torch.ones((2, 131))}
         state = self.candidate.prepare(weights)
-        for m in [1, 7, 8, 9]:
+        for m in [1, 2, 7, 8, 9]:
             with self.subTest(m=m):
                 x = torch.randn((m, 131), generator=gen).bfloat16()
                 data = dict(x=x, config=dict(layer=self.layer, m=m, n=37, k=131))
@@ -38,6 +38,12 @@ class ProjectionCandidateMixin:
         out = self.candidate.kernel_fn(data, self.candidate.prepare(weights))
         expected = torch.stack([w[:, col] * (8 if row % 2 else -128) for row, col in enumerate(cols)])
         torch.testing.assert_close(out, expected, rtol=0, atol=0)
+        # Exercise one-row dispatch with fresh different probe values each call.
+        for row in range(8):
+            single = dict(x=x[row:row + 1].clone(),
+                          config=dict(layer=self.layer, m=1, n=self.full_width, k=8192))
+            actual = self.candidate.kernel_fn(single, self.candidate.prepare(weights))
+            torch.testing.assert_close(actual, expected[row:row + 1], rtol=0, atol=0)
 
     def test_router_control_preserved(self):
         gen = torch.Generator().manual_seed(71293)
@@ -54,8 +60,9 @@ class ProjectionCandidateMixin:
 for filename, layer, width in [
     ("pooler_triton_split8.py", "pooler", 4096),
     ("qkv_triton_split8.py", "qkv_gate", 2304),
+    ("pooler_simt_row.py", "pooler", 4096),
 ]:
     module = load_module(ROOT / "candidates" / filename, "bf16_" + layer)
-    globals()["Test_" + layer] = type(
-        "Test_" + layer, (ProjectionCandidateMixin, unittest.TestCase),
+    globals()["Test_" + Path(filename).stem] = type(
+        "Test_" + Path(filename).stem, (ProjectionCandidateMixin, unittest.TestCase),
         dict(candidate=module, layer=layer, full_width=width))
