@@ -1,3 +1,8 @@
+Latest source projection_qkv_m128_singlepass.py (035/M36) passed fullCUDA and
+nearby/layout correctness but target~2.5xslower; rejected/noofficialcheck. Best
+projection_full_composition.py unchanged.112localCPUtests pass,all11apps stopped.
+See ../QKV_M128_SINGLEPASS_RESULTS.md and STATUS.md for currentevidence/budgets.
+
 # Current cycle-two candidates
 
 Best official source projection_full_composition.py (c34c497b), job48b1357016134e52,

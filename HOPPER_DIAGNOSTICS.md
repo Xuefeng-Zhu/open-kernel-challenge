@@ -1,3 +1,9 @@
+Latest focused follow-up: [QKV_M128_SINGLEPASS_RESULTS.md](QKV_M128_SINGLEPASS_RESULTS.md).
+H2tested at BM64/BN32, emitsWGMMA, correctnesspass but55.10us vs21.89us,
+0/15pairedwins. Rejected/noofficialcheck; broadH1pipeline remains unimplemented.
+All11apps stopped,112localtests pass,Modalguard$1.146412/$2,netpaid$0.
+Earlier dated diagnostic/hypothesis context follows unchanged.
+
 # Hopper diagnosis of unchanged projection kernels
 
 Completed 2026-10-24T20:16:32.989508+00:00. No algorithm was changed or newly benchmarked. Best remains

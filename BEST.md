@@ -1,3 +1,8 @@
+Latest follow-up: QKV m128 single-pass035/M36 passed CUDA correctness but
+regressed strongly; rejected/no officialcheck. [Exact results](QKV_M128_SINGLEPASS_RESULTS.md).
+112localtests pass,all11apps stopped,conservativeModalguard$1.146412/$2,netpaid$0.
+This officialbest source/result is unchanged.
+
 Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
 M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
 M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.

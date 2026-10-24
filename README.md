@@ -1,3 +1,9 @@
+Latest focused follow-up: [QKV_M128_SINGLEPASS_RESULTS.md](QKV_M128_SINGLEPASS_RESULTS.md).
+H2tested at BM64/BN32, emitsWGMMA, correctnesspass but55.10us vs21.89us,
+0/15pairedwins. Rejected/noofficialcheck; broadH1pipeline remains unimplemented.
+All11apps stopped,112localtests pass,Modalguard$1.146412/$2,netpaid$0.
+Earlier dated diagnostic/hypothesis context follows unchanged.
+
 Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
 M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
 M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.

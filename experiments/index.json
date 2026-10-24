@@ -471,12 +471,12 @@
   "current_status": "STATUS.md",
   "current_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 108,
-    "total": 108,
-    "log": "results/m34-preflight-tests.local.txt",
+    "passed": 112,
+    "total": 112,
+    "log": "results/m36-preflight-tests.local.txt",
     "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
     "scope": "CPU models/static only; actual GPU evidence separate",
-    "verified_utc": "2026-10-24T20:11:04.264770+00:00",
+    "verified_utc": "2026-10-24T20:22:53.966811+00:00",
     "gpu_scope": "Actual CUDA/official results and budgets separately journaled in cycle-two index/ledgers, never inferred from CPU tests"
   }
 }

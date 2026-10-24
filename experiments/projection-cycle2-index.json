@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T20:18:04.567349+00:00",
+  "updated_utc": "2026-10-24T20:29:48.540681+00:00",
   "best_official": "P2-02-full-composition",
   "followup_screens": [
     {
@@ -49,18 +49,33 @@
       "gross_aggregate_best_over_candidate": 0.8630602405509111,
       "results": "results/remote-modal-M32-pooler-narrow.json",
       "timings": "results/remote-modal-M32-pooler-narrow.csv"
+    },
+    {
+      "id": "M36-qkv-m128-singlepass",
+      "candidate": "candidates/projection_qkv_m128_singlepass.py",
+      "source_sha256": "84e86a5e6fff111220cc6ddc77d3b8885a00f7383b068f360699956de2d39132",
+      "source_commit": "26189baa01e72d6e629f130a85f776347ca15a3f",
+      "frozen_bundle_commit": "40772dc015eccdeae0f9c46ac1c5d61acf18598e",
+      "app_id": "ap-N9JWk0BvaWxhSdDYLxUJmL",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9560322311775801,
+      "target_paired_best_over_candidate": 0.3954007836404262,
+      "results": "results/remote-modal-M36-qkv-m128-singlepass.json",
+      "timings": "results/remote-modal-M36-qkv-m128-singlepass.csv",
+      "report": "QKV_M128_SINGLEPASS_RESULTS.md"
     }
   ],
   "official_budget": "projection-cycle2-budget.json",
   "modal_budget": "modal-diagnostics-budget.json",
   "local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 108,
-    "total": 108,
-    "log": "results/m34-preflight-tests.local.txt",
+    "passed": 112,
+    "total": 112,
+    "log": "results/m36-preflight-tests.local.txt",
     "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
     "scope": "CPU models/static only; actual GPU evidence separate",
-    "verified_utc": "2026-10-24T20:11:04.264770+00:00"
+    "verified_utc": "2026-10-24T20:22:53.966811+00:00"
   },
   "resource_diagnostic": {
     "failed_experiment": "M33-resource-probe",

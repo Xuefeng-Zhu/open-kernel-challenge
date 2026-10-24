@@ -1,52 +1,30 @@
-# Latest diagnostic checkpoint — 2026-10-24 20:16UTC
+# Resume existing projection project
 
-M34resources/timeline complete,appap-GwiDybwrxgrysaFh3d8DRM stopped. All10Modalapps
-stopped/tasks0. Driver reports0spill in both nativepoolers; PTXmma.sync+cp.async,
-no WGMMA/TMA. Native excess GPUkernel time observed, cannot be fixed by launchcount
-alone. ActualDRAM/achievedoccupancy unknown; no restrictedcounterattempt. Two
-unimplemented hypotheses with benefit/risk gates: HOPPER_DIAGNOSTICS.md. No new
-algorithm benchmark or official check. Bestfullcomposition1.14865x unchanged.
+Branch projection-bf16-local, no newwork pushed. Read STATUS.md and
+QKV_M128_SINGLEPASS_RESULTS.md, then exact official/Modal ledgers.
+Latest one-hypothesis stagecomplete: M36ap-N9JWk0BvaWxhSdDYLxUJmL stopped,
+all11apps stopped/tasks0. No active/uncertainofficialjob. Never rerun an accepted ID.
 
-108localtests pass. M33failed protocolCLI before diagnostic (known terminal),
-fixed/testedM34success; preserve both experimentcommits. Conservative stageguard
-1.034494554of2USD,finalsnapshot0.75credited/0paid,observedhighwater0.87077815;
-counters asynchronous. Existing12htoken unchanged/expiry06:26:47UTC Oct25,
-no credential/cap/payment/terms/push. Officialcycle2/10used,8remaining; no active/
-uncertainjob. Further algorithm work not implemented; no permission/access blocker.
-For next prototype read H1/H2 tradeoffs before any algorithm benchmark. Preserve
-fullBF16/FP32precision, fullCUDA gates/nearby/fresh checks and balanced graph timing.
+Source03526189baa /SHA84e86a5e is QKVm128singlepass, correctnesspass but~2.5xslower
+at target; aggregate0.9560. Reject/noofficialcheck. GPUactuallyemitsWGMMA,0spill;
+absenceWGMMAalone is no longer a plausible cure for this candidate. Exact copied
+source/prepare/otherpaths preserved,112localCPUtests pass. No broadTMArewrite.
 
-Earlier bounded optimization checkpoint follows with its original date/scope:
+Bestfullcomposition c34c497b official48b1357016134e52 1.14865xSGLang
+[1.13142,1.16588] unchanged. Officialcycle2/10used,8remaining; freshdaily7left,
+reset00:00UTC. Existing approval for meaningful off-board checks persists, but
+none warranted by M36. Wrapperheld until exactModal-qualified plan, not a new
+permissionrequirement. No rankedentry/push. Original10projection+1attention
+budgets separate/exhausted; main/attention/baseline/controlbranches preserved.
 
----
+Modalconservativeguard1.146411930of2USD,latestgross0.89/net0; do not lower guard
+because billingasyncreadsfall. Allresourcesstopped. Netpaidcap0verified, existing
+ignored owner-onlytokenexpires2026-10-25T06:26:47Z. Never print/upload/renew without
+newapproval. No payment/cap/terms changes. Refresh livecredits/cap/expiry before
+any future independently justified app and maintain immutable allowlist/reservation.
 
-# Resume existing projection task
-
-Branch projection-bf16-local, no new work pushed. Read STATUS.md,
-MODAL_FOLLOWUP_RESULTS.md and exact two budget ledgers. Bounded stage complete;
-all8apps stopped/tasks0, no active/uncertain official job. Do not rerun accepted IDs.
-Bestsource projection_full_composition.py c34c497b, official48b1357016134e52,
-1.14865xSGLang [1.13142,1.16588]. Preserve all original/attention/main branches.
-
-Four new Modal screens M26/28/30/32 correct but rejected for performance/parity.
-Each hypothesis/source/result separate commit; source/hash/appID/all samples in
-records.104CPUtests pass. No new official request consumed; secondcycle2/10used,
-8authorizedleft, currentdaily7left. Reset00:00UTC. Authorization persists for
-meaningful off-board Modal-qualified checks, no scored/publicentry/push.
-
-Latest Modalusage/credit/net/guard in ledger and STATUS; conservative guard0.964254
-of cumulative2dollar stage includes initialsmoke. No paidusage/capchanges. Existing
-ignored owner-only credential expires2026-10-25 06:26:47UTC. Never print/upload it,
-create a replacement or repeat denied original logging command. No new grant.
-
-Early stop: basic tiles regressed and layout screens showed no aggregategain.
-Ranked nextresearch in MODAL_FOLLOWUP_RESULTS.md: compiler/resource profiling,
-then justified Hopper asyncpipeline; isolatedunpoolerm128 gain too small alone.
-No architectural candidate implemented. No new GPU needed to finish this stage.
-For future independent experiment, refreshMacUIcredits/cap/expiry, check stage
-reserve, immutable allowlist, commit source, maintain accepted/uncertain ledger and
-follow jobterminal. Existing wrapperinternalpause must be scoped to exactqualified
-source/report before officialdispatch, not removed blindly. No blindretry.
-
-Legacy update_progress.py regenerates first-cycle docs; do not run it over current
-cycle-two summaries. Current cycle-two index/ledgers and STATUS are authoritative.
+HOPPER_DIAGNOSTICS.md is earlier evidence/hypothesis context. H2nowtestednegative
+in this specific geometry; H1broadpipeline remains unimplemented and was not
+attempted in this stage. No need to repeat H2without materially new justification.
+Legacy update_progress.py regenerates first-cycle docs; do not run over current
+cycle-two status. Currentindex and two ledgers authoritative. All failures retained.
