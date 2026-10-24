@@ -85,6 +85,7 @@ def main():
         observed=max(Decimal(billing['metered_cost']),sum((Decimal(v) for v in billing['metered_cost_breakdown'].values()),Decimal(0)))
         d['observed_gross_high_water_usd']=str(max(Decimal(d['observed_gross_high_water_usd']),observed))
         d.update(final_app_states=read_cli('app','list','--json'),final_billing_snapshot=billing,latest_billing_observed_utc=now());save(d)
+        (ROOT/'local-notes/modal-budget-latest.local.json').write_text(json.dumps(d,indent=2)+'\n')
         evidence=dict(kind='Attention Modal diagnostic, not OKC result',attempt=e,app=app,
             result={k:v for k,v in raw.items() if k!='log'},failure_log=raw['log'] if raw['exit_code'] else None,
             billing_snapshot=billing,conservative_stage_spent_usd=d['conservative_stage_spent_usd'])

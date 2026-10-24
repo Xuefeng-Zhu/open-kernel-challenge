@@ -32,18 +32,20 @@ def compiled(module,data):
     import torch,triton
     cfg=data['config'];b,l,hq,hkv,d=[cfg[k] for k in ['batch','q_len','num_q_heads','num_kv_heads','head_dim']]
     g=hq//hkv;bm=max(16,triton.next_power_of_2(l*g));x=data['qkv'].reshape(b*l,-1)
-    span=data['page_table'].shape[1]*cfg['page_size'];kw={}
+    span=cfg['window'] or data['page_table'].shape[1]*cfg['page_size'];kw={}
     if 'CHUNK_SIZE' in inspect.signature(module._fused.fn).parameters:
         size=8192 if cfg['window']==0 and b in (16,32) else 0;kw['CHUNK_SIZE']=size
         splits=(span+size-1)//size if size else module._num_splits(b,hkv,span,64)
     else:splits=module._num_splits(b,hkv,span,64)
+    if 'PIPELINED_HISTORY' in inspect.signature(module._fused.fn).parameters:
+        kw['PIPELINED_HISTORY']=cfg['window']==0 and b in (16,32)
     n=b*hkv*splits*bm;out=torch.empty((b*l,hq*d),device=x.device,dtype=torch.bfloat16)
     po=torch.empty((n,d),device=x.device);pm=torch.empty((n,),device=x.device);pl=torch.empty_like(pm)
     k=module._fused.warmup(x,data['seq_lens'],data['page_table'],data['cache_loc'],data['k_cache'],
         data['v_cache'],data['k_scale'],data['v_scale'],po,pm,pl,module._tickets(x.device,b*hkv),out,
-        1.,module.RMS_EPS,float(cfg['qk_scale_factor']),float(cfg['sm_scale']),cfg['window'],cfg['page_size'],
+        float(cfg['rope_theta']) if cfg['rope_theta'] else 1.,module.RMS_EPS,float(cfg['qk_scale_factor']),float(cfg['sm_scale']),cfg['window'],cfg['page_size'],
         x.stride(0),data['page_table'].stride(0),L=l,G=g,HQ=hq,HKV=hkv,D=d,BLOCK_M=bm,
-        BLOCK_N=64,BLOCK_L=16,SPLITS=splits,ROPE=False,WINDOWED=False,DOT=module._DOT,
+        BLOCK_N=64,BLOCK_L=16,SPLITS=splits,ROPE=bool(cfg['rope_theta']),WINDOWED=bool(cfg['window']),DOT=module._DOT,
         num_warps=4,num_stages=3,grid=(b,hkv,splits),**kw)
     k._init_handles();ptx=k.asm.get('ptx','')
     canonical='\n'.join(line for line in ptx.splitlines() if not line.strip().startswith(('.file','.loc','//')))
@@ -74,6 +76,8 @@ def main():
     # non-unit scales and L8, absent from the previous cycle's replay coverage.
     cases=[dict(batch=16,ctx=80000,heads='tp8',layer='full',q_len=8,page=1,spread='mixed',dist='coherent'),
            dict(batch=32,ctx=80000,heads='tp8',layer='full',q_len=8,page=64,kv_scale=1/64,spread='agentic',dist='normal')]
+    if plan.get('sliding_control'):
+        cases.append(dict(batch=16,ctx=80000,heads='tp8',layer='sliding',q_len=8,page=1,spread='agentic',dist='soft'))
     for i,case in enumerate(cases):
         if time.monotonic()>deadline:raise TimeoutError('Probe deadline')
         a=reference.generate_input(**case,seed=910000+i*100,device='cuda')
