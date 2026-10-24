@@ -11,7 +11,10 @@ reference=load_module(ROOT/'official/reference.py','cycle2_reference')
 control=load_module(ROOT/'candidates/router_pooler_hybrid.py','cycle2_best_control')
 SPECS=[('projection_pooler_layout.py','pooler',8192,4096),
        ('projection_qkv_m1_simt.py','qkv_gate',8192,2304),
-       ('projection_unpooler_m1_simt.py','unpooler',4096,1024)]
+       ('projection_unpooler_m1_simt.py','unpooler',4096,1024),
+       ('projection_native_composition.py','qkv_gate',8192,2304),
+       ('projection_native_composition.py','unpooler',4096,1024),
+       ('projection_native_composition.py','pooler',8192,4096)]
 requested=os.environ.get('PROJECTION_CANDIDATE')
 
 
@@ -76,5 +79,5 @@ class ProjectionCycle2Mixin:
 for filename,layer,k,n in SPECS:
     if requested and filename!=Path(requested).name:continue
     module=load_module(ROOT/'candidates'/filename,'cycle2_'+Path(filename).stem)
-    globals()['Test_'+Path(filename).stem]=type('Test_'+Path(filename).stem,
+    globals()['Test_'+Path(filename).stem+'_'+layer]=type('Test_'+Path(filename).stem+'_'+layer,
         (ProjectionCycle2Mixin,unittest.TestCase),dict(candidate=module,layer=layer,k=k,n=n))
