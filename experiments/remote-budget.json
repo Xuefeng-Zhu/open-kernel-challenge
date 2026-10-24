@@ -347,7 +347,7 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:12:21.074398+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:15:04.502604+00:00"
+      "last_checked_utc": "2026-10-24T16:18:35.907668+00:00"
     },
     {
       "experiment": "R09-pooler-simt",
@@ -369,10 +369,12 @@
         }
       },
       "state": "accepted",
-      "status": "accepted",
+      "status": "queued",
       "job_id": "97aa5690ff134369",
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-24T16:15:17.023952+00:00"
+      "accepted_utc": "2026-10-24T16:15:17.023952+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T16:18:36.282958+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",

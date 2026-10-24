@@ -318,7 +318,7 @@
       "job_id": "26ea99ee0869482a",
       "mode": "check",
       "status": "done",
-      "result_commit": "49f2b7d77b20556b8fbecfb4f155376c8219880f",
+      "result_commit": "8cdd06b45b55481ec61748bd37623f2d055fe3c3",
       "record": "experiments/remote-R07-router-native-wide.md",
       "results": "results/remote-R07-router-native-wide.json",
       "timings": "results/remote-R07-router-native-wide.csv"
@@ -331,7 +331,7 @@
       "job_id": "ab74f25caa2e46a8",
       "mode": "check",
       "status": "queued",
-      "result_commit": null,
+      "result_commit": "3a84ae002d335c2116352099781f3ec559dd9027",
       "record": "experiments/remote-R08-router-split32.md",
       "results": null,
       "timings": null
@@ -343,8 +343,8 @@
       "candidate": "candidates/pooler_simt_row.py",
       "job_id": "97aa5690ff134369",
       "mode": "check",
-      "status": "accepted",
-      "result_commit": null,
+      "status": "queued",
+      "result_commit": "85b8ea6f1fc7e40691c6796a9c0e735c99ad7b37",
       "record": "experiments/remote-R09-pooler-simt.md",
       "results": null,
       "timings": null

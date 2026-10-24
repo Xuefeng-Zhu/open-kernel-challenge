@@ -1,0 +1,16 @@
+{
+  "source": "https://openkernelchallenge.dev/api/v1/leaderboard/muse_bf16_proj",
+  "snapshot_utc": "2026-10-24T16:06:00.435224+00:00",
+  "board": "muse_bf16_proj",
+  "metric": "speedup over SGLang; higher ranks higher",
+  "ranked_participants": 749,
+  "published_reference_us": 4830.8,
+  "leader": {
+    "rank": 1,
+    "team": "accountforgoofystuff",
+    "job": "5987bf672867464e",
+    "value": 3095.088247790042,
+    "speedup": 1.5608
+  },
+  "note": "Sanitized public aggregate only; no private account/auth or competitor code"
+}

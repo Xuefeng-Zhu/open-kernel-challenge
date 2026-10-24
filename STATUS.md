@@ -13,7 +13,7 @@ $0; no scored/public/final entry. Original baseline is separately preserved.
 | R06-pooler-triton8 | `b70d87fc51864276` | done | 0.9930291x |
 | R07-router-native-wide | `26ea99ee0869482a` | done | 1.0991970x |
 | R08-router-split32 | `ab74f25caa2e46a8` | queued | unmeasured |
-| R09-pooler-simt | `97aa5690ff134369` | accepted | unmeasured |
+| R09-pooler-simt | `97aa5690ff134369` | queued | unmeasured |
 
 Exact source/result hashes, confidence intervals, correctness, per-shape times and experiment qualifications: `experiments/index.json`, `REMOTE_RESULTS.md`, `BEST.md`.
 The ledger records each read timestamp and quota; queued jobs are not completed results.
