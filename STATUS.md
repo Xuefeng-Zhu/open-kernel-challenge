@@ -1,30 +1,26 @@
-# Current status
+# Coordinator checkpoint — 2026-10-24 08:44 UTC
 
-**New authorization:** up to **10 new** official off-board dense-projection checks,
-$0 spending, prior baseline excluded. No scored/final submission, new credentials or
-new material agreement. `experiments/remote-budget.json` is the admission ledger;
-uncertain requests reserve an allowance until reconciled. At most two independent
-jobs may be active, with stricter server limits taking precedence. Older single-run
-authorization statements below are superseded by this explicit new budget.
+Authorization: up to **10 NEW** meaningful off-board dense-projection experiments,
+$0 spend, prior baseline excluded; no scored/final entry, new credentials or material
+agreement. **5 admitted, 3 done, 2 queued, 5 allowances remaining, 0 uncertain**.
 
-- Baseline source commit: `fde8a042944c742c20b76f27fcc030d767fd0058`.
-- Baseline source SHA256: `78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e`.
-- CPU: 39/39 full-size cases and 5/5 focused tests; reproduced from a clean Git archive.
-- Official H200 check **e5a5b2d20da54187** is **done**: 9/9 prerequisite and 30/30 scored
-  shape checks passed; no rejected/flagged checks. Mode is check, off-board/unscored.
-- Official speedup **0.9076063758×**, 95% interval **[0.8939922801, 0.9212204714]**.
-  Starter is slower than SGLang. No GPU-validated optimization exists yet.
-- One check used; 19/20 remain in the service quota. Scored usage is 0/10. The user's
-  single-check authorization is exhausted. No further check or scored entry is authorized.
-- Serving's separate cap is 1 scored submission/day and 3 checks/day; track is closed.
-- No paid resource, new credential or additional agreement was created by the agent.
-- Private repository: https://github.com/Xuefeng-Zhu/open-kernel-challenge.
-- See `experiments/001-offboard-baseline.md`, `results/h200-check.json` and
-  `results/h200-per-shape.csv` for source/configuration/job/per-shape evidence.
-- A separate user attention draft is under local review only; it is ignored by Git,
-  has not replaced this baseline and has not been uploaded or run on the judge.
-- Attention contract review is complete in local-only notes. Four isolated router
-  candidates are committed separately, each with 39/39 CPU oracle cases and 3 focused
-  tests passing. Combined regression suite: 17/17. Their GPU paths are unverified.
-- Ranked shortlist and a one-check approval plan are in `candidates/README.md`;
-  exact candidate source/result commits and configurations are in `experiments/index.json`.
+| ID | Job | State | Official speedup vs SGLang |
+|---|---|---|---|
+| R01 control | 59abe5825690427c | done; correctness passes | 1.0012943× [0.9862749,1.0163137], parity |
+| R02 wide GEMM | 89fe00c5034a4198 | done; correctness passes | 1.0476946× [1.0319792,1.0634100] |
+| R03 dispatch | 718e0730e1bd4c30 | done; correctness passes | 1.0267804× [1.0113787,1.0421821] |
+| R04 Triton router | e3bc1481851f4a23 | queued | unmeasured |
+| R05 wide layout | 1631810d19af4af4 | queued | unmeasured |
+
+Each completed run passes 9/9 prerequisites and 30/30 scored-shape checks. Current
+best completed source is `candidates/router_fused_wide.py` (R02); normalized ratio to
+our original 0.9076064× starter is 1.1543491×, a cross-run reference-normalized comparison.
+Original `submission.py` and all pending source files remain unchanged.
+
+Account quota: **6/20 checks used, 14 left; 0/10 scored used** (includes prior baseline).
+This is distinct from the new authorization's 5/10 usage. No paid resource or charge.
+No tool/approval blockage; bounded status reads return normally. The only pending
+prerequisite for the two admitted jobs is the organizer's shared H200 queue.
+
+See `CONTINUE.md`, `experiments/remote-budget.json`, `REMOTE_RESULTS.md` and `BEST.md`.
+All admitted requests must be followed to terminal; do not replace or resubmit queued IDs.

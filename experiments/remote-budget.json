@@ -167,7 +167,34 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T08:31:39.324941+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T08:40:54.948398+00:00"
+      "last_checked_utc": "2026-10-24T08:43:59.237668+00:00"
+    },
+    {
+      "experiment": "R05-wide-layout",
+      "candidate": "candidates/router_fused_view.py",
+      "source_commit": "b5f6eddf6f7e6ec59692aaefb2f3600d8f4738a4",
+      "submission_sha256": "a7ba4be49f33c4eae5eba30a4b16950fcb867091cb662a9ef1ad57448a47c53c",
+      "mode": "check",
+      "created_utc": "2026-10-24T08:42:58.716705+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "1631810d19af4af4",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T08:42:59.010057+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T08:43:59.495028+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",
@@ -179,9 +206,9 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 5,
-      "left": 15
+      "used": 6,
+      "left": 14
     }
   },
-  "last_account_quota_utc": "2026-10-24T08:40:55.196605+00:00"
+  "last_account_quota_utc": "2026-10-24T08:43:59.948115+00:00"
 }

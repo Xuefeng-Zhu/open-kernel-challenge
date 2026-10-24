@@ -134,11 +134,11 @@
       "candidate": "candidates/router_split_after1.py",
       "job_id": "718e0730e1bd4c30",
       "mode": "check",
-      "status": "queued",
-      "result_commit": null,
+      "status": "done",
+      "result_commit": "34db70b340fddb72512c25b3630ce9392823ba8d",
       "record": "experiments/remote-R03-router-dispatch.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R03-router-dispatch.json",
+      "timings": "results/remote-R03-router-dispatch.csv"
     },
     {
       "id": "R04-router-triton16",
@@ -152,12 +152,25 @@
       "record": "experiments/remote-R04-router-triton16.md",
       "results": null,
       "timings": null
+    },
+    {
+      "id": "R05-wide-layout",
+      "source_commit": "b5f6eddf6f7e6ec59692aaefb2f3600d8f4738a4",
+      "submission_sha256": "a7ba4be49f33c4eae5eba30a4b16950fcb867091cb662a9ef1ad57448a47c53c",
+      "candidate": "candidates/router_fused_view.py",
+      "job_id": "1631810d19af4af4",
+      "mode": "check",
+      "status": "queued",
+      "result_commit": null,
+      "record": "experiments/remote-R05-wide-layout.md",
+      "results": null,
+      "timings": null
     }
   ],
   "remote_budget": {
     "maximum": 10,
-    "admitted_or_reserved": 4,
-    "remaining": 6,
+    "admitted_or_reserved": 5,
+    "remaining": 5,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   }
 }
