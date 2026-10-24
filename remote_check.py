@@ -98,6 +98,7 @@ def main():
     if not isinstance(data, dict):
         raise RuntimeError("Read-only status failed; existing job reservation unchanged")
     if data.get("mode") != "check" or data.get("id") != entry["job_id"]:
+        (ROOT / "results" / (args.experiment + "-status-error.local.json")).write_text(p.stdout)
         raise RuntimeError("Job identity/mode mismatch")
     save(ROOT / "results" / (args.experiment + "-job.local.json"), data)
     entry.update(status=data["status"], status_cli_exit_code=p.returncode, last_checked_utc=now())
