@@ -25,3 +25,8 @@ and original BF16 weights; only the router has the explicit BF16 hi+lo exception
 Switching a BF16 projection's weights to FP8/FP4 is not an allowed optimization.
 Every new GPU validation still requires separate approval; package availability is
 not authorization for a run.
+
+Update: remote R04 (`e3bc1481851f4a23`) has now actually compiled/executed the custom
+Triton kernels in the supplied H200 judge and passed 9+30 correctness cases. This
+verifies usable Triton for that run without installing anything new. It does not
+constitute an import/API test of CUTLASS, FlashInfer or DeepGEMM, or report their versions.
