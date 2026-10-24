@@ -9,12 +9,15 @@ before further official checks. **New official dispatch paused.** Cycle2 has use
 uncertain. Prior first-cycle ten and attention one are separate exhausted budgets.
 No new work push authorized. Preserve `main` and `attention-v2-preflight` branches.
 
-Modal is gated by Mac browser login, actual workspace credit/payment/cap verification,
-and specific CLI credential/source-transfer authorization. No CLI/token/config or
-web session observed. No Modal upload/image build/GPU launch. Local bundle builder
-and bounded worker are preparation only. Do not turn the public price/Starter
-credit allowance into a claim about the account. Do not add payment method or
-create a grant. Handed-off Mac Chrome tab is at `https://modal.com/login?next=%2Fapps`.
+Modal web login is now complete through the user's expressly authorized existing
+GitHub session. Workspace xuefeng-zhu, GitHub Xuefeng-Zhu, actual credits$30left,
+usage$0, payment method present; net Spend limit set to$0 and persisted. Gross
+usage limit$42.50 differs from net spend cap. Stripe says service paused; effective
+GPU availability unresolved, do not resume/change plan. Specific CLI credential
+and source-transfer authorization still pending. No CLI/token/config or Modal
+upload/image build/GPU launch. Read MODAL_PREFLIGHT.md for the precise next request;
+do not create a grant. Handed-off Mac Chrome tab is at
+`https://modal.com/settings/xuefeng-zhu/usage`.
 
 Experiment016 QKV m1 SIMT and017 unpooler m1 SIMT are separate CPU/static-only
 commits, each 39+3 checks pass, no native compilation or performance validation.

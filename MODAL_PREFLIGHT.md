@@ -7,25 +7,40 @@ cases. No native CUDA, container image or Modal SDK execution has occurred.
 
 ## Actual access and budget status
 
-2026-10-24 (rechecked after local tests): Mac Chrome (profile Xuefeng) shows
-`https://modal.com/login?next=%2Fapps`, not a signed-in workspace. Stopped before
-“Continue with GitHub”; the tab was handed to the user. No actual credit balance,
-payment method, workspace identity or spend cap observed. No local Modal CLI,
-package, `~/.modal.toml`, or Modal token environment variables found. No token
-values inspected; no credential, account grant, upload, image build or GPU launch.
+2026-10-24 18:14 UTC: after explicit user authorization, clicked “Continue with
+GitHub” in the user's Mac Chrome. Existing session signed in successfully, with
+no new OAuth grant, explicit agreement or credential entry. Workspace
+`xuefeng-zhu`, Starter, connected GitHub `Xuefeng-Zhu`. Actual credit popover
+confirms **$30.00 left, $0.00 used** this billing period. Billing overview shows
+$0.00 spend and gross usage limit $42.50. Net Spend limit was default $12.50;
+set it to **$0** under the user's explicit constraint, saved and verified again
+after returning to the page. Local screenshots are ignored under `local-notes/`.
+
+Existing payment method present in Stripe portal; no payment details changed.
+The portal also says **“Your service is paused.”** Modal itself shows Starter,
+credits and a GPU concurrency allowance of10/current0. Whether the portal message
+affects free-credit GPU execution is unresolved; do not silently resume service
+or add/upgrade anything. No local Modal CLI/package, `~/.modal.toml`, or Modal
+token environment variables found. No new credential, OAuth grant, code upload,
+image build, GPU launch or cost occurred.
 
 User permits free-credit-only experiments with additional out-of-pocket $0.
-Before launching: user completes web login; inspect actual workspace credits,
-payment status and spend limit. A **spend limit** caps net usage after credits,
+Before launching: reconcile any effective service pause and obtain specific CLI
+credential and intended source-upload authorization. A **spend limit** caps net usage after credits,
 whereas a **usage budget** caps gross usage before credits. Public documentation
 does not establish that this account has credits, that the UI accepts zero, or
 that enforcement guarantees zero overshoot. If the requested $0 constraint cannot
 be established, stop and report. Do not add a payment method or upgrade.
 
-No CLI authorization exists. After account/workspace is known, a separate request
-must identify that workspace and ask for the official temporary CLI authorization
-(documented `modal token new --expires-in 12h`) on this Mac. The user completes
-login/grants; never paste credentials into chat. Do not run that command now.
+No CLI authorization exists. Minimal next approval request: install the official
+Modal client in the task virtualenv and authorize a **12-hour** CLI token for
+workspace `xuefeng-zhu`, using the already signed-in browser. Store it only at
+the ignored task-local `local-notes/modal-auth.toml` via documented
+`MODAL_CONFIG_PATH`, with owner-only file permissions. This grants programmatic
+workspace access rather than mere web login; inspect and disclose the actual
+authorization screen before any material expansion. The documented command is
+`modal token new --expires-in 12h`. Never paste credentials into chat. **Not yet
+approved or run.** This request does not itself authorize uploading the test bundle.
 
 ## Local deliverables and limits
 
@@ -89,6 +104,7 @@ Sources: [GPU requirements](https://modal.com/docs/guide/gpu),
 [prices](https://modal.com/pricing), [budget semantics](https://modal.com/docs/guide/budgets),
 [ephemeral apps](https://modal.com/docs/guide/apps),
 [temporary tokens](https://modal.com/docs/cli/latest/token),
+[local credential configuration](https://modal.com/docs/sdk/py/latest/config),
 [image API](https://modal.com/docs/sdk/py/latest/Image).
 
 ## Official cycle2 checkpoint
