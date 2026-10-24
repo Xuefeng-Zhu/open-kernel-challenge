@@ -1,0 +1,271 @@
+# okc: problem=muse_attention_decode
+"""v2 (Frank Zhu): the whole step in ONE Triton launch (SGLang uses five: QK-norm,
+store_cache, q->fp8 cast, FA3 (+its combine), rms_norm_gate).
+
+Grid (request b, kv head h, split s). Each CTA:
+  1. RMSNorm(q)*5.473 + interleaved RoPE for the L*G query rows of kv head h, in registers
+     (GQA packing: all 8 query heads of a kv head x the L block tokens share each K/V tile,
+     so every FP8 cache row is read from HBM exactly once).
+  2. Online softmax over its slice of the request's *cached* keys [lo, seq) in the paged
+     FP8 cache (page_table gather; page size 1 in the scored shapes).
+  3. The last split also owns the block's L new tokens: it computes RMSNorm(k)+RoPE and v
+     straight from qkv, rounds them to E4M3 exactly as stored, writes them into the cache at
+     cache_loc, and attends to them causally from registers. No other CTA reads those rows,
+     so there is no ordering hazard and no separate prologue launch.
+  4. Partials (acc, m, l) go to scratch; an atomic ticket per (b, h) elects the last CTA
+     to finish, which merges the splits (log-sum-exp), applies per-head RMSNorm x
+     sigmoid(gate) and stores BF16. It then resets the ticket to 0, so the counter buffer
+     (not derived from inputs) is reusable across graph replays without a memset.
+
+Graph-safe: no host syncs; the split count depends only on shapes/config. Every key in the
+window (sliding) or context (full) is attended; no key or value is skipped.
+"""
+
+import os
+from typing import TypedDict
+
+import torch
+import triton
+import triton.language as tl
+
+
+class Config(TypedDict):
+    batch: int
+    q_len: int
+    num_q_heads: int
+    num_kv_heads: int
+    head_dim: int
+    page_size: int
+    window: int
+    rope_theta: float
+    qk_scale_factor: float
+    sm_scale: float
+    kv_scale: float
+
+
+class Inputs(TypedDict):
+    qkv: torch.Tensor
+    positions: torch.Tensor
+    cache_loc: torch.Tensor
+    cache_seqlens: torch.Tensor
+    cu_seqlens_q: torch.Tensor
+    scheduler_metadata: torch.Tensor | None
+    k_cache: torch.Tensor
+    v_cache: torch.Tensor
+    k_scale: torch.Tensor
+    v_scale: torch.Tensor
+    page_table: torch.Tensor
+    seq_lens: torch.Tensor
+    config: Config
+
+
+RMS_EPS = 1e-5
+LOG2E = 1.4426950408889634
+NUM_SMS = 132  # H200 SXM
+_INTERP = os.environ.get("TRITON_INTERPRET") == "1"
+# Tensor-core operands are BF16 on the GPU. Triton's CPU interpreter (local testing only) can't
+# matmul BF16, so there the same BF16-rounded values are multiplied in FP32.
+_DOT = tl.float32 if _INTERP else tl.bfloat16
+_TICKETS = {}
+
+
+def _tickets(device, n):
+    buf = _TICKETS.get(device)
+    if buf is None or buf.numel() < n:
+        buf = torch.zeros(max(n, 4096), dtype=torch.int32, device=device)
+        _TICKETS[device] = buf
+    return buf
+
+
+@triton.jit
+def _norm_rope(x_ptr, offs_d, pos, theta, eps, ROPE: tl.constexpr, D: tl.constexpr, mask):
+    """RMSNorm (no weight) then interleaved RoPE of rows x[..., D] (fp32).
+    x_ptr: [R, 1] row base pointers; pos: [R, 1] positions; mask: [R, 1]."""
+    x = tl.load(x_ptr + offs_d[None, :], mask=mask, other=0.0).to(tl.float32)
+    inv = tl.rsqrt(tl.sum(x * x, 1) / D + eps)[:, None]
+    x = x * inv
+    if ROPE:
+        partner = tl.load(x_ptr + (offs_d ^ 1)[None, :], mask=mask, other=0.0).to(tl.float32) * inv
+        i = (offs_d // 2).to(tl.float32)
+        inv_freq = tl.exp2(-(2.0 * i / D) * tl.log2(theta))
+        ang = [pos.to](http://pos.to)(tl.float32) * inv_freq[None, :]
+        sign = tl.where((offs_d % 2) == 0, -1.0, 1.0)[None, :]
+        x = x * tl.cos(ang) + sign * partner * tl.sin(ang)
+    return x
+
+
+@triton.jit
+def _fused(qkv_ptr, seq_ptr, pt_ptr, loc_ptr, kc_ptr, vc_ptr, ks_ptr, vs_ptr,
+           o_ptr, m_ptr, l_ptr, ticket_ptr, out_ptr,
+           theta, eps, qk_factor, sm_scale, window, page, stride_tok, stride_pt,
+           L: tl.constexpr, G: tl.constexpr, HQ: tl.constexpr, HKV: tl.constexpr,
+           D: tl.constexpr, BLOCK_M: tl.constexpr, BLOCK_N: tl.constexpr, BLOCK_L: tl.constexpr,
+           SPLITS: tl.constexpr, ROPE: tl.constexpr, WINDOWED: tl.constexpr,
+           DOT: tl.constexpr):
+    b = tl.program_id(0)
+    kvh = tl.program_id(1)
+    split = tl.program_id(2)
+
+    seq = tl.load(seq_ptr + b).to(tl.int64)
+    # Query rows r = j * G + g  (block token j, query head kvh*G + g).
+    offs_m = tl.arange(0, BLOCK_M)
+    row_ok = offs_m < L * G
+    j = tl.where(row_ok, offs_m // G, 0)
+    g = offs_m % G
+    qpos = seq + j
+    offs_d = tl.arange(0, D)
+    tok = (b * L + j).to(tl.int64)
+    q_rows = qkv_ptr + tok[:, None] * stride_tok + ((kvh * G + g) * D)[:, None]
+    q = _norm_rope(q_rows, offs_d, qpos[:, None], theta, eps, ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q = (q * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+
+    # Cached keys [lo, seq); new block keys [seq, seq + L).
+    if WINDOWED:
+        lo = tl.maximum(seq - window + 1, 0)   # earliest key the first block row sees
+    else:
+        lo = seq * 0
+    lo = tl.minimum(lo, seq)
+    span = seq - lo
+    per = ((span + SPLITS - 1) // SPLITS + BLOCK_N - 1) // BLOCK_N * BLOCK_N
+    s_lo = lo + split * per
+    s_hi = tl.minimum(s_lo + per, seq)
+
+    m_i = tl.full([BLOCK_M], float("-inf"), tl.float32)
+    l_i = tl.zeros([BLOCK_M], tl.float32)
+    acc = tl.zeros([BLOCK_M, D], tl.float32)
+    offs_n = tl.arange(0, BLOCK_N)
+    for start in range(s_lo, s_hi, BLOCK_N):
+        t = start + offs_n
+        t_ok = t < s_hi
+        pg = tl.load(pt_ptr + b * stride_pt + t // page, mask=t_ok, other=0).to(tl.int64)
+        pg = tl.maximum(pg, 0)
+        row = pg * page + t % page
+        kv_off = row[:, None] * (HKV * D) + kvh * D + offs_d[None, :]
+        k = tl.load(kc_ptr + kv_off, mask=t_ok[:, None], other=0.0).to(DOT)
+        s = tl.dot(q, tl.trans(k)) * qk_scale  # log2 domain
+        vis = t_ok[None, :]
+        if WINDOWED:
+            vis = vis & (t[None, :] > qpos[:, None] - window)
+        s = tl.where(vis, s, float("-inf"))
+        m_new = tl.maximum(m_i, tl.max(s, 1))
+        m_safe = tl.where(m_new == float("-inf"), 0.0, m_new)
+        alpha = tl.exp2(m_i - m_safe)
+        p = tl.exp2(s - m_safe[:, None])
+        l_i = l_i * alpha + tl.sum(p, 1)
+        v = tl.load(vc_ptr + kv_off, mask=t_ok[:, None], other=0.0).to(DOT)
+        acc = acc * alpha[:, None] + tl.dot([p.to](http://p.to)(tl.bfloat16).to(DOT), v)
+        m_i = m_new
+
+    if split == SPLITS - 1:
+        # The block's own L tokens: compute, quantize, store, attend.
+        offs_l = tl.arange(0, BLOCK_L)
+        l_ok = offs_l < L
+        ntok = (b * L + tl.where(l_ok, offs_l, 0)).to(tl.int64)
+        npos = seq + offs_l
+        k_rows = qkv_ptr + ntok[:, None] * stride_tok + (HQ * D + kvh * D)
+        kn = _norm_rope(k_rows, offs_d, npos[:, None], theta, eps, ROPE, D, l_ok[:, None])
+        vn = tl.load(qkv_ptr + ntok[:, None] * stride_tok + ((HQ + HKV) * D + kvh * D)
+                     + offs_d[None, :], mask=l_ok[:, None], other=0.0).to(tl.float32)
+        kq = (kn / ks).to(kc_ptr.dtype.element_ty)
+        vq = (vn / vs).to(vc_ptr.dtype.element_ty)
+        loc = tl.load(loc_ptr + ntok, mask=l_ok, other=0)
+        dst = loc[:, None] * (HKV * D) + kvh * D + offs_d[None, :]
+        tl.store(kc_ptr + dst, kq, mask=l_ok[:, None])
+        tl.store(vc_ptr + dst, vq, mask=l_ok[:, None])
+        s = tl.dot(q, tl.trans([kq.to](http://kq.to)(tl.float32).to(DOT))) * qk_scale
+        vis = l_ok[None, :] & (npos[None, :] <= qpos[:, None])
+        s = tl.where(vis, s, float("-inf"))
+        m_new = tl.maximum(m_i, tl.max(s, 1))
+        m_safe = tl.where(m_new == float("-inf"), 0.0, m_new)
+        alpha = tl.exp2(m_i - m_safe)
+        p = tl.exp2(s - m_safe[:, None])
+        l_i = l_i * alpha + tl.sum(p, 1)
+        acc = acc * alpha[:, None] + tl.dot([p.to](http://p.to)(tl.bfloat16).to(DOT), [vq.to](http://vq.to)(tl.float32).to(DOT))
+        m_i = m_new
+
+    head = kvh * G + g
+    out_off = tok[:, None] * (HQ * D) + head[:, None] * D + offs_d[None, :]
+    gate_off = tok[:, None] * stride_tok + ((HQ + 2 * HKV) * D) + head[:, None] * D + offs_d[None, :]
+    if SPLITS == 1:
+        a = acc * vs / l_i[:, None]
+        a = a * tl.rsqrt(tl.sum(a * a, 1) / D + eps)[:, None]
+        gate = tl.load(qkv_ptr + gate_off, mask=row_ok[:, None], other=0.0).to(tl.float32)
+        tl.store(out_ptr + out_off, (a * tl.sigmoid(gate)).to(tl.bfloat16), mask=row_ok[:, None])
+    else:
+        # Partials [B, HKV, SPLITS, BLOCK_M, (D)].
+        pbase = ((b * HKV + kvh) * SPLITS + split) * BLOCK_M + offs_m
+        tl.store(o_ptr + pbase[:, None] * D + offs_d[None, :], acc)
+        tl.store(m_ptr + pbase, m_i)
+        tl.store(l_ptr + pbase, l_i)
+        tl.debug_barrier()  # every warp's partial stores precede the ticket (release below)
+        tk = ticket_ptr + b * HKV + kvh
+        prev = tl.atomic_add(tk, 1, sem="acq_rel", scope="gpu")
+        if prev == SPLITS - 1:
+            m_t = tl.full([BLOCK_M], float("-inf"), tl.float32)
+            l_t = tl.zeros([BLOCK_M], tl.float32)
+            a = tl.zeros([BLOCK_M, D], tl.float32)
+            for s_i in range(0, SPLITS):
+                qb = ((b * HKV + kvh) * SPLITS + s_i) * BLOCK_M + offs_m
+                m_s = tl.load(m_ptr + qb, cache_modifier=".cg")
+                l_s = tl.load(l_ptr + qb, cache_modifier=".cg")
+                o_s = tl.load(o_ptr + qb[:, None] * D + offs_d[None, :], cache_modifier=".cg")
+                m_n = tl.maximum(m_t, m_s)
+                m_z = tl.where(m_n == float("-inf"), 0.0, m_n)
+                w_t = tl.exp2(m_t - m_z)
+                w_s = tl.exp2(m_s - m_z)
+                l_t = l_t * w_t + l_s * w_s
+                a = a * w_t[:, None] + o_s * w_s[:, None]
+                m_t = m_n
+            a = a * vs / l_t[:, None]
+            a = a * tl.rsqrt(tl.sum(a * a, 1) / D + eps)[:, None]
+            gate = tl.load(qkv_ptr + gate_off, mask=row_ok[:, None], other=0.0).to(tl.float32)
+            tl.store(out_ptr + out_off, (a * tl.sigmoid(gate)).to(tl.bfloat16), mask=row_ok[:, None])
+            tl.atomic_xchg(tk, 0, sem="relaxed", scope="gpu")
+
+
+def _num_splits(batch, hkv, span_max, block_n):
+    ctas = batch * hkv
+    want = max(1, (2 * NUM_SMS + ctas - 1) // ctas)
+    most = max(1, span_max // (2 * block_n))  # >= 2 tiles per split
+    return min(want, most)
+
+
+def kernel_fn(data: Inputs) -> torch.Tensor:
+    cfg = data["config"]
+    batch, length = cfg["batch"], cfg["q_len"]
+    hq, hkv, d, page = cfg["num_q_heads"], cfg["num_kv_heads"], cfg["head_dim"], cfg["page_size"]
+    g = hq // hkv
+    tokens = batch * length
+    qkv = data["qkv"].reshape(tokens, -1)
+    window = cfg["window"]
+    rope = bool(cfg["rope_theta"])
+    theta = float(cfg["rope_theta"]) if rope else 1.0
+    page_table = data["page_table"]
+    dev = qkv.device
+
+    block_n = 64
+    block_m = max(16, triton.next_power_of_2(length * g))
+    span_max = window if window else page_table.shape[1] * page  # shape-only bound
+    splits = _num_splits(batch, hkv, span_max, block_n)
+    out = torch.empty((tokens, hq * d), dtype=torch.bfloat16, device=dev)
+    if splits > 1:
+        n = batch * hkv * splits * block_m
+        part_o = torch.empty((n, d), dtype=torch.float32, device=dev)
+        part_m = torch.empty((n,), dtype=torch.float32, device=dev)
+        part_l = torch.empty((n,), dtype=torch.float32, device=dev)
+    else:
+        part_o = part_m = part_l = out
+    tickets = _tickets(dev, batch * hkv)
+    _fused[(batch, hkv, splits)](
+        qkv, data["seq_lens"], page_table, data["cache_loc"], data["k_cache"], data["v_cache"],
+        data["k_scale"], data["v_scale"], part_o, part_m, part_l, tickets, out,
+        theta, RMS_EPS, float(cfg["qk_scale_factor"]), float(cfg["sm_scale"]),
+        window, page, qkv.stride(0), page_table.stride(0),
+        L=length, G=g, HQ=hq, HKV=hkv, D=d, BLOCK_M=block_m, BLOCK_N=block_n,
+        BLOCK_L=16, SPLITS=splits, ROPE=rope, WINDOWED=bool(window), DOT=_DOT,
+        num_warps=4, num_stages=3)
+    return out.view(batch, length, hq * d)

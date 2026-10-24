@@ -1,0 +1,47 @@
+{
+  "created_utc": "2026-10-24T17:19:39.565818+00:00",
+  "source": "Parent trusted transcript Sentinel_c1dc2c1eeaa4819189d0603be91e307c",
+  "transport_note": "XML entities decoded when transcribing; escaped transport view separately preserved; candidate normalization changes only the five Markdown links.",
+  "markdown_replacements": 5,
+  "algorithm_changes": 0,
+  "files": {
+    "cpu-results.json": "e20b63079621e0f56e6d9ec035134fff39c46302542c59f8a670f9994a72f425",
+    "submission.py": "b1a87afb4c428502d5066688ba784f577236b6bad4fea8879c8cd98fefb9c3dc",
+    "paste.transport.txt": "b070d8fbc5dc492c0b44ff5658921d831ef3205f1ba13e62c8fdcfc6e4eee53a",
+    "remote-policy.json": "f48e62780d689a2c7a8ec5f8c0f0609567fe7efb724d5115dcad3ef0b67d8b88",
+    "normalization.diff": "5dcbac7f696cde49a4615eb91089d66c34fe92380c5efa648d0e51ef1a95e468",
+    "README.md": "232d84fce27a9210ade729fb8bd2f00f58c78c8f95ac728f8031cf07523168b0",
+    "transport-decoding.diff": "0891f3980f10ac3cf0f4cfdbda505ed628588b38cf1dae6f04de030021837b76",
+    "paste.original.txt": "578da2c469d6b6230c66c3f3c4f0ca0301e535c2b7dffed50ac37fb9cc79b0e8",
+    "REVIEW.md": "68b0aa174213c483e80a61f68dfe828370eb29e1641427b2d56b7925b5ef2d05",
+    "preflight.py": "95f37d636bfd5f382a540f64f138fa40ef5d152428e5ea20a99339c75bb03392",
+    "official/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/template.py": "18e15dfdfdcebb8251d94530947f4ccfa1c19f598a8240a0b76c6574eddecb6d",
+    "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "official/TASK.md": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76",
+    "official/AGENTS.md": "c01682737af060546f7f17c480cc37309c28e6c2de1cc13c669f3f66307d3476"
+  },
+  "official_source": "https://openkernelchallenge.dev/api/v1/problems/muse_attention_decode",
+  "official_reference_matches_previous": true,
+  "remote_execution": "not authorized; no request sent",
+  "publication": "not authorized; no push",
+  "local_preflight_utc": "2026-10-24T17:29:56.772796+00:00",
+  "original_syntax": {
+    "passed": false,
+    "line": 91,
+    "message": "invalid syntax"
+  },
+  "normalized_syntax": {
+    "passed": true
+  },
+  "execution_blocker": {
+    "operation": "TRITON_INTERPRET=1 .venv/bin/python reviews/attention-v2/submission.py",
+    "outcome": "failed",
+    "reason": "ModuleNotFoundError: No module named 'triton'",
+    "cuda_available": false,
+    "gpu_execution_attempted": false
+  },
+  "remote_requests": [],
+  "remote_approval": "pending; projection ten-check budget exhausted"
+}

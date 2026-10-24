@@ -1,0 +1,38 @@
+--- paste.original.txt
++++ submission.py
+@@ -88,7 +88,7 @@
+         partner = tl.load(x_ptr + (offs_d ^ 1)[None, :], mask=mask, other=0.0).to(tl.float32) * inv
+         i = (offs_d // 2).to(tl.float32)
+         inv_freq = tl.exp2(-(2.0 * i / D) * tl.log2(theta))
+-        ang = [pos.to](http://pos.to)(tl.float32) * inv_freq[None, :]
++        ang = pos.to(tl.float32) * inv_freq[None, :]
+         sign = tl.where((offs_d % 2) == 0, -1.0, 1.0)[None, :]
+         x = x * tl.cos(ang) + sign * partner * tl.sin(ang)
+     return x
+@@ -157,7 +157,7 @@
+         p = tl.exp2(s - m_safe[:, None])
+         l_i = l_i * alpha + tl.sum(p, 1)
+         v = tl.load(vc_ptr + kv_off, mask=t_ok[:, None], other=0.0).to(DOT)
+-        acc = acc * alpha[:, None] + tl.dot([p.to](http://p.to)(tl.bfloat16).to(DOT), v)
++        acc = acc * alpha[:, None] + tl.dot(p.to(tl.bfloat16).to(DOT), v)
+         m_i = m_new
+ 
+     if split == SPLITS - 1:
+@@ -176,7 +176,7 @@
+         dst = loc[:, None] * (HKV * D) + kvh * D + offs_d[None, :]
+         tl.store(kc_ptr + dst, kq, mask=l_ok[:, None])
+         tl.store(vc_ptr + dst, vq, mask=l_ok[:, None])
+-        s = tl.dot(q, tl.trans([kq.to](http://kq.to)(tl.float32).to(DOT))) * qk_scale
++        s = tl.dot(q, tl.trans(kq.to(tl.float32).to(DOT))) * qk_scale
+         vis = l_ok[None, :] & (npos[None, :] <= qpos[:, None])
+         s = tl.where(vis, s, float("-inf"))
+         m_new = tl.maximum(m_i, tl.max(s, 1))
+@@ -184,7 +184,7 @@
+         alpha = tl.exp2(m_i - m_safe)
+         p = tl.exp2(s - m_safe[:, None])
+         l_i = l_i * alpha + tl.sum(p, 1)
+-        acc = acc * alpha[:, None] + tl.dot([p.to](http://p.to)(tl.bfloat16).to(DOT), [vq.to](http://vq.to)(tl.float32).to(DOT))
++        acc = acc * alpha[:, None] + tl.dot(p.to(tl.bfloat16).to(DOT), vq.to(tl.float32).to(DOT))
+         m_i = m_new
+ 
+     head = kvh * G + g
