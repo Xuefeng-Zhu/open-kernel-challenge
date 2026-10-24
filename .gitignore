@@ -34,3 +34,7 @@ results/*
 !results/h200-per-shape.csv
 !results/router-*-cpu.json
 NEXT-STEP.md
+!results/remote-*.json
+!results/remote-*.csv
+*.local.json
+*.local.txt

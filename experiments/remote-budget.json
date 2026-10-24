@@ -6,5 +6,60 @@
   "max_spend_usd": 0,
   "max_active_jobs": 2,
   "bounded_concurrency_reason": "Two prevalidated, independent controls can wait through the shared queue without flooding it; inspect both before admitting more. Honor any stricter server limit.",
-  "requests": []
+  "requests": [
+    {
+      "experiment": "R01-router-control",
+      "candidate": "candidates/router_split_after8.py",
+      "source_commit": "4fb8e81fba03a2b9eedbdbdb9ce671d1be4ea4f5",
+      "submission_sha256": "6b1b66e2875ad4a755e98e41235243c5f0b5131c32f5f6b08e49d2f4f7d5c352",
+      "mode": "check",
+      "created_utc": "2026-10-24T08:02:18.090436+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "59abe5825690427c",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T08:02:18.259654+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T08:06:55.761495+00:00"
+    },
+    {
+      "experiment": "R02-router-wide",
+      "candidate": "candidates/router_fused_wide.py",
+      "source_commit": "2d7f55d150ea4ca266bbc95fa70c3555c1d75cd9",
+      "submission_sha256": "016dbc6828bbf85dd6479a119b0b6f4b06cdb13fdc486fa1df16a09139537ccd",
+      "mode": "check",
+      "created_utc": "2026-10-24T08:02:53.186769+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "89fe00c5034a4198",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T08:02:53.374629+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T08:06:56.044807+00:00"
+    }
+  ]
 }

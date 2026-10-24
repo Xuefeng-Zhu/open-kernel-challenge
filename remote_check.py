@@ -94,12 +94,13 @@ def main():
     if not entry.get("job_id"):
         raise RuntimeError("No accepted job ID; reconcile jobs first")
     p, data = cli("status", entry["job_id"], "--json")
-    if p.returncode or not isinstance(data, dict):
+    (ROOT / "results" / (args.experiment + "-status-reply.local.json")).write_text(p.stdout)
+    if not isinstance(data, dict):
         raise RuntimeError("Read-only status failed; existing job reservation unchanged")
     if data.get("mode") != "check" or data.get("id") != entry["job_id"]:
         raise RuntimeError("Job identity/mode mismatch")
     save(ROOT / "results" / (args.experiment + "-job.local.json"), data)
-    entry.update(status=data["status"], last_checked_utc=now())
+    entry.update(status=data["status"], status_cli_exit_code=p.returncode, last_checked_utc=now())
     if data["status"] in TERMINAL:
         result = data.get("result") or {}
         entry.update(state="terminal", quota_after=quota(), passed=result.get("passed"),

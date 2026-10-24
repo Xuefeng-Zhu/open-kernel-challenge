@@ -18,7 +18,7 @@ def main():
     assert {"prepare", "kernel_fn"} <= functions
     for node in ast.walk(tree):
         if isinstance(node, ast.Import):
-            assert all(n.name in {"torch"} for n in node.names), "Unexpected import"
+            assert all(n.name in {"torch", "triton", "triton.language"} for n in node.names), "Unexpected import"
         if isinstance(node, ast.ImportFrom):
             assert node.module == "typing", "Unexpected import"
         if isinstance(node, ast.Call):
