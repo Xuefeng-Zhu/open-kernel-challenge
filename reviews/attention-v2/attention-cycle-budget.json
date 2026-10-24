@@ -1,0 +1,38 @@
+{
+  "problem": "muse_attention_decode",
+  "maximum_new_checks": 6,
+  "reserved_final_checks": 1,
+  "mode": "check",
+  "max_spend_usd": 0,
+  "max_active_jobs": 2,
+  "rules_version": "2026-10-22.1",
+  "created_utc": "2026-10-24T22:25:25.825087+00:00",
+  "authorization": "New separate up-to-six attention off-board checks approved; failures count; at least one final complete-candidate check; no projection quota, scored entries, push, credentials/payment/terms changes",
+  "historical_excluded": [
+    "bf4b49bd8bb34dae",
+    "Modal A03",
+    "Modal A05"
+  ],
+  "requests": [],
+  "remaining": 6,
+  "plans": {
+    "E0": {
+      "candidate": "submission.py",
+      "hypothesis": "Official corrected-v2 baseline after passing Modal",
+      "expected_sha256": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+      "final": false
+    }
+  },
+  "initial_platform_quota": {
+    "checks": {
+      "per_day": 20,
+      "used": 1,
+      "left": 19
+    },
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    }
+  }
+}
