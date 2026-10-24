@@ -19,7 +19,8 @@ SPECS=[('projection_pooler_layout.py','pooler',8192,4096),
        ('projection_full_composition.py','unpooler',4096,1024),
        ('projection_full_composition.py','pooler',8192,4096),
        ('projection_qkv_layout.py','qkv_gate',8192,2304),
-       ('projection_unpooler_layout.py','unpooler',4096,8192)]
+       ('projection_unpooler_layout.py','unpooler',4096,8192),
+       ('projection_pooler_grouped.py','pooler',8192,4096)]
 requested=os.environ.get('PROJECTION_CANDIDATE')
 
 
