@@ -13,7 +13,7 @@ CUDA `out_dtype`, Triton compilation or graph capture.
 | `router_split_after1.py` | R03 passed, 1.0267804×; m8 router improved |
 | `router_fused_wide.py` | R02 passed, 1.0476946×; strongest measured large-M router component |
 | `router_triton_split16.py` | R04 passed, 1.0459769×; native low-M router compilation/correctness verified |
-| `router_fused_view.py` | R05 passed, highest observed aggregate 1.0509508×; larger-router regression versus R02, overlapping score intervals |
+| `router_fused_view.py` | R05 passed 1.0509508×; larger-router regression versus R02, overlapping score intervals |
 | `router_transpose_view.py` | Local-only two-product layout control; no GPU validation |
 | `pooler_triton_split8.py` | R06 passes correctness but regresses low-M pooler; do not compose |
 | `router_hybrid_library.py` | Local-only composition of R03 small-M and R02 large-M paths |

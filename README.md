@@ -40,7 +40,7 @@ and FP32 for the router. `prepare` retains original weights. The unpooler uses i
 Completed off-board job **`e5a5b2d20da54187`**: **9/9 prerequisite tests and 30/30
 scored-shape correctness checks passed** on NVIDIA H200. The judge reports speedup
 `0.9076063758`, 95% interval `[0.8939922801, 0.9212204714]`, and normalized `score_us`
-`5322.5716885` (not a directly measured single-load latency). No optimization is claimed.
+`5322.5716885` (not a directly measured single-load latency). No optimization was present in this starter trial.
 The main measured gap is the FP32 router for m>8; at m=256 it takes 45.53 µs versus
 SGLang's 17.34 µs. See [experiment 001](experiments/001-offboard-baseline.md),
 [full sanitized records](results/h200-check.json) and [per-shape CSV](results/h200-per-shape.csv).
