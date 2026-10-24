@@ -28,5 +28,18 @@ this screen warrants a meaningful attempt. Preserve every failure/regression.
 .venv/bin/python finalize_modal_diagnostic.py M26-qkv-layout
 ```
 
-Local95unit tests/syntax pass. GPU outcome pending at source commit. No candidate
-source changes while this accepted app is pending; no uncertain replacement.
+Local95unit tests/syntax pass. Actual app ap-KFijr1ps085dubW3fuiteg completed and
+verified stopped/tasks0. All3runners39CUDA checks and30shapes x6warmup+30steady
+replays pass. Worker55.754s, app65s, no timeout. Same H200/public pinned image.
+
+**Rejected for performance, no official admission.** Gross aggregate best/candidate
+0.9984097. QKV m256 paired best/candidate0.9458453 (0/15winning pairs), about5.4%
+slower, candidate median25.376us vs best24.064us. Other m8/16/32/128 ratios are
+1.00168/1.01435/1.00682/1.01593, only8/10/10/12of15win: no robust whole-workload
+benefit. m1 is unchanged; ratio0.99704 is noise/control variation. Preserve all
+samples/source. Do not compose this layout or spend official quota on it.
+
+Full evidence results/remote-modal-M26-qkv-layout.json/.csv; raw medians/tails,
+source hash, all seeds and every pair retained. Billing asynchronously updates;
+conservative cumulative guard$0.55673<$2, net paid$0. Next independent direction
+is large-M unpooler layout, without any QKV-layout changes.
