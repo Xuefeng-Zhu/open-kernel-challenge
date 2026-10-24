@@ -62,8 +62,9 @@ def main():
         print(json.dumps(ledger["last_account_quota"]))
         return 0
     if args.action == "send":
-        if ledger.get("admission_paused"):
-            raise RuntimeError("New uploads paused after automatic approval rejection; resolve with materially new trusted authorization")
+        exception = ledger.get("single_admission_exception") or {}
+        if ledger.get("admission_paused") and args.experiment != exception.get("experiment"):
+            raise RuntimeError("Official dispatch remains paused except for the specifically authorized composition")
         if any(x["experiment"] == args.experiment for x in entries):
             raise RuntimeError("Experiment already journaled; reconcile it, never blindly resend")
         if any(x["state"] in {"sending", "uncertain"} for x in entries):
@@ -83,6 +84,9 @@ def main():
         source = path.read_bytes()
         if source != committed:
             raise RuntimeError("Candidate differs from its source commit; commit before admitting it")
+        if ledger.get("admission_paused") and (relative != exception.get("candidate")
+                or hashlib.sha256(source).hexdigest() != exception.get("sha256")):
+            raise RuntimeError("Scoped admission requires the exact Modal-verified source hash")
         globals_errors = plain_jit_globals(ast.parse(source.decode()))
         if globals_errors:
             raise RuntimeError("Known JIT-global preflight failure: " + "; ".join(globals_errors))

@@ -23,6 +23,13 @@
       "control_job_id": "02e099c3724e4a05",
       "cpu_report": "results/router-cycle2-pooler-layout-cpu.json",
       "local_record": "experiments/015-pooler-layout-local.md"
+    },
+    "P2-02-full-composition": {
+      "candidate": "candidates/projection_full_composition.py",
+      "hypothesis": "Officially validate Modal-checked composition of R10 router, QKV/unpooler m1 SIMT and BF16 pooler m>1 layout",
+      "control_job_id": "eeec05d897ef4946",
+      "cpu_report": "results/router-cycle2-full-compose-cpu.json",
+      "local_record": "experiments/024-official-full-composition.md"
     }
   },
   "requests": [
@@ -86,5 +93,13 @@
     "at_utc": "2026-10-24T17:54:02.225263+00:00",
     "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
     "scope": "No new official checks; monitor accepted jobs only. No Modal uploads/GPU/auth actions approved yet."
+  },
+  "single_admission_exception": {
+    "experiment": "P2-02-full-composition",
+    "candidate": "candidates/projection_full_composition.py",
+    "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+    "max_new_requests": 1,
+    "recorded_utc": "2026-10-24T19:24:41.142402+00:00",
+    "scope": "Only this off-board check from existing second-cycle budget after Modal stability; all other official dispatch remains paused"
   }
 }
