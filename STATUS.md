@@ -1,5 +1,12 @@
 # Current status
 
+**New authorization:** up to **10 new** official off-board dense-projection checks,
+$0 spending, prior baseline excluded. No scored/final submission, new credentials or
+new material agreement. `experiments/remote-budget.json` is the admission ledger;
+uncertain requests reserve an allowance until reconciled. At most two independent
+jobs may be active, with stricter server limits taking precedence. Older single-run
+authorization statements below are superseded by this explicit new budget.
+
 - Baseline source commit: `fde8a042944c742c20b76f27fcc030d767fd0058`.
 - Baseline source SHA256: `78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e`.
 - CPU: 39/39 full-size cases and 5/5 focused tests; reproduced from a clean Git archive.

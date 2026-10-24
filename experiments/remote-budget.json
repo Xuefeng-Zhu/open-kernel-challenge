@@ -1,0 +1,10 @@
+{
+  "authorization": "Ten NEW official off-board dense-projection experiments, autonomous selection, strict $0 spend; no scored/final entry, new credentials or material agreements",
+  "maximum_new_experiments": 10,
+  "prior_baseline_excluded": "e5a5b2d20da54187",
+  "mode": "check",
+  "max_spend_usd": 0,
+  "max_active_jobs": 2,
+  "bounded_concurrency_reason": "Two prevalidated, independent controls can wait through the shared queue without flooding it; inspect both before admitting more. Honor any stricter server limit.",
+  "requests": []
+}
