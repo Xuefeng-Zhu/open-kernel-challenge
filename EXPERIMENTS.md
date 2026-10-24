@@ -28,3 +28,15 @@ outcome stays reserved until reconciled. At most two independent jobs are active
 Use `remote_check.py`; it never creates a scored entry or retries a POST automatically.
 No new material terms or credential changes are authorized. Current statuses, exact
 source hashes/commits and quota snapshots live in `experiments/remote-budget.json`.
+
+## Offline comparisons of actual remote evidence
+
+```sh
+.venv/bin/python compare_results.py R02-router-wide R05-wide-layout
+.venv/bin/python compare_results.py R03-router-dispatch R04-router-triton16
+```
+
+This reads saved terminal records only. It reports actual shape latencies, within-run
+SGLang-normalized ratios and six weighted-load speedups with cross-run qualifications.
+It does not benchmark, predict a composite score, or establish statistical significance.
+Generated examples: COMPARISON_R02_R05.md and COMPARISON_R03_R04.md.
