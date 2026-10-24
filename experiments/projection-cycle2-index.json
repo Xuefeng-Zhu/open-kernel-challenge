@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-24T20:02:58.403543+00:00",
+  "updated_utc": "2026-10-24T20:18:04.567349+00:00",
   "best_official": "P2-02-full-composition",
   "followup_screens": [
     {
@@ -55,10 +55,18 @@
   "modal_budget": "modal-diagnostics-budget.json",
   "local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 104,
-    "total": 104,
-    "log": "results/m32-preflight-tests.local.txt",
+    "passed": 108,
+    "total": 108,
+    "log": "results/m34-preflight-tests.local.txt",
     "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
-    "scope": "CPU models/static only; actual GPU evidence separate"
+    "scope": "CPU models/static only; actual GPU evidence separate",
+    "verified_utc": "2026-10-24T20:11:04.264770+00:00"
+  },
+  "resource_diagnostic": {
+    "failed_experiment": "M33-resource-probe",
+    "successful_experiment": "M34-resource-probe-fixed",
+    "app_id": "ap-GwiDybwrxgrysaFh3d8DRM",
+    "results": "results/remote-modal-M34-resource-probe-fixed.json",
+    "report": "HOPPER_DIAGNOSTICS.md"
   }
 }

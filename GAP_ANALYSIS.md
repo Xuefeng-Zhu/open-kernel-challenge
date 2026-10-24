@@ -1,3 +1,9 @@
+Follow-on compiled resources and ordinary CUDA timelines now available in
+[HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md):0reportedspill in inspected
+nativepoolers, MMA/copy instruction paths and actual per-kernel activity. Missing
+actualDRAM/achievedoccupancy explicitly separated. Two future hypotheses only;
+no new algorithm benchmark or official check.
+
 # Current gap update — official P2-02, 2026-10-24
 
 Source full composition c34c497b, job48b1357016134e52,1.1486499523xSGLang,

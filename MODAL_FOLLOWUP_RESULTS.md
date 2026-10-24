@@ -1,3 +1,8 @@
+Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
+M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
+M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.
+Two future hypotheses assessed; no new algorithm benchmark or officialcheck.
+
 # Modal follow-up projection screens — 2026-10-24T20:02:58.403543+00:00
 
 Best unchanged: candidates/projection_full_composition.py, source

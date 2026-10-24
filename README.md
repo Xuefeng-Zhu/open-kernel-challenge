@@ -1,3 +1,8 @@
+Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
+M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
+M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.
+Two future hypotheses assessed; no new algorithm benchmark or officialcheck.
+
 # Open Kernel Challenge — dense projections
 
 Latest official passing composition: **1.1486499523x SGLang**, 95% interval

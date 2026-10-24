@@ -730,10 +730,26 @@
       "conservative_cost_upper_usd": "0.043015488"
     }
   ],
-  "latest_billing_observed_utc": "2026-10-24T20:11:52.915441+00:00",
-  "stage_completed": false,
+  "latest_billing_observed_utc": "2026-10-24T20:14:34.619888+00:00",
+  "stage_completed": true,
   "report_before_expanding": false,
   "final_app_states": [
+    {
+      "app_id": "ap-GwiDybwrxgrysaFh3d8DRM",
+      "description": "okc-m34-resource-probe-fixed",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-24 13:11:19-07:00",
+      "stopped_at": "2026-10-24 13:11:37-07:00"
+    },
+    {
+      "app_id": "ap-vd8ZPjum8f0SpBMhBTTYDE",
+      "description": "okc-m33-resource-probe",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-24 13:09:49-07:00",
+      "stopped_at": "2026-10-24 13:09:56-07:00"
+    },
     {
       "app_id": "ap-L3DFQUMb8HkSfOzpd5K953",
       "description": "okc-m32-pooler-narrow",
@@ -800,23 +816,23 @@
     }
   ],
   "legacy_high_water_note": "Earlier derived high-water field mixed in the conservative time guard; corrected to actual billing snapshots. Raw historical records preserved.",
-  "early_stop_reason": "All four follow-up screens passed correctness but no meaningful whole-workload winner; stop basic tile tuning rather than burn official allowance",
+  "early_stop_reason": "Diagnostic complete: two architecture-aware hypotheses assessed; no new algorithm benchmark or official check in this bounded diagnostic stage",
   "final_billing_snapshot": {
-    "metered_cost": "0.87000000",
+    "metered_cost": "0.75000000",
     "billed_cost": "0E-8",
     "adjustments": {
-      "credits": "-0.87000000",
-      "plan_cost": "0E-8",
-      "reservation_adjustment": "-0E-8",
+      "credits": "-0.75000000",
       "network_egress_allowance": "0E-8",
-      "free_storage": "-0E-8"
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8"
     },
     "metered_cost_breakdown": {
-      "llm_tokens": "0E-8",
-      "ephemeral_apps": "0.87077815",
       "volumes": "0E-8",
-      "network_egress": "0E-8"
+      "network_egress": "0E-8",
+      "ephemeral_apps": "0.74548257",
+      "llm_tokens": "0E-8"
     }
   },
-  "current_diagnostic": "M33 unchanged-kernel metadata and ordinary CUDA activity; no algorithm benchmark or official check"
+  "current_diagnostic": "M34 terminal success; hypotheses reported, no algorithm benchmark"
 }

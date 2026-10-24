@@ -25,7 +25,7 @@ fresh graph oracle checks pass. BN128 n_regs95/shared40960/n_spills0; BN32
 n_regs45/shared16384/n_spills0. PTX has mma.sync+cp.async, no WGMMA/TMA/local ops.
 No hardware counters used. Native kernel62.139/70.632us (m128/256) versus best
 21.506+3.424/29.209us activity. HostGraphLaunch instrumentation0.58–1.92ms is
-strongly perturbed and not a usable launch-overhead estimate; never subtract it.
+profiled with no unprofiled host control, hence not a usable launch-overhead estimate; never subtract it.
 Exact timing/context caveats and at-most-two hypotheses: HOPPER_DIAGNOSTICS.md.
 Conservative stageguard1.034494554<$2,latestgross0.73/net0 snapshot asynchronous,
 prior observed highwater0.87077815. No official request/newcredential/push.

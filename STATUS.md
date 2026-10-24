@@ -1,3 +1,25 @@
+# Latest diagnostic checkpoint — 2026-10-24 20:16UTC
+
+M34resources/timeline complete,appap-GwiDybwrxgrysaFh3d8DRM stopped. All10Modalapps
+stopped/tasks0. Driver reports0spill in both nativepoolers; PTXmma.sync+cp.async,
+no WGMMA/TMA. Native excess GPUkernel time observed, cannot be fixed by launchcount
+alone. ActualDRAM/achievedoccupancy unknown; no restrictedcounterattempt. Two
+unimplemented hypotheses with benefit/risk gates: HOPPER_DIAGNOSTICS.md. No new
+algorithm benchmark or official check. Bestfullcomposition1.14865x unchanged.
+
+108localtests pass. M33failed protocolCLI before diagnostic (known terminal),
+fixed/testedM34success; preserve both experimentcommits. Conservative stageguard
+1.034494554of2USD,finalsnapshot0.75credited/0paid,observedhighwater0.87077815;
+counters asynchronous. Existing12htoken unchanged/expiry06:26:47UTC Oct25,
+no credential/cap/payment/terms/push. Officialcycle2/10used,8remaining; no active/
+uncertainjob. Further algorithm work not implemented; no permission/access blocker.
+For next prototype read H1/H2 tradeoffs before any algorithm benchmark. Preserve
+fullBF16/FP32precision, fullCUDA gates/nearby/fresh checks and balanced graph timing.
+
+Earlier bounded optimization checkpoint follows with its original date/scope:
+
+---
+
 # Current checkpoint — 2026-10-24T20:02:58.403543+00:00
 
 Best official candidate fullcomposition c34c497b, job48b1357016134e52,
