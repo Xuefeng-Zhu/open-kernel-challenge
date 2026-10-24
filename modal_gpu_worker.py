@@ -19,6 +19,42 @@ import time
 ROOT = Path(__file__).resolve().parent
 
 
+def make_modal_entry():
+    # Local function is serialized by value. Its code is in this allowlisted
+    # worker; it captures no host globals, credentials or project directory.
+    def execute(candidate_name):
+        import json
+        import os
+        from pathlib import Path
+        import signal
+        import subprocess
+        import sys
+        import time
+
+        root = Path("/opt/okc-bundle")
+        output = Path("/tmp/okc-smoke-result")
+        started = time.monotonic()
+        command = [sys.executable, str(root / "modal_gpu_worker.py"),
+                   "--candidate", str(root / "candidates" / candidate_name),
+                   "--output-dir", str(output), "--repeats", "6"]
+        with Path("/tmp/okc-smoke-worker.log").open("w") as log:
+            child = subprocess.Popen(command, cwd=root, stdout=log, stderr=subprocess.STDOUT,
+                                     start_new_session=True)
+            try:
+                code = child.wait(timeout=555)
+                state = "completed"
+            except subprocess.TimeoutExpired:
+                os.killpg(child.pid, signal.SIGKILL)
+                child.wait()
+                code, state = -signal.SIGKILL, "deadline-killed"
+        records = {p.name: json.loads(p.read_text()) for p in output.glob("*.json")}
+        logs = {p.name: p.read_text()[-16000:] for p in output.glob("*.log")}
+        logs["worker.log"] = Path("/tmp/okc-smoke-worker.log").read_text()[-16000:]
+        return dict(exit_code=code, state=state, worker_wall_seconds=time.monotonic()-started,
+                    python=sys.version, python_executable=sys.executable, records=records, logs=logs)
+    return execute
+
+
 def save(path, report):
     Path(path).write_text(json.dumps(report, indent=2) + "\n")
 

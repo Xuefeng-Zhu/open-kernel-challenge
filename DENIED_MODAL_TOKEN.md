@@ -1,5 +1,21 @@
 # Modal CLI authentication — creation command denied before execution
 
+## Resolution
+
+After new explicit user approval, performed exactly one safer retry with no output
+redirection. Official Modal browser screen requested workspace `xuefeng-zhu` and
+12 hours, matching approval; authorized successfully. Config is task-local ignored
+`local-notes/modal-auth.toml`, mode0600. Supported token info confirms user/workspace
+xuefeng-zhu, created2026-10-24 18:26:47UTC, expires2026-10-25 06:26:47UTC. No token
+secret printed or committed. Original denial below is preserved as history; never
+retry that original logging command.
+
+The official CLI emitted a token identifier in its expiry warning, not the secret.
+Subsequent metadata verification captures output in memory and prints only
+workspace/user/creation/expiry fields. No credential dump or authentication log.
+
+## Original denial
+
 2026-10-24: user explicitly approved official client installation and a 12-hour
 token for workspace `xuefeng-zhu`, stored privately only on the Mac, with no
 credential values in chat/logs/repo. Official PyPI client1.6.2 installed in `.venv`.
