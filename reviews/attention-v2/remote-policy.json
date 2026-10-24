@@ -2,10 +2,13 @@
   "problem": "muse_attention_decode",
   "candidate": "reviews/attention-v2/submission.py",
   "candidate_sha256": "b1a87afb4c428502d5066688ba784f577236b6bad4fea8879c8cd98fefb9c3dc",
-  "remote_check_approval": "pending",
-  "maximum_authorized_remote_checks": 0,
+  "remote_check_approval": "approved_one_normalized_only",
+  "maximum_authorized_remote_checks": 1,
   "requests": [],
   "max_spend_usd": 0,
   "publication": "not authorized; local-only commit, no push",
-  "projection_budget": "10/10 exhausted; cannot be reused for attention"
+  "projection_budget": "10/10 exhausted; cannot be reused for attention",
+  "rules_version": "2026-10-22.1",
+  "approval_recorded_utc": "2026-10-24T17:36:57.597499+00:00",
+  "authorization_scope": "One additional official off-board H200 check, upload only the normalized user attention v2 source; $0, no scored entry, no new credentials or publishing; no second check/retry consuming another allowance"
 }
