@@ -10,7 +10,7 @@ source hashes and current states; never resubmit a pending or uncertain request.
 - E1 historical separate merge: Modal correctness passed, overall regression;
   [report](REPORT.md). Not used as E2's parent; no new check spent on it.
 - E2 fixed8192 history chunks for full B16/32 only: [scope](E2_FIXED_CHUNKS.md).
-  Official job 7edded086c8a47f2 accepted; consult the ledger for current status.
+  Official job 7edded086c8a47f2 passed: 0.7958818006× SGLang, about 10.2% over E0.
 - [Coverage audit](COVERAGE_AUDIT.md) distinguishes the older tests from the new
   [explicit same-address A→B→A test](A07_REPLAY.md). New length vectors, page64,
   non-unit scales, cache writes and untouched rows were checked on H200.

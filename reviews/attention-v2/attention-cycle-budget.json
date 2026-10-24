@@ -119,9 +119,44 @@
           "left": 17
         }
       }
+    },
+    {
+      "experiment": "E3",
+      "mode": "check",
+      "state": "accepted",
+      "status": "running",
+      "job_id": "d4e3fc9a2c234d72",
+      "candidate": "reviews/attention-v2/pipeline.py",
+      "source_commit": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+      "source_sha256": "b917b19ec78506fe6145509a6d51c7f83a034d4b4ea0c4b1b99b88042f31771f",
+      "hypothesis": "Only full B16/32 loop tl.range num_stages3 from officially passing E2; CPU invariants pass, A09 GPU result transfer failed with401 so no prior GPU-pass claim",
+      "final": false,
+      "created_utc": "2026-10-24T22:44:46.243759+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/pipeline.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T22:44:46.642268+00:00",
+      "last_checked_utc": "2026-10-24T22:46:08.638768+00:00"
     }
   ],
-  "remaining": 4,
+  "remaining": 3,
   "plans": {
     "E0": {
       "candidate": "submission.py",
