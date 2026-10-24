@@ -251,13 +251,31 @@
           "left": 14
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "b70d87fc51864276",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:02:53.798991+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:04:08.085279+00:00"
+      "last_checked_utc": "2026-10-24T16:10:18.578122+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 8,
+          "left": 12
+        }
+      },
+      "passed": true,
+      "speedup": 0.9930291494670364,
+      "speedup_ci": [
+        0.9781337122250308,
+        1.0079245867090418
+      ]
     },
     {
       "experiment": "R07-router-native-wide",
@@ -279,10 +297,12 @@
         }
       },
       "state": "accepted",
-      "status": "accepted",
+      "status": "queued",
       "job_id": "26ea99ee0869482a",
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-24T16:05:02.390539+00:00"
+      "accepted_utc": "2026-10-24T16:05:02.390539+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T16:10:19.113839+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",

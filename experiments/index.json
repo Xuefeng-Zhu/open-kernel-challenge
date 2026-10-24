@@ -207,6 +207,17 @@
       "focused_tests_passed": 4,
       "gpu_run_id": "26ea99ee0869482a",
       "gpu_validation": "pending actual official H200 check; CPU numerical model not GPU evidence"
+    },
+    {
+      "id": "012-qkv-split8-local",
+      "configuration_file": "candidates/qkv_triton_split8.py",
+      "source_commit": "7258c866d86bc8eee32d6975cef69ae7fe88125d",
+      "submission_sha256": "cf10ebcda0782330b1e9b0cd633ffa1f299810787bbfd9191af57ea9b2438be2",
+      "record": "experiments/012-qkv-split8-local.md",
+      "results": "results/router-qkv-split8-cpu.json",
+      "cpu_cases_passed": 39,
+      "focused_tests_passed": 3,
+      "gpu_validation": "not run; deprioritized after R06 targeted regression"
     }
   ],
   "remote_experiments": [
@@ -282,11 +293,11 @@
       "candidate": "candidates/pooler_triton_split8.py",
       "job_id": "b70d87fc51864276",
       "mode": "check",
-      "status": "queued",
+      "status": "done",
       "result_commit": "90032a97994ad51e7779793000946545a76ba86d",
       "record": "experiments/remote-R06-pooler-triton8.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R06-pooler-triton8.json",
+      "timings": "results/remote-R06-pooler-triton8.csv"
     },
     {
       "id": "R07-router-native-wide",
@@ -295,8 +306,8 @@
       "candidate": "candidates/router_hybrid_native.py",
       "job_id": "26ea99ee0869482a",
       "mode": "check",
-      "status": "accepted",
-      "result_commit": null,
+      "status": "queued",
+      "result_commit": "49f2b7d77b20556b8fbecfb4f155376c8219880f",
       "record": "experiments/remote-R07-router-native-wide.md",
       "results": null,
       "timings": null
