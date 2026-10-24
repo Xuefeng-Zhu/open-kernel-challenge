@@ -1,6 +1,11 @@
 # Modal preparation — local only, launch gated
 
-Local verification 2026-10-24 18:09 UTC: all **69 unittest tests passed**,
+**Latest: official Modal1.6.2 client installed after explicit approval. Token
+creation was rejected before execution because output redirection could log
+credentials. See DENIED_MODAL_TOKEN.md. Neither token config nor output log
+exists. No token/GPU run. Do not retry without materially new authorization.**
+
+Local verification 2026-10-24 18:09 UTC (before Modal installation): all **69 unittest tests passed**,
 including 3 bundle-boundary tests; syntax checks passed. Worker benchmark entry
 on this Mac correctly records `Explicit H200 required; no fallback GPU`, zero
 cases. No native CUDA, container image or Modal SDK execution has occurred.

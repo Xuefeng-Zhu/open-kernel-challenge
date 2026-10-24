@@ -2,6 +2,11 @@
 
 ## Current local branch checkpoint (2026-10-24)
 
+Latest: Modal CLI1.6.2 installed, but token-creation command denied BEFORE
+execution because output redirection could log credentials. Neither config nor
+log exists. Read DENIED_MODAL_TOKEN.md; no alternate route/retry without materially
+new relevant user authorization. No Modal upload/GPU/cost, and no new OKC checks.
+
 On `projection-bf16-local`, read **MODAL_PREFLIGHT.md** and
 `experiments/projection-cycle2-budget.json` first. User wants Modal experiments
 before further official checks. **New official dispatch paused.** Cycle2 has used
