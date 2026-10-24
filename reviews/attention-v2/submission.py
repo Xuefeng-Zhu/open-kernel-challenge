@@ -60,7 +60,7 @@ class Inputs(TypedDict):
 
 
 RMS_EPS = 1e-5
-LOG2E = 1.4426950408889634
+LOG2E = tl.constexpr(1.4426950408889634)
 NUM_SMS = 132  # H200 SXM
 _INTERP = os.environ.get("TRITON_INTERPRET") == "1"
 # Tensor-core operands are BF16 on the GPU. Triton's CPU interpreter (local testing only) can't
