@@ -134,6 +134,12 @@
       "expected_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
       "hypothesis": "Only full B16/32 fixed 8192 historical chunks; E0 parent, passes A07 same-address ABA with actual length changes",
       "final": false
+    },
+    "E3": {
+      "candidate": "pipeline.py",
+      "expected_sha256": "b917b19ec78506fe6145509a6d51c7f83a034d4b4ea0c4b1b99b88042f31771f",
+      "hypothesis": "Only full B16/32 loop tl.range num_stages3 from officially passing E2; CPU invariants pass, A09 GPU result transfer failed with401 so no prior GPU-pass claim",
+      "final": false
     }
   },
   "initial_platform_quota": {

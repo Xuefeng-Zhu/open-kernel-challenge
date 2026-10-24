@@ -1,0 +1,139 @@
+{
+  "kind": "Failed attention compiler/replay result transfer; no GPU correctness or metadata claim",
+  "attempt": {
+    "experiment": "A09-pipeline-probe",
+    "mode": "replay",
+    "state": "terminal",
+    "app_id": "ap-R6eHydPQwAqE8eg0p5lSCi",
+    "created_utc": "2026-10-24T22:41:48.640741+00:00",
+    "source_commit": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+    "submission_sha256": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+    "manifest": {
+      "kind": "Explicit attention source/license allowlist; no repository/auth contents",
+      "mode": "replay",
+      "source_commit": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+      "sha256": {
+        "submission.py": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+        "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+        "fixtures.json": "1fa73ca927a88605efb0182070feec216d9f3d329820bff85c34a509a2252afe",
+        "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "official/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "official/TASK.md": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76",
+        "official/AGENTS.md": "c01682737af060546f7f17c480cc37309c28e6c2de1cc13c669f3f66307d3476",
+        "official/template.py": "18e15dfdfdcebb8251d94530947f4ccfa1c19f598a8240a0b76c6574eddecb6d",
+        "legal/LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+        "legal/THIRD_PARTY_NOTICES.md": "b6ed011d287ca4cd9dbe558a9fa84890486f0d317c134355e592e23b39333768",
+        "legal/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5",
+        "fixed_chunks.py": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+        "pipeline.py": "b917b19ec78506fe6145509a6d51c7f83a034d4b4ea0c4b1b99b88042f31771f",
+        "replay_probe.py": "f3d15dddfedc433955225a1427aa10101869fe95d06e7f9feab2c17a9561d179"
+      },
+      "probe": {
+        "parent": "fixed_chunks.py",
+        "candidate": "pipeline.py",
+        "sliding_control": true,
+        "hypothesis": "Only full B16/32 loop tl.range num_stages3, fixed chunks unchanged; compare actual compiler code/resources and explicit ABA; sliding unchanged control",
+        "expected_sha256": {
+          "fixed_chunks.py": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+          "pipeline.py": "b917b19ec78506fe6145509a6d51c7f83a034d4b4ea0c4b1b99b88042f31771f"
+        }
+      }
+    },
+    "billing_before": {
+      "metered_cost": "1.11000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "credits": "-1.11000000",
+        "network_egress_allowance": "0E-8",
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8",
+        "plan_cost": "0E-8"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "1.10831983",
+        "network_egress": "0E-8",
+        "llm_tokens": "0E-8",
+        "volumes": "0E-8"
+      }
+    },
+    "conservative_reserve_usd": "0.25",
+    "resources": {
+      "gpu": "H200",
+      "cpu": [
+        2,
+        2
+      ],
+      "memory_mib": [
+        8192,
+        8192
+      ],
+      "max_containers": 1,
+      "min_containers": 0,
+      "buffer_containers": 0,
+      "scaledown_window": 2,
+      "timeout": 90,
+      "startup_timeout": 45,
+      "internal_deadline": 70,
+      "retries": 0
+    },
+    "accepted_utc": "2026-10-24T22:41:50.807151+00:00",
+    "error_type": "AuthError",
+    "client_finished_utc": "2026-10-24T22:42:27.733127+00:00",
+    "client_wall_seconds": 39.091805916978046,
+    "app_lifetime_seconds": 41.0,
+    "conservative_cost_upper_usd": "0.076030976",
+    "platform_state": "stopped",
+    "tasks": 0,
+    "termination_verified_utc": "2026-10-24T22:44:26.699135+00:00",
+    "billing_after": {
+      "metered_cost": "1.15000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "network_egress_allowance": "0E-8",
+        "plan_cost": "0E-8",
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8",
+        "credits": "-1.15000000"
+      },
+      "metered_cost_breakdown": {
+        "ephemeral_apps": "1.15008536",
+        "llm_tokens": "0E-8",
+        "network_egress": "0E-8",
+        "volumes": "0E-8"
+      }
+    },
+    "correctness_and_graph_passed": null,
+    "outcome": "result-transfer-failed",
+    "results_missing": true,
+    "failure_stage": "Container push_outputs -> format_blob_data -> BlobCreate returned AuthError401; no returned correctness/compiler data",
+    "function_call_id": "fc-01M5R17P7CP6Q2P1J8R3CCKQ8N"
+  },
+  "app": {
+    "app_id": "ap-R6eHydPQwAqE8eg0p5lSCi",
+    "description": "okc-attention-replay",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-24 15:41:49-07:00",
+    "stopped_at": "2026-10-24 15:42:30-07:00"
+  },
+  "billing_snapshot": {
+    "metered_cost": "1.15000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.15000000"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.15008536",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "conservative_stage_spent_usd": "1.708917914",
+  "log": "2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N Traceback (most recent call last):\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_runtime/container_io_manager.py\", line 987, in handle_input_exception\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     yield\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_container_entrypoint.py\", line 190, in run_input_sync\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     container_io_manager.push_outputs(io_context, started_at, values)\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_runtime/container_io_manager.py\", line 1036, in push_outputs\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     outputs = await io_context.output_items(started_at, output_data)\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_runtime/container_io_manager.py\", line 471, in output_items\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     return await asyncio.gather(\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N            ^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_runtime/container_io_manager.py\", line 453, in package_output\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     formatted = await format_blob_data(\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N                 ^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_utils/blob_utils.py\", line 377, in format_blob_data\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     return {\"data_blob_id\": await blob_upload(data, api_stub)} if len(data) > max_object_size_bytes else {\"data\": data}\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_utils/blob_utils.py\", line 370, in blob_upload\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     blob_id, _ = await blob_upload_with_results(payload, stub)\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_utils/blob_utils.py\", line 360, in blob_upload_with_results\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     blob_id, upload_results = await _blob_upload(upload_hashes, payload, stub)\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N   File \"/pkg/modal/_utils/blob_utils.py\", line 300, in _blob_upload\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N     resp = await stub.BlobCreate(req)\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N            ^^^^^^^^^^^^^^^^^^^^^^^^^^\n2026-10-24 15:42:27-07:00 fc-01M5R17P7CP6Q2P1J8R3CCKQ8N modal.exception.AuthError: Received :status = '401'\n2026-10-24 15:42:27-07:00 Stopping app - uncaught exception raised locally: AuthError(\"Received :status = '401'\").\n\u256d\u2500 Modal Warning \u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256e\n\u2502 Your Modal token [redacted token identifier] expires in 7h. Run `modal token   \u2502\n\u2502 new` to create a replacement.                                                \u2502\n\u2570\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u256f\n"
+}

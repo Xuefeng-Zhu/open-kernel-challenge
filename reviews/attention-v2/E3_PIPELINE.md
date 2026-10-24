@@ -15,3 +15,18 @@ The former attempts to pipeline more loop loads, while launch stages targets
 loads feeding dot. Actual emitted code/resources must be compared; adding an
 attribute does not prove overlap or speed. Proposed A09 is a short correctness/
 compiler probe, not a timing benchmark. No official check until it is justified.
+
+## A09 result-transfer failure
+
+App ap-R6eHydPQwAqE8eg0p5lSCi, function call
+fc-01M5R17P7CP6Q2P1J8R3CCKQ8N, stopped with zero tasks. Container logs
+show output packaging attempted BlobCreate and received AuthError401. The
+existing client can still read app status/billing. The returned report was not
+received, so GPU correctness, compiler-resource and code-difference findings are
+unknown, not passes. No app launch was repeated and no credential/permission
+change was made. Exact logs and conservative lifetime cost are preserved.
+
+The separately authorized official E3 check can independently establish
+compilation, correctness and performance of this narrow candidate. It cannot
+recover the missing compiler artifacts; that limitation remains explicit. No
+claim of pipeline overlap is made.
