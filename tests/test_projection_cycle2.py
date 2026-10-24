@@ -10,7 +10,8 @@ from harness import ROOT,load_module
 reference=load_module(ROOT/'official/reference.py','cycle2_reference')
 control=load_module(ROOT/'candidates/router_pooler_hybrid.py','cycle2_best_control')
 SPECS=[('projection_pooler_layout.py','pooler',8192,4096),
-       ('projection_qkv_m1_simt.py','qkv_gate',8192,2304)]
+       ('projection_qkv_m1_simt.py','qkv_gate',8192,2304),
+       ('projection_unpooler_m1_simt.py','unpooler',4096,1024)]
 requested=os.environ.get('PROJECTION_CANDIDATE')
 
 
