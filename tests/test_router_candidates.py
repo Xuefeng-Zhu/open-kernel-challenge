@@ -58,6 +58,19 @@ class RouterCandidateMixin:
             out = self.candidate.kernel_fn(data, state)
             torch.testing.assert_close(out, (scale * w[:3, 0])[None], rtol=0, atol=0)
 
+    def test_full_width_probe_columns_at_reduction_boundaries(self):
+        gen = torch.Generator().manual_seed(71283)
+        w = torch.randn((256, 8192), generator=gen) / 8192**0.5
+        columns = [0, 63, 64, 511, 512, 4095, 4096, 8191]
+        x = torch.zeros((8, 8192), dtype=torch.bfloat16)
+        for row, col in enumerate(columns):
+            x[row, col] = 8 if row % 2 else -128
+        data = dict(x=x, config=dict(m=8, n=256, k=8192, layer="router"))
+        weights = {"router": w}
+        out = self.candidate.kernel_fn(data, self.candidate.prepare(weights))
+        ok, message = reference.check_implementation(data, out, weights)
+        self.assertTrue(ok, message)
+
 
 for path in paths:
     if not path.is_file():
