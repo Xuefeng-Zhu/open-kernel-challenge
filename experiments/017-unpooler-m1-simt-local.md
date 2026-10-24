@@ -24,3 +24,11 @@ no CUDA/Triton. CPU path models FP32 products/reduction, not native Triton.
 No remote request or run ID. No speedup claimed. Official dispatch paused for
 Modal-first testing; Modal account login/actual credit/cap/auth remain prerequisites.
 Local-only commit, no push.
+
+## Subsequent H200 evidence, experiment019
+
+Candidate bytes unchanged. Modal app ap-dMJsl67NMlcBiZs5KJWUFv passed39/39CUDA
+checks and30shapes x12fresh graph repetitions, then verified stopped. Target m1
+gross median8.368us vs R10 11.552us; six paired ratios all above1, median1.38704.
+See experiment019 and results/remote-modal-M19-unpooler.json for raw samples,
+distribution, environment and qualifications. No official score/CI claimed.

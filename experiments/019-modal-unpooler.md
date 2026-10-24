@@ -29,9 +29,23 @@ insufficient reserve or an unresolved prior app. No new credential/cap change.
 .venv/bin/python modal_diagnostics.py --experiment M19-unpooler --bundle local-notes/modal-m19-bundle
 ```
 
-Results pending at source commit. Full CPU contract39+focused3 tests already pass;
-GPU and performance remain unverified until this exact accepted app completes.
-After it stops, reconcile cost and record results before independent QKV repeat.
+Result: app `ap-dMJsl67NMlcBiZs5KJWUFv` completed and verified stopped/tasks0.
+Candidate/R10/SGLang each39/39native CUDA checks pass;30graph shapes x12fresh
+repetitions per runner pass. Same H200/Torch2.14.1+cu130/Triton3.8.0/public SGLang
+base as initial smoke. Setup2.281s, worker47.775s, app lifetime56s. No timeout.
+
+Unpooler m1 gross median8.368us vs R10 11.552us vs SGLang11.744us. Candidate
+range8.128–9.728us, p908.573us, MAD0.176us (12samples). R10 range11.424–12.352us.
+Six opposite-order paired ratios vs R10:1.39442/1.37214/1.40825/1.37965/1.32040/
+1.42301; median1.38704. All retained, no outlier removal, overhead subtraction,
+CI or official score. m8 remains the original path (paired R10 ratio1.00057).
+
+Latest cumulative billing$0.13metered/credits-$0.13/billed$0, detailed cost
+$0.12837141. Conservative stage bound$0.218105626 including historical initial
+smoke high-water and whole-app-time cost margin. No parallel app, new credentials,
+paid activation, cap change or official check. Raw evidence/distributions/each
+seed and pairing: results/remote-modal-M19-unpooler.json/.csv. Unchanged paths and
+nearby official prerequisite shapes preserved; not proof of a whole-workload win.
 Updated harness: all72local unit tests pass, including opposite-order pairing,
 outlier retention and duplicate-seed rejection. Syntax checks pass; no candidate
 algorithm changes. The previous initial-smoke one-run guard is left unchanged;
