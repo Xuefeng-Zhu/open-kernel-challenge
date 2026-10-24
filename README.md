@@ -21,7 +21,7 @@ uv pip install --python .venv/bin/python -r requirements-macos.lock
 
 The full-size suite covers the nine official prerequisite shapes plus all 30 scored
 shapes using the unmodified official FP64 reference, per-row limits and weight-column
-probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **50/50 tests**. The local
+probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **57/57 tests**. The local
 Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
 The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
 
@@ -119,7 +119,7 @@ The [experiment backlog](experiments/BACKLOG.md) explains how to choose one-vari
 changes from actual profiles while preserving correctness and quota discipline.
 [Isolated candidates](candidates/README.md) have separate experiment commits and CPU
 gates. Completed H200 evidence and unadmitted CPU-only variants are distinguished there.
-The latest combined local regression suite passes 50/50 tests. Current remote states,
+The latest combined local regression suite passes 57/57 tests. Current remote states,
 remaining budget and any admission block are recorded in the ledger.
 
 See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and `licenses/` for challenge,

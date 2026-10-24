@@ -14,9 +14,12 @@ $0; no scored/public/final entry. Original baseline is separately preserved.
 | R07-router-native-wide | `26ea99ee0869482a` | done | 1.0991970x |
 | R08-router-split32 | `ab74f25caa2e46a8` | done | 1.0617021x |
 | R09-pooler-simt | `97aa5690ff134369` | done | 1.0076197x |
-| R10-final-composition | `02e099c3724e4a05` | accepted | unmeasured |
+| R10-final-composition | `02e099c3724e4a05` | running | unmeasured |
 
 Exact source/result hashes, confidence intervals, correctness, per-shape times and experiment qualifications: `experiments/index.json`, `REMOTE_RESULTS.md`, `BEST.md`.
 The ledger records each read timestamp and quota; queued jobs are not completed results.
+
+Most recent observed job state: 2026-10-24T16:35:09.993420+00:00.
+Account quota read at 2026-10-24T16:35:09.571881+00:00: `{"scored": {"per_day": 10, "used": 0, "left": 10}, "checks": {"per_day": 20, "used": 11, "left": 9}}`.
 
 The historical R06 denial was resolved by specific new human approval; its single retry was accepted. Do not repeat it; preserve `DENIED_R06.md` history/resolution.

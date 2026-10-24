@@ -57,7 +57,9 @@ def main():
               "Ledger: `experiments/remote-budget.json`. Exact source/result commits and per-shape evidence: "
               "`experiments/index.json`. Uncertain requests stay reserved until reconciled; never blindly retry a POST."]
     if ledger.get("last_account_quota"):
-        lines += ["", "Latest account quota (distinct from this authorization): `" + json.dumps(ledger["last_account_quota"]) + "`."]
+        lines += ["", "Latest account quota (distinct from this authorization), read " +
+                  ledger.get('last_account_quota_utc', 'at unknown time') + ": `" +
+                  json.dumps(ledger["last_account_quota"]) + "`."]
     (ROOT / "REMOTE_RESULTS.md").write_text("\n".join(lines) + "\n")
     active = [x for x in admitted if x['state'] != 'terminal']
     status = ["# Current experiment checkpoint", "",
@@ -72,6 +74,11 @@ def main():
     status += ["", "Exact source/result hashes, confidence intervals, correctness, per-shape times and "
                "experiment qualifications: `experiments/index.json`, `REMOTE_RESULTS.md`, `BEST.md`.",
                "The ledger records each read timestamp and quota; queued jobs are not completed results."]
+    observed_at = max((e.get('last_checked_utc', e.get('accepted_utc', e['created_utc']))
+                       for e in admitted), default=None)
+    status += ["", f"Most recent observed job state: {observed_at}.",
+               "Account quota read at " + ledger.get('last_account_quota_utc', 'unknown time') +
+               ": `" + json.dumps(ledger.get('last_account_quota')) + "`."]
     if ledger.get('admission_paused'):
         status += ["", "New uploads paused by automatic approval review; see `DENIED_R06.md` and ledger."]
     elif ledger.get('denied_operation_resolutions'):
@@ -84,6 +91,10 @@ def main():
               "Never resend admitted experiments. At most two active jobs; inspect terminal results before "
               "choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials "
               "or material agreement. Uncertain requests stay reserved until reconciled read-only.", ""]
+    if remaining == 0:
+        resume += ["**The ten-new-check budget is exhausted. Send no further check requests.** "
+                   "Finish monitoring/recording accepted jobs, tests and private push only. Any new GPU "
+                   "experiment requires additional explicit user authorization before changing the ceiling.", ""]
     if active:
         resume += ["## Already accepted — monitor to terminal", "", "```sh"]
         resume += [f"python3 remote_check.py poll {e['experiment']}  # {e.get('job_id')}" for e in active]
@@ -100,8 +111,9 @@ def main():
                "Any new denial must be honored without alternate transfer routes.", "",
                "Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 "
                "regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. "
-               "Current remaining hypotheses: router split-count isolation; single-row SIMT pooler; combine only "
-               "measured winning regions in a separately committed/checked final candidate if justified.", "",
+               "R08 validated the router split count; R09 validated the one-row SIMT pooler component; "
+               "R10 is their separately committed composition with the verified wide router. Future hypotheses "
+               "require remaining allowance or a new authorization; do not infer approval from this plan.", "",
                "The unrelated attention attachment review remains ignored/local-only under "
                "`local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project."]
     (ROOT / 'CONTINUE.md').write_text('\n'.join(resume) + '\n')
@@ -110,6 +122,19 @@ def main():
     index["remote_experiments"] = remotes
     index["remote_budget"] = dict(maximum=10, admitted_or_reserved=len(admitted), remaining=remaining,
                                  prior_baseline_excluded=ledger["prior_baseline_excluded"])
+    for local in index.get('experiments', []):
+        matching = [e for e in admitted if e['candidate'] == local.get('configuration_file')]
+        if not matching:
+            continue
+        local['gpu_runs'] = [dict(experiment=e['experiment'], job_id=e.get('job_id'),
+                                  status=e['status'], passed=e.get('passed')) for e in matching]
+        local['gpu_run_id'] = matching[-1].get('job_id')
+        local['gpu_validation'] = 'See exact remote records; pending states are not GPU validation'
+        local['gpu_compilation_correctness_capture_performance'] = 'See actual per-run result/interval; no generalized performance guarantee'
+    current = index.get('current_local_verification', {})
+    current.update(gpu_admissions=len(admitted), uncertain_requests=len(uncertain),
+                   admission_paused=bool(ledger.get('admission_paused')),
+                   gpu_state_updated_utc=observed_at)
     index_path.write_text(json.dumps(index, indent=2) + "\n")
     if best:
         entry, result = best["admission"], best["result"]

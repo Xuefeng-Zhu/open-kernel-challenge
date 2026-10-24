@@ -3,7 +3,7 @@
 The original `../submission.py` remains unchanged: baseline H200 check passed at
 0.9076064× SGLang. Current source/result commits, SHA256s, configurations and CPU
 reports are in `../experiments/index.json`; all actual H200 results are in
-`../REMOTE_RESULTS.md`. The latest combined Mac regression suite passes 50/50 tests.
+`../REMOTE_RESULTS.md`. The latest combined Mac regression suite passes 57/57 tests.
 CPU branches explicitly model BF16 products with FP32 accumulation and do not test
 CUDA `out_dtype`, Triton compilation or graph capture.
 
@@ -20,13 +20,13 @@ CUDA `out_dtype`, Triton compilation or graph capture.
 | `router_hybrid_native.py` | R07 passes, current best 1.0991970×; native small-M + wide large-M composition |
 | `router_triton_split32.py` | R08 passes 1.0617021× with R01 large-M control; m1/8 router 7.30/6.87µs |
 | `qkv_triton_split8.py` | CPU-only; deprioritized after related R06 pooler regression |
-| `pooler_simt_row.py` | R09 admitted, GPU result pending |
+| `pooler_simt_row.py` | R09 passes correctness; whole workload 1.0076197× (parity), target m1 pooler 18.30µs vs R01 21.66µs |
+| `router_pooler_hybrid.py` | R10 final measured-component composition admitted; result pending, no allowance remains |
 
 Every local candidate passed 39 full-size CPU contract cases and focused boundary,
 probe/negative tests recorded separately. There is no CPU speed ranking. R07 is now the highest verified observed score. Its interval lies above the old R05
 interval, but it remains one trial and nearby/held-out shapes are not GPU-verified.
-R08 independently validates split32 on low-M router; a final composition still needs
-its own GPU check. Preserve source hashes and all per-shape/failed evidence.
+R08 independently validates split32 on low-M router; the final R10 composition has been admitted and awaits its own GPU result. Preserve source hashes and all per-shape/failed evidence.
 
 Current admissions and allowance are in `../experiments/remote-budget.json`; at most
 two active jobs and ten new checks, $0. The historical R06 denial was resolved by

@@ -31,7 +31,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "59abe5825690427c",
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R01-router-control",
@@ -40,7 +40,7 @@
           "passed": true
         }
       ],
-      "gpu_validation": "actual terminal H200 result in R01-router-control"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation"
     },
     {
       "id": "003-router-split-after1",
@@ -59,7 +59,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "718e0730e1bd4c30",
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R03-router-dispatch",
@@ -68,7 +68,7 @@
           "passed": true
         }
       ],
-      "gpu_validation": "actual terminal H200 result in R03-router-dispatch"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation"
     },
     {
       "id": "004-router-fused-wide",
@@ -87,7 +87,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
       "gpu_run_id": "89fe00c5034a4198",
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_runs": [
         {
           "experiment": "R02-router-wide",
@@ -96,7 +96,7 @@
           "passed": true
         }
       ],
-      "gpu_validation": "actual terminal H200 result in R02-router-wide"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation"
     },
     {
       "id": "005-router-transpose-view",
@@ -136,9 +136,9 @@
           "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_run_id": "e3bc1481851f4a23",
-      "gpu_validation": "actual terminal H200 result in R04-router-triton16"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation"
     },
     {
       "id": "007-triton-pooler-local",
@@ -150,8 +150,8 @@
       "results": "results/router-pooler-split8-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_validation": "actual terminal H200 result in R06-pooler-triton8",
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_validation": "See exact remote records; pending states are not GPU validation",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_run_id": "b70d87fc51864276",
       "gpu_runs": [
         {
@@ -180,9 +180,9 @@
           "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_run_id": "1631810d19af4af4",
-      "gpu_validation": "actual terminal H200 result in R05-wide-layout"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation"
     },
     {
       "id": "009-library-hybrid-local",
@@ -207,8 +207,8 @@
       "results": "results/router-triton-split32-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 4,
-      "gpu_validation": "actual terminal H200 result in R08-router-split32",
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee",
+      "gpu_validation": "See exact remote records; pending states are not GPU validation",
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee",
       "gpu_run_id": "ab74f25caa2e46a8",
       "gpu_runs": [
         {
@@ -229,7 +229,7 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 4,
       "gpu_run_id": "26ea99ee0869482a",
-      "gpu_validation": "actual terminal H200 result in R07-router-native-wide",
+      "gpu_validation": "See exact remote records; pending states are not GPU validation",
       "gpu_runs": [
         {
           "experiment": "R07-router-native-wide",
@@ -238,7 +238,7 @@
           "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee"
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee"
     },
     {
       "id": "012-qkv-split8-local",
@@ -260,17 +260,17 @@
       "results": "results/router-pooler-simt-cpu.json",
       "cpu_cases_passed": 39,
       "focused_tests_passed": 3,
-      "gpu_validation": "pending actual H200 result in R09-pooler-simt",
+      "gpu_validation": "See exact remote records; pending states are not GPU validation",
       "gpu_run_id": "97aa5690ff134369",
       "gpu_runs": [
         {
           "experiment": "R09-pooler-simt",
           "job_id": "97aa5690ff134369",
-          "status": "queued",
-          "passed": null
+          "status": "done",
+          "passed": true
         }
       ],
-      "gpu_compilation_correctness_capture_performance": "See exact remote record; no generalized performance guarantee"
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee"
     },
     {
       "id": "014-final-composition-local",
@@ -282,7 +282,16 @@
       "cpu_cases_passed": 39,
       "focused_tests_passed": 7,
       "gpu_run_id": "02e099c3724e4a05",
-      "gpu_validation": "pending final actual H200 composition check"
+      "gpu_validation": "See exact remote records; pending states are not GPU validation",
+      "gpu_runs": [
+        {
+          "experiment": "R10-final-composition",
+          "job_id": "02e099c3724e4a05",
+          "status": "running",
+          "passed": null
+        }
+      ],
+      "gpu_compilation_correctness_capture_performance": "See actual per-run result/interval; no generalized performance guarantee"
     }
   ],
   "remote_experiments": [
@@ -410,8 +419,8 @@
       "candidate": "candidates/router_pooler_hybrid.py",
       "job_id": "02e099c3724e4a05",
       "mode": "check",
-      "status": "accepted",
-      "result_commit": null,
+      "status": "running",
+      "result_commit": "b8379aa0a41dda51583160210214fa136de6af62",
       "record": "experiments/remote-R10-final-composition.md",
       "results": null,
       "timings": null
@@ -438,10 +447,12 @@
       "machine": "arm64",
       "cuda_available": false
     },
-    "verified_utc": "2026-10-24T09:15:51.152217+00:00",
+    "verified_utc": "2026-10-24T16:28:01.461234+00:00",
     "python_compilation_command": ".venv/bin/python -m compileall -q harness.py check.py benchmark.py static_check.py remote_check.py summarize_check.py update_progress.py candidates tests",
     "static_check_command": ".venv/bin/python static_check.py",
-    "static_check_passed": true
+    "static_check_passed": true,
+    "verification_scope": "Local 57-test execution timestamp; GPU states/admission times are separately journaled in remote-budget.json",
+    "gpu_state_updated_utc": "2026-10-24T16:35:09.993420+00:00"
   },
   "historical_local_verification_before_remote_budget": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",

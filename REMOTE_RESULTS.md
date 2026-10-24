@@ -14,10 +14,10 @@ Prior baseline job `e5a5b2d20da54187` is excluded. Only off-board checks and $0 
 | R07-router-native-wide | `26ea99ee0869482a` | done | 9/9 + 30/30 | 1.0992× [1.0827, 1.1157] | 1.2111× |
 | R08-router-split32 | `ab74f25caa2e46a8` | done | 9/9 + 30/30 | 1.0617× [1.0458, 1.0776] | 1.1698× |
 | R09-pooler-simt | `97aa5690ff134369` | done | 9/9 + 30/30 | 1.0076× [0.9925, 1.0227] | 1.1102× |
-| R10-final-composition | `02e099c3724e4a05` | accepted | pending | — | — |
+| R10-final-composition | `02e099c3724e4a05` | running | pending | — | — |
 
 The original starter scored 0.9076063758×. Comparisons to it are reference-normalized across separate runs, not paired same-input measurements. Official within-run SGLang pairings and their intervals are authoritative. Missing results/timings are not inferred from CPU models.
 
 Ledger: `experiments/remote-budget.json`. Exact source/result commits and per-shape evidence: `experiments/index.json`. Uncertain requests stay reserved until reconciled; never blindly retry a POST.
 
-Latest account quota (distinct from this authorization): `{"scored": {"per_day": 10, "used": 0, "left": 10}, "checks": {"per_day": 20, "used": 6, "left": 14}}`.
+Latest account quota (distinct from this authorization), read 2026-10-24T16:35:09.571881+00:00: `{"scored": {"per_day": 10, "used": 0, "left": 10}, "checks": {"per_day": 20, "used": 11, "left": 9}}`.

@@ -4,6 +4,8 @@ Budget 10/10, 0 remain, 0 uncertain; $0, check mode only.
 Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
 Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
 
+**The ten-new-check budget is exhausted. Send no further check requests.** Finish monitoring/recording accepted jobs, tests and private push only. Any new GPU experiment requires additional explicit user authorization before changing the ceiling.
+
 ## Already accepted — monitor to terminal
 
 ```sh
@@ -16,6 +18,6 @@ For terminal results: `python3 summarize_check.py <experiment>`, inspect all cor
 
 Historical R06 denial and its sole approved retry: `DENIED_R06.md`. Never retry that upload again. Any new denial must be honored without alternate transfer routes.
 
-Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. Current remaining hypotheses: router split-count isolation; single-row SIMT pooler; combine only measured winning regions in a separately committed/checked final candidate if justified.
+Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. R08 validated the router split count; R09 validated the one-row SIMT pooler component; R10 is their separately committed composition with the verified wide router. Future hypotheses require remaining allowance or a new authorization; do not infer approval from this plan.
 
 The unrelated attention attachment review remains ignored/local-only under `local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project.

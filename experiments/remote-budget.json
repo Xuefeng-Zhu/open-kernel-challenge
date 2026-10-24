@@ -432,10 +432,12 @@
         }
       },
       "state": "accepted",
-      "status": "accepted",
+      "status": "running",
       "job_id": "02e099c3724e4a05",
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-24T16:28:45.295313+00:00"
+      "accepted_utc": "2026-10-24T16:28:45.295313+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-24T16:35:09.993420+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",
@@ -447,11 +449,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 6,
-      "left": 14
+      "used": 11,
+      "left": 9
     }
   },
-  "last_account_quota_utc": "2026-10-24T09:14:24.597923+00:00",
+  "last_account_quota_utc": "2026-10-24T16:35:09.571881+00:00",
   "denied_operation_resolutions": [
     {
       "at_utc": "2026-10-24T08:59:05.101254+00:00",
