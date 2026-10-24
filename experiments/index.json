@@ -436,7 +436,16 @@
     "remaining": 0,
     "prior_baseline_excluded": "e5a5b2d20da54187"
   },
-  "current_local_verification": {
+  "historical_local_verification_before_remote_budget": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "tests_passed": 17,
+    "tests_total": 17,
+    "python_compilation_command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py candidates tests",
+    "python_compilation_passed": true,
+    "candidate_case_count_each": 39,
+    "candidate_gpu_tests": 0
+  },
+  "historical_first_cycle_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
     "passed": 57,
     "total": 57,
@@ -458,13 +467,16 @@
     "verification_scope": "Local 57-test execution timestamp; GPU states/admission times are separately journaled in remote-budget.json",
     "gpu_state_updated_utc": "2026-10-24T16:37:47.378717+00:00"
   },
-  "historical_local_verification_before_remote_budget": {
+  "current_cycle2_index": "experiments/projection-cycle2-index.json",
+  "current_status": "STATUS.md",
+  "current_local_verification": {
     "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "tests_passed": 17,
-    "tests_total": 17,
-    "python_compilation_command": ".venv/bin/python -m compileall -q submission.py harness.py check.py benchmark.py static_check.py candidates tests",
-    "python_compilation_passed": true,
-    "candidate_case_count_each": 39,
-    "candidate_gpu_tests": 0
+    "passed": 104,
+    "total": 104,
+    "log": "results/m32-preflight-tests.local.txt",
+    "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
+    "scope": "CPU models/static only; actual GPU evidence separate",
+    "verified_utc": "2026-10-24T19:58:30.411647+00:00",
+    "gpu_scope": "Actual CUDA/official results and budgets separately journaled in cycle-two index/ledgers, never inferred from CPU tests"
   }
 }

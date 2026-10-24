@@ -24,7 +24,8 @@ Official full records/CI/profile/limits: OFFICIAL_COMPOSITION_RESULT.md and
 results/remote-P2-02-full-composition.json/.csv, results/remote-P2-02-profile.json.
 Current source is verified by both environments; Modal gross values are distinct.
 
-Next local hypothesis candidates/projection_qkv_layout.py (experiment025) passes
-39CPU+3focused checks but is **GPU-unverified**, not a replacement for this best.
-95local regression tests pass. No new GPU run for025, scored entry or push.
-Budgets/state: STATUS.md, CONTINUE.md and their explicit ledgers.
+Latest follow-up screens M26QKVlayout/M28unpoolerlayout/M30poolergrouped/
+M32poolernarrow all passed actual CUDA correctness but none provides a meaningful
+whole-workload gain. All rejected; no new official request.104local CPUtests pass.
+Allapps stopped, exact costs/budgets/nextresearch in MODAL_FOLLOWUP_RESULTS.md and
+STATUS.md. This source remains best official. No new work pushed.

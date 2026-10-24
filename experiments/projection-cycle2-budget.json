@@ -143,11 +143,7 @@
     }
   ],
   "publication": "New work remains local; no push authorized",
-  "admission_paused": {
-    "at_utc": "2026-10-24T17:54:02.225263+00:00",
-    "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
-    "scope": "Single composition exception consumed; all other official admissions remain paused. No new Modal GPU run until the reported next hypothesis is directed."
-  },
+  "admission_paused": true,
   "admission_exception_history": [
     {
       "experiment": "P2-02-full-composition",
@@ -174,5 +170,12 @@
       "left": 7
     }
   },
-  "last_account_quota_utc": "2026-10-24T19:26:48.056328+00:00"
+  "last_account_quota_utc": "2026-10-24T19:59:17.493091+00:00",
+  "admission_pause_reason": "Bounded follow-up stage stopped: no meaningful Modal-qualified next candidate; remaining user authorization persists. Scope exact source/evidence plan before future dispatch.",
+  "latest_stage_summary": "MODAL_FOLLOWUP_RESULTS.md",
+  "historical_modal_first_pause": {
+    "at_utc": "2026-10-24T17:54:02.225263+00:00",
+    "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
+    "scope": "Single composition exception consumed; all other official admissions remain paused. No new Modal GPU run until the reported next hypothesis is directed."
+  }
 }

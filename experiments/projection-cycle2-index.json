@@ -1,0 +1,64 @@
+{
+  "updated_utc": "2026-10-24T20:02:58.403543+00:00",
+  "best_official": "P2-02-full-composition",
+  "followup_screens": [
+    {
+      "id": "M26-qkv-layout",
+      "candidate": "candidates/projection_qkv_layout.py",
+      "source_sha256": "50a76d4eb203732b7d0dede9dc4797e9f4f3ffa49aae947348a32e956c993e00",
+      "source_commit": "54a0877928f7a0bd111ad7a329ca12e054abeb94",
+      "app_id": "ap-KFijr1ps085dubW3fuiteg",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9984096562009763,
+      "results": "results/remote-modal-M26-qkv-layout.json",
+      "timings": "results/remote-modal-M26-qkv-layout.csv"
+    },
+    {
+      "id": "M28-unpooler-layout",
+      "candidate": "candidates/projection_unpooler_layout.py",
+      "source_sha256": "9122d171a15f622dec494cb864cbaebae501791706edecf2a8b4236e131d9a68",
+      "source_commit": "ed31d28d9835dbe4a485b122d5deb1ae8689dbba",
+      "app_id": "ap-w7VrX6FmljUODnxXeM8wUK",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9998407149374197,
+      "results": "results/remote-modal-M28-unpooler-layout.json",
+      "timings": "results/remote-modal-M28-unpooler-layout.csv"
+    },
+    {
+      "id": "M30-pooler-grouped",
+      "candidate": "candidates/projection_pooler_grouped.py",
+      "source_sha256": "573f2f9e0e196c0c098ca9f9ca5a48e610df5482bc981933b1119d29fda75f3c",
+      "source_commit": "8dc042307fd37157ff20c53e3a7053f788b8ac06",
+      "app_id": "ap-cjt62CgauSmkFmLcwhlgPT",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9003442551692761,
+      "results": "results/remote-modal-M30-pooler-grouped.json",
+      "timings": "results/remote-modal-M30-pooler-grouped.csv"
+    },
+    {
+      "id": "M32-pooler-narrow",
+      "candidate": "candidates/projection_pooler_narrow.py",
+      "source_sha256": "8269021351b0fc4ae659c11480a622c6a5fd93655978865bd33bd3e336788310",
+      "source_commit": "f41043adcb6b7ee654fb3f9178f5f16bf56b9e1b",
+      "app_id": "ap-L3DFQUMb8HkSfOzpd5K953",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.8630602405509111,
+      "results": "results/remote-modal-M32-pooler-narrow.json",
+      "timings": "results/remote-modal-M32-pooler-narrow.csv"
+    }
+  ],
+  "official_budget": "projection-cycle2-budget.json",
+  "modal_budget": "modal-diagnostics-budget.json",
+  "local_verification": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "passed": 104,
+    "total": 104,
+    "log": "results/m32-preflight-tests.local.txt",
+    "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
+    "scope": "CPU models/static only; actual GPU evidence separate"
+  }
+}

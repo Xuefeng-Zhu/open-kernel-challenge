@@ -1,39 +1,30 @@
-# Resume the existing projection task
+# Resume existing projection task
 
-Current branch projection-bf16-local; sources/results local and unpushed. Preserve
-main, attention-v2-preflight, original submission.py and every independent control.
-Read STATUS.md, BEST.md and OFFICIAL_COMPOSITION_RESULT.md first.
+Branch projection-bf16-local, no new work pushed. Read STATUS.md,
+MODAL_FOLLOWUP_RESULTS.md and exact two budget ledgers. Bounded stage complete;
+all8apps stopped/tasks0, no active/uncertain official job. Do not rerun accepted IDs.
+Bestsource projection_full_composition.py c34c497b, official48b1357016134e52,
+1.14865xSGLang [1.13142,1.16588]. Preserve all original/attention/main branches.
 
-Official job48b1357016134e52 is terminal/pass:1.1486499523x SGLang,
-CI[1.1314202031,1.1658797016],9+30gates,flags[]. Source
-candidates/projection_full_composition.py, b9b0fd9, SHA c34c497b….
-Second cycle2/10used,8remaining. Latest daily platform snapshot13/20checks used,
-7left; scored0. Earlier ten projection/one attention budgets are separately spent.
-**Single composition exception consumed. New official dispatch remains paused.**
-Never resend any journaled job or replace an uncertain response. Rules version,
-committed exact source and fresh quota must be rechecked before any later approval.
+Four new Modal screens M26/28/30/32 correct but rejected for performance/parity.
+Each hypothesis/source/result separate commit; source/hash/appID/all samples in
+records.104CPUtests pass. No new official request consumed; secondcycle2/10used,
+8authorizedleft, currentdaily7left. Reset00:00UTC. Authorization persists for
+meaningful off-board Modal-qualified checks, no scored/publicentry/push.
 
-All four Modal apps stopped/tasks0. Actual cumulative credits$0.29, paid$0,
-balance$29.71, net cap$0, conservative guard$0.44625 below$2. No new GPU run in
-this latest phase. Existing token is ignored/owner-only at local-notes/modal-auth.toml,
-expires2026-10-25 06:26:47UTC. Never print it, upload it or extend credentials without
-new specific authorization. DENIED_MODAL_TOKEN.md records resolved history; never
-repeat the original logging command. No payment/cap/plan/term changes or push.
+Latest Modalusage/credit/net/guard in ledger and STATUS; conservative guard0.964254
+of cumulative2dollar stage includes initialsmoke. No paidusage/capchanges. Existing
+ignored owner-only credential expires2026-10-25 06:26:47UTC. Never print/upload it,
+create a replacement or repeat denied original logging command. No new grant.
 
-Next reported hypothesis025: candidates/projection_qkv_layout.py, SHA50a76d4e…,
-only QKV m>1 uses BF16 transposed contiguous weights. CPU39+focused3 pass,
-static/syntax pass; current total95local tests pass. Official profiles show
-split-K plus1.6–3.0us reduction for QKV m8/16/32/128; extra layout may alter tactic,
-not necessarily win. **No GPU compile/capture/performance evidence for025.**
-Hold any GPU run until the next meaningful hypothesis is reviewed/directed; no
-additional official request or Modal app is authorized by this checkpoint alone.
+Early stop: basic tiles regressed and layout screens showed no aggregategain.
+Ranked nextresearch in MODAL_FOLLOWUP_RESULTS.md: compiler/resource profiling,
+then justified Hopper asyncpipeline; isolatedunpoolerm128 gain too small alone.
+No architectural candidate implemented. No new GPU needed to finish this stage.
+For future independent experiment, refreshMacUIcredits/cap/expiry, check stage
+reserve, immutable allowlist, commit source, maintain accepted/uncertain ledger and
+follow jobterminal. Existing wrapperinternalpause must be scoped to exactqualified
+source/report before officialdispatch, not removed blindly. No blindretry.
 
-Safe independent work: analyze saved profiles/shape evidence and exact precision
-contract. Future validation must cover all shapes and nearby inputs; preserve
-6predeclared graph warmups, all samples and balanced order if continuing the same
-protocol. No post-hoc outlier deletion/fixed-cost guess to imitate the judge.
-A queued job is not completion; monitor admitted IDs to terminal and record failures.
-
-Exact current commands and result evidence: experiments/024-official-full-composition.md,
-experiments/025-qkv-layout-local.md. Old read-only comparisons/history are in
-REMOTE_RESULTS.md, GAP_ANALYSIS.md and MODAL_*_RESULTS.md with their dated scope.
+Legacy update_progress.py regenerates first-cycle docs; do not run it over current
+cycle-two summaries. Current cycle-two index/ledgers and STATUS are authoritative.

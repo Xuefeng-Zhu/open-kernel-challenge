@@ -1,30 +1,25 @@
-# Current checkpoint — 2026-10-24
+# Current checkpoint — 2026-10-24T20:02:58.403543+00:00
 
-Best official passing point score: **1.1486499523x**, 95%CI
-[1.1314202031,1.1658797016], job **48b1357016134e52**, full composition.
-9+30 correctness pass, no flags, off-board only. See BEST.md and
-OFFICIAL_COMPOSITION_RESULT.md; prior intervals overlap, no ranking claim.
+Best official candidate fullcomposition c34c497b, job48b1357016134e52,
+1.1486499523x SGLang [1.1314202031,1.1658797016];9+30gatespass/flags[].
+Source and qualifications in BEST.md/OFFICIAL_COMPOSITION_RESULT.md.
 
-| Budget | Used | Remaining | Active / uncertain |
-|---|---:|---:|---:|
-| Second projection official cycle |2/10|8|0 / 0|
-| Today's platform projection checks (last snapshot19:26:48UTC) |13/20|7|0 / 0|
-| Scored official entries |0/10|10|0 / 0|
-| Modal cumulative credit stage |$0.29actual|$1.71actual below$2|0 / 0|
+This bounded Modal-first follow-up stage ended early after four correct but
+uncompetitive screens. M26QKVlayoutregression; M28unpoolerlayoutparity;
+M30/M32nativepoolerregressions. None promoted or sent for officialcheck.
+All8Modal apps stopped/tasks0, no active/uncertain job. No denied action/pending
+operation. Latest usage$0.87000000freecredit/$0paid; highwater
+$0.87077815; conservative guard$0.964253594<$2. Bill counters
+asynchronous. Verified net cap$0.104CPUlocal tests pass, separate from real CUDA.
 
-Conservative Modal spend guard$0.44625 (not actual billed cost), paid$0, credits
-balance$29.71 and net spend cap$0. All four apps stopped. Old initial ten projection
-checks and separate attention one-check are exhausted and preserved independently.
-The sole official admission exception is consumed; all new official/Modal GPU
-requests paused pending next stage direction. No paid compute/new credentials/push.
+Official second cycle2/10used,8remaining. Fresh platform2026-10-24T19:59:17.493091+00:00:
+13/20checksused,7left;0/10scored. Daily reset2026-10-25T00:00:00Z. Existing user
+permission covers meaningful remaining off-board checks; wrapper held because no
+qualified next source. This is not a request for repeat approval. Stage stops
+for technical/evidence reasons, not quota/access failure.
 
-- Full verified source: candidates/projection_full_composition.py, SHA c34c497b….
-- New isolated QKV m>1 layout: experiment025, source50a76d4e…;39CPU+3focused,
-  static/syntax pass; no GPU compilation/performance claim or request.
-- Latest full local regression suite:95/95pass. Mac M2 has no CUDA.
-- Official second-cycle ledger: experiments/projection-cycle2-budget.json.
-- Modal stage ledger: experiments/modal-diagnostics-budget.json.
-- All first-cycle records: REMOTE_RESULTS.md and experiments/remote-budget.json.
-- Independent attention branch remains preserved; no attention work in this cycle.
-
-No accepted job or app remains pending. No uncertain requests or unresolved denial.
+Full evidence, next ranked research, versions and exact commands:
+MODAL_FOLLOWUP_RESULTS.md, experiments025–032, respective resultJSON/CSV files.
+Ledgers: experiments/projection-cycle2-budget.json and modal-diagnostics-budget.json.
+No new push/credential/payment/cap/terms/ranked entry. Sources/failed attempts/main/
+attention/baseline preserved. Existing token expiry06:26:47UTC Oct25; no renewal.

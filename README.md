@@ -7,11 +7,12 @@ Latest official passing composition: **1.1486499523x SGLang**, 95% interval
 shape checks pass, no flags. Prior candidate intervals overlap, so differences
 between point scores are not declared statistically resolved.
 
-Second projection cycle2/10used,8remaining; all accepted jobs terminal. Today's
-last platform snapshot13/20checks used; no scored entry. Modal-first validation
-completed on H200 with all four apps stopped, cumulative$0.29credits/$0paid under
-$2stage ceiling and$0net cap. New GPU dispatch paused after the single ready check.
-Current Mac suite95/95tests pass; CPU/static and actual H200 checks are distinct.
+Second projection cycle2/10used,8remaining; all accepted jobs terminal. Fresh
+platform13/20checks used,7left; no scored entry. Four additional Modal screens
+passed CUDA correctness but regressed or showed parity; none admitted officially.
+All8apps stopped/tasks0, latest$0.87000000credits/$0paid, conservative stageguard
+$0.964253594<$2, netcap$0. See [follow-up outcomes](MODAL_FOLLOWUP_RESULTS.md).
+104localtests pass; CPU/static and actual H200 evidence remain distinct.
 Historical first-cycle records remain in REMOTE_RESULTS.md and their immutable sources.
 
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang

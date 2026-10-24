@@ -1,5 +1,10 @@
 # Official composition check — best observed passing point score
 
+Subsequent Modal-only screens are tracked in MODAL_FOLLOWUP_RESULTS.md and
+STATUS.md. The source/result below remain best official. Budget/pause/CPU-only
+statements in this dated measurement record describe its completion checkpoint;
+latest authorization and live state are in the durable ledgers and STATUS.md.
+
 Job **48b1357016134e52**, mode **check** (off-board), completed2026-10-24 19:26:10UTC.
 Started19:25:08UTC; no replacement or retry. Nine prerequisites and all30scored
 shape checks pass, no flags/rejections. Source is the exact Modal-verified

@@ -1,3 +1,36 @@
+# Current gap update — official P2-02, 2026-10-24
+
+Source full composition c34c497b, job48b1357016134e52,1.1486499523xSGLang,
+95%CI[1.1314202031,1.1658797016]. Versus the dated16:06leader snapshot1.56079556,
+26.41%further latency reduction would be required at identical normalization.
+This is a cross-run/reference comparison, not current rank or a competitor profile.
+
+| Family | Measured mean per-load share | Measured latency range µs | TASK floor range µs | Optimistic additional speedup if only this whole family reached its floors |
+|---|---|---|---|---|
+| pooler | 32.14% | 18.51–30.26 | 14.0–17.4 | 1.1153× |
+| qkv_gate | 22.42% | 12.05–20.13 | 7.9–9.8 | 1.1122× |
+| unpooler | 21.01% | 4.12–24.42 | 1.7–17.4 | 1.0755× |
+| router | 13.49% | 7.37–11.44 | 1.8–2.7 | 1.1175× |
+| o | 10.95% | 6.86–9.40 | 3.5–4.5 | 1.0567× |
+
+**Floor columns are theoretical scenarios, not measured/predicted performance or candidate scores.** They assume the published optimistic traffic/compute floor is attainable for every shape of one family while all other times stay fixed. Launch costs, utilization, reductions, precision requirements and memory access can prevent that. Family bounds cannot be added together.
+
+Even the impossible zero-time router scenario gives only 1.1560× further speedup, or 1.3278× SGLang—below the leader snapshot. The gap therefore cannot be closed by router-only work on these measured loads.
+
+
+Follow-up Modal screens test these opportunities, not competitor implementations.
+QKV library layout regresses m256; unpooler library layout aggregate parity;
+native pooler BM32/BN128 is much slower despite correctness. No new score inferred
+from those Modal gross measurements. Next BN32 test asks whether higher parallelism
+recovers native pooler regression; its result is recorded in MODAL_FOLLOWUP_RESULTS.md.
+No cross-layer input fusion/cache or lower BF16 precision is allowed.
+
+Reproduce current shares/floor scenarios offline:
+`.venv/bin/python analyze_gap.py P2-02-full-composition`.
+The historical analysis below preserves its earlier R10 measurement context.
+
+---
+
 # Gap diagnosis from actual H200 evidence
 
 Subsequent official result: full composition job48b1357016134e52 passes at
