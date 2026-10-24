@@ -172,9 +172,62 @@
           "left": 16
         }
       }
+    },
+    {
+      "experiment": "E4",
+      "mode": "check",
+      "state": "terminal",
+      "status": "duplicate",
+      "job_id": "a5ee77cedca44ab9",
+      "candidate": "reviews/attention-v2/final_attention.py",
+      "source_commit": "745e0e4efe05edd1f2a771418e51a0d501a353ac",
+      "source_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+      "hypothesis": "Final complete artifact identical to E2: E3 correct but0.25% aggregate/no target improvement is inconclusive; request exact-file verification, respect deduplication",
+      "final": true,
+      "created_utc": "2026-10-24T22:51:45.469727+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/final_attention.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-24T22:51:45.920097+00:00",
+      "last_checked_utc": "2026-10-24T22:52:00.630491+00:00",
+      "passed": null,
+      "speedup": null,
+      "speedup_ci": null,
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "duplicate_of": "7edded086c8a47f2",
+      "new_gpu_measurement": false,
+      "verification_via_prior_passed_job": true
     }
   ],
-  "remaining": 3,
+  "remaining": 2,
   "plans": {
     "E0": {
       "candidate": "submission.py",
@@ -220,6 +273,28 @@
     "sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
     "reason": "E3 target changes within0.2%, aggregate0.25% inside overlapping CIs; choose simpler E2 with explicit ABA evidence",
     "highest_point_estimate_experiment": "E3",
-    "highest_point_estimate_speedup": 0.7978730330211233
-  }
+    "highest_point_estimate_speedup": 0.7978730330211233,
+    "final_verification_request": "a5ee77cedca44ab9",
+    "final_verification_status": "duplicate",
+    "verified_via_job": "7edded086c8a47f2"
+  },
+  "counting_note": "Four requests conservatively reserved against six; E4 deduplicated to E2, only three new GPU runs and no E4 platform quota increment.",
+  "stop_reason": "E2 provides material verified gain; E3 target changes are noise, E4 exact complete source confirmed by deduplication. No justified further experiment within E0-E4 scope.",
+  "last_platform_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 4,
+      "left": 16
+    }
+  },
+  "quota_observed_utc": "2026-10-24T22:52:41.784478+00:00",
+  "completed_utc": "2026-10-24T22:53:38.887477+00:00",
+  "all_requests_terminal": true,
+  "actual_new_gpu_runs": 3,
+  "duplicate_requests": 1
 }

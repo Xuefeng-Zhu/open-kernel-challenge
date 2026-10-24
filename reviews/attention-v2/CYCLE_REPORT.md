@@ -10,8 +10,8 @@ credentials, or payment/cap change.
 | E0 | Original v2 + only LOG2E constexpr repair | 5b0baa286659421a; passed; 0.7224690513×, CI [0.7116320155, 0.7373518839] | Preserved baseline |
 | E1 (historical) | Full-only separate merge from E0 | No new official check; Modal weighted paired raw v2/merge 0.916402 | Reject overall regression; not stacked |
 | E2 | E0, only full B16/32 fixed 8192-token historical chunks | 7edded086c8a47f2; passed; 0.7958818006×, CI [0.7839435736, 0.8078200276] | +10.16% score vs E0; E3 parent |
-| E3 | E2, only full B16/32 history tl.range num_stages=3 | d4e3fc9a2c234d72 accepted; consult ledger | Await terminal evidence |
-| E4 | Final complete file, chosen after E3 | Not dispatched | Final reserve retained |
+| E3 | E2, only full B16/32 history tl.range num_stages=3 | d4e3fc9a2c234d72; passed; 0.7978730330×, CI [0.7859049375, 0.8098411285] | Inconclusive +0.25% vs E2; not selected |
+| E4 | Exact E2 bytes, all paths included | a5ee77cedca44ab9 duplicate_of7edded086c8a47f2 | Select E2; no new measurement |
 
 Sources: E0 submission.py at05922b7; E1 separate_merge.py at3818c72; E2
 fixed_chunks.py at2613417; E3 pipeline.py atf009696. Full hashes, exact commands,
@@ -90,5 +90,31 @@ Exact apps stopped/tasks0: A07 ap-c7hDHYlZH7Ja3VAJNM4Iur; A09
 ap-R6eHydPQwAqE8eg0p5lSCi. Older A03/A05 stopped evidence preserved. Prior projection
 apps were stopped and current visible app inventory contains no active resource.
 
-Pending: E3 terminal result, final selection and E4 verification; no other uncertain
-submission. See CONTINUE.md and durable ledgers before resuming.
+Cycle completed: E0/E2/E3 passed; E4 deduplicated. Four requests conservatively
+counted of six, two unused; only three new GPU runs. Platform attention checks
+4/20used,16remaining, scored0/10; daily reset00:00UTC. Projection user budget still
+8remaining; its current daily quota is7/20left and was not consumed by this cycle.
+Exact snapshot: final-platform-quota.json. Highest point estimate E3=0.797873×
+but only0.2502% over E2, with unchanged controls moving more than target paths;
+selected final is simpler E2 (0.795882×), not a claim that E2 is statistically faster.
+
+Final final_attention.py source commit745e0e4efe05edd1f2a771418e51a0d501a353ac,
+SHA7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782. It
+is byte-identical to E2 and the server duplicate explicitly references E2. No new
+independent final GPU trial is claimed or forced. Every meaningful experiment and
+failure has local commits; no pushes or ranked entries. Latest local gates and
+environment are in cycle-local-verification.json. Projection branch HEAD remains
+0eabf0e48640be3c401c437471af724fa06154d9.
+
+Remaining performance gaps are measured, but their mechanisms are not established:
+verify paths still lose to same-run SGLang, including untouched B1 and sliding.
+No fixed-work, FP8-Q or broader head redesign was attempted in this bounded cycle.
+Stop early rather than spend unused checks on noise.
+
+Unresolved blocker: A09's result BlobCreate was denied with AuthError401 while
+packaging its return. App stopped/tasks0; known operation failure, unknown GPU
+correctness/compiler results. No credential/access change or retry was attempted.
+Official E3 establishes its own correctness/timing only; E3 explicit ABA and
+PTX/resource comparison remain unverified. Shared E0/E2/E3 tickets remain unsafe
+for simultaneous calls/graphs, which are outside this sequential validation.
+No external job is pending or has an uncertain submission outcome.

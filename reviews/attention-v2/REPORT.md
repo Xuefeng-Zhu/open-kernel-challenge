@@ -1,3 +1,9 @@
+Latest E0–E4 cycle is complete: [CYCLE_REPORT.md](CYCLE_REPORT.md). Final exact
+E2 source is final_attention.py, official 0.7958818×; E3's 0.7978730× is inconclusive.
+Four requests (three GPU checks +one duplicate), all terminal; all Modal apps
+stopped. A09 output BlobCreate401 leaves its compiler/replay report unknown.
+The historical bounded E0/E1 Modal cycle below is preserved with its original scope.
+
 # Attention corrected-v2 and separate-merge test — complete
 
 Completed 2026-10-24T22:06:32.381804+00:00. Branch attention-v2-preflight, local commits only. No OKCcheck,

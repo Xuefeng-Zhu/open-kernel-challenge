@@ -1,8 +1,9 @@
 {
   "method": "Six weighted loads (46 sliding + 16 full); geometric mean over loads. Official paired adjusted times and raw times kept separate.",
   "qualification": "Candidate comparisons across separate official runs are not directly paired. CI overlap and 0\u20132% changes are inconclusive; report any >5% regression.",
-  "checks_used": 3,
-  "checks_remaining": 3,
+  "requests_conservatively_used": 4,
+  "requests_remaining": 2,
+  "unique_new_gpu_results": 3,
   "experiments": {
     "E0": {
       "passed": true,
@@ -1125,6 +1126,26 @@
       "source": "reviews/attention-v2/pipeline.py",
       "receipt": "E3-official-result.json",
       "score_ratio_vs_E0": 1.1043698434240508
+    },
+    "E4": {
+      "passed": null,
+      "status": "duplicate",
+      "duplicate_of": "7edded086c8a47f2",
+      "new_gpu_measurement": false,
+      "qualification": "No new result; inspect the matching source and referenced job.",
+      "job_id": "a5ee77cedca44ab9",
+      "source_commit": "745e0e4efe05edd1f2a771418e51a0d501a353ac",
+      "source_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+      "source": "reviews/attention-v2/final_attention.py",
+      "receipt": "E4-official-result.json",
+      "verification_via": {
+        "experiment": "E2",
+        "job_id": "7edded086c8a47f2",
+        "exact_source_hash_match": true,
+        "server_content_hash_match": true,
+        "prior_passed": true,
+        "prior_speedup": 0.7958818005959276
+      }
     }
   }
 }

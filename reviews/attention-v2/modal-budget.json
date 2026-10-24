@@ -1210,8 +1210,8 @@
       "function_call_id": "fc-01M5R17P7CP6Q2P1J8R3CCKQ8N"
     }
   ],
-  "latest_billing_observed_utc": "2026-10-24T22:44:26.699350+00:00",
-  "stage_completed": false,
+  "latest_billing_observed_utc": "2026-10-24T22:53:16.689935+00:00",
+  "stage_completed": true,
   "report_before_expanding": false,
   "final_app_states": [
     {
@@ -1253,25 +1253,25 @@
     "metered_cost": "1.15000000",
     "billed_cost": "0E-8",
     "adjustments": {
-      "network_egress_allowance": "0E-8",
       "plan_cost": "0E-8",
-      "free_storage": "-0E-8",
       "reservation_adjustment": "-0E-8",
-      "credits": "-1.15000000"
+      "network_egress_allowance": "0E-8",
+      "credits": "-1.15000000",
+      "free_storage": "-0E-8"
     },
     "metered_cost_breakdown": {
-      "ephemeral_apps": "1.15008536",
+      "volumes": "0E-8",
       "llm_tokens": "0E-8",
-      "network_egress": "0E-8",
-      "volumes": "0E-8"
+      "ephemeral_apps": "1.15008536",
+      "network_egress": "0E-8"
     }
   },
-  "current_diagnostic": "Bounded attention baseline and single full-only merge comparison complete; no more runs authorized by this cycle",
+  "current_diagnostic": "Attention E0-E4 complete; A07 ABA passed, A09 return BlobCreate401 failed and result unavailable; all apps stopped; no more Modal runs",
   "prior_projection_authorization": "Autonomous remaining projection optimization, Modal-first screening and meaningful off-board checks within separate remaining quota; same cumulative USD2 free-credit stage, paid USD0, existing credentials, no push",
   "attention_branch_base_guard_usd": "1.146411930",
   "projection_snapshot_sha256": "678d740297055da1cde090b844c17c1d95835dae8026aa22723565b6703290fd",
   "inventory_note": "CLI recent app list shrank; do not require historical total count. Both exact attention IDs reverified stopped; older snapshots preserve all prior shutdown evidence.",
-  "final_local_assertion": "A closing ad-hoc assertion expecting13historicalapps failed when recent list returned5; inspected exactIDs and all visible states, resolved without remote mutation/retry",
+  "final_local_assertion": "Final source selected; no current GPU resource; cumulative guard unchanged; no credentials renewed or permissions broadened",
   "authorization_history": [
     "Attention corrected-v2 baseline then only full-attention separate final-merge if baseline passes; existing free credits, cumulative USD2 unchanged, paid USD0, no OKC/push/new credentials"
   ],

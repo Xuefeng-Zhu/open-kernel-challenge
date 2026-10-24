@@ -1,0 +1,67 @@
+{
+  "verified_utc": "2026-10-24T22:53:11.467889+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda_available": false
+  },
+  "qualification": "Nine CPU/AST/harness tests and syntax/whitespace gates; not Triton/GPU execution. Official and Modal results are separate receipts.",
+  "commands": [
+    {
+      "command": [
+        ".venv/bin/python",
+        "reviews/attention-v2/test_fixed_chunks.py"
+      ],
+      "exit_code": 0,
+      "output": "test_all_valid_keys_once_and_empty_chunks (__main__.FixedChunks.test_all_valid_keys_once_and_empty_chunks) ... ok\ntest_only_partition_and_host_capacity_change (__main__.FixedChunks.test_only_partition_and_host_capacity_change) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.007s\n\nOK\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "reviews/attention-v2/test_pipeline.py"
+      ],
+      "exit_code": 0,
+      "output": "test_fixed_chunks_parent (__main__.Pipeline.test_fixed_chunks_parent) ... ok\ntest_original_parent (__main__.Pipeline.test_original_parent) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.034s\n\nOK\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "reviews/attention-v2/test_modal_worker.py"
+      ],
+      "exit_code": 0,
+      "output": "<local-path> UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at <local-path>)\n  cpu = _conversion_method_template(device=torch.device(\"cpu\"))\ntest_clones_restore_scalars_fp8_and_metadata (__main__.InputIsolation.test_clones_restore_scalars_fp8_and_metadata) ... ok\ntest_graph_buffers_cannot_silently_change_shape (__main__.InputIsolation.test_graph_buffers_cannot_silently_change_shape) ... ok\ntest_immutable_tensor_and_config_are_checked (__main__.InputIsolation.test_immutable_tensor_and_config_are_checked) ... ok\ntest_only_minimal_compiler_repair_after_original_normalization (__main__.InputIsolation.test_only_minimal_compiler_repair_after_original_normalization) ... ok\ntest_only_new_cache_rows_may_change (__main__.InputIsolation.test_only_new_cache_rows_may_change) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.041s\n\nOK\n"
+    },
+    {
+      "command": [
+        ".venv/bin/python",
+        "-m",
+        "py_compile",
+        "reviews/attention-v2/submission.py",
+        "reviews/attention-v2/fixed_chunks.py",
+        "reviews/attention-v2/pipeline.py",
+        "reviews/attention-v2/final_attention.py",
+        "reviews/attention-v2/check_cycle.py",
+        "reviews/attention-v2/modal_control.py",
+        "reviews/attention-v2/replay_probe.py",
+        "reviews/attention-v2/summarize_official.py"
+      ],
+      "exit_code": 0,
+      "output": ""
+    },
+    {
+      "command": [
+        "git",
+        "diff",
+        "--check"
+      ],
+      "exit_code": 0,
+      "output": ""
+    }
+  ],
+  "final_exactly_matches_E2": true,
+  "final_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+  "projection_branch": "0eabf0e48640be3c401c437471af724fa06154d9",
+  "log_sanitization": "Captured command exit codes/results unchanged; absolute user/build paths redacted. Raw local log is ignored, not committed.",
+  "local_warning": "Torch reports NumPy integration unavailable on Mac; the nine recorded tests completed using native Torch/AST helpers. No NumPy or Triton GPU pass inferred."
+}

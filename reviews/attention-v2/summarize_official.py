@@ -8,7 +8,10 @@ HERE=Path(__file__).resolve().parent
 
 
 def describe(receipt):
-    result=receipt['result']
+    if receipt['status']=='duplicate':
+        return dict(passed=None,status='duplicate',duplicate_of=receipt['duplicate_of'],
+            new_gpu_measurement=False,qualification='No new result; inspect the matching source and referenced job.')
+    result=receipt.get('result') or {}
     if not result.get('passed'):return dict(passed=False,error=result.get('error'))
     rows=[r for r in result['records'] if r['event']=='benchmark']
     if len(rows)!=12:raise ValueError('Expected all twelve official timing rows')
@@ -44,6 +47,15 @@ def main():
         receipt=json.loads((HERE/(e['experiment']+'-official-result.json')).read_text())
         result=describe(receipt);result.update(job_id=e['job_id'],source_commit=e['source_commit'],
             source_sha256=e['source_sha256'],source=e['candidate'],receipt=e['experiment']+'-official-result.json')
+        if receipt['status']=='duplicate':
+            parent=next(p for p in ledger['requests'] if p['job_id']==receipt['duplicate_of'])
+            prior=json.loads((HERE/(parent['experiment']+'-official-result.json')).read_text())
+            if parent['source_sha256']!=e['source_sha256'] or prior['content_hash']!=receipt['content_hash']:
+                raise ValueError('Duplicate does not match previously verified source')
+            result['verification_via']=dict(experiment=parent['experiment'],job_id=parent['job_id'],
+                exact_source_hash_match=True,server_content_hash_match=True,
+                prior_passed=bool((prior.get('result') or {}).get('passed')),
+                prior_speedup=(prior.get('result') or {}).get('speedup'))
         results[e['experiment']]=result
     if results.get('E0',{}).get('passed'):
         original=results['E0']
@@ -56,7 +68,8 @@ def main():
                 s['relative_reference_normalized_speedup_vs_E0']=s['paired_reference_over_candidate']/p['paired_reference_over_candidate']
     report=dict(method='Six weighted loads (46 sliding + 16 full); geometric mean over loads. Official paired adjusted times and raw times kept separate.',
         qualification='Candidate comparisons across separate official runs are not directly paired. CI overlap and 0–2% changes are inconclusive; report any >5% regression.',
-        checks_used=len(ledger['requests']),checks_remaining=ledger['remaining'],experiments=results)
+        requests_conservatively_used=len(ledger['requests']),requests_remaining=ledger['remaining'],
+        unique_new_gpu_results=sum(bool(r.get('passed') is not None) for r in results.values()),experiments=results)
     (HERE/'official-cycle-summary.json').write_text(json.dumps(report,indent=2)+'\n')
     for name,r in results.items():
         print(name,'passed',r['passed'],'score',r.get('speedup'),'CI',r.get('speedup_ci'))

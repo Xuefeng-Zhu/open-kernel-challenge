@@ -16,3 +16,13 @@ Final verification request is separately recorded in attention-cycle-budget.json
 Identical-source server deduplication must be honored and disclosed. Do not mutate
 comments to manufacture a new run or claim a deduplicated receipt is a fresh trial.
 The final matching hash links it to the full official contract check and A07.
+
+## Final request outcome
+
+Request a5ee77cedca44ab9 is terminal duplicate_of7edded086c8a47f2. Server
+content hashes match as do exact local source hashes. No E4 result/timings exist,
+no new GPU run occurred, and attention platform checks stayed4/20used. Do not
+label this a fourth correctness pass or an independent repeat. The complete final
+source is verified through E2's16 prerequisite passes and12 scored shapes, plus
+A07 explicit sequential ABA coverage. Local ledger conservatively counts4/6
+requests, leaving2unused. Three distinct new GPU checks passed (E0,E2,E3).

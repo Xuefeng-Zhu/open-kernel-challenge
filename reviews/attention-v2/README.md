@@ -1,6 +1,7 @@
 # Attention v2 experiments
 
-Current cycle: E0–E4, up to six newly authorized **off-board attention checks**.
+Completed cycle: E0–E4, four of six conservatively counted **off-board attention requests**
+(three actual GPU checks and one duplicate). [Final report](CYCLE_REPORT.md).
 Projection's remaining eight checks are separate. No ranked entry or repository
 push is authorized. See `attention-cycle-budget.json` for exact accepted jobs,
 source hashes and current states; never resubmit a pending or uncertain request.
@@ -11,6 +12,9 @@ source hashes and current states; never resubmit a pending or uncertain request.
   [report](REPORT.md). Not used as E2's parent; no new check spent on it.
 - E2 fixed8192 history chunks for full B16/32 only: [scope](E2_FIXED_CHUNKS.md).
   Official job 7edded086c8a47f2 passed: 0.7958818006× SGLang, about 10.2% over E0.
+- E3 loop-scoped pipeline: correct, 0.797873×, only +0.25% over E2 and inconclusive.
+- **Selected final:** [final_attention.py](final_attention.py), exact E2 source; final
+  request a5ee77cedca44ab9 deduplicated to E2, no new measurement.
 - [Coverage audit](COVERAGE_AUDIT.md) distinguishes the older tests from the new
   [explicit same-address A→B→A test](A07_REPLAY.md). New length vectors, page64,
   non-unit scales, cache writes and untouched rows were checked on H200.

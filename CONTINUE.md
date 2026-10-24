@@ -1,39 +1,37 @@
-# Attention E0–E4 cycle in progress
+# Completed attention E0–E4 cycle
 
-Current branch: attention-v2-preflight. Read reviews/attention-v2/COVERAGE_AUDIT.md,
-A07_REPLAY.md and attention-cycle-budget.json first. No new projection work.
-Projection branch projection-bf16-local remains at 0eabf0e with best 1.14864995×.
+Current branch attention-v2-preflight. Read reviews/attention-v2/CYCLE_REPORT.md,
+attention-cycle-budget.json, modal-budget.json and final-platform-quota.json.
+All accepted official jobs terminal. No active Modal app. No push/ranked entry.
 
-New authorization: at most six additional attention-only off-board checks, failures
-count. Preserve one final verification check. No ranked entry, push, new credentials,
-payment/spend-cap changes, or paid compute. Projection's eight remaining checks are
-separate and untouched. Never duplicate an uncertain request; inspect existing jobs.
+E0 5b0baa286659421a passed0.7224690513×. E2 7edded086c8a47f2 passed0.7958818006×,
++10.16% score versus E0. E3 d4e3fc9a2c234d72 passed0.7978730330×, only+0.25% and
+inconclusive. Select simpler E2; final_attention.py at745e0e4 is byte-identical,
+SHA7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782. E4 request
+a5ee77cedca44ab9 deduplicated to E2, not a new GPU measurement. Four requests of
+six conservatively counted, two unused; three actual new GPU runs. Platform daily
+attention quota16/20left, scored0/10, resets00:00UTC. Projection user budget still
+8left (distinct daily platform quota7left), branch projection-bf16-local preserved
+at0eabf0e48640be3c401c437471af724fa06154d9 with best1.14864995×.
 
-E0 job 5b0baa286659421a passed all 16 prerequisite tests and 12 scored shapes:
-0.7224690513× SGLang, CI [0.7116320155, 0.7373518839]. Source submission.py is
-preserved. E2 fixed_chunks.py changes only full B16/32 to fixed 8192-token history
-chunks. Job 7edded086c8a47f2 passed: 0.7958818006× SGLang, CI [0.7839435736, 0.8078200276].
-Three of six new checks admitted, three remain, including final reserve. E3 pipeline.py
-job d4e3fc9a2c234d72 accepted; poll exact job through check_cycle.py poll E3. E1 separate
-merge was a historical negative result; no new official check spent on it.
+A07 app ap-c7hDHYlZH7Ja3VAJNM4Iur passed12 same-address A/B/A replays for E0/E2,
+actual lengths changed/restored, empty chunks, page64/scale1/64/L8, output/cache
+oracle and untouched-row checks. Sequential only; global shared tickets retain a
+simultaneous-invocation limitation. No universal ABA claim for every shape/L1.
 
-A07 passed explicit same-address A→B→A with changed actual length vectors, cache
-oracle/untouched-row checks, empty chunks and page64/scale1/64/L8. 12 checked H200
-replays, no speed claim. App ap-c7hDHYlZH7Ja3VAJNM4Iur stopped/tasks0. Shared global
-E0 tickets still limit simultaneous invocations; sequential replay is what passed.
+A09 app ap-R6eHydPQwAqE8eg0p5lSCi stopped/tasks0. Its output packaging BlobCreate
+returned AuthError401, so no correctness/compiler report recovered. No retry,
+permission broadening or credential change. E3 native correctness and timing were
+independently verified by official check, but its ABA and compiled-resource/code
+comparison remain unverified. Historical failed experiments are preserved.
 
-E2 selected as parent from E0/E2. E3 changes ONLY full B16/32
-history loop to tl.range(..., num_stages=3), launch stages stay3. Local transformation
-and two AST invariants prepared. Compare emitted code/resources before a new check.
-Then explicit complete candidate E4 and final official validation if justified.
+Cumulative Modal conservative guard$1.708917914/$2, remaining$0.291082086; latest
+billing net$0, gross observed$1.15 delayed, never reduce guard. All visible apps
+stopped/tasks0. Latest authoritative ledger reviews/attention-v2/modal-budget.json;
+shared ignored bridge local-notes/modal-budget-latest.local.json synchronized.
+Existing12h auth expires2026-10-25 06:26:47UTC; no renewal/new credentials authorized.
+Do not launch more work merely to use remaining quota. New activity must respect
+actual remaining budgets/scope and denied-action rules; do not bypass A09 denial.
 
-Latest authoritative Modal ledger reviews/attention-v2/modal-budget.json: cumulative
-conservative guard $1.708917914 of $2, remaining $0.291082086; net paid $0. Never lower
-this guard from delayed billing. Short compiler/replay probe must reserve $0.25.
-Existing 12h owner-only auth expires 2026-10-25 06:26:47 UTC; no renewal authorized.
-A09 app ap-R6eHydPQwAqE8eg0p5lSCi stopped/tasks0; result transfer failed at
-Modal BlobCreate401. No report received, so no E3 Modal GPU pass/compiler data
-claim. No retry/credential or permission change. All Modal apps stopped. Source bundles must be committed and explicitly allowlisted;
-no auth/config/repository contents. Known failed operation: A09 large return BlobCreate401; no GPU outcome recovered.
-Do not retry that transfer or launch a replacement without resolving authorization.
-Independent official E3 remains approved and accepted; no duplicate requests.
+Final report links exact sources, hashes, receipts, commands, tests and costs.
+No final contest submission, paid resource or publication occurred.
