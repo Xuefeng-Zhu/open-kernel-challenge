@@ -1,0 +1,22 @@
+{
+  "cycle": "projection-cycle2",
+  "problem": "muse_bf16_proj",
+  "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
+  "maximum_new_experiments": 10,
+  "remaining_authorized": 10,
+  "max_active_jobs": 2,
+  "max_spend_usd": 0,
+  "mode": "check",
+  "rules_version": "2026-10-22.1",
+  "prior_budgets": "Original10projection + separate1attention exhausted; neither is extended by this ledger",
+  "baseline_best": {
+    "candidate": "candidates/router_pooler_hybrid.py",
+    "source_commit": "5f491a34d52449f5d0c5c7985b4a0d4ecd17217d",
+    "job_id": "02e099c3724e4a05",
+    "speedup": 1.1207320490337331
+  },
+  "created_utc": "2026-10-24T17:50:52.192284+00:00",
+  "plans": {},
+  "requests": [],
+  "publication": "New work remains local; no push authorized"
+}

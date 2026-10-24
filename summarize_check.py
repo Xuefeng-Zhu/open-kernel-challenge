@@ -12,8 +12,9 @@ ROOT = Path(__file__).resolve().parent
 def main():
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("experiment")
+    p.add_argument("--ledger", type=Path, default=ROOT / "experiments/remote-budget.json")
     args = p.parse_args()
-    ledger = json.loads((ROOT / "experiments/remote-budget.json").read_text())
+    ledger = json.loads(args.ledger.read_text())
     entry = next(x for x in ledger["requests"] if x["experiment"] == args.experiment)
     assert entry["state"] == "terminal", "Never infer a result from queue state"
     job = json.loads((ROOT / "results" / (args.experiment + "-job.local.json")).read_text())
