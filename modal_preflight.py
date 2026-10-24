@@ -26,7 +26,7 @@ def describe(candidate):
     extra = ()
     if candidate.name == "projection_full_composition.py":
         extra=("candidates/projection_native_composition.py","candidates/projection_pooler_layout.py")
-    if candidate.name in {"projection_qkv_layout.py","projection_unpooler_layout.py","projection_pooler_grouped.py"}:
+    if candidate.name in {"projection_qkv_layout.py","projection_unpooler_layout.py","projection_pooler_grouped.py","projection_pooler_narrow.py"}:
         extra=("candidates/projection_full_composition.py",)
     files = {}
     for relative in sorted(set(FIXED + extra + (candidate.as_posix(),))):

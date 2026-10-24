@@ -228,7 +228,7 @@ def supervise(candidate, output_dir, repeats, seed_offset=200000, protocol="thre
               "--submission", str(source), "--seed-offset", str(seed_offset),
               "--output", str(output_dir / (name + "-correctness.json"))])
              for name, source in runner_specs(candidate,protocol)]
-    if candidate.name in {"projection_unpooler_layout.py","projection_pooler_grouped.py"}:
+    if candidate.name in {"projection_unpooler_layout.py","projection_pooler_grouped.py","projection_pooler_narrow.py"}:
         steps.append(("nearby-correctness",[__file__,"--phase","nearby","--candidate",str(candidate),
                       "--output-dir",str(output_dir),"--seed-offset",str(seed_offset),"--protocol",protocol]))
     steps.append(("graph-benchmark", [__file__, "--phase", "benchmark", "--candidate", str(candidate),
