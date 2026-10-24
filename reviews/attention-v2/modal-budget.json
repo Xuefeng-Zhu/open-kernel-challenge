@@ -1,12 +1,12 @@
 {
-  "authorization": "Attention corrected-v2 baseline then only full-attention separate final-merge if baseline passes; existing free credits, cumulative USD2 unchanged, paid USD0, no OKC/push/new credentials",
+  "authorization": "Attention E0-E4 cycle: six NEW off-board OKC checks separate ledger; focused existing-auth free-credit Modal replay/compiler probes within cumulative USD2, net paid USD0; no push/new credentials",
   "workspace": "xuefeng-zhu",
   "cumulative_gross_ceiling_usd": 2,
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
   "observed_gross_high_water_usd": "1.21273207",
   "conservative_stage_spent_usd": "1.565468698",
-  "billing_ui_verified_utc": "2026-10-24T21:57:31.083139+00:00",
-  "verified_credit_balance_usd": 29.07,
+  "billing_ui_verified_utc": "2026-10-24T22:33:28.236663+00:00",
+  "verified_credit_balance_usd": 28.93,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
   "max_active_apps": 1,
@@ -998,7 +998,7 @@
     }
   ],
   "latest_billing_observed_utc": "2026-10-24T22:04:58.085437+00:00",
-  "stage_completed": true,
+  "stage_completed": false,
   "report_before_expanding": false,
   "final_app_states": [
     {
@@ -1066,5 +1066,19 @@
   "attention_branch_base_guard_usd": "1.146411930",
   "projection_snapshot_sha256": "678d740297055da1cde090b844c17c1d95835dae8026aa22723565b6703290fd",
   "inventory_note": "CLI recent app list shrank; do not require historical total count. Both exact attention IDs reverified stopped; older snapshots preserve all prior shutdown evidence.",
-  "final_local_assertion": "A closing ad-hoc assertion expecting13historicalapps failed when recent list returned5; inspected exactIDs and all visible states, resolved without remote mutation/retry"
+  "final_local_assertion": "A closing ad-hoc assertion expecting13historicalapps failed when recent list returned5; inspected exactIDs and all visible states, resolved without remote mutation/retry",
+  "authorization_history": [
+    "Attention corrected-v2 baseline then only full-attention separate final-merge if baseline passes; existing free credits, cumulative USD2 unchanged, paid USD0, no OKC/push/new credentials"
+  ],
+  "attention_probe_plans": {
+    "A07-replay": {
+      "parent": "submission.py",
+      "candidate": "fixed_chunks.py",
+      "hypothesis": "Explicit same-address A/B/A with actual GPU lengths changed; neutral non-owner chunks; page64 scale1/64 L8 and exact compiler resources",
+      "expected_sha256": {
+        "submission.py": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+        "fixed_chunks.py": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782"
+      }
+    }
+  }
 }

@@ -29,10 +29,16 @@ def read_cli(*args):
     return json.loads(p.stdout)
 
 
-def bundle(mode,destination):
+def bundle(mode,destination,experiment=None):
     files={p:HERE/p for p in FIXED}
     files.update({p:ROOT/src for p,src in LEGAL.items()})
     if mode=='merge':files['separate_merge.py']=HERE/'separate_merge.py'
+    probe=None
+    if mode=='replay':
+        probe=json.loads(LEDGER.read_text())['attention_probe_plans'][experiment]
+        for name in [probe['parent'],probe['candidate'],'replay_probe.py']:files[name]=HERE/name
+        for name,sha in probe['expected_sha256'].items():
+            if hashlib.sha256(files[name].read_bytes()).hexdigest()!=sha:raise ValueError('Planned probe source changed')
     for name,p in files.items():
         if p.is_symlink() or p.read_bytes()!=subprocess.check_output(['git','show','HEAD:'+p.relative_to(ROOT).as_posix()],cwd=ROOT):
             raise ValueError('Commit reviewed exact file before bundling: '+name)
@@ -44,6 +50,7 @@ def bundle(mode,destination):
     manifest=dict(kind='Explicit attention source/license allowlist; no repository/auth contents',mode=mode,
         source_commit=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
         sha256={name:hashlib.sha256(p.read_bytes()).hexdigest() for name,p in files.items()})
+    if probe:manifest['probe']=probe
     (destination/'bundle-manifest.json').write_text(json.dumps(manifest,indent=2)+'\n')
     print('Built',len(files),'allowlisted files for',mode)
 
@@ -51,11 +58,11 @@ def bundle(mode,destination):
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action',choices=['build','run','finalize','status'])
-    parser.add_argument('--mode',choices=['baseline','merge'],default='baseline')
-    parser.add_argument('--experiment',choices=['A03-baseline','A05-merge'],default='A03-baseline')
+    parser.add_argument('--mode',choices=['baseline','merge','replay'],default='baseline')
+    parser.add_argument('--experiment',choices=['A03-baseline','A05-merge','A07-replay','A09-pipeline-probe'],default='A03-baseline')
     parser.add_argument('--bundle',type=Path)
     args=parser.parse_args()
-    if args.action=='build':bundle(args.mode,args.bundle);return
+    if args.action=='build':bundle(args.mode,args.bundle,args.experiment);return
     d=json.loads(LEDGER.read_text())
     auth=ROOT/'local-notes/modal-auth.toml'
     if not auth.exists() or auth.stat().st_mode&0o077:raise ValueError('Existing approved owner-only auth required')
@@ -88,7 +95,7 @@ def main():
               'guard',d['conservative_stage_spent_usd'],'net',billing['billed_cost'])
         if Decimal(billing['billed_cost'])!=0 or Decimal(d['conservative_stage_spent_usd'])>2:raise RuntimeError('Cost gate, stop')
         return
-    expected_mode='baseline' if args.experiment=='A03-baseline' else 'merge'
+    expected_mode={'A03-baseline':'baseline','A05-merge':'merge','A07-replay':'replay','A09-pipeline-probe':'replay'}[args.experiment]
     if args.mode!=expected_mode:raise ValueError('Experiment/mode mismatch')
     if any(e['experiment']==args.experiment for e in d['attempts']):raise RuntimeError('Already reserved, inspect existing app, never duplicate')
     if any(e['state']!='terminal' for e in d['attempts']):raise RuntimeError('Prior attempt not terminal')
@@ -103,33 +110,36 @@ def main():
     observed=max(Decimal(billing['metered_cost']),sum((Decimal(v) for v in billing['metered_cost_breakdown'].values()),Decimal(0)))
     d['observed_gross_high_water_usd']=str(max(Decimal(d['observed_gross_high_water_usd']),observed))
     guard=max(Decimal(d['conservative_stage_spent_usd']),Decimal(d['observed_gross_high_water_usd']))
-    if guard+Decimal('.50')>2:raise RuntimeError('Remaining conservative budget cannot reserve this run')
+    reserve=Decimal('.25') if args.mode=='replay' else Decimal('.50')
+    timeout,startup,deadline=(90,45,70) if args.mode=='replay' else (240,60,210)
+    if guard+reserve>2:raise RuntimeError('Remaining conservative budget cannot reserve this run')
     path=args.bundle.resolve()
     if (ROOT/'local-notes').resolve() not in path.parents:raise ValueError('Use explicit ignored bundle')
     manifest=json.loads((path/'bundle-manifest.json').read_text())
-    if manifest['mode']!=args.mode or len(manifest['sha256'])!=(12 if args.mode=='baseline' else 13):raise ValueError('Wrong reviewed file count/mode')
+    expected_count=(len(set(FIXED)|set(LEGAL)|{manifest['probe']['parent'],manifest['probe']['candidate'],'replay_probe.py'}) if args.mode=='replay' else (12 if args.mode=='baseline' else 13))
+    if manifest['mode']!=args.mode or len(manifest['sha256'])!=expected_count:raise ValueError('Wrong reviewed file count/mode')
     if {p.relative_to(path).as_posix() for p in path.rglob('*') if p.is_file()}!=set(manifest['sha256'])|{'bundle-manifest.json'}:raise ValueError('Extra upload files')
     for name,sha in manifest['sha256'].items():
         if (path/name).is_symlink() or hashlib.sha256((path/name).read_bytes()).hexdigest()!=sha:raise ValueError('Bundle hash changed')
     if (path/'modal_worker.py').read_bytes()!=(HERE/'modal_worker.py').read_bytes():raise ValueError('Worker bundle differs')
     import modal
-    spec=importlib.util.spec_from_file_location('attention_modal_worker',HERE/'modal_worker.py');worker=importlib.util.module_from_spec(spec);spec.loader.exec_module(worker)
+    spec=importlib.util.spec_from_file_location('attention_modal_worker',HERE/('replay_probe.py' if args.mode=='replay' else 'modal_worker.py'));worker=importlib.util.module_from_spec(spec);spec.loader.exec_module(worker)
     e=dict(experiment=args.experiment,mode=args.mode,state='reserved',app_id=None,created_utc=now(),
         source_commit=manifest['source_commit'],submission_sha256=manifest['sha256']['submission.py'],
-        manifest=manifest,billing_before=billing,conservative_reserve_usd='.50',
+        manifest=manifest,billing_before=billing,conservative_reserve_usd=str(reserve),
         resources=dict(gpu='H200',cpu=[2,2],memory_mib=[8192,8192],max_containers=1,min_containers=0,
-            buffer_containers=0,scaledown_window=2,timeout=240,startup_timeout=60,internal_deadline=210,retries=0))
+            buffer_containers=0,scaledown_window=2,timeout=timeout,startup_timeout=startup,internal_deadline=deadline,retries=0))
     d['attempts'].append(e);save(d);started=time.monotonic()
     image=modal.Image.from_id(d['reused_image_id']).add_local_dir(path,'/opt/attention-bundle/reviews/attention-v2',copy=False)
     app=modal.App('okc-attention-'+args.mode,include_source=False)
     fn=app.function(image=image,gpu='H200',cpu=(2,2),memory=(8192,8192),max_containers=1,
-        min_containers=0,buffer_containers=0,scaledown_window=2,timeout=240,startup_timeout=60,
+        min_containers=0,buffer_containers=0,scaledown_window=2,timeout=timeout,startup_timeout=startup,
         retries=0,serialized=True,include_source=False,block_network=True,restrict_modal_access=True)(worker.make_entry())
     try:
         with app.run(detach=False,environment_name='main'):
             e.update(state='accepted',app_id=app.app_id,accepted_utc=now());save(d)
             print('Accepted',args.experiment,app.app_id,flush=True)
-            result=fn.remote(args.mode,210)
+            result=fn.remote(args.mode,deadline)
             (ROOT/f'local-notes/attention-{args.experiment}-result.local.json').write_text(json.dumps(result,indent=2)+'\n')
             e.update(state='function-terminal',exit_code=result['exit_code'],worker_wall_seconds=result['worker_wall_seconds'])
     except Exception as error:
