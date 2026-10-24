@@ -17,8 +17,8 @@
     {
       "experiment": "E0",
       "mode": "check",
-      "state": "accepted",
-      "status": "running",
+      "state": "terminal",
+      "status": "done",
       "job_id": "5b0baa286659421a",
       "candidate": "reviews/attention-v2/submission.py",
       "source_commit": "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32",
@@ -47,7 +47,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T22:25:42.942289+00:00",
-      "last_checked_utc": "2026-10-24T22:30:32.415247+00:00"
+      "last_checked_utc": "2026-10-24T22:34:01.409882+00:00",
+      "passed": true,
+      "speedup": 0.7224690512621683,
+      "speedup_ci": [
+        0.7116320154932357,
+        0.7373518838861473
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      }
     }
   ],
   "remaining": 5,
@@ -56,6 +74,12 @@
       "candidate": "submission.py",
       "hypothesis": "Official corrected-v2 baseline after passing Modal",
       "expected_sha256": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+      "final": false
+    },
+    "E2": {
+      "candidate": "fixed_chunks.py",
+      "expected_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+      "hypothesis": "Only full B16/32 fixed 8192 historical chunks; E0 parent, passes A07 same-address ABA with actual length changes",
       "final": false
     }
   },
