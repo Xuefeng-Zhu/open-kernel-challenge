@@ -1,3 +1,10 @@
+Latest authorized Modal testing is complete: [REPORT.md](REPORT.md).
+Minimalconstexprfix05922b7 passes actualH200correctness; sole separate-merge
+comparison also passes but losesoverall (pairedrawratio0.9164). Bothapps stopped,
+no newOKCcheck/push/credential. Cumulativeconservativeguard$1.565469/$2,netpaid$0.
+The historical compiler failure and earlier preflight statements below are retained
+with their original scope; currentsource has exactly the recordedconstexprrepair.
+
 **Current result:** approved attention check bf4b49bd8bb34dae is terminal, failed
 compilation on non-constexpr LOG2E (0/16 prerequisite passes, no timing). One
 additional allowance is exhausted; no resubmission/push. See REMOTE_CHECK.md.

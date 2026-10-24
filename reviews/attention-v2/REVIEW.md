@@ -1,3 +1,10 @@
+Latest authorized Modal testing is complete: [REPORT.md](REPORT.md).
+Minimalconstexprfix05922b7 passes actualH200correctness; sole separate-merge
+comparison also passes but losesoverall (pairedrawratio0.9164). Bothapps stopped,
+no newOKCcheck/push/credential. Cumulativeconservativeguard$1.565469/$2,netpaid$0.
+The historical compiler failure and earlier preflight statements below are retained
+with their original scope; currentsource has exactly the recordedconstexprrepair.
+
 **Later H200 result:** the approved formatting-only check failed compilation on LOG2E.
 See REMOTE_CHECK.md and remote-result.json. The preflight below is historical CPU-only
 evidence; it is not a claim that native compilation passed.

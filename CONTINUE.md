@@ -1,17 +1,28 @@
-# Resume this same project and exact accepted jobs
+# Current task: attention test cycle complete
 
-Budget 10/10, 0 remain, 0 uncertain; $0, check mode only.
-Read `STATUS.md`, `BEST.md`, `REMOTE_RESULTS.md` and `experiments/remote-budget.json`.
-Never resend admitted experiments. At most two active jobs; inspect terminal results before choosing a meaningful replacement. No paid compute, scored/public/final entry, new credentials or material agreement. Uncertain requests stay reserved until reconciled read-only.
+Branch attention-v2-preflight; read reviews/attention-v2/REPORT.md and modal-budget.json.
+Projection branch projection-bf16-local preserved at0eabf0e, best1.14864995x.
+Do not overwrite its source/results or treat this as more projection experimentation.
 
-**The ten-new-check budget is exhausted. Send no further check requests.** Finish monitoring/recording accepted jobs, tests and private push only. Any new GPU experiment requires additional explicit user authorization before changing the ceiling.
+A01onlyLOG2Econstexpr repair05922b7. A03baseline actualH200pass:16prerequisites+
+12scoredshapes v2/SGLang,appap-KGuppwXiAqOLZIE6m75wS0 stopped. A04full-only
+separate_merge source3818c72 no globalticket. A05appap-sS1X8nAzzsQPkNzcNIhBGq
+also correct/stopped, but overallrawv2/merge0.9164: reject. B16parity,B32~2%point
+estimate with3pairs/controlnoise,B1large regressions. No nextalgorithm permitted
+by this boundedcycle; no extraOKCchecks. Variant is full-only; sliding botharms use
+unchangedv2 as control. No formalcontestentry or score inferred from Modal.
 
-All admitted jobs are terminal. Choose further work only from actual evidence and the remaining authorization; stop early if no meaningful hypothesis or a real blocker exists.
+Both exact attention IDs reverified stopped/tasks0. Recent CLIlist mayomit older
+stoppedapps; do not assert a fixed historical count. Originaltermination snapshots
+preserved. No denied/pending/uncertainoperation. Fullraw/calibrated samples/resources
+in A03/A05resultJSON and modal-summary.json. CPU16gates notGPUevidence.
 
-For terminal results: `python3 summarize_check.py <experiment>`, inspect all correctness and timing/profile records, record failures too, then independently commit sanitized evidence. `python3 update_progress.py` refreshes derived status offline. Push only sanitized files to the existing private repository; preserve original baseline and immutable experiment sources.
+Authoritative cumulativeModalguard1.565468698of2USD,remaining0.434531302,netpaid0.
+Never resetaccounting onbranchswitch or lowerguardfromdelayedbillingreads.
+Latest ledger reviews/attention-v2/modal-budget.json; sharedignored bridge
+local-notes/modal-budget-latest.local.json. Projectionbrancholderledger1.146is
+historical only. Existing12hcredentialowner-only/notinGit,expires06:26:47UTC Oct25;
+no newcredential/renewal,paidresource,payment/cap/terms/push. No currentGPUapp.
 
-Historical R06 denial and its sole approved retry: `DENIED_R06.md`. Never retry that upload again. Any new denial must be honored without alternate transfer routes.
-
-Candidate-specific hypotheses and CPU/GPU limitations are in `experiments/`. R06 pooler split8 regressed and must not be composed into the best. QKV split8 stays local-only after that evidence. R08 validated the router split count; R09 validated the one-row SIMT pooler component; R10 is their separately committed composition with the verified wide router. Future hypotheses require remaining allowance or a new authorization; do not infer approval from this plan.
-
-The unrelated attention attachment review remains ignored/local-only under `local-notes/attention-review/REVIEW.md`; never upload/commit it as part of this project.
+Historicalfailed bf4b49bd8bb34dae retained; attentionextraOKC1/1exhausted, no new
+checkgrant. Projectionsecondcycle2/10used,8remaining unchanged; not forattention.

@@ -1,0 +1,4942 @@
+{
+  "A03-baseline": {
+    "mode": "baseline",
+    "names": [
+      "v2",
+      "sglang"
+    ],
+    "passed": true,
+    "cases": [
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "dist": "soft",
+          "load": "decode 1",
+          "weight": 46,
+          "seed": 601
+        },
+        "raw_median_us": {
+          "v2": 19.008000381290913,
+          "sglang": 26.75200067460537
+        },
+        "raw_pair_ratios": [
+          1.451650510263697,
+          1.368174240234863,
+          1.4823418669433897
+        ],
+        "raw_median_reference_over_candidate": 1.451650510263697,
+        "winning_pairs": 3,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000603,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 19.1040001809597,
+              "sglang": 26.399999856948853
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.963e-03 (worst row 3.963e-03) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.722e-02 (worst row 8.722e-02) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 15.936000272631645,
+              "sglang": 23.231999948620796
+            }
+          },
+          {
+            "seed": 7000604,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 27.424000203609467,
+              "v2": 17.983999103307724
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.217e-02 (worst row 7.217e-02) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.880e-03 (worst row 3.880e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 24.25600029528141,
+              "v2": 14.815999194979668
+            }
+          },
+          {
+            "seed": 7000605,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 19.42400075495243,
+              "sglang": 26.75200067460537
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.380e-03 (worst row 3.380e-03) [bound 0.150: 2.5 x the reference's 0.054 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.562e-02 (worst row 5.562e-02) [bound 0.150: 2.5 x the reference's 0.054 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.256000846624374,
+              "sglang": 23.584000766277313
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 26.399999856948853,
+              "v2": 19.42400075495243
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.588e-02 (worst row 4.588e-02) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.092e-03 (worst row 4.092e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 23.231999948620796,
+              "v2": 16.256000846624374
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 17.983999103307724,
+              "sglang": 26.75200067460537
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.539e-03 (worst row 4.539e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.739e-02 (worst row 6.739e-02) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 14.815999194979668,
+              "sglang": 23.584000766277313
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 27.936000376939774,
+              "v2": 18.912000581622124
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.550e-02 (worst row 8.550e-02) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.657e-03 (worst row 5.657e-03) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 24.768000468611717,
+              "v2": 15.744000673294067
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.544890691907544,
+          1.4399198740051118,
+          1.5824543519496235
+        ],
+        "calibrated_median_us": {
+          "v2": 15.840000472962856,
+          "sglang": 23.584000766277313
+        },
+        "calibrated_median_reference_over_candidate": 1.544890691907544
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "dist": "coherent",
+          "load": "decode 1",
+          "weight": 16,
+          "seed": 602
+        },
+        "raw_median_us": {
+          "v2": 45.3759990632534,
+          "sglang": 37.61599957942963
+        },
+        "raw_pair_ratios": [
+          0.817645383450707,
+          0.8518725127614749,
+          0.8172559485162514
+        ],
+        "raw_median_reference_over_candidate": 0.817645383450707,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.2319999299943447,
+        "raw_all_samples": [
+          {
+            "seed": 7000604,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 45.343998819589615,
+              "sglang": 37.18400001525879
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.923e-04 (worst row 5.923e-04) [bound 0.150: 2.5 x the reference's 0.055 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.655e-02 (worst row 5.655e-02) [bound 0.150: 2.5 x the reference's 0.055 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 42.11199888959527,
+              "sglang": 33.952000085264444
+            }
+          },
+          {
+            "seed": 7000605,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 37.28000074625015,
+              "v2": 45.72800174355507
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.642e-02 (worst row 4.642e-02) [bound 0.148: 2.5 x the reference's 0.053 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.033e-04 (worst row 6.033e-04) [bound 0.148: 2.5 x the reference's 0.053 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 34.04800081625581,
+              "v2": 42.496001813560724
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 45.40799930691719,
+              "sglang": 37.88800165057182
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.998e-04 (worst row 5.998e-04) [bound 0.114: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.782e-02 (worst row 3.782e-02) [bound 0.114: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 42.175999376922846,
+              "sglang": 34.65600172057748
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 38.88000175356865,
+              "v2": 44.704001396894455
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.797e-02 (worst row 4.797e-02) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.851e-04 (worst row 2.851e-04) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 35.648001823574305,
+              "v2": 41.47200146690011
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 45.343998819589615,
+              "sglang": 37.76000067591667
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.018e-04 (worst row 4.018e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.868e-02 (worst row 2.868e-02) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 42.11199888959527,
+              "sglang": 34.52800074592233
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 37.47199848294258,
+              "v2": 46.720001846551895
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.490e-02 (worst row 4.490e-02) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.728e-04 (worst row 7.728e-04) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 34.23999855294824,
+              "v2": 43.48800191655755
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.8037139862287345,
+          0.8404204958162415,
+          0.8034612384579003
+        ],
+        "calibrated_median_us": {
+          "v2": 42.14399913325906,
+          "sglang": 34.38399964943528
+        },
+        "calibrated_median_reference_over_candidate": 0.8037139862287345
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "decode 16",
+          "weight": 46,
+          "seed": 603
+        },
+        "raw_median_us": {
+          "v2": 19.872000440955162,
+          "sglang": 32.84800052642822
+        },
+        "raw_pair_ratios": [
+          1.6796323466907093,
+          1.685112287290897,
+          1.6535694050924363
+        ],
+        "raw_median_reference_over_candidate": 1.6796323466907093,
+        "winning_pairs": 3,
+        "empty_graph_median_us": 3.1999999191612005,
+        "raw_all_samples": [
+          {
+            "seed": 7000605,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 20.35200037062168,
+              "sglang": 34.752000123262405
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.011e-03 (worst row 6.543e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.851e-02 (worst row 8.190e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 17.15200045146048,
+              "sglang": 31.552000204101205
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 32.83200040459633,
+              "v2": 19.872000440955162
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.264e-02 (worst row 8.058e-02) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.487e-03 (worst row 7.172e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 29.632000485435128,
+              "v2": 16.67200052179396
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 19.58400011062622,
+              "sglang": 33.824000507593155
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.411e-03 (worst row 6.944e-03) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.609e-02 (worst row 8.525e-02) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.38400019146502,
+              "sglang": 30.624000588431954
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 32.67199918627739,
+              "v2": 19.872000440955162
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.241e-02 (worst row 9.868e-02) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.662e-03 (worst row 6.400e-03) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 29.47199926711619,
+              "v2": 16.67200052179396
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 20.031999796628952,
+              "sglang": 32.6399989426136
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.041e-03 (worst row 5.182e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.956e-02 (worst row 8.713e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.83199987746775,
+              "sglang": 29.4399990234524
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 32.86400064826012,
+              "v2": 19.58400011062622
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.283e-02 (worst row 8.939e-02) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.350e-03 (worst row 6.954e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 29.664000729098916,
+              "v2": 16.38400019146502
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.8081842696455956,
+          1.81774069967244,
+          1.77953250544192
+        ],
+        "calibrated_median_us": {
+          "v2": 16.67200052179396,
+          "sglang": 29.648000607267022
+        },
+        "calibrated_median_reference_over_candidate": 1.8081842696455956
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "decode 16",
+          "weight": 16,
+          "seed": 604
+        },
+        "raw_median_us": {
+          "v2": 288.0000025033951,
+          "sglang": 205.79199492931366
+        },
+        "raw_pair_ratios": [
+          0.7181220101937982,
+          0.7072073015348936,
+          0.7191083148278545
+        ],
+        "raw_median_reference_over_candidate": 0.7181220101937982,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000606,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 286.72000765800476,
+              "sglang": 206.4639925956726
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.603e-04 (worst row 9.962e-04) [bound 0.131: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.498e-02 (worst row 7.405e-02) [bound 0.131: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 283.5520077496767,
+              "sglang": 203.29599268734455
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 204.352006316185,
+              "v2": 285.3440046310425
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.300e-02 (worst row 6.590e-02) [bound 0.121: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.925e-04 (worst row 9.945e-04) [bound 0.121: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 201.18400640785694,
+              "v2": 282.1760047227144
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 292.38399863243103,
+              "sglang": 209.98400449752808
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.804e-04 (worst row 9.994e-04) [bound 0.125: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.793e-02 (worst row 6.223e-02) [bound 0.125: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 289.215998724103,
+              "sglang": 206.81600458920002
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 205.08800446987152,
+              "v2": 294.49599981307983
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.827e-02 (worst row 6.258e-02) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.015e-04 (worst row 9.163e-04) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 201.92000456154346,
+              "v2": 291.3279999047518
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 285.8240008354187,
+              "sglang": 205.1199972629547
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.538e-04 (worst row 9.456e-04) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.140e-02 (worst row 6.261e-02) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 282.65600092709064,
+              "sglang": 201.95199735462666
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 208.44799280166626,
+              "v2": 289.2799973487854
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.302e-02 (worst row 7.486e-02) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.076e-04 (worst row 1.026e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 205.2799928933382,
+              "v2": 286.11199744045734
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.7149649172669795,
+          0.7040110492358129,
+          0.7159789410113055
+        ],
+        "calibrated_median_us": {
+          "v2": 284.832002595067,
+          "sglang": 202.6239950209856
+        },
+        "calibrated_median_reference_over_candidate": 0.7149649172669795
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "decode 32",
+          "weight": 46,
+          "seed": 605
+        },
+        "raw_median_us": {
+          "v2": 23.871999233961105,
+          "sglang": 37.47200034558773
+        },
+        "raw_pair_ratios": [
+          1.5644647096694804,
+          1.5816581840923134,
+          1.5651909238041803
+        ],
+        "raw_median_reference_over_candidate": 1.5651909238041803,
+        "winning_pairs": 3,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000607,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 23.77600036561489,
+              "sglang": 36.99199855327606
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.549e-03 (worst row 9.729e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.772e-02 (worst row 9.878e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 20.608000457286835,
+              "sglang": 33.823998644948006
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 38.2080003619194,
+              "v2": 24.288000538945198
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.794e-02 (worst row 9.346e-02) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 6.505e-03) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 35.04000045359135,
+              "v2": 21.12000063061714
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 23.871999233961105,
+              "sglang": 37.31200098991394
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.218e-03 (worst row 6.191e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.967e-02 (worst row 9.185e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 20.70399932563305,
+              "sglang": 34.144001081585884
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 38.2080003619194,
+              "v2": 23.871999233961105
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.219e-02 (worst row 8.909e-02) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.443e-03 (worst row 7.043e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 35.04000045359135,
+              "v2": 20.70399932563305
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 23.679999634623528,
+              "sglang": 36.80000081658363
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.252e-03 (worst row 5.783e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.626e-02 (worst row 8.910e-02) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 20.51199972629547,
+              "sglang": 33.63200090825558
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 37.63199970126152,
+              "v2": 23.871999233961105
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.925e-02 (worst row 9.054e-02) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.608e-03 (worst row 7.235e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 34.463999792933464,
+              "v2": 20.70399932563305
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.650173599036295,
+          1.6706482205910989,
+          1.6520685704312759
+        ],
+        "calibrated_median_us": {
+          "v2": 20.70399932563305,
+          "sglang": 34.304000437259674
+        },
+        "calibrated_median_reference_over_candidate": 1.6520685704312759
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "decode 32",
+          "weight": 16,
+          "seed": 606
+        },
+        "raw_median_us": {
+          "v2": 512.1279954910278,
+          "sglang": 389.77599143981934
+        },
+        "raw_pair_ratios": [
+          0.7606691672157994,
+          0.7637688840749308,
+          0.7577056529683935
+        ],
+        "raw_median_reference_over_candidate": 0.7606691672157994,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 518.559992313385,
+              "sglang": 392.41600036621094
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.644e-04 (worst row 1.129e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.775e-02 (worst row 8.132e-02) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 515.391992405057,
+              "sglang": 389.2480004578829
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 388.35200667381287,
+              "v2": 507.9039931297302
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.801e-02 (worst row 7.684e-02) [bound 0.128: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.988e-04 (worst row 1.273e-03) [bound 0.128: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 385.1840067654848,
+              "v2": 504.73599322140217
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 510.8479857444763,
+              "sglang": 389.0239894390106
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.635e-04 (worst row 1.242e-03) [bound 0.127: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.648e-02 (worst row 7.943e-02) [bound 0.127: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 507.67998583614826,
+              "sglang": 385.85598953068256
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 393.2799994945526,
+              "v2": 513.4080052375793
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.613e-02 (worst row 7.193e-02) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.832e-04 (worst row 1.311e-03) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 390.11199958622456,
+              "v2": 510.2400053292513
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 510.3999972343445,
+              "sglang": 385.5679929256439
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.768e-04 (worst row 1.159e-03) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.872e-02 (worst row 7.424e-02) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 507.2319973260164,
+              "sglang": 382.39999301731586
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 390.52799344062805,
+              "v2": 513.8559937477112
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.057e-02 (worst row 8.594e-02) [bound 0.140: 2.5 x the reference's 0.050 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 9.059e-04 (worst row 1.471e-03) [bound 0.140: 2.5 x the reference's 0.050 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 387.3599935323,
+              "v2": 510.6879938393831
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.7591827772171229,
+          0.7622983909350742,
+          0.7561973922349585
+        ],
+        "calibrated_median_us": {
+          "v2": 508.9599955826998,
+          "sglang": 386.6079915314913
+        },
+        "calibrated_median_reference_over_candidate": 0.7591827772171229
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "dist": "soft",
+          "load": "verify 1",
+          "weight": 46,
+          "seed": 607
+        },
+        "raw_median_us": {
+          "v2": 49.02399890124798,
+          "sglang": 29.536000452935696
+        },
+        "raw_pair_ratios": [
+          0.5957829430189668,
+          0.6026374079384577,
+          0.6035930638410928
+        ],
+        "raw_median_reference_over_candidate": 0.6026374079384577,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.247999935410917,
+        "raw_all_samples": [
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 48.73599857091904,
+              "sglang": 30.047999694943428
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.064e-03 (worst row 4.935e-03) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.944e-02 (worst row 6.539e-02) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.48799863550812,
+              "sglang": 26.79999975953251
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 28.831999748945236,
+              "v2": 50.08000135421753
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.307e-02 (worst row 7.091e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 5.994e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 25.58399981353432,
+              "v2": 46.83200141880661
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 48.608001321554184,
+              "sglang": 29.120000079274178
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.858e-03 (worst row 4.637e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.892e-02 (worst row 7.276e-02) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.36000138614327,
+              "sglang": 25.87200014386326
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 29.952000826597214,
+              "v2": 49.40799996256828
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.021e-02 (worst row 8.692e-02) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.213e-03 (worst row 6.008e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 26.704000891186297,
+              "v2": 46.160000027157366
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 48.73599857091904,
+              "sglang": 30.368000268936157
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.394e-03 (worst row 5.203e-03) [bound 0.150: 2.5 x the reference's 0.075 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.632e-02 (worst row 9.679e-02) [bound 0.150: 2.5 x the reference's 0.075 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.48799863550812,
+              "sglang": 27.12000033352524
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 28.831999748945236,
+              "v2": 49.31199923157692
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.515e-02 (worst row 7.686e-02) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.208e-03 (worst row 6.258e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 25.58399981353432,
+              "v2": 46.063999296166
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5673248969293049,
+          0.5744255379371803,
+          0.5754397144429726
+        ],
+        "calibrated_median_us": {
+          "v2": 45.77599896583706,
+          "sglang": 26.28800051752478
+        },
+        "calibrated_median_reference_over_candidate": 0.5744255379371803
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "dist": "coherent",
+          "load": "verify 1",
+          "weight": 16,
+          "seed": 608
+        },
+        "raw_median_us": {
+          "v2": 80.47999814152718,
+          "sglang": 43.63200068473816
+        },
+        "raw_pair_ratios": [
+          0.5431702290735735,
+          0.5398864458256137,
+          0.5403600332804863
+        ],
+        "raw_median_reference_over_candidate": 0.5403600332804863,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.2319999299943447,
+        "raw_all_samples": [
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 81.69600367546082,
+              "sglang": 44.67200115323067
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.072e-04 (worst row 5.122e-04) [bound 0.088: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.168e-02 (worst row 4.248e-02) [bound 0.088: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 78.46400374546647,
+              "sglang": 41.44000122323632
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 43.64800080657005,
+              "v2": 80.89599758386612
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.609e-02 (worst row 3.084e-02) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.890e-04 (worst row 3.502e-04) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 40.41600087657571,
+              "v2": 77.66399765387177
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 80.06399869918823,
+              "sglang": 42.49599948525429
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.776e-04 (worst row 6.472e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.050e-02 (worst row 4.220e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 76.83199876919389,
+              "sglang": 39.26399955525994
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 43.616000562906265,
+              "v2": 79.42400127649307
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.784e-02 (worst row 4.077e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.707e-04 (worst row 4.432e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 40.38400063291192,
+              "v2": 76.19200134649873
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 79.32800054550171,
+              "sglang": 42.75200143456459
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-04 (worst row 6.810e-04) [bound 0.079: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.577e-02 (worst row 2.875e-02) [bound 0.079: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 76.09600061550736,
+              "sglang": 39.520001504570246
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 44.38399896025658,
+              "v2": 81.91999793052673
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.492e-02 (worst row 3.376e-02) [bound 0.077: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.799e-04 (worst row 5.431e-04) [bound 0.077: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 41.15199903026223,
+              "v2": 78.68799800053239
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5242536293383213,
+          0.5204466071552757,
+          0.5211572460715518
+        ],
+        "calibrated_median_us": {
+          "v2": 77.24799821153283,
+          "sglang": 40.400000754743814
+        },
+        "calibrated_median_reference_over_candidate": 0.5211572460715518
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "verify 16",
+          "weight": 46,
+          "seed": 609
+        },
+        "raw_median_us": {
+          "v2": 41.39200039207935,
+          "sglang": 35.2960005402565
+        },
+        "raw_pair_ratios": [
+          0.842985296971402,
+          0.8395293663620635,
+          0.8628927779700544
+        ],
+        "raw_median_reference_over_candidate": 0.842985296971402,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.247999935410917,
+        "raw_all_samples": [
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 41.471999138593674,
+              "sglang": 35.19999980926514
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-03 (worst row 7.229e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.797e-02 (worst row 1.107e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 38.22399920318276,
+              "sglang": 31.95199987385422
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 35.392001271247864,
+              "v2": 42.27200150489807
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.039e-02 (worst row 1.071e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.373e-03 (worst row 9.051e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 32.14400133583695,
+              "v2": 39.024001569487154
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 41.31200164556503,
+              "sglang": 34.52799841761589
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.552e-03 (worst row 8.338e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.212e-02 (worst row 9.929e-02) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 38.064001710154116,
+              "sglang": 31.279998482204974
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 34.78400036692619,
+              "v2": 41.24800115823746
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.016e-02 (worst row 9.929e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.453e-03 (worst row 7.939e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 31.536000431515276,
+              "v2": 38.00000122282654
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 41.56799986958504,
+              "sglang": 36.12799942493439
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.125e-03 (worst row 7.325e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.440e-02 (worst row 1.100e-01) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 38.31999993417412,
+              "sglang": 32.87999948952347
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 35.392001271247864,
+              "v2": 41.31200164556503
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.000e-02 (worst row 1.047e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.498e-03 (worst row 8.593e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 32.14400133583695,
+              "v2": 38.064001710154116
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.8297839489575931,
+          0.8258242672794964,
+          0.8512279943891417
+        ],
+        "calibrated_median_us": {
+          "v2": 38.14400045666844,
+          "sglang": 32.04800060484558
+        },
+        "calibrated_median_reference_over_candidate": 0.8297839489575931
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "verify 16",
+          "weight": 16,
+          "seed": 610
+        },
+        "raw_median_us": {
+          "v2": 395.10399103164673,
+          "sglang": 222.87999838590622
+        },
+        "raw_pair_ratios": [
+          0.5717445370537299,
+          0.5716592695787394,
+          0.5607129832748946
+        ],
+        "raw_median_reference_over_candidate": 0.5716592695787394,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 375.99998712539673,
+              "sglang": 234.68799889087677
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.163e-04 (worst row 9.715e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.470e-02 (worst row 6.642e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 372.8319872170687,
+              "sglang": 231.5199989825487
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 210.1760059595108,
+              "v2": 401.311993598938
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.538e-02 (worst row 5.830e-02) [bound 0.098: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.969e-04 (worst row 9.061e-04) [bound 0.098: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 207.00800605118275,
+              "v2": 398.14399369060993
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 368.9599931240082,
+              "sglang": 235.23199558258057
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.824e-04 (worst row 1.156e-03) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.591e-02 (worst row 6.301e-02) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 365.7919932156801,
+              "sglang": 232.0639956742525
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 210.65600216388702,
+              "v2": 410.97599267959595
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.210e-02 (worst row 6.681e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.635e-04 (worst row 9.582e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 207.48800225555897,
+              "v2": 407.8079927712679
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 388.89598846435547,
+              "sglang": 235.9360009431839
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.711e-04 (worst row 8.531e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.310e-02 (worst row 5.730e-02) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 385.7279885560274,
+              "sglang": 232.76800103485584
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 211.07199788093567,
+              "v2": 407.29600191116333
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.214e-02 (worst row 6.006e-02) [bound 0.086: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.918e-04 (worst row 1.242e-03) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 207.9039979726076,
+              "v2": 404.1280020028353
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5682129925838285,
+          0.568140060545325,
+          0.5571767820428064
+        ],
+        "calibrated_median_us": {
+          "v2": 391.9359911233187,
+          "sglang": 219.71199847757816
+        },
+        "calibrated_median_reference_over_candidate": 0.568140060545325
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "verify 32",
+          "weight": 46,
+          "seed": 611
+        },
+        "raw_median_us": {
+          "v2": 49.72800053656101,
+          "sglang": 40.44799879193306
+        },
+        "raw_pair_ratios": [
+          0.8122479629061983,
+          0.8222994972701699,
+          0.8271073835243903
+        ],
+        "raw_median_reference_over_candidate": 0.8222994972701699,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.2319999299943447,
+        "raw_all_samples": [
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 49.855999648571014,
+              "sglang": 40.44799879193306
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.494e-03 (worst row 8.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.260e-02 (worst row 1.241e-01) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 46.62399971857667,
+              "sglang": 37.215998861938715
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 41.79200157523155,
+              "v2": 51.392000168561935
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.164e-02 (worst row 1.104e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.510e-03 (worst row 1.012e-02) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 38.56000164523721,
+              "v2": 48.16000023856759
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 48.70399832725525,
+              "sglang": 40.383998304605484
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 8.657e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.425e-02 (worst row 9.975e-02) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.471998397260904,
+              "sglang": 37.15199837461114
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 40.44799879193306,
+              "v2": 49.60000142455101
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.072e-02 (worst row 1.039e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.392e-03 (worst row 7.816e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 37.215998861938715,
+              "v2": 46.368001494556665
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 48.287998884916306,
+              "sglang": 40.28800129890442
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.296e-03 (worst row 8.469e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.751e-02 (worst row 1.117e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.05599895492196,
+              "sglang": 37.056001368910074
+            }
+          },
+          {
+            "seed": 7000618,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 41.82400181889534,
+              "v2": 51.00800096988678
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.176e-02 (worst row 1.012e-01) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.566e-03 (worst row 7.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 38.592001888900995,
+              "v2": 47.776001039892435
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.7994390491034054,
+          0.8097943084425561,
+          0.8150734021895992
+        ],
+        "calibrated_median_us": {
+          "v2": 46.49600060656667,
+          "sglang": 37.215998861938715
+        },
+        "calibrated_median_reference_over_candidate": 0.8097943084425561
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "verify 32",
+          "weight": 16,
+          "seed": 612
+        },
+        "raw_median_us": {
+          "v2": 701.6319930553436,
+          "sglang": 407.039999961853
+        },
+        "raw_pair_ratios": [
+          0.5842731513858067,
+          0.5864722018582527,
+          0.578503580591712
+        ],
+        "raw_median_reference_over_candidate": 0.5842731513858067,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.311999957077205,
+        "raw_all_samples": [
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 675.1360297203064,
+              "sglang": 418.17599534988403
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.581e-04 (worst row 1.332e-03) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.700e-02 (worst row 5.807e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 671.8240297632292,
+              "sglang": 414.8639953928068
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 394.3359851837158,
+              "v2": 715.4880166053772
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.423e-02 (worst row 7.868e-02) [bound 0.082: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.330e-04 (worst row 1.260e-03) [bound 0.082: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 391.0239852266386,
+              "v2": 712.1760166483
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 689.7600293159485,
+              "sglang": 425.56801438331604
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.620e-04 (worst row 1.072e-03) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.688e-02 (worst row 8.375e-02) [bound 0.091: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 686.4480293588713,
+              "sglang": 422.25601442623883
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 395.904004573822,
+              "v2": 710.1759910583496
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.513e-02 (worst row 6.976e-02) [bound 0.086: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.289e-04 (worst row 1.152e-03) [bound 0.086: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 392.5920046167448,
+              "v2": 706.8639911012724
+            }
+          },
+          {
+            "seed": 7000618,
+            "order": [
+              "v2",
+              "sglang"
+            ],
+            "raw_us": {
+              "v2": 693.0879950523376,
+              "sglang": 419.2639887332916
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.682e-04 (worst row 1.214e-03) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.741e-02 (worst row 7.265e-02) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 689.7759950952604,
+              "sglang": 415.9519887762144
+            }
+          },
+          {
+            "seed": 7000619,
+            "order": [
+              "sglang",
+              "v2"
+            ],
+            "raw_us": {
+              "sglang": 394.8799967765808,
+              "v2": 713.7600183486938
+            },
+            "checks": {
+              "sglang": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.622e-02 (worst row 8.294e-02) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.438e-04 (worst row 1.071e-03) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "sglang": 391.5679968195036,
+              "v2": 710.4480183916166
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5822816884762957,
+          0.5845031915614652,
+          0.5765075581852961
+        ],
+        "calibrated_median_us": {
+          "v2": 698.3199930982664,
+          "sglang": 403.7280000047758
+        },
+        "calibrated_median_reference_over_candidate": 0.5822816884762957
+      }
+    ],
+    "loads": [
+      {
+        "load": "decode 1",
+        "raw_pair_ratios": [
+          1.1593901186868631,
+          1.1376679651157826,
+          1.1733498798456994
+        ],
+        "raw_median_reference_over_candidate": 1.1593901186868631
+      },
+      {
+        "load": "decode 16",
+        "raw_pair_ratios": [
+          0.8798453934821637,
+          0.8656060738608329,
+          0.8735585837342331
+        ],
+        "raw_median_reference_over_candidate": 0.8735585837342331
+      },
+      {
+        "load": "decode 32",
+        "raw_pair_ratios": [
+          0.8560516578544376,
+          0.8604269232508972,
+          0.8527940489449584
+        ],
+        "raw_median_reference_over_candidate": 0.8560516578544376
+      },
+      {
+        "load": "verify 1",
+        "raw_pair_ratios": [
+          0.5766136562474191,
+          0.5799478673562347,
+          0.5807083361689028
+        ],
+        "raw_median_reference_over_candidate": 0.5799478673562347
+      },
+      {
+        "load": "verify 16",
+        "raw_pair_ratios": [
+          0.636112637653762,
+          0.6342943995199759,
+          0.63043288199003
+        ],
+        "raw_median_reference_over_candidate": 0.6342943995199759
+      },
+      {
+        "load": "verify 32",
+        "raw_pair_ratios": [
+          0.6238485107837997,
+          0.6261589246915692,
+          0.62055196821322
+        ],
+        "raw_median_reference_over_candidate": 0.6238485107837997
+      }
+    ],
+    "qualification": "Three reverse-order pairs per shape only; no official score or confidence interval; calibrated diagnostic uses independently measured empty graphs",
+    "raw_weighted_load_geometric_ratio": 0.7640646309031593
+  },
+  "A05-merge": {
+    "mode": "merge",
+    "names": [
+      "merge",
+      "v2"
+    ],
+    "passed": true,
+    "cases": [
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "dist": "soft",
+          "load": "decode 1",
+          "weight": 46,
+          "seed": 601
+        },
+        "raw_median_us": {
+          "merge": 18.60800012946129,
+          "v2": 18.543999642133713
+        },
+        "raw_pair_ratios": [
+          0.9726581345409614,
+          0.9966201645051577,
+          1.0305726199101195
+        ],
+        "raw_median_reference_over_candidate": 0.9966201645051577,
+        "winning_pairs": 1,
+        "empty_graph_median_us": 3.1999999191612005,
+        "raw_all_samples": [
+          {
+            "seed": 7000603,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 18.97599920630455,
+              "v2": 18.0479995906353
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.963e-03 (worst row 3.963e-03) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.963e-03 (worst row 3.963e-03) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 15.77599928714335,
+              "v2": 14.8479996714741
+            }
+          },
+          {
+            "seed": 7000604,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 18.0479995906353,
+              "merge": 18.144000321626663
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.880e-03 (worst row 3.880e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.880e-03 (worst row 3.880e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 14.8479996714741,
+              "merge": 14.944000402465463
+            }
+          },
+          {
+            "seed": 7000605,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 18.94400082528591,
+              "v2": 18.848000094294548
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.380e-03 (worst row 3.380e-03) [bound 0.150: 2.5 x the reference's 0.054 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.380e-03 (worst row 3.380e-03) [bound 0.150: 2.5 x the reference's 0.054 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 15.744000906124711,
+              "v2": 15.648000175133348
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 18.912000581622124,
+              "merge": 18.94400082528591
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.092e-03 (worst row 4.092e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.092e-03 (worst row 4.092e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 15.712000662460923,
+              "merge": 15.744000906124711
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 18.015999346971512,
+              "v2": 18.239999189972878
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.539e-03 (worst row 4.539e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.539e-03 (worst row 4.539e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 14.815999427810311,
+              "v2": 15.039999270811677
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 19.168000668287277,
+              "merge": 18.271999433636665
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.657e-03 (worst row 5.657e-03) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.657e-03 (worst row 5.657e-03) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 15.968000749126077,
+              "merge": 15.071999514475465
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.967021377609228,
+          0.9959328545964264,
+          1.0370465898905818
+        ],
+        "calibrated_median_us": {
+          "merge": 15.408000210300088,
+          "v2": 15.343999722972512
+        },
+        "calibrated_median_reference_over_candidate": 0.9959328545964264
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "dist": "coherent",
+          "load": "decode 1",
+          "weight": 16,
+          "seed": 602
+        },
+        "raw_median_us": {
+          "merge": 79.18399944901466,
+          "v2": 45.3919991850853
+        },
+        "raw_pair_ratios": [
+          0.5786672115531939,
+          0.5767595141417138,
+          0.567701543541688
+        ],
+        "raw_median_reference_over_candidate": 0.5767595141417138,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.1679999083280563,
+        "raw_all_samples": [
+          {
+            "seed": 7000604,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 79.0719985961914,
+              "v2": 45.43999955058098
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.923e-04 (worst row 5.923e-04) [bound 0.150: 2.5 x the reference's 0.055 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.923e-04 (worst row 5.923e-04) [bound 0.150: 2.5 x the reference's 0.055 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 75.90399868786335,
+              "v2": 42.27199964225292
+            }
+          },
+          {
+            "seed": 7000605,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 46.33599892258644,
+              "merge": 79.52000200748444
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.033e-04 (worst row 6.033e-04) [bound 0.148: 2.5 x the reference's 0.053 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.033e-04 (worst row 6.033e-04) [bound 0.148: 2.5 x the reference's 0.053 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 43.167999014258385,
+              "merge": 76.35200209915638
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 79.29600030183792,
+              "v2": 45.40799930691719
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.998e-04 (worst row 5.998e-04) [bound 0.114: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.998e-04 (worst row 5.998e-04) [bound 0.114: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 76.12800039350986,
+              "v2": 42.239999398589134
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 45.3759990632534,
+              "merge": 78.11199873685837
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.851e-04 (worst row 2.851e-04) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.851e-04 (worst row 2.851e-04) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 42.207999154925346,
+              "merge": 74.94399882853031
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 78.78399640321732,
+              "v2": 44.64000090956688
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.018e-04 (worst row 4.018e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.018e-04 (worst row 4.018e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 75.61599649488926,
+              "v2": 41.47200100123882
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 45.3759990632534,
+              "merge": 79.77599650621414
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.728e-04 (worst row 7.728e-04) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.728e-04 (worst row 7.728e-04) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 42.207999154925346,
+              "merge": 76.60799659788609
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5611317111541487,
+          0.5590088606936364,
+          0.5497066430107453
+        ],
+        "calibrated_median_us": {
+          "merge": 76.01599954068661,
+          "v2": 42.22399927675724
+        },
+        "calibrated_median_reference_over_candidate": 0.5590088606936364
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "decode 16",
+          "weight": 46,
+          "seed": 603
+        },
+        "raw_median_us": {
+          "merge": 20.015999674797058,
+          "v2": 19.7759997099638
+        },
+        "raw_pair_ratios": [
+          0.9910918940464151,
+          0.9999797788226671,
+          0.9801253159157916
+        ],
+        "raw_median_reference_over_candidate": 0.9910918940464151,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.263999940827489,
+        "raw_all_samples": [
+          {
+            "seed": 7000605,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 19.7759997099638,
+              "v2": 19.487999379634857
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.011e-03 (worst row 6.543e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.011e-03 (worst row 6.543e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 16.51199976913631,
+              "v2": 16.22399943880737
+            }
+          },
+          {
+            "seed": 7000606,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 19.807999953627586,
+              "merge": 19.872000440955162
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.487e-03 (worst row 7.172e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.487e-03 (worst row 7.172e-03) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.544000012800097,
+              "merge": 16.608000500127673
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 20.22399939596653,
+              "v2": 20.287999883294106
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.411e-03 (worst row 6.944e-03) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.411e-03 (worst row 6.944e-03) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 16.95999945513904,
+              "v2": 17.023999942466617
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 19.967999309301376,
+              "merge": 20.031999796628952
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.662e-03 (worst row 6.400e-03) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.662e-03 (worst row 6.400e-03) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.703999368473887,
+              "merge": 16.767999855801463
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 19.999999552965164,
+              "v2": 19.680000841617584
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.041e-03 (worst row 5.182e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.041e-03 (worst row 5.182e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 16.735999612137675,
+              "v2": 16.416000900790095
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 19.74399946630001,
+              "merge": 20.22399939596653
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.350e-03 (worst row 6.954e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.350e-03 (worst row 6.954e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 16.479999525472522,
+              "merge": 16.95999945513904
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.9893289338912816,
+          0.9999711933631743,
+          0.9762780735755594
+        ],
+        "calibrated_median_us": {
+          "merge": 16.75199973396957,
+          "v2": 16.51199976913631
+        },
+        "calibrated_median_reference_over_candidate": 0.9893289338912816
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "decode 16",
+          "weight": 16,
+          "seed": 604
+        },
+        "raw_median_us": {
+          "merge": 287.03999519348145,
+          "v2": 289.8720055818558
+        },
+        "raw_pair_ratios": [
+          1.0052639302292237,
+          0.9969594389099375,
+          1.0177400771821152
+        ],
+        "raw_median_reference_over_candidate": 1.0052639302292237,
+        "winning_pairs": 2,
+        "empty_graph_median_us": 3.1999999191612005,
+        "raw_all_samples": [
+          {
+            "seed": 7000606,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 287.00798749923706,
+              "v2": 287.84000873565674
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.603e-04 (worst row 9.962e-04) [bound 0.131: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.603e-04 (worst row 9.962e-04) [bound 0.131: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 283.80798758007586,
+              "v2": 284.64000881649554
+            }
+          },
+          {
+            "seed": 7000607,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 282.9760015010834,
+              "merge": 280.8319926261902
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.925e-04 (worst row 9.945e-04) [bound 0.121: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.925e-04 (worst row 9.945e-04) [bound 0.121: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 279.7760015819222,
+              "merge": 277.631992707029
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 296.00000381469727,
+              "v2": 294.8800027370453
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.804e-04 (worst row 9.994e-04) [bound 0.125: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.804e-04 (worst row 9.994e-04) [bound 0.125: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 292.80000389553607,
+              "v2": 291.6800028178841
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 291.9040024280548,
+              "merge": 292.57598519325256
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.015e-04 (worst row 9.163e-04) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.015e-04 (worst row 9.163e-04) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 288.7040025088936,
+              "merge": 289.37598527409136
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 282.9119861125946,
+              "v2": 286.3360047340393
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.538e-04 (worst row 9.456e-04) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 7.538e-04 (worst row 9.456e-04) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 279.7119861934334,
+              "v2": 283.1360048148781
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 293.7920093536377,
+              "merge": 287.07200288772583
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.076e-04 (worst row 1.026e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.076e-04 (worst row 1.026e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 290.5920094344765,
+              "merge": 283.87200296856463
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.005324205783055,
+          0.9969260572694509,
+          1.01794089992815
+        ],
+        "calibrated_median_us": {
+          "merge": 283.83999527432024,
+          "v2": 286.6720056626946
+        },
+        "calibrated_median_reference_over_candidate": 1.005324205783055
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "decode 32",
+          "weight": 46,
+          "seed": 605
+        },
+        "raw_median_us": {
+          "merge": 24.304000660777092,
+          "v2": 24.07999988645315
+        },
+        "raw_pair_ratios": [
+          0.9628335273826901,
+          1.0021509818514605,
+          1.020248971104107
+        ],
+        "raw_median_reference_over_candidate": 1.0021509818514605,
+        "winning_pairs": 2,
+        "empty_graph_median_us": 3.1999999191612005,
+        "raw_all_samples": [
+          {
+            "seed": 7000607,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 25.34399926662445,
+              "v2": 23.903999477624893
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.549e-03 (worst row 9.729e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.549e-03 (worst row 9.729e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 22.14399934746325,
+              "v2": 20.703999558463693
+            }
+          },
+          {
+            "seed": 7000608,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 23.903999477624893,
+              "merge": 24.320000782608986
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 6.505e-03) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 6.505e-03) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 20.703999558463693,
+              "merge": 21.120000863447785
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 23.80800060927868,
+              "v2": 24.064000695943832
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.218e-03 (worst row 6.191e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.218e-03 (worst row 6.191e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 20.60800069011748,
+              "v2": 20.864000776782632
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 24.927999824285507,
+              "merge": 25.087999179959297
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.443e-03 (worst row 7.043e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.443e-03 (worst row 7.043e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 21.727999905124307,
+              "merge": 21.887999260798097
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 24.064000695943832,
+              "v2": 25.248000398278236
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.252e-03 (worst row 5.783e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.252e-03 (worst row 5.783e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 20.864000776782632,
+              "v2": 22.048000479117036
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 24.09599907696247,
+              "merge": 24.288000538945198
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.608e-03 (worst row 7.235e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.608e-03 (worst row 7.235e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 20.89599915780127,
+              "merge": 21.088000619783998
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.9573687645417133,
+          1.0025076784323874,
+          1.0232922334101517
+        ],
+        "calibrated_median_us": {
+          "merge": 21.10400074161589,
+          "v2": 20.87999996729195
+        },
+        "calibrated_median_reference_over_candidate": 1.0025076784323874
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "decode 32",
+          "weight": 16,
+          "seed": 606
+        },
+        "raw_median_us": {
+          "merge": 513.4080052375793,
+          "v2": 510.76799631118774
+        },
+        "raw_pair_ratios": [
+          0.9938850439707486,
+          1.0010305833684279,
+          0.9947004206574097
+        ],
+        "raw_median_reference_over_candidate": 0.9947004206574097,
+        "winning_pairs": 1,
+        "empty_graph_median_us": 3.2159999245777726,
+        "raw_all_samples": [
+          {
+            "seed": 7000608,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 520.5119848251343,
+              "v2": 517.6640152931213
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.644e-04 (worst row 1.129e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.644e-04 (worst row 1.129e-03) [bound 0.122: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 517.2959849005565,
+              "v2": 514.4480153685436
+            }
+          },
+          {
+            "seed": 7000609,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 507.9360008239746,
+              "merge": 511.3919973373413
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.988e-04 (worst row 1.273e-03) [bound 0.128: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.988e-04 (worst row 1.273e-03) [bound 0.128: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 504.72000089939684,
+              "merge": 508.17599741276354
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 512.6720070838928,
+              "v2": 509.0879797935486
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.635e-04 (worst row 1.242e-03) [bound 0.127: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.635e-04 (worst row 1.242e-03) [bound 0.127: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 509.45600715931505,
+              "v2": 505.8719798689708
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 520.6720232963562,
+              "merge": 515.9680247306824
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.832e-04 (worst row 1.311e-03) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.832e-04 (worst row 1.311e-03) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 517.4560233717784,
+              "merge": 512.7520248061046
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 504.35197353363037,
+              "v2": 500.67198276519775
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.768e-04 (worst row 1.159e-03) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 8.768e-04 (worst row 1.159e-03) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 501.1359736090526,
+              "v2": 497.45598284062
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 512.4480128288269,
+              "merge": 514.1440033912659
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 9.059e-04 (worst row 1.471e-03) [bound 0.140: 2.5 x the reference's 0.050 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 9.059e-04 (worst row 1.471e-03) [bound 0.140: 2.5 x the reference's 0.050 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 509.23201290424913,
+              "merge": 510.9280034666881
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.99384664907409,
+          1.0010366999680385,
+          0.9946666004340752
+        ],
+        "calibrated_median_us": {
+          "merge": 510.1920053130016,
+          "v2": 507.55199638660997
+        },
+        "calibrated_median_reference_over_candidate": 0.9946666004340752
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "dist": "soft",
+          "load": "verify 1",
+          "weight": 46,
+          "seed": 607
+        },
+        "raw_median_us": {
+          "merge": 48.46400022506714,
+          "v2": 49.42400008440018
+        },
+        "raw_pair_ratios": [
+          1.0372603225030066,
+          0.889690332257407,
+          1.034650597999313
+        ],
+        "raw_median_reference_over_candidate": 1.034650597999313,
+        "winning_pairs": 2,
+        "empty_graph_median_us": 3.1839999137446284,
+        "raw_all_samples": [
+          {
+            "seed": 7000609,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 48.00000041723251,
+              "v2": 52.352000027894974
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.064e-03 (worst row 4.935e-03) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.064e-03 (worst row 4.935e-03) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 44.816000503487885,
+              "v2": 49.168000114150345
+            }
+          },
+          {
+            "seed": 7000610,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 48.99200052022934,
+              "merge": 49.66399818658829
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 5.994e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 5.994e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.80800060648471,
+              "merge": 46.47999827284366
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 48.09600114822388,
+              "v2": 48.767998814582825
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.858e-03 (worst row 4.637e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.858e-03 (worst row 4.637e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 44.91200123447925,
+              "v2": 45.583998900838196
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 47.488000243902206,
+              "merge": 60.83200126886368
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.213e-03 (worst row 6.008e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.213e-03 (worst row 6.008e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 44.30400033015758,
+              "merge": 57.64800135511905
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 48.35199937224388,
+              "v2": 50.4320003092289
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.394e-03 (worst row 5.203e-03) [bound 0.150: 2.5 x the reference's 0.075 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.394e-03 (worst row 5.203e-03) [bound 0.150: 2.5 x the reference's 0.075 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 45.16799945849925,
+              "v2": 47.24800039548427
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 49.855999648571014,
+              "merge": 48.576001077890396
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.208e-03 (worst row 6.258e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.208e-03 (worst row 6.258e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 46.671999734826386,
+              "merge": 45.39200116414577
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.0398299935849513,
+          0.8831904216699117,
+          1.037086136322936
+        ],
+        "calibrated_median_us": {
+          "merge": 45.28000031132251,
+          "v2": 46.24000017065555
+        },
+        "calibrated_median_reference_over_candidate": 1.037086136322936
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "dist": "coherent",
+          "load": "verify 1",
+          "weight": 16,
+          "seed": 608
+        },
+        "raw_median_us": {
+          "merge": 149.63199943304062,
+          "v2": 80.84800094366074
+        },
+        "raw_pair_ratios": [
+          0.5423751977311148,
+          0.5286564673187539,
+          0.542487807805234
+        ],
+        "raw_median_reference_over_candidate": 0.5423751977311148,
+        "winning_pairs": 0,
+        "empty_graph_median_us": 3.2319999299943447,
+        "raw_all_samples": [
+          {
+            "seed": 7000610,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 149.4079977273941,
+              "v2": 81.11999928951263
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.072e-04 (worst row 5.122e-04) [bound 0.088: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.072e-04 (worst row 5.122e-04) [bound 0.088: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 146.17599779739976,
+              "v2": 77.88799935951829
+            }
+          },
+          {
+            "seed": 7000611,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 81.69600367546082,
+              "merge": 150.78400075435638
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.890e-04 (worst row 3.502e-04) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.890e-04 (worst row 3.502e-04) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 78.46400374546647,
+              "merge": 147.55200082436204
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 149.50400590896606,
+              "v2": 79.23199981451035
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.776e-04 (worst row 6.472e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 3.776e-04 (worst row 6.472e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 146.27200597897172,
+              "v2": 75.999999884516
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 78.97599786520004,
+              "merge": 149.75999295711517
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.707e-04 (worst row 4.432e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.707e-04 (worst row 4.432e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 75.7439979352057,
+              "merge": 146.52799302712083
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 159.61599349975586,
+              "v2": 87.00799942016602
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-04 (worst row 6.810e-04) [bound 0.079: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-04 (worst row 6.810e-04) [bound 0.079: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 156.38399356976151,
+              "v2": 83.77599949017167
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 80.57600259780884,
+              "merge": 149.24800395965576
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.799e-04 (worst row 5.431e-04) [bound 0.077: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 2.799e-04 (worst row 5.431e-04) [bound 0.077: 2.5 x the reference's 0.025 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 77.3440026678145,
+              "merge": 146.01600402966142
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          0.5323042354376759,
+          0.5182508209755895,
+          0.532692707659187
+        ],
+        "calibrated_median_us": {
+          "merge": 146.39999950304627,
+          "v2": 77.61600101366639
+        },
+        "calibrated_median_reference_over_candidate": 0.5323042354376759
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "verify 16",
+          "weight": 46,
+          "seed": 609
+        },
+        "raw_median_us": {
+          "merge": 40.79999960958958,
+          "v2": 41.18400067090988
+        },
+        "raw_pair_ratios": [
+          1.0129858754119019,
+          0.9716690085684305,
+          1.0176448027658032
+        ],
+        "raw_median_reference_over_candidate": 1.0129858754119019,
+        "winning_pairs": 2,
+        "empty_graph_median_us": 3.263999940827489,
+        "raw_all_samples": [
+          {
+            "seed": 7000611,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 40.672000497579575,
+              "v2": 41.24800115823746
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-03 (worst row 7.229e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.406e-03 (worst row 7.229e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 37.408000556752086,
+              "v2": 37.98400121740997
+            }
+          },
+          {
+            "seed": 7000612,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 41.120000183582306,
+              "merge": 40.64000025391579
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.373e-03 (worst row 9.051e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.373e-03 (worst row 9.051e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 37.85600024275482,
+              "merge": 37.3760003130883
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 40.92799872159958,
+              "v2": 40.063999593257904
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.552e-03 (worst row 8.338e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.552e-03 (worst row 8.338e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 37.66399878077209,
+              "v2": 36.799999652430415
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 40.863998234272,
+              "merge": 42.367998510599136
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.453e-03 (worst row 7.939e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.453e-03 (worst row 7.939e-03) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 37.599998293444514,
+              "merge": 39.10399856977165
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 42.27200150489807,
+              "v2": 41.56799986958504
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.125e-03 (worst row 7.325e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.125e-03 (worst row 7.325e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 39.00800156407058,
+              "v2": 38.30399992875755
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 41.85599833726883,
+              "merge": 39.744000881910324
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.498e-03 (worst row 8.593e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.498e-03 (worst row 8.593e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 38.59199839644134,
+              "merge": 36.480000941082835
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.0141193236869104,
+          0.9692683286521032,
+          1.019216455625875
+        ],
+        "calibrated_median_us": {
+          "merge": 37.53599966876209,
+          "v2": 37.92000073008239
+        },
+        "calibrated_median_reference_over_candidate": 1.0141193236869104
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "verify 16",
+          "weight": 16,
+          "seed": 610
+        },
+        "raw_median_us": {
+          "merge": 394.6879953145981,
+          "v2": 393.0559903383255
+        },
+        "raw_pair_ratios": [
+          1.005824254673573,
+          1.0139112884079242,
+          0.9878016675281801
+        ],
+        "raw_median_reference_over_candidate": 1.005824254673573,
+        "winning_pairs": 2,
+        "empty_graph_median_us": 3.247999935410917,
+        "raw_all_samples": [
+          {
+            "seed": 7000612,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 374.08000230789185,
+              "v2": 405.7599902153015
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.163e-04 (worst row 9.715e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.163e-04 (worst row 9.715e-04) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 370.83200237248093,
+              "v2": 402.5119902798906
+            }
+          },
+          {
+            "seed": 7000613,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 373.82400035858154,
+              "merge": 400.7999897003174
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.969e-04 (worst row 9.061e-04) [bound 0.098: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.969e-04 (worst row 9.061e-04) [bound 0.098: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 370.5760004231706,
+              "merge": 397.55198976490647
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 373.1200098991394,
+              "v2": 401.43999457359314
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.824e-04 (worst row 1.156e-03) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.824e-04 (worst row 1.156e-03) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 369.8720099637285,
+              "v2": 398.1919946381822
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 384.0320110321045,
+              "merge": 401.91999077796936
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.635e-04 (worst row 9.582e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.635e-04 (worst row 9.582e-04) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 380.7840110966936,
+              "merge": 398.67199084255844
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 388.5760009288788,
+              "v2": 402.3680090904236
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.711e-04 (worst row 8.531e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.711e-04 (worst row 8.531e-04) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 385.32800099346787,
+              "v2": 399.12000915501267
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 384.67198610305786,
+              "merge": 408.2239866256714
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.918e-04 (worst row 1.242e-03) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 5.918e-04 (worst row 1.242e-03) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 381.42398616764694,
+              "merge": 404.97598669026047
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.0058714625188343,
+          1.0140328359305677,
+          0.9877017651045404
+        ],
+        "calibrated_median_us": {
+          "merge": 391.43999537918717,
+          "v2": 389.8079904029146
+        },
+        "calibrated_median_reference_over_candidate": 1.0058714625188343
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "sliding",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "soft",
+          "load": "verify 32",
+          "weight": 46,
+          "seed": 611
+        },
+        "raw_median_us": {
+          "merge": 49.616001546382904,
+          "v2": 49.20000024139881
+        },
+        "raw_pair_ratios": [
+          1.004166329985609,
+          0.985933456040877,
+          0.9964641544379571
+        ],
+        "raw_median_reference_over_candidate": 0.9964641544379571,
+        "winning_pairs": 1,
+        "empty_graph_median_us": 3.279999946244061,
+        "raw_all_samples": [
+          {
+            "seed": 7000613,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 49.695998430252075,
+              "v2": 50.175998359918594
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.494e-03 (worst row 8.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.494e-03 (worst row 8.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 46.415998484008014,
+              "v2": 46.89599841367453
+            }
+          },
+          {
+            "seed": 7000614,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 49.31199923157692,
+              "merge": 49.375999718904495
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.510e-03 (worst row 1.012e-02) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.510e-03 (worst row 1.012e-02) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 46.03199928533286,
+              "merge": 46.095999772660434
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 49.60000142455101,
+              "v2": 48.96000027656555
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 8.657e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.106e-03 (worst row 8.657e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 46.32000147830695,
+              "v2": 45.68000033032149
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 49.66399818658829,
+              "merge": 50.4320003092289
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.392e-03 (worst row 7.816e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.392e-03 (worst row 7.816e-03) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 46.383998240344226,
+              "merge": 47.152000362984836
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 48.67200180888176,
+              "v2": 49.0880012512207
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.296e-03 (worst row 8.469e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.296e-03 (worst row 8.469e-03) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 45.3920018626377,
+              "v2": 45.80800130497664
+            }
+          },
+          {
+            "seed": 7000618,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 48.86399954557419,
+              "merge": 49.6320016682148
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.566e-03 (worst row 7.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 4.566e-03 (worst row 7.745e-03) [bound 0.150: 2.5 x the reference's 0.071 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 45.58399959933013,
+              "merge": 46.35200172197074
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.004459299866632,
+          0.984946852591273,
+          0.9962147564301911
+        ],
+        "calibrated_median_us": {
+          "merge": 46.33600160013884,
+          "v2": 45.92000029515475
+        },
+        "calibrated_median_reference_over_candidate": 0.9962147564301911
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "heads": "tp8",
+          "layer": "full",
+          "page": 1,
+          "q_len": 8,
+          "spread": "agentic",
+          "dist": "coherent",
+          "load": "verify 32",
+          "weight": 16,
+          "seed": 612
+        },
+        "raw_median_us": {
+          "merge": 680.6400120258331,
+          "v2": 691.4560198783875
+        },
+        "raw_pair_ratios": [
+          1.0216317805139608,
+          1.020433279259654,
+          1.0188068598533164
+        ],
+        "raw_median_reference_over_candidate": 1.020433279259654,
+        "winning_pairs": 3,
+        "empty_graph_median_us": 3.2319999299943447,
+        "raw_all_samples": [
+          {
+            "seed": 7000614,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 659.0080261230469,
+              "v2": 698.6240148544312
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.581e-04 (worst row 1.332e-03) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.581e-04 (worst row 1.332e-03) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 655.7760261930525,
+              "v2": 695.3920149244368
+            }
+          },
+          {
+            "seed": 7000615,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 676.8320202827454,
+              "merge": 687.4560117721558
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.330e-04 (worst row 1.260e-03) [bound 0.082: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.330e-04 (worst row 1.260e-03) [bound 0.082: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 673.600020352751,
+              "merge": 684.2240118421614
+            }
+          },
+          {
+            "seed": 7000616,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 673.8240122795105,
+              "v2": 709.05601978302
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.620e-04 (worst row 1.072e-03) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.620e-04 (worst row 1.072e-03) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 670.5920123495162,
+              "v2": 705.8240198530257
+            }
+          },
+          {
+            "seed": 7000617,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 681.4079880714417,
+              "merge": 688.6079907417297
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.289e-04 (worst row 1.152e-03) [bound 0.086: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.289e-04 (worst row 1.152e-03) [bound 0.086: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 678.1759881414473,
+              "merge": 685.3759908117354
+            }
+          },
+          {
+            "seed": 7000618,
+            "order": [
+              "merge",
+              "v2"
+            ],
+            "raw_us": {
+              "merge": 664.57599401474,
+              "v2": 707.7760100364685
+            },
+            "checks": {
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.682e-04 (worst row 1.214e-03) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.682e-04 (worst row 1.214e-03) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "merge": 661.3439940847456,
+              "v2": 704.5440101064742
+            }
+          },
+          {
+            "seed": 7000619,
+            "order": [
+              "v2",
+              "merge"
+            ],
+            "raw_us": {
+              "v2": 684.2880249023438,
+              "merge": 702.1120190620422
+            },
+            "checks": {
+              "v2": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.438e-04 (worst row 1.071e-03) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              },
+              "merge": {
+                "passed": true,
+                "oracle_message": "relative L2 error 6.438e-04 (worst row 1.071e-03) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+                "immutability": "immutable inputs and non-new cache rows unchanged"
+              }
+            },
+            "calibrated_us": {
+              "v2": 681.0560249723494,
+              "merge": 698.8800191320479
+            }
+          }
+        ],
+        "calibrated_pair_ratios": [
+          1.0217366504941452,
+          1.020530032673409,
+          1.0188974235314212
+        ],
+        "calibrated_median_us": {
+          "merge": 677.4080120958388,
+          "v2": 688.2240199483931
+        },
+        "calibrated_median_reference_over_candidate": 1.020530032673409
+      }
+    ],
+    "loads": [
+      {
+        "load": "decode 1",
+        "raw_pair_ratios": [
+          0.7370763233909554,
+          0.7484752693586258,
+          0.7514186558101551
+        ],
+        "raw_median_reference_over_candidate": 0.7484752693586258
+      },
+      {
+        "load": "decode 16",
+        "raw_pair_ratios": [
+          1.0029013988350828,
+          0.997456251288264,
+          1.0114040926173749
+        ],
+        "raw_median_reference_over_candidate": 1.0029013988350828
+      },
+      {
+        "load": "decode 32",
+        "raw_pair_ratios": [
+          0.9901085933341323,
+          1.0011394579183621,
+          0.9978332281099086
+        ],
+        "raw_median_reference_over_candidate": 0.9978332281099086
+      },
+      {
+        "load": "verify 1",
+        "raw_pair_ratios": [
+          0.7816410358715884,
+          0.7114529917033892,
+          0.7759623315272401
+        ],
+        "raw_median_reference_over_candidate": 0.7759623315272401
+      },
+      {
+        "load": "verify 16",
+        "raw_pair_ratios": [
+          1.0075156731618153,
+          1.0039910091207414,
+          0.994405601053866
+        ],
+        "raw_median_reference_over_candidate": 1.0039910091207414
+      },
+      {
+        "load": "verify 32",
+        "raw_pair_ratios": [
+          1.018541838355937,
+          1.0144716460916827,
+          1.0149697150823707
+        ],
+        "raw_median_reference_over_candidate": 1.0149697150823707
+      }
+    ],
+    "qualification": "Three reverse-order pairs per shape only; no official score or confidence interval; calibrated diagnostic uses independently measured empty graphs",
+    "raw_weighted_load_geometric_ratio": 0.9164023625864471
+  }
+}
