@@ -1,38 +1,44 @@
-Latest authorized Modal testing is complete: [REPORT.md](REPORT.md).
-Minimalconstexprfix05922b7 passes actualH200correctness; sole separate-merge
-comparison also passes but losesoverall (pairedrawratio0.9164). Bothapps stopped,
-no newOKCcheck/push/credential. Cumulativeconservativeguard$1.565469/$2,netpaid$0.
-The historical compiler failure and earlier preflight statements below are retained
-with their original scope; currentsource has exactly the recordedconstexprrepair.
+# Attention v2 experiments
 
-**Current result:** approved attention check bf4b49bd8bb34dae is terminal, failed
-compilation on non-constexpr LOG2E (0/16 prerequisite passes, no timing). One
-additional allowance is exhausted; no resubmission/push. See REMOTE_CHECK.md.
+Current cycle: E0–E4, up to six newly authorized **off-board attention checks**.
+Projection's remaining eight checks are separate. No ranked entry or repository
+push is authorized. See `attention-cycle-budget.json` for exact accepted jobs,
+source hashes and current states; never resubmit a pending or uncertain request.
 
-Current approval/admission status: **REMOTE_CHECK.md** and remote-policy.json.
-The earlier pending-approval paragraph below is the original preflight history.
+- E0 compile-fixed v2: official correctness passed, 0.7224690513× SGLang;
+  [official result](E0_OFFICIAL.md), [receipt](E0-official-result.json).
+- E1 historical separate merge: Modal correctness passed, overall regression;
+  [report](REPORT.md). Not used as E2's parent; no new check spent on it.
+- E2 fixed8192 history chunks for full B16/32 only: [scope](E2_FIXED_CHUNKS.md).
+  Official job 7edded086c8a47f2 accepted; consult the ledger for current status.
+- [Coverage audit](COVERAGE_AUDIT.md) distinguishes the older tests from the new
+  [explicit same-address A→B→A test](A07_REPLAY.md). New length vectors, page64,
+  non-unit scales, cache writes and untouched rows were checked on H200.
 
-# Local-only attention v2 preflight
-
-Read REVIEW.md first. The user's algorithm is unchanged; submission.py only restores
-five corrupted Markdown links. Original paste, escaped transport, exact diffs and
-SHA256 manifest are preserved. Root dense-projection submission/results are unchanged.
-
-Python syntax passes. Eight CPU/analytical tests pass; eight equation-model cases
-pass the official numerical checker. The actual Triton source is **unexecuted**:
-interpreter import fails because Triton is absent, and the Mac has no CUDA.
-
-The concrete robustness defect is device-global tickets shared by simultaneous
-calls/graphs; the state-model counterexample includes a published-style16split case.
-Sequential replay and concurrent replay are classified separately in REVIEW.md.
-No numerical failure in published single-call shapes has been reproduced.
+Only sequential graph replay is validated. The original per-device shared ticket
+map still has a simultaneous-invocation limitation; no concurrency pass is claimed.
+CPU/AST checks are separate from actual GPU compilation and correctness.
 
 ```sh
-.venv/bin/python -m py_compile reviews/attention-v2/submission.py
-.venv/bin/python reviews/attention-v2/preflight.py
+.venv/bin/python reviews/attention-v2/check_cycle.py poll E0
+.venv/bin/python reviews/attention-v2/check_cycle.py poll E2
+.venv/bin/python reviews/attention-v2/summarize_official.py
+.venv/bin/python reviews/attention-v2/test_fixed_chunks.py
+.venv/bin/python reviews/attention-v2/test_pipeline.py
+.venv/bin/python reviews/attention-v2/test_modal_worker.py
 ```
 
-**Do not push, publish or upload this draft.** Its commit is local-only on
-`attention-v2-preflight`, without an upstream. The prior ten projection checks are
-exhausted. Additional attention remote-check approval is pending; this folder grants
-no execution/upload permission. No new credentials, installs or paid resources.
+Official summaries use six loads, each 46×sliding +16×full, then their geometric
+mean. Complete receipts retain all twelve raw/adjusted timing rows and samples.
+Modal public-image measurements are diagnostic, not official scores.
+
+The cumulative Modal ceiling is $2 free credits, net paid $0, across both projects.
+The authoritative ledger is `modal-budget.json`; do not reset it from older branches
+or lower it when billing lags. All new bundles use exact committed allowlists and
+existing authorized authentication; secrets/config and repository data are excluded.
+
+Historical initial review, original paste, formatting normalization and failed
+check bf4b49bd8bb34dae are preserved in REVIEW.md, REMOTE_CHECK.md, original files,
+and Git history. Their old pending/one-check restrictions describe that earlier
+stage. The subsequent minimal compiler repair is commit 05922b7, unchanged in E0.
+Root projection source/results and its best branch remain preserved.

@@ -1,28 +1,34 @@
-# Current task: attention test cycle complete
+# Attention E0–E4 cycle in progress
 
-Branch attention-v2-preflight; read reviews/attention-v2/REPORT.md and modal-budget.json.
-Projection branch projection-bf16-local preserved at0eabf0e, best1.14864995x.
-Do not overwrite its source/results or treat this as more projection experimentation.
+Current branch: attention-v2-preflight. Read reviews/attention-v2/COVERAGE_AUDIT.md,
+A07_REPLAY.md and attention-cycle-budget.json first. No new projection work.
+Projection branch projection-bf16-local remains at 0eabf0e with best 1.14864995×.
 
-A01onlyLOG2Econstexpr repair05922b7. A03baseline actualH200pass:16prerequisites+
-12scoredshapes v2/SGLang,appap-KGuppwXiAqOLZIE6m75wS0 stopped. A04full-only
-separate_merge source3818c72 no globalticket. A05appap-sS1X8nAzzsQPkNzcNIhBGq
-also correct/stopped, but overallrawv2/merge0.9164: reject. B16parity,B32~2%point
-estimate with3pairs/controlnoise,B1large regressions. No nextalgorithm permitted
-by this boundedcycle; no extraOKCchecks. Variant is full-only; sliding botharms use
-unchangedv2 as control. No formalcontestentry or score inferred from Modal.
+New authorization: at most six additional attention-only off-board checks, failures
+count. Preserve one final verification check. No ranked entry, push, new credentials,
+payment/spend-cap changes, or paid compute. Projection's eight remaining checks are
+separate and untouched. Never duplicate an uncertain request; inspect existing jobs.
 
-Both exact attention IDs reverified stopped/tasks0. Recent CLIlist mayomit older
-stoppedapps; do not assert a fixed historical count. Originaltermination snapshots
-preserved. No denied/pending/uncertainoperation. Fullraw/calibrated samples/resources
-in A03/A05resultJSON and modal-summary.json. CPU16gates notGPUevidence.
+E0 job 5b0baa286659421a passed all 16 prerequisite tests and 12 scored shapes:
+0.7224690513× SGLang, CI [0.7116320155, 0.7373518839]. Source submission.py is
+preserved. E2 fixed_chunks.py changes only full B16/32 to fixed 8192-token history
+chunks. Job 7edded086c8a47f2 was accepted; poll exact ID with check_cycle.py poll E2.
+Two of six new checks admitted, four remain, including final reserve. E1 separate
+merge was a historical negative result; no new official check spent on it.
 
-Authoritative cumulativeModalguard1.565468698of2USD,remaining0.434531302,netpaid0.
-Never resetaccounting onbranchswitch or lowerguardfromdelayedbillingreads.
-Latest ledger reviews/attention-v2/modal-budget.json; sharedignored bridge
-local-notes/modal-budget-latest.local.json. Projectionbrancholderledger1.146is
-historical only. Existing12hcredentialowner-only/notinGit,expires06:26:47UTC Oct25;
-no newcredential/renewal,paidresource,payment/cap/terms/push. No currentGPUapp.
+A07 passed explicit same-address A→B→A with changed actual length vectors, cache
+oracle/untouched-row checks, empty chunks and page64/scale1/64/L8. 12 checked H200
+replays, no speed claim. App ap-c7hDHYlZH7Ja3VAJNM4Iur stopped/tasks0. Shared global
+E0 tickets still limit simultaneous invocations; sequential replay is what passed.
 
-Historicalfailed bf4b49bd8bb34dae retained; attentionextraOKC1/1exhausted, no new
-checkgrant. Projectionsecondcycle2/10used,8remaining unchanged; not forattention.
+Next: select the best correct parent from E0/E2. E3 will change ONLY full B16/32
+history loop to tl.range(..., num_stages=3), launch stages stay3. Local transformation
+and two AST invariants prepared. Compare emitted code/resources before a new check.
+Then explicit complete candidate E4 and final official validation if justified.
+
+Latest authoritative Modal ledger reviews/attention-v2/modal-budget.json: cumulative
+conservative guard $1.632886938 of $2, remaining $0.367113062; net paid $0. Never lower
+this guard from delayed billing. Short compiler/replay probe must reserve $0.25.
+Existing 12h owner-only auth expires 2026-10-25 06:26:47 UTC; no renewal authorized.
+No active Modal app. Source bundles must be committed and explicitly allowlisted;
+no auth/config/repository contents. No denied or uncertain current operation.
