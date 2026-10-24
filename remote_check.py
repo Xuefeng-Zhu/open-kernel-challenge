@@ -58,6 +58,8 @@ def main():
         print(json.dumps(ledger["last_account_quota"]))
         return 0
     if args.action == "send":
+        if ledger.get("admission_paused"):
+            raise RuntimeError("New uploads paused after automatic approval rejection; resolve with materially new trusted authorization")
         if any(x["experiment"] == args.experiment for x in entries):
             raise RuntimeError("Experiment already journaled; reconcile it, never blindly resend")
         if any(x["state"] in {"sending", "uncertain"} for x in entries):
