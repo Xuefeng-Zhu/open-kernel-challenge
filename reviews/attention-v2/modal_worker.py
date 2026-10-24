@@ -124,19 +124,31 @@ def resources(module,case,data):
     n=b*hkv*splits*bm
     po=torch.empty((n,d),device=x.device) if splits>1 else out
     pm=torch.empty((n,),device=x.device) if splits>1 else out
-    pl=torch.empty_like(pm);tickets=module._tickets(x.device,b*hkv)
-    kernel=module._fused.warmup(x,data['seq_lens'],data['page_table'],data['cache_loc'],
-        data['k_cache'],data['v_cache'],data['k_scale'],data['v_scale'],po,pm,pl,tickets,out,
-        float(cfg['rope_theta']) if cfg['rope_theta'] else 1.,module.RMS_EPS,
-        float(cfg['qk_scale_factor']),float(cfg['sm_scale']),cfg['window'],cfg['page_size'],
-        x.stride(0),data['page_table'].stride(0),L=l,G=g,HQ=hq,HKV=hkv,D=d,
+    pl=torch.empty_like(pm)
+    common=[x,data['seq_lens'],data['page_table'],data['cache_loc'],data['k_cache'],
+            data['v_cache'],data['k_scale'],data['v_scale'],po,pm,pl]
+    is_partial=hasattr(module,'_partial')
+    if not is_partial:common.append(module._tickets(x.device,b*hkv))
+    common += [out,float(cfg['rope_theta']) if cfg['rope_theta'] else 1.,module.RMS_EPS,
+               float(cfg['qk_scale_factor']),float(cfg['sm_scale']),cfg['window'],cfg['page_size'],
+               x.stride(0),data['page_table'].stride(0)]
+    shader=module._partial if is_partial else module._fused
+    kernel=shader.warmup(*common,L=l,G=g,HQ=hq,HKV=hkv,D=d,
         BLOCK_M=bm,BLOCK_N=64,BLOCK_L=16,SPLITS=splits,ROPE=bool(cfg['rope_theta']),
         WINDOWED=bool(cfg['window']),DOT=module._DOT,num_warps=4,num_stages=3,grid=(b,hkv,splits))
-    kernel._init_handles();ptx=kernel.asm.get('ptx','')
-    return dict(case=case,splits=splits,registers_per_thread=kernel.n_regs,
-        n_spills_driver_raw=kernel.n_spills,shared_bytes=kernel.metadata.shared,
-        ptx_sha256=hashlib.sha256(ptx.encode()).hexdigest(),ptx=ptx,
-        qualification='Static compiler/driver metadata, not achieved occupancy or measured DRAM traffic')
+    def describe(kernel,phase):
+        kernel._init_handles();ptx=kernel.asm.get('ptx','')
+        return dict(case=case,phase=phase,splits=splits,registers_per_thread=kernel.n_regs,
+            n_spills_driver_raw=kernel.n_spills,shared_bytes=kernel.metadata.shared,
+            ptx_sha256=hashlib.sha256(ptx.encode()).hexdigest(),ptx=ptx,
+            qualification='Static compiler/driver metadata, not achieved occupancy or measured DRAM traffic')
+    result=[describe(kernel,'partial' if is_partial else 'fused')]
+    if is_partial and splits>1:
+        merger=module._merge.warmup(x,data['v_scale'],po,pm,pl,out,module.RMS_EPS,x.stride(0),
+            L=l,G=g,HQ=hq,HKV=hkv,D=d,BLOCK_M=bm,SPLITS=splits,
+            num_warps=4,num_stages=3,grid=(b,hkv))
+        result.append(describe(merger,'merge'))
+    return result
 
 
 def main():
@@ -176,6 +188,10 @@ def main():
     else:
         other=load(HERE/'separate_merge.py','attention_merge');names=['merge','v2']
     modules={'v2':baseline,names[0] if args.mode=='merge' else 'sglang':other}
+    def function(name,case):
+        if args.mode=='merge' and case['layer']=='sliding':return baseline.kernel_fn
+        return modules[name].kernel_fn
+    report['sliding_control']='Both arms call corrected v2 unchanged' if args.mode=='merge' else 'v2 vs official SGLang'
     fixtures=json.loads((HERE/'fixtures.json').read_text())
     report['source_sha256']={name:hashlib.sha256(Path(module.__file__).read_bytes()).hexdigest()
                              for name,module in modules.items()}
@@ -183,7 +199,7 @@ def main():
     for index,case in enumerate(fixtures['tests']):
         gate();fresh=reference.generate_input(**case,device='cuda');work=clone_inputs(fresh)
         for name in names:
-            restore(work,fresh);graph,out=capture(modules[name].kernel_fn,work,fresh)
+            restore(work,fresh);graph,out=capture(function(name,case),work,fresh)
             restore(work,fresh);graph.replay();result=check(reference,work,out,fresh)
             report['tests'].append(dict(index=index,case=case,runner=name,**result));gate()
             if not result['passed']:return 1
@@ -193,7 +209,7 @@ def main():
         gate();fresh=reference.generate_input(**case,device='cuda');work=clone_inputs(fresh)
         graphs={};outputs={}
         for name in names:
-            restore(work,fresh);graphs[name],outputs[name]=capture(modules[name].kernel_fn,work,fresh)
+            restore(work,fresh);graphs[name],outputs[name]=capture(function(name,case),work,fresh)
         item=dict(case=case,warmup=[],samples=[],calibration=[]);report['benchmarks'].append(item)
         try:
             empty=torch.cuda.CUDAGraph()
@@ -220,7 +236,10 @@ def main():
                 row['calibrated_us']={name:value-offset for name,value in row['raw_us'].items()}
             item['calibration_resolves_both']=all(value>0 for row in item['samples'] for value in row['calibrated_us'].values())
         if case['layer']=='full' and case.get('q_len',1)==8 and case['batch'] in [16,32]:
-            report['resources'].append(resources(baseline,case,work))
+            for name in names:
+                if name=='sglang':continue
+                for row in resources(modules[name],case,work):
+                    row['runner']=name;report['resources'].append(row)
         gate();del graphs,outputs,work,fresh
     report['passed']=True;report['wall_seconds']=time.monotonic()-started;save();return 0
 

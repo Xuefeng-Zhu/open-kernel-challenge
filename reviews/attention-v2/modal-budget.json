@@ -5,8 +5,8 @@
   "includes_initial_smoke": "ap-ukvOyTeF1ztdOLggl5xJee",
   "observed_gross_high_water_usd": "1.20490055",
   "conservative_stage_spent_usd": "1.378907610",
-  "billing_ui_verified_utc": "2026-10-24T21:47:17.929513+00:00",
-  "verified_credit_balance_usd": 29.25,
+  "billing_ui_verified_utc": "2026-10-24T21:57:31.083139+00:00",
+  "verified_credit_balance_usd": 29.07,
   "verified_net_spend_cap_usd": 0,
   "reused_image_id": "im-cPTbGpNiX3RarKResPgX7h",
   "max_active_apps": 1,
@@ -983,7 +983,7 @@
       "ephemeral_apps": "1.20490055"
     }
   },
-  "current_diagnostic": "Attention A03 baseline, then conditional A05 independent merge",
+  "current_diagnostic": "A05 full-only separate merge vs corrected-v2; no further algorithms",
   "prior_projection_authorization": "Autonomous remaining projection optimization, Modal-first screening and meaningful off-board checks within separate remaining quota; same cumulative USD2 free-credit stage, paid USD0, existing credentials, no push",
   "attention_branch_base_guard_usd": "1.146411930",
   "projection_snapshot_sha256": "678d740297055da1cde090b844c17c1d95835dae8026aa22723565b6703290fd"
