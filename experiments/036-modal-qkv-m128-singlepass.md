@@ -34,3 +34,27 @@ existingcredentialexpires06:26:47UTC Oct25; no newcredentials/payment/cap/push.
 
 Full112CPUtests+39contractCPU+static/syntax pass; GPUpending at preparationcommit.
 All prior10Modal apps stopped; no active/uncertainofficialjob, secondcycle2/10used.
+
+Terminal result: app ap-N9JWk0BvaWxhSdDYLxUJmL stopped/tasks0,worker56.403s,
+app66s,exit0. Full39CUDA cases perrunner,36nearby/layoutoraclechecks andall30shape
+6warmup+30steadyreplays pass. Frozenbundle40772dc; source035commit26189baa01e72d6e629f130a85f776347ca15a3f,
+SHA84e86a5e6fff111220cc6ddc77d3b8885a00f7383b068f360699956de2d39132.
+NativeactualPTX wgmma.mma_async.sync.aligned.m64n32k16.f32.bf16.bf16,
+46regs,0reportedspill,36864Bshared,144CTAs,noTMA. No explicitpipeline rewrite.
+
+REJECTED: targetm128 candidate55.104usmedian,p9056.515,max57.248;
+best21.888usmedian,p9022.499,max23.072. Paired best/candidate0.3954008,
+0/15winningpairs. All30candidate samples slower than all30control samples.
+AggregateGMofloadmedians0.9560322; verify16load0.7534077. Post-hoc descriptive
+matched reversepairGM acrosssixloads median0.9551637,0/15wins; not a CI or a
+separate promotion rule. Otherunchangedcases range0.9781–1.0342 due variation,
+not attributable gains. Removed reduction fails to offset slower full-K geometry;
+actual causal DRAM/occupancy/stall breakdown remains unmeasured.
+
+No officialcheck admitted;2/10used,8remaining,platform13/20used7left/scored0.
+No nextcandidate generated or broadrewrite. Keep negative/source/alltimings.
+All11apps stopped. Latestbilling0.89fullycredited/net0; conservative stageguard
+1.146411930, never reduced because asynchronous previousbilling was lower. Below
+same2USDceiling, no credential/cap/payment/terms/push. Exact JSON/CSV evidence:
+results/remote-modal-M36-qkv-m128-singlepass.json/.csv. Summary:
+QKV_M128_SINGLEPASS_RESULTS.md. No pending/uncertain/deniedoperation.
