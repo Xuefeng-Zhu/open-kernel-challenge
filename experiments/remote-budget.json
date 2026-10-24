@@ -386,13 +386,31 @@
           "left": 11
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "97aa5690ff134369",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:15:17.023952+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:24:33.082891+00:00"
+      "last_checked_utc": "2026-10-24T16:26:51.629429+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      },
+      "passed": true,
+      "speedup": 1.0076197259640831,
+      "speedup_ci": [
+        0.9925054300746219,
+        1.0227340218535443
+      ]
     }
   ],
   "rules_version": "2026-10-22.1",

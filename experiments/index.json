@@ -385,11 +385,11 @@
       "candidate": "candidates/pooler_simt_row.py",
       "job_id": "97aa5690ff134369",
       "mode": "check",
-      "status": "queued",
+      "status": "done",
       "result_commit": "85b8ea6f1fc7e40691c6796a9c0e735c99ad7b37",
       "record": "experiments/remote-R09-pooler-simt.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R09-pooler-simt.json",
+      "timings": "results/remote-R09-pooler-simt.csv"
     }
   ],
   "remote_budget": {
