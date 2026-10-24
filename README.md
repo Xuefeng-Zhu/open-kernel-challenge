@@ -1,8 +1,7 @@
 # Open Kernel Challenge — dense projections
 
 Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
-baseline and reproducible correctness/diagnostic harness. **No optimized candidate
-exists yet.** CPU checks and the first off-board H200 check pass correctness. The measured starter
+baseline and reproducible correctness/diagnostic harness. **No candidate has a verified GPU speedup yet.** CPU checks and the first off-board H200 check pass correctness. The measured starter
 is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
 
 ## Reproduce locally

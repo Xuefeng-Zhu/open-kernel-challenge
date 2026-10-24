@@ -6,7 +6,7 @@
 - Official H200 check **e5a5b2d20da54187** is **done**: 9/9 prerequisite and 30/30 scored
   shape checks passed; no rejected/flagged checks. Mode is check, off-board/unscored.
 - Official speedup **0.9076063758×**, 95% interval **[0.8939922801, 0.9212204714]**.
-  Starter is slower than SGLang. No optimized candidate exists yet.
+  Starter is slower than SGLang. No GPU-validated optimization exists yet.
 - One check used; 19/20 remain in the service quota. Scored usage is 0/10. The user's
   single-check authorization is exhausted. No further check or scored entry is authorized.
 - Serving's separate cap is 1 scored submission/day and 3 checks/day; track is closed.
