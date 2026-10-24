@@ -18,3 +18,16 @@ If ordinary profiling is unavailable, record that once; no access bypass.
 No result inferred from M33; GPU diagnostic pending at preparation. Same question,
 not a duplicate uncertain request. All prior apps terminal. Static/syntax gates
 and full local regression must pass before dispatch.
+
+Terminal success: app ap-GwiDybwrxgrysaFh3d8DRM stopped/tasks0,worker10.304s,
+app18s,exit0. Four compiled variants inspected,10ordinary CUDA timelines and20
+fresh graph oracle checks pass. BN128 n_regs95/shared40960/n_spills0; BN32
+n_regs45/shared16384/n_spills0. PTX has mma.sync+cp.async, no WGMMA/TMA/local ops.
+No hardware counters used. Native kernel62.139/70.632us (m128/256) versus best
+21.506+3.424/29.209us activity. HostGraphLaunch instrumentation0.58–1.92ms is
+strongly perturbed and not a usable launch-overhead estimate; never subtract it.
+Exact timing/context caveats and at-most-two hypotheses: HOPPER_DIAGNOSTICS.md.
+Conservative stageguard1.034494554<$2,latestgross0.73/net0 snapshot asynchronous,
+prior observed highwater0.87077815. No official request/newcredential/push.
+Full generated PTX/TTGIR/resources/activity evidence:
+results/remote-modal-M34-resource-probe-fixed.json. No algorithm modified/benchmarked.
