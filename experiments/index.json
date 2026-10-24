@@ -330,11 +330,11 @@
       "candidate": "candidates/router_triton_split32.py",
       "job_id": "ab74f25caa2e46a8",
       "mode": "check",
-      "status": "queued",
+      "status": "done",
       "result_commit": "3a84ae002d335c2116352099781f3ec559dd9027",
       "record": "experiments/remote-R08-router-split32.md",
-      "results": null,
-      "timings": null
+      "results": "results/remote-R08-router-split32.json",
+      "timings": "results/remote-R08-router-split32.csv"
     },
     {
       "id": "R09-pooler-simt",

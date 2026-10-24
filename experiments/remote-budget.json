@@ -341,13 +341,31 @@
           "left": 12
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "ab74f25caa2e46a8",
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:12:21.074398+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:18:35.907668+00:00"
+      "last_checked_utc": "2026-10-24T16:21:17.692626+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      },
+      "passed": true,
+      "speedup": 1.061702104529382,
+      "speedup_ci": [
+        1.0457765729614412,
+        1.0776276360973225
+      ]
     },
     {
       "experiment": "R09-pooler-simt",
@@ -374,7 +392,7 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-24T16:15:17.023952+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-24T16:18:36.282958+00:00"
+      "last_checked_utc": "2026-10-24T16:21:18.275631+00:00"
     }
   ],
   "rules_version": "2026-10-22.1",

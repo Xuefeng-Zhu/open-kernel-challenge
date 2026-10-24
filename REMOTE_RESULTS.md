@@ -1,6 +1,6 @@
 # Remote experiment results and budget
 
-**9/10 new requests admitted/reserved; 1 remain.** 7 terminal, 2 pending, 0 uncertain.
+**9/10 new requests admitted/reserved; 1 remain.** 8 terminal, 1 pending, 0 uncertain.
 Prior baseline job `e5a5b2d20da54187` is excluded. Only off-board checks and $0 spend are authorized; no scored/final submission, new credentials or material agreement.
 
 | Experiment | Job | State | Correctness | Speedup vs SGLang (95% interval) | vs original, normalized |
@@ -12,7 +12,7 @@ Prior baseline job `e5a5b2d20da54187` is excluded. Only off-board checks and $0 
 | R05-wide-layout | `1631810d19af4af4` | done | 9/9 + 30/30 | 1.0510× [1.0352, 1.0667] | 1.1579× |
 | R06-pooler-triton8 | `b70d87fc51864276` | done | 9/9 + 30/30 | 0.9930× [0.9781, 1.0079] | 1.0941× |
 | R07-router-native-wide | `26ea99ee0869482a` | done | 9/9 + 30/30 | 1.0992× [1.0827, 1.1157] | 1.2111× |
-| R08-router-split32 | `ab74f25caa2e46a8` | queued | pending | — | — |
+| R08-router-split32 | `ab74f25caa2e46a8` | done | 9/9 + 30/30 | 1.0617× [1.0458, 1.0776] | 1.1698× |
 | R09-pooler-simt | `97aa5690ff134369` | queued | pending | — | — |
 
 The original starter scored 0.9076063758×. Comparisons to it are reference-normalized across separate runs, not paired same-input measurements. Official within-run SGLang pairings and their intervals are authoritative. Missing results/timings are not inferred from CPU models.

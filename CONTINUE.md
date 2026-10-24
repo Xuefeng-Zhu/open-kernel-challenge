@@ -7,7 +7,6 @@ Never resend admitted experiments. At most two active jobs; inspect terminal res
 ## Already accepted — monitor to terminal
 
 ```sh
-python3 remote_check.py poll R08-router-split32  # ab74f25caa2e46a8
 python3 remote_check.py poll R09-pooler-simt  # 97aa5690ff134369
 ```
 
