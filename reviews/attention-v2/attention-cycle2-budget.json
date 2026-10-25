@@ -222,9 +222,44 @@
           "left": 14
         }
       }
+    },
+    {
+      "experiment": "A2-05",
+      "mode": "check",
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "50465a4c440f4b75",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_prepare.py",
+      "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+      "source_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+      "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged",
+      "final": false,
+      "created_utc": "2026-10-25T04:09:04+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_prepare.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:09:04.300166+00:00",
+      "last_checked_utc": "2026-10-25T04:09:52.394725+00:00"
     }
   ],
-  "remaining": 6,
+  "remaining": 5,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -301,7 +336,7 @@
       "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged"
     }
   },
-  "all_requests_terminal": true,
+  "all_requests_terminal": false,
   "current_phase": "Resumed same task; A2-05 critical audit/local correction, no new job yet",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",

@@ -1,0 +1,222 @@
+{
+  "observed_utc": "2026-10-25T04:07:22.218500+00:00",
+  "whoami_exit_code": 0,
+  "authenticated": true,
+  "recent_jobs": [
+    {
+      "id": null,
+      "job_id": "66b44d7586184708",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "bdd11e743365439a",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "d57d89967d1a408f",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "3e85261cb8ed4899",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "d5636ac8d1404abd",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "6e761bdd1d9747ad",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "4f626ab7437a42be",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "6799753227ed463e",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "e0b3cd9474084069",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "a5ee77cedca44ab9",
+      "problem": "muse_attention_decode",
+      "status": "duplicate",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "d4e3fc9a2c234d72",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "7edded086c8a47f2",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "5b0baa286659421a",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "48b1357016134e52",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "eeec05d897ef4946",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "bf4b49bd8bb34dae",
+      "problem": "muse_attention_decode",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "02e099c3724e4a05",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "97aa5690ff134369",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "ab74f25caa2e46a8",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "26ea99ee0869482a",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "b70d87fc51864276",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "1631810d19af4af4",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "e3bc1481851f4a23",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "718e0730e1bd4c30",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "89fe00c5034a4198",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "59abe5825690427c",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    },
+    {
+      "id": null,
+      "job_id": "e5a5b2d20da54187",
+      "problem": "muse_bf16_proj",
+      "status": "done",
+      "mode": "check"
+    }
+  ],
+  "platform_quota": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 6,
+        "left": 14
+      }
+    }
+  }
+}

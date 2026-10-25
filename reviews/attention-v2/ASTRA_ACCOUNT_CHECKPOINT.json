@@ -1,0 +1,215 @@
+{
+  "observed_utc": "2026-10-25T03:58:26.736793+00:00",
+  "jobs_in_cli_window": [
+    {
+      "id": "66b44d7586184708",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "bdd11e743365439a",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "d57d89967d1a408f",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "3e85261cb8ed4899",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "d5636ac8d1404abd",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "6e761bdd1d9747ad",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "4f626ab7437a42be",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "6799753227ed463e",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "e0b3cd9474084069",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "a5ee77cedca44ab9",
+      "status": "duplicate",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "d4e3fc9a2c234d72",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "7edded086c8a47f2",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "5b0baa286659421a",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_attention_decode",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "48b1357016134e52",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "eeec05d897ef4946",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "02e099c3724e4a05",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "97aa5690ff134369",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "ab74f25caa2e46a8",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "26ea99ee0869482a",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "b70d87fc51864276",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "1631810d19af4af4",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "e3bc1481851f4a23",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "718e0730e1bd4c30",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "89fe00c5034a4198",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    },
+    {
+      "id": "59abe5825690427c",
+      "status": "done",
+      "mode": "check",
+      "problem": "muse_bf16_proj",
+      "owned_by_task_ledger": true
+    }
+  ],
+  "active_jobs_in_cli_window": [],
+  "actual_platform_quota": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 6,
+        "left": 14
+      }
+    }
+  },
+  "all_known_task_requests_terminal": true,
+  "uncertain_requests": 0,
+  "user_remaining": {
+    "attention_new_cycle": 6,
+    "projection_second_cycle": 5
+  },
+  "next_candidate": "A2-05 prepared only, no request",
+  "model": "Not visible through this execution environment; parent applies requested Astra transition next turn"
+}
