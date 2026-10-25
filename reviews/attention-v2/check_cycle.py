@@ -1,4 +1,4 @@
-"""At most six newly authorized attention CHECKs; reserve final, never retry POST."""
+"""Explicit attention-cycle ledgers; reserve final, never retry an uncertain POST."""
 import argparse
 from datetime import datetime,timezone
 import hashlib
@@ -47,10 +47,14 @@ def sanitized(value):
 
 
 def main():
+    global LEDGER
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('action',choices=['send','poll','quota'])
     parser.add_argument('experiment',nargs='?')
-    args=parser.parse_args();d=json.loads(LEDGER.read_text())
+    parser.add_argument('--cycle2',action='store_true',help='Use the separately authorized ten-request ledger')
+    args=parser.parse_args()
+    if args.cycle2:LEDGER=HERE/'attention-cycle2-budget.json'
+    d=json.loads(LEDGER.read_text())
     if args.action=='quota':
         d.update(last_platform_quota=quota(),quota_observed_utc=now());save(d);print(d['last_platform_quota']);return
     if args.action=='send':
@@ -58,9 +62,10 @@ def main():
             raise RuntimeError('Coordinator GPU slot not free; no competing GPU measurement')
         if any(e['experiment']==args.experiment for e in d['requests']):raise RuntimeError('Already reserved; inspect existing job, never duplicate')
         if any(e['state'] in ['sending','uncertain'] for e in d['requests']):raise RuntimeError('Uncertain request reserved, reconcile before POST')
-        if len(d['requests'])>=6:raise RuntimeError('Six-check authorization exhausted')
+        maximum=d['maximum_new_checks']
+        if len(d['requests'])>=maximum:raise RuntimeError('This cycle authorization exhausted')
         plan=d['plans'][args.experiment]
-        if 6-len(d['requests'])<=1 and not plan['final']:raise RuntimeError('Last check reserved for final complete candidate')
+        if maximum-len(d['requests'])<=d['reserved_final_checks'] and not plan['final']:raise RuntimeError('Last check reserved for final complete candidate')
         if sum(e.get('status') not in TERMINAL for e in d['requests'])>=d['max_active_jobs']:raise RuntimeError('Active job limit')
         path=(HERE/plan['candidate']).resolve()
         if path.parent!=HERE or path.is_symlink():raise ValueError('Only intended standalone attention source')
@@ -102,7 +107,7 @@ def main():
         result=r.get('result') or {};e.update(state='terminal',passed=result.get('passed'),speedup=result.get('speedup'),
             speedup_ci=result.get('speedup_ci'),quota_after=quota())
     save(d)
-    if args.experiment in ['E5','E6']:gpu_slot(e['state'],e)
+    gpu_slot(e['state'],e)
     print(json.dumps(e))
 
 

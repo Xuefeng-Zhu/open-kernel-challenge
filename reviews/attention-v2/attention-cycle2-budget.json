@@ -1,0 +1,20 @@
+{
+  "problem": "muse_attention_decode",
+  "maximum_new_checks": 10,
+  "reserved_final_checks": 1,
+  "mode": "check",
+  "max_spend_usd": 0,
+  "max_active_jobs": 1,
+  "rules_version": "2026-10-22.1",
+  "created_utc": "2026-10-25T02:11:08.267920+00:00",
+  "authorization": "Ten NEW attention off-board requests authorized after E6; separate from prior six-request cycle; failures and accepted duplicate requests count; no Modal/push/ranked entry/paid compute/new credentials",
+  "previous_cycle": "attention-cycle-budget.json",
+  "previous_cycle_last_job": "4f626ab7437a42be",
+  "requests": [],
+  "remaining": 10,
+  "plans": {},
+  "all_requests_terminal": true,
+  "current_phase": "Await old-cycle E6 terminal result before any new dispatch",
+  "projection_checks_remaining": 7,
+  "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent"
+}
