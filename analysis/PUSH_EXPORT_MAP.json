@@ -1,9 +1,9 @@
 {
   "purpose": "One-time private push export; preserve original research branch and per-experiment commits",
   "source_branch": "attention-fa3-local",
-  "source_snapshot": "ec5cdffbe493eacd0cc969953a110e52ba8dec84",
+  "source_snapshot": "3a1111db03812e6e4f95844dc9b64a27670acd24",
   "export_branch": "attention-fa3-sanitized",
-  "sanitized_snapshot": "81c67a09007a9244bf45d112f2fea310fd4eb787",
+  "sanitized_snapshot": "24537e4f8158127a7ea16ba1fd62d908dd17ec7e",
   "changes": "Only historical non-secret Modal token identifier in A09 CLI warning replaced; no secret found; current tree/candidates identical",
   "original_history_preserved": true,
   "commit_mapping": {
@@ -47,7 +47,9 @@
     "2b968f5a9aaebc48ebbe2a7597ff55193164c894": "db13737fbe3efa197829774e19d3527979a23dfd",
     "790d4256fe311086eb9f899ae88b0915ce0eb5ab": "1c4c1d57bf00d470bb5b696555ee70b8341cbc12",
     "4a34ae3eda8a4d8a1418a515f6dc0feec7596249": "cd1c45b70a0136cc75fcda4c13192966b18f123b",
-    "ec5cdffbe493eacd0cc969953a110e52ba8dec84": "81c67a09007a9244bf45d112f2fea310fd4eb787"
+    "ec5cdffbe493eacd0cc969953a110e52ba8dec84": "81c67a09007a9244bf45d112f2fea310fd4eb787",
+    "c94ec7109d7b5525d2c849d297a3c6c28a886d55": "9d17ee0c490108903abdca0144d283881dcbd38d",
+    "3a1111db03812e6e4f95844dc9b64a27670acd24": "24537e4f8158127a7ea16ba1fd62d908dd17ec7e"
   },
   "historical_redacted_versions": [
     {
@@ -134,13 +136,14 @@
   "candidate_sha256": {
     "reviews/attention-v2/mixed_fa3.py": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
     "reviews/attention-v2/mixed_fa3_all_verify.py": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+    "reviews/attention-v2/mixed_fa3_decode16.py": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
     "reviews/attention-v2/mixed_fa3_sliding.py": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
     "reviews/attention-v2/mixed_fa3_verify1.py": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357"
   },
   "projection_unrelated_and_unchanged": true,
   "initial_source_snapshot": "9638575cd8382a823eb5fb66a4aca14247bae5d2",
   "initial_export_job_note": "A2-01 6e761bdd1d9747ad, no result claimed",
-  "previous_export_tip": "3400cff9ca48e5f9ca40e80c33fc8005ca98e2fa",
+  "previous_export_tip": "fe34f7ab9e256119e70a2ef65341c1372095b973",
   "incremental_related_replay": true,
   "current_export_note": "Runtime state is in the exported ledgers/reports, not inferred by this local exporter"
 }
