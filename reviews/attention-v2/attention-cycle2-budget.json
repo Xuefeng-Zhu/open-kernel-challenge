@@ -328,9 +328,62 @@
           "left": 12
         }
       }
+    },
+    {
+      "experiment": "A2-07",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "ba9e02c1d6584cc4",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_full_verify1.py",
+      "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+      "source_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+      "hypothesis": "Only full B1L8 reuses identical fused preprocessing kernel with ROPE=False; preserve FA3/window/scales/schedule/gate and other11timedpaths; target>=10% normalizedlatencycut, longpage64correctness gate",
+      "final": false,
+      "created_utc": "2026-10-25T04:29:15.550227+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 8,
+          "left": 12
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_full_verify1.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:29:15.969234+00:00",
+      "last_checked_utc": "2026-10-25T04:37:33.235385+00:00",
+      "passed": true,
+      "speedup": 1.150533242033493,
+      "speedup_ci": [
+        1.1332752434029907,
+        1.1738497008309647
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      }
     }
   ],
-  "remaining": 4,
+  "remaining": 3,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -440,20 +493,20 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-07 isolated fullB1L8 source preflight, no new request yet",
+  "current_phase": "A2-07 terminal and retained; evaluate full decode1 extension next",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
-    "source": "mixed_fa3_fused_verify.py",
-    "source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
-    "sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
-    "official_job": "05b52e7834064b14",
-    "score": 1.1381117300015302,
+    "source": "mixed_fa3_fused_full_verify1.py",
+    "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+    "sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+    "official_job": "ba9e02c1d6584cc4",
+    "score": 1.150533242033493,
     "ci": [
-      1.121040054051507,
-      1.1598261225179742
+      1.1332752434029907,
+      1.1738497008309647
     ],
-    "reason": "Target normalized cuts23.46/19.49% exceed10%goal, no>5%controls; aggregate2.0%CIoverlap, retain qualified target gains",
+    "reason": "Target15.77%normalized cut exceeds10%goal; no>5%controls; million-context page64 passes; total1.09%gain has overlappingCI",
     "aggregate_vs_parent_inconclusive": true
   },
   "last_platform_quota": {
@@ -464,11 +517,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 8,
-      "left": 12
+      "used": 9,
+      "left": 11
     }
   },
-  "quota_observed_utc": "2026-10-25T04:26:43.175081+00:00",
+  "quota_observed_utc": "2026-10-25T04:37:33.235385+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -533,5 +586,18 @@
     ],
     "reason": "Target28.18% normalized latency cut; aggregate3.596% vsparent with nonoverlap intervals, no>5%control regression",
     "aggregate_vs_parent_inconclusive": false
+  },
+  "selection_before_A2_07": {
+    "source": "mixed_fa3_fused_verify.py",
+    "source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
+    "sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+    "official_job": "05b52e7834064b14",
+    "score": 1.1381117300015302,
+    "ci": [
+      1.121040054051507,
+      1.1598261225179742
+    ],
+    "reason": "Target normalized cuts23.46/19.49% exceed10%goal, no>5%controls; aggregate2.0%CIoverlap, retain qualified target gains",
+    "aggregate_vs_parent_inconclusive": true
   }
 }
