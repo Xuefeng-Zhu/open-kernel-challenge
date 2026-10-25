@@ -423,10 +423,24 @@
       ],
       "target_latency_cut": 0.1,
       "hypothesis": "Extend unchanged native-verified fused prologue to all sliding L8 batches; >=10% normalized latency cut in B16 and32, ten timed controls unchanged; gain may be inside aggregate CI"
+    },
+    "A2-07": {
+      "candidate": "mixed_fa3_fused_full_verify1.py",
+      "expected_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+      "final": false,
+      "parent_receipt": "A2-06-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only full B1L8 reuses identical fused preprocessing kernel with ROPE=False; preserve FA3/window/scales/schedule/gate and other11timedpaths; target>=10% normalizedlatencycut, longpage64correctness gate"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-06 terminal and adopted; full B1L8 adapter local-only preparation",
+  "current_phase": "A2-07 isolated fullB1L8 source preflight, no new request yet",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
