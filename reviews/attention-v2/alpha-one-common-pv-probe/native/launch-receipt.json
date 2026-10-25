@@ -1,0 +1,160 @@
+{
+  "experiment": "attention-alpha-one-common-pv-compile",
+  "state": "function-terminal",
+  "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+  "created_utc": "2026-10-25T22:27:24.030022+00:00",
+  "source_commit": "6df535d096aec0e76379b6795bb97b5956d0474b",
+  "payload_sha256": {
+    "reviews/attention-v2/alpha-one-common-pv-probe/native/worker.py": "bef01dd950ce3955fb45316c5f5ee8937ea85a86c471b30c8639aeb0647e02e2",
+    "reviews/attention-v2/alpha-one-common-pv-probe/baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reviews/attention-v2/alpha-one-common-pv-probe/candidate.py": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "reviews/attention-v2/alpha-one-common-pv-probe/native/controller.py": "1c9256c05ba907e0f5044599a584304eb1cd7c32fe67fc9c6867481e8c75caaa"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "billing_before": {
+    "metered_cost": "1.99000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-1.99000000"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.99337538",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "description": "okc-projection-p046-confirmation-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:18:38-07:00",
+      "stopped_at": "2026-10-25 15:19:01-07:00"
+    },
+    {
+      "app_id": "ap-uY5K1rBNFRR2K8rdo2F8tw",
+      "description": "okc-attention-alpha-one-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:05:56-07:00",
+      "stopped_at": "2026-10-25 15:06:25-07:00"
+    },
+    {
+      "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+      "description": "okc-attention-dp-merge-validation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:50:59-07:00",
+      "stopped_at": "2026-10-25 14:51:32-07:00"
+    },
+    {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "description": "okc-attention-fusion-lookahead",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:14:54-07:00",
+      "stopped_at": "2026-10-25 14:15:59-07:00"
+    },
+    {
+      "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+      "description": "okc-projection-p044-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:05:38-07:00",
+      "stopped_at": "2026-10-25 14:06:23-07:00"
+    },
+    {
+      "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+      "description": "okc-attention-sliding-unsplit",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:51:49-07:00",
+      "stopped_at": "2026-10-25 13:52:50-07:00"
+    }
+  ],
+  "cost_reserve_usd": "0.40",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "conservative_free_credit_floor_usd": "28.00662462",
+  "slot_receipt_sha256": "79f795bf130b500129ef29ca1b2c8dbc73c2fc5e214cf128c6169274a7487c9f",
+  "billing_guardrail_receipt_sha256": "28b6eb06f093d5ee4a21277d8c690c7582529a2da67cfcab8776ea5e27a555a2",
+  "paid_limit_usd": "0",
+  "artificial_stage_ceiling_removed": true,
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 90,
+    "child_timeout": 100,
+    "function_timeout": 115,
+    "startup_timeout": 20,
+    "watchdog": 140,
+    "retry_policy": 0,
+    "explicit_invocations": 1
+  },
+  "compile_only": true,
+  "kernel_launches": 0,
+  "correctness_measurement": false,
+  "performance_measurement": false,
+  "official_check": false,
+  "formal_entry": false,
+  "accepted_utc": "2026-10-25T22:27:27.862432+00:00",
+  "artifact_files": 24,
+  "artifacts_retrieved": true,
+  "result_retrieved": true,
+  "exit_code": 0,
+  "worker_status": "compiled",
+  "worker_passed": true,
+  "report_sha256": "de0efb07a8e46e6e261d16db249668619e7d7083c17c599478db5f2aff861e90",
+  "worker_wall_seconds": 32.565060435,
+  "shutdown_observation": {
+    "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+    "description": "okc-attention-alpha-one-common-pv-compile",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 15:27:24-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": false,
+  "all_apps_stopped_zero_tasks": false,
+  "billing_after": {
+    "metered_cost": "1.99000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-1.99000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.99337538",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+    "requested_utc": "2026-10-25T22:28:08.287077+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T22:28:11.270099+00:00",
+  "client_wall_seconds": 47.2394720420707
+}

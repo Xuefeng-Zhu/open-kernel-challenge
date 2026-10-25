@@ -1,0 +1,82 @@
+{
+  "created_utc": "2026-10-25T22:48:29.068696+00:00",
+  "scope": "Reviewed one common-PV original-correctness/frequency/uninstrumentedpairedstage; appnotcreatedatfreeze",
+  "source_sha256": {
+    "baseline": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+    "diagnostic": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60"
+  },
+  "local_test_methods": {
+    "source": 7,
+    "worker": 12,
+    "diagnostic": 5,
+    "controller": 10
+  },
+  "independent_review": "PASS",
+  "original_oracles": 39,
+  "expected_diagnostic_calls": 10,
+  "expected_timing_replays_if_opportunity": 64,
+  "performance_gate": "Eachfreshfixturetarget>=2%,all6favorablepairs,unchangedcontrolslow<=2%eachfixture; no arbitraryfrequencypercentage",
+  "paid_limit_usd": "0",
+  "free_credit_reserve_usd": ".58",
+  "parent_slot": "GrantedONEstageafterP049stoppedandfinalreview",
+  "files": {
+    "CONTROLLER.md": {
+      "sha256": "e6e1aeacfb303b1987e2db9ffaacf7799255b4250d705bd2cf568c2bbbf391fb",
+      "bytes": 7049
+    },
+    "CONTROLLER_REVIEW.md": {
+      "sha256": "5b228e9a0a781c7e58b8c0e8bddd50bbbf1f95fdc59e7d4036099a68aa4db21d",
+      "bytes": 7660
+    },
+    "DIAGNOSTIC.md": {
+      "sha256": "663ebaf31bdf686015c4ed24695e708f2d3f369268a114300a2a1fbb84c37180",
+      "bytes": 4666
+    },
+    "DIAGNOSTIC_REVIEW.md": {
+      "sha256": "d1bc00dee22891eb08b0cbce983cfb85ca7f81830aa61005e940b8ff098910bd",
+      "bytes": 5615
+    },
+    "PROTOCOL.md": {
+      "sha256": "7d76b2ba37d069b53de8dad30c7e29b52dd65cb675e451365e49d33cd01d0548",
+      "bytes": 8823
+    },
+    "REVIEW.md": {
+      "sha256": "e353c027e14ec81f12633b5746939ff94866abb7c1b65026dab6e25db17e0c0a",
+      "bytes": 11013
+    },
+    "controller.py": {
+      "sha256": "ab4b88f430ab2934f4cd0e75ce5bfa1b16fd1f6c1ca3801631a3f0b77ef7f0e3",
+      "bytes": 21008
+    },
+    "diagnostic-verification.json": {
+      "sha256": "552ec7fd7ba8f0c84c644dae949d32573ca86ac01e78a484bdf120674f271d51",
+      "bytes": 1769
+    },
+    "diagnostic.py": {
+      "sha256": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60",
+      "bytes": 41396
+    },
+    "test_controller.py": {
+      "sha256": "2c1f957f5d454376a5d3a18ed6f170e938a827d5452d23aa1ddf5764d711bd07",
+      "bytes": 10540
+    },
+    "test_diagnostic.py": {
+      "sha256": "70cb800eb8cf08833170fc157d741a56822a10b4d91e05d7eca7b7f08416cdb0",
+      "bytes": 7634
+    },
+    "test_worker.py": {
+      "sha256": "48cc3db91fc2d5023901c695611a5383f8847af526ebf9e87b4fc67107cbb4ca",
+      "bytes": 14102
+    },
+    "worker.py": {
+      "sha256": "c3e9193d8c7dbb8cd68c06ea363b2f77cc8b4d64657be6a20ad832ac3e1739bb",
+      "bytes": 34248
+    }
+  },
+  "secret_scan": {
+    "files": 13,
+    "patterns": 6,
+    "matches": 0
+  }
+}
