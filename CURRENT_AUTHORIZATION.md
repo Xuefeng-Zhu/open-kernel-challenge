@@ -13,3 +13,7 @@ the frozen A2-11 attention source. Incremental free-credit ceiling $0.25, paid $
 existing auth only, no renewal or access changes. See A13-OWNERSHIP-PLAN.md under
 reviews/attention-v2. This narrow exception does not authorize general Modal
 benchmarking, further launches, a payment/cap change or a new OKC check.
+
+A13 has now consumed this single-run exception: app ap-f1GBalg3lZ0sfNmXyjJ7bu
+is stopped with zero tasks, conservative incremental cost $0.078901888, paid $0.
+No further Modal launch follows from unused incremental allowance.

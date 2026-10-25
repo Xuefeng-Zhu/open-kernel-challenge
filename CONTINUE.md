@@ -10,7 +10,8 @@ SHA256: c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0
 Job: cfa8a8670e394f80, DONE, 16+12 passed, 1.1876787561×.
 95% interval: [1.1698635747, 1.2109342502]. The +2.761% point gain over
 historical A2-08 has slight interval overlap; not statistically resolved.
-No device-global completion counter remains. Bespoke native stress is unrun.
+No device-global completion counter remains. A13 passed 42 bounded-context ABA/cache replays; actual cross-graph overlap was
+observed for full decode B32 only. Other paths remain concurrency-unverified.
 
 Rejected A2-12: b24bbd05419c499a, DONE, 16+12 passed, 1.1734299856×.
 Query preparation saved producer work but increased target whole-call normalized
@@ -30,14 +31,19 @@ scored 0/10 each. Reset 2026-10-26 00:00 UTC. Verify again before any dispatch.
 No paid compute, Modal launches, new credentials, ranked entry or serving launch.
 Current authorization is in CURRENT_AUTHORIZATION.md.
 
-Next priority: native_ownership_probe.py on the exact selected source with a
-permitted H200 environment and official dependencies. Five CPU tests pass;
-zero native probe replays executed. Planned 30 replays cover L1 independent
-captures/changed contents and lengths/cache; add L8 coverage separately.
-The Mac has no CUDA; no new Modal/credential grant exists. Current-source
-compiler resources/counters are also absent. Do not claim a measured bottleneck
-or native concurrency pass from old sources/CPU stand-ins. Serving audit is
-complete; no integration patch or end-to-end gain has been tested.
+A13 exact-source Modal diagnostic is complete: ap-f1GBalg3lZ0sfNmXyjJ7bu,
+stopped/tasks0 verified. All 42 checked ABA/cache replays passed across seven
+reduced-context cases. Actual cross-graph kernel overlap was observed for full
+decode B32 only; other six profiled cases did not overlap. Default full-context
+30-replay plan remains unrun. No general concurrent-safety or new score claim.
+See reviews/attention-v2/A13-RESULT.md and A13-coverage.csv.
+Worker35.706s/app43s; observed usage about$0.05, conservative incremental
+$0.078901888 and cumulative$1.787819802, paid$0. One approved launch consumed;
+no further Modal run/credential renewal authorized. Earlier A09 large-result401
+remains historical; A13 small-result retrieval succeeded. Cleanup stop returned1
+while task count drained; subsequent stopped/tasks0 read resolved shutdown.
+No new OKC checks, algorithm changes or serving launch. Both best sources remain.
+Current-source compiler resources/counters remain absent; no speculative rewrite.
 
 Private autopush: never push attention-fa3-local original history. Use
 analysis/safe_attention_export.py, then audit_push.py attention-fa3-sanitized

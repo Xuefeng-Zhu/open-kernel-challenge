@@ -1,4 +1,18 @@
-# Focused native ownership regression probe — NOT GPU-executed
+# Native ownership probe: bounded H200 run completed
+
+A13 ran the exact selected A2-11 source on H200: **42/42 checked replays passed**
+across seven reduced-context cases. Actual cross-graph overlap was observed for
+full decode B32 only; six other profiled cases did not overlap. See
+[A13-RESULT.md](A13-RESULT.md) and [coverage matrix](A13-coverage.csv).
+Nine current CPU tests pass. The single Modal run is complete and stopped; its
+specific authorization does not permit another launch.
+
+The original default 30-replay full-context command below remains unexecuted.
+The old five-test preflight is historical evidence; A13's source, commands,
+environment, hashes and nine-test report are separate.
+
+## Historical preparation, before A13
+
 
 Five CPU tests and a dependency-free dry run pass. Exact environment/source hashes are in NATIVE_OWNERSHIP_PREFLIGHT.json. This is harness preparation, not a new benchmark result.
 

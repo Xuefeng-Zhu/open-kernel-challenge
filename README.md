@@ -27,6 +27,8 @@ It improves2.761% over A2-08, with slightly overlapping confidence intervals. Se
 [best-version manifest](BEST_VALIDATED_MANIFEST.json) and
 [correctness/serving audit](CORRECTNESS_AND_SERVING_AUDIT.md).
 
+The [A13 H200 diagnostic](reviews/attention-v2/A13-RESULT.md) passed 42 replay/cache checks on the selected attention source. Actual concurrent-graph overlap was observed for full decode B32 only; broader concurrency remains unverified. The one approved Modal app is stopped.
+
 Standing reviewed automatic pushes go only to this private repository. Original
 attention research history stays local; `attention-fa3-sanitized` preserves source
 bytes and maps source commits via analysis/PUSH_EXPORT_MAP.json. Credentials and

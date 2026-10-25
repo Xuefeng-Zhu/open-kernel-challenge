@@ -1,0 +1,128 @@
+{
+  "experiment": "A13-ownership",
+  "state": "terminal",
+  "created_utc": "2026-10-25T06:11:46.570737+00:00",
+  "kind": "One exact-source correctness/overlap diagnostic, no performance score",
+  "prior_conservative_cumulative_usd": "1.708917914",
+  "incremental_free_credit_ceiling_usd": "0.25",
+  "paid_ceiling_usd": "0",
+  "manifest": {
+    "candidate": "mixed_fa3_decode_parallel_merge.py",
+    "candidate_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "source_commit": "5b7a61cd0556ab1d5b83c2ee0554934f8fabf2dc",
+    "sha256": {
+      "mixed_fa3_decode_parallel_merge.py": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+      "native_ownership_probe.py": "c836fbe4b002f60de08675a149c5f32360ab868bcafad3fb1d44a20bcc212be3",
+      "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "official/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+      "official/TASK.md": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76",
+      "official/AGENTS.md": "c01682737af060546f7f17c480cc37309c28e6c2de1cc13c669f3f66307d3476",
+      "legal/LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+      "legal/THIRD_PARTY_NOTICES.md": "f7b0e22c4c226e9cc1006fc3e8c4ebe18c7831871bbd6c913502b0b0e7b3b19c",
+      "legal/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+    }
+  },
+  "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+  "reserved_utc": "2026-10-25T06:11:55.851256+00:00",
+  "billing_before": {
+    "metered_cost": "1.15000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-1.15000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.15008536",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "timeout": 90,
+    "startup_timeout": 30,
+    "internal_deadline": 75,
+    "retries": 0,
+    "client_stop_watchdog_seconds": 120
+  },
+  "conservative_incremental_reservation_usd": ".25",
+  "accepted_utc": "2026-10-25T06:11:58.331258+00:00",
+  "exit_code": 0,
+  "shutdown_observation": {
+    "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+    "description": "okc-attention-ownership-A13",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-24 23:11:56-07:00",
+    "stopped_at": "2026-10-24 23:12:39-07:00"
+  },
+  "shutdown_verified": true,
+  "explicit_stop_outcome": {
+    "requested_utc": "2026-10-25T06:12:40.212198+00:00",
+    "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+    "returncode": 1
+  },
+  "client_finished_utc": "2026-10-25T06:12:41.449833+00:00",
+  "client_wall_seconds": 45.597744916100055,
+  "termination_verified_utc": "2026-10-25T06:14:53.152125+00:00",
+  "app_lifetime_seconds": 43.0,
+  "conservative_incremental_cost_upper_usd": "0.078901888",
+  "conservative_cumulative_usd": "1.787819802",
+  "billing_after": {
+    "metered_cost": "1.24000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.24000000",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.24434726"
+    }
+  },
+  "billing_observed_utc": "2026-10-25T06:14:53.152125+00:00",
+  "browser_verified": {
+    "surface": "User Mac Chrome",
+    "state": "Finished",
+    "live_containers": 0,
+    "live_sandboxes": 0,
+    "app_usage_display_usd": ".05",
+    "url": "https://modal.com/apps/xuefeng-zhu/main/ap-f1GBalg3lZ0sfNmXyjJ7bu"
+  },
+  "correctness_complete": true,
+  "checked_replays": 42,
+  "cross_graph_overlap_cases": [
+    "full_decode32"
+  ],
+  "remaining_overlap_unverified_cases": [
+    "tiny_full_verify2_local_ticket",
+    "sliding_decode1",
+    "tiny_full_verify1_retained_fa3",
+    "sliding_decode16",
+    "sliding_decode32",
+    "nearby_full_page64_nonunit"
+  ]
+}

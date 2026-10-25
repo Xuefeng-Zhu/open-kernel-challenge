@@ -32,8 +32,7 @@ not a claimed exact number of underlying graph replays. Profile sums are not wal
 
 A2-09 through A2-12 are all terminal. The [completed cycle report](OWNERSHIP_MERGE_CYCLE.md) records target results, commands, source identities and the exact next validation prerequisite. A2-12 passed correctness but slowed its target by 8.676%; A2-11 remains selected. A2-11 removes completion counters on L1fallback;
 L8fallback retains invocation-local zeroed counters. No device-global completion
-counter remains. Dedicated native independent-graph ABA/concurrency stress is
-still unrun; [prepared harness](NATIVE_OWNERSHIP_PROBE.md) has five CPU tests only.
+counter remains. A13 subsequently passed 42 bounded-context native ABA/cache replays. Actual cross-graph overlap was observed for full decode B32 only; six other profiled paths did not overlap. See [A13 result](A13-RESULT.md) and [harness notes](NATIVE_OWNERSHIP_PROBE.md).
 
 User count ceilings were removed explicitly; actual daily quotas remain enforced
 in the [ledger](attention-cycle2-budget.json). Historical ten-check and six-check
@@ -55,6 +54,6 @@ concurrency remains unverified.
 Historical E0..E4 [report](CYCLE_REPORT.md), E5/E6 receipts, original draft and
 compilation failurebf4b49bd8bb34dae are preserved. `final_attention.py` is historical
 E2, not current selection. Old Modal replay coverage does not transfer to new
-sources. Modal cost guard remains$1.708917914/$2, prior apps stopped; old A09 report
+sources. After the separately approved A13 run, conservative Modal accounting is $1.787819802/$2; all apps stopped; old A09 report
 retrieval401 unresolved, no restart/renewal. Original local research commit IDs
 map to private sanitized-export commits via analysis/PUSH_EXPORT_MAP.json.

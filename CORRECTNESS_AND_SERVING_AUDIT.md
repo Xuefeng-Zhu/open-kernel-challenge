@@ -1,5 +1,7 @@
 # Consolidation audit and next engineering step
 
+**A13 follow-up:** exact-source bounded H200 validation passed 42 replay/cache checks, with actual cross-graph overlap observed for full decode B32 only. See reviews/attention-v2/A13-RESULT.md; the earlier unrun-harness status below is historical.
+
 Updated 2026-10-25 after A2-11. Exact source identity, original/export commit mapping, receipts and intervals are in BEST_VALIDATED_MANIFEST.json. Selected attention A2-11 is 1.1876787561×; selected projection P039 is 1.1732389990×. Neither is a ranked or serving result. Historical `final_attention.py` is E2, not current best. Projection P040's higher 1.1758713× point failed its predeclared target, so it was not promoted. The ownership diagnosis below refers to historical A2-08; subsequent repairs and measurements are recorded explicitly.
 
 ## Confirmed ownership issue, qualified coverage

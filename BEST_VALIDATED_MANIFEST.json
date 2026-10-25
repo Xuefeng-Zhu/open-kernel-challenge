@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-25T05:58:09.177342+00:00",
+  "observed_utc": "2026-10-25T06:18:19.715663+00:00",
   "attention": {
     "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
     "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
@@ -15,7 +15,17 @@
     ],
     "prerequisites": 16,
     "timed_shapes": 12,
-    "restriction": "Official sequential graph validation; no shared completion counter remains, but bespoke independent-stream/current-path ABA test is still unrun. Same-graph overlapping use not supported."
+    "restriction": "Official 16+12 validation plus A13: 42 bounded-context graph ABA/cache replays pass; true cross-graph overlap observed for full decode B32 only. Other six profiled paths did not overlap; general concurrent safety and same-graph overlap remain unverified.",
+    "native_ownership_probe": {
+      "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+      "report": "reviews/attention-v2/A13-RESULT.md",
+      "checked_replays": 42,
+      "passed": 42,
+      "actual_overlap_cases": [
+        "full_decode32"
+      ],
+      "all_paths_concurrency_verified": false
+    }
   },
   "projection": {
     "source": "candidates/projection_router_m1_fp32_gemv.py",

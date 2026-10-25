@@ -1,5 +1,7 @@
 # Ownership and decode-merge cycle: completed
 
+**Follow-up:** A13 subsequently passed 42 bounded H200 replay checks on this exact selected source. Actual overlap was observed for full decode B32 only; see [A13 result](A13-RESULT.md). Statements below about zero native stress describe the earlier cycle snapshot.
+
 Updated 2026-10-25T05:58:09.177342+00:00. All four admitted jobs are terminal; no active or uncertain request. Selected attention source is A2-11, 1.1876787561× SGLang, 95% interval [1.1698635747, 1.2109342502]. Projection P039 remains 1.1732389990×; its code and GPU result were unchanged in this cycle.
 
 ## Experiment cards
