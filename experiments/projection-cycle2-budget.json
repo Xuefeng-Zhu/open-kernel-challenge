@@ -44,6 +44,13 @@
       "local_record": "experiments/039-router-m1-fp32-gemv-local.md",
       "control_job_id": "48b1357016134e52",
       "hypothesis": "Only router m1 reuses unchanged single-call FP32 SIMT GEMV on original weights, removing padded16 hi/lo split32 + reducer; keep all other paths; aggregate value may be noise"
+    },
+    "P2-05-o-m1-group8": {
+      "candidate": "candidates/projection_o_m1_group8.py",
+      "cpu_report": "results/router-p040-o-m1-group8-cpu.json",
+      "local_record": "experiments/040-o-m1-group8-local.md",
+      "control_job_id": "d5636ac8d1404abd",
+      "hypothesis": "Only O m1 replaces one library kernel with fixed8-output SIMT FP32reduction/BF16out; >=15%targetnormalized latencycut, aggregate potential<=1.22%/likelyinconclusive; preserveP039router"
     }
   },
   "requests": [
@@ -350,5 +357,5 @@
     "previous_best_job": "48b1357016134e52",
     "previous_best_preserved": true
   },
-  "current_phase": "P039 native target benefit supported; total-vs-parent unresolved; six checks left; read-only next-mechanism review while attention candidate is prepared"
+  "current_phase": "P039 retained with totalqualification; P040localgatespass, A2-02terminal, nextsoleGPU after plancommit"
 }
