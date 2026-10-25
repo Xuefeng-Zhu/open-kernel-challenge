@@ -1,0 +1,21 @@
+{
+  "observed_utc": "2026-10-25T06:11:32.514492+00:00",
+  "CPU_orchestration_tests_passed": 9,
+  "test_command": ".venv/bin/python -m unittest discover -s reviews/attention-v2 -p test_native_ownership_probe.py -v",
+  "test_elapsed_seconds": 0.043,
+  "GPU_executed": false,
+  "candidate_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "harness_sha256": "c836fbe4b002f60de08675a149c5f32360ab868bcafad3fb1d44a20bcc212be3",
+  "controller_sha256": "732d6e865db6c25bad4cb17d901c242a893bca957f103b11477129fc74ab3e97",
+  "controller_checks": [
+    "syntax",
+    "allowlisted_count11",
+    "candidate_hash",
+    "137sec_fallback_envelope_under_ceiling",
+    "cumulative_reservation_under2",
+    "bounded_transport_roundtrip"
+  ],
+  "fallback_envelope_bound_usd": "0.213834752",
+  "max_incremental_reserve_usd": ".25",
+  "preserved_prior_conservative_cumulative_usd": "1.708917914"
+}
