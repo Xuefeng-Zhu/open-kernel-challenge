@@ -1,21 +1,27 @@
-# Local strategy analysis complete; Pro brief upload blocked before execution
+# Pro research completed; independent review saved
 
-Read [the ranked next plan](reviews/attention-v2/next-plan/PLAN.md).
-Nine local analysis/representation tests passed; no candidate edits, GPU work,
-or official checks. A2-15's measured target gain transfers to only a modeled
-+0.750% total, so defer a performance-only official confirmation. First proposed
-architecture gate: full verify's natural M64 tile with exact E4M3-to-BF16 QK
-widening, preserving FP32 accumulation; inspect generated code before execution.
-A2-11 remains selected and projection is unchanged.
+Read [the Pro research review](reviews/attention-v2/next-plan/PRO_RESEARCH_REVIEW.md)
+and its `pro-request-status.json` receipt. The single approved research request
+completed in the user's Mac Chrome, with Pro selected and Response complete
+visible. No duplicate request or browser action is pending. The live conversation
+is https://chatgpt.com/c/6ade40a4-9438-83e8-b546-958708e69fd0.
 
-The sanitized [Pro brief](reviews/attention-v2/next-plan/PRO_RESEARCH_BRIEF.md)
-is ready. In the user's Mac Chrome, ChatGPT is signed in; Pro was explicitly
-selected and Web search enabled. The upload was denied by automatic approval
-review before execution, citing missing trusted payload/destination authorization.
-No attachment or research message was sent; the page is still the new-chat root,
-not an accepted conversation. Do not retry or switch transfer routes without
-materially new relevant confirmation. See `next-plan/pro-request-status.json`.
-No credential, spending or access change. Modal ledger remains $1.919496218/$2.
+Pro recommends extending existing fused preparation to full decode B16 and full
+verify B16/B32. Independent source review confirms this needs only a dispatch
+change: the existing helper is already batch-generic. Five to seven microseconds
+saved per complete call would model +0.84–1.19% overall; this is not measured.
+Keep the natural L8/M64 WGMMA idea as a separate compiler-feasibility probe.
+The earlier PLAN.md preserves our original ranking and exact score calculations.
+
+No candidate was changed, GPU job launched, official check consumed or credential
+changed by this research stage. Dedicated batched-full cache/replay validation
+remains necessary. A2-11 remains selected and projection is unchanged. The last
+conservative Modal ledger observed by this task is $1.919496218/$2; this research
+consumed no GPU credit. Do not infer another task's live app state from this file.
+
+The former upload denial was resolved with specific user confirmation. A later
+stop preserved the attached unsent draft; subsequent explicit reauthorization
+permitted exactly one send. See the receipt history for the earlier states.
 
 Earlier checkpoints below are historical.
 

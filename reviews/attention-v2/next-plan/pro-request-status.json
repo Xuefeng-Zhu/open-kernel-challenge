@@ -1,21 +1,42 @@
 {
-  "observed_utc": "2026-10-25T16:54:06.311425+00:00",
+  "observed_utc": "2026-10-25T18:01:29.864154+00:00",
   "destination": "https://chatgpt.com/",
   "surface": "User Mac Chrome, signed-in existing session",
-  "model_ui_verified": "GPT-6 selected model; Pro, 5 of 5 reasoning setting; composer showed Pro",
+  "model_ui_verified": "Pro shown before send and on accepted conversation",
   "research_tool_ui": "Web search enabled; Deep research option observed but not selected",
   "payload": "PRO_RESEARCH_BRIEF.md",
   "payload_bytes": 16694,
   "payload_sha256": "2b532569e6ae626ae512589f8b4b2829be4b919ba91e70ce8e321a73260fc8e7",
   "operation": "Upload this single sanitized Markdown research brief using the browser file chooser",
-  "outcome": "denied before execution",
-  "review_reason": "Uploading internal research brief is external project-data egress; automatic review did not recognize trusted user authorization for this payload and destination",
-  "post_denial_observation": "Accessibility tree unchanged; empty new-chat page with Web search in composer; no attachment or submitted research message",
-  "accepted_conversation_url": null,
-  "research_started": false,
-  "retry_attempted": false,
-  "next_required_step": "Fresh explicit user confirmation for this exact brief upload to ChatGPT Pro, before one scoped retry",
+  "outcome": "completed; Response complete visible; Pro selected",
+  "accepted_conversation_url": "https://chatgpt.com/c/6ade40a4-9438-83e8-b546-958708e69fd0",
+  "research_started": true,
+  "retry_attempted": true,
+  "next_required_step": "No browser request pending; see PRO_RESEARCH_REVIEW.md for independent review",
   "gpu_launched": false,
   "official_check_started": false,
-  "credentials_changed": false
+  "credentials_changed": false,
+  "history": [
+    {
+      "observed_utc": "2026-10-25T16:54:06.311425+00:00",
+      "operation": "Upload this single sanitized Markdown research brief using the browser file chooser",
+      "outcome": "denied before execution",
+      "review_reason": "Uploading internal research brief is external project-data egress; automatic review did not recognize trusted user authorization for this payload and destination",
+      "post_denial_observation": "Accessibility tree unchanged; empty new-chat page with Web search in composer; no attachment or submitted research message",
+      "retry_attempted": false
+    },
+    {
+      "observed_utc": "2026-10-25T17:48:06.278871+00:00",
+      "outcome": "single research request accepted; initial acknowledgment visible",
+      "accepted_conversation_url": "https://chatgpt.com/c/6ade40a4-9438-83e8-b546-958708e69fd0",
+      "research_complete": false
+    }
+  ],
+  "title": "Research architectural diagnosis",
+  "single_send": true,
+  "research_complete": true,
+  "attachment_visible": true,
+  "ui_worked_duration": "6m 3s",
+  "ui_research_subagents": 3,
+  "completed_review": "PRO_RESEARCH_REVIEW.md"
 }
