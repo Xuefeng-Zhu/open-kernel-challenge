@@ -1,0 +1,369 @@
+run,group,selected_paths,kind,path_acceleration,path_latency_cut_percent,score,unbounded,score_gain_percent
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1979628698882938,False,0.8659002906925339
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1990261981265045,False,0.9554302442057239
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2111789164043774,False,1.9786630178484588
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2288340033807243,False,3.4651834162191975
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2537308141864176,False,5.561441405014356
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2990350435330864,False,9.375960197615886
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_zero_latency_ceiling,,100.0,1.359049172854738,False,14.429020969653749
+A2-11,path:decode 1/sliding,decode 1/sliding,modeled_harness_floor_substitution,,,1.3564155733986516,False,14.207277552707943
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1958894538361016,False,0.6913231130200259
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1967326981143906,False,0.762322469872001
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2062930203595863,False,1.567281066310544
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2199246203027811,False,2.715032499375525
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,2.0,50.0,1.2386133928758203,False,4.288587004519218
+A2-11,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,4.0,75.0,1.270948982933454,False,7.011174227024797
+A2-11,path:decode 1/full,decode 1/full,modeled_zero_latency_ceiling,,100.0,1.3103079837545488,False,10.325117548767327
+A2-11,path:decode 1/full,decode 1/full,modeled_harness_floor_substitution,,,1.2847222930279902,False,8.170857350423955
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.190921244041382,False,0.27301052055699326
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1912489206140442,False,0.300600184090416
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.19489559019516,False,0.60764192937941
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.1998822118124857,False,1.027504757755282
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.206326597869983,False,1.570108220557831
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2164683811238912,False,2.4240245848888176
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_zero_latency_ceiling,,100.0,1.2272388388491988,False,3.3308739892508266
+A2-11,path:decode 16/sliding,decode 16/sliding,modeled_harness_floor_substitution,,,1.222474721286367,False,2.92974552430052
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2031431367304748,False,1.3020676310303125
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2047692638128054,False,1.4389840382655894
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2237451262301104,False,3.036710891596406
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2527382732583672,False,5.477871590957828
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,2.0,50.0,1.2971307729449035,False,9.215624704670212
+A2-11,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,4.0,75.0,1.3931691350187567,False,17.301848490492546
+A2-11,path:decode 16/full,decode 16/full,modeled_zero_latency_ceiling,,100.0,1.5828327060064056,False,33.271113749774514
+A2-11,path:decode 16/full,decode 16/full,modeled_harness_floor_substitution,,,1.363260213299726,False,14.783581529351085
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1902690910073652,False,0.21810063598808327
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.190530309569528,False,0.240094677796443
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.1934304892537626,False,0.4842835773091414
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.1973757480517078,False,0.8164658932532376
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2024387909282845,False,1.2427632274969236
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.210324427786786,False,1.906716911781281
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_zero_latency_ceiling,,100.0,1.218586936067979,False,2.602402360295697
+A2-11,path:decode 32/sliding,decode 32/sliding,modeled_harness_floor_substitution,,,1.213364900513152,False,2.162718184076806
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2038463873117975,False,1.3612798193193276
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2055503622409285,False,1.5047508480295901
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2254926710909007,False,3.183850414959455
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.256185477880757,False,5.768118815194434
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.303783652446901,False,9.775782867633186
+A2-11,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.4100217458565427,False,18.72080212180205
+A2-11,path:decode 32/full,decode 32/full,modeled_zero_latency_ceiling,,100.0,1.6426698037931373,False,38.30926884685504
+A2-11,path:decode 32/full,decode 32/full,modeled_harness_floor_substitution,,,1.3611552132350038,False,14.606345045669444
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1990835193208957,False,0.9602565656413375
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2002670229672847,False,1.0599050303733648
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2138530035587778,False,2.203815412020327
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2337974865483836,False,3.8830980368370627
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2623837446778796,False,6.289999564964233
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.31603310344159,False,10.807160328239473
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_zero_latency_ceiling,,100.0,1.391279427448397,False,17.142739172364642
+A2-11,path:verify 1/sliding,verify 1/sliding,modeled_harness_floor_substitution,,,1.3885195601282574,False,16.910364272502587
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1947894770746568,False,0.5987074325755071
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1955171477022015,False,0.6599757362995229
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2037326348797222,False,1.3517021088911285
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2153346585383,False,2.328567578540852
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,2.0,50.0,1.2310191184591455,False,3.649165411958566
+A2-11,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,4.0,75.0,1.2575189423936028,False,5.88039366274995
+A2-11,path:verify 1/full,verify 1/full,modeled_zero_latency_ceiling,,100.0,1.2886112077203935,False,8.498295613714646
+A2-11,path:verify 1/full,verify 1/full,modeled_harness_floor_substitution,,,1.2701469433178847,False,6.943644214261768
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.1920439265773581,False,0.3675379784425781
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1924866684033038,False,0.40481588912983923
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.197434220641137,False,0.8213891596777323
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2042616167622506,False,1.3962412470896801
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2131952393695504,False,2.1484330802360674
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.227521921115748,False,3.3547089080029124
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_zero_latency_ceiling,,100.0,1.2431237199129939,False,4.66834685237858
+A2-11,path:verify 16/sliding,verify 16/sliding,modeled_harness_floor_substitution,,,1.2378186510990319,False,4.221671454104969
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2019454299323968,False,1.2012232914359933
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2034397748757466,False,1.3270439256513722
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.220792369338579,False,2.78809510417084
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2469848371004644,False,4.993444625466004
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,2.0,50.0,1.2862649763571756,False,8.300747972890598
+A2-11,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,4.0,75.0,1.3672647966569946,False,15.120758845754633
+A2-11,path:verify 16/full,verify 16/full,modeled_zero_latency_ceiling,,100.0,1.5071365984223053,False,26.897664094625064
+A2-11,path:verify 16/full,verify 16/full,modeled_harness_floor_substitution,,,1.3452659560797442,False,13.26850372504067
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.190737698410546,False,0.257556372716472
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.1910466423421728,False,0.2835687881144633
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.194482539046427,False,0.5728639099346733
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.1991740358588738,False,0.967877863699762
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2052249955704637,False,1.4773556732992743
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2147194667359509,False,2.2767697502816375
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.2247635727659938,False,3.1224619021843925
+A2-11,path:verify 32/sliding,verify 32/sliding,modeled_harness_floor_substitution,,,1.2192412690760743,False,2.6574957939991872
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2033405005084143,False,1.3186852371740665
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2049884400056152,False,1.4574382028859967
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.224234526529135,False,3.077917345489456
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.253700456009241,False,5.558885311708739
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.2989766652371844,False,9.37104487050382
+A2-11,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.397764035490168,False,17.688729239841837
+A2-11,path:verify 32/full,verify 32/full,modeled_zero_latency_ceiling,,100.0,1.5981366127460603,False,34.559669822805404
+A2-11,path:verify 32/full,verify 32/full,modeled_harness_floor_substitution,,,1.362314650485502,False,14.703967171564681
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.306446631695529,False,10.000000000000009
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.319643062318716,False,11.111111111111116
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.4845984451085554,False,24.99999999999998
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.7815181341302666,False,50.0
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,2.3753575121736885,False,99.99999999999996
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,4.750715024347378,False,300.0
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-11,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_harness_floor_substitution,,,6.741356756577891,False,467.6077577399182
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2666281607356698,False,6.647370279565101
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2751301195418994,False,7.3632169479219245
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.377196883770264,False,15.95701924549382
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.5434871159278138,False,29.95829958374301
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.8231681090600071,False,53.50683842043016
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.5390067802582887,False,113.77891683638346
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,4.474578755627969,False,276.7499193444176
+A2-11,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,2.3482280730700773,False,97.71575950444735
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.223022398883837,False,2.975858801536746
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.226695813129665,False,3.285152390144086
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2689310251318642,False,6.841266514922695
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.3311110645930055,False,12.0766922680962
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.4204549392178902,False,19.599254591198978
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.5881832471240647,False,33.72161781834
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.8218256630360814,False,53.39380734893497
+A2-11,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_harness_floor_substitution,,,1.7841354371890183,False,50.22037129529664
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2456479881676017,False,4.880884817015163
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2519233326099992,False,5.409255338945962
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3278652170212881,False,11.80339887498949
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4546034653781048,False,22.474487139158917
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.6796314046004224,False,41.421356237309496
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.3753575121736885,False,99.99999999999996
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-11,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_harness_floor_substitution,,,2.7366505372081313,False,130.42009661137902
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2456479881676017,False,4.880884817015163
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2519233326099992,False,5.409255338945962
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3278652170212881,False,11.80339887498949
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4546034653781048,False,22.474487139158917
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.6796314046004226,False,41.42135623730952
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.3753575121736894,False,100.00000000000004
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-11,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_harness_floor_substitution,,,2.925680900111635,False,146.33604711017543
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2204674254745294,False,2.7607355288324475
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2239352771923058,False,3.052721194148411
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2647099666856594,False,6.485862461042657
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.328254788128635,False,11.83619992538718
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.4293608452167847,False,20.349112745455898
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.6763551601593671,False,41.145503493100286
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_zero_latency_ceiling,,100.0,,True,
+A2-11,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_harness_floor_substitution,,,1.6874089885354282,False,42.07621209754491
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.270590746802085,False,6.981011514293511
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2796193346246973,False,7.7411992145736574
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3896320062719671,False,17.00402984814824
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.5759411056533832,False,32.690855803953475
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.9130906260509415,False,61.07812118776788
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,2.9816933007041118,False,151.0521709193632
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,,True,
+A2-11,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_harness_floor_substitution,,,3.632595160769175,False,205.85670932919805
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2336518253788402,False,3.8708336792574682
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2385488612114108,False,4.283153576996934
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2965803277832015,False,9.169278404470681
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.388408698244845,False,16.90102994006257
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.5364469859051297,False,29.36553575879426
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.8875234745596066,False,58.92542195320605
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,2.702735562225056,False,127.56452857084098
+A2-11,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,1.771194937828816,False,49.13080904676082
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2504452787183866,False,5.284806376291917
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2571859357037503,False,5.852355214798788
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3378615059296097,False,12.64506492795967
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.468493761600102,False,23.64402024319141
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.6866467071235098,False,42.01202964012436
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.2408830092344734,False,88.67753571830474
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,3.7381337949774123,False,214.74283562112274
+A2-11,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,2.0299017818795235,False,70.91336958552913
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2038533323159224,False,1.3618645737480284
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2055179248448011,False,1.5020196889546922
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2244397294082037,False,3.0951949871090623
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.251596431413141,False,5.381730960389652
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.289241287372704,False,8.551346966959894
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.35589329795084,False,14.163303081906387
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_zero_latency_ceiling,,100.0,1.4408633771124624,False,21.317601222388525
+A2-11,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_harness_floor_substitution,,,1.4263499981325203,False,20.095605888586256
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2065902734001113,False,1.5923091337910478
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2085432554827795,False,1.7567460299348303
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2308343034712046,False,3.633604386976552
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2631326629976658,False,6.353056878732621
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.3085557930941552,False,10.177586859057364
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.3911503996907164,False,17.131875312333513
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.501699378061782,False,26.439861820006815
+A2-11,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_harness_floor_substitution,,,1.4855959333301307,False,25.083986365543964
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2211108019438144,False,0.8356792166152482
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2221559409803309,False,0.9219836735532727
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2340840416344727,False,1.9069705636126644
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2513558226747568,False,3.3332226037267265
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2755894323311223,False,5.334361636875973
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.319278088220429,False,8.942040222346304
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_zero_latency_ceiling,,100.0,1.3762114259398164,False,13.64342503514524
+A2-13,path:decode 1/sliding,decode 1/sliding,modeled_harness_floor_substitution,,,1.373533455302883,False,13.42228622639221
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2197249821954053,False,0.7212423650369892
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2206230247883165,False,0.7954000374427395
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.230818524358407,False,1.637313910013738
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2454016556328802,False,2.8415452908399086
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,2.0,50.0,1.2654884730188272,False,4.500254616142607
+A2-13,path:decode 1/full,decode 1/full,modeled_uniform_path_acceleration,4.0,75.0,1.300525323484696,False,7.393492976423244
+A2-13,path:decode 1/full,decode 1/full,modeled_zero_latency_ceiling,,100.0,1.3437276221732735,False,10.961009638340569
+A2-13,path:decode 1/full,decode 1/full,modeled_harness_floor_substitution,,,1.3154595037306687,False,8.626712931769509
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2141366720720277,False,0.25977642266152845
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2144544224760494,False,0.28601530103349315
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2179885991325576,False,0.5778570430467589
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2228153090031444,False,0.9764323135360575
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2290424337155126,False,1.4906496547786974
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2388174614062688,False,2.2978422166572754
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_zero_latency_ceiling,,100.0,1.2491640707883058,False,3.1522342857192465
+A2-13,path:decode 16/sliding,decode 16/sliding,modeled_harness_floor_substitution,,,1.2443060897407259,False,2.7510767349266496
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2269310242597984,False,1.3162957744982107
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2286081101998974,False,1.4547845173750407
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2481922961092125,False,3.0719880380766007
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2781670690144986,False,5.547215167717057
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,2.0,50.0,1.3242016401703012,False,9.348612422210035
+A2-13,path:decode 16/full,decode 16/full,modeled_uniform_path_acceleration,4.0,75.0,1.4245196663961002,False,17.63257510278431
+A2-13,path:decode 16/full,decode 16/full,modeled_zero_latency_ceiling,,100.0,1.6271969324232018,False,34.369057778293175
+A2-13,path:decode 16/full,decode 16/full,modeled_harness_floor_substitution,,,1.3928976922113194,False,15.021327016192277
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.213868457462545,False,0.23762806210327891
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2141588687237899,False,0.2616093558017507
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2173858758586702,False,0.5280859570770291
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2217838319462657,False,0.8912560220306842
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2274417920920766,False,1.3584734550230015
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2362861899318514,False,2.088817386151942
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_zero_latency_ceiling,,100.0,1.2455969133135127,False,2.8576690863361787
+A2-13,path:decode 32/sliding,decode 32/sliding,modeled_harness_floor_substitution,,,1.2394886222851464,False,2.3532646754362174
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2272201217818646,False,1.3401685835430444
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2289292016473228,False,1.4812992891223953
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2489104417046812,False,3.1312903542793924
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2795829022001344,False,5.664130439208992
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.3269313359877644,False,9.574022541726212
+A2-13,path:decode 32/full,decode 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.4314125490435001,False,18.201768743856505
+A2-13,path:decode 32/full,decode 32/full,modeled_zero_latency_ceiling,,100.0,1.6513327566614577,False,36.362121983968244
+A2-13,path:decode 32/full,decode 32/full,modeled_harness_floor_substitution,,,1.3625984067668373,False,12.519302611274231
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2228186375676977,False,0.9767071764453128
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2240468247780536,False,1.0781272043119516
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.23815666605096,False,2.2432757118243885
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2589084536401356,False,3.956896288419487
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.288738609884853,False,6.420181406596859
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.3450417030534616,False,11.069522508661912
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_zero_latency_ceiling,,100.0,1.4248849260551242,False,17.66273715339386
+A2-13,path:verify 1/sliding,verify 1/sliding,modeled_harness_floor_substitution,,,1.4220505250416242,False,17.42868079183062
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2180470395751533,False,0.5826828800743922
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.218768688236326,False,0.642274468969739
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2269103169823945,False,1.3145858294396406
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2383891751669385,False,2.2624756194792983
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,2.0,50.0,1.2538703988736417,False,3.540868788293161
+A2-13,path:verify 1/full,verify 1/full,modeled_uniform_path_acceleration,4.0,75.0,1.2799242144288387,False,5.69231498261944
+A2-13,path:verify 1/full,verify 1/full,modeled_zero_latency_ceiling,,100.0,1.3103134226323847,False,8.201764940134982
+A2-13,path:verify 1/full,verify 1/full,modeled_harness_floor_substitution,,,1.2922430287889553,False,6.709565842384491
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2154695999291034,False,0.3698456199866307
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2159239067956644,False,0.40736092276631997
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2210012094559766,False,0.8266293966230132
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.228009229889496,False,1.4053307718405295
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2371820385493908,False,2.162793886630898
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2518993097794588,False,3.3781021439460712
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_zero_latency_ceiling,,100.0,1.2679368324525468,False,4.702432818212854
+A2-13,path:verify 16/sliding,verify 16/sliding,modeled_harness_floor_substitution,,,1.2624857780391252,False,4.252301042006201
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2255079007161773,False,1.1987784870401308
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2270283322036857,False,1.3243311735786412
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2446817589843855,False,2.7820983779134334
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2713205609062606,False,4.981850997440862
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,2.0,50.0,1.3112505201799007,False,8.279147653927698
+A2-13,path:verify 16/full,verify 16/full,modeled_uniform_path_acceleration,4.0,75.0,1.393500635604111,False,15.071116278923014
+A2-13,path:verify 16/full,verify 16/full,modeled_zero_latency_ceiling,,100.0,1.535137344513022,False,26.767052243211698
+A2-13,path:verify 16/full,verify 16/full,modeled_harness_floor_substitution,,,1.3703313775261585,False,13.15786821698104
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2141563536277018,False,0.2614016666862895
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2144761120050909,False,0.28780635749561245
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2180328724676803,False,0.5815130026952886
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.222891176114435,False,0.9826971927632489
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.2291603675503138,False,1.500388278264686
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.2390044849870199,False,2.3132860648031883
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.2494284409605059,False,3.174065184140562
+A2-13,path:verify 32/sliding,verify 32/sliding,modeled_harness_floor_substitution,,,1.2437887520495516,False,2.708356535096401
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2269098466693322,False,1.314546992393062
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2285845911931284,False,1.4528423881118524
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2481397560055298,False,3.0676494333959248
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.2780636920925967,False,5.538678610576864
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.3240030419803615,False,9.332212777442429
+A2-13,path:verify 32/full,verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.424023342633218,False,17.591590170326164
+A2-13,path:verify 32/full,verify 32/full,modeled_zero_latency_ceiling,,100.0,1.6255217238378448,False,34.23072406175813
+A2-13,path:verify 32/full,verify 32/full,modeled_harness_floor_substitution,,,1.3880123653059082,False,14.617911326217058
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.3320898838323747,False,10.000000000000009
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.3455453372044188,False,11.111111111111116
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.5137385043549711,False,25.0
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.8164862052259656,False,50.00000000000002
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,2.421981606967954,False,100.0
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,4.843963213935907,False,299.9999999999999
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-13,family:all_paths,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full;verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_harness_floor_substitution,,,6.693116002002054,False,452.6975087462432
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.291496214359586,False,6.647896139590648
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.3001651397728375,False,7.363750082354814
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.4042258163374075,False,15.956769638340806
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.573714627017771,False,29.952648896279864
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.8585910708722342,False,53.47689392232662
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.5861659680262874,False,113.55785366709483
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,4.533117087799164,False,274.33125625376755
+A2-13,family:all_full,decode 1/full;decode 16/full;decode 32/full;verify 1/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,2.3562615082168272,False,94.57303073136045
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2470125334502364,False,2.974566764885944
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2507558454248897,False,3.2836782762106997
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2937867426503806,False,6.83704111775274
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.357111175402445,False,12.06618345061623
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.4480430247728413,False,19.57506370873121
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.6185886423299218,False,33.65821091896821
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.8559519971852927,False,53.258967107412026
+A2-13,family:all_sliding,decode 1/sliding;decode 16/sliding;decode 32/sliding;verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_harness_floor_substitution,,,1.8163223817378884,False,49.98647194614478
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2700978697466763,False,4.880884817015163
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2764963881755786,False,5.409255338945962
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3539288783586307,False,11.80339887498949
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4831547758693804,False,22.474487139158896
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.7125996181961316,False,41.421356237309496
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.421981606967954,False,100.0
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-13,family:decode,decode 1/sliding;decode 1/full;decode 16/sliding;decode 16/full;decode 32/sliding;decode 32/full,modeled_harness_floor_substitution,,,2.707969778868798,False,123.6160482043354
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2700978697466763,False,4.880884817015163
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2764963881755786,False,5.409255338945962
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3539288783586307,False,11.80339887498949
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4831547758693804,False,22.474487139158896
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.7125996181961318,False,41.42135623730952
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.421981606967954,False,100.0
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_zero_latency_ceiling,,100.0,,True,
+A2-13,family:verify,verify 1/sliding;verify 1/full;verify 16/sliding;verify 16/full;verify 32/sliding;verify 32/full,modeled_harness_floor_substitution,,,2.99312864874798,False,147.16361512712206
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2438860167729973,False,2.7163883651619702
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2473641193954512,False,3.00359968109003
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2882459425469341,False,6.379498410780404
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.3519149919257398,False,11.637098154364933
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.4531438596105675,False,19.996275399443576
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.7003806510186228,False,40.41235045936673
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_zero_latency_ceiling,,100.0,,True,
+A2-13,family:four_fallback_paths,decode 1/sliding;decode 16/sliding;decode 32/full;decode 32/sliding,modeled_harness_floor_substitution,,,1.6713738758759744,False,38.017057690900046
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.296097177314873,False,7.027829904739846
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.305367620694122,False,7.793355402751723
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.4183704777343333,False,17.12479348759153
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.6099109241579312,False,32.94163089647548
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.9569803634000666,False,61.60158754054157
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,3.059682855757727,False,152.65946256198885
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,,True,
+A2-13,family:eight_FA3_paths,decode 1/full;decode 16/full;verify 1/full;verify 1/sliding;verify 16/full;verify 16/sliding;verify 32/full;verify 32/sliding,modeled_harness_floor_substitution,,,3.739731267922085,False,208.81582726830067
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2579611403133741,False,3.878669986119232
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2629650794765468,False,4.291880321720187
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3222736676605358,False,9.189406216496621
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4161638439269326,False,16.94257626504514
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.5676427122065226,False,29.451248324633927
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,1.927573906893775,False,59.17329028000991
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,2.7688437040967013,False,128.64283495224225
+A2-13,family:batched_full_FA3,decode 16/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,1.8065769554003033,False,49.18172377551065
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.274819940309034,False,5.270819286275574
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.281673372220697,False,5.836755203538191
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.3636778954731665,False,12.608443561248727
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.4963772112798701,False,23.566356323668746
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,2.0,50.0,1.7177291788469036,False,41.84494001978039
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_uniform_path_acceleration,4.0,75.0,2.2784264517934996,False,88.14564447876472
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_zero_latency_ceiling,,100.0,3.7756540293257688,False,211.78222150517976
+A2-13,family:batched_full_all,decode 16/full;decode 32/full;verify 16/full;verify 32/full,modeled_harness_floor_substitution,,,2.0327477913524126,False,67.8582352156821
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.227192199774113,False,1.3378628676225635
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2288579129517843,False,1.4754124817797365
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2477699667937738,False,3.03711334586394
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.27483614879936,False,5.272157734947469
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.312190853512686,False,8.356797569193763
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.377783550669866,False,13.773246395103268
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_zero_latency_ceiling,,100.0,1.4601600999314055,False,20.5756555483805
+A2-13,family:sliding_decode,decode 1/sliding;decode 16/sliding;decode 32/sliding,modeled_harness_floor_substitution,,,1.4445325194130543,False,19.285176671630055
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1,9.090909090909093,1.2305494690362737,False,1.615096125918325
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.1111111111111112,10.000000000000009,1.2325703486541306,False,1.7819743228495222
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.25,19.999999999999996,1.2556511926994072,False,3.687921418308382
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,1.5,33.333333333333336,1.28914539665783,False,6.453772642121236
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,2.0,50.0,1.336365652416185,False,10.353080186200359
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_uniform_path_acceleration,4.0,75.0,1.4226443330174543,False,17.477715679141227
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_zero_latency_ceiling,,100.0,1.5392427175654864,False,27.106061675872397
+A2-13,family:sliding_verify,verify 1/sliding;verify 16/sliding;verify 32/sliding,modeled_harness_floor_substitution,,,1.522672332319955,False,25.737728803495564

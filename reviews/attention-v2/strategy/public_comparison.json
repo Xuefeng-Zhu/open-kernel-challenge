@@ -1,0 +1,18 @@
+{
+  "observed_utc": "2026-10-25T07:27:25.719195+00:00",
+  "source_url": "https://raw.githubusercontent.com/MadanChaollaPark/open-kernel-experiments/40154c27d4b694c7d641c7959b00d7ff24a7c2e4/outputs/attention_balanced_hybrid.py",
+  "source_sha256": "a4c2ab31edd4cdf088df05e6035a13274a86171bf65a266af0ce1141a1802d69",
+  "source_executed": false,
+  "source_copied_to_candidate": false,
+  "receipt_url": "https://raw.githubusercontent.com/MadanChaollaPark/open-kernel-experiments/40154c27d4b694c7d641c7959b00d7ff24a7c2e4/outputs/attention-balanced-hybrid-check-result.json",
+  "receipt_sha256": "b29cde3fcef07a768928dc0164ef2c661b496c4a94e31b1509e69c967135f120",
+  "third_party_score": 1.4938647136287944,
+  "our_A2_13_score": 1.210990803483977,
+  "same_evaluator": true,
+  "per_shape_times_available_in_archived_receipt": false,
+  "relative_score_difference": 0.2335888177936607,
+  "equal_normalization_latency_cut_to_public": 0.189357113508411,
+  "comparison_limit": "Historical third-party receipt, not our reproduction and not current leader; matching evaluator does not pair fresh data or hardware runs; aggregate cannot identify implementation cause.",
+  "notices_url": "https://raw.githubusercontent.com/MadanChaollaPark/open-kernel-experiments/40154c27d4b694c7d641c7959b00d7ff24a7c2e4/THIRD_PARTY_NOTICES.md",
+  "license_url": "https://raw.githubusercontent.com/MadanChaollaPark/open-kernel-experiments/40154c27d4b694c7d641c7959b00d7ff24a7c2e4/licenses/Apache-2.0.txt"
+}

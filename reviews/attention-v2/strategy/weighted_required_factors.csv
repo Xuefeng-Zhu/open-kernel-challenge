@@ -1,0 +1,185 @@
+run,group,target_score,required_uniform_path_acceleration,attainable_under_zero_floor_model,score_at_reported_harness_floors,target_within_reported_harness_floor_model,required_uniform_factor_respects_every_selected_harness_floor,target_is_provided_public_leader,target_is_known_prize_threshold
+A2-11,path:decode 1/sliding,1.3,4.076340557547791,True,1.3564155733986516,True,True,False,False
+A2-11,path:decode 1/sliding,1.5,,False,1.3564155733986516,False,False,False,False
+A2-11,path:decode 1/sliding,2.0,,False,1.3564155733986516,False,False,False,False
+A2-11,path:decode 1/sliding,2.9096724044146387,,False,1.3564155733986516,False,False,True,False
+A2-11,path:decode 1/full,1.3,16.551337068130586,True,1.2847222930279902,False,False,False,False
+A2-11,path:decode 1/full,1.5,,False,1.2847222930279902,False,False,False,False
+A2-11,path:decode 1/full,2.0,,False,1.2847222930279902,False,False,False,False
+A2-11,path:decode 1/full,2.9096724044146387,,False,1.2847222930279902,False,False,True,False
+A2-11,path:decode 16/sliding,1.3,,False,1.222474721286367,False,False,False,False
+A2-11,path:decode 16/sliding,1.5,,False,1.222474721286367,False,False,False,False
+A2-11,path:decode 16/sliding,2.0,,False,1.222474721286367,False,False,False,False
+A2-11,path:decode 16/sliding,2.9096724044146387,,False,1.222474721286367,False,False,True,False
+A2-11,path:decode 16/full,1.3,2.038511647426373,True,1.363260213299726,True,True,False,False
+A2-11,path:decode 16/full,1.5,12.09444930579983,True,1.363260213299726,False,False,False,False
+A2-11,path:decode 16/full,2.0,,False,1.363260213299726,False,False,False,False
+A2-11,path:decode 16/full,2.9096724044146387,,False,1.363260213299726,False,False,True,False
+A2-11,path:decode 32/sliding,1.3,,False,1.213364900513152,False,False,False,False
+A2-11,path:decode 32/sliding,1.5,,False,1.213364900513152,False,False,False,False
+A2-11,path:decode 32/sliding,2.0,,False,1.213364900513152,False,False,False,False
+A2-11,path:decode 32/sliding,2.9096724044146387,,False,1.213364900513152,False,False,True,False
+A2-11,path:decode 32/full,1.3,1.9541670786346987,True,1.3611552132350038,True,True,False,False
+A2-11,path:decode 32/full,1.5,8.277664779708084,True,1.3611552132350038,False,False,False,False
+A2-11,path:decode 32/full,2.0,,False,1.3611552132350038,False,False,False,False
+A2-11,path:decode 32/full,2.9096724044146387,,False,1.3611552132350038,False,False,True,False
+A2-11,path:verify 1/sliding,1.3,3.151984313699229,True,1.3885195601282574,True,True,False,False
+A2-11,path:verify 1/sliding,1.5,,False,1.3885195601282574,False,False,False,False
+A2-11,path:verify 1/sliding,2.0,,False,1.3885195601282574,False,False,False,False
+A2-11,path:verify 1/sliding,2.9096724044146387,,False,1.3885195601282574,False,False,True,False
+A2-11,path:verify 1/full,1.3,,False,1.2701469433178847,False,False,False,False
+A2-11,path:verify 1/full,1.5,,False,1.2701469433178847,False,False,False,False
+A2-11,path:verify 1/full,2.0,,False,1.2701469433178847,False,False,False,False
+A2-11,path:verify 1/full,2.9096724044146387,,False,1.2701469433178847,False,False,True,False
+A2-11,path:verify 16/sliding,1.3,,False,1.2378186510990319,False,False,False,False
+A2-11,path:verify 16/sliding,1.5,,False,1.2378186510990319,False,False,False,False
+A2-11,path:verify 16/sliding,2.0,,False,1.2378186510990319,False,False,False,False
+A2-11,path:verify 16/sliding,2.9096724044146387,,False,1.2378186510990319,False,False,True,False
+A2-11,path:verify 16/full,1.3,2.2237688223281937,True,1.3452659560797442,True,True,False,False
+A2-11,path:verify 16/full,1.5,109.92859192414014,True,1.3452659560797442,False,False,False,False
+A2-11,path:verify 16/full,2.0,,False,1.3452659560797442,False,False,False,False
+A2-11,path:verify 16/full,2.9096724044146387,,False,1.3452659560797442,False,False,True,False
+A2-11,path:verify 32/sliding,1.3,,False,1.2192412690760743,False,False,False,False
+A2-11,path:verify 32/sliding,1.5,,False,1.2192412690760743,False,False,False,False
+A2-11,path:verify 32/sliding,2.0,,False,1.2192412690760743,False,False,False,False
+A2-11,path:verify 32/sliding,2.9096724044146387,,False,1.2192412690760743,False,False,True,False
+A2-11,path:verify 32/full,1.3,2.013335911843244,True,1.362314650485502,True,True,False,False
+A2-11,path:verify 32/full,1.5,10.669196164145253,True,1.362314650485502,False,False,False,False
+A2-11,path:verify 32/full,2.0,,False,1.362314650485502,False,False,False,False
+A2-11,path:verify 32/full,2.9096724044146387,,False,1.362314650485502,False,False,True,False
+A2-11,family:all_paths,1.3,1.0945720745929908,True,6.741356756577891,True,True,False,False
+A2-11,family:all_paths,1.5,1.2629677783765278,True,6.741356756577891,True,True,False,False
+A2-11,family:all_paths,2.0,1.6839570378353703,True,6.741356756577891,True,True,False,False
+A2-11,family:all_paths,2.9096724044146387,2.4498816616046972,True,6.741356756577891,True,True,True,False
+A2-11,family:all_full,1.3,1.1440082378253684,True,2.3482280730700773,True,True,False,False
+A2-11,family:all_full,1.5,1.431576248150637,True,2.3482280730700773,True,True,False,False
+A2-11,family:all_full,2.0,2.380214084815245,True,2.3482280730700773,True,True,False,False
+A2-11,family:all_full,2.9096724044146387,5.793190819557681,True,2.3482280730700773,False,False,True,False
+A2-11,family:all_sliding,1.3,1.3671849871617712,True,1.7841354371890183,True,True,False,False
+A2-11,family:all_sliding,1.5,2.685223981079823,True,1.7841354371890183,True,True,False,False
+A2-11,family:all_sliding,2.0,,False,1.7841354371890183,False,False,False,False
+A2-11,family:all_sliding,2.9096724044146387,,False,1.7841354371890183,False,False,True,False
+A2-11,family:decode,1.3,1.1980880264788036,True,2.7366505372081313,True,True,False,False
+A2-11,family:decode,1.5,1.595087609217342,True,2.7366505372081313,True,True,False,False
+A2-11,family:decode,2.0,2.8357113052752747,True,2.7366505372081313,True,True,False,False
+A2-11,family:decode,2.9096724044146387,6.001920155866992,True,2.7366505372081313,False,False,True,False
+A2-11,family:verify,1.3,1.1980880264788036,True,2.925680900111635,True,True,False,False
+A2-11,family:verify,1.5,1.595087609217342,True,2.925680900111635,True,True,False,False
+A2-11,family:verify,2.0,2.8357113052752747,True,2.925680900111635,True,True,False,False
+A2-11,family:verify,2.9096724044146387,6.0019201558669915,True,2.925680900111635,True,False,True,False
+A2-11,family:four_fallback_paths,1.3,1.3834282440503813,True,1.6874089885354282,True,True,False,False
+A2-11,family:four_fallback_paths,1.5,2.441810163323369,True,1.6874089885354282,True,True,False,False
+A2-11,family:four_fallback_paths,2.0,9.634956141412768,True,1.6874089885354282,False,False,False,False
+A2-11,family:four_fallback_paths,2.9096724044146387,80.55699403866501,True,1.6874089885354282,False,False,True,False
+A2-11,family:eight_FA3_paths,1.3,1.136352917766262,True,3.632595160769175,True,True,False,False
+A2-11,family:eight_FA3_paths,1.5,1.395848678244193,True,3.632595160769175,True,True,False,False
+A2-11,family:eight_FA3_paths,2.0,2.138910762800336,True,3.632595160769175,True,True,False,False
+A2-11,family:eight_FA3_paths,2.9096724044146387,3.8449120915852975,True,3.632595160769175,True,False,True,False
+A2-11,family:batched_full_FA3,1.3,1.2586183288907384,True,1.771194937828816,True,True,False,False
+A2-11,family:batched_full_FA3,1.5,1.8639813210070535,True,1.771194937828816,True,True,False,False
+A2-11,family:batched_full_FA3,2.0,5.0905364465817176,True,1.771194937828816,False,False,False,False
+A2-11,family:batched_full_FA3,2.9096724044146387,,False,1.771194937828816,False,False,True,False
+A2-11,family:batched_full_all,1.3,1.1834366662439284,True,2.0299017818795235,True,True,False,False
+A2-11,family:batched_full_all,1.5,1.5654022527145945,True,2.0299017818795235,True,True,False,False
+A2-11,family:batched_full_all,2.0,2.9638131996753154,True,2.0299017818795235,True,False,False,False
+A2-11,family:batched_full_all,2.9096724044146387,10.179764025527074,True,2.0299017818795235,False,False,True,False
+A2-11,family:sliding_decode,1.3,2.1932524096003267,True,1.4263499981325203,True,True,False,False
+A2-11,family:sliding_decode,1.5,,False,1.4263499981325203,False,False,False,False
+A2-11,family:sliding_decode,2.0,,False,1.4263499981325203,False,False,False,False
+A2-11,family:sliding_decode,2.9096724044146387,,False,1.4263499981325203,False,False,True,False
+A2-11,family:sliding_verify,1.3,1.8880010722095704,True,1.4855959333301307,True,True,False,False
+A2-11,family:sliding_verify,1.5,308.7016560297144,True,1.4855959333301307,False,False,False,False
+A2-11,family:sliding_verify,2.0,,False,1.4855959333301307,False,False,False,False
+A2-11,family:sliding_verify,2.9096724044146387,,False,1.4855959333301307,False,False,True,False
+A2-13,path:decode 1/sliding,1.3,2.8320926226398275,True,1.373533455302883,True,True,False,False
+A2-13,path:decode 1/sliding,1.5,,False,1.373533455302883,False,False,False,False
+A2-13,path:decode 1/sliding,2.0,,False,1.373533455302883,False,False,False,False
+A2-13,path:decode 1/sliding,2.9096724044146387,,False,1.373533455302883,False,False,True,False
+A2-13,path:decode 1/full,1.3,3.9462087552777185,True,1.3154595037306687,True,True,False,False
+A2-13,path:decode 1/full,1.5,,False,1.3154595037306687,False,False,False,False
+A2-13,path:decode 1/full,2.0,,False,1.3154595037306687,False,False,False,False
+A2-13,path:decode 1/full,2.9096724044146387,,False,1.3154595037306687,False,False,True,False
+A2-13,path:decode 16/sliding,1.3,,False,1.2443060897407259,False,False,False,False
+A2-13,path:decode 16/sliding,1.5,,False,1.2443060897407259,False,False,False,False
+A2-13,path:decode 16/sliding,2.0,,False,1.2443060897407259,False,False,False,False
+A2-13,path:decode 16/sliding,2.9096724044146387,,False,1.2443060897407259,False,False,True,False
+A2-13,path:decode 16/full,1.3,1.7168315054485719,True,1.3928976922113194,True,True,False,False
+A2-13,path:decode 16/full,1.5,7.7593917447617695,True,1.3928976922113194,False,False,False,False
+A2-13,path:decode 16/full,2.0,,False,1.3928976922113194,False,False,False,False
+A2-13,path:decode 16/full,2.9096724044146387,,False,1.3928976922113194,False,False,True,False
+A2-13,path:decode 32/sliding,1.3,,False,1.2394886222851464,False,False,False,False
+A2-13,path:decode 32/sliding,1.5,,False,1.2394886222851464,False,False,False,False
+A2-13,path:decode 32/sliding,2.0,,False,1.2394886222851464,False,False,False,False
+A2-13,path:decode 32/sliding,2.9096724044146387,,False,1.2394886222851464,False,False,True,False
+A2-13,path:decode 32/full,1.3,1.6961474819771083,True,1.3625984067668373,True,True,False,False
+A2-13,path:decode 32/full,1.5,6.959155061809806,True,1.3625984067668373,False,False,False,False
+A2-13,path:decode 32/full,2.0,,False,1.3625984067668373,False,False,False,False
+A2-13,path:decode 32/full,2.9096724044146387,,False,1.3625984067668373,False,False,True,False
+A2-13,path:verify 1/sliding,1.3,2.2532195071264054,True,1.4220505250416242,True,True,False,False
+A2-13,path:verify 1/sliding,1.5,,False,1.4220505250416242,False,False,False,False
+A2-13,path:verify 1/sliding,2.0,,False,1.4220505250416242,False,False,False,False
+A2-13,path:verify 1/sliding,2.9096724044146387,,False,1.4220505250416242,False,False,True,False
+A2-13,path:verify 1/full,1.3,12.45496560393811,True,1.2922430287889553,False,False,False,False
+A2-13,path:verify 1/full,1.5,,False,1.2922430287889553,False,False,False,False
+A2-13,path:verify 1/full,2.0,,False,1.2922430287889553,False,False,False,False
+A2-13,path:verify 1/full,2.9096724044146387,,False,1.2922430287889553,False,False,True,False
+A2-13,path:verify 16/sliding,1.3,,False,1.2624857780391252,False,False,False,False
+A2-13,path:verify 16/sliding,1.5,,False,1.2624857780391252,False,False,False,False
+A2-13,path:verify 16/sliding,2.0,,False,1.2624857780391252,False,False,False,False
+A2-13,path:verify 16/sliding,2.9096724044146387,,False,1.2624857780391252,False,False,True,False
+A2-13,path:verify 16/full,1.3,1.8403444200873365,True,1.3703313775261585,True,True,False,False
+A2-13,path:verify 16/full,1.5,21.134371298662202,True,1.3703313775261585,False,False,False,False
+A2-13,path:verify 16/full,2.0,,False,1.3703313775261585,False,False,False,False
+A2-13,path:verify 16/full,2.9096724044146387,,False,1.3703313775261585,False,False,True,False
+A2-13,path:verify 32/sliding,1.3,,False,1.2437887520495516,False,False,False,False
+A2-13,path:verify 32/sliding,1.5,,False,1.2437887520495516,False,False,False,False
+A2-13,path:verify 32/sliding,2.0,,False,1.2437887520495516,False,False,False,False
+A2-13,path:verify 32/sliding,2.9096724044146387,,False,1.2437887520495516,False,False,True,False
+A2-13,path:verify 32/full,1.3,1.718396505918996,True,1.3880123653059082,True,True,False,False
+A2-13,path:verify 32/full,1.5,7.826605017216579,True,1.3880123653059082,False,False,False,False
+A2-13,path:verify 32/full,2.0,,False,1.3880123653059082,False,False,False,False
+A2-13,path:verify 32/full,2.9096724044146387,,False,1.3880123653059082,False,False,True,False
+A2-13,family:all_paths,1.3,1.0735011333363944,True,6.693116002002054,True,True,False,False
+A2-13,family:all_paths,1.5,1.2386551538496857,True,6.693116002002054,True,True,False,False
+A2-13,family:all_paths,2.0,1.6515402051329142,True,6.693116002002054,True,True,False,False
+A2-13,family:all_paths,2.9096724044146387,2.402720479828266,True,6.693116002002054,True,True,True,False
+A2-13,family:all_full,1.3,1.1108988091323235,True,2.3562615082168272,True,True,False,False
+A2-13,family:all_full,1.5,1.387417057754545,True,2.3562615082168272,True,True,False,False
+A2-13,family:all_full,2.0,2.293868871602489,True,2.3562615082168272,True,True,False,False
+A2-13,family:all_full,2.9096724044146387,5.493945501731764,True,2.3562615082168272,False,False,True,False
+A2-13,family:all_sliding,1.3,1.2719131320051718,True,1.8163223817378884,True,True,False,False
+A2-13,family:all_sliding,1.5,2.4035997488935403,True,1.8163223817378884,True,True,False,False
+A2-13,family:all_sliding,2.0,,False,1.8163223817378884,False,False,False,False
+A2-13,family:all_sliding,2.9096724044146387,,False,1.8163223817378884,False,False,True,False
+A2-13,family:decode,1.3,1.1524046832745232,True,2.707969778868798,True,True,False,False
+A2-13,family:decode,1.5,1.5342665901583883,True,2.707969778868798,True,True,False,False
+A2-13,family:decode,2.0,2.727585049170468,True,2.707969778868798,True,False,False,False
+A2-13,family:decode,2.9096724044146387,5.773065704186172,True,2.707969778868798,False,False,True,False
+A2-13,family:verify,1.3,1.1524046832745232,True,2.99312864874798,True,True,False,False
+A2-13,family:verify,1.5,1.5342665901583885,True,2.99312864874798,True,True,False,False
+A2-13,family:verify,2.0,2.7275850491704685,True,2.99312864874798,True,True,False,False
+A2-13,family:verify,2.9096724044146387,5.773065704186173,True,2.99312864874798,True,False,True,False
+A2-13,family:four_fallback_paths,1.3,1.2929123050900082,True,1.6713738758759744,True,True,False,False
+A2-13,family:four_fallback_paths,1.5,2.2831252734114726,True,1.6713738758759744,True,True,False,False
+A2-13,family:four_fallback_paths,2.0,9.02045549368251,True,1.6713738758759744,False,False,False,False
+A2-13,family:four_fallback_paths,2.9096724044146387,75.48275772017399,True,1.6713738758759744,False,False,True,False
+A2-13,family:eight_FA3_paths,1.3,1.1046725091353151,True,3.739731267922085,True,True,False,False
+A2-13,family:eight_FA3_paths,1.5,1.354297794315299,True,3.739731267922085,True,True,False,False
+A2-13,family:eight_FA3_paths,2.0,2.066224481099864,True,3.739731267922085,True,True,False,False
+A2-13,family:eight_FA3_paths,2.9096724044146387,3.6903764876352194,True,3.739731267922085,True,False,True,False
+A2-13,family:batched_full_FA3,1.3,1.196241386963054,True,1.8065769554003033,True,True,False,False
+A2-13,family:batched_full_FA3,1.5,1.759986488738733,True,1.8065769554003033,True,True,False,False
+A2-13,family:batched_full_FA3,2.0,4.643756920714774,True,1.8065769554003033,False,False,False,False
+A2-13,family:batched_full_FA3,2.9096724044146387,,False,1.8065769554003033,False,False,True,False
+A2-13,family:batched_full_all,1.3,1.1411906169407904,True,2.0327477913524126,True,True,False,False
+A2-13,family:batched_full_all,1.5,1.507301239887257,True,2.0327477913524126,True,True,False,False
+A2-13,family:batched_full_all,2.0,2.839117651733233,True,2.0327477913524126,True,False,False,False
+A2-13,family:batched_full_all,2.9096724044146387,9.518800495642028,True,2.0327477913524126,False,False,True,False
+A2-13,family:sliding_decode,1.3,1.8106168066130863,True,1.4445325194130543,True,True,False,False
+A2-13,family:sliding_decode,1.5,,False,1.4445325194130543,False,False,False,False
+A2-13,family:sliding_decode,2.0,,False,1.4445325194130543,False,False,False,False
+A2-13,family:sliding_decode,2.9096724044146387,,False,1.4445325194130543,False,False,True,False
+A2-13,family:sliding_verify,1.3,1.5968127643884973,True,1.522672332319955,True,True,False,False
+A2-13,family:sliding_verify,1.5,13.408707311486536,True,1.522672332319955,True,False,False,False
+A2-13,family:sliding_verify,2.0,,False,1.522672332319955,False,False,False,False
+A2-13,family:sliding_verify,2.9096724044146387,,False,1.522672332319955,False,False,True,False

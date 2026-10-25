@@ -57,3 +57,21 @@ direct FP8 conversion, and live cache-row-zero handling. The original
 vendor optional fused KV path reserves zero, which differs from this task.
 Applicable Apache-2.0 text remains in LICENSE and the standalone source. No
 competitor whole source/module is executed or imported.
+
+Attention A2-14 (`reviews/attention-v2/mixed_fa3_deferred_denom.py`) is an original
+narrow denominator-recurrence change to A2-13. Conceptual references were the
+FA3 softmax/pipeline source at commit
+`060c9188beec3a8b62b33a3bfa6d5d2d44975fab` (BSD-3-Clause), and FlashInfer decode
+source at `a88349f9f43df74d31d1d52ad5aa20c28824a790` (Apache-2.0).
+No code from either was copied or executed. The existing SGLang adaptation and
+its notices remain. Exact links and distinctions are in
+`reviews/attention-v2/strategy/STRATEGY_REPORT.md`.
+
+The strategy folder also preserves a small public historical receipt from
+MadanChaollaPark/open-kernel-experiments commit
+`40154c27d4b694c7d641c7959b00d7ff24a7c2e4`, with source/receipt URLs and hashes in
+`public_comparison.json`. It is third-party evidence, not this project's result.
+The public competitor source was inspected but not copied into or executed by
+the candidate. Its original additions are Apache-2.0 under its own notices;
+upstream rights remain separate. No competitor performance claim is adopted as
+our measured result.
