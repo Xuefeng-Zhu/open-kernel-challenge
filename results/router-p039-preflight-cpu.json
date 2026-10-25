@@ -1,0 +1,73 @@
+{
+  "kind": "P039 local source/static/CPU only; no native compilation or performance",
+  "base_commit": "75d1dc117aa40c401cddab015402ee75f8a2f934",
+  "parent_source": "candidates/projection_full_composition.py",
+  "parent_sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+  "source": "candidates/projection_router_m1_fp32_gemv.py",
+  "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "cpu_oracle_cases": 39,
+  "cpu_oracle_passed": true,
+  "weights_unchanged": true,
+  "focused_test_methods": 6,
+  "full_regression_tests_passed": 125,
+  "static_and_syntax_passed": true,
+  "router_m1_cpu": [
+    {
+      "case": {
+        "m": 1,
+        "layer": "router",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 205
+      },
+      "actual_seed": 205,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00"
+    }
+  ],
+  "native_fp32_compilation_verified": false,
+  "native_correctness_verified": false,
+  "cuda_graph_capture_verified": false,
+  "performance_measured": false,
+  "gpu_or_okc_launched": false,
+  "ledger_changed": false,
+  "committed": false,
+  "source_changes": [
+    "Untimed contiguous original-FP32 router state",
+    "Metadata helper",
+    "Only router m1 dispatch; unchanged existing GEMV body"
+  ],
+  "logical_requests_canonical": {
+    "shape": {
+      "m": 1,
+      "n": 256,
+      "k": 8192
+    },
+    "simt": {
+      "ctas": 256,
+      "weight_bytes": 8388608,
+      "weight_bytes_per_cta": 32768,
+      "x_bytes": 4194304
+    },
+    "old_split32": {
+      "ctas": 256,
+      "weight_bytes": 8388608,
+      "weight_bytes_per_cta": 32768,
+      "valid_x_bytes": 131072
+    },
+    "qualification": "Source logical requests, not measured HBM/cache traffic or achieved occupancy"
+  },
+  "score_scenarios": {
+    "qualification": "All other official best timings frozen; scenarios, not predictions",
+    "target_us_6_gain_percent": 0.5078441134,
+    "target_us_5_gain_percent": 0.8641694889,
+    "target_us_4_1233659677_gain_percent": 1.1839541124,
+    "target_us_needed_for_1_5_percent_aggregate": 3.2758287703
+  },
+  "logs": [
+    "results/p039-cpu-oracle.local.txt",
+    "results/p039-preflight-tests.local.txt"
+  ],
+  "test_source": "tests/test_router_m1_fp32_gemv.py",
+  "test_sha256": "cedf8c21f671e98dd742b60091de0393c9a7c7049e32a9a81d18133cf65f6d36"
+}
