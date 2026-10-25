@@ -1,0 +1,59 @@
+{
+  "observed_utc": "2026-10-25T04:39:20.729353+00:00",
+  "candidate": "mixed_fa3_fused_full_small.py",
+  "source_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+  "parent": "mixed_fa3_fused_full_verify1.py",
+  "parent_source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+  "parent_job": "ba9e02c1d6584cc4",
+  "native_execution": false,
+  "tests": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_full_fused_small_dispatch.py",
+      "exit_code": 0,
+      "output": "test_actual_complete_entrypoint_L1_CPU (__main__.FullSmallDispatch.test_actual_complete_entrypoint_L1_CPU) ... ok\ntest_all_dispatch_paths (__main__.FullSmallDispatch.test_all_dispatch_paths) ... ok\ntest_only_length_guard_changes (__main__.FullSmallDispatch.test_only_length_guard_changes) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.112s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_full_fused_decode_model.py",
+      "exit_code": 0,
+      "output": "test_CPU_A_B_A_same_addresses_changed_lengths_and_metadata (__main__.FullFusedDecodeModel.test_CPU_A_B_A_same_addresses_changed_lengths_and_metadata) ... ok\ntest_L1_TP8_DP_page1_page64_unit_nonunit_live_cache_zero (__main__.FullFusedDecodeModel.test_L1_TP8_DP_page1_page64_unit_nonunit_live_cache_zero) ... ok\ntest_empty_history_one_new_token_nonunit_scale (__main__.FullFusedDecodeModel.test_empty_history_one_new_token_nonunit_scale) ... ok\ntest_supplied_scheduler_tensor_identity_for_L1 (__main__.FullFusedDecodeModel.test_supplied_scheduler_tensor_identity_for_L1) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.129s\n\nOK\n"
+    }
+  ],
+  "target_parent": {
+    "load": "decode 1",
+    "layer": "full",
+    "target": false,
+    "weight": 16,
+    "parent_adjusted_candidate_us": 30.98586669106681,
+    "parent_adjusted_sglang_us": 30.911999754607677,
+    "new_adjusted_candidate_us": 31.874406515088907,
+    "new_adjusted_sglang_us": 31.728000845760107,
+    "parent_raw_candidate_us": 35.312000662088394,
+    "parent_raw_sglang_us": 35.19999980926514,
+    "new_raw_candidate_us": 36.06399893760681,
+    "new_raw_sglang_us": 35.79200059175491,
+    "parent_paired_ratio": 0.997616108750625,
+    "new_paired_ratio": 0.9954067954407404,
+    "relative_speedup": 0.9977854073420572,
+    "normalized_latency_cut": -0.0022195079639839577
+  },
+  "models_not_achieved": [
+    {
+      "assumed_cut": 0.1,
+      "modeled_score": 1.1590550252442122
+    },
+    {
+      "assumed_cut": 0.15,
+      "modeled_score": 1.1634864492666084
+    },
+    {
+      "assumed_cut": 0.2,
+      "modeled_score": 1.1680392613356567
+    }
+  ],
+  "limitations": [
+    "CPU stubs do not execute Triton",
+    "CPU fake scheduler sentinel only proves forwarding",
+    "Native L1/page64/scales/ABA/concurrency unverified before check",
+    "No native compiler resource metadata exposed"
+  ]
+}

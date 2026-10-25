@@ -490,10 +490,24 @@
       ],
       "target_latency_cut": 0.1,
       "hypothesis": "Only full B1L8 reuses identical fused preprocessing kernel with ROPE=False; preserve FA3/window/scales/schedule/gate and other11timedpaths; target>=10% normalizedlatencycut, longpage64correctness gate"
+    },
+    "A2-08": {
+      "candidate": "mixed_fa3_fused_full_small.py",
+      "expected_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+      "final": false,
+      "parent_receipt": "A2-07-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only full B1L1 joins identical checked ROPE=False prologue/FA3 adapter, preserving supplied scheduler; >=10%normalized targetlatencycut; other11timedpathsunchanged"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-07 terminal and retained; evaluate full decode1 extension next",
+  "current_phase": "A2-08 exact single-token dispatch source ready, no new accepted request yet",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
