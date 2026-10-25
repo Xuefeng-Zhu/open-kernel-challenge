@@ -1,34 +1,28 @@
-# Autonomous cycle — A2-02 active, P039 complete
+# Autonomous cycle — A2-02 done, P040 ready for next serial GPU
 
-Only active GPU job: attention A2-02 3e85261cb8ed4899, source790d425/SHA25b35cc7,
-mixed_fa3_all_verify.py. Monitor check_cycle.py poll A2-02 --cycle2, NEVER resend.
-New attention2/10used,8left. Old six-request cycle exhausted separately.
-A2-01 remains selected until new result:1.0002799616×,CIincludes1.0; source0309241,
-job6e761bdd1d9747ad passed16+12. No statistically resolved win over SGLang.
+Attention selected mixed_fa3_all_verify.py source790d425/SHA25b35cc7,
+job3e85261cb8ed4899 DONE16+12, score1.0124269677×,
+CI[.9972405632,1.0276133722]. TargetB16/32 sliding latency cuts21.23/23.42%
+supported; overall+1.21%vsA2-01 overlapsCI and not a resolved win overSG.
+Retainshape-local benefits fornextparent; oldsource0309241/1.00028 preserved.
+New attention2/10used,8left. Last daily16/20left,0scoredused. No pendingattention.
+Next localattention target full decodeB16, current C257.392vsS200.384; existing
+FA3fulladapter can be extended only to that path; not yet implemented/admitted.
 
-Projection P039 d5636ac8d1404abd DONE9+30, highest verified point1.1732389990×,
-CI[1.1556404140,1.1908375840] overlaps previous1.14864995. Routerm1 target
-7.4688→5.2043us, normalizedlatencycut30.1% is supported; shifted unchangedcontrols
-mean not all2.14%totalgain is caused by P039. Frozen-parent target-only model
-1.1576659 is scenario, not achievedextraresult. Preserve previousbest. Projection6left.
-Sourcecdf5bc2, resultfdeb02d pushed/remoteSHAverified on projection-pipeline-preflight.
-P040 grouped8-output O m1 prototype is LOCAL-only research, no admission yet.
+Projection P039d5636ac8d1404abd DONE9+30,1.1732389990× highestpoint,
+aggregate-vs-old1.14865 unresolved; native router30.1%latencycut supported.
+Projection6checksleft. P040 fixed8-output O m1 source97fe74d/SHA8ca6417a,
+39CPUoracle+6focused+131regression pass; nativeunverified. NextserializedGPU
+onlyafter source/plan gates and free primaryGPUslot. No duplicaterequests.
 
-Standing user authorization now allows automatic reviewed private pushes for this
-project. No force/public/PR/ranked/paid/newcredentials/Modal. Attention uses existing
-sanitized export branch; originalresearchbranch is never rewritten/pushed because
-historicalA09log contained tokenidentifier. Candidatebytes/perexperimentcommits
-preserved, analysis/PUSH_EXPORT_MAP.json maps original receipt-source IDs.
-analysis/safe_attention_export.py appends related commits fast-forward locally;
-review outgoing history, then normalpush and verifySHA. A2-01 result exported/pushed
-at6ddde17; later source/admission exports may advance it. Projection branch remote
-fdeb02d173ebe3944dbdfd3c251f210f4e83c11c. Repo remainsPRIVATE.
-
-A2-02 targets only B16/32slidingverify via existing officialFA3adapter,10controls
-unchanged.9CPUtests pass; native new target page64/nonunit/explicitABA/untouched
-rows not claimed. No GPUmetrics from CPU. All graph measurements serialized by
-primary ignored local-notes/gpu-slot.local.json. PriorModal stopped/costguard
-$1.708917914/$2 unchanged; no credentialrenewal or app launch permitted.
+Standing reviewed privateAUTO-PUSH allowed; noforce/public/PR/ranked/paid/
+newcredentials/Modal. Attention export branch uses safe_attention_export.py,
+originalattention-fa3-local neverrewritten/pushed becausehistoricalA09tokenID.
+Sourcehashes unchanged; analysis/PUSH_EXPORT_MAP.json maps receipt-sourceIDs.
+Remoteattention3400cff includesA2-02source/accepted; resultautopush pending.
+Remoteprojection97fe74d includesP040sourceCPU-unverified; P039resultfdeb02d.
+Auditoutgoinghistory, pushnormal, verifyremoteSHA/PRIVATE. No rawlocalauthlogs.
+PriorModalstopped/costguard$1.708917914/$2 unchanged, no new app/credential.
 
 The completed earlier-cycle checkpoint below is historical, not current status.
 

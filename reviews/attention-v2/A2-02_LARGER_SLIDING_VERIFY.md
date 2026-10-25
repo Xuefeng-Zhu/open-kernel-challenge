@@ -71,3 +71,35 @@ New attention2/10used,8left. Projection P039 was terminal first; projection6left
 No native correctness/performance claimed until this job's terminal receipt.
 Monitor same ID, never resubmit an uncertain request. Reviewed source/acceptance
 may auto-push with GPU-pending label under explicit standing authorization.
+
+
+## Actual native result — retain target wins, qualify total
+
+Job3e85261cb8ed4899 DONE,16prerequisites+12timed shapes passed.
+Score1.0124269677×,CI[.9972405632,1.0276133722], vs parent1.0002799616×,
+CI[.9852757622,1.0152841611]. Point+1.2144%, intervals overlap; no resolved total
+improvement over parent or SGLang. Preserve parent and full samples.
+TargetB16C37.247→29.372µs (S29.360), B32C44.883→34.389µs(S34.432).
+Reference-normalized latency cuts21.227%/23.417% support both >=15% goals.
+All10other shapes unchanged in source, no>5%latency regression; max4.45%decode1
+sliding shift is not assigned to code. Adopt the supported shape-local improvements
+for the next candidate; label the total score improvement inconclusive.
+
+Prior15%-cut model1.0155625× and matching-SGLang1.0231544× were conditional.
+Freezing parent controls and applying only observed target ratios models1.0231761×;
+actual1.012427× also includes reference/control timing variation. No extra run.
+All12raw/adjusted/paired times and six46×sliding+16×full loads are retained in
+A2-02-RESULT.md, -assessment.json, -per-shape.csv and -official-result.json.
+Reproduce `.venv/bin/python reviews/attention-v2/assess_cycle2.py A2-02`.
+
+Native scored page1/unit-scale output/new-cache and fresh-input CUDA-graph
+protocol pass, including the published agentic-spread cases. Explicit custom
+same-address A→B→A assertions, target page64/nonunit and untouched-old-row checks
+were not separately executed on GPU; CPU stand-ins are separate. Prerequisites
+do not enter B16/32slidingverify; no universal concurrency claim. No compiled
+register/shared/spill/hardware-counter receipt obtained.
+
+Attention new2/10used,8left; old six-request cycle exhausted separately.
+Platform attention16/20checksleft,0scoredused. Projection6left, P039terminal.
+No Modal/paid/newcredential/ranked action. Source and result commits separately
+reviewed and automatically pushed privately under standing authorization.

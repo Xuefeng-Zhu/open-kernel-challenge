@@ -67,8 +67,8 @@
     {
       "experiment": "A2-02",
       "mode": "check",
-      "state": "accepted",
-      "status": "accepted",
+      "state": "terminal",
+      "status": "done",
       "job_id": "3e85261cb8ed4899",
       "candidate": "reviews/attention-v2/mixed_fa3_all_verify.py",
       "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
@@ -96,7 +96,26 @@
         "--json"
       ],
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-25T02:50:05.688335+00:00"
+      "accepted_utc": "2026-10-25T02:50:05.688335+00:00",
+      "last_checked_utc": "2026-10-25T02:59:53.790696+00:00",
+      "passed": true,
+      "speedup": 1.0124269676911493,
+      "speedup_ci": [
+        0.997240563175782,
+        1.0276133722065164
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      }
     }
   ],
   "remaining": 8,
@@ -134,11 +153,37 @@
       "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive"
     }
   },
-  "all_requests_terminal": false,
-  "current_phase": "A2-02 accepted3e85261cb8ed4899; only activeGPU; new2/10used8left",
+  "all_requests_terminal": true,
+  "current_phase": "A2-02 terminal/adopt shape-local benefits, totalgain inconclusive; nextGPU projectionP040; nextattention local full decodeB16",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {
+    "source": "mixed_fa3_all_verify.py",
+    "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
+    "sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+    "official_job": "3e85261cb8ed4899",
+    "score": 1.012426967691149,
+    "ci": [
+      0.997240563175782,
+      1.0276133722065164
+    ],
+    "reason": "Two target latency cuts21.23/23.42% supported; ten controls no>5%regression; aggregate1.21%vsparent overlapsCI, provisional total improvement",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "last_platform_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 4,
+      "left": 16
+    }
+  },
+  "quota_observed_utc": "2026-10-25T02:59:53.790696+00:00",
+  "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
     "sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
@@ -149,18 +194,5 @@
       1.0152841610663221
     ],
     "reason": "Target53.60% normalized latency cut; aggregate6.46% over E6/nonoverlapping CIs; all11controls within5%"
-  },
-  "last_platform_quota": {
-    "scored": {
-      "per_day": 10,
-      "used": 0,
-      "left": 10
-    },
-    "checks": {
-      "per_day": 20,
-      "used": 3,
-      "left": 17
-    }
-  },
-  "quota_observed_utc": "2026-10-25T02:30:57.310297+00:00"
+  }
 }
