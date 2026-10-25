@@ -1,30 +1,39 @@
-# Parallel kernel work — serialized GPU measurements
+# Two kernel tracks — serialized official checks
 
-Primary branch attention-fa3-local from preserved attention-v2-preflight fdd310e.
-Attention E5 mixed_fa3.py source51d7fca04ccc38a972039ef1b086011d8e456264,
+Primary attention-fa3-local; selected attention mixed_fa3.py source51d7fca,
 SHA708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423.
-Four CPU stand-in/AST/oracle tests pass; native source contract audited. Only
-full verifyB16/B32 routes via official FusedQKNorm/cache/FA3/gate; all other E2
-functions unchanged. Read reviews/attention-v2/E5_MIXED_FA3.md and its ledgers.
-Official E5 e0b3cd9474084069 accepted, queued at latest poll; monitor exact ID,
-no resubmission. Attention user budget1left after E5, reserved for necessary
-correction/final verification. Platform quota reset00:00UTC, not user budgets.
-
-GPU slot local-notes/gpu-slot.local.json belongs to primary coordinator only and
-is held by E5 until terminal. No competing official or Modal measurement. No
-new/renewed credentials, push, ranked entry, paid resource or cap/payment change.
+E5 e0b3cd9474084069 TERMINAL passed16+12,0.8919466283×,
+CI[0.8785674289,0.9053258277],12.07% above preserved E2(.795882×).
+Targets full verifyB16/B32:339→204us,589→390us. Other E2 functions unchanged.
+Read reviews/attention-v2/E5_MIXED_FA3.md. One user attention request remains;
+no new change or known duplicate run needed for the exact complete checked file.
+All attention jobs terminal. E2 final_attention.py and branch are preserved.
 
 Projection isolated worktree /tmp/okc-projection-pipeline-preflight, branch
-projection-pipeline-preflight, research commits f30145d/983a455. Preserved best
-projection-bf16-local0eabf0e, sourcec34c497b, official1.1486499523×. P037 review
-quantifies pooler m256 single-shape ROI:10% latency reduction=>0.5373% aggregate;
-27.0105% needed for1.5%. Native research assistant is preparing compact same-
-geometry TMA/control prototypes from official Triton3.8 API, CPU/static only.
-It cannot launch or commit GPU experiments; primary reviews and admits any check.
-Eight projection checks remain, no new projection dispatch so far.
+projection-pipeline-preflight. Best projection-bf16-local0eabf0e/sourcec34c497b
+remains1.1486499523×. New P038 TMA/copy sources commit60a8b4bdcdd4f3c48d2b7a8a0db4907c394ba84a.
+TMA SHA443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d.
+Only dense aligned pooler m256 uses documented Triton3.8 host TensorDescriptor,
+64/64/64 BF16 operands/FP32 accumulation; other paths AST-identical to best.
+Two sources differ only USE_TMA. Each39CPUoracles pass;117regression+5focused
+and2coordinator ownership tests pass, static/syntax pass. Native code unverified
+until accepted P2-03 finishes; exact ID below. No competing GPU work or Modal.
 
-Modal cumulative conservative guard$1.708917914/$2, no new app launched. Prior
-A09 result BlobCreate401 unresolved, all prior apps verified stopped. Do not
-use historical projection ledger$1.146 to reset accounting. Existing auth expires
-2026-10-25 06:26:47UTC; no renewal authorized. Primary latest shared bridge remains
-authoritative across branch/worktree changes.
+Projection official job6799753227ed463e accepted00:23:24UTC, experiment
+P2-03-pooler-m256-tma, user projection budget7left (third of second10). Poll ONLY
+that ID via worktree cycle2_check.py using existing primary bin/okc:
+OKC_CLI=<primary-workspace>/bin/okc
+OKC_GPU_SLOT=<primary-workspace>/local-notes/gpu-slot.local.json
+<primary-workspace>/.venv/bin/python cycle2_check.py poll P2-03-pooler-m256-tma
+
+Primary coordinator owns GPU slot; currently held by projection. Do not poll old
+attention jobs to overwrite it. Any unknown/sending/uncertain slot blocks new
+admissions. Check-cycle scripts protect cross-problem ownership. Never duplicate
+uncertain jobs. Same-geometry copy control only if meaningful TMA gain or concrete
+diagnosis warrants it; no arbitrary sweep. Keep all failures and independent commits.
+
+No push, ranked entry, paid compute, payment/cap/terms change, new/renewed credentials.
+Modal conservativeguard$1.708917914/$2 unchanged; no new Modal app this cycle.
+Prior A09 BlobCreate401 report remains unresolved, previous apps verified stopped.
+Never reset budget from old projection ledger$1.146. Existing auth expires
+2026-10-25 06:26:47UTC, no renewal authorized. User budgets did not reset00:00UTC.

@@ -17,3 +17,12 @@ Attention E5 targets only full verifyB16/B32 with official-image FA3. Projection
 research reviews failed layouts/singlepass before admitting a new hypothesis;
 no repeated knob sweep is authorized by this schedule. Each actual experiment
 has separate source/result commits and an exact per-problem ledger.
+
+## Current measured handoff
+
+Attention E5 e0b3cd9474084069 is terminal/pass0.8919466283×; its result commit
+86b6ed6 preserves all12 timings. Projection P038 was source-reviewed after
+documented API/alignment/lifetime and CPU gates, then accepted as
+6799753227ed463e at00:23:24UTC, after E5 terminal observation00:19:54UTC.
+No GPU overlap. Active GPU slot is now projection. Projection budget7left,
+attention1left. No other account jobs active at handoff. No Modal app launched.
