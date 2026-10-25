@@ -101,7 +101,7 @@ def main():
                  'Separate jobs are not directly paired parent/candidate trials. No hardware-counter claim.',
                  'Native output/new-cache and fresh-input graph evidence is limited to actual receipt cases.',
                  'CPU ABA/page/scales/untouched-row tests remain stand-ins unless explicitly confirmed natively.',
-                 f"User attention checks remaining: {ledger['remaining']}; no push, ranked entry or Modal in this experiment."]
+                 f"User attention checks remaining: {ledger['remaining']}; no ranked entry or Modal; reviewed private auto-push is authorized."]
         (HERE/f'{exp}-RESULT.md').write_text('\n'.join(text)+'\n')
     (HERE/f'{exp}-assessment.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k in ['experiment','job_id','passed','score','relative_score_change','target_goal_met','recommendation']}))

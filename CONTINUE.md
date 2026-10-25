@@ -6,7 +6,9 @@ both problem budget ledgers before any external action.
 
 Attention A2-05 accepted job `50465a4c440f4b75`, source `535d602`, SHA256
 `a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de`.
-Monitor the existing job with:
+Job is now DONE and adopted:1.1157987383x (CI[1.0990617572,1.1386331074]).
+Target28.18% normalized latency cut; no>5%control regressions. Read its result.
+Read-only refresh if necessary:
 
 ```
 .venv/bin/python reviews/attention-v2/check_cycle.py poll A2-05 --cycle2
@@ -15,7 +17,7 @@ Monitor the existing job with:
 Do not resubmit. User attention allowance5 remains, including one final reserve.
 Preserved selected parent A2-04 job66b44d7586184708:1.0770658900x. A2-05 only
 fuses the B1/L8/sliding prologue; all other paths unchanged. CPU8tests pass;
-GPU pending. Corrected initial unsupported explicit-clamp claim before upload.
+Native16prerequisites+12timings pass, newpath coverage limited to B1/L8/page1/scale1. Corrected initial unsupported explicit-clamp claim before upload.
 
 Projection remains clean at projection-pipeline-preflight/af7f149. P039 selected
 1.173238999x; P040 correct1.175871327x but failed declared target and was not

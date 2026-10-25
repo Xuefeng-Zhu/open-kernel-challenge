@@ -59,3 +59,17 @@ helpers scan history, enforce existing private URL/visibility and fast-forward,
 then verify remote SHA. No secret material or local-notes is staged. No new
 Modal usage; cost guard$1.708917914/$2, prior apps stopped. Historical A09 report
 retrieval failed401; it is not proof of absent execution and is not retried.
+
+## Independent projection stopping review
+
+Read-only second review supports preserving five projection checks. P040's
+target-only frozen-parent effect is about+0.16% aggregate and missed its goal.
+P038 copy control could explain a failure but is not a justified optimization.
+QKV single-pass55.10us versus21.89us loses despite WGMMA/zero reported spills.
+Unpooler layout's isolated m128 opportunity is about0.1% aggregate. Router m16
+reaching an unmeasured7.5us from9.30us would model only0.45% aggregate. These do
+not establish a new mechanism. Exact-target hardware evidence remains absent;
+M34 metrics belong to other kernels. No projection request sent during resume.
+
+Attention extension arithmetic is saved in FUSION_EXTENSION_MODELS.json. These
+are conditional frozen-parent scenarios, not measured speedups or commitments.

@@ -1,0 +1,120 @@
+{
+  "parent_job": "66b44d7586184708",
+  "parent_score": 1.07706589002702,
+  "models_only": true,
+  "achieved_results": false,
+  "scenarios": [
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.1,
+      "score": 1.0823111435876287,
+      "relative_gain": 0.004869946777793732
+    },
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.15,
+      "score": 1.08500209964577,
+      "relative_gain": 0.007368360368882332
+    },
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.2,
+      "score": 1.0877405994700644,
+      "relative_gain": 0.009910915889070226
+    },
+    {
+      "targets": [
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.1,
+      "score": 1.0807579171259454,
+      "relative_gain": 0.0034278563021179487
+    },
+    {
+      "targets": [
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.15,
+      "score": 1.0826375944350195,
+      "relative_gain": 0.00517303951372905
+    },
+    {
+      "targets": [
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.2,
+      "score": 1.0845403974705143,
+      "relative_gain": 0.0069396937668380065
+    },
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.1,
+      "score": 1.0860211506620283,
+      "relative_gain": 0.00831449655766514
+    },
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.15,
+      "score": 1.0906148583797166,
+      "relative_gain": 0.012579516701950899
+    },
+    {
+      "targets": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "assumed_latency_cut": 0.2,
+      "score": 1.0952891861281433,
+      "relative_gain": 0.016919388377127254
+    }
+  ],
+  "qualification": "Parent times frozen. No estimate of native kernel runtime or guaranteed benefit. Changes in compiler resources or occupancy may offset saved calls. Do not dispatch a follow-on until A2-05 is terminal and informative."
+}

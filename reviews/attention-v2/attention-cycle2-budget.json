@@ -226,8 +226,8 @@
     {
       "experiment": "A2-05",
       "mode": "check",
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "50465a4c440f4b75",
       "candidate": "reviews/attention-v2/mixed_fa3_fused_prepare.py",
       "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
@@ -256,7 +256,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T04:09:04.300166+00:00",
-      "last_checked_utc": "2026-10-25T04:09:52.394725+00:00"
+      "last_checked_utc": "2026-10-25T04:16:51.019776+00:00",
+      "passed": true,
+      "speedup": 1.1157987383237482,
+      "speedup_ci": [
+        1.0990617572488919,
+        1.1386331073714417
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 7,
+          "left": 13
+        }
+      }
     }
   ],
   "remaining": 5,
@@ -336,22 +354,22 @@
       "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged"
     }
   },
-  "all_requests_terminal": false,
-  "current_phase": "Resumed same task; A2-05 critical audit/local correction, no new job yet",
+  "all_requests_terminal": true,
+  "current_phase": "A2-05 terminal and adopted; evaluate isolated batch-generalization next",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
-    "source": "mixed_fa3_decode_small.py",
-    "source_commit": "28991e79b6062602705bc25463139eec8c154903",
-    "sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
-    "official_job": "66b44d7586184708",
-    "score": 1.07706589002702,
+    "source": "mixed_fa3_fused_prepare.py",
+    "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+    "sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+    "official_job": "50465a4c440f4b75",
+    "score": 1.1157987383237482,
     "ci": [
-      1.060909901676615,
-      1.0932218783774255
+      1.0990617572488919,
+      1.1386331073714417
     ],
-    "reason": "Target22.34%latencycut supported, other11controls no>5%regression; total1.75%vsparent hasoverlappingCI, stillaboveSG",
-    "aggregate_vs_parent_inconclusive": true
+    "reason": "Target28.18% normalized latency cut; aggregate3.596% vsparent with nonoverlap intervals, no>5%control regression",
+    "aggregate_vs_parent_inconclusive": false
   },
   "last_platform_quota": {
     "scored": {
@@ -361,11 +379,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 6,
-      "left": 14
+      "used": 7,
+      "left": 13
     }
   },
-  "quota_observed_utc": "2026-10-25T03:58:26.736793+00:00",
+  "quota_observed_utc": "2026-10-25T04:16:51.019776+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -404,5 +422,18 @@
     "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
     "aggregate_vs_parent_inconclusive": false
   },
-  "handoff_model_request": "Same task resumed by parent; configured model not visible to tools. Critically audited A2-05 before possible admission."
+  "handoff_model_request": "Same task resumed by parent; configured model not visible to tools. Critically audited A2-05 before possible admission.",
+  "selection_before_A2_05": {
+    "source": "mixed_fa3_decode_small.py",
+    "source_commit": "28991e79b6062602705bc25463139eec8c154903",
+    "sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+    "official_job": "66b44d7586184708",
+    "score": 1.07706589002702,
+    "ci": [
+      1.060909901676615,
+      1.0932218783774255
+    ],
+    "reason": "Target22.34%latencycut supported, other11controls no>5%regression; total1.75%vsparent hasoverlappingCI, stillaboveSG",
+    "aggregate_vs_parent_inconclusive": true
+  }
 }
