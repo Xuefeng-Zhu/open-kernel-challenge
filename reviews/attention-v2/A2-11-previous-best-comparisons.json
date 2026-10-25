@@ -1,0 +1,186 @@
+{
+  "A2-08": {
+    "score": 1.1557671624359636,
+    "relative_score_change": 0.02761074608108971,
+    "CI_overlap": true,
+    "per_shape": [
+      {
+        "load": "decode 1",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.18544267938080294,
+        "old_candidate_us": 14.010100432770429,
+        "new_candidate_us": 11.820900046410669
+      },
+      {
+        "load": "decode 1",
+        "layer": "full",
+        "normalized_latency_cut": 0.008357668217709557,
+        "old_candidate_us": 27.428827196932613,
+        "new_candidate_us": 27.297174364587768
+      },
+      {
+        "load": "decode 16",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.048593916259070724,
+        "old_candidate_us": 15.707230082224134,
+        "new_candidate_us": 15.156678880519271
+      },
+      {
+        "load": "decode 16",
+        "layer": "full",
+        "normalized_latency_cut": 0.0007955653721595235,
+        "old_candidate_us": 201.11926913032198,
+        "new_candidate_us": 200.5752974475781
+      },
+      {
+        "load": "decode 32",
+        "layer": "sliding",
+        "normalized_latency_cut": -0.029085255126654497,
+        "old_candidate_us": 20.358058016249288,
+        "new_candidate_us": 21.035819060074473
+      },
+      {
+        "load": "decode 32",
+        "layer": "full",
+        "normalized_latency_cut": 0.01839201990427708,
+        "old_candidate_us": 368.46403437955996,
+        "new_candidate_us": 362.8773079616016
+      },
+      {
+        "load": "verify 1",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.01377780449260213,
+        "old_candidate_us": 16.76628679024429,
+        "new_candidate_us": 16.465710216303716
+      },
+      {
+        "load": "verify 1",
+        "layer": "full",
+        "normalized_latency_cut": 0.013991215585559602,
+        "old_candidate_us": 30.28306376397636,
+        "new_candidate_us": 29.885708950080733
+      },
+      {
+        "load": "verify 16",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.007039213200995431,
+        "old_candidate_us": 22.908593770014594,
+        "new_candidate_us": 22.562297701952506
+      },
+      {
+        "load": "verify 16",
+        "layer": "full",
+        "normalized_latency_cut": -0.0006247114526507502,
+        "old_candidate_us": 206.08767825998493,
+        "new_candidate_us": 205.99218841283374
+      },
+      {
+        "load": "verify 32",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.009114624836958019,
+        "old_candidate_us": 27.810415551559295,
+        "new_candidate_us": 27.45439546236452
+      },
+      {
+        "load": "verify 32",
+        "layer": "full",
+        "normalized_latency_cut": 6.037279750625846e-05,
+        "old_candidate_us": 390.58405708072144,
+        "new_candidate_us": 389.60056242237926
+      }
+    ],
+    "over5pct_regressions": []
+  },
+  "A2-09": {
+    "score": 1.1466598820556553,
+    "relative_score_change": 0.035772485523478226,
+    "CI_overlap": false,
+    "per_shape": [
+      {
+        "load": "decode 1",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.24157291871894704,
+        "old_candidate_us": 15.310532634979763,
+        "new_candidate_us": 11.820900046410669
+      },
+      {
+        "load": "decode 1",
+        "layer": "full",
+        "normalized_latency_cut": -0.009599127832248477,
+        "old_candidate_us": 27.106681980430565,
+        "new_candidate_us": 27.297174364587768
+      },
+      {
+        "load": "decode 16",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.11640722383495772,
+        "old_candidate_us": 17.063185636325187,
+        "new_candidate_us": 15.156678880519271
+      },
+      {
+        "load": "decode 16",
+        "layer": "full",
+        "normalized_latency_cut": -0.0004980828604090881,
+        "old_candidate_us": 200.28355789000904,
+        "new_candidate_us": 200.5752974475781
+      },
+      {
+        "load": "decode 32",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.019792222695819706,
+        "old_candidate_us": 21.23122231979825,
+        "new_candidate_us": 21.035819060074473
+      },
+      {
+        "load": "decode 32",
+        "layer": "full",
+        "normalized_latency_cut": 0.02312145711772451,
+        "old_candidate_us": 370.17082125562405,
+        "new_candidate_us": 362.8773079616016
+      },
+      {
+        "load": "verify 1",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.0012266237835837357,
+        "old_candidate_us": 16.474322015284283,
+        "new_candidate_us": 16.465710216303716
+      },
+      {
+        "load": "verify 1",
+        "layer": "full",
+        "normalized_latency_cut": 0.00405710346071364,
+        "old_candidate_us": 29.58425393865482,
+        "new_candidate_us": 29.885708950080733
+      },
+      {
+        "load": "verify 16",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.0071319652656407495,
+        "old_candidate_us": 22.662243883320695,
+        "new_candidate_us": 22.562297701952506
+      },
+      {
+        "load": "verify 16",
+        "layer": "full",
+        "normalized_latency_cut": -0.002060039175994177,
+        "old_candidate_us": 204.91337628169174,
+        "new_candidate_us": 205.99218841283374
+      },
+      {
+        "load": "verify 32",
+        "layer": "sliding",
+        "normalized_latency_cut": 0.013243413141280191,
+        "old_candidate_us": 27.900800955277944,
+        "new_candidate_us": 27.45439546236452
+      },
+      {
+        "load": "verify 32",
+        "layer": "full",
+        "normalized_latency_cut": 0.0007176900349725734,
+        "old_candidate_us": 388.4874842731123,
+        "new_candidate_us": 389.60056242237926
+      }
+    ],
+    "over5pct_regressions": []
+  }
+}
