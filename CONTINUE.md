@@ -1,3 +1,21 @@
+# P046 narrow pooler composition — local ready
+
+P045 is rejected and privately pushed through `7b1ca18`, remote verified at
+21:41:07 UTC. Selected P039 remains 1.173238999×. P046 changes only P045's guard:
+pooler M8/M16/M32 use BMM; M128 and all other paths restore P039.
+Seven bounded CPU tests and independent review passed; source SHA256
+`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+No P046 native validation, request, reservation or job ID exists.
+
+Read experiment 046 for newly declared three-target gates and explicit lower
+whole-score upside (~1.237% conditional model, not measured). P045's broader
+failure/gates remain unchanged. Current code is local; Attention owns the
+measurement slot for robustness validation. Wait for fresh coordinator release,
+then use committed source and the P2-09 plan with current jobs/quota checks.
+Do not infer slot permission from old terminal records or repeat P045.
+
+## Previous checkpoint (historical)
+
 # P045 complete — preserve P039, measurement slot released
 
 Job `b2c1e6c724144e87` passed all 9 prerequisites and 30 scored shapes;

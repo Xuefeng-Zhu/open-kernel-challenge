@@ -85,6 +85,24 @@
       "created_utc": "2026-10-25T21:30:17.885485+00:00",
       "dispatch_command": "python -B cycle2_check.py send P2-08-pooler-column-batch2 candidates/projection_pooler_column_batch2.py",
       "dispatched": false
+    },
+    "P2-09-pooler-column-batch2-hybrid": {
+      "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+      "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "cpu_report": "results/router-p046-cpu.json",
+      "local_record": "experiments/046-pooler-column-batch2-hybrid.md",
+      "control_job_id": "d5636ac8d1404abd",
+      "hypothesis": "Validate narrow composition: only canonical pooler M8/M16/M32 retains measured P045 column-batch BMM; restore P039 M128 and all other timed paths. No tile/math/precision/packing change. Test reproducibility of small-M gains with lower explicitly new-scope gates, not retroactive acceptance of P045.",
+      "predeclared_gates": {
+        "target_normalized_geomean_latency_cut_min": 0.05,
+        "individual_target_latency_increase_max": 0.0,
+        "frozen_parent_target_only_modeled_score_gain_min": 0.01,
+        "original_correctness_required": true,
+        "controls_count": 27
+      },
+      "preflight_state": "local-ready-awaiting-fresh-coordinator-slot-release",
+      "created_utc": "2026-10-25T21:46:30.030170+00:00",
+      "dispatched": false
     }
   },
   "requests": [

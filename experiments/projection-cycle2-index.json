@@ -98,35 +98,29 @@
     "source_commit": "a3aba7ba7d70ef84bacd957ced35c0f0c9939c0b"
   },
   "prepared_local_candidate": {
-    "id": "P045",
-    "status": "terminal-rejected-performance",
-    "candidate": "candidates/projection_pooler_column_batch2.py",
-    "source_sha256": "c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58",
-    "parent": "P039",
-    "parent_job": "d5636ac8d1404abd",
+    "id": "P046",
+    "status": "local-preflight-passed-awaiting-serialized-slot",
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "code_parent": "P045",
+    "performance_parent": "P039",
+    "control_job_id": "d5636ac8d1404abd",
     "target_scored_m": [
       8,
       16,
-      32,
-      128
+      32
     ],
+    "controls_count": 27,
+    "cpu_report": "results/router-p046-cpu.json",
     "local_tests": {
-      "passed": 13,
-      "total": 13,
-      "unittest_seconds": 5.75,
-      "wrapper_seconds": 6.721,
-      "command": "python -B -m unittest discover -s tests -p test_projection_pooler_column_batch2.py -v",
-      "scope": "CPU full K at M2/M7; larger M helper K131; static/packing/dispatch tests; no CUDA",
-      "coordinator_rerun_seconds": 5.674
+      "passed": 7,
+      "total": 7,
+      "unittest_seconds": 8.192
     },
-    "gpu_executed": true,
-    "official_job": "b2c1e6c724144e87",
-    "report": "experiments/045-pooler-column-batch2-local.md",
-    "updated_utc": "2026-10-25T21:28:36.995293+00:00",
-    "cpu_report": "results/router-p045-cpu.json",
-    "source_commit": "a3aba7ba7d70ef84bacd957ced35c0f0c9939c0b",
-    "runner_plan": "P2-08-pooler-column-batch2",
-    "accepted_utc": "2026-10-25T21:34:36.232649+00:00",
-    "assessment": "results/router-p045-official-assessment.json"
+    "gpu_executed": false,
+    "official_job": null,
+    "report": "experiments/046-pooler-column-batch2-hybrid.md",
+    "runner_plan": "P2-09-pooler-column-batch2-hybrid",
+    "updated_utc": "2026-10-25T21:46:30.030170+00:00"
   }
 }

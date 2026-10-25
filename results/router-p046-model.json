@@ -1,0 +1,100 @@
+{
+  "experiment": "P046",
+  "model_only": true,
+  "selected_parent_job": "d5636ac8d1404abd",
+  "evidence_job": "b2c1e6c724144e87",
+  "targets": [
+    8,
+    16,
+    32
+  ],
+  "target_m": [
+    8,
+    16,
+    32
+  ],
+  "relative_score_factor": 1.0123702024050865,
+  "score": 1.187752202856076,
+  "measured_combined_candidate": false,
+  "interpretation": "Uses observed separate-run normalized P045 small-M ratios and freezes all other P039 times; not a verified composition or independent repeat. Below original 1.5% whole-score gate.",
+  "warning": "Conditional cross-run model using P045 observed targets; P046 has not executed.",
+  "scenarios": [
+    {
+      "mode": "uniform_10pct",
+      "modeled_score": 1.1920801839131945,
+      "relative_gain": 0.01605911920798908,
+      "targets": [
+        {
+          "m": 16,
+          "parent_us": 19.931792705741444,
+          "modeled_us": 17.9386134351673,
+          "cut_us": 1.9931792705741422
+        },
+        {
+          "m": 32,
+          "parent_us": 20.237408898405246,
+          "modeled_us": 18.21366800856472,
+          "cut_us": 2.023740889840525
+        },
+        {
+          "m": 8,
+          "parent_us": 20.161721609753744,
+          "modeled_us": 18.14554944877837,
+          "cut_us": 2.0161721609753727
+        }
+      ]
+    },
+    {
+      "mode": "official_task_floor",
+      "modeled_score": 1.232877784362957,
+      "relative_gain": 0.05083259714863364,
+      "targets": [
+        {
+          "m": 16,
+          "parent_us": 19.931792705741444,
+          "modeled_us": 14.1,
+          "cut_us": 5.831792705741444
+        },
+        {
+          "m": 32,
+          "parent_us": 20.237408898405246,
+          "modeled_us": 14.1,
+          "cut_us": 6.137408898405246
+        },
+        {
+          "m": 8,
+          "parent_us": 20.161721609753744,
+          "modeled_us": 14.0,
+          "cut_us": 6.161721609753744
+        }
+      ]
+    },
+    {
+      "mode": "zero_latency_algebraic",
+      "modeled_score": 1.416934942894401,
+      "relative_gain": 0.207712106518116,
+      "targets": [
+        {
+          "m": 16,
+          "parent_us": 19.931792705741444,
+          "modeled_us": 0,
+          "cut_us": 19.931792705741444
+        },
+        {
+          "m": 32,
+          "parent_us": 20.237408898405246,
+          "modeled_us": 0,
+          "cut_us": 20.237408898405246
+        },
+        {
+          "m": 8,
+          "parent_us": 20.161721609753744,
+          "modeled_us": 0,
+          "cut_us": 20.161721609753744
+        }
+      ]
+    }
+  ],
+  "task_sha256": "deb9118fa75cbc03c2ebd16b283e72a0314168d40299fa7501373eb1960a2bc4",
+  "limitations": "Official TASK floors are optimistic hardware models, not achieved times or a rigorous lower bound. Zero latency is an impossible algebraic ceiling. The 10% scenario is not a prediction."
+}
