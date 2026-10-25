@@ -1,3 +1,26 @@
+# Local strategy analysis complete; Pro brief upload blocked before execution
+
+Read [the ranked next plan](reviews/attention-v2/next-plan/PLAN.md).
+Nine local analysis/representation tests passed; no candidate edits, GPU work,
+or official checks. A2-15's measured target gain transfers to only a modeled
++0.750% total, so defer a performance-only official confirmation. First proposed
+architecture gate: full verify's natural M64 tile with exact E4M3-to-BF16 QK
+widening, preserving FP32 accumulation; inspect generated code before execution.
+A2-11 remains selected and projection is unchanged.
+
+The sanitized [Pro brief](reviews/attention-v2/next-plan/PRO_RESEARCH_BRIEF.md)
+is ready. In the user's Mac Chrome, ChatGPT is signed in; Pro was explicitly
+selected and Web search enabled. The upload was denied by automatic approval
+review before execution, citing missing trusted payload/destination authorization.
+No attachment or research message was sent; the page is still the new-chat root,
+not an accepted conversation. Do not retry or switch transfer routes without
+materially new relevant confirmation. See `next-plan/pro-request-status.json`.
+No credential, spending or access change. Modal ledger remains $1.919496218/$2.
+
+Earlier checkpoints below are historical.
+
+---
+
 # A2-15 paired diagnostic complete; selected A2-11 unchanged
 
 Read [PAIRED_RESULT.md](reviews/attention-v2/a215/PAIRED_RESULT.md).
