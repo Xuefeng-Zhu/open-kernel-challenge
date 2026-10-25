@@ -1,0 +1,79 @@
+{
+  "created_utc": "2026-10-25T22:22:39.489557+00:00",
+  "scope": "Separate common-PV lowering compile-only preparation; GPUslotpending, no app/creditreservation/native/performance/official",
+  "baseline_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+  "local_test_methods": {
+    "source": 7,
+    "worker": 10,
+    "controller": 12
+  },
+  "independent_review": "PASS",
+  "secret_scan": {
+    "files": 15,
+    "patterns": 6,
+    "matches": 0
+  },
+  "files": {
+    "EXPERIMENT_CARD.md": {
+      "sha256": "4bac18701d3519d67362a769ca1030182360b43399bf8e5cce5e287335d9b0f3",
+      "bytes": 4007
+    },
+    "READINESS.json": {
+      "sha256": "469fcfcc70dc81a3da68c722a36150ce0034c0c19ad8ae7fa08bfee954e1aa62",
+      "bytes": 1131
+    },
+    "SEMANTICS_REVIEW.md": {
+      "sha256": "cd496ff4c3cef0f190958928d3eded94e7ba7d7ab6887ff14be649f9944777d2",
+      "bytes": 6810
+    },
+    "SOURCE_AUDIT.md": {
+      "sha256": "120e938b1e7fa457cad9af0eb25adb5a890ba62478cd7a22f8b1cf756628bbf2",
+      "bytes": 5092
+    },
+    "baseline.py": {
+      "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "bytes": 40538
+    },
+    "candidate.py": {
+      "sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+      "bytes": 40889
+    },
+    "local-verification.json": {
+      "sha256": "19ec0a1337b58bfa9c648eb228b145d062d6016bcc52d1ddb5cec724684fc566",
+      "bytes": 1706
+    },
+    "native/ADMISSION.md": {
+      "sha256": "e08e11e089f89ed7a40eef98e7b7febae5b5db7689a3e8e0e384521504a07582",
+      "bytes": 3786
+    },
+    "native/CONTROLLER.md": {
+      "sha256": "266fdc535f4eaaf6923a20f9bab577bce7d4fd313f735fc1b41da9110aecdfb4",
+      "bytes": 6657
+    },
+    "native/REVIEW.md": {
+      "sha256": "24a96735d2511e451d28516ed37bab151d336b09e3aaf2448bb7e9c84da436c5",
+      "bytes": 9202
+    },
+    "native/controller.py": {
+      "sha256": "1c9256c05ba907e0f5044599a584304eb1cd7c32fe67fc9c6867481e8c75caaa",
+      "bytes": 23201
+    },
+    "native/test_controller.py": {
+      "sha256": "f998ae9a4f46b5787e7220ead3f1d255f6130b22bbc175b9a9c4cfb48fadafab",
+      "bytes": 13453
+    },
+    "native/test_worker.py": {
+      "sha256": "3996889084ca9f6d7ab66ed6baab19574632ce5e6d42babcb66ad428dcffedd7",
+      "bytes": 9460
+    },
+    "native/worker.py": {
+      "sha256": "bef01dd950ce3955fb45316c5f5ee8937ea85a86c471b30c8639aeb0647e02e2",
+      "bytes": 15043
+    },
+    "test_source.py": {
+      "sha256": "bd5a8664f263635027d2bd5f239998b29e8e7359d7154bb302881c48cab40d8f",
+      "bytes": 6512
+    }
+  }
+}

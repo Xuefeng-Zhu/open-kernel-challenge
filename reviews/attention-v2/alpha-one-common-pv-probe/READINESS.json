@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-10-25T22:22:39.489557+00:00",
+  "state": "locally_reviewed_preparation",
+  "candidate_sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+  "baseline_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "based_on_private_commit": "ed46b22f005c61aac2993fd79e8efc628bf32809",
+  "local_test_methods": {
+    "source": 7,
+    "worker": 10,
+    "controller": 12
+  },
+  "independent_review": "PASS",
+  "serialized_slot": "pending_parent_coordination",
+  "Projection_owns_measurement_slot": true,
+  "requests_started": 0,
+  "apps_created": 0,
+  "paid_limit_usd": "0",
+  "proposed_free_credit_reserve_usd": ".40",
+  "credit_reservation_active": false,
+  "native_compiled": false,
+  "candidate_executed": false,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "official_check": false,
+  "formal_entry": false,
+  "working_candidate_changed": false,
+  "predeclared_gate": "At most same-job baseline96regs, originalKandV2slotasyncpipeline, noNEWspill/localaccess, realMULbypass, originalPVcarryorder, exactmergeSASS; otherwiseSTOPthisreformulation"
+}
