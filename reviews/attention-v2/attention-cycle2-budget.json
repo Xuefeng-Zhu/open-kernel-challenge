@@ -866,10 +866,36 @@
       ],
       "target_latency_cut": 0.15,
       "hypothesis": "Only B1L1 sliding hoists repeated exact Q norm/computed-trig RoPE/factor/finalBF16 into timed per-call buffer; keeps all KV/partition/merge math and other11computations. Target>=15%normalized whole-call cut including extra launch; native correctness first."
+    },
+    "A2-13": {
+      "candidate": "mixed_fa3_fp8_qk.py",
+      "expected_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "final": false,
+      "parent_receipt": "A2-11-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression."
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-11 selected best; A2-12 one-shape timed Q-hoist prepared locally, all prior jobs terminal",
+  "current_phase": "A2-13 exact FP8 QK candidate local preflight; no request yet; A2-11 selected",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
@@ -1023,5 +1049,12 @@
     "job_id": "cfa8a8670e394f80",
     "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
     "score": 1.1876787560868445
+  },
+  "current_payload_approval": {
+    "experiment": "A2-13",
+    "candidate": "mixed_fa3_fp8_qk.py",
+    "user_message": "Sentinel_3f76007e45288191bebca69b3076f568",
+    "scope": "One official off-board check and reviewed source/tests/sanitized results push to existing private Xuefeng-Zhu/open-kernel-challenge; no unrelated future payload authorization from this approval",
+    "prior_denied_delegations_executed": false
   }
 }

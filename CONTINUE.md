@@ -1,4 +1,12 @@
-# Completed ownership/merge cycle; preserve A2-11
+# A2-13 FP8 QK preflight; preserve A2-11
+
+Current work: isolated `reviews/attention-v2/mixed_fa3_fp8_qk.py` from A2-11.
+One exact off-board check and reviewed private push are newly approved after
+two denied delegations that executed no external actions. See the latest
+section of CURRENT_AUTHORIZATION.md. Check ledger before dispatch; no A2-13
+request was sent at this checkpoint. Local tests are not GPU validation.
+No Modal launch or new/renewed credentials. This approval covers this payload
+and its evidence only, not arbitrary future uploads.
 
 No active or uncertain GPU request. All A2-09 through A2-12 jobs are terminal.
 See reviews/attention-v2/OWNERSHIP_MERGE_CYCLE.md for exact commands, evidence,

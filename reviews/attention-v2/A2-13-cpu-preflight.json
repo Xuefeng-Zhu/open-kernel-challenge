@@ -1,0 +1,35 @@
+{
+  "experiment": "A2-13",
+  "observed_utc": "2026-10-25T06:50:32.067567+00:00",
+  "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+  "parent_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "device": "CPU"
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_fp8_qk_source.py",
+      "exit_code": 0,
+      "tests_passed": 7
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_fp8_qk_numerics.py",
+      "exit_code": 0,
+      "tests_passed": 8
+    }
+  ],
+  "tests_passed": 15,
+  "GPU_or_interpreter_executed": false,
+  "coverage": "Whole-module AST reconstruction proves only QK encoding/scale/dot kwargs/selector changed;12scored/16prerequisite plus nearby routes;8CPU FP8 rounding/scale/normRoPE tests.",
+  "unverified": [
+    "native Triton compilation",
+    "native FP8 instruction lowering",
+    "official numerical tolerance",
+    "GPU cache output checks",
+    "new-source ABA/concurrency",
+    "H200 performance"
+  ]
+}

@@ -17,3 +17,18 @@ benchmarking, further launches, a payment/cap change or a new OKC check.
 A13 has now consumed this single-run exception: app ap-f1GBalg3lZ0sfNmXyjJ7bu
 is stopped with zero tasks, conservative incremental cost $0.078901888, paid $0.
 No further Modal launch follows from unused incremental allowance.
+
+## Current exact FP8 payload approval, 2026-10-25
+
+Two external delegations were denied before execution; local work continued.
+The user then explicitly confirmed the named FP8 QK candidate transfer to
+openkernelchallenge.dev for one non-ranking check, and source/tests/sanitized
+results to the existing private Xuefeng-Zhu/open-kernel-challenge repository
+(message Sentinel_3f76007e45288191bebca69b3076f568).
+Only A2-13 `reviews/attention-v2/mixed_fa3_fp8_qk.py` and its reviewed evidence
+are covered by that renewed payload approval. Inspect state before the one
+attempt; uncertain requests must be reconciled, never duplicated. If denied
+again, stop the action. No paid compute, Modal launch, credentials, ranked
+entry, force push or visibility change. Do not treat this renewed approval as
+permission for unrelated future uploads. Preserve the earlier historical
+authorization and usage, with this latest scope governing current egress.
