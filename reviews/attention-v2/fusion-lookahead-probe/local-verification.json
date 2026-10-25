@@ -1,0 +1,29 @@
+{
+  "observed_utc": "2026-10-25T21:13:32.654225+00:00",
+  "scope": "Source/CPU/local protocol preparation only",
+  "all_passed": true,
+  "test_methods": {
+    "source_and_integer_address_models": 8,
+    "score_model": 4,
+    "runtime_protocol": 7,
+    "controller_guards": 7
+  },
+  "total_methods": 26,
+  "source_sha256": {
+    "baseline.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "test_source.py": "a9d01af00f3c007b1fc1870da9d7db4a343a522a9eceec70effd243e9d6e0fa1",
+    "runtime/worker.py": "03c1261d8cb18b9c2ea266556463d087ee83d2da8cc121e1be80ff04fdc3cb15",
+    "runtime/controller.py": "0b78f5a5147030f67701dcaf1298ba5077b947e133c6485478931e938014cbf1"
+  },
+  "native_executed": false,
+  "GPU_jobs_started_at_freeze": 0,
+  "official_checks_started": 0,
+  "new_cost_at_freeze_usd": "0",
+  "parent_serialized_slot": "available for one native job conditional on final review and live admission",
+  "historical_goal": "A2-15 missed original10% target; new4% gate is fresh composition/replication question",
+  "fresh_seeds": [
+    135711,
+    135712
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "prepared_utc": "2026-10-25T21:10:19.388512+00:00",
+  "scope": "local stdlib protocol tests only; no GPU/network/credential action",
+  "tests_passed": 7,
+  "source_hashes": {
+    "worker.py": "03c1261d8cb18b9c2ea266556463d087ee83d2da8cc121e1be80ff04fdc3cb15",
+    "test_worker.py": "c07f07dc5b8efce19a794f0f4dc5b4582b168069d847c4ece6f296be1b570409",
+    "PROTOCOL.md": "540e6946bdb92cc87c32cd38e0b833f2e937ee299bf0bda0958a19cb60eb5c31"
+  },
+  "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "baseline_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "case_count": 5,
+  "seeds": [
+    135711,
+    135712
+  ],
+  "ABA_official_oracle_calls": 30,
+  "independent_candidate_oracle_calls": 2,
+  "exact_return_A_checks": 10,
+  "cross_arm_cache_byte_comparisons": 30,
+  "checked_timing_replays": 64,
+  "timed_families": [
+    "full_B32_L1_scored",
+    "full_B16_L8_fusion_unchanged"
+  ],
+  "profiler_sessions": 0,
+  "replication_gate": {
+    "target_minimum_median_balanced_latency_reduction_percent": 4,
+    "required_positive_target_pairs": 6,
+    "control_maximum_paired_slowdown_percent": 5,
+    "historical_A2_15_10_percent_goal_relabelled": false
+  },
+  "proposed_bounds_seconds": {
+    "worker": 160,
+    "child": 170,
+    "function": 185,
+    "startup": 20,
+    "watchdog": 210
+  },
+  "proposed_free_credit_reserve_usd": "0.58",
+  "actual_paid_limit_usd": "0",
+  "GPU_executed": false,
+  "official_check_started": false
+}

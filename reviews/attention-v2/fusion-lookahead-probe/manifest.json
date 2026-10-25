@@ -1,0 +1,113 @@
+{
+  "created_utc": "2026-10-25T21:14:12.765903+00:00",
+  "scope": "Reviewed local preparation for one bounded fusion+A2-15 composition replication",
+  "validated_fusion_base_commit": "05c9cc08948c42fed9e09aae1cd2b41edf966c74",
+  "baseline_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "donor_A2_15_sha256": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+  "isolation": "ExactA215_fused/_e2_kernel_fn only; allotherfusioncodeunchanged,automaticsplits",
+  "local_test_methods": 26,
+  "independent_review": "passed",
+  "fresh_seeds": [
+    135711,
+    135712
+  ],
+  "new_replication_gate": "Target\u22654%medianbalancedcut/6of6positive/control\u22645%slowdown; historical10%goalnotretconned",
+  "files": {
+    "PLAN.md": {
+      "sha256": "251829926e4c81b9e03be19e2381167ac16aaf3f6a99b0dc43bcd87e0f2c630a",
+      "bytes": 11617
+    },
+    "README.md": {
+      "sha256": "fd901d5e9b6fb77a672daa63b83aada53ec7e7831befa7147fe498e2cda88d7d",
+      "bytes": 4385
+    },
+    "REVIEW.md": {
+      "sha256": "d80c71583911329ac2a7001a3612ac1c8fdff4f084895d6e0ccc6fe26596f5be",
+      "bytes": 8623
+    },
+    "SOURCE_AUDIT.md": {
+      "sha256": "a67b4a96f3a22738001b0f8d8d5cf4d209a13ee866e3e339ec0ac9a5f747cd63",
+      "bytes": 10133
+    },
+    "baseline.py": {
+      "sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+      "bytes": 39424
+    },
+    "candidate.py": {
+      "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "bytes": 40538
+    },
+    "local-verification.json": {
+      "sha256": "81829146ea5b361bc1e0b751376d217b8dff47d0a9bf942a84e09227b668f3e9",
+      "bytes": 1176
+    },
+    "model-verification.json": {
+      "sha256": "00e3212e07fea49ed700bfbb205309a5aade5ecf3dc1ed9d8050ef9b2ffc2786",
+      "bytes": 1365
+    },
+    "model.json": {
+      "sha256": "3c40573dd037f8dc9657ca35732ac191b92a93d7a78e40f0fab20b6055e17e9f",
+      "bytes": 3604
+    },
+    "model.py": {
+      "sha256": "a175a4e09ed12285967d439ce2606a5736b13dec46cfd99c2fde4979c81bf66d",
+      "bytes": 6111
+    },
+    "runtime/CONTROLLER.md": {
+      "sha256": "0f7c7815b7da46afd463b6f22608ac3ef3188f36715b21202e0e2527e116cf5a",
+      "bytes": 4026
+    },
+    "runtime/PROTOCOL.md": {
+      "sha256": "540e6946bdb92cc87c32cd38e0b833f2e937ee299bf0bda0958a19cb60eb5c31",
+      "bytes": 8522
+    },
+    "runtime/controller-verification.json": {
+      "sha256": "18068889f4e447f86286ba93563db29d44ae299cbfe5b546f758fa2826244e3b",
+      "bytes": 1203
+    },
+    "runtime/controller.py": {
+      "sha256": "0b78f5a5147030f67701dcaf1298ba5077b947e133c6485478931e938014cbf1",
+      "bytes": 16297
+    },
+    "runtime/local-verification.json": {
+      "sha256": "f7d3df9b0ad3f6499236b66c77eef0d18dcf041798edff8140c7108871da1ee7",
+      "bytes": 1497
+    },
+    "runtime/test_controller.py": {
+      "sha256": "184c7a812f722ede16d9e6e18cbe3b86ab7feb77e7f16536f916a66715a5141d",
+      "bytes": 5996
+    },
+    "runtime/test_worker.py": {
+      "sha256": "c07f07dc5b8efce19a794f0f4dc5b4582b168069d847c4ece6f296be1b570409",
+      "bytes": 6943
+    },
+    "runtime/worker.py": {
+      "sha256": "03c1261d8cb18b9c2ea266556463d087ee83d2da8cc121e1be80ff04fdc3cb15",
+      "bytes": 21628
+    },
+    "source-audit-evidence.json": {
+      "sha256": "a70885c4107e84f7d9841d4d12137ad4334a3371f4f904cc4c0fe0fa06e530ec",
+      "bytes": 10806
+    },
+    "test_model.py": {
+      "sha256": "cbf03ec03f3969240a1c824d7691ac4a979866fd183706429463a0789e75ab8c",
+      "bytes": 2141
+    },
+    "test_source.py": {
+      "sha256": "a9d01af00f3c007b1fc1870da9d7db4a343a522a9eceec70effd243e9d6e0fa1",
+      "bytes": 11121
+    }
+  },
+  "file_count": 21,
+  "secret_scan": {
+    "files": 21,
+    "patterns": 6,
+    "matches": 0
+  },
+  "GPU_jobs_started_at_freeze": 0,
+  "official_checks_started": 0,
+  "actual_paid_limit_usd": "0",
+  "reviewed_free_credit_reserve_usd": "0.58",
+  "parent_slot": "grantedONEboundednativeafterreview,ProjectionP044stoppedtasks0"
+}

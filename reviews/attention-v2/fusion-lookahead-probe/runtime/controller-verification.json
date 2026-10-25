@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-10-25T21:09:57.933486+00:00",
+  "scope": "offline controller adaptation only; no Modal import, network, credentials read, browser or launch",
+  "test_methods": 7,
+  "all_passed": true,
+  "test_command": "python3 -B reviews/attention-v2/fusion-lookahead-probe/runtime/test_controller.py",
+  "test_wall_seconds": 0.021,
+  "source_sha256": {
+    "controller.py": "0b78f5a5147030f67701dcaf1298ba5077b947e133c6485478931e938014cbf1",
+    "test_controller.py": "184c7a812f722ede16d9e6e18cbe3b86ab7feb77e7f16536f916a66715a5141d",
+    "CONTROLLER.md": "0f7c7815b7da46afd463b6f22608ac3ef3188f36715b21202e0e2527e116cf5a"
+  },
+  "payload_file_count": 8,
+  "worker_deadline_seconds": 160,
+  "child_timeout_seconds": 170,
+  "function_timeout_seconds": 185,
+  "startup_timeout_seconds": 20,
+  "watchdog_seconds": 210,
+  "free_credit_reservation_usd": "0.58",
+  "actual_paid_limit_usd": "0",
+  "actual_committed_payload_preflight": "pending source freeze; unit test mocks committed reads and does not establish a real freeze",
+  "serial_slot": "Projection P044 owns current measurement slot; no launch permitted until parent handoff",
+  "official_check_sent": false,
+  "GPU_launched": false
+}

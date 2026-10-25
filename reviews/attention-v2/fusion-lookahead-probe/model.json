@@ -1,0 +1,84 @@
+{
+  "kind": "Conditional composition score sensitivity; no achieved composition result",
+  "frozen_evidence_sha256": {
+    "fusion-lookahead-probe/baseline.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "fusion-lookahead-probe/candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "fused-preparation-probe/candidate.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "fused-preparation-probe/official-check/official-result.json": "46f9818a029a68995d6bad8b99c79a72f390ab09e464c01eb9a79b64bb160001",
+    "mixed_fa3_page_lookahead.py": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+    "mixed_fa3_fp8_qk.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "a215/paired-result.json": "92b5ba197689c3e17ec3c86cefdefdb1edd4bfe0222171b0bd63bd67f000e867",
+    "a215/paired-analysis.json": "a6ee815651dadc1172b2c9663b424d532235b9b4fe3be389f3349ba63e7dfbef"
+  },
+  "fusion_official_job_id": "2f5f1fb54b48486d",
+  "composition_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "fusion_official_speedup": 1.2255554363764571,
+  "reconstructed_speedup": 1.2255554363764571,
+  "target": "full decode B32 only",
+  "fusion_target_us": 317.205125874417,
+  "fusion_sliding_us": 19.915056634386172,
+  "decode32_load_cost_us": 5991.374619172436,
+  "full_target_load_share": 0.8470980929400972,
+  "old_a215": {
+    "raw_reverse_order_pair_ratios": [
+      1.0552069199888756,
+      1.0542553557192564,
+      1.0517753010207507,
+      1.0573142154499742,
+      1.0579793282536023,
+      1.0501475147181742
+    ],
+    "median_ratio": 1.054731137854066,
+    "target_cut_percent": 5.189108000112796,
+    "all_twelve_comparisons_favorable": true,
+    "original_goal_percent": 10,
+    "original_goal_met": false,
+    "qualification": "One prior session, two fixtures, no unchanged-path controls; edit induced both address scheduling and K/V buffering changes"
+  },
+  "transfer_old_relative_cut": {
+    "aggregate_gain_percent": 0.7520171384544749,
+    "hypothetical_speedup": 1.2347718232992686,
+    "qualification": "Freeze every other current-fusion official path; changed environment/calibration and composition make transfer conditional"
+  },
+  "scenarios": [
+    {
+      "assumed_target_cut_percent": 0,
+      "conditional_aggregate_gain_percent": 0.0
+    },
+    {
+      "assumed_target_cut_percent": 2.0,
+      "conditional_aggregate_gain_percent": 0.2851912106779375
+    },
+    {
+      "assumed_target_cut_percent": 3.0,
+      "conditional_aggregate_gain_percent": 0.429945437413326
+    },
+    {
+      "assumed_target_cut_percent": 4.0,
+      "conditional_aggregate_gain_percent": 0.5761750433444401
+    },
+    {
+      "assumed_target_cut_percent": 5.0,
+      "conditional_aggregate_gain_percent": 0.7239082015618292
+    },
+    {
+      "assumed_target_cut_percent": 10.0,
+      "conditional_aggregate_gain_percent": 1.4861705642722933
+    }
+  ],
+  "required_target_cut_percent": {
+    "0.5": 3.480343336391725,
+    "1.0": 6.8415647761222855,
+    "1.5": 10.088301248031655
+  },
+  "proposed_new_composition_gate": {
+    "median_paired_target_cut_percent": 4,
+    "reverse_order_pairs_favorable": 6,
+    "unchanged_full_B16_verify_max_regression_percent": 5,
+    "conditional_minimum_aggregate_gain_percent": 0.5761750433444401,
+    "purpose": "Replicate useful component gain on fusion; the failed historical10% architectural goal remains failed"
+  },
+  "compute_started": false,
+  "official_check_started": false,
+  "achieved_composition_score": false
+}
