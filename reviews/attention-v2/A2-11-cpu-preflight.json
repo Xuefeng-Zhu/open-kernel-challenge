@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T05:34:51.018370+00:00",
+  "experiment": "A2-11",
+  "candidate_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "command": ".venv/bin/python -B reviews/attention-v2/test_decode_parallel_merge.py",
+  "tests_passed": 8,
+  "GPU_or_interpreter_executed": false,
+  "CPU_models": "FP32 rounded operation/tree-sum stand-ins and FP64 oracle; signed cancellation, neutral/padded splits1/2/5/9/11/16/66,64Dscaling/RMS/gate; not nativeFMA/exp2/layout",
+  "unchanged": "All module AST except merge and two host edits(grid,BS); exact producer, partition, otherpaths"
+}

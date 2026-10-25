@@ -715,10 +715,41 @@
       ],
       "target_latency_cut": 0.03,
       "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure."
+    },
+    "A2-11": {
+      "candidate": "mixed_fa3_decode_parallel_merge.py",
+      "expected_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+      "final": false,
+      "parent_receipt": "A2-10-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cuts": {
+        "decode 1|sliding": 0.15,
+        "decode 16|sliding": 0.1,
+        "decode 32|sliding": 0.03,
+        "decode 32|full": -0.01
+      },
+      "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required."
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-10 correct but slower on sliding; retain A2-09 robustness baseline, test evidenced serial-merge bottleneck separately",
+  "current_phase": "A2-11 parallel-merge source ready after A2-10 measured merge costs; no active jobs until admission",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {

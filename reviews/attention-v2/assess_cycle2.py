@@ -65,9 +65,13 @@ def main():
         regressions = [r for r in rows if not r['target'] and r['relative_speedup'] < 1/1.05]
         ci, oldci = new['result']['speedup_ci'], parent['result']['speedup_ci']
         overlaps = max(ci[0], oldci[0]) <= min(ci[1], oldci[1])
-        goal = all(r['normalized_latency_cut'] >= plan.get('target_latency_cut', .2) for r in rows if r['target'])
+        thresholds = {key: plan.get('target_latency_cuts', {}).get(
+            '|'.join(key), plan.get('target_latency_cut', .2)) for key in targets}
+        goal = all(r['normalized_latency_cut'] >= thresholds[(r['load'], r['layer'])]
+                   for r in rows if r['target'])
         report.update(parent_score=oldG, score=G, relative_score_change=G/oldG-1,
             ci=ci, parent_ci=oldci, aggregate_ci_overlap=overlaps, target_goal_met=goal,
+            target_thresholds={'|'.join(k): v for k,v in sorted(thresholds.items())},
             shape_rows=rows, parent_loads=bloads, new_loads=aloads,
             unchanged_controls_over5pct_latency_regression=regressions,
             score_if_only_targets_observed_normalized_change=oldG*math.prod(
@@ -101,7 +105,7 @@ def main():
                  'Separate jobs are not directly paired parent/candidate trials. No hardware-counter claim.',
                  'Native output/new-cache and fresh-input graph evidence is limited to actual receipt cases.',
                  'CPU ABA/page/scales/untouched-row tests remain stand-ins unless explicitly confirmed natively.',
-                 f"User attention checks remaining: {ledger['remaining']}; no ranked entry or Modal; reviewed private auto-push is authorized."]
+                 f"User attention count ceiling: {'removed; daily platform limits still apply' if ledger['remaining'] is None else str(ledger['remaining'])+' checks remaining'}; no ranked entry or Modal; reviewed private auto-push is authorized."]
         (HERE/f'{exp}-RESULT.md').write_text('\n'.join(text)+'\n')
     (HERE/f'{exp}-assessment.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k in ['experiment','job_id','passed','score','relative_score_change','target_goal_met','recommendation']}))
