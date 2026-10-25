@@ -311,6 +311,12 @@
       "expected_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
       "hypothesis": "Only full B16/B32 L8 uses official baseline FA3 path; untouched E2 fallback; native-required FP8 Q conversion explicit",
       "final": false
+    },
+    "E6": {
+      "candidate": "mixed_fa3_sliding.py",
+      "expected_sha256": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+      "final": true,
+      "hypothesis": "Only B1 L8 sliding2048 RoPE500000 routes through official FA3; all E5 paths unchanged; target >=20% normalized latency reduction"
     }
   },
   "initial_platform_quota": {
