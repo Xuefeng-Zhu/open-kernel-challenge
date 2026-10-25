@@ -1,0 +1,26 @@
+{
+  "experiment": "P049 zero-bias public addmm route",
+  "observed_utc": "2026-10-25T22:27:15.222834+00:00",
+  "source": "candidates/projection_qkv_unpooler_zero_bias.py",
+  "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+  "parent": "candidates/projection_pooler_column_batch2_hybrid.py",
+  "parent_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "command": "python -B -m unittest tests.test_projection_zero_bias -v",
+  "passed": 13,
+  "total": 13,
+  "seconds": 1.786,
+  "static_command": "python -B static_check.py --submission candidates/projection_qkv_unpooler_zero_bias.py",
+  "static_passed": true,
+  "environment": "Mac ARM64, macOS26.6.2, Python3.12.13, Torch2.14.1, noCUDA; four CPU threads in test scope",
+  "coverage": {
+    "full_k": "QKV/unpooler M2 normal/outliers/sparse/zero and same-address CPU A/B/A; unpooler M9 full width/outliers",
+    "reduced_k": "K131 helper arithmetic for larger M; not production dispatch or CUDA proof",
+    "metadata_only": "30 scored plus nine prerequisite dispatches and nearby bounds",
+    "other": "Original FP64 oracle, immutable state, fresh output, poisoned output, stride/dtype/width fallback, unaffected-parent AST equivalence"
+  },
+  "warnings": [
+    "Torch emitted missing optional NumPy warning; tests passed and no dependency installed"
+  ],
+  "gpu_executed": false,
+  "performance_unverified": true
+}
