@@ -1,3 +1,24 @@
+# P049 complete — rejected; P046 remains selected
+
+P049 app `ap-qGKwQTPaVfoieaRJxN3Etw` completed and is independently stopped/tasks0;
+all workspace apps were stopped. Slot released at22:37:36UTC. All326oracle
+comparisons passed; QKV M128 paired cut3.7804%, unpooler M16 regression3.5852%,
+two-case geometric cut0.1655%. Declared5%/2%gates fail. Reject, no official check.
+Actual activity changes QKV split-K+reduce to one bias kernel; unpooler keeps one
+main kernel with a bias variant. No claim of hardware causality or whole-score win.
+
+Read experiment049 and results/router-p049-assessment.json. P046 remains selected
+at official1.1841399409×, P039 rollback immutable. P049 source and failed evidence
+are retained. Current quota snapshot6/20checks used14left, historicaltimestamp
+in the ledger; reread before any new check. No active/uncertain Projection request.
+No P049 broad all-shape or official verification is justified by this screen.
+
+Delayed workspace gross delta$0.01641954, paid$0; reserve$0.407635 retained and
+billing may lag. Finish reviewed private result push. Continue bounded local
+next-mechanism review; wait for new coordinator slot before any compute.
+
+## Previous checkpoint (historical)
+
 # P049 local screen ready — P046 remains selected
 
 P046 official 1.1841399409× is the working candidate; P039 remains rollback.

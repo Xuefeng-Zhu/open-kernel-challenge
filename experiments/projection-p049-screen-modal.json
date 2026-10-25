@@ -1,0 +1,137 @@
+{
+  "experiment": "P049 direct P046/P049 zero-bias causal screen",
+  "state": "terminal",
+  "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+  "created_utc": "2026-10-25T22:37:00.601893+00:00",
+  "source_commit": "afa9db212c9b7c608f87c227c624cff18ea3e6e3",
+  "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+  "parent_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "candidates/projection_qkv_unpooler_zero_bias.py": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p049_screen.py": "1e6a04fa2a0b0e2105810e1ecd9179f20a18b7bdfb79cb1e868abbd0e8b4d415",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "706598fb56751ab0d9b00f99bf6a051f51c897b31ce2b7d9d2dc52b55a60c9c0",
+  "cost_reserve_usd": "0.4076345000990",
+  "verified_free_credit_floor_usd": "27.95641954",
+  "resource_rate_usd_per_second": "0.001305166667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "2.04000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "credits": "-2.04000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "2.04358046",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "authentication_expiry_utc": "2026-10-26T03:39:46+00:00",
+  "preflight_sha256": "964eaf42cbd992e1b71d156d0495a8fcca89ad8732c83de1ad486e02ad5bbdfd",
+  "shared_controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 195,
+    "startup_timeout": 45,
+    "child_internal_timeout": 120,
+    "child_hard_timeout": 180,
+    "app_watchdog": 240,
+    "stop_allowance": 15,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-25T22:37:02.668935+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 2,
+    "packed_bytes": 26072,
+    "encoded_bytes": 240989,
+    "artifact_bytes": 180696,
+    "sha256": "5c8c9211eb74f436e85bea3d29c67e48d0261578687ec66e60938ecfc74e975d",
+    "artifact_sha256": {
+      "summary.json": "85dd2052fa53118b0c0f3f9ad4fc80a73f857979ff48de3c8cfbfcd30212fd53",
+      "timing.json": "6e78fffd4dfdafe53eb7b5d63102bbeffdf97d84ccab5956773944a7b60fa512",
+      "timing.log": "ec03cf85b9f938f1013c9613d52a3bef5667aa23f6c5fb94f6b0a6d6f9bf14cd"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "timing",
+      "exit_code": 0,
+      "wall_seconds": 7.806924959000001
+    }
+  ],
+  "worker_wall_seconds": 7.806972409,
+  "explicit_stop": {
+    "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+    "requested_utc": "2026-10-25T22:37:16.007099+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T22:37:16.993523+00:00",
+  "client_wall_seconds": 16.390319332946092,
+  "shutdown_observation": {
+    "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 15:37:01-07:00",
+    "stopped_at": "2026-10-25 15:37:17-07:00"
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "2.06000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.06000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.05663253",
+      "network_egress": "0E-8"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0.01641954",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "reconciled_utc": "2026-10-25T22:37:36.136004+00:00",
+  "billing_reconciled_utc": "2026-10-25T22:38:56.111142+00:00"
+}

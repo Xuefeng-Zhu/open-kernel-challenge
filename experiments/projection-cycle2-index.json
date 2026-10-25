@@ -97,24 +97,7 @@
     "assessment": "results/router-p046-official-assessment.json",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e"
   },
-  "prepared_local_candidate": {
-    "id": "P049",
-    "status": "local-source-reviewed-native-unverified",
-    "candidate": "candidates/projection_qkv_unpooler_zero_bias.py",
-    "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
-    "parent": "P046",
-    "target_families": [
-      "qkv_gate",
-      "unpooler"
-    ],
-    "target_m": "M>1 canonical BF16 contiguous",
-    "target_scored_count": 10,
-    "cpu_report": "results/router-p049-cpu.json",
-    "report": "experiments/049-zero-bias-lt-route.md",
-    "gpu_executed": false,
-    "official_job": null,
-    "updated_utc": "2026-10-25T22:29:04.062114+00:00"
-  },
+  "prepared_local_candidate": null,
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
@@ -139,5 +122,27 @@
     "oracle_checks": 480,
     "stopped_tasks0": true,
     "not_official_score": true
+  },
+  "last_rejected_candidate": {
+    "id": "P049",
+    "status": "local-source-reviewed-native-unverified",
+    "candidate": "candidates/projection_qkv_unpooler_zero_bias.py",
+    "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+    "parent": "P046",
+    "target_families": [
+      "qkv_gate",
+      "unpooler"
+    ],
+    "target_m": "M>1 canonical BF16 contiguous",
+    "target_scored_count": 10,
+    "cpu_report": "results/router-p049-cpu.json",
+    "report": "experiments/049-zero-bias-lt-route.md",
+    "gpu_executed": false,
+    "official_job": null,
+    "updated_utc": "2026-10-25T22:29:04.062114+00:00",
+    "native_status": "completed;326oraclepass;performancegatefailed",
+    "result": "results/router-p049-assessment.json",
+    "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+    "decision": "reject; no official check"
   }
 }

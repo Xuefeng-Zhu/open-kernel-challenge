@@ -1,6 +1,6 @@
 # P049 — public zero-bias GEMM epilogue route
 
-Status: local preparation, no native run or official check. Parent is selected
+Status: completed native screen; rejected on declared performance gates. No official check. Parent is selected
 P046, source `fa56f2b`, SHA256
 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
 P046 remains selected throughout this experiment.
@@ -137,3 +137,69 @@ python -B projection_p049_modal.py self-test --control-root /path/to/control-wor
 # Only after fresh budget/auth/slot preflight, using the exact harness commit:
 python -B projection_p049_modal.py launch --frozen-head <40-character-commit> --control-root /path/to/control-workspace
 ```
+
+## Actual H200 outcome — rejected
+
+App `ap-qGKwQTPaVfoieaRJxN3Etw` was accepted at 2026-10-25 22:37:02 UTC,
+completed, and independently reconciled stopped with zero tasks at 22:37:36 UTC.
+All workspace apps were stopped/tasks0. The initial stop observation was still
+`stopping...`; the launcher therefore returned needs-reconciliation. One
+read-only status query resolved that known teardown state. No repeated launch
+or stop occurred. Measurement slot released before report preparation.
+
+Frozen harness commit `afa9db212c9b7c608f87c227c624cff18ea3e6e3`; candidate source
+commit `9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53`. H200 SM90, Torch
+2.14.1+cu130, CUDA13.0, Triton3.8.0, Python3.12.3. TF32 remained false; existing
+BF16 reduced-precision reduction policy remained true. No global setting changed.
+The image is a native diagnostic environment, not the exact official judge overlay.
+
+All **326 original-oracle comparisons passed**: 192 measured, 48 excluded warmup,
+80 explicit pre/post probes and six instrumented replays. This includes sequential
+same-address A → outlier B → A, signed sparse power-of-two rows, zero and state
+immutability. No NaN/Inf output or tolerance failure occurred. Signed-zero bitwise
+identity is not established or required by the numerical oracle; no claim of
+bitwise equivalence to a different vendor GEMM is made. Other scored shapes,
+concurrent calls and official validation remain untested for P049.
+
+| Path | P046 raw median µs | P049 raw median µs | Paired raw latency cut | Winning pairs |
+|---|---:|---:|---:|---:|
+| QKV M128 | 21.728 | 21.040 | 3.7804% | 10/12 |
+| Unpooler M16 | 22.528 | 23.040 | -3.5852% | 2/12 |
+
+The two-case geometric latency cut is **0.1655%**. Both substantive timing gates
+fail: below the predefined 5% improvement and an unpooler regression above 2%.
+Reject P049, retain selected P046, and do not spend an official check. The QKV
+point improvement is not justification to extrapolate to ten shapes or silently
+change the declared threshold. Each paired statistic uses adjacent reversed-order
+pairs, not the ratio of table medians. No outlier removal or replay-cost subtraction.
+
+The route hypothesis was exercised, not merely assumed:
+
+- QKV parent and beta-zero control execute `nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN`
+  plus the cublasLt split-K reducer. P049 executes one
+  `nvjet_sm90_tst_48x64_64x15_4x2_h_bz_bias_TNN` kernel. Instrumented stage times
+  were parent14.527+3.327µs versus candidate16.831µs.
+- Unpooler parent/control execute `nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT`;
+  P049 changes to the corresponding `_bias_TNT` symbol. Instrumented times were
+  17.952 versus19.358µs. The bias path adds work without removing a listed stage.
+- Beta-zero retains the parent symbol sequence in each case; paired timing
+  movements +1.0987%/-0.2475% are informational control observations, not wins.
+- No visible copy or recognized unfused-fallback warning appeared. That does not
+  prove no hidden library work. Symbols are not exact tactic IDs or machine code.
+
+Activity was collected only after all paired timing; instrumented durations are
+not the acceptance timing. No instruction/resource/counter measurements occurred
+in this screen. In particular, the QKV route change also changes kernel geometry,
+so this is an API-selection mechanism test, not isolated reducer overhead.
+
+Worker execution7.081s, supervised child7.807s, client16.390s, recorded app
+lifetime16s. Reserve$0.407634500099 retained. Delayed workspace gross usage
+delta$0.01641954, actual paid$0; this is not a settled per-app invoice. No new
+credentials, installation, formal entry or official check. All raw numerical
+artifacts are preserved unchanged with hashes under `results/remote-P049-screen/`;
+local process logs remain untracked. Independent audit reproduced counts, hashes,
+paired statistics and both failed gates.
+
+The next investigation is local and distinct: inspect whether existing launch-grid
+evidence supports any principled larger-pooler partition. Missing grid/resource
+data must remain unknown; no blind shard sweep, and no new GPU slot is implied.
