@@ -1,3 +1,31 @@
+# P051 — major-gap audit and matched orientation diagnostic
+
+P046 remains selected at official 1.1841399409×; P039 remains the rollback.
+At 2026-10-25 22:54:34 UTC, the public Projection leader was 1.6099×.
+Matching that score requires a modeled 26.4464% uniform effective latency cut,
+or 34.8864% across pooler/QKV/unpooler while all other paths stay fixed.
+These are conditional requirements, not forecasts or measured bottlenecks.
+
+P050 is PARKED by the strategy change. Its reviewed source/harness at aecd1f6
+and 40 passing local tests are preserved; no P050 GPU or official request exists.
+Do not launch it merely because quota remains.
+
+P051 prepares a matched old-R06 versus weight-first GEMM orientation diagnostic.
+Only operand orientation/direct partial-store indexing changes; geometry,
+partition, precision and reducer stay fixed. Compiler eligibility provides a
+specific hypothesis; actual native instructions/resources are still unverified.
+Read experiments/051-gap-closing-orientation.md and the reproducible gap model.
+No new Projection app has been admitted. A bounded compile-only probe is the
+next staged action after reviewed freeze and fresh guardrails; no official check.
+
+Official read-only quota observation at 2026-10-25 23:10:08 UTC:
+Projection checks 6/20 used, 14 left; Attention checks 18/20 used, 2 left.
+Both scored limits are 0/10 used. TASK states reset at 00:00 UTC; the quota
+response itself did not supply a reset timestamp. These are platform limits,
+not a reason to run weak experiments. Re-read before any actual admission.
+
+## Previous checkpoint (historical)
+
 # P050 QKV-only expansion — reviewed local freeze ready
 
 P049 rejected and result push verified at `4c438423a5f8f85ba4a8757326ea05f01c9ce375`

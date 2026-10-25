@@ -1,6 +1,6 @@
 # P050 — QKV-only public epilogue route expansion
 
-Status: local preparation; no P050 GPU or official check. Selected P046 remains
+Status: PARKED after the 2026-10-25 22:51 strategy review; no P050 GPU or official check. The frozen source and harness are preserved; the launch instructions below are historical preparation, not the current next action. Selected P046 remains
 unchanged at its official 1.1841399408925375×; P039 is the preserved rollback.
 
 实验卡：P049 证明加零偏置确实改变了 QKV M128 的库内核选择，但该点只有

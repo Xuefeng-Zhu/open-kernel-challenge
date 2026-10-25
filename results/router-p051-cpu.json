@@ -1,0 +1,25 @@
+{
+  "experiment": "P051 orientation and strategic gap",
+  "verified_utc": "2026-10-25T23:16:43.603921+00:00",
+  "python": "3.12.13",
+  "command": "python -B -m unittest tests.test_projection_gap_model tests.test_projection_p051_orientation tests.test_projection_p051_modal -q",
+  "passed": 34,
+  "total": 34,
+  "wall_seconds": 0.262,
+  "self_test": "4 local guards passed; no Modal SDK import or external call",
+  "gpu_executed": false,
+  "sha256": {
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+    "projection_p051_modal.py": "961345c72351eb929e2ea88268d0e4b35fda7f64045527d417c0662af6f4a9e3",
+    "projection_gap_model.py": "d362150a561c8e804a06484ce1fd2445754b8b651b6d46cfac6995dbb2874ad6",
+    "tests/test_projection_p051_orientation.py": "e36c069e417824dde191be7a6bd52e46a7fec6615d310d6b1506b46c2a0cb260",
+    "tests/test_projection_p051_modal.py": "90a6c094af666c72f6a1911c4b4c3f16c946ee6a1c872c31643dab7661cc36d6",
+    "tests/test_projection_gap_model.py": "ef80e2bc23ccfa13a1c6697c8ed3d7d74f85ba3231d1bea87f64801b98259e77"
+  },
+  "coverage": "Standard-library score algebra, matched AST and address/split models, mock launcher/transport safeguards only",
+  "resolved_preflight_findings": [
+    "K1 correctness fixture A/B bit equality corrected; native compile-only unchanged",
+    "Timeout atomic temp excluded narrowly while preserving partial artifacts",
+    "New timeout fixture initially failed on Python3.12 pathlib mock; corrected test factory, no algorithm change"
+  ]
+}

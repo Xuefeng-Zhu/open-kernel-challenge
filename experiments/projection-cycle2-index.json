@@ -105,9 +105,11 @@
     "design_predecessor": "P049 rejected",
     "scope": "QKV M>1 only; restore every other P046 path",
     "local_tests": 40,
-    "gpu_status": "not run; reviewed native harness ready; fresh coordinator slot required",
+    "gpu_status": "parked after strategy review; not run; do not launch for quota consumption",
     "report": "experiments/050-qkv-only-expansion.md",
-    "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd"
+    "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd",
+    "status": "parked-low-whole-score-ceiling",
+    "source_commit": "aecd1f625e1e802feaa2abd0a86c221fce649b38"
   },
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
@@ -136,7 +138,7 @@
   },
   "last_rejected_candidate": {
     "id": "P049",
-    "status": "local-source-reviewed-native-unverified",
+    "status": "terminal-rejected-performance",
     "candidate": "candidates/projection_qkv_unpooler_zero_bias.py",
     "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
     "parent": "P046",
@@ -148,12 +150,19 @@
     "target_scored_count": 10,
     "cpu_report": "results/router-p049-cpu.json",
     "report": "experiments/049-zero-bias-lt-route.md",
-    "gpu_executed": false,
+    "gpu_executed": true,
     "official_job": null,
     "updated_utc": "2026-10-25T22:29:04.062114+00:00",
     "native_status": "completed;326oraclepass;performancegatefailed",
     "result": "results/router-p049-assessment.json",
     "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
     "decision": "reject; no official check"
+  },
+  "strategy_review": {
+    "report": "experiments/051-gap-closing-orientation.md",
+    "model": "results/router-p051-gap-model.json",
+    "public_snapshot": "results/public-leader-gap-20261025.json",
+    "next": "P051 matched orientation compile-only gate; native unverified",
+    "selected_unchanged": true
   }
 }
