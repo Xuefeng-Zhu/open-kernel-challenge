@@ -1,8 +1,13 @@
 # A2-15: page-address lookahead, local diagnostic candidate
 
-2026-10-25. Local research only. No new GPU run, OKC request, upload, push,
-dependency install or credential action occurred. Selected A2-11, promising
-A2-13, rejected A2-14 and projection remain preserved.
+2026-10-25. The prototype and ten local checks are complete. The subsequent
+native diagnostic stopped before upload because existing Modal authentication
+expired. A read-only official capability/quota audit completed; no new GPU run
+or OKC check was sent. The source, tests and sanitized findings are prepared
+for reviewed private delivery, whose success is verified separately. Selected
+A2-11, promising A2-13, rejected A2-14 and projection remain preserved. See
+[NATIVE_ATTEMPT.md](NATIVE_ATTEMPT.md) and
+[OFFICIAL_CAPABILITY_AUDIT.md](OFFICIAL_CAPABILITY_AUDIT.md).
 
 ## What the A2-14 evidence actually establishes
 

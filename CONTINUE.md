@@ -1,26 +1,30 @@
-# A2-15 Modal diagnostic blocked before upload; no active request
+# A2-15: native diagnostic blocked; official capability audit complete
 
-At 2026-10-25 08:31:05 UTC, `modal app list --json` using the existing
-owner-only config failed with exit 1, `Token has expired`. No upload, app
-creation or GPU execution occurred; no new app ID or uncertain request.
-Incremental GPU credit use is $0. Do not create or renew credentials, retry
-through alternate authentication, launch an old wrapper, issue OKC checks or
-push. Read CURRENT_AUTHORIZATION.md and a215/NATIVE_ATTEMPT.md first.
+Read reviews/attention-v2/a215/OFFICIAL_CAPABILITY_AUDIT.md and
+NATIVE_ATTEMPT.md. Modal app-list failed `Token has expired` at 08:31:05 UTC;
+no upload or new app, no GPU use, no credential renewal. No launch outcome is
+uncertain. Historical conservative Modal cost stays $1.787819802. Existing
+account credits/cap/apps could not be freshly verified.
 
-The exact diagnostic approval permits only A2-13/A2-15 plus one reviewed
-diagnostic program, with a $0.25 incremental free-credit ceiling and paid $0.
-The allowance is unused. Historical conservative cost remains $1.787819802;
-current credits, paid cap and active apps are not freshly verified. Prior
-stopped-app receipts do not prove current account state. No new app from this
-attempt needs shutdown. Required prerequisite: valid supported Modal auth,
-established through a separately authorized action.
+OKC read-only access works. At 08:36:21 UTC, attention checks were 16/20 used
+(4 left), projection 3/20 (17 left), scored 0/10 each, all 37 returned jobs
+terminal. No new check was reserved or sent. The inspected documented CLI/API
+and saved receipts expose timings/profiles/logs, not native generated artifacts.
+A timing-only result could assess net benefit but not the intended page-load
+scheduling mechanism. The bounded decision is to preserve quota and prepare
+native comparison when valid access can be established separately.
 
-The source commit a2c9a91b1dd347d11cb333b2f96b8973951cfa03 and both candidate
-hashes are unchanged. Seven source/address and three diagnosis tests passed
-previously; native compiler resources, scheduling and GPU behavior remain
-unverified. The saved plan now excludes A2-14 and separate fixture uploads.
-A narrow diagnostic program still needs implementation; old replay compile
-arguments do not cover these candidates. All new A2-15 work remains local.
+A2-15 source commit a2c9a91b1dd347d11cb333b2f96b8973951cfa03 and both frozen
+candidate hashes remain unchanged. Seven source/address and three diagnosis
+tests passed previously; no native compilation, GPU correctness or performance
+result exists for A2-15. The narrow diagnostic program is still unimplemented;
+old wrappers package extra files and omit current compile arguments.
+
+The reviewed A2-15 export is being delivered to the existing private
+attention-fa3-sanitized branch. Verify its actual SHA from the push receipt or
+remote before any retry; this file does not assert that a pending push worked.
+Selected A2-11 and projection P039 remain unchanged. No active GPU job or
+uncertain request is introduced by this phase.
 
 The prior completed local checkpoint follows as historical context.
 

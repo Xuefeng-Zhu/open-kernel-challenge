@@ -1,21 +1,23 @@
-# Current phase: A2-15 approved native diagnostic blocked before upload
+# A2-15 status: native diagnostic blocked; official capability audit complete
 
-The latest exact approval permits one Modal H200 native diagnostic, uploading
-only A2-13/A2-15 and one reviewed diagnostic program, at most $0.25 incremental
-free credits and $0 paid spending. Existing authentication only; if expired,
-stop without creating or renewing credentials. No OKC check or GitHub push.
+The attempted Modal diagnostic stopped at the existing CLI's authentication
+check on 2026-10-25 08:31:05 UTC: `Token has expired`, exit 1. No upload, app,
+GPU execution, renewal or uncertain request. Incremental GPU cost is $0;
+historical conservative cumulative accounting remains $1.787819802. Current
+Modal credits, paid cap and apps could not be reverified. This phase does not
+renew credentials or route around that prerequisite.
 
-At 2026-10-25 08:31:05 UTC, the supported read-only Modal app-list command
-failed with `Token has expired` (exit 1). No upload, app, GPU execution or
-credential action occurred. No retry is pending. Current credits/cap/live apps
-could not be verified. The diagnostic allowance is unused and the historical
-conservative cumulative ledger remains $1.787819802. See
-reviews/attention-v2/a215/NATIVE_ATTEMPT.md and native-attempt.json.
+The subsequent official capability audit succeeded using existing OKC access:
+attention 16/20 checks used, projection 3/20, all 37 returned jobs terminal at
+08:36:21 UTC. No native artifact API was found in inspected CLI documentation
+or saved receipts. No new official check was sent. The predeclared native
+scheduling question remains unresolved; selected A2-11 and projection are intact.
 
-Valid existing authentication is a prerequisite; this scope cannot create or
-renew it. Complete local records only. Do not launch old wrappers: their
-payload and compile signature do not match this exact diagnostic. A2-15 and
-its parent remain unchanged, unvalidated by native compilation, and unpushed.
+Reviewed A2-15 source, tests and sanitized findings are prepared for the
+existing private export branch. Actual delivery requires verified remote SHA,
+recorded by the push tool and final task response, never inferred from this
+file. See reviews/attention-v2/a215/OFFICIAL_CAPABILITY_AUDIT.md. Earlier phase
+restrictions below are historical, not a statement of a current pending job.
 
 The earlier local research scope follows as historical context.
 

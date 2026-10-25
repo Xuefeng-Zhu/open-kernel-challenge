@@ -6,7 +6,8 @@ This is an authentication failure, not an approval-review denial or an
 uncertain launch outcome. The command completed; there is no pending launch.
 
 Command, from the project root, with the pre-existing ignored owner-only
-configuration (its contents were never read or displayed):
+configuration (its contents were never displayed or accessed outside the
+supported CLI):
 
 ```sh
 MODAL_CONFIG_PATH=local-notes/modal-auth.toml .venv/bin/python -m modal app list --json
