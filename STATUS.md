@@ -1,3 +1,24 @@
+# P049 local screen ready — P046 remains selected
+
+P046 official 1.1841399409× is the working candidate; P039 remains rollback.
+Its P048 paired confirmation and selection were pushed and remote-verified at
+`26bec37aa5056375eb9dd262424a388a72078511` on 2026-10-25 22:23:49 UTC.
+
+P049 source commit `9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53`, source SHA256
+`4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7`.
+Only canonical QKV/unpooler M>1 changes to public zero-bias addmm; 20,992 bytes
+of immutable BF16 zero state, no precision policy or layout change. The actual
+CUDA route and benefit are unverified. Read experiment 049 for fixed gates and
+the two-case paired screen, including its separate route-equivalence control.
+All 34 local candidate/worker/launcher tests passed. No P049 app/check exists.
+
+Attention owns the measurement slot. Wait for coordinator release, then refresh
+credits, paid cap, authentication and active apps before one bounded screen.
+Do not use a terminal historical slot file as a new grant. P047 exact-judge
+FlashInfer capability remains unresolved and is not required by this public API.
+
+## Previous checkpoint (historical)
+
 # P048 complete — P046 selected, GPU slot released
 
 P046 source `candidates/projection_pooler_column_batch2_hybrid.py`, source commit

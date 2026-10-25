@@ -99,3 +99,41 @@ continues separately; no external job or score exists for this source.
 Independent source review found no blocker and reran all 13 CPU tests in
 2.262 s. Original/static weights, invocation-local output, M1 and noncanonical
 fallbacks are preserved. CUDA behavior remains unverified.
+
+## Frozen two-case native screen
+
+Candidate source commit `9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53`. The final
+worker is `projection_p049_screen.py`, SHA256
+`1e6a04fa2a0b0e2105810e1ecd9179f20a18b7bdfb79cb1e868abbd0e8b4d415`.
+The coordinator reran 34 candidate, worker and launcher CPU/mock/static tests:
+all passed in 1.966 s. Independent worker review found no execution blocker.
+These checks do not execute CUDA.
+
+The screen uses QKV M128 and unpooler M16, two separate paired series per case,
+six excluded warmup rounds and 24 measured rounds (12 reversed-order pairs) per
+series. Full completion performs 326 oracle comparisons, including pre/post
+same-address A/B/A, outliers, signed sparse powers of two, zero and immutable
+weight checks. All timings precede six separate instrumented activity replays.
+Raw samples are retained; no fixed replay-cost subtraction or official score.
+
+The beta-zero control uses its freshly allocated 2-D output as ignored self,
+matching mm's native route. The candidate uses the 1-D immutable zero bias. This
+is a route-equivalence control, not a beta-only isolation. Negative-control
+performance and activity are informational and cannot promote the candidate.
+Main parent/candidate activity must be available for the declared screen.
+
+One existing-image ephemeral H200 invocation, 13 allowlisted files only. Internal
+deadline 120 s, child hard limit 180 s, function timeout 195 s, startup timeout
+45 s, watchdog 240 s, and a conservative 270-second resource reserve plus 10%
+and $0.02 margin (about $0.408 at the last verified rate). Fresh credits, net
+paid cap $0, existing authentication, no active apps and a coordinator slot are
+required before launch. No automatic retries, deployment or retained capacity.
+The launcher requires a committed file freeze and refuses an existing ledger.
+No P049 app or official request has been created at this preparation checkpoint.
+
+```bash
+python -B -m unittest tests.test_projection_zero_bias tests.test_projection_p049_screen tests.test_projection_p049_modal -v
+python -B projection_p049_modal.py self-test --control-root /path/to/control-workspace
+# Only after fresh budget/auth/slot preflight, using the exact harness commit:
+python -B projection_p049_modal.py launch --frozen-head <40-character-commit> --control-root /path/to/control-workspace
+```

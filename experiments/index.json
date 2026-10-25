@@ -502,7 +502,12 @@
     "report": "experiments/049-zero-bias-lt-route.md",
     "gpu_executed": false,
     "official_job": null,
-    "updated_utc": "2026-10-25T22:29:04.062114+00:00"
+    "updated_utc": "2026-10-25T22:29:04.062114+00:00",
+    "source_commit": "9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53",
+    "native_screen": "projection_p049_screen.py",
+    "native_screen_sha256": "1e6a04fa2a0b0e2105810e1ecd9179f20a18b7bdfb79cb1e868abbd0e8b4d415",
+    "local_test_count": 34,
+    "native_status": "not-run; coordinator slot required"
   },
   "updated_utc": "2026-10-25T22:29:04.062114+00:00",
   "current_selection": {
