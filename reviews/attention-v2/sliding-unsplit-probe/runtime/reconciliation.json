@@ -1,0 +1,49 @@
+{
+  "observed_utc": "2026-10-25T20:53:15.259613+00:00",
+  "app": {
+    "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+    "description": "okc-attention-sliding-unsplit",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 13:51:49-07:00",
+    "stopped_at": "2026-10-25 13:52:50-07:00"
+  },
+  "all_apps": [
+    {
+      "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+      "description": "okc-attention-sliding-unsplit",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:51:49-07:00",
+      "stopped_at": "2026-10-25 13:52:50-07:00"
+    },
+    {
+      "app_id": "ap-I6PNHOGgL6uRL1AjjG2yoV",
+      "description": "okc-attention-fused-preparation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:16:14-07:00",
+      "stopped_at": "2026-10-25 13:17:43-07:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "1.77000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.77000000"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.76982384"
+    }
+  },
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks": true,
+  "paid_limit_usd": "0"
+}
