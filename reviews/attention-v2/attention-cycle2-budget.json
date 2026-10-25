@@ -438,8 +438,8 @@
     {
       "experiment": "A2-09",
       "mode": "check",
-      "state": "accepted",
-      "status": "running",
+      "state": "terminal",
+      "status": "done",
       "job_id": "3fb683ba982d448c",
       "candidate": "reviews/attention-v2/mixed_fa3_local_tickets.py",
       "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
@@ -468,7 +468,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T05:12:12.573756+00:00",
-      "last_checked_utc": "2026-10-25T05:14:09.646695+00:00"
+      "last_checked_utc": "2026-10-25T05:18:57.027388+00:00",
+      "passed": true,
+      "speedup": 1.1466598820556553,
+      "speedup_ci": [
+        1.1294599838248205,
+        1.1690678066480464
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 11,
+          "left": 9
+        }
+      }
     }
   ],
   "remaining": null,
@@ -620,8 +638,8 @@
       "hypothesis": "Remove cross-invocation counter aliasing with per-call zeroed tickets; no math or dispatch changes. Correctness repair, not speed claim. Measure cost on four scored fallback paths; flag >5%normalized path regression. Official check does not prove multistream stress."
     }
   },
-  "all_requests_terminal": false,
-  "current_phase": "Audit complete; prepare isolated per-invocation ticket correction with explicit GPU stress limitations",
+  "all_requests_terminal": true,
+  "current_phase": "A2-09 standard native correctness passed; source-local ownership repair has measured sliding initialization cost; prepare isolated L1 separate-merge comparison",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
@@ -748,5 +766,13 @@
     "recorded_utc": "2026-10-25T05:10:40.221269+00:00",
     "user_message": "Sentinel_26cefe33699481919e869a7bce3c3476",
     "scope": "Free off-board checks for attention and projection no longer have a user count cap; daily platform limits, no paid/Modal/new credentials/ranked entry restrictions remain."
+  },
+  "robustness_baseline": {
+    "source": "mixed_fa3_local_tickets.py",
+    "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
+    "sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "job": "3fb683ba982d448c",
+    "score": 1.1466598820556553,
+    "coverage": "Official sequential graph checks pass; bespoke concurrent graphs unverified"
   }
 }
