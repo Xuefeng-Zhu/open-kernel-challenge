@@ -352,10 +352,28 @@
       ],
       "target_latency_cut": 0.15,
       "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged"
+    },
+    "A2-06": {
+      "candidate": "mixed_fa3_fused_verify.py",
+      "expected_sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+      "final": false,
+      "parent_receipt": "A2-05-official-result.json",
+      "target_shapes": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Extend unchanged native-verified fused prologue to all sliding L8 batches; >=10% normalized latency cut in B16 and32, ten timed controls unchanged; gain may be inside aggregate CI"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-05 terminal and adopted; evaluate isolated batch-generalization next",
+  "current_phase": "A2-06 source preflight; no accepted new request yet",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {

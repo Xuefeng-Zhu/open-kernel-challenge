@@ -1,0 +1,21 @@
+{
+  "parent_job": "50465a4c440f4b75",
+  "not_achieved": true,
+  "models": [
+    {
+      "assumed_cut": 0.1,
+      "modeled_score": 1.125152152525781,
+      "relative_gain": 0.008382707275762291
+    },
+    {
+      "assumed_cut": 0.15,
+      "modeled_score": 1.1299513113350441,
+      "relative_gain": 0.012683804457923165
+    },
+    {
+      "assumed_cut": 0.2,
+      "modeled_score": 1.1348355571223159,
+      "relative_gain": 0.017061158204181526
+    }
+  ]
+}
