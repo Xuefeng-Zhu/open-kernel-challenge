@@ -47,5 +47,11 @@
     "Two earlier CPU suites were interrupted, each after five completed tests; they were not suite passes."
   ],
   "review": "Independent source/address/test review found no definite contract/bounds defect or sensitive data.",
-  "test_source_sha256": "aba51473df9202d9e87535b9e9d2e7d472836a2420c73ae1a69dbe6357d06d7f"
+  "test_source_sha256": "aba51473df9202d9e87535b9e9d2e7d472836a2420c73ae1a69dbe6357d06d7f",
+  "assessment_tool_tests": {
+    "passed": 12,
+    "total": 12,
+    "command": "python3 -B -m unittest discover -s tests -p test_projection_p045_assess.py -v",
+    "scope": "Synthetic/offline receipt arithmetic and negative tests; no P045 GPU timing"
+  }
 }

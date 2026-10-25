@@ -167,3 +167,33 @@ was started by this preflight, and P039 remains selected.
    control: preinitialize and reuse event pairs and compare matched queue depth
    on the same frozen source. This is a timing-method check, not a new kernel
    optimization or a reason to consume an official candidate check.
+
+
+## Admission and assessment readiness
+
+Source commit: `a3aba7ba7d70ef84bacd957ced35c0f0c9939c0b`. The local runner plan
+is `P2-08-pooler-column-batch2`; it has no request/reservation/job ID. After a fresh
+coordinator slot release and the wrapper's quota/rules/source checks, the exact
+planned command is:
+
+```bash
+python -B cycle2_check.py send P2-08-pooler-column-batch2 candidates/projection_pooler_column_batch2.py
+```
+
+This command has **not** been executed. A terminal saved receipt can be assessed
+without network or GPU activity using:
+
+```bash
+python3 -B assess_p045.py results/remote-P2-08-pooler-column-batch2.json --output results/router-p045-official-assessment.json
+python3 -B -m unittest discover -s tests -p test_projection_p045_assess.py -v
+```
+
+The assessor's 12 focused tests pass. They exercise synthetic known gains,
+reference normalization, control movements, failed correctness, malformed rows,
+source mismatch and the real P039 times used as an explicitly synthetic
+no-change control. They are analysis-tool tests, not P045 performance evidence.
+The tool requires all 30 valid unique rows for a numerical comparison and fails
+closed on incomplete receipts. Failed compilation/correctness receipts must
+still be retained and reported even when no complete timing comparison exists.
+Profile execution remains a manual, unverified gate and the tool never changes
+the selected parent. No actual P045 receipt exists at this checkpoint.

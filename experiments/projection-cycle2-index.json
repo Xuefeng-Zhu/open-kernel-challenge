@@ -123,6 +123,8 @@
     "official_job": null,
     "report": "experiments/045-pooler-column-batch2-local.md",
     "updated_utc": "2026-10-25T21:28:36.995293+00:00",
-    "cpu_report": "results/router-p045-cpu.json"
+    "cpu_report": "results/router-p045-cpu.json",
+    "source_commit": "a3aba7ba7d70ef84bacd957ced35c0f0c9939c0b",
+    "runner_plan": "P2-08-pooler-column-batch2"
   }
 }
