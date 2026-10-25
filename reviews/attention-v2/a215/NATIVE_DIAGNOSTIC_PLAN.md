@@ -9,7 +9,9 @@ The latest exact approval narrows the original proposal to A2-13, A2-15 and
 one reviewed diagnostic program only. It permits one bounded H200 diagnostic,
 at most $0.25 incremental free credits and $0 paid spending, using existing
 authentication only. A2-14 and separate official fixture/reference files are
-excluded. No OKC check or GitHub push is authorized. The full allowance is
+excluded. No OKC check or GitHub push is authorized by this Modal diagnostic
+scope; the later official capability audit/private delivery is recorded
+separately in OFFICIAL_CAPABILITY_AUDIT.md. The full diagnostic allowance is
 unused. Historical conservative cumulative Modal accounting remains
 $1.787819802; current credits, paid cap and live apps could not be reverified.
 
