@@ -1,0 +1,118 @@
+{
+  "source_freeze": "99185609d7924d18bb07de950c3d689a9ec9e649",
+  "app_id": "ap-uY5K1rBNFRR2K8rdo2F8tw",
+  "source_sha256": {
+    "baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate.py": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764"
+  },
+  "raw_result_sha256": "952637501db9fa11b6a53f354824a9566e24186be5fab090531667f39fbf8fea",
+  "launch_receipt_sha256": "5361b469cb6eb162370fcfaf04d0dbabf367b05bba2e6b61923d75b428eb5652",
+  "reconciliation_sha256": "c3098eeb019ce619931c567f618b1cb15c00e77ea38ea845de6ecc77292d1d18",
+  "compilation_complete": true,
+  "artifact_files_verified": 24,
+  "artifact_file_bytes": 1986773,
+  "raw_bundle_json_bytes": 2649727,
+  "compressed_bundle_bytes": 393593,
+  "resources": {
+    "baseline": {
+      "producer": {
+        "registers": 96,
+        "shared_memory_bytes": 20480,
+        "driver_spills_raw": 0
+      },
+      "merge": {
+        "registers": 27,
+        "shared_memory_bytes": 1024,
+        "driver_spills_raw": 0
+      }
+    },
+    "candidate": {
+      "producer": {
+        "registers": 128,
+        "shared_memory_bytes": 20480,
+        "driver_spills_raw": 0
+      },
+      "merge": {
+        "registers": 27,
+        "shared_memory_bytes": 1024,
+        "driver_spills_raw": 0
+      }
+    }
+  },
+  "same_geometry": true,
+  "merge_sass_byte_identical": true,
+  "merge_sass_sha256": "69985cf3d726014b1e4242c61d8c40738cace85a71b831c6383e53c304f56bb4",
+  "producer_static_inventory": {
+    "baseline": {
+      "two_stage_e4m3_shared_allocations": [
+        "    %k_114 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared1, #smem, mutable> loc(#loc209)",
+        "    %v_115 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared2, #smem, mutable> loc(#loc210)"
+      ],
+      "ttgir_async_copy_operations": 6,
+      "ttgir_async_commit_operations": 6,
+      "ptx_wait_group_parameters": [
+        2,
+        0
+      ],
+      "ptx_local_accesses": 0,
+      "sass_local_accesses": 0,
+      "highest_named_sass_register": 93,
+      "qualification": "Static generated-code inventory; no dynamic frequency, throughput, achieved occupancy or causal compiler attribution"
+    },
+    "candidate": {
+      "two_stage_e4m3_shared_allocations": [
+        "    %k_95 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared1, #smem, mutable> loc(#loc217)"
+      ],
+      "ttgir_async_copy_operations": 3,
+      "ttgir_async_commit_operations": 3,
+      "ptx_wait_group_parameters": [
+        1,
+        0
+      ],
+      "ptx_local_accesses": 0,
+      "sass_local_accesses": 0,
+      "highest_named_sass_register": 125,
+      "qualification": "Static generated-code inventory; no dynamic frequency, throughput, achieved occupancy or causal compiler attribution"
+    }
+  },
+  "resource_gate_passed": false,
+  "onward_admission": false,
+  "candidate_rejected": true,
+  "rejection_reasons": [
+    "Producer register count increases96to128, violating the predeclared no-increase gate.",
+    "Generated two-stage E4M3 shared allocations/copy pipeline differ; static buffering preservation is not established."
+  ],
+  "kernel_launches": 0,
+  "correctness_tested": false,
+  "frequency_tested": false,
+  "performance_tested": false,
+  "official_check": false,
+  "semantic_equivalence_established": false,
+  "selected_working_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04"
+  },
+  "worker_wall_seconds": 19.308325546,
+  "stage_closed": true,
+  "app_stopped": true,
+  "app_tasks": 0,
+  "closure_observed_utc": "2026-10-25T22:06:59.192653+00:00",
+  "actual_paid_usd": "0E-8",
+  "qualifications": [
+    "Compile completion is separate from a failed resource-admission gate.",
+    "Registers/shared/spills and generated-code counts are static, not measured latency, achieved occupancy or causal allocator proof.",
+    "Wait-group parameter changes2to1; both PTX files still contain two wait-group instructions including final wait0.",
+    "Unchanged merge SASS is byte-identical; other debug-bearing merge artifact bytes need not match.",
+    "No frequency, native correctness, timing or official check was performed; do not execute this rejected variant.",
+    "Shutdown/billed0 refer to the retained independent cutoff, not a fresh service query."
+  ]
+}

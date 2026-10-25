@@ -1,3 +1,31 @@
+# Alpha-one branch rejected before execution; working source unchanged
+
+The [compile-only alpha-one probe](reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md)
+compiled all four same-geometry units and retrieved 24 hash-verified artifacts,
+but failed its declared resource gate: producer registers rose 96 to 128, and
+V asynchronous buffering was lost. Shared memory stayed 20,480 bytes and spills
+zero. Actual rescale bypass and unchanged merge SASS do not establish a speedup.
+No candidate/merge invocation, frequency run, native correctness test, timing
+or official check followed. This is not a measured slowdown.
+
+App `ap-uY5K1rBNFRR2K8rdo2F8tw` was independently stopped/tasks0 at
+22:06:59.192653 UTC and its measurement slot released. Closed accounting showed
+a detailed delayed workspace delta $0.02871385, paid $0; no exact app invoice
+is claimed. The rejected source SHA256 is
+`e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764`.
+
+Attention still selects composition SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`,
+with official score 1.233633059x; DP two/three-chunk validation remains passing.
+A2-11 rollback, fusion control and Projection records are unchanged. A distinct
+local lowering card considers conditional MUL followed by one common PV, based
+on observed branch/liveness changes. No thresholds are relaxed, no failed
+source is overwritten, and no further test is launched or reserved here.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # Attention DP multi-chunk robustness passed
 
 The working fusion-plus-lookahead candidate is unchanged:
