@@ -1,0 +1,32 @@
+{
+  "method": "Frozen official weighted-load scenario only: change pooler m256 latency, hold all other times fixed. Not a prediction or new measured score.",
+  "job_id": "48b1357016134e52",
+  "receipt_csv_sha256": "09e4100efcf189e0c769ec7740fd1d5c29c35f50270c6f6f6a42245b3629a028",
+  "reproduced_official_score": 1.1486499523461589,
+  "target_latency_us": 30.262860818780073,
+  "target_share_of_verify32_load": 0.3163869950801738,
+  "target_latency_reduction_for_1_5pct_aggregate": 0.27010531030351825,
+  "scenarios": [
+    {
+      "assumed_target_latency_reduction": 0.1,
+      "assumed_latency_us": 27.236574736902067,
+      "frozen_scenario_relative_score": 1.0053727177312013
+    },
+    {
+      "assumed_target_latency_reduction": 0.2,
+      "assumed_latency_us": 24.21028865502406,
+      "frozen_scenario_relative_score": 1.010954244948431
+    },
+    {
+      "assumed_target_latency_reduction": 0.27010531030351825,
+      "assumed_latency_us": 22.088701406651296,
+      "frozen_scenario_relative_score": 1.015
+    }
+  ],
+  "optimistic_floor_scenario": {
+    "published_floor_us": 17.4,
+    "relative_score": 1.024362138032655
+  },
+  "new_gpu_experiments": 0,
+  "new_official_checks": 0
+}
