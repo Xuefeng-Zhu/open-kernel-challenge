@@ -18,11 +18,14 @@ class InventoryTests(unittest.TestCase):
         self.root = Path(self.tmp.name)
         self.distributions = {}
 
-    def fixture(self, name="flashinfer-python", sources=None, extra_record=()):
+    def fixture(self, name="flashinfer-python", sources=None, extra_record=(), version="0.9.9", headers="", entry_points=None):
         folder = self.root / (name.replace("-", "_") + "-0.9.9.dist-info")
         folder.mkdir()
-        (folder / "METADATA").write_text(f"Metadata-Version: 2.1\nName: {name}\nVersion: 0.9.9\n\n")
+        (folder / "METADATA").write_text(f"Metadata-Version: 2.1\nName: {name}\nVersion: {version}\n{headers}\n")
         paths = [folder.name + "/METADATA", folder.name + "/RECORD"]
+        if entry_points is not None:
+            (folder / "entry_points.txt").write_text(entry_points)
+            paths.append(folder.name + "/entry_points.txt")
         for relative, content in (sources or {}).items():
             path = self.root / relative
             path.parent.mkdir(parents=True, exist_ok=True)
@@ -174,6 +177,90 @@ class InventoryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             Reader(max_files=MAX_FILES + 1)
 
+    def test_pinned_env_and_provider_declarations_read_without_factory(self):
+        version = "0.7.0.post1"
+        self.fixture(version=version, sources={"flashinfer/jit/env.py": "# get_aot_artifacts cuda_architectures\n"})
+        self.fixture(name="flashinfer-jit-cache", version=version + "+cu130",
+                     headers="Requires-Dist: flashinfer-jit-cache-sm100a (==0.7.0.post1+cu130)\n")
+        self.fixture(name="flashinfer-jit-cache-sm90a", version=version + "+cu130",
+            entry_points="[flashinfer.jit_cache.providers]\nsm90a = flashinfer_jit_cache_sm90a:provider\n",
+            sources={"flashinfer_jit_cache_sm90a/__init__.py": "raise RuntimeError('MUST NOT EXECUTE')\n",
+                     "flashinfer_jit_cache_sm90a/provider_manifest.json": json.dumps(dict(schema_version=1,
+                         distribution="flashinfer-jit-cache-sm90a", version=version + "+cu130",
+                         cuda_architectures=["sm_90a"], modules=["mm_bf16_cublaslt"],
+                         jit_cache_dir="/private/DO_NOT_FOLLOW_OR_EMIT"))})
+        before = set(sys.modules)
+        output = self.run_inventory()
+        by_name = {r["distribution"]: r for r in output["distributions"]}
+        self.assertIn("flashinfer-jit-cache-sm100a", by_name)
+        self.assertEqual(by_name["flashinfer-jit-cache-sm100a"]["status"], "missing_distribution")
+        self.assertNotIn("jit/env.py", by_name["flashinfer-python"]["missing_source_suffixes"])
+        provider = by_name["flashinfer-jit-cache-sm90a"]
+        self.assertEqual(provider["provider_entry_points"]["entries"][0]["function"], "provider")
+        self.assertTrue(provider["provider_version_evidence"]["matches_installed_shim"])
+        self.assertTrue(provider["provider_version_evidence"]["matches_installed_python"])
+        self.assertEqual(provider["provider_manifests"][0]["sm90_compatibility"], "declares_sm90_family")
+        self.assertTrue(provider["provider_manifests"][0]["module_declared"])
+        self.assertNotIn("DO_NOT_FOLLOW_OR_EMIT", json.dumps(output))
+        self.assertFalse(output["provider_factories_executed"])
+        self.assertFalse(output["binary_loadability_verified"])
+        self.assertFalse(any(n.startswith("flashinfer_jit_cache_sm") for n in set(sys.modules) - before))
+
+    def test_provider_mismatch_non_sm90_and_unknown_schema(self):
+        self.fixture(version="0.7.0.post1")
+        self.fixture(name="flashinfer-jit-cache", version="0.7.0.post1+cu130")
+        self.fixture(name="flashinfer-jit-cache-sm90a", version="0.7.1+cu130", sources={
+            "flashinfer_jit_cache_sm90a/provider_manifest.json": json.dumps(dict(schema_version=1,
+                distribution="flashinfer-jit-cache-sm90a", version="0.7.1+cu130", cuda_architectures=["sm100a"], modules=[])),
+            "flashinfer_jit_cache_sm90a/aot_manifest.json": '{"schema_version": 99}'})
+        provider = next(r for r in self.run_inventory()["distributions"] if r["distribution"] == "flashinfer-jit-cache-sm90a")
+        self.assertFalse(provider["provider_version_evidence"]["matches_installed_python"])
+        self.assertFalse(provider["provider_version_evidence"]["matches_installed_shim"])
+        self.assertEqual({r["sm90_compatibility"] for r in provider["provider_manifests"]}, {"unknown", "no_declared_sm90_family"})
+
+    def test_unlisted_dynamic_factory_and_other_entry_groups_not_followed(self):
+        self.fixture(name="flashinfer-jit-cache-sm90a", entry_points=
+            "[console_scripts]\nsecret = unrelated:main\n[flashinfer.jit_cache.providers]\nsm90a = flashinfer_jit_cache_sm90a:provider\n",
+            sources={"unrelated.py": "NEVER_READ", "flashinfer_jit_cache_sm90a/not_named.py": "NEVER_READ"})
+        path = self.root / "flashinfer_jit_cache_sm90a/__init__.py"
+        path.write_text("UNLISTED_MUST_NOT_READ")
+        output = self.run_inventory()
+        provider = next(r for r in output["distributions"] if r["distribution"] == "flashinfer-jit-cache-sm90a")
+        self.assertEqual(len(provider["files"]), 3)
+        self.assertEqual(provider["provider_manifests"], [])
+        self.assertNotIn("NEVER_READ", json.dumps(output))
+        self.assertNotIn("UNLISTED", json.dumps(output))
+
+    def test_entry_and_manifest_corruption_safe_unknown(self):
+        self.fixture(name="flashinfer-jit-cache-sm90a", entry_points="broken ini",
+            sources={"flashinfer_jit_cache_sm90a/provider_manifest.json": "{ broken"})
+        provider = next(r for r in self.run_inventory()["distributions"] if r["distribution"] == "flashinfer-jit-cache-sm90a")
+        self.assertEqual(provider["provider_entry_points"]["status"], "invalid_entry_points")
+        self.assertEqual(provider["provider_manifests"][0]["sm90_compatibility"], "unknown")
+
+    def test_provider_discovery_and_reads_remain_globally_bounded(self):
+        headers = "".join(f"Requires-Dist: flashinfer-jit-cache-sm{i}\n" for i in range(100, 120))
+        headers += "Requires-Dist: arbitrary-package\n"
+        self.fixture(name="flashinfer-jit-cache", headers=headers)
+        output = self.run_inventory()
+        names = [r["distribution"] for r in output["distributions"]]
+        self.assertNotIn("arbitrary-package", names)
+        self.assertEqual(sum(n.startswith("flashinfer-jit-cache-sm") for n in names), 8)
+        shim = next(r for r in output["distributions"] if r["distribution"] == "flashinfer-jit-cache")
+        self.assertTrue(shim["provider_distribution_limit_reached"])
+        self.assertLessEqual(output["reads"]["files_attempted"], 64)
+        self.assertLessEqual(output["reads"]["bytes_read"], 4 * 1024 * 1024)
+
+    def test_entry_path_symlink_rejected_and_byte_budget_enforced(self):
+        folder = self.fixture(name="flashinfer-jit-cache-sm90a", entry_points="x" * 2000)
+        provider = next(r for r in self.run_inventory(reader=Reader(max_file_bytes=1000))["distributions"] if r["distribution"] == "flashinfer-jit-cache-sm90a")
+        self.assertTrue(any(r["path"].endswith("entry_points.txt") and r["status"] == "file_byte_limit" for r in provider["files"]))
+        (folder / "entry_points.txt").unlink()
+        (self.root / "private.txt").write_text("MUST_NOT_READ")
+        (folder / "entry_points.txt").symlink_to(self.root / "private.txt")
+        provider = next(r for r in self.run_inventory()["distributions"] if r["distribution"] == "flashinfer-jit-cache-sm90a")
+        self.assertTrue(any(r["path"].endswith("entry_points.txt") and r["status"] == "symlink_rejected" for r in provider["files"]))
+
     def test_script_has_no_package_imports_process_network_or_environment_reads(self):
         source = Path(__file__).parents[1] / "flashinfer_capability_inventory.py"
         tree = ast.parse(source.read_text())
@@ -181,7 +268,7 @@ class InventoryTests(unittest.TestCase):
         for node in ast.walk(tree):
             if isinstance(node, ast.Import): imports.extend(n.name for n in node.names)
             if isinstance(node, ast.ImportFrom): imports.append(node.module)
-        self.assertTrue(set(imports) <= {"csv", "hashlib", "importlib.metadata", "io", "json", "re", "sys", "pathlib"})
+        self.assertTrue(set(imports) <= {"csv", "configparser", "hashlib", "importlib.metadata", "io", "json", "re", "sys", "pathlib"})
         for token in ("find_spec(", "import_module(", "__import__(", "os.environ", "subprocess", "ctypes", ".glob(", ".rglob("):
             self.assertNotIn(token, source.read_text())
 
