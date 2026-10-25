@@ -1,4 +1,9 @@
-# P053 local diagnostic ready — no new GPU run
+# P053 local diagnostic ready — private push blocked
+
+Source freeze 8ee2fa7; P054 commit ecf2eb2. The reviewed private push was rejected
+by automatic approval review before execution. No upload or retry occurred.
+Read experiments/053-private-push-blocked.md. Last verified remote is f646eae;
+current work remains local. GPU preparation is unaffected; Attention owns slot.
 
 P046 remains selected at official 1.1841399409×; P039 is preserved. P052's
 negative native screen remains rejected. No P053 app or official job exists.

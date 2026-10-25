@@ -468,7 +468,7 @@
     "gpu_state_updated_utc": "2026-10-24T16:37:47.378717+00:00"
   },
   "current_cycle2_index": "experiments/projection-cycle2-index.json",
-  "current_status": "P053 local diagnostic reviewed and ready for coordinator slot; P054 source capability narrowed; no new external run; P046 selected",
+  "current_status": "P053 reviewed local preparation complete; private push denied before execution; Attention owns GPU slot; P046 selected",
   "current_local_verification": {
     "verified_utc": "2026-10-25T23:51:32.457123+00:00",
     "command": "python -B -m unittest tests.test_projection_p053_phase_screen tests.test_projection_p053_modal tests.test_projection_p053_analysis tests.test_flashinfer_capability_inventory",
@@ -515,7 +515,7 @@
     "report": "experiments/050-qkv-only-expansion.md",
     "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd"
   },
-  "updated_utc": "2026-10-25T23:51:32.457123+00:00",
+  "updated_utc": "2026-10-25T23:53:08.373735+00:00",
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
@@ -600,7 +600,8 @@
     "free_credit_reserve_floor_usd": "0.4578834167785",
     "paid_limit_usd": "0",
     "slot": "Attention owns next measurement; fresh coordinator grant required",
-    "independent_review": "Worker and controller independently reviewed; no concrete blocker"
+    "independent_review": "Worker and controller independently reviewed; no concrete blocker",
+    "source_commit": "8ee2fa7eafe80891e79b64cb9def5502ef9a081c"
   },
   "capability_audit": {
     "id": "P054",
@@ -611,5 +612,13 @@
     "api_callability_verified": false,
     "jit_free_verified": false,
     "official_judge_identity_verified": false
+  },
+  "pending_private_push": {
+    "state": "denied-before-execution",
+    "report": "experiments/053-private-push-blocked.md",
+    "attempted_utc": "2026-10-25T23:53:08.373735+00:00",
+    "executed": false,
+    "retried": false,
+    "last_verified_remote_sha": "f646eaeee9cb6d0d188654a661b15d112feb0db7"
   }
 }
