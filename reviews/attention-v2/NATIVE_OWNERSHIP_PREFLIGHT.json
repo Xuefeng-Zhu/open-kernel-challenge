@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-10-25T05:24:31.712459+00:00",
+  "kind": "local-only native ownership probe preparation",
+  "GPU_executed": false,
+  "CPU_tests_passed": 5,
+  "test_command": ".venv/bin/python -m unittest discover -s reviews/attention-v2 -p test_native_ownership_probe.py -v",
+  "dry_run_command": ".venv/bin/python -B reviews/attention-v2/native_ownership_probe.py --list-cases",
+  "planned_checked_native_replays_default": 30,
+  "executed_native_replays": 0,
+  "files": {
+    "native_ownership_probe.py": "f48c5b4f0e282187e46363fa3b4cc2c9343379e46c70a90ec5613341eecca127",
+    "test_native_ownership_probe.py": "b255caad0d095d85873541e12097d80e8c9afd1290e403a1ed8d6e180586c44f"
+  },
+  "environment": {
+    "python": "3.12.13",
+    "platform": "macOS-26.6.2-arm64-arm-64bit"
+  },
+  "limitations": [
+    "CPU fake runner checks orchestration only",
+    "No physical-overlap measurement",
+    "Independent graph captures only, not concurrent use of same graph or explicit shared memory pool",
+    "Native execution requires separately permitted H200 environment with official dependencies; no Modal launch allowed this phase"
+  ]
+}
