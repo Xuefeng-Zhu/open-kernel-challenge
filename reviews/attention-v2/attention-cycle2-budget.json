@@ -491,8 +491,8 @@
     {
       "experiment": "A2-10",
       "mode": "check",
-      "state": "accepted",
-      "status": "running",
+      "state": "terminal",
+      "status": "done",
       "job_id": "08235841c4044048",
       "candidate": "reviews/attention-v2/mixed_fa3_decode_merge.py",
       "source_commit": "a0e49b48ed456536a5e72db7d5ee5bb767aa1823",
@@ -521,7 +521,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T05:21:31.803363+00:00",
-      "last_checked_utc": "2026-10-25T05:25:03.290922+00:00"
+      "last_checked_utc": "2026-10-25T05:28:04.884036+00:00",
+      "passed": true,
+      "speedup": 1.1405486256447261,
+      "speedup_ci": [
+        1.1234403962600552,
+        1.1576568550293969
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      }
     }
   ],
   "remaining": null,
@@ -699,8 +717,8 @@
       "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure."
     }
   },
-  "all_requests_terminal": false,
-  "current_phase": "A2-09 standard native correctness passed; source-local ownership repair has measured sliding initialization cost; prepare isolated L1 separate-merge comparison",
+  "all_requests_terminal": true,
+  "current_phase": "A2-10 correct but slower on sliding; retain A2-09 robustness baseline, test evidenced serial-merge bottleneck separately",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
