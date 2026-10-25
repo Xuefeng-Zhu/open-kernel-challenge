@@ -1,9 +1,9 @@
 {
   "purpose": "One-time private push export; preserve original research branch and per-experiment commits",
   "source_branch": "attention-fa3-local",
-  "source_snapshot": "639bf0e2f5d9ad768a5a3beecaa134880f6e929a",
+  "source_snapshot": "3203c46689c3d75332b86a9fe8f04bcc3ef8be97",
   "export_branch": "attention-fa3-sanitized",
-  "sanitized_snapshot": "327f04ba0c77987f76e38f27cc399fc7fafba4c1",
+  "sanitized_snapshot": "0e79014005459f0812150723c47a384f7b53a893",
   "changes": "Only historical non-secret Modal token identifier in A09 CLI warning replaced; no secret found; current tree/candidates identical",
   "original_history_preserved": true,
   "commit_mapping": {
@@ -83,7 +83,10 @@
     "2092957b1c8312b1fc90b43f64c3ed5eed8f4658": "5fbac85899e0c74b64cfee6a4eb55279a30eae05",
     "c6207e363ca6ab054942f07c641dbc9c3b30c632": "93f10b33519dd4cbd484cd0458170182e38661d3",
     "0c1ffeacb127105def7a7bc49636e87ec7822ff9": "8313848b086233a32ee688629b605dda3a5af4b3",
-    "639bf0e2f5d9ad768a5a3beecaa134880f6e929a": "327f04ba0c77987f76e38f27cc399fc7fafba4c1"
+    "639bf0e2f5d9ad768a5a3beecaa134880f6e929a": "327f04ba0c77987f76e38f27cc399fc7fafba4c1",
+    "a2c9a91b1dd347d11cb333b2f96b8973951cfa03": "5b3a769a3471dbacda51a0ccb72dcaf4bbe73675",
+    "6c239da0a671256161070e879a638b6e99f6d4ae": "beb38afc96aba124308972bbcf0889c2e97992d7",
+    "3203c46689c3d75332b86a9fe8f04bcc3ef8be97": "0e79014005459f0812150723c47a384f7b53a893"
   },
   "historical_redacted_versions": [
     {
@@ -182,13 +185,14 @@
     "reviews/attention-v2/mixed_fa3_fused_prepare.py": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
     "reviews/attention-v2/mixed_fa3_fused_verify.py": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
     "reviews/attention-v2/mixed_fa3_local_tickets.py": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "reviews/attention-v2/mixed_fa3_page_lookahead.py": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
     "reviews/attention-v2/mixed_fa3_sliding.py": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
     "reviews/attention-v2/mixed_fa3_verify1.py": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357"
   },
   "projection_unrelated_and_unchanged": true,
   "initial_source_snapshot": "9638575cd8382a823eb5fb66a4aca14247bae5d2",
   "initial_export_job_note": "A2-01 6e761bdd1d9747ad, no result claimed",
-  "previous_export_tip": "16a8c48296884950e308d8217918444ccefedb99",
+  "previous_export_tip": "73d9d1acfa21722415bb0957f3ec9197c75c5855",
   "incremental_related_replay": true,
   "current_export_note": "Runtime state is in the exported ledgers/reports, not inferred by this local exporter"
 }
