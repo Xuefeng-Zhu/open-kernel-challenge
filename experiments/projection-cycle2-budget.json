@@ -167,8 +167,8 @@
           "left": 20
         }
       },
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "6799753227ed463e",
       "hypothesis": "Only pooler m256 dense aligned BF16 uses descriptor/TMA-fed64x64x64 FP32-accumulation kernel; preserve other paths; compare best first, do not attribute TMA cause without same-geometry control",
       "control_job_id": "48b1357016134e52",
@@ -182,7 +182,25 @@
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T00:23:24.325463+00:00",
       "status_cli_exit_code": 0,
-      "last_checked_utc": "2026-10-25T00:27:03.174910+00:00"
+      "last_checked_utc": "2026-10-25T00:31:31.708616+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "passed": true,
+      "speedup": 1.1120410181725284,
+      "speedup_ci": [
+        1.0953604028999404,
+        1.1287216334451162
+      ]
     }
   ],
   "publication": "New work remains local; no push authorized",
@@ -234,10 +252,17 @@
   "historical_admission_exceptions": [
     null
   ],
-  "single_admission_exception": {
+  "single_admission_exception": null,
+  "current_preserved_best": {
+    "source": "candidates/projection_full_composition.py",
+    "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+    "job_id": "48b1357016134e52",
+    "speedup": 1.1486499523461586
+  },
+  "latest_decision": {
     "experiment": "P2-03-pooler-m256-tma",
-    "candidate": "candidates/projection_pooler_m256_tma.py",
-    "sha256": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
-    "basis": "New parallel research authorization; source-reviewed documented v3.8 descriptor API, CPU39/static/regression gates; Modal unavailable, first official native compatibility/performance check only"
-  }
+    "decision": "reject regression; no control/sweep follow-up",
+    "remaining_authorized": 7
+  },
+  "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00"
 }

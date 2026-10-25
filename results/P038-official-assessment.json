@@ -1,0 +1,253 @@
+{
+  "observed_utc": "2026-10-25T00:34:08.879550+00:00",
+  "parent_job": "48b1357016134e52",
+  "candidate_job": "6799753227ed463e",
+  "score_ratio_vs_parent": 0.9681287287751545,
+  "unchanged_control_max_relative_change": 0.04691274409764956,
+  "shapes": [
+    {
+      "load": "decode 1",
+      "layer": "qkv_gate",
+      "m": 1,
+      "parent_us": 12.047100007327781,
+      "candidate_us": 12.329197527005446,
+      "reference_normalized_speedup_ratio": 1.015839975672862
+    },
+    {
+      "load": "decode 1",
+      "layer": "o",
+      "m": 1,
+      "parent_us": 6.920742031181178,
+      "candidate_us": 6.846554305881001,
+      "reference_normalized_speedup_ratio": 0.9941473912361383
+    },
+    {
+      "load": "decode 1",
+      "layer": "pooler",
+      "m": 1,
+      "parent_us": 18.505112616105617,
+      "candidate_us": 18.37085103914484,
+      "reference_normalized_speedup_ratio": 1.004303818693121
+    },
+    {
+      "load": "decode 1",
+      "layer": "unpooler",
+      "m": 1,
+      "parent_us": 4.12336596765303,
+      "candidate_us": 4.129419544715963,
+      "reference_normalized_speedup_ratio": 1.0075705471995418
+    },
+    {
+      "load": "decode 1",
+      "layer": "router",
+      "m": 1,
+      "parent_us": 7.468828869645319,
+      "candidate_us": 7.329259434487087,
+      "reference_normalized_speedup_ratio": 1.0002873347304095
+    },
+    {
+      "load": "decode 16",
+      "layer": "qkv_gate",
+      "m": 16,
+      "parent_us": 14.513417489241437,
+      "candidate_us": 14.362363864371897,
+      "reference_normalized_speedup_ratio": 1.0219356520766918
+    },
+    {
+      "load": "decode 16",
+      "layer": "o",
+      "m": 16,
+      "parent_us": 6.872616341027644,
+      "candidate_us": 6.8559528235991225,
+      "reference_normalized_speedup_ratio": 0.988377783131812
+    },
+    {
+      "load": "decode 16",
+      "layer": "pooler",
+      "m": 16,
+      "parent_us": 20.2460173647966,
+      "candidate_us": 20.494810829856565,
+      "reference_normalized_speedup_ratio": 0.9989768918181446
+    },
+    {
+      "load": "decode 16",
+      "layer": "unpooler",
+      "m": 16,
+      "parent_us": 18.857186565064662,
+      "candidate_us": 18.739432628980417,
+      "reference_normalized_speedup_ratio": 1.0080068028799076
+    },
+    {
+      "load": "decode 16",
+      "layer": "router",
+      "m": 16,
+      "parent_us": 9.439148880903996,
+      "candidate_us": 9.397546988375982,
+      "reference_normalized_speedup_ratio": 0.9936958120283181
+    },
+    {
+      "load": "decode 32",
+      "layer": "qkv_gate",
+      "m": 32,
+      "parent_us": 14.395700225257112,
+      "candidate_us": 14.456076359927994,
+      "reference_normalized_speedup_ratio": 0.9980315281817349
+    },
+    {
+      "load": "decode 32",
+      "layer": "o",
+      "m": 32,
+      "parent_us": 7.160476472685242,
+      "candidate_us": 6.617286441569654,
+      "reference_normalized_speedup_ratio": 1.0121966422634183
+    },
+    {
+      "load": "decode 32",
+      "layer": "pooler",
+      "m": 32,
+      "parent_us": 20.3257151850633,
+      "candidate_us": 20.3613331707266,
+      "reference_normalized_speedup_ratio": 1.0048374105507165
+    },
+    {
+      "load": "decode 32",
+      "layer": "unpooler",
+      "m": 32,
+      "parent_us": 18.96956619349718,
+      "candidate_us": 18.68767745854424,
+      "reference_normalized_speedup_ratio": 1.0133490543560895
+    },
+    {
+      "load": "decode 32",
+      "layer": "router",
+      "m": 32,
+      "parent_us": 9.797008690647841,
+      "candidate_us": 9.821456891872188,
+      "reference_normalized_speedup_ratio": 1.0183791384713312
+    },
+    {
+      "load": "verify 1",
+      "layer": "qkv_gate",
+      "m": 8,
+      "parent_us": 14.551005368125711,
+      "candidate_us": 14.160577542743926,
+      "reference_normalized_speedup_ratio": 1.0240999440557073
+    },
+    {
+      "load": "verify 1",
+      "layer": "o",
+      "m": 8,
+      "parent_us": 6.86478628210326,
+      "candidate_us": 6.704348548012038,
+      "reference_normalized_speedup_ratio": 1.023930469030484
+    },
+    {
+      "load": "verify 1",
+      "layer": "pooler",
+      "m": 8,
+      "parent_us": 19.99369875565751,
+      "candidate_us": 19.57670094699414,
+      "reference_normalized_speedup_ratio": 1.012853873814386
+    },
+    {
+      "load": "verify 1",
+      "layer": "unpooler",
+      "m": 8,
+      "parent_us": 6.98908655744505,
+      "candidate_us": 6.910968625063075,
+      "reference_normalized_speedup_ratio": 1.0469127440976496
+    },
+    {
+      "load": "verify 1",
+      "layer": "router",
+      "m": 8,
+      "parent_us": 7.371316263892892,
+      "candidate_us": 7.177706835678798,
+      "reference_normalized_speedup_ratio": 1.0232165214382973
+    },
+    {
+      "load": "verify 16",
+      "layer": "qkv_gate",
+      "m": 128,
+      "parent_us": 16.71187325114823,
+      "candidate_us": 16.842006384445902,
+      "reference_normalized_speedup_ratio": 0.9913327766735719
+    },
+    {
+      "load": "verify 16",
+      "layer": "o",
+      "m": 128,
+      "parent_us": 7.320422705927978,
+      "candidate_us": 7.263876940083693,
+      "reference_normalized_speedup_ratio": 0.9880238861362619
+    },
+    {
+      "load": "verify 16",
+      "layer": "pooler",
+      "m": 128,
+      "parent_us": 23.037134018807627,
+      "candidate_us": 22.878004009818973,
+      "reference_normalized_speedup_ratio": 1.0108686974615606
+    },
+    {
+      "load": "verify 16",
+      "layer": "unpooler",
+      "m": 128,
+      "parent_us": 19.853618549338986,
+      "candidate_us": 20.09603256835973,
+      "reference_normalized_speedup_ratio": 1.0000343848103608
+    },
+    {
+      "load": "verify 16",
+      "layer": "router",
+      "m": 128,
+      "parent_us": 10.12831533124816,
+      "candidate_us": 10.377728930224379,
+      "reference_normalized_speedup_ratio": 0.986648729585193
+    },
+    {
+      "load": "verify 32",
+      "layer": "qkv_gate",
+      "m": 256,
+      "parent_us": 20.128560407816202,
+      "candidate_us": 19.7597535035119,
+      "reference_normalized_speedup_ratio": 0.9911330551483327
+    },
+    {
+      "load": "verify 32",
+      "layer": "o",
+      "m": 256,
+      "parent_us": 9.399162830630155,
+      "candidate_us": 9.360147704902522,
+      "reference_normalized_speedup_ratio": 1.0007174908140193
+    },
+    {
+      "load": "verify 32",
+      "layer": "pooler",
+      "m": 256,
+      "parent_us": 30.262860818780073,
+      "candidate_us": 54.19139019280722,
+      "reference_normalized_speedup_ratio": 0.5483586307229009
+    },
+    {
+      "load": "verify 32",
+      "layer": "unpooler",
+      "m": 256,
+      "parent_us": 24.416032172595987,
+      "candidate_us": 24.31207374533107,
+      "reference_normalized_speedup_ratio": 0.9983257648891367
+    },
+    {
+      "load": "verify 32",
+      "layer": "router",
+      "m": 256,
+      "parent_us": 11.44478945172696,
+      "candidate_us": 11.11398611704895,
+      "reference_normalized_speedup_ratio": 1.0029334193082982
+    }
+  ],
+  "decision": "Reject candidate; TMA source path compiles/runs correctly but target regresses; no copy-control GPU run justified. Not a general conclusion about TMA or a causal attribution without matching control.",
+  "compiler_emission_note": "Official profile shows _pooler_pipeline once, confirming actual new GPU path. No PTX/SASS/register receipt; instruction mix remains unobserved.",
+  "new_extra_gpu_requests": 1,
+  "projection_user_checks_remaining": 7
+}

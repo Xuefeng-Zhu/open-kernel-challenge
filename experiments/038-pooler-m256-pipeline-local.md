@@ -140,3 +140,34 @@ Only TMA source uploaded; copy control is not admitted. This is first native
 compatibility/correctness/performance evidence, not a claim of compiler pass.
 Monitor the exact job to terminal and retain failures; never replace an uncertain
 request. User budgets do not reset at UTC midnight.
+
+## Actual official outcome — rejected
+
+Job6799753227ed463e terminal/pass:9prerequisite tests,30scored shapes.
+Score1.1120410182×,95%CI[1.0953604029,1.1287216334]. Preserved best is
+1.1486499523×,CI[1.1314202031,1.1658797016]; candidate/best0.9681287,
+so the overall score regresses3.1871%. Native descriptor path compiled and
+passed official fresh-input CUDA-graph correctness/timing, not just CPU models.
+
+Target pooler m256 adjusted time30.2629us→54.1914us. Its same-run-reference
+normalized speedup ratio to prior best is0.54836 (a clear >5% regression). All
+29unchanged shapes stay within5% of their prior normalized speedups. The official
+profile confirms one _pooler_pipeline GPU call (~56.5us in that separate
+instrumented sample), rather than a silent library fallback. Do not treat that
+single profile duration as steady-state timing or subtract guessed overhead.
+No PTX/SASS/register output was returned, so emitted TMA/WGMMA mix remains
+unobserved; API source/compiled source intent is different evidence.
+
+Result does NOT support this concrete implementation beating the library best.
+Reject promotion, preserve all failure/raw/per-shape samples, leave copy control
+unmeasured and do not sweep more configurations. It does not prove all TMA
+implementations slower, nor isolate descriptor loading from geometry without
+the control. Missing achieved occupancy/DRAM/stall data remains missing.
+
+Complete sanitized receipt/CSV: results/remote-P2-03-pooler-m256-tma.json/.csv.
+Comparison: results/P038-official-assessment.json. Reproduce offline summary:
+<primary-workspace>/.venv/bin/python summarize_check.py P2-03-pooler-m256-tma --ledger experiments/projection-cycle2-budget.json
+
+Projection user allowance7remains; actual daily19/20left after UTC reset.
+No scored entry, push, paid compute, credential or Modal action. GPU slot returned
+to terminal. No uncertain request or pending external job for this experiment.

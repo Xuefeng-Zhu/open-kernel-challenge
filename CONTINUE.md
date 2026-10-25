@@ -1,29 +1,25 @@
-# Projection P038 native check active — primary coordinator only
+# Projection P038 complete — rejected, best preserved
 
-Worktree branch projection-pipeline-preflight. Preserved best remains
-projection-bf16-local0eabf0e, sourcec34c497b, official1.1486499523×
-job48b1357016134e52. Read experiments/038-pooler-m256-pipeline-local.md.
+Branch projection-pipeline-preflight, separate from active attention-fa3-local.
+Best source projection_full_composition.py unchangedSHA c34c497b, official
+48b1357016134e52=1.1486499523×. P038 descriptor/TMA source60a8b4b passed real
+H200 compile,9prerequisites+30scored shapes, but job6799753227ed463e only
+1.1120410182×; pooler m256 30.26→54.19us. Reject, preserve full receipt/failure.
+Read experiments/038-pooler-m256-pipeline-local.md and results/P038-official-assessment.json.
+No copy-control GPU run or more tile sweep justified; no pending/uncertain job.
 
-P038 TMA and identical-geometry control committed60a8b4bdcdd4f3c48d2b7a8a0db4907c394ba84a.
-TMA SHA443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d;
-copy SHA1b6fe24df633fb8e01e69cfa0cc3d78992af6c8deae033f6b08093c668d457cb.
-Only aligned dense pooler m256 changes; other paths preserve best. Each39CPU
-oracles,117regressions,5focused and2extra coordinator tests pass. Source API is
-pinned Triton3.8 host TensorDescriptor, no allocator mutation/manual barriers.
-Actual native compile/correctness/capture/performance remain unverified until
-accepted official check6799753227ed463e reaches terminal. No other GPU active.
+Projection user budget7remaining, daily19/20left at completion; no scored runs.
+Attention's separateE5 passed0.8919466283×,12.07% above E2, source/results in
+primary attention-fa3-local. Attention user1left, daily19/20left. User budgets
+do not reset at UTC midnight. Primary coordinator owns shared GPU slot, terminal.
 
-ExperimentP2-03-pooler-m256-tma accepted00:23:24UTC; latestqueued00:27UTC.
-Projection user allowance7remaining, attention1remaining (separate). No new
-request until this exact job terminal; copy control only if meaningful gain or
-concrete diagnosis warrants it. Primary task owns the shared GPU slot; subagents
-cannot launch. Never duplicate unknown/uncertain jobs. Poll with existing primary
-Python/CLI, using OKC_CLI=<primary-workspace>/bin/okc and
-OKC_GPU_SLOT=<primary-workspace>/local-notes/gpu-slot.local.json:
-<primary-workspace>/.venv/bin/python cycle2_check.py poll P2-03-pooler-m256-tma
+TMA and matching copy source retained with MIT/Apache text, CPU39each,117full
+regressions/5focused and2coordinator guard tests. Actual new TMA path confirmed by
+profile _pooler_pipeline once; no PTX/SASS/occupancy/counter evidence. CUDA
+published fresh replay passes; nearby GPU fallback/concurrency stress not run.
+No general claim about TMA from this concrete failed implementation.
 
-Attention E5 already terminal/pass0.8919466283×,12.07% above preserved E2. Its
-source/results stay on primary attention-fa3-local branch; not merged here.
-No GPU overlap. No push/ranked entry/new credentials/payment/cap changes or paid
-compute. Modalguard$1.708917914/$2 remains cumulative; this worktree's$1.146 ledger
-is historical. Prior A09 BlobCreate401 unresolved; no app restart or auth renewal.
+No push/ranking/paid compute/new credentials/payment/cap/terms change. No Modal app
+launched; cumulativeguard$1.708917914/$2 in primary workspace/shared ignored bridge.
+Old$1.146 projection Modal snapshot is historical, never reset accounting from it.
+A09 BlobCreate401 report remains unavailable; no retry or credential renewal.
