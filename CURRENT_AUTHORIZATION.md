@@ -19,6 +19,6 @@ All historical Modal apps are stopped. Conservative cumulative cost remains
 $1.787819802; this approval permits no Modal or credential action.
 
 A2-14 is now terminal and its one-check permission consumed. Performance
-regressed; preserve selected A2-11. The remaining authorized operation is the
-reviewed exact-payload private push and verification. No unrelated future
+regressed; preserve selected A2-11. The reviewed exact-payload private push has also completed and been verified.
+Only this completion record is being synchronized. No unrelated future
 transfer follows from this exception.

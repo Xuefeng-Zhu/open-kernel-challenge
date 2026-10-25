@@ -1,5 +1,5 @@
 {
-  "status": "check complete; rejected for performance; private push pending",
+  "status": "complete: check rejected for performance; approved private payload push verified",
   "experiment": "A2-14",
   "payload": {
     "file": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
@@ -40,5 +40,13 @@
   },
   "job_id": "6d6019056cbc4f81",
   "check_permission_consumed": true,
-  "result_report": "../A2-14-RESULT.md"
+  "result_report": "../A2-14-RESULT.md",
+  "private_push_confirmation": {
+    "verified_utc": "2026-10-25T07:55:09.718391+00:00",
+    "branch": "attention-fa3-sanitized",
+    "remote_sha": "16a8c48296884950e308d8217918444ccefedb99",
+    "visibility": "PRIVATE",
+    "force": false,
+    "meaning": "First verified delivery of the complete A2-14 payload; a later confirmation-only commit may advance the branch. Final current SHA is reported in the task and local push receipt."
+  }
 }

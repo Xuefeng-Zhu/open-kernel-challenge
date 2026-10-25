@@ -1026,7 +1026,7 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-14 terminal: 16+12 pass, 1.16870864x; rejected target +33.9263% latency; A2-11 remains selected. Exact check grant consumed; reviewed A2-14 private push authorized.",
+  "current_phase": "A2-14 complete and privately delivered: 16+12 pass, 1.16870864x; rejected target +33.9263% latency; A2-11 remains selected. Exact upload/push grant consumed.",
   "projection_checks_remaining": null,
   "counting_note": "Historical user count ceiling removed. Platform quota remains independent. Current A2-14 exact-payload grant allowed one check and its private push; no unrelated future upload follows.",
   "selection": {
@@ -1190,7 +1190,15 @@
     "scope": "One exact candidate off-board check plus reviewed source/tests/sanitized results to existing private repository; no other new upload.",
     "completed_check_id": "6d6019056cbc4f81",
     "check_status": "terminal",
-    "private_push_status": "pending reviewed export"
+    "private_push_status": "completed and verified",
+    "private_push_confirmation": {
+      "verified_utc": "2026-10-25T07:55:09.718391+00:00",
+      "branch": "attention-fa3-sanitized",
+      "remote_sha": "16a8c48296884950e308d8217918444ccefedb99",
+      "visibility": "PRIVATE",
+      "force": false,
+      "meaning": "First verified delivery of the complete A2-14 payload; a later confirmation-only commit may advance the branch. Final current SHA is reported in the task and local push receipt."
+    }
   },
   "provisional_fp8_candidate": {
     "experiment": "A2-13",

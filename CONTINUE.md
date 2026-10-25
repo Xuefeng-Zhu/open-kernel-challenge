@@ -22,8 +22,11 @@ in its separate worktree, job d5636ac8d1404abd, 1.1732389990×.
 
 The one exact A2-14 check permission is consumed; no new candidate upload,
 Modal, credentials, paid resource or ranked entry is authorized by it. The
-reviewed A2-14 source/tests/related analysis/sanitized evidence private push is
-approved. Use only the sanitized export branch and verify the remote SHA.
+reviewed A2-14 source/tests/related analysis/sanitized evidence private push
+completed at 07:55:09 UTC, verified first-delivery SHA
+16a8c48296884950e308d8217918444ccefedb99 on attention-fa3-sanitized.
+A confirmation-only commit may advance that branch; the final task/ignored
+receipt records its exact latest SHA. No additional candidate transfer is granted.
 Push verification belongs to the task and ignored local push receipt; inspect
 actual remote state after any interruption, never blindly retry. Never push
 original attention-fa3-local history. No unrelated projection push.
