@@ -3,7 +3,7 @@
   "problem": "muse_bf16_proj",
   "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
   "maximum_new_experiments": 10,
-  "remaining_authorized": 8,
+  "remaining_authorized": 7,
   "max_active_jobs": 1,
   "max_spend_usd": 0,
   "mode": "check",
@@ -147,6 +147,42 @@
         1.1314202030609661,
         1.165879701631351
       ]
+    },
+    {
+      "experiment": "P2-03-pooler-m256-tma",
+      "candidate": "candidates/projection_pooler_m256_tma.py",
+      "source_commit": "60a8b4bdcdd4f3c48d2b7a8a0db4907c394ba84a",
+      "submission_sha256": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+      "mode": "check",
+      "created_utc": "2026-10-25T00:23:24.054394+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 0,
+          "left": 20
+        }
+      },
+      "state": "accepted",
+      "status": "queued",
+      "job_id": "6799753227ed463e",
+      "hypothesis": "Only pooler m256 dense aligned BF16 uses descriptor/TMA-fed64x64x64 FP32-accumulation kernel; preserve other paths; compare best first, do not attribute TMA cause without same-geometry control",
+      "control_job_id": "48b1357016134e52",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_m256_tma.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T00:23:24.325463+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T00:27:03.174910+00:00"
     }
   ],
   "publication": "New work remains local; no push authorized",

@@ -122,3 +122,21 @@ Source hashes (uncommitted pending parent review):
 
 - candidates/projection_pooler_m256_tma.py: 443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d
 - candidates/projection_pooler_m256_copy.py: 1b6fe24df633fb8e01e69cfa0cc3d78992af6c8deae033f6b08093c668d457cb
+
+## Coordinator admission after local review
+
+Source commit60a8b4bdcdd4f3c48d2b7a8a0db4907c394ba84a; final source hashes
+above unchanged. Coordinator added2GPU-slot ownership tests (both pass) and a
+shared primary-workspace slot,45second bounded CLI calls, no automatic retry.
+Native admission uses the existing official binary via OKC_CLI and shared slot
+via OKC_GPU_SLOT; no copied credentials or login needed.
+
+Attention E5 e0b3cd9474084069 reached terminal/pass before this admission, so no
+measurement overlap. New projection check6799753227ed463e was accepted at
+2026-10-25 00:23:24UTC, experimentP2-03-pooler-m256-tma. This is the third of the
+second-cycle10projection allowance;7remain. Actual daily quota was20before it.
+Attention has a separate1request left. No Modal app or paid resource launched.
+Only TMA source uploaded; copy control is not admitted. This is first native
+compatibility/correctness/performance evidence, not a claim of compiler pass.
+Monitor the exact job to terminal and retain failures; never replace an uncertain
+request. User budgets do not reset at UTC midnight.
