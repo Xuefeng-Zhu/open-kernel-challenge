@@ -146,4 +146,6 @@ history are excluded. Local tests validate boundaries and transport, not H200
 execution. The result commit must replace this prospective status with observed
 coverage, partial failures, exact app ID, hashes, stop state and cost accounting.
 
-Local preflight at2026-10-25 20:17 UTC: 18 plan/worker tests and13 launcher tests passed, plus3 local launcher self-checks. No Modal SDK/network call is made by the self-test. Static diff check passed. GPU compilation, correctness, timing and traces remain pending.
+Local preflight at2026-10-25 20:17 UTC: 18 plan/worker tests and16 launcher tests passed, plus3 local launcher self-checks. No Modal SDK/network call is made by the self-test. Static diff check passed. GPU compilation, correctness, timing and traces remain pending.
+
+The result assessor adds10 passing offline tests for source binding, partial runs, missing traces, malformed samples and hash/path failures. This brings P044-related local coverage to44 tests; no GPU evidence is implied. Worker/controller payload is frozen by commit b0b3007439e39adf8eb447cd6d53e0743c83d713.
