@@ -1,10 +1,12 @@
 # Attention experiments
 
-Selected complete file: [mixed_fa3_fused_full_small.py](mixed_fa3_fused_full_small.py).
-Official off-board job`cf979895a3f24685`, source`f01799c`, **1.1557671624x**,
-CI[1.1384306550,1.1731036699]. All16prerequisites+12timedshapes passed.
-See [complete fusion-series evidence](FUSION_SERIES_RESULTS.md) and
-[reasoned next-step review](BOUNDED_NEXT_STEPS.md).
+Selected complete file: [mixed_fa3_decode_parallel_merge.py](mixed_fa3_decode_parallel_merge.py).
+Official off-board job `cfa8a8670e394f80`, source `7e302d2`, **1.1876787561x**,
+CI [1.1698635747,1.2109342502]. All16prerequisites+12timedshapes passed.
+A2-09 fixes shared counter ownership with initialization cost; A2-10 separate
+serial merge regresses; A2-11 parallel merge recovers cost and improves the
+previous A2-08 score by2.761%, with slight interval overlap. Complete comparisons
+and qualifications are in [A2-11 result](A2-11-RESULT.md).
 
 | Experiment | Isolated change | Official score |
 |---|---|---:|
@@ -16,6 +18,9 @@ See [complete fusion-series evidence](FUSION_SERIES_RESULTS.md) and
 | [A2-06](A2-06-RESULT.md) | Same fusion, other sliding verify batches |1.13811173x|
 | [A2-07](A2-07-RESULT.md) | Full verify B1 prologue, no RoPE |1.15053324x|
 | [A2-08](A2-08-RESULT.md) | Same full fusion, single-token decode |1.15576716x|
+| [A2-09](A2-09-RESULT.md) | Per-invocation fallback counter ownership |1.14665988x|
+| [A2-10](A2-10-RESULT.md) | Decode fallback independent serial merge |1.14054863x|
+| [A2-11](A2-11-RESULT.md) | Per-head parallel split merge |1.18767876x|
 
 A2-05..08 target normalized cuts:28.18%,23.46%/19.49%,15.77%,12.54%.
 A2-06..08 aggregate increments have overlapping intervals; do not call them
@@ -24,14 +29,10 @@ individually significant. All raw samples, calibrated times, paired ratios,
 Each run has11shapes with60timing sample entries and fullverify32 with56,
 not a claimed exact number of underlying graph replays. Profile sums are not walltime.
 
-A2-09 (`mixed_fa3_local_tickets.py`) is an isolated per-invocation counter repair;
-its official job `3fb683ba982d448c` passed at 1.14665988x. Sliding decode
-B1/B16 normalized latency regressed 7.40/7.68%, supporting A2-10
-(`mixed_fa3_decode_merge.py`), job `08235841c4044048`, which passed
-but regressed further to 1.14054863x. A2-11 parallel merge, job
-`cfa8a8670e394f80`, is running after eight CPU/static tests.
-The measured A2-08 remains the sequential-only performance reference. Five CPU ownership/protocol/AST tests pass,
-including 96 modeled interleavings; this is not a native concurrent-stream test.
+A2-09..11 are all terminal. A2-11 removes completion counters on L1fallback;
+L8fallback retains invocation-local zeroed counters. No device-global completion
+counter remains. Dedicated native independent-graph ABA/concurrency stress is
+still unrun; [prepared harness](NATIVE_OWNERSHIP_PROBE.md) has five CPU tests only.
 
 User count ceilings were removed explicitly; actual daily quotas remain enforced
 in the [ledger](attention-cycle2-budget.json). Historical ten-check and six-check
@@ -47,7 +48,8 @@ models/stubs and do not execute Triton. Native new-path coverage includes slidin
 scale1/64 and mixed batches plus fullL8 million-context/page64. L1 full new path
 has nativepage1/scale1 with real supplied scheduler. Native bespoke same-address
 ABA, untouched-row stress and concurrent calls are not separately verified for
-these fused sources; E2 fallback shared-ticket concurrency limitations remain.
+these fused sources; the old E2 shared-ticket limitation is repaired in A2-11, but bespoke native
+concurrency remains unverified.
 
 Historical E0..E4 [report](CYCLE_REPORT.md), E5/E6 receipts, original draft and
 compilation failurebf4b49bd8bb34dae are preserved. `final_attention.py` is historical

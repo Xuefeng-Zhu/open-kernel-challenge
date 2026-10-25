@@ -16,7 +16,7 @@ Local commands already run:
 Future native command, ONLY on a separately authorized H200 host with official SGLang/Triton dependencies (not this Mac environment):
 
 ```sh
-python reviews/attention-v2/native_ownership_probe.py   --candidate reviews/attention-v2/mixed_fa3_decode_merge.py   --expected-sha 94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f   --output /tmp/attention-ownership-new-report.json --rounds 1 --deadline 180
+python reviews/attention-v2/native_ownership_probe.py   --candidate reviews/attention-v2/mixed_fa3_decode_parallel_merge.py   --expected-sha c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0   --output /tmp/attention-ownership-new-report.json --rounds 1 --deadline 180
 ```
 
 This command has NOT run. Existing-output protection prevents overwriting evidence. It neither uploads to OKC nor starts cloud resources; it uses the supplied local GPU only. Do not upload this harness as a challenge candidate. Current phase permits ordinary free official checks but no new Modal launches/credentials/paid resources, and the Mac has no CUDA. Thus bespoke native stress remains unverified; no such GPU request was attempted or denied.

@@ -6,7 +6,7 @@ current permissions, budgets or selected candidates.
 
 | Track | Selected checked code | Official score | Current experiment |
 |---|---|---:|---|
-| Attention | [A2-08 combined fused paths](reviews/attention-v2/mixed_fa3_fused_full_small.py) | 1.15576716x | A2-09 repair passed; A2-11 parallel merge running |
+| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-11 retained; A2-12 query hoist running |
 | Projection | P039, on [projection-pipeline-preflight branch](https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight) | 1.17323900x | Selected P039 preserved; serving interfaces audited |
 
 Attention receipts,12shape rows and six weighted loads are in
@@ -14,14 +14,15 @@ Attention receipts,12shape rows and six weighted loads are in
 establish native correctness/performance; CPU models remain explicitly separate.
 The [fusion series report](reviews/attention-v2/FUSION_SERIES_RESULTS.md) records
 A2-05 through A2-08: all four pass16prerequisites+12timedshapes, with source hashes,
-raw timings and CPU limitations. Selected score CI is[1.13843065,1.17310367]. The
-latest0.45% aggregate increment overlaps its parent CI; its12.54%target latency
+raw timings and CPU limitations. The historical A2-08 score CI is[1.13843065,1.17310367]. The
+A2-08 0.45% aggregate increment overlaps its parent CI; its12.54%target latency
 cut supports retention. Series point change versus its starting candidate is
 +7.307%, not a claim that every small step has a resolved aggregate improvement.
 Projection P040's slightly higher point score was not promoted because it missed
 its predeclared target. A2-09 `3fb683ba982d448c` passed at 1.14665988x with initialization cost.
 A2-10 `08235841c4044048` passed but regressed; A2-11
-`cfa8a8670e394f80` is running, with no duplicate request. See the
+`cfa8a8670e394f80` passed all16+12 at1.18767876x and is retained.
+It improves2.761% over A2-08, with slightly overlapping confidence intervals. See the
 [best-version manifest](BEST_VALIDATED_MANIFEST.json) and
 [correctness/serving audit](CORRECTNESS_AND_SERVING_AUDIT.md).
 

@@ -1,21 +1,21 @@
 {
-  "observed_utc": "2026-10-25T05:14:02.682879+00:00",
+  "observed_utc": "2026-10-25T05:51:19.659268+00:00",
   "attention": {
-    "source": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
-    "original_source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
-    "exported_source_commit": "362561fa786234bf7853b63d87dae73af433e7ae",
+    "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+    "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+    "exported_source_commit": "1da9037bcc87e7dcd4d859c52d8c94a8bc46d798",
     "local_branch": "attention-fa3-local",
     "private_export_branch": "attention-fa3-sanitized",
-    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
-    "job_id": "cf979895a3f24685",
-    "score": 1.1557671624359636,
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "job_id": "cfa8a8670e394f80",
+    "score": 1.1876787560868445,
     "ci": [
-      1.138430654999424,
-      1.1731036698725028
+      1.1698635747455417,
+      1.2109342502243532
     ],
     "prerequisites": 16,
     "timed_shapes": 12,
-    "restriction": "Sequential official validation; global completion-counter overlap risk in E2 fallback. Counter-local A2-09 is a separately checked correctness repair with measured cost; A2-10 is pending."
+    "restriction": "Official sequential graph validation; no shared completion counter remains, but bespoke independent-stream/current-path ABA test is still unrun. Same-graph overlapping use not supported."
   },
   "projection": {
     "source": "candidates/projection_router_m1_fp32_gemv.py",
@@ -44,5 +44,29 @@
       1.1690678066480464
     ],
     "native_coverage": "16+12 official sequential; bespoke concurrency unverified"
+  },
+  "attention_previous_sequential_best": {
+    "source": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+    "original_source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "exported_source_commit": "362561fa786234bf7853b63d87dae73af433e7ae",
+    "local_branch": "attention-fa3-local",
+    "private_export_branch": "attention-fa3-sanitized",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "job_id": "cf979895a3f24685",
+    "score": 1.1557671624359636,
+    "ci": [
+      1.138430654999424,
+      1.1731036698725028
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "restriction": "Sequential official validation; global completion-counter overlap risk in E2 fallback. Counter-local A2-09 is a separately checked correctness repair with measured cost; A2-10 is pending."
+  },
+  "pending_attention_experiment": {
+    "experiment": "A2-12",
+    "job_id": "b24bbd05419c499a",
+    "candidate": "mixed_fa3_decode_qhoist.py",
+    "status": "accepted",
+    "not_selected_until_result": true
   }
 }

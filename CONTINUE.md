@@ -1,32 +1,43 @@
-# Active correctness audit and isolated repair
+# A2-12 active; preserve A2-11 best
 
-Read CURRENT_AUTHORIZATION.md: user count caps for free attention/projection checks were removed; actual platform daily limits remain. Historical ledgers/results are preserved. No paid/Modal/new credentials/ranked entry.
+Current authorization: free off-board attention/projection user count ceilings
+removed; actual platform quotas, serialized GPU and all other restrictions remain.
+No paid/Modal/newcredentials/ranked entry. See CURRENT_AUTHORIZATION.md.
 
-Selected measured attention best: reviews/attention-v2/mixed_fa3_fused_full_small.py, source f01799cea791006f109f09bd064f953eff6b584b, SHA256 34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9, official cf979895a3f24685 = 1.1557671624x. Existing graph results are sequential; four scored fallback paths retain a device-global counter concurrency limitation.
+Selected attention complete source: reviews/attention-v2/mixed_fa3_decode_parallel_merge.py
+original source commit7e302d2366b194c32c433f6d6f9cc7b0b59b3928
+SHA256c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0
+jobcfa8a8670e394f80 DONE16+12pass,1.1876787561x,
+CI[1.1698635747,1.2109342502]. +2.761%versusA2-08withslightCIoverlap;
+alltargetgoalsmetvsA2-10andnocontrol>5%regression. No device-global completion
+counter; dedicated native concurrent graph/ABA stress remains unrun.
 
-A2-09 isolated per-call counter repair passed all16+12, job3fb683ba982d448c,
-score1.1466598821x, with measured7.40/7.68%slidingB1/B16initialization penalty.
-Its source is ef5f09a, mixed_fa3_local_tickets.py. It is the invocation-local
-counter baseline; dedicated native multistream/ABA remains unrun.
+A2-09 localtickets passed1.14666xwithinitializationcost. A2-10 serialmerge
+passed1.14055xbutregressed. A2-11 parallelmerge measured improvement is retained.
+All source/results/failures/12timings/sixweightedloads are preserved.
 
-A2-10 job08235841c4044048 is terminal,16+12pass,1.1405486256x; rejected for
-sliding regressions. Profiles locate material serial-merge activity6.6/4.8/3.2us
-on slidingB1/B16/B32 and8usfullB32 (not calibrated walltime/counters).
+A2-12 ACTIVE jobb24bbd05419c499a accepted2026-10-25T05:49:30UTC.
+Candidate mixed_fa3_decode_qhoist.py, sourcee2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8,
+SHA25645003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597.
+Only B1/L1/sliding hoists exact repeated querynorm/RoPE/factor/finalBF16 into
+an invocation-local timedbuffer. Target>=15%normalizedwholecallcut, including
+extra launch. Other11computations preserved. Seven CPU/static tests pass;
+native result PENDING. Poll SAME ID with check_cycle.py poll A2-12 --cycle2;
+do not resubmit. Shared slot in ignored local-notes/gpu-slot.local.json.
 
-A2-11 is ACTIVE, jobcfa8a8670e394f80, accepted05:34:57UTC; latest05:36running.
-Source7e302d2366b194c32c433f6d6f9cc7b0b59b3928,
-mixed_fa3_decode_parallel_merge.py, SHA256
-c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0.
-Only the L1 separate merge is parallelized across splits/per-query-head;
-producer/partition/FA3/L8unchanged. FP32sumorder changes explicitly.
-Eight CPU/ASTtests pass; GPU result PENDING. Poll this SAME job via
-check_cycle.py poll A2-11 --cycle2, never resubmit. Shared GPU slot in
-ignored local-notes/gpu-slot.local.json. Free user count cap removed; dailyquota applies.
+Projection selected P0391.173238999x: candidates/projection_router_m1_fp32_gemv.py,
+sourcecdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da,jobd5636ac8d1404abd.
+Worktree /tmp/okc-projection-pipeline-preflight. Candidate unchanged; policy
+runner/tests updated to explicit uncappedfreeauthorization.12admissiontests,
+143fullCPUtests passed. Remote branch verifiedbc70cf261e86ca4c4bf8d0ba63d198dad6024b39.
 
-Native ownership stress harness is prepared, FIVE CPU orchestration tests pass,
-ZERO native stress replays run. Read NATIVE_OWNERSHIP_PROBE.md before using;
-needs separately permitted H200 environment and official dependencies. No Modal.
+Native ownership harness prepared, five CPU tests only, ZERO native stress
+replays. NATIVE_OWNERSHIP_PROBE.md gives exact futurecommand and limitations.
+Needs separately permitted H200execution; no newModal launch allowed.
+Serving interface audit complete, no servingpatch/deployment/submission.
 
-Projection selected P039: source cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da, job d5636ac8d1404abd = 1.173238999x. Worktree /tmp/okc-projection-pipeline-preflight. P040 higher point not promoted because declared target was missed; branch af7f149 preserved. No new projection check this audit.
-
-Private export: NEVER push original attention-fa3-local history. Run analysis/safe_attention_export.py, audit_push.py attention-fa3-sanitized origin/attention-fa3-sanitized, push_private_verified.py attention-fa3-sanitized. Preserve attribution and no credentials/local-notes in export. Model configuration remains controlled by parent; no self-claimed Astra identity.
+Private autopush: NEVER push attention-fa3-local originalhistory. Use
+analysis/safe_attention_export.py; audit_push.py attention-fa3-sanitized
+origin/attention-fa3-sanitized; push_private_verified.py attention-fa3-sanitized.
+Source/hash mapping lives in exportmanifest. Preservecredentials/local-notes.
+Model configuration is controlled byparent; tools do not expose currentidentity.
