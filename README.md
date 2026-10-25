@@ -1,34 +1,30 @@
-Latest focused follow-up: [QKV_M128_SINGLEPASS_RESULTS.md](QKV_M128_SINGLEPASS_RESULTS.md).
-H2tested at BM64/BN32, emitsWGMMA, correctnesspass but55.10us vs21.89us,
-0/15pairedwins. Rejected/noofficialcheck; broadH1pipeline remains unimplemented.
-All11apps stopped,112localtests pass,Modalguard$1.146412/$2,netpaid$0.
-Earlier dated diagnostic/hypothesis context follows unchanged.
-
-Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
-M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
-M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.
-Two future hypotheses assessed; no new algorithm benchmark or officialcheck.
-
 # Open Kernel Challenge — dense projections
 
-Latest official passing composition: **1.1486499523x SGLang**, 95% interval
-**[1.1314202031,1.1658797016]**, job48b1357016134e52, off-board only.
-[Source](candidates/projection_full_composition.py), [result and limitations](OFFICIAL_COMPOSITION_RESULT.md),
-[best](BEST.md), [current budgets/status](STATUS.md).9/9prerequisites and30/30scored
-shape checks pass, no flags. Prior candidate intervals overlap, so differences
-between point scores are not declared statistically resolved.
+Current selected candidate: **P039, 1.173238999× SGLang**, official 95% interval
+**[1.155640414, 1.190837584]**, off-board job `d5636ac8d1404abd`.
+[Source](candidates/projection_router_m1_fp32_gemv.py),
+[selection and limits](BEST.md), [current state](STATUS.md),
+[immutable receipt](results/remote-P2-04-router-m1-fp32-gemv.json).
+All **9 prerequisites and 30 scored shapes passed**. Original `submission.py`
+remains the PyTorch starter; it is not the selected optimized source.
 
-Second projection cycle2/10used,8remaining; all accepted jobs terminal. Fresh
-platform13/20checks used,7left; no scored entry. Four additional Modal screens
-passed CUDA correctness but regressed or showed parity; none admitted officially.
-All8apps stopped/tasks0, latest$0.87000000credits/$0paid, conservative stageguard
-$0.964253594<$2, netcap$0. See [follow-up outcomes](MODAL_FOLLOWUP_RESULTS.md).
-104localtests pass; CPU/static and actual H200 evidence remain distinct.
-Historical first-cycle records remain in REMOTE_RESULTS.md and their immutable sources.
+P039 changes only router m1 to original-FP32 SIMT GEMV. The measured
+reference-normalized target reduction is **30.1058%** (7.468829→5.204267 µs
+adjusted time across runs). Its whole-score point movement is not wholly causal:
+unchanged paths also moved, and there is no independent paired candidate repeat.
+P040's higher 1.175871327 point is **not selected**: its O-m1 target improvement
+was 6.5077%, below the declared 15% gate. Both remain preserved.
 
-Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
-baseline and reproducible correctness/diagnostic harness. The original starter remains preserved; subsequent verified GPU improvements are listed above. CPU checks and the first off-board H200 check pass correctness. The measured starter
-is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
+Current work is P041: source-bound profiling and correctness preparation for
+pooler, QKV and unpooler. Their average fractions within the six equal-weight
+loads are 32.62%, 22.54% and 20.93%. No hardware-counter diagnosis is claimed.
+GPU work waits for the coordinator's serialized slot. See the P041 experiment
+record for the exact local checks and unexecuted native plan.
+
+Historical reports retain their original dated results: the earlier 1.148650×
+composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),
+layout and TMA failures are not current selections. Dated quota, cost and app
+statements below are historical snapshots; consult STATUS.md before any run.
 
 ## Reproduce locally
 

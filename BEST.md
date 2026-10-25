@@ -1,3 +1,33 @@
+# Selected Projection candidate: P039
+
+`candidates/projection_router_m1_fp32_gemv.py`
+
+- Source commit: `cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da`.
+- SHA256: `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`.
+- Official off-board job: `d5636ac8d1404abd`, done/pass, 9/9 prerequisites and
+  30/30 scored cases. Score **1.173238998969285×**, interval
+  **[1.1556404139847458, 1.1908375839538243]**.
+- Authoritative selection: `experiments/projection-cycle2-budget.json:selection`.
+  Receipt: `results/remote-P2-04-router-m1-fp32-gemv.json` and its CSV.
+
+P039 retains the preceding composition and changes only router m1 to FP32 GEMV
+on original FP32 weights. The target reference-normalized latency cut is
+30.1058%. Preserve the original tolerance, all weights and all other dispatch.
+The +2.1407% aggregate point movement versus the earlier composition cannot be
+attributed entirely to the router change: unchanged controls moved too. Marginal
+CI overlap alone is not a difference test; independent paired comparison is absent.
+
+P040 passed but is not promoted. Its score 1.1758713266400707× is the highest
+observed point, not the selected best; O-m1 improvement 6.5077% missed its 15%
+predeclared target. Do not change the selection based on that small point gap.
+
+Native canonical m1 correctness/fresh graphs are verified by the official job.
+Dedicated native tail/stride/outlier/concurrency stress was not separately run.
+No saved P039 library PTX/SASS/register/spill/shared-memory/counter evidence
+exists. Older M34/M36 artifacts belong to different sources.
+
+## Historical selection record (superseded, preserved)
+
 Latest follow-up: QKV m128 single-pass035/M36 passed CUDA correctness but
 regressed strongly; rejected/no officialcheck. [Exact results](QKV_M128_SINGLEPASS_RESULTS.md).
 112localtests pass,all11apps stopped,conservativeModalguard$1.146412/$2,netpaid$0.
