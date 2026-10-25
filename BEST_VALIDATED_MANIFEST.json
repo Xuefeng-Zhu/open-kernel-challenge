@@ -212,6 +212,38 @@
       "independent_review": "reviews/attention-v2/alpha-one-common-pv-probe/runtime/RESULT_REVIEW.md",
       "raw_result_sha256": "24c7ea033298ea155d31ef161e887ed086a3820860cb077919d8276990e3d0c9",
       "qualification": "One native session and two fresh fixtures, not an official score or population confidence interval. Predicate frequency does not establish saved issue cycles; precise hardware cause and general serving concurrency remain unmeasured."
+    },
+    "last_architecture_compile_probe": {
+      "source_commit": "605e815462b56768fca9c84c68a8aada639bbb0b",
+      "source": "reviews/attention-v2/gluon-overlap-probe/kernel.py",
+      "sha256": "3d847a290d747c204419fd131c8149a21c4afddbdfb1d0a6130f5f522b81847c",
+      "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+      "compile_complete": true,
+      "artifact_files": 10,
+      "candidate_kernel_invocations": 0,
+      "resource_gate_passed": true,
+      "static_precision_buffer_review_passed": true,
+      "strict_serial_native_control_gate_passed": false,
+      "registers": {
+        "serial": 167,
+        "overlap": 168
+      },
+      "shared_bytes_each": 32768,
+      "spill_and_local_bytes_each": 0,
+      "CUDA_legal_max_CTA_per_SM_each": 3,
+      "actual_residency_measured": false,
+      "correctness_tested": false,
+      "performance_tested": false,
+      "decision": "Preserve partial-overlap codegen finding; declared fully serial native control not retained, so no automatic execution or timing. Diagnose locally without changing the failed gate.",
+      "report": "reviews/attention-v2/gluon-overlap-probe/RESULTS.md",
+      "app_stopped": true,
+      "tasks": 0,
+      "closure_utc": "2026-10-25T23:44:21.845040+00:00",
+      "delayed_workspace_cost_usd": ".01044224",
+      "paid_usd": "0",
+      "exact_app_invoice": false,
+      "official_check": false,
+      "formal_entry": false
     }
   },
   "projection": {

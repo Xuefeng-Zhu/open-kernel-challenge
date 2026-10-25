@@ -1,3 +1,29 @@
+# Gluon compile: resource/ownership pass, strict native control fails
+
+The [Gluon attention-core result](reviews/attention-v2/gluon-overlap-probe/RESULTS.md)
+compiled two fixed arms and preserved ten native artifacts. Static precision,
+buffer ownership and resources pass:167/168 registers,32KiB shared, zero
+spill/local and legal maximum3 CTA/SM in both arms. The native control already
+prefetches next K before its QK wait, so the declared fully serial control was
+not retained. Partial V/conversion/store overlap is real codegen evidence;
+no candidate invocation, numerical correctness or performance result follows.
+The failed strict gate is preserved; the execution branch stops pending a
+separately declared interpretation and review.
+
+App `ap-AECevTBOrJ7vVRE4EWgk3R` was independently stopped/tasks0 at
+23:44:21.845040 UTC and the slot released. The23:47:17.887804 UTC no-new-app
+cutoff records delayed detailed workspace delta$0.01044224, paid$0, not an
+exact app invoice. Working fusion+lookahead SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`
+remains selected at1.233633059x; A2-11 rollback and Projection records remain
+unchanged. Main architecture research still covers B1/sliding/full; no missing
+FA3 page1 mechanism or winning performance is claimed. No official quota was
+used by this stage.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # Common-PV runtime rejected; broad architecture work continues
 
 The [common-PV native result](reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md)
