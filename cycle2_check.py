@@ -3,6 +3,7 @@ import argparse
 import datetime
 import hashlib
 import json
+import os
 from pathlib import Path
 import ast
 from static_check import plain_jit_globals
@@ -11,7 +12,8 @@ import sys
 
 ROOT = Path(__file__).resolve().parent
 LEDGER = ROOT / "experiments/projection-cycle2-budget.json"
-CLI = ROOT / "bin/okc"
+CLI = Path(os.environ.get("OKC_CLI", str(ROOT / "bin/okc")))
+GPU_SLOT = Path(os.environ.get("OKC_GPU_SLOT", str(ROOT / "local-notes/gpu-slot.local.json")))
 TERMINAL = {"done", "failed", "rejected", "duplicate"}
 
 
@@ -28,12 +30,22 @@ def save(path, value):
 
 
 def cli(*args):
-    p = subprocess.run([str(CLI), *args], cwd=ROOT, capture_output=True, text=True)
+    p = subprocess.run([str(CLI), *args], cwd=ROOT, stdin=subprocess.DEVNULL,
+                       capture_output=True, text=True, timeout=45)
     try:
         data = json.loads(p.stdout)
     except ValueError:
         data = None
     return p, data
+
+
+def gpu_slot(state, entry):
+    current = json.loads(GPU_SLOT.read_text())
+    if current["state"] not in {"idle", "terminal"} and (
+            current.get("problem") != "muse_bf16_proj" or current.get("experiment") != entry["experiment"]):
+        raise RuntimeError("Cannot overwrite another active GPU experiment")
+    save(GPU_SLOT, dict(state=state, problem="muse_bf16_proj", experiment=entry["experiment"],
+                       job_id=entry.get("job_id"), source_sha256=entry["submission_sha256"], updated_utc=now()))
 
 
 def quota():
@@ -62,6 +74,8 @@ def main():
         print(json.dumps(ledger["last_account_quota"]))
         return 0
     if args.action == "send":
+        if not GPU_SLOT.exists() or json.loads(GPU_SLOT.read_text())["state"] not in {"idle", "terminal"}:
+            raise RuntimeError("Coordinator GPU slot not free; no competing measurement")
         exception = ledger.get("single_admission_exception") or {}
         if ledger.get("admission_paused") and args.experiment != exception.get("experiment"):
             raise RuntimeError("Official dispatch remains paused except for the specifically authorized composition")
@@ -86,7 +100,7 @@ def main():
             raise RuntimeError("Candidate differs from its source commit; commit before admitting it")
         if ledger.get("admission_paused") and (relative != exception.get("candidate")
                 or hashlib.sha256(source).hexdigest() != exception.get("sha256")):
-            raise RuntimeError("Scoped admission requires the exact Modal-verified source hash")
+            raise RuntimeError("Scoped admission requires the exact reviewed source hash")
         globals_errors = plain_jit_globals(ast.parse(source.decode()))
         if globals_errors:
             raise RuntimeError("Known JIT-global preflight failure: " + "; ".join(globals_errors))
@@ -111,7 +125,13 @@ def main():
                      command=["bin/okc", "check", relative, "--no-wait", "--json"])
         entries.append(entry)
         save(LEDGER, ledger)  # Reserve BEFORE the sole POST; interruption is an uncertain outcome.
-        p, data = cli("check", relative, "--no-wait", "--json")
+        gpu_slot("sending", entry)
+        try:
+            p, data = cli("check", relative, "--no-wait", "--json")
+        except subprocess.TimeoutExpired:
+            entry.update(state="uncertain", reconciliation="POST timed out; inspect existing jobs before any retry")
+            save(LEDGER, ledger);gpu_slot("uncertain", entry)
+            raise
         (ROOT / "results" / (args.experiment + "-accept.local.json")).write_text(p.stdout)
         (ROOT / "results" / (args.experiment + "-accept.local.txt")).write_text(p.stderr)
         entry["cli_exit_code"] = p.returncode
@@ -121,6 +141,7 @@ def main():
         else:
             entry.update(state="uncertain", reconciliation="Inspect own jobs read-only before any retry; reservation remains charged")
         save(LEDGER, ledger)
+        gpu_slot(entry["state"], entry)
         print(json.dumps(entry))
         return 0 if job_id else 2
     entry = next(x for x in entries if x["experiment"] == args.experiment)
@@ -138,6 +159,7 @@ def main():
         entry.update(status=data["status"], status_cli_exit_code=p.returncode,
                      last_checked_utc=now())
         save(LEDGER, ledger)
+        gpu_slot(entry["state"], entry)
         print(json.dumps(entry))
         return 0
     if data.get("mode") != "check" or data.get("id") != entry["job_id"]:
@@ -150,6 +172,7 @@ def main():
         entry.update(state="terminal", quota_after=quota(), passed=result.get("passed"),
                      speedup=result.get("speedup"), speedup_ci=result.get("speedup_ci"))
     save(LEDGER, ledger)
+    gpu_slot(entry["state"], entry)
     print(json.dumps(entry))
     return 0
 
