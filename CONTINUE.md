@@ -1,3 +1,22 @@
+# Active autonomous cycles — E6 complete, next source preparation
+
+Attention E6 job4f626ab7437a42be is DONE, passed16+12, score0.9395909196×,
+CI[.9254970558,.9584871441],+5.34% over E5. Selected standalone
+reviews/attention-v2/mixed_fa3_sliding.py, source5202cbe/SHA7a3bc586.
+Target verify1/sliding43.976→22.542us, normalized latency cut47.30%; all11controls
+below5% regression. See E6_SLIDING_FA3.md, assessment and full receipt.
+Old attention budget0/6; NEW independent attention-cycle2-budget.json0/10used.
+Projection7checks remain. Actual last attention quota18/20left,0scoredused.
+Next attention hypothesis: only full B1/L8 routes to existing official FA3 full
+adapter; other11paths unchanged from E6. No candidate or request yet.
+Projection researcher preparing local-only router m1 FP32 GEMV reuse; coordinator
+must review and commit before any authorized check. GPU measurements SERIALIZED,
+shared slot terminal. No Modal/newcredentials/push/paid/ranked actions.
+Explicit new target GPU ABA/page64/nonunit/untouched-row tests remain unverified;
+CPU stand-ins are separate. Parent E5 and projection1.14864995 preserved.
+
+The completed earlier-cycle checkpoint below is historical, not current status.
+
 # Completed two-track bounded cycle — no active GPU
 
 Read DUAL_TRACK_RESULTS.md/.json. Primary attention-fa3-local selects

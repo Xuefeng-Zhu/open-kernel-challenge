@@ -278,9 +278,62 @@
           "left": 19
         }
       }
+    },
+    {
+      "experiment": "E6",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "4f626ab7437a42be",
+      "candidate": "reviews/attention-v2/mixed_fa3_sliding.py",
+      "source_commit": "5202cbea994771eebffa1f479e7e88915106ca14",
+      "source_sha256": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+      "hypothesis": "Only B1 L8 sliding2048 RoPE500000 routes through official FA3; all E5 paths unchanged; target >=20% normalized latency reduction",
+      "final": true,
+      "created_utc": "2026-10-25T02:09:12.341128+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_sliding.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:09:12.833662+00:00",
+      "last_checked_utc": "2026-10-25T02:18:43.128479+00:00",
+      "passed": true,
+      "speedup": 0.9395909196258531,
+      "speedup_ci": [
+        0.9254970558314652,
+        0.958487144057228
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      }
     }
   ],
-  "remaining": 1,
+  "remaining": 0,
   "plans": {
     "E0": {
       "candidate": "submission.py",
@@ -332,18 +385,18 @@
     }
   },
   "selection": {
-    "source": "mixed_fa3.py",
-    "source_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
-    "sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
-    "official_job": "e0b3cd9474084069",
-    "speedup": 0.8919466283178157,
+    "source": "mixed_fa3_sliding.py",
+    "source_commit": "5202cbea994771eebffa1f479e7e88915106ca14",
+    "sha256": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+    "official_job": "4f626ab7437a42be",
+    "speedup": 0.9395909196258531,
     "speedup_ci": [
-      0.8785674288930484,
-      0.9053258277425829
+      0.9254970558314652,
+      0.958487144057228
     ],
-    "reason": "Only full verifyB16/B32 uses official FA3; all-path check passes,12.07% aggregate improvement over E2; preserved E2 remains unchanged"
+    "reason": "E6 target47.30% normalized latency cut, aggregate5.34% with nonoverlapping CIs, controls below5%; all16prerequisites+12timed passed"
   },
-  "counting_note": "Four requests conservatively reserved against six; E4 deduplicated to E2, only three new GPU runs and no E4 platform quota increment.",
+  "counting_note": "Six requests counted, including historical E4 duplicate; five actual new GPU runs. Old remaining0. E6 is not charged to new ten-request ledger.",
   "last_platform_quota": {
     "scored": {
       "per_day": 10,
@@ -352,13 +405,13 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 1,
-      "left": 19
+      "used": 2,
+      "left": 18
     }
   },
-  "quota_observed_utc": "2026-10-25T00:36:14.613565+00:00",
+  "quota_observed_utc": "2026-10-25T02:18:43.128479+00:00",
   "all_requests_terminal": true,
-  "actual_new_gpu_runs": 4,
+  "actual_new_gpu_runs": 5,
   "duplicate_requests": 1,
   "phase_history": [
     {
@@ -367,7 +420,7 @@
       "phase": "E0-E4 completed"
     }
   ],
-  "current_phase": "E5 complete, one user attention request reserved; no unchanged-source duplicate check needed",
+  "current_phase": "E6 complete; old six-request attention authorization exhausted; selected E6; new ten-request cycle is independent",
   "selection_before_E5": {
     "source": "final_attention.py",
     "parent": "fixed_chunks.py",
@@ -380,5 +433,17 @@
     "final_verification_status": "duplicate",
     "verified_via_job": "7edded086c8a47f2"
   },
-  "completed_utc": "2026-10-25T00:22:06.700956+00:00"
+  "selection_before_E6": {
+    "source": "mixed_fa3.py",
+    "source_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
+    "sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "official_job": "e0b3cd9474084069",
+    "speedup": 0.8919466283178157,
+    "speedup_ci": [
+      0.8785674288930484,
+      0.9053258277425829
+    ],
+    "reason": "Only full verifyB16/B32 uses official FA3; all-path check passes,12.07% aggregate improvement over E2; preserved E2 remains unchanged"
+  },
+  "completed_utc": "2026-10-25T02:19:48.633953+00:00"
 }
