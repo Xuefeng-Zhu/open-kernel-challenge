@@ -1,3 +1,7 @@
+Latest selected source: [mixed_fa3.py](mixed_fa3.py), official E5
+0.8919466×,12.07% above E2; [experiment card/results](E5_MIXED_FA3.md).
+One user attention check remains. Prior E2 source/final file stays preserved.
+
 # Attention v2 experiments
 
 Completed cycle: E0–E4, four of six conservatively counted **off-board attention requests**

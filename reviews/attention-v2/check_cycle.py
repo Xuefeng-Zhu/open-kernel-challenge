@@ -21,6 +21,10 @@ def save(d):
     d['all_requests_terminal']=all(e['state']=='terminal' for e in d['requests'])
     p=LEDGER.with_suffix('.tmp');p.write_text(json.dumps(d,indent=2)+'\n');p.replace(LEDGER)
 def gpu_slot(state,e):
+    current=json.loads(GPU_SLOT.read_text())
+    if current['state'] not in ['idle','terminal'] and (
+            current.get('problem')!='muse_attention_decode' or current.get('experiment')!=e['experiment']):
+        raise RuntimeError('Cannot overwrite another active GPU experiment')
     value=dict(state=state,problem='muse_attention_decode',experiment=e['experiment'],
         job_id=e.get('job_id'),source_sha256=e['source_sha256'],updated_utc=now())
     p=GPU_SLOT.with_suffix('.tmp');p.write_text(json.dumps(value,indent=2)+'\n');p.replace(GPU_SLOT)

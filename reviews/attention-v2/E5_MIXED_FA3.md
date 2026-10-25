@@ -53,3 +53,32 @@ No Modal launch: cumulative conservative guard stays$1.708917914/$2,netpaid$0;
 previous A09 BlobCreate401 remains unresolved. No new/renewed credentials,
 spend-cap change, push, ranking entry or paid resource. E2's unchanged shared
 ticket path still has a simultaneous-call limitation; no concurrency pass claimed.
+
+## Actual official outcome
+
+Check e0b3cd9474084069 passed all16 prerequisites and12timed shapes.
+Source commit51d7fca04ccc38a972039ef1b086011d8e456264. Score0.8919466283×,
+95%CI[0.8785674289,0.9053258277]. This is12.0702% above E2,23.4581% above
+corrected-v2 E0; still slower overall than SGLang. Six weighted loads reproduce
+the official score. Full receipts/raw samples are in E5-official-result.json.
+
+Target full verifyB16 adjusted time339.220us→204.304us; B32 588.574us→389.661us.
+Reference-normalized shape speedup ratios versus E2 are1.6476 and1.5110. Other
+paths remain unchanged; largest control movement about2.04%, none exceeds5%.
+Separate official runs are not directly paired candidates, but intervals do not
+overlap and target gains are substantial. The dispatch hypothesis is supported.
+
+The exact checked mixed_fa3.py is the selected complete candidate. It includes
+all paths and entrypoint, so no source copy or algorithm change is needed for
+finalization; do not spend the reserved request on a known identical-source
+duplicate. User attention budget1remains of6 conservatively counted requests.
+Platform daily checks1/20used after reset; user budgets did not reset. E2 and its
+0.795882× receipt/source are preserved. No competitor source executed.
+
+GPU evidence: official output/new-cache correctness and fresh-input CUDA-graph
+timing on published shapes. Explicit target-path same-address GPU A/B/A, page64/
+non-unit-scale B16/B32 and untouched-old-row checks were not separately executed;
+CPU stand-in tests cover those contracts but are not native execution evidence.
+Unchanged E2 fallback retains its simultaneous-call ticket limitation. No universal
+concurrency pass is claimed. Native FA3 compile/performance is now verified by
+the official check; no Modal app or new credential was used.

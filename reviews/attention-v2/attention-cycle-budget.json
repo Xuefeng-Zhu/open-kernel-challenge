@@ -229,8 +229,8 @@
     {
       "experiment": "E5",
       "mode": "check",
-      "state": "accepted",
-      "status": "queued",
+      "state": "terminal",
+      "status": "done",
       "job_id": "e0b3cd9474084069",
       "candidate": "reviews/attention-v2/mixed_fa3.py",
       "source_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
@@ -259,7 +259,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T00:09:11.384402+00:00",
-      "last_checked_utc": "2026-10-25T00:14:21.586168+00:00"
+      "last_checked_utc": "2026-10-25T00:19:54.449936+00:00",
+      "passed": true,
+      "speedup": 0.8919466283178157,
+      "speedup_ci": [
+        0.8785674288930484,
+        0.9053258277425829
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      }
     }
   ],
   "remaining": 1,
@@ -308,16 +326,16 @@
     }
   },
   "selection": {
-    "source": "final_attention.py",
-    "parent": "fixed_chunks.py",
-    "parent_job": "7edded086c8a47f2",
-    "sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
-    "reason": "E3 target changes within0.2%, aggregate0.25% inside overlapping CIs; choose simpler E2 with explicit ABA evidence",
-    "highest_point_estimate_experiment": "E3",
-    "highest_point_estimate_speedup": 0.7978730330211233,
-    "final_verification_request": "a5ee77cedca44ab9",
-    "final_verification_status": "duplicate",
-    "verified_via_job": "7edded086c8a47f2"
+    "source": "mixed_fa3.py",
+    "source_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
+    "sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "official_job": "e0b3cd9474084069",
+    "speedup": 0.8919466283178157,
+    "speedup_ci": [
+      0.8785674288930484,
+      0.9053258277425829
+    ],
+    "reason": "Only full verifyB16/B32 uses official FA3; all-path check passes,12.07% aggregate improvement over E2; preserved E2 remains unchanged"
   },
   "counting_note": "Four requests conservatively reserved against six; E4 deduplicated to E2, only three new GPU runs and no E4 platform quota increment.",
   "last_platform_quota": {
@@ -333,8 +351,8 @@
     }
   },
   "quota_observed_utc": "2026-10-24T22:52:41.784478+00:00",
-  "all_requests_terminal": false,
-  "actual_new_gpu_runs": 3,
+  "all_requests_terminal": true,
+  "actual_new_gpu_runs": 4,
   "duplicate_requests": 1,
   "phase_history": [
     {
@@ -343,5 +361,18 @@
       "phase": "E0-E4 completed"
     }
   ],
-  "current_phase": "E5 own full-verify FA3 dispatch from preserved E2; two remaining user checks continue after UTC reset"
+  "current_phase": "E5 complete, one user attention request reserved; no unchanged-source duplicate check needed",
+  "selection_before_E5": {
+    "source": "final_attention.py",
+    "parent": "fixed_chunks.py",
+    "parent_job": "7edded086c8a47f2",
+    "sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
+    "reason": "E3 target changes within0.2%, aggregate0.25% inside overlapping CIs; choose simpler E2 with explicit ABA evidence",
+    "highest_point_estimate_experiment": "E3",
+    "highest_point_estimate_speedup": 0.7978730330211233,
+    "final_verification_request": "a5ee77cedca44ab9",
+    "final_verification_status": "duplicate",
+    "verified_via_job": "7edded086c8a47f2"
+  },
+  "completed_utc": "2026-10-25T00:22:06.700956+00:00"
 }

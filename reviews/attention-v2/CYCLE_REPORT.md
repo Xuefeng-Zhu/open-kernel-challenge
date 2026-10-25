@@ -1,3 +1,6 @@
+Latest narrow mixed-dispatch extension: [E5_MIXED_FA3.md](E5_MIXED_FA3.md).
+E5 official0.8919466× passes; E2 preserved. Earlier E0–E4 report follows.
+
 # Attention E0–E4 cycle
 
 Scope: muse_attention_decode only. Six newly authorized off-board checks maximum,
