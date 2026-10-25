@@ -1,3 +1,36 @@
+# A2-15 local diagnosis and prototype complete; no external operation pending
+
+Read CURRENT_AUTHORIZATION.md. No new OKC/GPU/Modal/push/credential operation
+was attempted or reserved in this phase. Native compilation and execution are
+not available in this Mac environment (no Triton installation). Do not upload
+or launch without a separate exact approval.
+
+Candidate: reviews/attention-v2/mixed_fa3_page_lookahead.py, SHA256
+fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c.
+Parent is preserved A2-13, not rejected A2-14. Only full B32/L1 prefetches next
+page IDs before current QK/PV, consumes them after PV and carries int64 rows.
+Math, scalar denominator, K/V payload loads, merge/cache ownership, geometry and
+all other paths remain the parent. Seven AST/address and three diagnosis tests
+pass. Independent review found no concrete semantic defect; native scheduling,
+resources, correctness and performance remain unverified.
+
+A2-14 diagnosis: denominator state16→1024 FP32 values and full-chunk logical
+multiplies2048→131072, with max reductions unchanged. These are source counts,
+not measured instructions/registers. Producer profile311.1→422.0us; no saved
+candidate-specific compiler artifacts were found. Do not claim proven spilling.
+
+See reviews/attention-v2/a215/README.md, diagnosis.json, preflight.json and
+NATIVE_DIAGNOSTIC_PLAN.md for evidence, commands and the falsification gate.
+The bounded local phase has one candidate; do not start a broader rewrite or
+parameter sweep. Selected A2-11 and projection remain unchanged. Latest actual
+verified private remote tip from the prior phase:
+73d9d1acfa21722415bb0957f3ec9197c75c5855 (attention-fa3-sanitized).
+New A2-15 work is local and unpushed.
+
+The prior completed A2-14 checkpoint follows; its check must never be repeated.
+
+---
+
 # A2-14 complete: reject performance regression
 
 Job `6d6019056cbc4f81` is terminal DONE; do not resubmit. Official H200 passed

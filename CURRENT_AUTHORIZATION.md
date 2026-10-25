@@ -1,3 +1,21 @@
+# Current phase: A2-15 local research only
+
+The completed A2-14 exact check/private-push permission is exhausted. The current
+instruction authorizes bounded local diagnosis, one next candidate or diagnostic,
+local tests and a local commit. No new candidate upload, OKC check, Modal launch,
+repository push, paid resource, credentials or formal entry is authorized.
+Do not route around prior external-action restrictions. Preserve all selected
+and failed versions. A2-15 is local-only; it has no reserved or accepted job.
+
+A2-15 source, tests, results and exact native-evidence needs are under
+reviews/attention-v2/a215/. Future native execution requires separately scoped
+approval and verified existing access; do not renew credentials automatically.
+The historical free-check count ceiling removal does not override this scope.
+
+The completed A2-14 record follows as historical context.
+
+---
+
 # Current exact A2-14 authorization
 
 The user approved one official off-board check of the frozen A2-14 candidate

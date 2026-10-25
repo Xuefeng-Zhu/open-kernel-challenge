@@ -75,3 +75,9 @@ The public competitor source was inspected but not copied into or executed by
 the candidate. Its original additions are Apache-2.0 under its own notices;
 upstream rights remain separate. No competitor performance claim is adopted as
 our measured result.
+
+Attention A2-15 (`reviews/attention-v2/mixed_fa3_page_lookahead.py`) is an original
+page-address scheduling change to the preserved A2-13 source. It retains the
+existing SGLang notices. Triton's public load/range documentation informs the
+API semantics; no new upstream or competitor code was copied or executed.
+The local diagnosis and tests do not claim native compiler or GPU evidence.

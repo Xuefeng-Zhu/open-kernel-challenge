@@ -1,0 +1,57 @@
+{
+  "experiment": "A2-15",
+  "phase": "local prototype and diagnosis only",
+  "recorded_utc": "2026-10-25T08:12:54.752437+00:00",
+  "source": "reviews/attention-v2/mixed_fa3_page_lookahead.py",
+  "source_sha256": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+  "parent_source": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+  "parent_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+  "parent_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+  "environment": {
+    "os": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "triton_installed": false
+  },
+  "tests": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/test_page_lookahead.py",
+      "passed": 7,
+      "failed": 0,
+      "elapsed_seconds": 2.363,
+      "evidence_type": "AST/source and CPU integer address model"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/diagnose_a214.py --self-test",
+      "passed": 3,
+      "failed": 0,
+      "elapsed_seconds": 0.039,
+      "evidence_type": "Source operation model and saved-receipt calculations"
+    }
+  ],
+  "development_history": [
+    {
+      "kind": "test harness error",
+      "outcome": "First run had 6 passes and 1 AttributeError from an AST assignment selector reading .id on a Tuple; ast.Name guard fixed, complete suite rerun."
+    },
+    {
+      "kind": "local source refinement",
+      "initial_sha256": "37c9044137949855c585ffabd6e3dfab376387b8f546ede78ce17b7752043c08",
+      "change": "Moved first consumption of prefetched raw page IDs after current QK/PV; exact final source retested. Neither draft ran on GPU."
+    }
+  ],
+  "independent_review": {
+    "reviewer": "a215_next_mechanism_review",
+    "reviewed_sha256": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+    "outcome": "No concrete semantic defect; new-token block, merge, entrypoint, masks and int64 ordering preserved. Compiler may sink load or worsen scheduling; no native endorsement."
+  },
+  "native_compile": false,
+  "gpu_correctness": false,
+  "gpu_performance": false,
+  "new_okc_requests": 0,
+  "new_modal_apps": 0,
+  "upload_attempted": false,
+  "push_attempted": false,
+  "external_scope": "Public documentation read only; no candidate transfer authorized in this phase"
+}
