@@ -1,9 +1,9 @@
 {
   "purpose": "One-time private push export; preserve original research branch and per-experiment commits",
   "source_branch": "attention-fa3-local",
-  "source_snapshot": "4266e22d7fec8e188a64e53438a0e38cd9c3c03b",
+  "source_snapshot": "f65dc0f36b9895771397b66ab4d95f6a25756832",
   "export_branch": "attention-fa3-sanitized",
-  "sanitized_snapshot": "f973035571dccdc77ccd4b514c574f67474d9f28",
+  "sanitized_snapshot": "45115b25c47295d0307d25af3afcb0c5d8b9611e",
   "changes": "Only historical non-secret Modal token identifier in A09 CLI warning replaced; no secret found; current tree/candidates identical",
   "original_history_preserved": true,
   "commit_mapping": {
@@ -67,7 +67,8 @@
     "3a3b2af5853bfd085597db3bcbc5e3d933c46f9f": "a424bf23023a77df0e825a20af744f4d3b4f847c",
     "a0e49b48ed456536a5e72db7d5ee5bb767aa1823": "f22734067c3eb6a914414ae3932ad492c0294efa",
     "be354ae892b30d08da687810b1f739e83c4b2e46": "5a819d103ed5ebe4979699986dfc15e0cb9e01ae",
-    "4266e22d7fec8e188a64e53438a0e38cd9c3c03b": "f973035571dccdc77ccd4b514c574f67474d9f28"
+    "4266e22d7fec8e188a64e53438a0e38cd9c3c03b": "f973035571dccdc77ccd4b514c574f67474d9f28",
+    "f65dc0f36b9895771397b66ab4d95f6a25756832": "45115b25c47295d0307d25af3afcb0c5d8b9611e"
   },
   "historical_redacted_versions": [
     {
@@ -168,7 +169,7 @@
   "projection_unrelated_and_unchanged": true,
   "initial_source_snapshot": "9638575cd8382a823eb5fb66a4aca14247bae5d2",
   "initial_export_job_note": "A2-01 6e761bdd1d9747ad, no result claimed",
-  "previous_export_tip": "e8cbe2e7bd771865f1107513645ea72ad41e190a",
+  "previous_export_tip": "3b6b57248612e3245b38519dddf3a2ef95d91028",
   "incremental_related_replay": true,
   "current_export_note": "Runtime state is in the exported ledgers/reports, not inferred by this local exporter"
 }
