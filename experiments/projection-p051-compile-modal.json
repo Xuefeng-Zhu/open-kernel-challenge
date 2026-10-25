@@ -1,0 +1,151 @@
+{
+  "experiment": "P051 compile-only split-K orientation diagnostic",
+  "state": "terminal",
+  "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+  "created_utc": "2026-10-25T23:17:08.209790+00:00",
+  "source_commit": "144a0b8e99cdb145acfc3638952c4971012999ae",
+  "worker_sha256": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+  "provenance_source_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "961345c72351eb929e2ea88268d0e4b35fda7f64045527d417c0662af6f4a9e3",
+  "cost_reserve_usd": "0.2784230000660",
+  "verified_free_credit_floor_usd": "27.87",
+  "resource_rate_usd_per_second": "0.001305166667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "2.13000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-2.13000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "2.12711045",
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "authentication_expiry_utc": "2026-10-26T03:39:46+00:00",
+  "preflight_sha256": "597bfede1951f08293706f1a92062220a89cbb7e35c55e6245d2ddbe023b2f56",
+  "shared_controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 105,
+    "startup_timeout": 45,
+    "child_internal_timeout": 75,
+    "child_hard_timeout": 90,
+    "app_watchdog": 150,
+    "stop_allowance": 15,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "compile_only_requested": true,
+  "performance_measurement_requested": false,
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-25T23:17:10.454467+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 1,
+    "packed_bytes": 14423,
+    "encoded_bytes": 71695,
+    "artifact_bytes": 53635,
+    "sha256": "7fc41a07741f7e18a528203d9bd2091df8c7f0db92633a92a8765d88b0a4fccf",
+    "artifact_sha256": {
+      "compile-only.log": "26a1193dd2528460701ae053da9bbd20ef52f555123ac3492d5a426b0e9b575f",
+      "summary.json": "ed45d82608b5c864175e8ba17f6ff890d67475c11506e298792ee1e77f4339fb",
+      "timing.json": "27d37c4b59cba551a2f8ccb339032cd6638d45d885d0263ea9a7d9d871d6cdb4",
+      "timing.pooler_m8.control.ptx": "232c2d78f29def4af5e7a30a94fbad488b0de23764901441344fe68060a2bae7",
+      "timing.pooler_m8.reduce.ptx": "bb67852b9532184e1c955300adf1aad8489ec50128c6e9a7a498f77c24f91e59",
+      "timing.pooler_m8.weight_first.ptx": "4d23fd278388af8bbd7be0d485768d0d102c33ccdb8d52563049dac97be0635b"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "compile-only",
+      "exit_code": 0,
+      "wall_seconds": 6.581029745
+    }
+  ],
+  "worker_wall_seconds": 6.581100659,
+  "explicit_stop": {
+    "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+    "requested_utc": "2026-10-25T23:17:23.677535+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T23:17:24.635997+00:00",
+  "client_wall_seconds": 16.423099749954417,
+  "shutdown_observation": {
+    "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 16:17:08-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "2.13000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-2.13000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "2.12711045",
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "independent_shutdown_observation": {
+    "observed_utc": "2026-10-25T23:17:42.880565+00:00",
+    "app": {
+      "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:17:08-07:00",
+      "stopped_at": "2026-10-25 16:17:25-07:00"
+    },
+    "all_apps_stopped_tasks_zero": true
+  },
+  "delayed_billing_observation": {
+    "observed_utc": "2026-10-25T23:20:52.279725+00:00",
+    "billed_cost": "0E-8",
+    "gross_usd": "2.14155627",
+    "workspace_gross_delta_usd": "0.01155627",
+    "qualification": "Delayed workspace snapshot; not a settled per-app invoice; full reserve retained"
+  }
+}

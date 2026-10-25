@@ -1,0 +1,157 @@
+{
+  "cases": [
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 42,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "timing.pooler_m8.control.ptx",
+          "ptx_sha256": "232c2d78f29def4af5e7a30a94fbad488b0de23764901441344fe68060a2bae7",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 20,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "timing.pooler_m8.reduce.ptx",
+          "ptx_sha256": "bb67852b9532184e1c955300adf1aad8489ec50128c6e9a7a498f77c24f91e59",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 2048
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 36,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "timing.pooler_m8.weight_first.ptx",
+          "ptx_sha256": "4d23fd278388af8bbd7be0d485768d0d102c33ccdb8d52563049dac97be0635b",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 20480
+        }
+      },
+      "complete": true,
+      "correctness": [],
+      "correctness_status": "not run",
+      "coverage": "official scored shape",
+      "generated_kernel_executed": false,
+      "k": 8192,
+      "lowering_differs": true,
+      "m": 8,
+      "n": 4096,
+      "name": "pooler_m8"
+    }
+  ],
+  "compile_only": true,
+  "complete": true,
+  "environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA H200",
+    "multiprocessor_count": 132,
+    "python": "3.12.3",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "kind": "P051 matched orientation compiler/correctness diagnostic",
+  "limitations": [
+    "Not the full 9-prerequisite/30-scored official suite",
+    "M9..16 are diagnostic tile-envelope extensions, not historical R06 dispatch",
+    "No simultaneous streams/calls test; graph ABA is sequential",
+    "An internal deadline cannot interrupt blocked CUDA/compiler operations"
+  ],
+  "limits": {
+    "internal_seconds": 75.0,
+    "required_external_timeout_seconds": 90.0
+  },
+  "measurement": "No timings, overhead subtraction, performance gate or official score",
+  "native_imports_completed": true,
+  "precision": "Original BF16 operands, FP32 partials and reduction, BF16 output",
+  "provenance_note": "sources_sha256 contains only locally verified files; provenance_reference_hashes records pinned local development references, including any omitted compile-only oracle files",
+  "provenance_reference_hashes": {
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d"
+  },
+  "sources_sha256": {
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db"
+  },
+  "started_utc": "2026-10-25T23:17:16.879030+00:00",
+  "wall_seconds": 5.934897607
+}

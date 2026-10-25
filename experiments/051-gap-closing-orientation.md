@@ -1,7 +1,7 @@
 # P051 — gap-closing strategy and matched GEMM orientation diagnostic
 
-Status: local research and executable diagnostic preparation. No P051 GPU,
-Modal, official check, or new performance result. Selected P046 and rollback
+Status: compile-only native gate passed on H200. No P051 generated-kernel
+execution, numerical correctness test, timing or official check. Selected P046 and rollback
 P039 remain unchanged. P050 is parked; its source and tests are preserved.
 
 实验卡：Projection 目前官方检查为 1.18414×，公开榜首为 1.6099×。需要的是
@@ -239,3 +239,92 @@ timeout partial-artifact retention. The new test initially hit a Python 3.12
 pathlib mock error; its test factory was corrected before this passing rerun.
 Worker SHA256: `445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db`.
 Launcher SHA256: `961345c72351eb929e2ea88268d0e4b35fda7f64045527d417c0662af6f4a9e3`.
+
+## Native result — compiler hypothesis confirmed, performance untested
+
+App **ap-Iu9K2yefCGuDlalnHrLuhd**, source commit
+`144a0b8e99cdb145acfc3638952c4971012999ae`, accepted 2026-10-25
+23:17:10.454467 UTC. The six-file payload matched the reviewed commit. H200
+SM90/132 SMs, Torch 2.14.1+cu130, CUDA 13.0, Triton 3.8.0, Python 3.12.3.
+TF32 remained false and the existing BF16 library-reduction setting unchanged.
+
+Exactly pooler M8/N4096/K8192 was compiled: matched partials and their common
+reducer. `warmup` compiled each kernel; load-only driver initialization obtained
+resources. **None of the generated kernels was launched.** No numerical
+correctness, replay, performance or score conclusion follows from this run.
+
+| Native evidence | Control | Weight-first |
+|---|---|---|
+| Matrix instruction | BF16 mma.sync m16n8k16 | BF16 WGMMA m64n16k16 |
+| Registers/thread | 42 | 36 |
+| Shared memory | 10,240 B | 20,480 B |
+| Driver local allocation / 4 | 0 | 0 |
+| Actual static async global-copy sites | 10 | 10 |
+| WGMMA wait inside loop | none | wait_group 1 |
+
+The common reducer reports 20 registers and 2,048 B shared. Raw PTX and
+byte-identical reports are under `results/remote-P051-compile/`; their hashes and
+line-level scheduling evidence are in `results/router-p051-native-assessment.json`.
+Control PTX SHA256 `232c2d78f29def4af5e7a30a94fbad488b0de23764901441344fe68060a2bae7`;
+weight-first `4d23fd278388af8bbd7be0d485768d0d102c33ccdb8d52563049dac97be0635b`.
+
+The control waits for copies and executes synchronous MMA before issuing next
+copies into reused shared buffers. The weight-first loop issues four WGMMA
+instructions, commits them, uses `wait_group 1`, and then issues the next copies
+into alternating shared buffers. At the loop exit, `wait_group 0` drains WGMMA
+before shared-memory reuse. This permits one committed group to remain
+outstanding during next-copy issuance. The instruction semantics are documented
+in [NVIDIA's PTX reference](https://docs.nvidia.com/cuda/archive/13.0.0/parallel-thread-execution/index.html).
+Actual overlap duration, utilization, HBM bytes and stalls were not measured.
+
+Both epilogues convert accumulator layout through shared memory before storing
+the identical external partial layout. Control uses two vector-4 shared
+stores/loads; weight-first uses four vector-2 operations. Both represent the same
+static 32 bytes/thread in each direction, with different instruction/address
+work. There is no global store inside the K loop or full global transpose.
+Different MMA issue granularities make four versus eight static matrix
+instructions unsuitable as a throughput ratio. The raw worker's broad
+`async_copy=16` prefix count includes commit/wait instructions; the precise
+data-copy count is ten sites, preserved separately without editing raw evidence.
+
+The worker completed in 6.5811 s; client wall time was 16.4231 s, app lifetime
+about 17 s. Explicit stop initially returned while the service was stopping, so
+the launcher correctly returned a reconciliation state. One subsequent
+read-only query confirmed this exact app **stopped, tasks 0**, and all workspace
+apps stopped. No duplicate launch or stop retry occurred. Delayed billing at
+23:20:52 UTC showed a workspace gross increase of **$0.01155627**, paid **$0**.
+This is not a settled per-app invoice; the full $0.278423 reserve remains the
+conservative accounting bound. Initial zero billing delta was not zero cost.
+
+The native gate therefore passes: the predicted lowering change occurred, BF16
+operands/FP32 accumulation remain visible, and resource/ordering evidence is
+available. Shared memory doubled, so this is not an unconditional resource win.
+Selected P046 remains unchanged at 1.1841399409×. No official quota was consumed.
+
+## Smallest next executable screen
+
+1. Execute the already-prepared five-case, 70-comparison original-oracle
+   protocol, with fresh normal/outlier/sparse/zero values, poisoned scratch and
+   same-address sequential graph A/B/A. Failures stop timing. This covers the
+   diagnostic envelope, not all 39 official cases or concurrent streams.
+2. On pooler M8 and nearby M7 only, compare the entire partial-plus-reducer call
+   against the matched control **and P046**. Use six predefined warmup rounds,
+   24 measured rounds / 12 reversed-order pairs, cold L2, fresh shared inputs,
+   original correctness before/after and all retained samples. Report raw graph
+   times separately from official calibrated timings. Do not modify split count,
+   stages or geometry while obtaining this first causal comparison.
+3. Predeclare advancement: every correctness check passes; at least 10% median
+   paired reduction versus matched control, winning at least 10/12 pairs for
+   each case; candidate no more than 5% slower than P046 on either case. These
+   are mechanism-screen gates, not selection or prize claims. If it remains far
+   behind P046, do not extend this unchanged geometry merely because WGMMA exists.
+
+The same algebra can map QKV, pooler, unpooler and O BF16 GEMMs with appropriate
+N/K metadata and original output layout. That establishes mathematical
+applicability, not compiled performance. M>16 needs identical M tiling in both
+controls or a separately isolated full-K design; M32/128/256 are not silently
+handled by this prototype. Router precision requires a separate treatment.
+Only after representative success should a matched explicit-pipeline extension
+and broader load coverage be considered. Direct vendor tactic selection remains
+capability-blocked as recorded above. No second app or official check is launched
+by this report.

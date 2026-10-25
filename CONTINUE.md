@@ -1,3 +1,22 @@
+# P051 compile gate passed — P046 remains selected
+
+Native app ap-Iu9K2yefCGuDlalnHrLuhd completed and was independently verified
+stopped/tasks0; all apps stopped. Shared measurement slot released. Source
+commit144a0b8e99cdb145acfc3638952c4971012999ae.
+
+Matched operand reversal changes BF16 mma.sync to BF16 WGMMA. Registers42→36,
+shared10→20KiB, driver local allocation0both. Generated loop allows one WGMMA
+group outstanding during next-buffer copies; no actual overlap/speed is measured.
+No generated kernel executed; correctness, replay and performance remain open.
+Read experiments/051-gap-closing-orientation.md and raw hash-bound artifacts
+under results/remote-P051-compile/. The next narrow screen is specified there.
+
+P0461.1841399409× selected; P039 rollback. P050 parked. No official checks used
+in this phase. Delayed gross workspace delta$0.01155627, paid$0, reserve$0.278423;
+billing is not a settled per-app invoice. No active/uncertain Projection app.
+
+## Previous checkpoint (historical)
+
 # P051 — major-gap audit and matched orientation diagnostic
 
 P046 remains selected at official 1.1841399409×; P039 remains the rollback.

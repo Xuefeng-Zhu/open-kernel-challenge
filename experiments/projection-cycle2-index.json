@@ -128,13 +128,16 @@
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
   "current_diagnostic": {
-    "id": "P048",
-    "status": "terminal-pass",
-    "report": "experiments/048-p046-paired-confirmation.md",
-    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
-    "oracle_checks": 480,
+    "id": "P051",
+    "status": "terminal-compile-gate-pass-execution-unverified",
+    "report": "experiments/051-gap-closing-orientation.md",
+    "assessment": "results/router-p051-native-assessment.json",
+    "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+    "source_commit": "144a0b8e99cdb145acfc3638952c4971012999ae",
     "stopped_tasks0": true,
-    "not_official_score": true
+    "gpu_kernel_executed": false,
+    "official_check": false,
+    "performance_measured": false
   },
   "last_rejected_candidate": {
     "id": "P049",
@@ -162,7 +165,18 @@
     "report": "experiments/051-gap-closing-orientation.md",
     "model": "results/router-p051-gap-model.json",
     "public_snapshot": "results/public-leader-gap-20261025.json",
-    "next": "P051 matched orientation compile-only gate; native unverified",
+    "next": "Five-case correctness plus minimal M8/M7 paired whole-call screen against matched control and P046; not launched",
     "selected_unchanged": true
-  }
+  },
+  "preserved_diagnostics": [
+    {
+      "id": "P048",
+      "status": "terminal-pass",
+      "report": "experiments/048-p046-paired-confirmation.md",
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "oracle_checks": 480,
+      "stopped_tasks0": true,
+      "not_official_score": true
+    }
+  ]
 }
