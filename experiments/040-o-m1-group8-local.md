@@ -133,3 +133,36 @@ Attention A2-02 is currently active; P040 may not dispatch until its terminal
 receipt releases the shared GPU slot. Projection6checks remain before any P040
 request. New explicit standing authorization allows reviewed private auto-push,
 never raw local logs or credentials; GPU remains unverified at source commit.
+
+
+## Actual official outcome — correct, target goal missed, no promotion
+
+Accepted once2026-10-25T03:02:39.328726Z, jobd57d89967d1a408f, source
+97fe74d3578668a5ce7d34b0171bd45322747917/SHA8ca6417a. Native9prerequisites+
+30scored cases pass. Score1.1758713266×,CI[1.1582332567,1.1935093965], P039
+1.1732389990×,CI[1.1556404140,1.1908375840]. Point+0.2244% and overlapping
+intervals do not establish a whole-workload gain; retain P039 as recommendation.
+Keep P040 as a correctness-passing but rejected optimization experiment, not a
+functional failure. Do not change the declared15%goal after seeing its result.
+
+O m1 adjusted6.655842→6.017233µs, same-run SGLang6.560000µs. Reference-normalized
+latency cut6.5077%, below15%target. Other29paths source-identical; max absolute
+normalized latency shift4.20%, no>5%regression. Target-only parent-frozen model
+1.1751338× is a scenario, not another achieved run. One separate instrumented
+profile shows_gemv_group8=4.3µs vs prior library4.9µs; samples are not official
+medians. Actual instructions/registers/shared/spills/DRAM/occupancy remain absent.
+No conclusion about a general memory bottleneck or library geometry from its name.
+
+Full samples/30shapes/six62-weighted-load arithmetic/evaluator/telemetry retained
+in remote-P2-05-o-m1-group8.json/.csv; router-p040-official-assessment.json and
+assess_p040.py reproduce the verdict. Native canonicalm1 correctness/fresh graphs
+pass; explicit native K/Ntails/strides/outliers/concurrency were not separately
+run. Their CPU evidence is not native execution.
+
+Projection5/10accepted,5left; latest daily17/20checksleft,0scoredused. All admitted
+projection jobs terminal. This ends this fixed-group hypothesis: no grouping/tile
+sweep or comment-only retry to obtain a lucky sample. OriginalP039 and earlier
+best1.14865 preserved. Preserve unused quota while attention has larger measured
+gaps. This is a bounded priority decision, not proof that no projection speedup
+exists. Read PROJECTION_BOUNDED_REVIEW.md. Standing private auto-push allowed;
+no Modal/paid/newcredential/ranked action or visibility change.
