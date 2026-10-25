@@ -144,3 +144,41 @@ OKC_CLI=<primary-workspace>/bin/okc OKC_GPU_SLOT=<primary-workspace>/local-notes
 
 Projection7remaining before this request. Failures count; do not repeat uncertain
 POST. No additional push authorization; new admission/result commits stay local.
+
+
+## Native terminal outcome — retain with aggregate qualification
+
+Jobd5636ac8d1404abd accepted once2026-10-25T02:34:58.847964Z, then terminal done;
+all9prerequisites+30scored cases pass. Sourcecdf5bc2/SHA0c0c4111.
+New score1.1732389990×, CI[1.1556404140,1.1908375840], previous best1.1486499523×,
+CI[1.1314202031,1.1658797016]. New point is+2.1407%, but intervals overlap:
+whole-workload improvement over previous best is not statistically resolved.
+Both are clearly faster than SGLang; do not attribute the whole2.14% to this change.
+
+Target routerm1 adjusted7.468829→5.204267µs; same-run SGLang10.400000µs.
+Relative normalized speedup1.430733, latency cut30.1058%. GPU profile confirms
+one_gemv(3.6µs separate instrumented sample) instead of partial+reduce. The
+native FP32 specialization and canonical m1 correctness/fresh-graph timing now
+pass; 1e-4router tolerance is retained. No registers/shared/spill/PTX/counter data
+were captured, so no occupancy/bandwidth diagnosis is claimed.
+
+Unchanged qkvm1 and unpoolerm1 have normalized speedup shifts+6.61%/+11.96%.
+They are source-identical controls, not additional P039 optimizations; separate
+runs/addresses/timing/normalization vary. No unchanged path has>5%latency regression.
+Frozen-parent arithmetic applying only the measured target ratio yields1.1576659×
+(+0.785%), consistent with the narrow initial value range; NOT another achieved run.
+Save highest verified point P039 for its concrete30%target benefit, preserve prior
+best and label aggregate ranking unresolved. Do not fabricate a nonce repeat.
+
+All30shape times, raw samples, six62-weighted-load totals, evaluator identity,
+telemetry and controls remain in remote-P2-04-router-m1-fp32-gemv.json/.csv and
+router-p039-official-assessment.json. Reproduce analysis with
+`<primary-workspace>/.venv/bin/python assess_p039.py`.
+Native m1tails/strides/outliers/concurrent stress were not separately executed;
+CPU tests are not GPU evidence, and official router prerequisites targetm8/m9.
+
+Projection4/10accepted in cycle2,6left; daily18/20checksleft,0scored used.
+GPU slot terminal; no Modal/paid/credential/ranked action. Later user explicitly
+approved automatic reviewed private pushes, superseding the earlier one-time
+push limitation. Source/results/report will be pushed with truthful status,
+no force push or visibility change; credentials/private logs stay ignored.

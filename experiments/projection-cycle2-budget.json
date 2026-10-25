@@ -3,7 +3,7 @@
   "problem": "muse_bf16_proj",
   "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
   "maximum_new_experiments": 10,
-  "remaining_authorized": 7,
+  "remaining_authorized": 6,
   "max_active_jobs": 1,
   "max_spend_usd": 0,
   "mode": "check",
@@ -208,6 +208,60 @@
         1.0953604028999404,
         1.1287216334451162
       ]
+    },
+    {
+      "experiment": "P2-04-router-m1-fp32-gemv",
+      "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+      "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+      "submission_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+      "mode": "check",
+      "created_utc": "2026-10-25T02:34:58.184364+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "d5636ac8d1404abd",
+      "hypothesis": "Only router m1 reuses unchanged single-call FP32 SIMT GEMV on original weights, removing padded16 hi/lo split32 + reducer; keep all other paths; aggregate value may be noise",
+      "control_job_id": "48b1357016134e52",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_router_m1_fp32_gemv.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:34:58.847964+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T02:40:14.422840+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "passed": true,
+      "speedup": 1.173238998969285,
+      "speedup_ci": [
+        1.1556404139847458,
+        1.1908375839538243
+      ]
     }
   ],
   "publication": "New work remains local; no push authorized",
@@ -234,11 +288,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 1,
-      "left": 19
+      "used": 2,
+      "left": 18
     }
   },
-  "last_account_quota_utc": "2026-10-25T00:36:14.613565+00:00",
+  "last_account_quota_utc": "2026-10-25T02:40:14.422840+00:00",
   "admission_pause_reason": "M36 single-pass candidate failed performance decisively, no meaningful Modal-qualified next candidate. Remaining user allowance persists; scope exact source/evidence before any future dispatch.",
   "latest_stage_summary": "QKV_M128_SINGLEPASS_RESULTS.md",
   "historical_modal_first_pause": {
@@ -280,5 +334,21 @@
       "reason": "Later explicit user autonomous iteration within remaining7 supersedes earlier intermediate pause; no Modal/newcredentials/push/ranked/paid"
     }
   ],
-  "latest_authorization_note": "User requests autonomous evidence-led iteration; projection7 remaining, reserve final where meaningful; GPU serialized across problems; no new Modal/push/ranked/paid/credentials"
+  "latest_authorization_note": "User requests autonomous evidence-led iteration; projection7 remaining, reserve final where meaningful; GPU serialized across problems; no new Modal/push/ranked/paid/credentials",
+  "selection_before_P039": null,
+  "selection": {
+    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "speedup": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "reason": "Retain P039 for correct native30%target latency reduction; highest verified point score, but aggregate gain over previous best is unresolved by overlapping CIs and shifted controls",
+    "previous_best_job": "48b1357016134e52",
+    "previous_best_preserved": true
+  },
+  "current_phase": "P039 native target benefit supported; total-vs-parent unresolved; six checks left; read-only next-mechanism review while attention candidate is prepared"
 }
