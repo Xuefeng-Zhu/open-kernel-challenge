@@ -1,0 +1,76 @@
+{
+  "scope": "Exactly two compile-only Gluon attention-core warmups; no candidate execution, correctness, performance or dispatch change",
+  "candidate_source_sha256": "3d847a290d747c204419fd131c8149a21c4afddbdfb1d0a6130f5f522b81847c",
+  "working_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "CPU_tests": {
+    "source": 9,
+    "worker": 9,
+    "controller": 12
+  },
+  "independent_source_review": "KERNEL_REVIEW.md",
+  "independent_harness_review": "Reviewer reported actual helper integration and source/worker/controller/card PASS; final narrative file may follow separately",
+  "free_credit_reserve_usd": ".40",
+  "actual_paid_limit_usd": "0",
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files": {
+    "CONFIG.md": {
+      "sha256": "e0061148b2b77cb278282c56baac27930c7e5be3d0e9348dff4ce5142ca01db1",
+      "bytes": 6649
+    },
+    "EXPERIMENT_CARD.md": {
+      "sha256": "6e1d758d4306a1e0510353e4062cf50b8ce04b17f893313c7f1a2cb408c0efa6",
+      "bytes": 4447
+    },
+    "KERNEL_REVIEW.md": {
+      "sha256": "491e1fb3789848576606fa351b2cd9c13ac4779cacdd5925944c1a86d28f6cb3",
+      "bytes": 6626
+    },
+    "README.md": {
+      "sha256": "9c81382a0e15c24085e3b3096b2f7babe545bf29969b73805d8744dcab89aa39",
+      "bytes": 2753
+    },
+    "config.py": {
+      "sha256": "ecaf6588893ad4ce6bc57944a9932018f511113aeb13a6ee266edcf536d701ec",
+      "bytes": 1562
+    },
+    "kernel.py": {
+      "sha256": "3d847a290d747c204419fd131c8149a21c4afddbdfb1d0a6130f5f522b81847c",
+      "bytes": 6261
+    },
+    "native/REVIEW.md": {
+      "sha256": "1e82f86e456f3358291cf9edff2194e436258baa6c05e08a673e5a3683e8060a",
+      "bytes": 7105
+    },
+    "native/controller.py": {
+      "sha256": "3c5cf83169e717dbc9cb1a24d5a2aadcbe1f8a44e7652ef2212186ce8546ab8a",
+      "bytes": 23633
+    },
+    "native/resources.py": {
+      "sha256": "48adfe47cdb9ca72890b93c816772e454552cf634e5f771cd23e3a14234fbdee",
+      "bytes": 8370
+    },
+    "native/test_controller.py": {
+      "sha256": "0b9ea170d578065854c3a4b3b0b6db545c90cc7ed82f26cbb8c192f1634b1722",
+      "bytes": 13751
+    },
+    "native/test_worker.py": {
+      "sha256": "9f3ae1ee8125bd2c32765f14d453a45b3c005f3ffcb3ec2ae6f6c5f06dfb5aa7",
+      "bytes": 6365
+    },
+    "native/worker.py": {
+      "sha256": "608cc5769883baa204c817773da80b1841eab1837c12daef7ef9a2b1518b4a39",
+      "bytes": 14788
+    },
+    "test_source.py": {
+      "sha256": "143e80c007c311ff3d89e807d4b3b455c4fe4fabe24b6c73b97ee0092d4a57d2",
+      "bytes": 11081
+    }
+  }
+}

@@ -89,6 +89,12 @@ unrelated requests also needs an explicit lawful mapping and cost proof.
    progress; compilation/execution still requires its own reviewed frozen
    harness and existing bounded resource admission. No GPU run follows from
    this document or from an implementation passing CPU/source checks.
+   The minimal attention-core contract may explicitly take already-normalized
+   BF16 Q and an FP8 cache prepopulated with history plus causal new tokens,
+   returning raw attention only. BF16→E4M3→BF16 and page gathers remain inside
+   that core. Such a fixture does not implement production normalization,
+   cache append or norm/gate, and cannot exclude their cost from a later
+   complete-call comparison.
 
 4. **Then validate correctness and actual complete-call benefit.** Original
    oracles/tolerances, fresh inputs, empty/tail/new-KV ownership, page1/page64,
