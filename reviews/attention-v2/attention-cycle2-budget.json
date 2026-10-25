@@ -10,8 +10,44 @@
   "authorization": "Ten NEW attention off-board requests authorized after E6; separate from prior six-request cycle; failures and accepted duplicate requests count; no Modal/push/ranked entry/paid compute/new credentials",
   "previous_cycle": "attention-cycle-budget.json",
   "previous_cycle_last_job": "4f626ab7437a42be",
-  "requests": [],
-  "remaining": 10,
+  "requests": [
+    {
+      "experiment": "A2-01",
+      "mode": "check",
+      "state": "accepted",
+      "status": "running",
+      "job_id": "6e761bdd1d9747ad",
+      "candidate": "reviews/attention-v2/mixed_fa3_verify1.py",
+      "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+      "source_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged",
+      "final": false,
+      "created_utc": "2026-10-25T02:22:12.036859+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_verify1.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:22:12.437286+00:00",
+      "last_checked_utc": "2026-10-25T02:27:34.525859+00:00"
+    }
+  ],
+  "remaining": 9,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -20,8 +56,8 @@
       "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged"
     }
   },
-  "all_requests_terminal": true,
-  "current_phase": "A2-01 local preflight ready; E6 adopted; commit source before dispatch",
+  "all_requests_terminal": false,
+  "current_phase": "A2-01 accepted6e761bdd1d9747ad; monitor same job, one of new ten used",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent"
 }

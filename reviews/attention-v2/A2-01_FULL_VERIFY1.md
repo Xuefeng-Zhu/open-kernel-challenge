@@ -46,3 +46,12 @@ New budget0/10 used before dispatch; old E6 belongs only to the exhausted old
 six-request cycle. Projection7checks unchanged. One GPU check at a time, off-board
 $0 only, no Modal/push/new credentials/ranked submission. Never repeat an uncertain
 POST; source/acceptance/receipt will be linked in the result commit.
+
+
+## Accepted; result pending at requested push checkpoint
+
+Accepted once2026-10-25T02:22:12.437286Z, job6e761bdd1d9747ad.
+Exact source commit030924103fe180b6645122ec3b02b2ed2af10b59,
+SHA2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357.
+New budget1/10used,9left. No terminal outcome or GPU gain claimed yet.
+Monitor the same job; do not dispatch a duplicate. E6 remains selected.
