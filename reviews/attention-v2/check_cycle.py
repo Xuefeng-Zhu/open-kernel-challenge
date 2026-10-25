@@ -11,13 +11,19 @@ HERE=Path(__file__).resolve().parent
 PROJECT=HERE.parents[1]
 CLI=PROJECT/'bin/okc'
 LEDGER=HERE/'attention-cycle-budget.json'
+GPU_SLOT=PROJECT/'local-notes/gpu-slot.local.json'
 TERMINAL={'done','failed','rejected','duplicate'}
 
 
 def now():return datetime.now(timezone.utc).isoformat()
 def save(d):
     d['remaining']=d['maximum_new_checks']-len(d['requests'])
+    d['all_requests_terminal']=all(e['state']=='terminal' for e in d['requests'])
     p=LEDGER.with_suffix('.tmp');p.write_text(json.dumps(d,indent=2)+'\n');p.replace(LEDGER)
+def gpu_slot(state,e):
+    value=dict(state=state,problem='muse_attention_decode',experiment=e['experiment'],
+        job_id=e.get('job_id'),source_sha256=e['source_sha256'],updated_utc=now())
+    p=GPU_SLOT.with_suffix('.tmp');p.write_text(json.dumps(value,indent=2)+'\n');p.replace(GPU_SLOT)
 def cli(*args):
     p=subprocess.run([str(CLI),*args],cwd=PROJECT,stdin=subprocess.DEVNULL,capture_output=True,text=True,timeout=120)
     try:r=json.loads(p.stdout)
@@ -44,6 +50,8 @@ def main():
     if args.action=='quota':
         d.update(last_platform_quota=quota(),quota_observed_utc=now());save(d);print(d['last_platform_quota']);return
     if args.action=='send':
+        if not GPU_SLOT.exists() or json.loads(GPU_SLOT.read_text())['state'] not in ['idle','terminal']:
+            raise RuntimeError('Coordinator GPU slot not free; no competing GPU measurement')
         if any(e['experiment']==args.experiment for e in d['requests']):raise RuntimeError('Already reserved; inspect existing job, never duplicate')
         if any(e['state'] in ['sending','uncertain'] for e in d['requests']):raise RuntimeError('Uncertain request reserved, reconcile before POST')
         if len(d['requests'])>=6:raise RuntimeError('Six-check authorization exhausted')
@@ -65,23 +73,23 @@ def main():
         e=dict(experiment=args.experiment,mode='check',state='sending',status='unknown',job_id=None,
             candidate=relative,source_commit=commit,source_sha256=sha,hypothesis=plan['hypothesis'],final=plan['final'],
             created_utc=now(),quota_before=before,command=['bin/okc','check',relative,'--no-wait','--json'])
-        d['requests'].append(e);save(d)
+        d['requests'].append(e);save(d);gpu_slot('sending',e)
         try:p,r=cli('check',relative,'--no-wait','--json')
         except subprocess.TimeoutExpired:
-            e.update(state='uncertain',reason='POST CLI timed out; inspect own jobs before any retry');save(d);raise
+            e.update(state='uncertain',reason='POST CLI timed out; inspect own jobs before any retry');save(d);gpu_slot('uncertain',e);raise
         (HERE/(args.experiment+'-accept.local.json')).write_text(p.stdout)
         (HERE/(args.experiment+'-accept.local.txt')).write_text(p.stderr)
         job=r.get('job_id') if isinstance(r,dict) else None
         e.update(cli_exit_code=p.returncode)
         if job:e.update(state='accepted',status='accepted',job_id=job,accepted_utc=now())
         else:e.update(state='uncertain',reason='No accepted ID; inspect own jobs, reservation remains counted')
-        save(d);print(json.dumps(e));return
+        save(d);gpu_slot(e['state'],e);print(json.dumps(e));return
     e=next(e for e in d['requests'] if e['experiment']==args.experiment)
     if not e.get('job_id'):raise RuntimeError('No accepted ID; reconcile first')
     p,r=cli('status',e['job_id'],'--json')
     if not isinstance(r,dict):raise RuntimeError('Read-only status failed, reservation unchanged')
     if r.get('job_id')==e['job_id'] and r.get('status') in ['received','queued','running'] and 'result' not in r:
-        e.update(status=r['status'],last_checked_utc=now());save(d);print(json.dumps(e));return
+        e.update(status=r['status'],last_checked_utc=now());save(d);gpu_slot(e['state'],e);print(json.dumps(e));return
     if r.get('id')!=e['job_id'] or r.get('mode')!='check':raise RuntimeError('Job identity/mode mismatch')
     (HERE/(args.experiment+'-job.local.json')).write_text(json.dumps(r,indent=2)+'\n')
     (HERE/(args.experiment+'-official-result.json')).write_text(json.dumps(sanitized(r),indent=2)+'\n')
@@ -89,7 +97,9 @@ def main():
     if r['status'] in TERMINAL:
         result=r.get('result') or {};e.update(state='terminal',passed=result.get('passed'),speedup=result.get('speedup'),
             speedup_ci=result.get('speedup_ci'),quota_after=quota())
-    save(d);print(json.dumps(e))
+    save(d)
+    if args.experiment in ['E5','E6']:gpu_slot(e['state'],e)
+    print(json.dumps(e))
 
 
 if __name__=='__main__':main()

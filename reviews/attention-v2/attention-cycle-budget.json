@@ -4,7 +4,7 @@
   "reserved_final_checks": 1,
   "mode": "check",
   "max_spend_usd": 0,
-  "max_active_jobs": 2,
+  "max_active_jobs": 1,
   "rules_version": "2026-10-22.1",
   "created_utc": "2026-10-24T22:25:25.825087+00:00",
   "authorization": "New separate up-to-six attention off-board checks approved; failures count; at least one final complete-candidate check; no projection quota, scored entries, push, credentials/payment/terms changes",
@@ -252,6 +252,12 @@
       "expected_sha256": "7efbb370d2828effabdc7ed717d2e7d5785f9ee0da55380fad6e591adf7c8782",
       "hypothesis": "Final complete artifact identical to E2: E3 correct but0.25% aggregate/no target improvement is inconclusive; request exact-file verification, respect deduplication",
       "final": true
+    },
+    "E5": {
+      "candidate": "mixed_fa3.py",
+      "expected_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+      "hypothesis": "Only full B16/B32 L8 uses official baseline FA3 path; untouched E2 fallback; native-required FP8 Q conversion explicit",
+      "final": false
     }
   },
   "initial_platform_quota": {
@@ -279,7 +285,6 @@
     "verified_via_job": "7edded086c8a47f2"
   },
   "counting_note": "Four requests conservatively reserved against six; E4 deduplicated to E2, only three new GPU runs and no E4 platform quota increment.",
-  "stop_reason": "E2 provides material verified gain; E3 target changes are noise, E4 exact complete source confirmed by deduplication. No justified further experiment within E0-E4 scope.",
   "last_platform_quota": {
     "scored": {
       "per_day": 10,
@@ -293,8 +298,15 @@
     }
   },
   "quota_observed_utc": "2026-10-24T22:52:41.784478+00:00",
-  "completed_utc": "2026-10-24T22:53:38.887477+00:00",
   "all_requests_terminal": true,
   "actual_new_gpu_runs": 3,
-  "duplicate_requests": 1
+  "duplicate_requests": 1,
+  "phase_history": [
+    {
+      "completed_utc": "2026-10-24T22:53:38.887477+00:00",
+      "stop_reason": "E2 provides material verified gain; E3 target changes are noise, E4 exact complete source confirmed by deduplication. No justified further experiment within E0-E4 scope.",
+      "phase": "E0-E4 completed"
+    }
+  ],
+  "current_phase": "E5 own full-verify FA3 dispatch from preserved E2; two remaining user checks continue after UTC reset"
 }

@@ -40,3 +40,10 @@ The user's transcribed attention v2 source and its recorded minimal compiler fix
 are preserved separately from the projection project. The Modal harness uses only
 these official files, our local source and the existing authorized SGLang image.
 No third-party competitor repository source is copied or executed in this cycle.
+
+Attention E5 (`reviews/attention-v2/mixed_fa3.py`) adapts only the full-verify path
+from the official attention baseline: SGLang's FusedQKNorm, cache-byte store,
+FA3 and output norm/gate API sequence. The candidate identifies the upstream
+commit and includes the applicable Apache-2.0 text. Its other paths retain our
+preserved E2 source. No competitor source is copied or executed; the high-level
+mixed-dispatch idea is independently implemented with the official contract.
