@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T20:09:35.848370+00:00",
+  "tests_passed": 7,
+  "worker_deadline_seconds": 160,
+  "child_timeout_seconds": 170,
+  "function_timeout_seconds": 185,
+  "startup_timeout_seconds": 20,
+  "app_watchdog_seconds": 210,
+  "free_credit_reserve_usd": "0.58",
+  "actual_paid_limit_usd": "0",
+  "controller_sha256": "5fa940cd1df79fabe0374b03149f18f404063f46fd1132dfa61799e9d96a0808",
+  "test_controller_sha256": "acd8f658ae36ebdf6d1cbc5bccf94a6895f2daca522879c729ca9fc85b5dd6c9",
+  "scope": "offline guard/transport tests; no Modal import, auth/config read, network, GPU or launch"
+}

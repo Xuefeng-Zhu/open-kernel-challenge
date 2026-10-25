@@ -1,0 +1,16 @@
+{
+  "kind": "Local stdlib runtime protocol validation; no native execution",
+  "observed_utc": "2026-10-25T20:07:46.534077+00:00",
+  "exit_code": 0,
+  "passed": true,
+  "tests": 6,
+  "stdout": "",
+  "stderr": "test_balanced_pairs_share_input_version (__main__.RuntimeProtocol.test_balanced_pairs_share_input_version) ... ok\ntest_boundary_lengths_change_live_values_keep_capacity_and_cover_append (__main__.RuntimeProtocol.test_boundary_lengths_change_live_values_keep_capacity_and_cover_append) ... ok\ntest_frozen_sources_and_official_support (__main__.RuntimeProtocol.test_frozen_sources_and_official_support) ... ok\ntest_no_profiler_no_candidate_patching_and_call_entrypoints (__main__.RuntimeProtocol.test_no_profiler_no_candidate_patching_and_call_entrypoints) ... ok\ntest_summary_rejects_incomplete_nonfinite_and_nonpositive_samples (__main__.RuntimeProtocol.test_summary_rejects_incomplete_nonfinite_and_nonpositive_samples) ... ok\ntest_three_targets_have_two_distinct_required_preparation_families (__main__.RuntimeProtocol.test_three_targets_have_two_distinct_required_preparation_families) ... ok\n\n----------------------------------------------------------------------\nRan 6 tests in 0.010s\n\nOK\n",
+  "sha256": {
+    "worker.py": "b4b47a4729fb06b85995c115cb91492bc6d552f5a809653359e38a67cd35f08f",
+    "test_worker.py": "9c1b08931c69252e2c9854dd549262fa943ea9ab5f306c58a1b987ade58971f5",
+    "PROTOCOL.md": "e9c26c4979f9aa5a008953948fb845a4e3caa51094628336cb72d98aee17ea65"
+  },
+  "gpu_launched": false,
+  "official_check_launched": false
+}

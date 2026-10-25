@@ -1,0 +1,100 @@
+{
+  "kind": "Reviewed local preparation, no GPU or official action",
+  "authoritative_base_commit": "ebb80b91c58032641bf5341927261eb64929f14e",
+  "branch": "attention-fused-preparation",
+  "source_sha256": {
+    "baseline.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "candidate.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "selected_A2_11": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0"
+  },
+  "files": {
+    "OFFICIAL_QUEUE.md": {
+      "sha256": "246a4f7405a5b5479b7b304c262eae4f75d5cec17758d42ebd318d3b63fa6b25",
+      "bytes": 3072
+    },
+    "PROFILING_HANDOFF.md": {
+      "sha256": "7f5bf7410e4b63eb49d0efde225b9f0172bac2869c65b5d747d6b508e5467d17",
+      "bytes": 2158
+    },
+    "README.md": {
+      "sha256": "ff5723cc392a1119b46e5364cfc3f9ca4fb3878f5e3b98a67c289387025ed11b",
+      "bytes": 3600
+    },
+    "REVIEW.md": {
+      "sha256": "22213cb17a22f4b7c2d07213fc21dfe44aadd78380df2d89a437883b12ae5490",
+      "bytes": 5907
+    },
+    "SOURCE_AUDIT.md": {
+      "sha256": "4856c141ebb993e312e1907e4534468f9888ddf138f452a3d28da77e9407034f",
+      "bytes": 9805
+    },
+    "baseline.py": {
+      "sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "bytes": 39393
+    },
+    "candidate.py": {
+      "sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+      "bytes": 39424
+    },
+    "cpu-support-hashes.json": {
+      "sha256": "e38d7644d7d35207424b8cf73a790596a9597e519ad31472a022fdb53b7a0cd1",
+      "bytes": 770
+    },
+    "local-verification.json": {
+      "sha256": "ebe801df0c4b13779e438b7290414f2dec11ab90998b8abec36ea2511c896e63",
+      "bytes": 751
+    },
+    "runtime/CONTROLLER.md": {
+      "sha256": "eaa0e3479119900567e2f4c18ee1050c19b952634686876db0800bd74c695b6e",
+      "bytes": 3028
+    },
+    "runtime/PROTOCOL.md": {
+      "sha256": "e9c26c4979f9aa5a008953948fb845a4e3caa51094628336cb72d98aee17ea65",
+      "bytes": 6697
+    },
+    "runtime/controller-verification.json": {
+      "sha256": "b07cf9077f54267e0580156fe7ca8eaf764b7b984015e6ef1522b163f557e8ee",
+      "bytes": 602
+    },
+    "runtime/controller.py": {
+      "sha256": "5fa940cd1df79fabe0374b03149f18f404063f46fd1132dfa61799e9d96a0808",
+      "bytes": 16237
+    },
+    "runtime/local-verification.json": {
+      "sha256": "a8cdf377af6376dc64a8564f0e74398fd16899ecd0bb19f9d7046c3058f8fe22",
+      "bytes": 1560
+    },
+    "runtime/test_controller.py": {
+      "sha256": "acd8f658ae36ebdf6d1cbc5bccf94a6895f2daca522879c729ca9fc85b5dd6c9",
+      "bytes": 5991
+    },
+    "runtime/test_worker.py": {
+      "sha256": "9c1b08931c69252e2c9854dd549262fa943ea9ab5f306c58a1b987ade58971f5",
+      "bytes": 4575
+    },
+    "runtime/worker.py": {
+      "sha256": "b4b47a4729fb06b85995c115cb91492bc6d552f5a809653359e38a67cd35f08f",
+      "bytes": 20905
+    },
+    "test_source.py": {
+      "sha256": "91c0d8f630ed44521a0e48afe80f920729ecdfbfa1885ae75f2923f973c03832",
+      "bytes": 8096
+    }
+  },
+  "file_count": 18,
+  "secret_scan": {
+    "files": 18,
+    "patterns": 6,
+    "matches": 0
+  },
+  "local_test_methods": {
+    "source_and_CPU_models": 4,
+    "runtime_protocol": 6,
+    "controller_guards": 7
+  },
+  "native_equivalence": "not_executed",
+  "GPU_jobs_started": 0,
+  "official_checks_started": 0,
+  "cost_usd": "0",
+  "pending_gate": "parent serialized slot and fresh free-credit/paid-zero admission; native byte/oracle/replay/cache/concurrency gates before timing"
+}
