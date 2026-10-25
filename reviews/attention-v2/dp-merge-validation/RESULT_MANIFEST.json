@@ -1,0 +1,120 @@
+{
+  "created_utc": "2026-10-25T21:58:17.526675+00:00",
+  "scope": "Completed source-bound DP two/three-split native correctness validation; no timing or officialcheck",
+  "source_freeze": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
+  "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "raw_result_sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47",
+  "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+  "app_stopped": true,
+  "tasks": 0,
+  "working_source_changed": false,
+  "projection_record_changed": false,
+  "formal_entry": false,
+  "preparation_files_unchanged": 9,
+  "secret_scan": {
+    "files": 24,
+    "patterns": 6,
+    "matches": 0
+  },
+  "files": {
+    "EXPERIMENT_CARD.md": {
+      "sha256": "262a862d0a23f23dbeba359b0054cd25fee8b0391fa71cb46b01a6068b1b9e65",
+      "bytes": 3485
+    },
+    "NEXT_ALGORITHM_ANALYSIS.md": {
+      "sha256": "d2847f6af4b47d986463e906c7bacff191adf3135922b0aed60b82adb3bb92ad",
+      "bytes": 11076
+    },
+    "PLAN.md": {
+      "sha256": "80c54d61920e88afdb58d4b62bb523fe267e6e68b4ba8eba52c442d17316cd53",
+      "bytes": 6755
+    },
+    "PREPARATION_MANIFEST.json": {
+      "sha256": "715f931469b29fa131e6de75032896156282c11f14abf0072097c4499e6cb951",
+      "bytes": 2244
+    },
+    "RESULTS.md": {
+      "sha256": "b97836e523f740fb4b29d46869caf8797d039441f0580e86fd03df0ee4badd34",
+      "bytes": 5765
+    },
+    "REVIEW.md": {
+      "sha256": "8b1d3309382243cf5819c48ef12eeb0f52932f187189706e893997308eb7f1a1",
+      "bytes": 8155
+    },
+    "SOURCE_PROTOCOL_AUDIT.md": {
+      "sha256": "f3d56ad4b152b6da46d6534b2476dd19943c2a85180773259d31b090e5fd3868",
+      "bytes": 12873
+    },
+    "WORKING_COVERAGE_UPDATE.json": {
+      "sha256": "1effef8976ce6612d9bbfb4b832330ddc663272197310c241ad281f9130f50ca",
+      "bytes": 2095
+    },
+    "runtime/CONTROLLER.md": {
+      "sha256": "97b4e979e0c8ad6f416a3bab8f66ce048e288b9a1cb244ce95abdbb2e6da3bae",
+      "bytes": 5296
+    },
+    "runtime/COSTS.json": {
+      "sha256": "aabf0ce997556c7b6435fb18b125f964e49c3dd5691535f2560b2c46f33564ba",
+      "bytes": 1621
+    },
+    "runtime/RESULT_REVIEW.md": {
+      "sha256": "25c3792b0e993bb0239c58b95156d8893a08d3051ff201778d0197a32298e401",
+      "bytes": 8337
+    },
+    "runtime/accounting-cutoff.json": {
+      "sha256": "ec5a39c22726e88fa68d0b2cbf036d3ab42b4c410facf37e715d571d96999192",
+      "bytes": 1836
+    },
+    "runtime/analysis.json": {
+      "sha256": "d8f1f41470ee3dd5eaafd3f6ee3922b3bbb9bcd92c02ded9c03a20b5bf845cd8",
+      "bytes": 3965
+    },
+    "runtime/analyze_result.py": {
+      "sha256": "67609894c94afde186c0cd02d4e9b59106fb498852eca91479fbdb3ef92863d4",
+      "bytes": 13498
+    },
+    "runtime/controller.py": {
+      "sha256": "0299612f835e68b26ece31f5d5d031c959953988ce4d998d95941ddd9d778f17",
+      "bytes": 18283
+    },
+    "runtime/launch-receipt.json": {
+      "sha256": "1839f535637795253f25923b74748f989714e0dada44b8e63c986f9a16e9f7d9",
+      "bytes": 5103
+    },
+    "runtime/reconciliation.json": {
+      "sha256": "0a0cf28eebae9a2f89157d57bd704ea543c2ac3954366009d492c60e18340f92",
+      "bytes": 2139
+    },
+    "runtime/result.json": {
+      "sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47",
+      "bytes": 16255
+    },
+    "runtime/test_controller.py": {
+      "sha256": "a78756b5a94f5447c41ecff45f750bc8d8e03f77210ae72975718b0337a7b29b",
+      "bytes": 8409
+    },
+    "runtime/test_worker.py": {
+      "sha256": "251afb67be2a3c5f2ad904e32b4573f7799f05522950ccc0c52279f7f9b5d7c1",
+      "bytes": 7579
+    },
+    "runtime/worker.py": {
+      "sha256": "4507a19cdaea450415b6d7a40315e9e0021741919f5a33842fed290e0f2af59d",
+      "bytes": 20821
+    }
+  },
+  "project_records": {
+    "BEST_VALIDATED_MANIFEST.json": {
+      "sha256": "919f6ed459f6f00c13fab861b3ca9cf09d95dcb13a123b07bcc45cdb745975f9",
+      "bytes": 8156
+    },
+    "CONTINUE.md": {
+      "sha256": "8b4ee43d230bce65b27f9036f179f80c766fae2e99f8507bef5209168d69b66d",
+      "bytes": 14835
+    },
+    "CURRENT_AUTHORIZATION.md": {
+      "sha256": "3974a74fd74d8a52fc8804ef60073648865d831e4e183feba78910bf2c26953a",
+      "bytes": 10946
+    }
+  },
+  "manifest_self_excluded": true
+}

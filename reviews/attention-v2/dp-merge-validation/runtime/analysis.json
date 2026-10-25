@@ -1,0 +1,165 @@
+{
+  "source_freeze": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
+  "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+  "source_sha256": {
+    "baseline.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8"
+  },
+  "raw_result_sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47",
+  "launch_receipt_sha256": "1839f535637795253f25923b74748f989714e0dada44b8e63c986f9a16e9f7d9",
+  "reconciliation_sha256": "0a0cf28eebae9a2f89157d57bd704ea543c2ac3954366009d492c60e18340f92",
+  "validation_passed": true,
+  "counts": {
+    "original_oracle_calls": 15,
+    "independent_setup_oracle_calls": 1,
+    "exact_return_A_checks": 4,
+    "cross_arm_cache_byte_comparisons": 12,
+    "concurrent_original_oracle_calls": 2,
+    "post_concurrent_isolation_checks": 4,
+    "extra_candidate_replays": 2
+  },
+  "fresh_seeds": [
+    135721,
+    135722
+  ],
+  "source_derived_geometry": [
+    {
+      "case": "DP_page64_ctx8193_soft_scaled",
+      "page_table_shape": [
+        32,
+        129
+      ],
+      "shape_bound_tokens": 8256,
+      "chunk_size": 8192,
+      "splits": 2,
+      "merge_bs": 2,
+      "producer_grid": [
+        32,
+        16,
+        2
+      ],
+      "merge_grid": [
+        32,
+        128
+      ],
+      "block_m": 16,
+      "partial_shapes": {
+        "o": [
+          16384,
+          64
+        ],
+        "m": [
+          16384
+        ],
+        "l": [
+          16384
+        ]
+      },
+      "source_derived_partial_bytes": 4325376,
+      "cache_bytes_per_tensor": 270532608
+    },
+    {
+      "case": "DP_page1_ctx16385_coherent",
+      "page_table_shape": [
+        32,
+        16386
+      ],
+      "shape_bound_tokens": 16386,
+      "chunk_size": 8192,
+      "splits": 3,
+      "merge_bs": 4,
+      "producer_grid": [
+        32,
+        16,
+        3
+      ],
+      "merge_grid": [
+        32,
+        128
+      ],
+      "block_m": 16,
+      "partial_shapes": {
+        "o": [
+          24576,
+          64
+        ],
+        "m": [
+          24576
+        ],
+        "l": [
+          24576
+        ]
+      },
+      "source_derived_partial_bytes": 6488064,
+      "cache_bytes_per_tensor": 536936448
+    }
+  ],
+  "graph_pool_observations": [
+    {
+      "case": "DP_page64_ctx8193_soft_scaled",
+      "graph_pools": [
+        [
+          1,
+          0
+        ],
+        [
+          2,
+          0
+        ]
+      ]
+    },
+    {
+      "case": "DP_page1_ctx16385_coherent",
+      "graph_pools": [
+        [
+          4,
+          0
+        ],
+        [
+          5,
+          0
+        ]
+      ]
+    }
+  ],
+  "independent_candidate_graph_pools": [
+    [
+      2,
+      0
+    ],
+    [
+      3,
+      0
+    ]
+  ],
+  "independent_graph_checks_passed": true,
+  "observable_output_cache_address_ranges_disjoint": true,
+  "actual_hardware_overlap_measured": false,
+  "direct_scratch_pointers_observed": false,
+  "environment": {
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "triton": "3.8.0",
+    "python": "3.12.3"
+  },
+  "worker_wall_seconds": 23.42475984,
+  "stage_closed": true,
+  "app_stopped": true,
+  "app_tasks": 0,
+  "closure_observed_utc": "2026-10-25T21:52:08.731188+00:00",
+  "actual_paid_usd": "0E-8",
+  "official_check": false,
+  "performance_measurement": false,
+  "qualifications": [
+    "Two targeted nearby DP cases, not universal serving/concurrency certification.",
+    "Shape/partial/grid descriptions are derived from exact executed source; no achieved CTA-residency trace.",
+    "Distinct graph pool handles and repeated output/cache isolation support these cases; internal scratch pointers and hardware overlap unmeasured.",
+    "No latency measurement, new official score or extra official check follows from this validation.",
+    "Shutdown and billed0 refer to the retained independent cutoff, not a fresh live workspace query."
+  ]
+}

@@ -1,3 +1,28 @@
+# Attention DP multi-chunk robustness passed
+
+The working fusion-plus-lookahead candidate is unchanged:
+`reviews/attention-v2/fusion-lookahead-probe/candidate.py`, SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`.
+Its [DP validation](reviews/attention-v2/dp-merge-validation/RESULTS.md) passed
+two native B32/L1 DP cases at ctx8193/SPLITS2 and ctx16385/SPLITS3/mergeBS4:
+15 original-oracle calls, four returning-A checks, twelve K/V byte comparisons
+and four independent-graph isolation checks. Distinct graph pools and disjoint
+outputs/caches were observed; actual hardware overlap and internal scratch
+pointers were not. General serving concurrency remains outside this evidence.
+
+App `ap-gXUKhAM11JBfvrA3h5rip9` was independently stopped/tasks0 at
+21:52:08.731188 UTC; the parent received immediate measurement-slot release.
+At the no-new-app accounting cutoff, delayed detailed credit usage increased
+$0.03730389, paid $0; this is not an exact per-app invoice. No official check
+or timing was performed, so the official score remains 1.233633059x and the
+last observed Attention quota remains two checks. A2-11 rollback and Projection
+records are preserved. The strict alpha==1 historical-numerator-rescale probe
+is next local preparation; it has no compute slot or launched job here.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # Working attention selection: fusion plus lookahead
 
 Attention now selects `reviews/attention-v2/fusion-lookahead-probe/candidate.py`
