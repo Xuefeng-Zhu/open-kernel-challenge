@@ -468,6 +468,60 @@
       ],
       "decision": "Reject promotion: predeclared target/score/execution gates missed; preserve P039 and stop this fixed codec mechanism without a tile sweep.",
       "assessment": "results/router-p043-official-assessment.json"
+    },
+    {
+      "experiment": "P2-08-pooler-column-batch2",
+      "candidate": "candidates/projection_pooler_column_batch2.py",
+      "source_commit": "a3aba7ba7d70ef84bacd957ced35c0f0c9939c0b",
+      "submission_sha256": "c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58",
+      "mode": "check",
+      "created_utc": "2026-10-25T21:34:35.971851+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "b2c1e6c724144e87",
+      "hypothesis": "Only pooler M2-128 with full BF16 N4096/K8192 uses two independent output-column batches through vendor BMM, full K retained and direct disjoint output writes; test whether library decomposition reduces whole-call cost. No guaranteed split-K removal or hardware bottleneck claim.",
+      "control_job_id": "d5636ac8d1404abd",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_column_batch2.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T21:34:36.232649+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T21:36:40.266588+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "passed": true,
+      "speedup": 1.1798636209696414,
+      "speedup_ci": [
+        1.1621656666550968,
+        1.197561575284186
+      ]
     }
   ],
   "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
@@ -536,10 +590,11 @@
     "source": "candidates/projection_router_m1_fp32_gemv.py"
   },
   "latest_decision": {
-    "experiment": "P2-07-pooler-lossless-codec",
-    "decision": "Reject promotion: predeclared target/score/execution gates missed; preserve P039 and stop this fixed codec mechanism without a tile sweep.",
-    "job_id": "128378586ebe4730",
-    "status": "done"
+    "experiment": "P2-08-pooler-column-batch2",
+    "decision": "Reject full candidate: only 4.52% target geomean gain, M128 regresses5.54%, modeled target-only score gain0.96%; preserve P039.",
+    "job_id": "b2c1e6c724144e87",
+    "status": "done",
+    "assessment": "results/router-p045-official-assessment.json"
   },
   "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
   "phase_history": [

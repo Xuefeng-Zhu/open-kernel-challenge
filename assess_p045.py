@@ -124,7 +124,9 @@ def assess(parent, candidate):
                     requirement="Review actual profiles for all four target paths, copies and reduction kernels; receipt timing or source bmm calls do not prove execution."),
                 selected_parent_unchanged=True, automatic_selection=False,
                 decision=("Numeric gates pass; retain P039 pending execution-profile review and independent confirmation."
-                          if all(gates.values()) else "Numeric/correctness gates missed; do not promote, preserve P039."),
+                          if all(gates.values()) else
+                          ("Performance gates missed; correctness passed. Do not promote; preserve P039."
+                           if passed else "Official correctness did not pass. Do not promote; preserve P039.")),
                 limitations=["Separate official jobs normalized to each run's reference, not a directly paired P039/candidate experiment.",
                              "Frozen-parent score is modeled: only four target latencies change; all 26 controls remain fixed.",
                              "Control shifts are reported, not automatically attributed to this isolated source change.",

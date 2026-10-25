@@ -1,6 +1,6 @@
 # P045 — two independent output-column batches using library BMM
 
-Status: local preflight passed; ready for serialized GPU validation. No native run or official check admitted.
+Status: official check completed; all correctness passed, performance gates failed. Reject promotion and preserve selected P039. Local preflight/admission sections below are historical checkpoints.
 P039 remains selected. P044 source, receipts and result commit `aa730b8` are intact.
 
 实验卡：P044 实测 pooler m8/m128 有独立归约开销。把输出列分成两个互不重叠
@@ -197,3 +197,89 @@ closed on incomplete receipts. Failed compilation/correctness receipts must
 still be retained and reported even when no complete timing comparison exists.
 Profile execution remains a manual, unverified gate and the tool never changes
 the selected parent. No actual P045 receipt exists at this checkpoint.
+
+
+## Official result — terminal, 2026-10-25 21:35:44 UTC
+
+Exactly one off-board check was accepted at 21:34:36 UTC, job
+`b2c1e6c724144e87`, source commit `a3aba7b`, SHA256
+`c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58`.
+The H200 run started at 21:34:50 and finished at 21:35:44 (about 54 seconds).
+It passed all **9 prerequisites and 30 scored correctness cases**, with no flags.
+All 30 timings and 60 retained observations/ratios per shape are preserved in
+`results/remote-P2-08-pooler-column-batch2.json` and its CSV. The selected P039
+source remained unchanged, and no second request was made.
+
+**Decision: reject promotion.** Official score **1.179863621×**, interval
+[1.162165667, 1.197561575], versus P039 **1.173238999×**. The point-score change
+is only +0.5646%, with overlapping intervals; no reliable aggregate win follows.
+
+| Pooler M | P039 calibrated µs | P045 calibrated µs | Reference-normalized latency cut |
+|---:|---:|---:|---:|
+| 8 | 20.162 | 17.747 | +8.925% |
+| 16 | 19.932 | 18.337 | +6.042% |
+| 32 | 20.237 | 18.294 | +7.972% |
+| 128 | 22.550 | 24.093 | −5.542% |
+
+The four-target normalized geometric-mean cut is **4.5185%**, below the 10%
+gate. M128 exceeds the permitted 5% regression. Holding controls fixed, the
+actual observed target changes model only **+0.9638%** total score, below 1.5%.
+All three predeclared performance gates fail. All 26 unchanged controls are
+reported: only pooler M256 moved beyond 5%, improving 6.155% after normalization.
+That path's code is unchanged, so do not attribute its movement to batching.
+The original +2.1142% scenario assumed a uniform 10% target cut; it was not met.
+
+### What the real profiles establish
+
+All four target profiles show exactly one listed main kernel, with **no
+separate split-K reduction or copy kernel**. P039 used a main and an independent
+reducer on all four targets. The P045 names and instrumented durations are:
+
+| M | Actual main kernel | Instrumented µs |
+|---:|---|---:|
+| 8 | `nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT` | 17.7 |
+| 16 | `nvjet_sm90_tst_64x8_64x16_1x2_h_bz_NNT` | 18.5 |
+| 32 | `nvjet_sm90_tst_64x16_64x16_1x2_h_bz_NNT` | 18.8 |
+| 128 | `nvjet_sm90_tst_64x64_64x13_2x1_v_bz_NNT` | 24.1 |
+
+This supports the intended library-dispatch change and removal of a separately
+launched reducer. It does **not** establish less HBM traffic, higher occupancy,
+absent internal workspace, or the causal hardware reason for M128's regression.
+No P045 PTX/SASS/register/spill metadata or hardware counters were collected.
+P044's resource numbers cannot be substituted for these new library kernels.
+
+Official fresh-input CUDA graph checks passed as defined by the published
+harness; dedicated exact-source A→B→A graphs, overlapping independent streams,
+all-bit CUDA arithmetic and arbitrary-stride native stress were not separately
+run. CPU coverage remains separately labeled. The official evaluator hashes and
+image digest match P039; cross-run device/runtime drift remains possible.
+
+### Follow-through and queue
+
+A restricted composition using only the three smaller-M wins models +1.2370%
+over P039 (1.187752203×), holding everything else fixed. This has **not** been
+executed and is below the original 1.5% gate. Do not spend an immediate rescue
+check or lower the gate after seeing the result.
+
+The next higher-information local candidate is the same independent-output
+batching mechanism applied separately to **QKV M8/16/32/128**, retaining P039
+for every other family. P039 profiles show split-K reducers on those four QKV
+paths (approximately 1.6/1.7/1.9/3.1 µs in separate activity samples). A uniform
+10% QKV target cut models +1.5144% overall; a 20% cut models +3.0878%. These are
+sensitivity cases, not a claim that the pooler gains transfer. QKV width 2304
+and original TNT/TNN tactics differ from pooler; a local layout/precision review
+and original oracle tests must precede any new native request. No QKV candidate
+was submitted by P045, and no shard-count sweep is justified by this result.
+
+A second queue item remains the cold/warm timing-method control from P044;
+ordinary cache labels did not isolate a measured memory bottleneck. It does not
+need an official candidate check. A broad unpooler rewrite is lower priority:
+its selected m>8 profiles already show one main kernel, so this reducer-removal
+hypothesis lacks the same direct evidence there.
+
+The shared slot was marked terminal and released at the 21:36:40 UTC observation,
+before analysis/push. Actual platform quota then: checks **5/20 used, 15 left**;
+ranked **0/10 used**; reset **00:00 UTC**. No Modal app, paid resource, new credential
+or formal entry was used. P044 remains stopped/tasks zero. One accepted request,
+zero uncertain requests, zero retries. Sanitized results are eligible for the
+reviewed private result commit; remote verification is reported separately.

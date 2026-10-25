@@ -112,7 +112,10 @@ class P045Assessment(unittest.TestCase):
     def test_correctness_failure_never_passes_gates(self):
         candidate = receipt(SOURCE_SHA, .7)
         candidate["result"]["passed"] = False
-        self.assertFalse(assess(self.parent, candidate)["performance_gates_passed"])
+        failed = assess(self.parent, candidate)
+        self.assertFalse(failed["performance_gates_passed"])
+        self.assertIn("correctness did not pass", failed["decision"])
+        self.assertIn("correctness passed", assess(self.parent, self.candidate)["decision"])
         candidate["result"]["passed"] = True
         candidate["shape_checks"]["passed"] = 29
         self.assertFalse(assess(self.parent, candidate)["performance_gates_passed"])

@@ -1,3 +1,35 @@
+# P045 complete — preserve P039, measurement slot released
+
+Job `b2c1e6c724144e87` passed all 9 prerequisites and 30 scored shapes;
+score 1.179863621×, interval overlaps selected P039 1.173238999×. Reject promotion:
+four-target normalized geomean gain 4.52% misses 10%; M128 regresses 5.54%;
+target-only modeled score gain 0.964% misses 1.5%. All targets execute one main
+kernel without a listed independent reducer; hardware causality remains unknown.
+See experiment 045 and results/router-p045-official-assessment.json.
+
+One check admitted, now terminal; no uncertain request, retry or active Projection
+GPU job. Slot released at 21:36:40 UTC. Quota then 5/20 used, 15 left; reset 00:00 UTC.
+P045 is preserved as a rejected experiment; P039 remains the selected source.
+Finish reviewed result commit/private push. No immediate small-M rescue check:
+its conditional modeled +1.237% is below the original gate. Next local mechanism
+can examine QKV independent-output batching, with separate tests and a fresh
+coordinator slot before any native measurement. Do not infer a new slot grant
+from this terminal state or modify Attention worktrees.
+
+## Previous checkpoint (historical)
+
+# P045 official check accepted — 2026-10-25 21:34:36 UTC
+
+Track only job `b2c1e6c724144e87`, experiment `P2-08-pooler-column-batch2`.
+One request accepted, no uncertain admission. Source commit `a3aba7b`, SHA256
+`c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58`.
+Do not send again or change the candidate. Read the exact job to terminal,
+then release the shared measurement slot before polishing/pushing results.
+P039 remains selected; no P045 GPU result or speedup exists yet. Pre-admission
+quota was 4/20 used, 16 left; refresh before reporting final availability.
+
+## Previous checkpoint (historical)
+
 # Resume Projection P045 local-ready candidate
 
 P044 diagnostic and private push are complete, remote verified at `aa730b8`.
