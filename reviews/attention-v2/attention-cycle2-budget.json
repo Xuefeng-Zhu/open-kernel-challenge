@@ -14,8 +14,8 @@
     {
       "experiment": "A2-01",
       "mode": "check",
-      "state": "accepted",
-      "status": "running",
+      "state": "terminal",
+      "status": "done",
       "job_id": "6e761bdd1d9747ad",
       "candidate": "reviews/attention-v2/mixed_fa3_verify1.py",
       "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -44,7 +44,25 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T02:22:12.437286+00:00",
-      "last_checked_utc": "2026-10-25T02:27:34.525859+00:00"
+      "last_checked_utc": "2026-10-25T02:30:57.310297+00:00",
+      "passed": true,
+      "speedup": 1.0002799616416969,
+      "speedup_ci": [
+        0.9852757622170714,
+        1.0152841610663221
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      }
     }
   ],
   "remaining": 9,
@@ -53,11 +71,44 @@
       "candidate": "mixed_fa3_verify1.py",
       "expected_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
       "final": false,
-      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged"
+      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged",
+      "parent_receipt": "E6-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2
     }
   },
-  "all_requests_terminal": false,
-  "current_phase": "A2-01 accepted6e761bdd1d9747ad; monitor same job, one of new ten used",
+  "all_requests_terminal": true,
+  "current_phase": "A2-01 complete/adopted; projection P039 is next serialized GPU experiment; prepare A2-02 remaining verify sliding locally",
   "projection_checks_remaining": 7,
-  "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent"
+  "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
+  "selection": {
+    "source": "mixed_fa3_verify1.py",
+    "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+    "sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+    "official_job": "6e761bdd1d9747ad",
+    "score": 1.0002799616416969,
+    "ci": [
+      0.9852757622170714,
+      1.0152841610663221
+    ],
+    "reason": "Target53.60% normalized latency cut; aggregate6.46% over E6/nonoverlapping CIs; all11controls within5%"
+  },
+  "last_platform_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 3,
+      "left": 17
+    }
+  },
+  "quota_observed_utc": "2026-10-25T02:30:57.310297+00:00"
 }

@@ -1,20 +1,30 @@
-# Active autonomous cycles — E6 complete, next source preparation
+# Active autonomous cycles — A2-01 adopted; next GPU is projection P039
 
-Attention E6 job4f626ab7437a42be is DONE, passed16+12, score0.9395909196×,
-CI[.9254970558,.9584871441],+5.34% over E5. Selected standalone
-reviews/attention-v2/mixed_fa3_sliding.py, source5202cbe/SHA7a3bc586.
-Target verify1/sliding43.976→22.542us, normalized latency cut47.30%; all11controls
-below5% regression. See E6_SLIDING_FA3.md, assessment and full receipt.
-Old attention budget0/6; NEW independent attention-cycle2-budget.json1/10used,9left.
-Projection7checks remain. Actual last attention quota18/20left,0scoredused.
-A2-01 full B1/L8 FA3 candidate mixed_fa3_verify1.py source0309241 is ACCEPTED
-as6e761bdd1d9747ad; monitor check_cycle.py poll A2-01 --cycle2, never resend.
-New attention budget1/10used,9left; no result yet. Other11paths unchanged.
-Projection researcher preparing local-only router m1 FP32 GEMV reuse; coordinator
-must review and commit before any authorized check. GPU measurements SERIALIZED,
-shared slot owned by A2-01; no concurrent GPU dispatch. No Modal/newcredentials/push/paid/ranked actions.
-Explicit new target GPU ABA/page64/nonunit/untouched-row tests remain unverified;
-CPU stand-ins are separate. Parent E5 and projection1.14864995 preserved.
+Attention selected mixed_fa3_verify1.py, source0309241/SHA2c7bd6a0,
+job6e761bdd1d9747ad passed16+12, score1.0002799616×,
+CI[.9852757622,1.0152841611]. +6.46% over E6, intervals do not overlap;
+not a statistically resolved win over SGLang1.0. Full verify1 normalized latency
+cut53.60%; all11controls below5%. See A2-01-RESULT/assessment/receipt.
+Old attention budget0; new independent attention-cycle2-budget.json1/10used,9left.
+Projection7checks left. GPU slot terminal; next serialized GPU candidate P039
+router m1 original-FP32 GEMV based on projection best, sourcecdf5bc2/SHA0c0c4111.
+Local125regressions+39oracles+6focused pass; native/performance unverified.
+Only coordinator dispatches, no duplicate uncertain requests.
+
+One-time user-requested private push VERIFIED:
+attention-fa3-sanitized cd19d4e0365263c92fce3380594448a18c06b670,
+projection-pipeline-preflight cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da.
+Repo remainsPRIVATE. Sanitized attention export preserves36experimental commits,
+redacts only historical Modal token identifier; original research branch unchanged.
+Source hashes identical; export mapping is analysis/PUSH_EXPORT_MAP.json on that
+branch. A2-01 was pending at push; terminal result and future commits remain LOCAL
+unless separately authorized. No force push, main update or PR.
+
+Next attention local hypothesis: remaining B16/32 verify sliding could use the
+same verified official sliding FA3 adapter, retaining all decode and full paths.
+No candidate/request yet. No Modal/newcredentials/paid/ranked actions.
+Explicit target GPU ABA/nonunit/untouched-row/concurrency limitations remain;
+CPU stand-ins are not GPU proof. Prior stopped-app/cost guard unchanged.
 
 The completed earlier-cycle checkpoint below is historical, not current status.
 

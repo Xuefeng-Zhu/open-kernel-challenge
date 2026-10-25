@@ -55,3 +55,28 @@ Exact source commit030924103fe180b6645122ec3b02b2ed2af10b59,
 SHA2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357.
 New budget1/10used,9left. No terminal outcome or GPU gain claimed yet.
 Monitor the same job; do not dispatch a duplicate. E6 remains selected.
+
+
+## Terminal outcome — adopt A2-01
+
+Check6e761bdd1d9747ad passed16prerequisites+12scored shapes. Score1.0002799616×,
+CI[.9852757622,1.0152841611], +6.4591% over E6 .9395909196× with nonoverlapping
+parent/new intervals. This resolves improvement over E6, NOT an overall win over
+SGLang: the new interval includes1.0. Full verify1 candidate76.348→36.173µs,
+same-receipt SGLang36.176µs; normalized latency cut53.6046%, supporting >=20% goal.
+All11unchanged controls below5%; minor cross-run shifts are not assigned to code.
+Prior20%/matching-SGLang models .9576911/.9947651× were scenarios; actual1.000280×.
+Full six-load arithmetic,12times/raw samples, model comparison and profile are
+in A2-01-RESULT.md, -assessment.json, -per-shape.csv and -official-result.json.
+
+Native new-path output/new-cache correctness includes the official B1/L8 full
+ctx1048576 prerequisite (default page64, unit scale). Its scored path is page1,
+unit scale with fresh-content graph timing. This does not prove explicit target
+GPU same-address ABA with changing actual lengths, nonunit scales, untouched-old-
+row assertions or concurrent calls. CPU stand-ins cover those separately;
+unchanged E2 fallback still has shared-ticket concurrency limitations.
+
+New attention budget1/10used,9left; actual platform17/20checksleft,0scoredused.
+No extra check, Modal, credential, paid or ranked action. This result arrived
+AFTER the one-time requested private push snapshot and remains local pending
+separate future push authorization. GPU slot terminal before next experiment.

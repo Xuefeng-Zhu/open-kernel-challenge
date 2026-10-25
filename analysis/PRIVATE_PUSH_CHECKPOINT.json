@@ -1,0 +1,12 @@
+{
+  "repository": "https://github.com/Xuefeng-Zhu/open-kernel-challenge",
+  "visibility": "PRIVATE",
+  "verified_remote_branches": {
+    "attention-fa3-sanitized": "cd19d4e0365263c92fce3380594448a18c06b670",
+    "projection-pipeline-preflight": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da"
+  },
+  "non_force_atomic": true,
+  "original_attention_research_branch_not_pushed": true,
+  "attention_export_preserves_candidate_bytes_and_per_experiment_history": true,
+  "note": "One-time requested push complete. Subsequent experiment commits remain local unless separately authorized."
+}
