@@ -151,10 +151,24 @@
       ],
       "target_latency_cut": 0.15,
       "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive"
+    },
+    "A2-03": {
+      "candidate": "mixed_fa3_decode16.py",
+      "expected_sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+      "final": false,
+      "parent_receipt": "A2-02-official-result.json",
+      "target_shapes": [
+        [
+          "decode 16",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2,
+      "hypothesis": "Only full decodeB16 L1 routes to unchanged official FA3 fulladapter, forwarding supplied scheduler_metadata; all11controls preserved; >=20%normalizedlatencycut"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-02 terminal/adopt shape-local benefits, totalgain inconclusive; nextGPU projectionP040; nextattention local full decodeB16",
+  "current_phase": "A2-03 localready; projectionP040terminal/correctbutmissed15%goal; commit before nextserialGPU",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {
