@@ -1,28 +1,29 @@
-# Autonomous cycle — A2-02 done, P040 ready for next serial GPU
+# Autonomous cycle — A2-03 adopted, no active GPU at this checkpoint
 
-Attention selected mixed_fa3_all_verify.py source790d425/SHA25b35cc7,
-job3e85261cb8ed4899 DONE16+12, score1.0124269677×,
-CI[.9972405632,1.0276133722]. TargetB16/32 sliding latency cuts21.23/23.42%
-supported; overall+1.21%vsA2-01 overlapsCI and not a resolved win overSG.
-Retainshape-local benefits fornextparent; oldsource0309241/1.00028 preserved.
-New attention2/10used,8left. Last daily16/20left,0scoredused. No pendingattention.
-Next localattention target full decodeB16, current C257.392vsS200.384; existing
-FA3fulladapter can be extended only to that path; not yet implemented/admitted.
+Attention selected mixed_fa3_decode16.py sourcec94ec71/SHA8e1db32f,
+jobbdd11e743365439a DONE16+12,1.0585245184×,
+CI[1.0426466506,1.0744023861]. Full decode16 normalizedlatencycut22.09%;
+whole-vs-parent4.55%andSGwinresolved byCI; notallgainattributedtosource.
+OldA2-02source790d425/1.012427 preserved. Newattention3/10used7left;
+lastplatform15/20left,0scored. Nextlocalhypothesis full decodeB1 existingFA3.
+No newcandidate/request yet. SharedGPUslotterminal.
 
-Projection P039d5636ac8d1404abd DONE9+30,1.1732389990× highestpoint,
-aggregate-vs-old1.14865 unresolved; native router30.1%latencycut supported.
-Projection6checksleft. P040 fixed8-output O m1 source97fe74d/SHA8ca6417a,
-39CPUoracle+6focused+131regression pass; nativeunverified. NextserializedGPU
-onlyafter source/plan gates and free primaryGPUslot. No duplicaterequests.
+Projection P040d57d89967d1a408f DONE9+30,correct1.1758713×butnotpromoted:
+O m1 normalizedgain6.51%missed15%goal, total0.224%inconclusive. PreserveP039
+recommended1.173238999× andold1.14865; P039routerm1gain30.1%supported but
+whole-vs-oldoverlapsCI. Projection5checksleft, boundedpausewithreasonedreview
+experiments/PROJECTION_BOUNDED_REVIEW.md. No grouping/tile/nonce sweeps.
+P040resultaf7f149 pushed/remoteverifiedPRIVATE on projection-pipeline-preflight.
 
 Standing reviewed privateAUTO-PUSH allowed; noforce/public/PR/ranked/paid/
-newcredentials/Modal. Attention export branch uses safe_attention_export.py,
-originalattention-fa3-local neverrewritten/pushed becausehistoricalA09tokenID.
-Sourcehashes unchanged; analysis/PUSH_EXPORT_MAP.json maps receipt-sourceIDs.
-Remoteattention3400cff includesA2-02source/accepted; resultautopush pending.
-Remoteprojection97fe74d includesP040sourceCPU-unverified; P039resultfdeb02d.
-Auditoutgoinghistory, pushnormal, verifyremoteSHA/PRIVATE. No rawlocalauthlogs.
-PriorModalstopped/costguard$1.708917914/$2 unchanged, no new app/credential.
+newcredentials/Modal. Attention uses safe_attention_export.py, preservingoriginal
+researchref andcandidatebytes/per-experimenthistory; exportmanifestmapsoriginal
+receipt-sourceIDs. Auditoutgoinghistory beforepush, verifyPRIVATE/remoteSHA.
+Lastremoteattentionfe34f7a containsA2-02result; A2-03source/resultnextautopush.
+Projectionremoteaf7f149872dda3afde8b8c6be459a261a6575f7b. No rawauth/logs.
+PriorModalstopped receipts/costguard$1.708917914/$2 unchanged; no newapps.
+AllCPUstandinsseparatefromnativeproof; explicitnativeABA/nonunit/untouchedrows
+andE2concurrencylimitsremainclearlydocumented inexperimentcards.
 
 The completed earlier-cycle checkpoint below is historical, not current status.
 

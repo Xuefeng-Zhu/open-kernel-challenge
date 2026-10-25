@@ -116,9 +116,62 @@
           "left": 16
         }
       }
+    },
+    {
+      "experiment": "A2-03",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "bdd11e743365439a",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode16.py",
+      "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+      "source_sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+      "hypothesis": "Only full decodeB16 L1 routes to unchanged official FA3 fulladapter, forwarding supplied scheduler_metadata; all11controls preserved; >=20%normalizedlatencycut",
+      "final": false,
+      "created_utc": "2026-10-25T03:10:31.557702+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode16.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T03:10:31.834632+00:00",
+      "last_checked_utc": "2026-10-25T03:19:09.238685+00:00",
+      "passed": true,
+      "speedup": 1.0585245183573702,
+      "speedup_ci": [
+        1.0426466505820096,
+        1.0744023861327305
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      }
     }
   ],
-  "remaining": 8,
+  "remaining": 7,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -168,21 +221,21 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-03 localready; projectionP040terminal/correctbutmissed15%goal; commit before nextserialGPU",
+  "current_phase": "A2-03 adopted/significantlyaboveSG; no activeGPU; nextlocal full decodeB1; projectionboundedpauseafterP040",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {
-    "source": "mixed_fa3_all_verify.py",
-    "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
-    "sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
-    "official_job": "3e85261cb8ed4899",
-    "score": 1.012426967691149,
+    "source": "mixed_fa3_decode16.py",
+    "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+    "sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+    "official_job": "bdd11e743365439a",
+    "score": 1.0585245183573702,
     "ci": [
-      0.997240563175782,
-      1.0276133722065164
+      1.0426466505820096,
+      1.0744023861327305
     ],
-    "reason": "Two target latency cuts21.23/23.42% supported; ten controls no>5%regression; aggregate1.21%vsparent overlapsCI, provisional total improvement",
-    "aggregate_vs_parent_inconclusive": true
+    "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
+    "aggregate_vs_parent_inconclusive": false
   },
   "last_platform_quota": {
     "scored": {
@@ -192,11 +245,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 4,
-      "left": 16
+      "used": 5,
+      "left": 15
     }
   },
-  "quota_observed_utc": "2026-10-25T02:59:53.790696+00:00",
+  "quota_observed_utc": "2026-10-25T03:19:09.238685+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -208,5 +261,18 @@
       1.0152841610663221
     ],
     "reason": "Target53.60% normalized latency cut; aggregate6.46% over E6/nonoverlapping CIs; all11controls within5%"
+  },
+  "selection_before_A2_03": {
+    "source": "mixed_fa3_all_verify.py",
+    "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
+    "sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+    "official_job": "3e85261cb8ed4899",
+    "score": 1.012426967691149,
+    "ci": [
+      0.997240563175782,
+      1.0276133722065164
+    ],
+    "reason": "Two target latency cuts21.23/23.42% supported; ten controls no>5%regression; aggregate1.21%vsparent overlapsCI, provisional total improvement",
+    "aggregate_vs_parent_inconclusive": true
   }
 }
