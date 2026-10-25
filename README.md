@@ -15,13 +15,13 @@ unchanged paths also moved, and there is no independent paired candidate repeat.
 P040's higher 1.175871327 point is **not selected**: its O-m1 target improvement
 was 6.5077%, below the declared 15% gate. Both remain preserved.
 
-Current work is P041: source-bound profiling and correctness preparation for
-pooler, QKV and unpooler. Their average fractions within the six equal-weight
-loads are 32.62%, 22.54% and 20.93%. No hardware-counter diagnosis is claimed.
-The diagnostic remains unexecuted after the user chose a direct official check.
-That unchanged-P039 request returned duplicate `d9b940ff4fa14a1b`, with no new
-measurement or quota use. See [experiment 042](experiments/042-p039-unchanged-official-recheck.md)
-and the P041 record for the prepared local analysis.
+Latest experiment P043 losslessly compressed pooler weights by about23.3% and
+decoded them inside a split-K GEMM. Official H200 correctness passed9+30 cases,
+but score fell to **0.898429×**: the three target paths regressed sharply while
+all27 controls stayed within5% normalized movement. **Rejected; P039 is unchanged.**
+[Source, predeclared gates and full result](experiments/043-pooler-lossless-codec.md).
+P041's profiling worker remains unexecuted. The earlier unchanged-P039 recheck
+returned a duplicate with no new measurement; neither is an optimization result.
 
 Historical reports retain their original dated results: the earlier 1.148650×
 composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),

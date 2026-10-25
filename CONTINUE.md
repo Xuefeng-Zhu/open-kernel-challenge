@@ -1,3 +1,11 @@
+# Resume Projection from P043 terminal result
+
+Read STATUS.md, BEST.md and experiments/043-pooler-lossless-codec.md first. Selected P039 is unchanged at1.173238999×. P043 job128378586ebe4730 completed0.898428982× with9+30 correctness pass but severe target regressions; no retry or tile sweep. Exact source commit10baddb and full receipt preserved. The raw matched control has no native measurement.
+
+All official jobs known terminal; current quota snapshot4/20used16left at19:14:36UTC, but reread live quota before a future check. No uncertain admission. Use official runner directly per current workflow; do not launch the deferred Modal diagnostic. Source/result commits are separate. Do not modify attention worktrees.
+
+## Historical handoff (superseded)
+
 # Projection P038 complete — rejected, best preserved
 
 Branch projection-pipeline-preflight, separate from active attention-fa3-local.

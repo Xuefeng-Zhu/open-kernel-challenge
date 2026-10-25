@@ -1,3 +1,15 @@
+# Current Projection checkpoint — 2026-10-25 19:14 UTC
+
+P043 is terminal **done**, job `128378586ebe4730`: H200 compilation and9 prerequisites+30 scored correctness checks passed. Score **0.898428982×** [0.884952547,0.911905417]; rejected for performance. Selected P039 remains **1.173238999×**, source `cdf5bc2`, job `d5636ac8d1404abd`, SHA256 `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`.
+
+P043 source `candidates/projection_pooler_lossless_codec.py`, commit `10baddb`, SHA256 `9598c7d1ebe6373b56f9ced2c0405b855f3a6895628f771c2eb8af314003b837`. Three-seed bit-exact weights shrink about23.3% including metadata, but target m8/16/32 calibrated times are52.639/51.912/98.953µs versus P03920.162/19.932/20.237µs. All27 controls move less than5% normalized; profiles prove codec execution. No causal hardware-bottleneck claim. See experiment043 and full sanitized receipt/CSV/assessment.
+
+Local16 focused tests and39 CPU oracle cases passed. Dedicated GPU exhaustive-bit/ABA/concurrency tests remain unverified. Current quota observed19:14:36UTC: Projection checks **4/20 used,16 left**, ranked **0/10**. UTC reset00:00; user history is separate. Seven cycle-two request records including one settled duplicate; all terminal, zero uncertain. A fresh account inventory at19:17:12UTC returned39 jobs and no nonterminal jobs. No Modal app was launched, no new credentials or paid resources, no ranked submission. Shared GPU slot terminal.
+
+This bounded single-candidate experiment is complete. Reject the fixed codec implementation without a tile/split sweep; a future mechanism needs stronger dataflow/generated-code evidence. Preserve raw matched control, which is not GPU tested. Attention and other worktrees untouched.
+
+## Previous checkpoint (historical)
+
 # Current Projection checkpoint — 2026-10-25 18:48 UTC
 
 P039 remains selected: source `cdf5bc2`, SHA256 `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`,

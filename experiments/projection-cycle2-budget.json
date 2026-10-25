@@ -392,6 +392,62 @@
       "new_gpu_measurement": false,
       "quota_consumed": 0,
       "decision": "No new optimization or GPU measurement; preserve selected P039 and original receipt"
+    },
+    {
+      "experiment": "P2-07-pooler-lossless-codec",
+      "candidate": "candidates/projection_pooler_lossless_codec.py",
+      "source_commit": "10baddbce8a690814cbf24452529b9836b404d51",
+      "submission_sha256": "9598c7d1ebe6373b56f9ced2c0405b855f3a6895628f771c2eb8af314003b837",
+      "mode": "check",
+      "created_utc": "2026-10-25T19:12:43.087035+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "128378586ebe4730",
+      "hypothesis": "Only pooler2<=m<=32 uses exact BF16 static-weight codec decoded inside fixed S8/BM16/BN64/BK64 FP32-accumulating GEMM; require>=22%storedbyte reduction, >=10%normalized latency cut on each target and>=1.5%target-only modeled aggregate gain; preserve all otherP039paths. Raw matched control unmeasured; no codec causality claim.",
+      "control_job_id": "d5636ac8d1404abd",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_lossless_codec.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T19:12:43.397531+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T19:14:36.553292+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "passed": true,
+      "speedup": 0.8984289821961206,
+      "speedup_ci": [
+        0.8849525474631788,
+        0.9119054169290622
+      ],
+      "decision": "Reject promotion: predeclared target/score/execution gates missed; preserve P039 and stop this fixed codec mechanism without a tile sweep.",
+      "assessment": "results/router-p043-official-assessment.json"
     }
   ],
   "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
@@ -418,11 +474,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 3,
-      "left": 17
+      "used": 4,
+      "left": 16
     }
   },
-  "last_account_quota_utc": "2026-10-25T18:48:29.693311+00:00",
+  "last_account_quota_utc": "2026-10-25T19:14:36.553292+00:00",
   "admission_pause_reason": "M36 single-pass candidate failed performance decisively, no meaningful Modal-qualified next candidate. Remaining user allowance persists; scope exact source/evidence before any future dispatch.",
   "latest_stage_summary": "QKV_M128_SINGLEPASS_RESULTS.md",
   "historical_modal_first_pause": {
@@ -454,16 +510,16 @@
       1.1556404139847458,
       1.1908375839538243
     ],
-    "reason": "Retain P039 for correct native30%target latency reduction; highest verified point score, but aggregate gain over previous best is unresolved by overlapping CIs and shifted controls",
+    "reason": "Retain P039 for native correct router m1 normalized latency reduction of30.1%; P040 higher aggregate point missed its target gate and P043 regressed. Separate-run overall improvement is not wholly causal.",
     "previous_best_job": "48b1357016134e52",
     "previous_best_preserved": true,
     "source": "candidates/projection_router_m1_fp32_gemv.py"
   },
   "latest_decision": {
-    "experiment": "P2-06-p039-unchanged-recheck",
-    "decision": "No new optimization or GPU measurement; preserve selected P039 and original receipt",
-    "job_id": "d9b940ff4fa14a1b",
-    "status": "duplicate"
+    "experiment": "P2-07-pooler-lossless-codec",
+    "decision": "Reject promotion: predeclared target/score/execution gates missed; preserve P039 and stop this fixed codec mechanism without a tile sweep.",
+    "job_id": "128378586ebe4730",
+    "status": "done"
   },
   "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
   "phase_history": [
@@ -492,11 +548,11 @@
       1.1556404139847458,
       1.1908375839538243
     ],
-    "reason": "Retain P039 for correct native30%target latency reduction; highest verified point score, but aggregate gain over previous best is unresolved by overlapping CIs and shifted controls",
+    "reason": "Retain P039 for native correct router m1 normalized latency reduction of30.1%; P040 higher aggregate point missed its target gate and P043 regressed. Separate-run overall improvement is not wholly causal.",
     "previous_best_job": "48b1357016134e52",
     "previous_best_preserved": true
   },
-  "current_phase": "P043 lossless static pooler codec: local preflight passed; independent review complete; one official nonranking candidate check planned.",
+  "current_phase": "P043 completed: 9+30 H200 correctness pass, codec paths verified, severe target performance regressions; preserve selected P039. No active or uncertain job.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",

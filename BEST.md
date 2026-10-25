@@ -69,3 +69,5 @@ M32poolernarrow all passed actual CUDA correctness but none provides a meaningfu
 whole-workload gain. All rejected; no new official request.104local CPUtests pass.
 Allapps stopped, exact costs/budgets/nextresearch in MODAL_FOLLOWUP_RESULTS.md and
 STATUS.md. This source remains best official. No new work pushed.
+
+P043 (`128378586ebe4730`) passed9+30 correctness but scored0.898428982; all three compressed pooler targets regressed substantially. It is rejected. Selected P039 source/hash/job above remain unchanged. See experiments/043-pooler-lossless-codec.md.
