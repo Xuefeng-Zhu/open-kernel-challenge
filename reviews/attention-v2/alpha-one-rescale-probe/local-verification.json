@@ -1,0 +1,51 @@
+{
+  "observed_utc": "2026-10-25T22:01:48.422102+00:00",
+  "scope": "Local source preparation only; no GPU/service/official/credential actions",
+  "baseline_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+  "test_command": "python3 reviews/attention-v2/alpha-one-rescale-probe/test_source.py",
+  "test_methods": 6,
+  "test_passed": 6,
+  "native_compile_tested": false,
+  "native_correctness_tested": false,
+  "performance_tested": false,
+  "independent_semantics_review": "SEMANTICS_REVIEW.md",
+  "secret_scan": {
+    "files": 6,
+    "patterns": 6,
+    "match_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  },
+  "files": {
+    "EXPERIMENT_CARD.md": {
+      "sha256": "040237d21771107fdb448e7ab2f27a117694360aa348685fca25caf1e6b18f84",
+      "bytes": 6470
+    },
+    "SEMANTICS_REVIEW.md": {
+      "sha256": "86cb3e696b6767f138d3b2334d45ec7a79d51762cd61d091e4144463f7ae344b",
+      "bytes": 6314
+    },
+    "SOURCE_AUDIT.md": {
+      "sha256": "e9117ed4d979c49b5a1b6137f5810a5763bb985832cd1b73e6047740def92bf0",
+      "bytes": 7599
+    },
+    "baseline.py": {
+      "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "bytes": 40538
+    },
+    "candidate.py": {
+      "sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+      "bytes": 40947
+    },
+    "test_source.py": {
+      "sha256": "69f38480aeb1da05b972f4eec6dcf5ffb07b4f43b15907cda0b143dca3d80862",
+      "bytes": 5556
+    }
+  }
+}
