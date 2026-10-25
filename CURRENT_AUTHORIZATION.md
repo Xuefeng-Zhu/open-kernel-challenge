@@ -1,3 +1,36 @@
+# A2-15 native diagnostic complete; no active GPU work
+
+Modal app `ap-TQMFJknnfH0UZbG8lOBcBe` stopped at 2026-10-25 15:52:43 UTC;
+a separate 15:53:12 UTC read confirmed stopped, zero tasks and no active apps.
+Four exact-source H200 specializations compiled and disassembled. All 25 raw
+files were retrieved and hash-verified. No candidate kernel was executed;
+correctness, graph/cache behavior and performance remain untested for A2-15.
+
+See [NATIVE_RESULT.md](reviews/attention-v2/a215/NATIVE_RESULT.md) and the saved
+native artifacts. The compiler produces page-load/use separation across part
+of PV plus double-buffered K/V, rather than the literal before-QK source order.
+Producer shared memory rises 12,544 to 20,480 bytes; registers remain 96, raw
+spill field 0. Both versions lower quantized FP8 Q/K to FP16 MMA in this
+specialization. Merge SASS is identical. No new score or selection change.
+
+Executed payload commit: 31010ce6b69d54767dc322a53b0cf6894b03d955.
+A2-15 candidate hash remains fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c.
+Post-run local warning hardening is commit aaa801a; it was not uploaded.
+Billing at 16:00:27 UTC shows $1.23 gross and $0 paid, an observed $0.03 rounded
+increase. Keep the larger $0.061676416 model allowance: cumulative $1.849496218,
+remaining $0.150503782 under the $2 stage ceiling. Prior accounting was retained.
+No active reservation, uncertain request, new official check or further GPU run.
+
+The next justified experiment is a full correctness/paired-timing check of the
+unchanged A2-15 source against A2-13, retaining A2-11 as selected best. This
+completed diagnostic does not itself authorize a new launch. The private export
+will include reviewed source, artifact hashes and results; verify delivery from
+the remote SHA receipt rather than assuming it from this status file.
+
+The earlier checkpoints below are historical and superseded by this result.
+
+---
+
 # A2-15 status: native diagnostic blocked; official capability audit complete
 
 The attempted Modal diagnostic stopped at the existing CLI's authentication

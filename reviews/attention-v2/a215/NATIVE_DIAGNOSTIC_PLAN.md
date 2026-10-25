@@ -1,3 +1,12 @@
+# Completed: A2-15 native diagnostic
+
+The plan below is the frozen prelaunch scope. App ap-TQMFJknnfH0UZbG8lOBcBe
+completed and is stopped/tasks0. Read [NATIVE_RESULT.md](NATIVE_RESULT.md) before
+acting; do not relaunch the existing ledger. Current code includes a post-run
+warning filter not present in the executed harness commit 31010ce.
+
+---
+
 # A2-15 native diagnostic — exact compile-only attempt prepared
 
 Historical attempt at 2026-10-25 08:31:05 UTC: the supported read-only `modal app list

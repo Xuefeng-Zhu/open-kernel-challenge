@@ -1,3 +1,14 @@
+# Current result: native scheduling change verified
+
+The diagnostic completed on 2026-10-25. See [NATIVE_RESULT.md](NATIVE_RESULT.md)
+for the exact-source H200 evidence, resources, limitations, costs and shutdown.
+A2-15 remains untested for numerical correctness and runtime performance.
+Selected A2-11 is unchanged. All native artifacts are preserved; no app is active.
+
+The local prototype and earlier blocked attempt below are historical context.
+
+---
+
 # A2-15: page-address lookahead, local diagnostic candidate
 
 2026-10-25. The prototype and ten local checks are complete. The subsequent

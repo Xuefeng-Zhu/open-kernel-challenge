@@ -1,0 +1,112 @@
+{
+  "kind": "Offline audit of saved native compilation; not runtime evidence",
+  "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+  "source_commit": "31010ce6b69d54767dc322a53b0cf6894b03d955",
+  "files_verified": 25,
+  "artifact_bytes": 1894074,
+  "resources": [
+    {
+      "source": "mixed_fa3_fp8_qk.py",
+      "kernel": "producer",
+      "registers": 96,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 12544
+    },
+    {
+      "source": "mixed_fa3_fp8_qk.py",
+      "kernel": "merge",
+      "registers": 27,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 1024
+    },
+    {
+      "source": "mixed_fa3_page_lookahead.py",
+      "kernel": "producer",
+      "registers": 96,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 20480
+    },
+    {
+      "source": "mixed_fa3_page_lookahead.py",
+      "kernel": "merge",
+      "registers": 27,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 1024
+    }
+  ],
+  "shared_memory_delta_bytes": 7936,
+  "page_load_use": [
+    {
+      "register": "R49",
+      "load": "0x2db0",
+      "first_use": "0x35b0",
+      "load_line": 1467,
+      "use_line": 1723,
+      "static_address_slots": 128
+    },
+    {
+      "register": "R48",
+      "load": "0x2de0",
+      "first_use": "0x35d0",
+      "load_line": 1473,
+      "use_line": 1727,
+      "static_address_slots": 127
+    },
+    {
+      "register": "R47",
+      "load": "0x2e30",
+      "first_use": "0x35f0",
+      "load_line": 1483,
+      "use_line": 1731,
+      "static_address_slots": 124
+    },
+    {
+      "register": "R46",
+      "load": "0x2e50",
+      "first_use": "0x3630",
+      "load_line": 1487,
+      "use_line": 1739,
+      "static_address_slots": 126
+    },
+    {
+      "register": "R89",
+      "load": "0x2f10",
+      "first_use": "0x3600",
+      "load_line": 1511,
+      "use_line": 1733,
+      "static_address_slots": 111
+    },
+    {
+      "register": "R62",
+      "load": "0x2f60",
+      "first_use": "0x3660",
+      "load_line": 1521,
+      "use_line": 1745,
+      "static_address_slots": 112
+    }
+  ],
+  "merge_sass_equal": true,
+  "lowering": {
+    "a213": {
+      "mma_instruction_families": [
+        "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32",
+        "mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32"
+      ],
+      "native_fp8_mma_present": false,
+      "wgmma_present": false
+    },
+    "a215": {
+      "mma_instruction_families": [
+        "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32",
+        "mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32"
+      ],
+      "native_fp8_mma_present": false,
+      "wgmma_present": false
+    }
+  },
+  "native_schedule_change": true,
+  "original_before_qk_order_preserved": false,
+  "candidate_kernel_launches": 0,
+  "correctness_tested": false,
+  "performance_tested": false
+}

@@ -1,0 +1,46 @@
+{
+  "verified_utc": "2026-10-25T16:04:37.463765+00:00",
+  "environment": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/test_page_lookahead.py",
+      "passed": 7,
+      "kind": "CPU source/address model"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/diagnose_a214.py --self-test",
+      "passed": 3,
+      "kind": "saved receipt/source-count analysis"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/native_diagnostic.py self-test",
+      "passed": 7,
+      "kind": "CPU compile protocol/privacy guards; postrun harness"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/a215/analyze_native.py",
+      "artifact_hashes_verified": 25,
+      "load_use_pairs_verified": 6,
+      "kind": "offline native artifact analysis"
+    },
+    {
+      "command": "git diff --cached --check -- . ':!reviews/attention-v2/a215/native_artifacts/**'",
+      "exit_code": 0,
+      "raw_artifact_whitespace_check": {
+        "command": "git diff --cached --check",
+        "exit_code": 2,
+        "diagnostics": 476,
+        "all_in_raw_artifacts": true,
+        "disposition": "Compiler-emitted trailing whitespace and final blank lines preserved for byte-exact hashes"
+      }
+    }
+  ],
+  "native_diagnostic_current_sha256": "fda95ffe181870354d146240d9ef87b9f2065b36242fb0911e67b164bf61e47f",
+  "executed_harness_sha256": "443241f373998e8fae85b2941c014b599e95be6abf344aef028c7316d17f741b",
+  "candidate_kernel_execution": false,
+  "new_official_checks": 0
+}

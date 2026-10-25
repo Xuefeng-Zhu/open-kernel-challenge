@@ -1,0 +1,167 @@
+{
+  "experiment": "A2-15 native compile",
+  "state": "terminal",
+  "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+  "created_utc": "2026-10-25T15:52:13.597421+00:00",
+  "source_commit": "31010ce6b69d54767dc322a53b0cf6894b03d955",
+  "payload_sha256": {
+    "mixed_fa3_fp8_qk.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "mixed_fa3_page_lookahead.py": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+    "native_diagnostic.py": "443241f373998e8fae85b2941c014b599e95be6abf344aef028c7316d17f741b"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "billing_before": {
+    "metered_cost": "1.20000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-1.20000000"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.19997247",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "prior_conservative_cumulative_usd": "1.787819802",
+  "remaining_ceiling_usd": "0.212180198",
+  "cost_reserve_usd": "0.196609280",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "timeout": 75,
+    "startup_timeout": 20,
+    "worker_hard_timeout": 60,
+    "app_watchdog": 110,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "native_compile_only": true,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "accepted_utc": "2026-10-25T15:52:15.699433+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 24,
+    "packed_bytes": 386434,
+    "raw_bytes": 2526076,
+    "sha256": "b6daa9eb5c6727fba9d6a757aa84e12d7fa97ff7ca45a9099f84a54398144c3a",
+    "artifact_sha256": {
+      "a213.merge.cubin": "2c02823352c6c30ffb42db4ce4f13b78c716f0f9a3d0f7636d7fc8b52bed4437",
+      "a213.merge.llir": "eb710eade453a4a14549763983869ac31e45ee41173d1afe649e52e694de7497",
+      "a213.merge.ptx": "d661e8cac573f39333d813b305c6e18562741f16ced9f5fbb035d3a354354612",
+      "a213.merge.sass": "69985cf3d726014b1e4242c61d8c40738cace85a71b831c6383e53c304f56bb4",
+      "a213.merge.ttgir": "d7d5910dbd4cf79a2f6324f6d7923081e234c8a738fbc3d39ac2934ca701f004",
+      "a213.merge.ttir": "ff310db51df8d8c5e7d0fc5c3895846e564add6cb7c65010f9b4dab69b0148cf",
+      "a213.producer.cubin": "5c1e221daf95b5acf41400c7088a43886e8044d113b6131934027c127d008c73",
+      "a213.producer.llir": "fceca8d464c953fc21d33f954a7f7adb0fe6c4538af6f70cf65f1bf8881faa74",
+      "a213.producer.ptx": "ae1445fb9d83069427e60053412a45771b7af5119bf6349455d5daa5ba5535ad",
+      "a213.producer.sass": "2ba30d9bd586d25d89d79273bb8598d318d2b042ecdc4fdb186ffa7629be0534",
+      "a213.producer.ttgir": "6cd9f58d12b5b8cdd9c86ae61fc25d9f051f6f633299bce2f5c37c6066921f99",
+      "a213.producer.ttir": "8b4f11a813ca6994cd7992e3f56b10ab1f5d83c544a87eead29980dd82853ddc",
+      "a215.merge.cubin": "4132c3ff33efd1660bb379a5fa4f1e5420fa9ff8cf0fcd654496cf5a97dea207",
+      "a215.merge.llir": "574d1ef30bbc96c493ed0f4672cf11bdcba301f43d15b44f4f965053772ec32a",
+      "a215.merge.ptx": "296ced51b14be851539a87f9d71675fc83728d6e324e96108d4670ff4d1f8a72",
+      "a215.merge.sass": "69985cf3d726014b1e4242c61d8c40738cace85a71b831c6383e53c304f56bb4",
+      "a215.merge.ttgir": "c0001597f5b751a3b7028c1acec386d70f960b1473a60dd84142f577f407b20f",
+      "a215.merge.ttir": "64c8248e174aaa922fc7f636978923fdf27a3a1261e5ba0b172dc3df353b4fe5",
+      "a215.producer.cubin": "f225fc110fe1a31e72788289f125b03daf12879a307f54d108b6a8bbadbad17c",
+      "a215.producer.llir": "da82162dfa21a5f04e2a6540b938e40ae5a1d10e4bd9cb37634d798a5b470768",
+      "a215.producer.ptx": "df4a5b499b5a4116bc35d0864187c2339d3ac5b62d213955384da4174b1f19e2",
+      "a215.producer.sass": "44dc14bbc9a1d2ab246146c7c76d76c9cb7f13b929ad4c900f18c3f3f021e8de",
+      "a215.producer.ttgir": "345f1ede702bdf065cd7002bcd637af5519ec86721aee8344a54e6280d9ab32a",
+      "a215.producer.ttir": "1706466428379cf22580c72e3f25808fef7907e49b3e5a13eb0cfe6048a459fa",
+      "summary.json": "0c523d393189997884ab0f4c99a8b137279f92d66af357d7fb9074e46d629b69"
+    },
+    "exit_code": 0,
+    "worker_wall_seconds": 20.461808976
+  },
+  "artifact_retrieval_complete": true,
+  "exit_code": 0,
+  "shutdown_observation": {
+    "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+    "description": "okc-a215-native-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 08:52:13-07:00",
+    "stopped_at": "2026-10-25 08:52:43-07:00"
+  },
+  "shutdown_verified": true,
+  "billing_after": {
+    "metered_cost": "1.23000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-1.23000000",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.22868578",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "explicit_stop": {
+    "requested_utc": "2026-10-25T15:52:41.431426+00:00",
+    "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T15:52:44.042033+00:00",
+  "client_wall_seconds": 30.44233545800671,
+  "initial_shutdown_observation": {
+    "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+    "description": "okc-a215-native-compile",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 08:52:13-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified_utc": "2026-10-25T15:53:12.387953+00:00",
+  "active_apps_at_verification": 0,
+  "app_lifetime_seconds": 30.0,
+  "billing_after_observed_utc": "2026-10-25T16:00:27.183454+00:00",
+  "billing_settled": false,
+  "conservative_incremental_cost_upper_usd": "0.061676416",
+  "cost_method": "ceil(max(platform app lifetime, client wall) + 5)s \u00d7 H200/2CPU/8GiB rate \u00d7 1.1 + $0.01; final billing pending",
+  "billing_initial_after": {
+    "metered_cost": "1.20000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.20000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.19997247",
+      "network_egress": "0E-8"
+    }
+  },
+  "billing_updated": true,
+  "billing_note": "Usage updated after the run; snapshot is not a final invoice. Conservative modeled cost retained.",
+  "observed_metered_delta_usd": "0.03000000",
+  "observed_ephemeral_delta_usd": "0.02871331",
+  "followup_read_issue": {
+    "operation": "modal billing summary --json",
+    "first_outcome": "read-only local subprocess timed out after 20 seconds",
+    "resolution": "subsequent bounded read completed successfully; no GPU relaunch or credential change"
+  }
+}
