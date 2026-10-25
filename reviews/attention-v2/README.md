@@ -27,7 +27,9 @@ not a claimed exact number of underlying graph replays. Profile sums are not wal
 A2-09 (`mixed_fa3_local_tickets.py`) is an isolated per-invocation counter repair;
 its official job `3fb683ba982d448c` passed at 1.14665988x. Sliding decode
 B1/B16 normalized latency regressed 7.40/7.68%, supporting A2-10
-(`mixed_fa3_decode_merge.py`), job `08235841c4044048`, now running.
+(`mixed_fa3_decode_merge.py`), job `08235841c4044048`, which passed
+but regressed further to 1.14054863x. A2-11 parallel merge, job
+`cfa8a8670e394f80`, is running after eight CPU/static tests.
 The measured A2-08 remains the sequential-only performance reference. Five CPU ownership/protocol/AST tests pass,
 including 96 modeled interleavings; this is not a native concurrent-stream test.
 

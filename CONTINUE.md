@@ -9,14 +9,19 @@ score1.1466598821x, with measured7.40/7.68%slidingB1/B16initialization penalty.
 Its source is ef5f09a, mixed_fa3_local_tickets.py. It is the invocation-local
 counter baseline; dedicated native multistream/ABA remains unrun.
 
-A2-10 is ACTIVE, job08235841c4044048, accepted05:21:31UTC; latest05:25running.
-Sourcea0e49b4, mixed_fa3_decode_merge.py, SHA256
-94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f.
-Only L1 fallback moves the unchanged merge recurrence to a second kernel,
-removing initialization/election while L8 keeps safe local counters.
-Poll this SAME ID via check_cycle.py poll A2-10 --cycle2, never resubmit.
-Five CPU/AST tests plus independent review pass; native result pending.
-Shared GPU slot is in ignored local-notes/gpu-slot.local.json.
+A2-10 job08235841c4044048 is terminal,16+12pass,1.1405486256x; rejected for
+sliding regressions. Profiles locate material serial-merge activity6.6/4.8/3.2us
+on slidingB1/B16/B32 and8usfullB32 (not calibrated walltime/counters).
+
+A2-11 is ACTIVE, jobcfa8a8670e394f80, accepted05:34:57UTC; latest05:36running.
+Source7e302d2366b194c32c433f6d6f9cc7b0b59b3928,
+mixed_fa3_decode_parallel_merge.py, SHA256
+c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0.
+Only the L1 separate merge is parallelized across splits/per-query-head;
+producer/partition/FA3/L8unchanged. FP32sumorder changes explicitly.
+Eight CPU/ASTtests pass; GPU result PENDING. Poll this SAME job via
+check_cycle.py poll A2-11 --cycle2, never resubmit. Shared GPU slot in
+ignored local-notes/gpu-slot.local.json. Free user count cap removed; dailyquota applies.
 
 Native ownership stress harness is prepared, FIVE CPU orchestration tests pass,
 ZERO native stress replays run. Read NATIVE_OWNERSHIP_PROBE.md before using;

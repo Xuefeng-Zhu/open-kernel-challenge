@@ -540,6 +540,41 @@
           "left": 8
         }
       }
+    },
+    {
+      "experiment": "A2-11",
+      "mode": "check",
+      "state": "accepted",
+      "status": "running",
+      "job_id": "cfa8a8670e394f80",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+      "source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+      "source_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+      "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required.",
+      "final": false,
+      "created_utc": "2026-10-25T05:34:56.814047+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:34:57.342717+00:00",
+      "last_checked_utc": "2026-10-25T05:36:18.060162+00:00"
     }
   ],
   "remaining": null,
@@ -748,7 +783,7 @@
       "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required."
     }
   },
-  "all_requests_terminal": true,
+  "all_requests_terminal": false,
   "current_phase": "A2-11 parallel-merge source ready after A2-10 measured merge costs; no active jobs until admission",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
