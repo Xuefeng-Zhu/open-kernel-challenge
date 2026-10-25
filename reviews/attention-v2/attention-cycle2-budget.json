@@ -80,10 +80,28 @@
         ]
       ],
       "target_latency_cut": 0.2
+    },
+    "A2-02": {
+      "candidate": "mixed_fa3_all_verify.py",
+      "expected_sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+      "final": false,
+      "parent_receipt": "A2-01-official-result.json",
+      "target_shapes": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-01 complete/adopted; projection P039 is next serialized GPU experiment; prepare A2-02 remaining verify sliding locally",
+  "current_phase": "A2-02 source/CPU ready; projectionP039terminal; commit before serialized dispatch",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {

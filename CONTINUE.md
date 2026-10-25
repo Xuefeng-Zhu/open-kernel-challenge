@@ -6,9 +6,12 @@ CI[.9852757622,1.0152841611]. +6.46% over E6, intervals do not overlap;
 not a statistically resolved win over SGLang1.0. Full verify1 normalized latency
 cut53.60%; all11controls below5%. See A2-01-RESULT/assessment/receipt.
 Old attention budget0; new independent attention-cycle2-budget.json1/10used,9left.
-Projection7checks left. GPU slot terminal; next serialized GPU candidate P039
+Projection6checks left. P039 terminal passed9+30, highest point1.1732389990×,
+CIoverlaps previous1.14865; router target30.1%latencycut supported, totalgain
+unresolved. See projection results/router-p039-official-assessment.json. Candidate P039
 router m1 original-FP32 GEMV based on projection best, sourcecdf5bc2/SHA0c0c4111.
-Local125regressions+39oracles+6focused pass; native/performance unverified.
+Local125regressions+39oracles+6focused pass; nativecanonicalm1 now passes;
+explicitnative tails/strides/outlier stress and compiled resources unverified.
 Only coordinator dispatches, no duplicate uncertain requests.
 
 One-time user-requested private push VERIFIED:
@@ -17,12 +20,13 @@ projection-pipeline-preflight cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da.
 Repo remainsPRIVATE. Sanitized attention export preserves36experimental commits,
 redacts only historical Modal token identifier; original research branch unchanged.
 Source hashes identical; export mapping is analysis/PUSH_EXPORT_MAP.json on that
-branch. A2-01 was pending at push; terminal result and future commits remain LOCAL
-unless separately authorized. No force push, main update or PR.
+branch. A2-01 was pending at initial push. User later granted standing AUTO-PUSH for
+reviewed experiment commits. Result40329d1 has now been exported/pushed on
+attention-fa3-sanitized6ddde17; source mapping retained, noforce/visibilitychange. No force push, main update or PR.
 
 Next attention local hypothesis: remaining B16/32 verify sliding could use the
 same verified official sliding FA3 adapter, retaining all decode and full paths.
-No candidate/request yet. No Modal/newcredentials/paid/ranked actions.
+A2-02 mixed_fa3_all_verify.py/SHA25b35cc7 has9CPUtests passed; no request yet. No Modal/newcredentials/paid/ranked actions; reviewed private auto-push allowed.
 Explicit target GPU ABA/nonunit/untouched-row/concurrency limitations remain;
 CPU stand-ins are not GPU proof. Prior stopped-app/cost guard unchanged.
 

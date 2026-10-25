@@ -25,6 +25,7 @@ def functions():
 
 def adapter(data, trace):
     cfg = data['config']
+    batch = cfg['batch']
     hq, hk, d = [cfg[k] for k in ['num_q_heads', 'num_kv_heads', 'head_dim']]
 
     class Norm:
@@ -61,24 +62,25 @@ def adapter(data, trace):
         for key in ['k_cache', 'v_cache', 'page_table', 'cache_seqlens', 'cu_seqlens_q', 'scheduler_metadata']:
             assert kw[key] is data[key]
         if cfg['kv_scale'] != 1:
-            assert torch.equal(kw['k_descale'], data['k_scale'].expand(1, hk))
-            assert torch.equal(kw['v_descale'], data['v_scale'].expand(1, hk))
+            assert torch.equal(kw['k_descale'], data['k_scale'].expand(batch, hk))
+            assert torch.equal(kw['v_descale'], data['v_scale'].expand(batch, hk))
         else:
             assert 'k_descale' not in kw and 'v_descale' not in kw
-        q = kw['q'].float().reshape(1, 8, hk, hq//hk, d)
+        q = kw['q'].float().reshape(batch, 8, hk, hq//hk, d)
         kc = kw['k_cache'].view(-1, hk, d).float()*data['k_scale']
         vc = kw['v_cache'].view(-1, hk, d).float()*data['v_scale']
-        out = torch.empty((1, 8, hq, d), dtype=torch.bfloat16)
-        for j in range(8):
-            end = int(data['cache_seqlens'][0])-8+j+1
-            # Window applies to each query separately, including the new tokens.
-            pos = torch.arange(max(0, end-cfg['window']), end)
-            page = cfg['page_size']
-            rows = data['page_table'][0].long()[pos//page]*page+pos%page
-            score = torch.einsum('hgd,thd->hgt', q[0, j], kc[rows])*kw['softmax_scale']
-            out[0, j] = torch.einsum('hgt,thd->hgd', score.softmax(-1), vc[rows]).reshape(hq, d).to(torch.bfloat16)
+        out = torch.empty((batch, 8, hq, d), dtype=torch.bfloat16)
+        for bi in range(batch):
+            for j in range(8):
+                end = int(data['cache_seqlens'][bi])-8+j+1
+                # Window applies to each query separately, including the new tokens.
+                pos = torch.arange(max(0, end-cfg['window']), end)
+                page = cfg['page_size']
+                rows = data['page_table'][bi].long()[pos//page]*page+pos%page
+                score = torch.einsum('hgd,thd->hgt', q[bi, j], kc[rows])*kw['softmax_scale']
+                out[bi, j] = torch.einsum('hgt,thd->hgd', score.softmax(-1), vc[rows]).reshape(hq, d).to(torch.bfloat16)
         trace.append('attention')
-        return (out.reshape(8, hq, d), None)
+        return (out.reshape(batch*8, hq, d), None)
 
     def finish(a, gate, weight, **kw):
         assert a.dtype == torch.bfloat16 and weight is None
@@ -129,7 +131,7 @@ class SlidingFA3(unittest.TestCase):
         self.assertEqual(changed, 1)
 
     def test_rope_table_layout_cache_and_constant_bound(self):
-        ns = adapter({'config': dict(num_q_heads=16, num_kv_heads=2, head_dim=64)}, [])
+        ns = adapter({'config': dict(batch=1, num_q_heads=16, num_kv_heads=2, head_dim=64)}, [])
         cache = ns['_fa3_cos_sin'](500000., 64, torch.device('cpu'))
         self.assertIs(cache, ns['_fa3_cos_sin'](500000., 64, torch.device('cpu')))
         self.assertEqual(cache.dtype, torch.float32)

@@ -1,0 +1,101 @@
+{
+  "observed_utc": "2026-10-25T02:43:02.546157+00:00",
+  "source_sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+  "parent_source_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+  "parent_source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+  "parent_job_id": "6e761bdd1d9747ad",
+  "tests": [
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_all_verify.py",
+      "exit_code": 0,
+      "output": "test_controls_and_nearby_dispatch (__main__.AllVerify.test_controls_and_nearby_dispatch) ... ok\ntest_larger_batches_page_scale_zero_and_untouched_cache (__main__.AllVerify.test_larger_batches_page_scale_zero_and_untouched_cache) ... ok\ntest_only_sliding_batch_dispatch_changes (__main__.AllVerify.test_only_sliding_batch_dispatch_changes) ... ok\ntest_same_address_A_B_A_changed_lengths (__main__.AllVerify.test_same_address_A_B_A_changed_lengths) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.702s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_sliding.py",
+      "exit_code": 0,
+      "output": "test_cpu_same_address_A_B_A_changed_lengths_and_content (__main__.SlidingFA3.test_cpu_same_address_A_B_A_changed_lengths_and_content) ... ok\ntest_only_one_scored_shape_changes_and_nearby_dispatch (__main__.SlidingFA3.test_only_one_scored_shape_changes_and_nearby_dispatch) ... ok\ntest_parent_functions_unchanged_except_dispatch (__main__.SlidingFA3.test_parent_functions_unchanged_except_dispatch) ... ok\ntest_rope_table_layout_cache_and_constant_bound (__main__.SlidingFA3.test_rope_table_layout_cache_and_constant_bound) ... ok\ntest_window_boundary_cache_zero_scales_and_heads (__main__.SlidingFA3.test_window_boundary_cache_zero_scales_and_heads) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.164s\n\nOK\n"
+    }
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda": false
+  },
+  "native_execution": false,
+  "initial_fixture_failure": "New A2-02 four tests passed; existing E6 table-only test omitted batch after CPU helper generalized, causing one KeyError. Added batch1 to that test fixture; no candidate algorithm changed. Final9tests passed.",
+  "parent_targets": [
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "target": false,
+      "weight": 46,
+      "parent_adjusted_candidate_us": 36.86359153311796,
+      "parent_adjusted_sglang_us": 28.991999570280313,
+      "new_adjusted_candidate_us": 37.24702494867579,
+      "new_adjusted_sglang_us": 29.327998869121075,
+      "parent_raw_candidate_us": 41.26400128006935,
+      "parent_raw_sglang_us": 33.215999603271484,
+      "new_raw_candidate_us": 41.280001401901245,
+      "new_raw_sglang_us": 33.135998994112015,
+      "parent_paired_ratio": 0.7864670360248032,
+      "new_paired_ratio": 0.7873917154332012,
+      "relative_speedup": 1.001175738290408,
+      "normalized_latency_cut": 0.0011743575532661144
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "target": false,
+      "weight": 46,
+      "parent_adjusted_candidate_us": 45.130071997333395,
+      "parent_adjusted_sglang_us": 34.78400129824877,
+      "new_adjusted_candidate_us": 44.88348914082246,
+      "new_adjusted_sglang_us": 34.415998961776495,
+      "parent_raw_candidate_us": 49.04000088572502,
+      "parent_raw_sglang_us": 38.784001022577286,
+      "new_raw_candidate_us": 49.12000149488449,
+      "new_raw_sglang_us": 38.51199895143509,
+      "parent_paired_ratio": 0.77074996247079,
+      "new_paired_ratio": 0.7667852838667667,
+      "relative_speedup": 0.9948560768121042,
+      "normalized_latency_cut": -0.005170519945336016
+    }
+  ],
+  "arithmetic_models_only": [
+    {
+      "name": "latency_minus15pct",
+      "targets": [
+        {
+          "load": "verify 16",
+          "target_us": 31.65997120637442
+        },
+        {
+          "load": "verify 32",
+          "target_us": 38.15096576969909
+        }
+      ],
+      "modeled_score": 1.0155625429687123
+    },
+    {
+      "name": "match_same_receipt_sglang",
+      "targets": [
+        {
+          "load": "verify 16",
+          "target_us": 29.327998869121075
+        },
+        {
+          "load": "verify 32",
+          "target_us": 34.415998961776495
+        }
+      ],
+      "modeled_score": 1.0231543986351186
+    }
+  ],
+  "limitations": [
+    "Native larger-batch FA3 compile/correctness/performance unverified",
+    "CPU table extent8192; actual candidate table2^21",
+    "New target page64/nonunit/explicit GPU ABA/untouched-row/concurrency remains unverified without native receipt"
+  ]
+}
