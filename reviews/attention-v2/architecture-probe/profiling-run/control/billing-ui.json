@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-25T18:16:53.027195+00:00",
+  "workspace": "xuefeng-zhu",
+  "source": "Supported Chrome extension live Usage & billing Overview, after direct user authorization for this read-only Modal operation",
+  "url": "https://modal.com/settings/xuefeng-zhu/usage",
+  "tab_id": "1626951124",
+  "verified_credit_balance_usd": "28.63",
+  "verified_net_spend_cap_usd": "0",
+  "total_spend_usd": "0.00",
+  "total_usage_usd": "1.37",
+  "detailed_ephemeral_usage_raw": "1.369644284248352",
+  "usage_limit_usd": "30",
+  "changes_made": [],
+  "chatgpt_pro_tab_accessed": false,
+  "credential_actions": false
+}

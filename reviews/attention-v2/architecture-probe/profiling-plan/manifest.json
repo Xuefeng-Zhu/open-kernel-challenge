@@ -1,0 +1,34 @@
+{
+  "prepared_utc": "2026-10-25T18:08:18.133146+00:00",
+  "source_head": "d51f83bd635ccb39e7292d0da046552ce1e8649f",
+  "scope": "Local preparation artifacts; no commit/push/new remote job this turn",
+  "algorithm_sources_unchanged": true,
+  "secret_pattern_scan_matches": 0,
+  "independent_review_passed": true,
+  "files": {
+    "PLAN.md": {
+      "bytes": 13090,
+      "sha256": "238de9989aed884da349bb6a717b06cca54f0bcff5f2f22b68645fb088a1af6c"
+    },
+    "docs-evidence.json": {
+      "bytes": 4135,
+      "sha256": "d4a87f87f0769305784e0e3ed6da715d276bc6a9c5921d46aba465ab04f08008"
+    },
+    "docs-evidence.md": {
+      "bytes": 7992,
+      "sha256": "23107ebbe152e387f2e8d29e5d44055752fb3df92d3b42ddb697a9c468cb1dbd"
+    },
+    "plan.json": {
+      "bytes": 3514,
+      "sha256": "0913ee3d6ee91f7f1d8c424e05b60e1dc93e694606ef5a7a5bb55c52b550082c"
+    },
+    "tools-audit.json": {
+      "bytes": 10044,
+      "sha256": "8b4e15e77859095087a7c7fe262119ee61c7200f20c956ef1869f0d644675deb"
+    },
+    "tools-audit.md": {
+      "bytes": 5549,
+      "sha256": "b2e07986f2db22f8ee85ffc45b6ba38762e0c9c97c89cb6ee82bf1b3602adbeb"
+    }
+  }
+}

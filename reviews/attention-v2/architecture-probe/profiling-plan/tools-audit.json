@@ -1,0 +1,207 @@
+{
+  "observed_utc": "2026-10-25T18:01:39.647729+00:00",
+  "kind": "Local evidence audit only; no remote capability query",
+  "actions": {
+    "network_calls": 0,
+    "gpu_launches": 0,
+    "browser_calls": 0,
+    "installs": 0,
+    "credential_actions": 0,
+    "algorithm_edits": 0,
+    "incremental_compute_cost_usd": "0"
+  },
+  "image": {
+    "modal_image_id": "im-cPTbGpNiX3RarKResPgX7h",
+    "historical_public_base": "lmsysorg/sglang@sha256:8cfc5a72cb296771f5f8a4a4688cb6d05685610a830cbb616fa4ab0eb7bb2b0a",
+    "qualification": "Digest is a historical base-plan record, not a new inspection of all current Modal image layers."
+  },
+  "observed_remote_environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "triton_package_file": "/opt/sglang/lib/python3.12/site-packages/triton/__init__.py",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04",
+    "triton_git_revision": null,
+    "triton_compiler_source_sha256": "28ff26b7e752df455c410418d72fd0afc5b3bfa952ca4bca95b1cfd5a31a0e2f",
+    "triton_distribution": {
+      "version": "3.8.0",
+      "vcs_commit_id": null,
+      "metadata_sha256": "d97a89f102848d1b74c4ce40e76150c3bbbbced8912eb5e0f56c203914788bd0",
+      "record_sha256": "bd578657969c238daafa979493e06aad9167774f174320ee6efa93591cad58e0"
+    },
+    "torch_distribution": {
+      "version": "2.14.1",
+      "vcs_commit_id": null,
+      "metadata_sha256": "f1e9245037c999a2ff46ba37e329cff31dcb3678d400f656bdc61fa906e6e3e6",
+      "record_sha256": "b1df3c88290a1cfce91ee9ad60e93a6976d90e74347579cb18f5ad078034bc7a"
+    },
+    "sglang_distribution": {
+      "version": "0.0.0.dev0",
+      "vcs_commit_id": null,
+      "metadata_sha256": "e345ccfcb7bc6df9fb5a55037f03dc75fa243770524a9f7f6cfef6e1ba6e7128",
+      "record_sha256": "be67ebab80443db763b5f88a65f3b5ebda2cfe92c50be204a9f3ea4a7985bce6"
+    },
+    "sgl-kernel_distribution": null
+  },
+  "tools": {
+    "torch_cuda_activity": {
+      "status": "demonstrated_on_existing_H200_image",
+      "evidence": "Latest paired result fa3_profiler: attempted=true, 8 complete names, 2829UTF8bytes, no omitted/truncated names; earlier A13 exported kernel intervals with graph IDs.",
+      "last_kernel_name_count": 8,
+      "latest_result_sha256": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9",
+      "can_measure": [
+        "instrumented kernel names and device activity intervals",
+        "CPU CUDA graph launch/API intervals when CPU activity enabled",
+        "cross-kernel/stream/graph overlap from complete trace"
+      ],
+      "cannot_establish": [
+        "per-CTA start/end or actual SM residency from saved ordinary kernel activity",
+        "measured DRAM bytes/bandwidth",
+        "tensor-pipe utilization",
+        "warp stall hardware counters",
+        "achieved occupancy from static metadata"
+      ]
+    },
+    "cuobjdump": {
+      "status": "successfully_executed_on_existing_image",
+      "evidence": "All four native records sass_tool_exit_code=0 and saved cubin/SASS hashes.",
+      "path": "not_recorded_by_worker; search candidates included PATH, /usr/local/cuda/bin/cuobjdump and Triton bundled bin",
+      "qualification": "Disassembly tool, not hardware performance counter access."
+    },
+    "ncu": {
+      "status": "remote_installation_unknown",
+      "hardware_counter_permission": "unknown_not_attempted",
+      "evidence": "No saved tool inventory, version output, metrics query, counter report or denial found in inspected records."
+    },
+    "nsys": {
+      "status": "remote_installation_unknown",
+      "trace_permission": "unknown_not_attempted",
+      "evidence": "No saved executable inventory, version output or .nsys-rep found in inspected records."
+    },
+    "cupti_activity": {
+      "status": "activity_capture_demonstrated",
+      "api_library_path": "not_recorded",
+      "qualification": "Successful PyTorch/Kineto CUDA activity does not prove CUPTI Profiling API/PM counters or per-CTA tracing access."
+    },
+    "cupti_profiling_counters": {
+      "status": "not_collected_and_permission_unknown",
+      "evidence": "Historical projection_resource_probe explicitly says no Nsight/CUPTI hardware metrics requested; native ownership code explicitly disables counter requests."
+    }
+  },
+  "local_mac": {
+    "torch_version": "2.14.1",
+    "torch_cuda_version": null,
+    "supported_profiler_activities": [
+      "CPU"
+    ],
+    "ncu_path_lookup": null,
+    "nsys_path_lookup": null,
+    "scoped_file_search_hits": [],
+    "searched_scopes": [
+      "PATH",
+      "/usr/local and /opt, maxdepth4, names ncu/nsys/*cupti*",
+      "/Applications maxdepth3, *nsight*"
+    ],
+    "qualification": "No hits within these scopes; do not infer remote image absence or global Mac absence."
+  },
+  "permission_evidence": {
+    "current_modal_function_flags": [
+      "block_network=True",
+      "restrict_modal_access=True"
+    ],
+    "performance_counter_denial_observed": false,
+    "permission_test_attempted": false,
+    "qualification": "These app flags and ordinary CUDA activity success do not determine NVIDIA counter privilege/perf_event policy. No administrator, capability, driver setting or access change was attempted."
+  },
+  "remaining_questions": [
+    "Are ncu and/or nsys already present in the existing remote image?",
+    "If ncu is present, which exact version/metric names support H200/driver610.57.04?",
+    "Does the platform permit performance counters/PC sampling/PM sampling?",
+    "Can the available profiler produce per-SM/CTA temporal evidence rather than aggregate kernel metrics?"
+  ],
+  "feasibility": {
+    "activity_stage_profile": "Existing demonstrated tools can perform a bounded ordinary CUDA/CPU activity profile in a future authorized GPU run.",
+    "hardware_metric_profile": "Not admitted by this audit: installed-tool and permission checks missing.",
+    "exact_cta_residency_tail": "Not currently demonstrated; ordinary torch kernel intervals and static ceilings are insufficient."
+  },
+  "blocker": {
+    "action": "Claim or execute hardware-counter/CTA-residency diagnostic",
+    "target": "Existing Modal H200 image im-cPTbGpNiX3RarKResPgX7h",
+    "state": "capability_and_permission_unknown_not_denied",
+    "reason": "No current tool inventory or counter-access result exists; this preparation turn forbids new GPU launch. This is not evidence of a hardware bottleneck."
+  },
+  "source_files": [
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/architecture-probe/paired/result.json",
+      "repository_relative": "reviews/attention-v2/architecture-probe/paired/result.json",
+      "sha256": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9",
+      "bytes": 46446
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/architecture-probe/paired/worker.py",
+      "repository_relative": "reviews/attention-v2/architecture-probe/paired/worker.py",
+      "sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+      "bytes": 15570
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/architecture-probe/native_artifacts/summary.json",
+      "repository_relative": "reviews/attention-v2/architecture-probe/native_artifacts/summary.json",
+      "sha256": "4aef9c653af05a09276b7385e14bf2a3d5889fefdb66885f319715178e1ff6d7",
+      "bytes": 22397
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/architecture-probe/control/launch.py",
+      "repository_relative": "reviews/attention-v2/architecture-probe/control/launch.py",
+      "sha256": "1a68508b367f276a2f56a411f9443b30023314fc3cbe487c3dbae845605aa680",
+      "bytes": 16615
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/architecture-probe/paired/controller.py",
+      "repository_relative": "reviews/attention-v2/architecture-probe/paired/controller.py",
+      "sha256": "1767584cf427698cb4e0d10db6e0049f6b10935cc421990a16691551ef3d3dce",
+      "bytes": 14583
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/native_ownership_probe.py",
+      "repository_relative": "reviews/attention-v2/native_ownership_probe.py",
+      "sha256": "c836fbe4b002f60de08675a149c5f32360ab868bcafad3fb1d44a20bcc212be3",
+      "bytes": 21330
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/A13-ownership-result.json",
+      "repository_relative": "reviews/attention-v2/A13-ownership-result.json",
+      "sha256": "8af336b264806bc39f12875a500d26e9777645660012accf5d71452c08ebbb41",
+      "bytes": 37744
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-architecture/reviews/attention-v2/A13-RESULT.md",
+      "repository_relative": "reviews/attention-v2/A13-RESULT.md",
+      "sha256": "19fad9604a023c637e49771441b1c0598f604ce9a3e344737a713e7fa3b30937",
+      "bytes": 7929
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-23/task/local-notes/modal-m34-bundle/projection_resource_probe.py",
+      "repository_relative": null,
+      "sha256": "8e3adedebe96a9d1e7c6141adb39106e76c63dfa8e2ba7f39f95f1efd8cc5485",
+      "bytes": 8121
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-23/task/local-notes/modal-M34-resource-probe-fixed-result.local.json",
+      "repository_relative": null,
+      "sha256": "3eb781d00a366e9ffc620f4983ec099d28f1f9f142a6afa0bb36ca8797ab0057",
+      "bytes": 214924
+    },
+    {
+      "path": "/Users/frank/Documents/Codex/2026-10-23/task/local-notes/modal-qkv-plan.local.json",
+      "repository_relative": null,
+      "sha256": "02fe365d743c16faf56f4127e193830e91027420a4475e1ef1eecc9fbcd179cd",
+      "bytes": 3678
+    }
+  ]
+}
