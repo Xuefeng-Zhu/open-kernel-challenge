@@ -1,0 +1,78 @@
+{
+  "working": {
+    "selection": "working",
+    "experiment": "preparation fusion plus A2-15 lookahead",
+    "observed_utc": "2026-10-25T21:37:05.089682+00:00",
+    "source": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+    "source_commit": "c9062363c665e37535d3370c1b6bfb54e04fc7c8",
+    "local_branch": "attention-fusion-lookahead",
+    "private_export_branch": "attention-fusion-lookahead",
+    "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "job_id": "5090b83f1d63407b",
+    "mode": "check",
+    "score": 1.2336330588627955,
+    "ci": [
+      1.2151285629798536,
+      1.2521375547457374
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "native_validation": {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "original_oracle_calls": 32,
+      "exact_return_A": 10,
+      "cross_arm_cache_byte_comparisons": 30,
+      "checked_warmup_measured_replays": 64,
+      "target_paired_latency_reduction_percent": 4.822641703044583,
+      "favorable_target_pairs": 6,
+      "unchanged_control_slowdown_percent": 0.15323574680115026,
+      "app_stopped": true,
+      "tasks": 0
+    },
+    "primary_control": {
+      "source": "reviews/attention-v2/fusion-lookahead-probe/baseline.py",
+      "sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+      "job_id": "2f5f1fb54b48486d",
+      "score": 1.2255554363764571,
+      "target_reference_normalized_cross_run_latency_reduction_percent": 3.825075129710631,
+      "max_unchanged_path_reference_normalized_regression_percent": 1.8322712132851082
+    },
+    "report": "reviews/attention-v2/fusion-lookahead-probe/RESULTS.md",
+    "rollback_key": "attention_rollback_A2_11",
+    "restriction": "Best validated working choice, not a ranked entry or proven aggregate statistical superiority. Limited native concurrency uses disjoint caches and submitted streams; actual overlap not asserted. Same-address live metadata ABA covered. DP multi-chunk true-lookahead remains an explicit targeted validation gap; general serving concurrency/coverage not established. Original A2-11 source retained unchanged."
+  },
+  "rollback": {
+    "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+    "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+    "exported_source_commit": "1da9037bcc87e7dcd4d859c52d8c94a8bc46d798",
+    "local_branch": "attention-fa3-local",
+    "private_export_branch": "attention-fa3-sanitized",
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "job_id": "cfa8a8670e394f80",
+    "score": 1.1876787560868445,
+    "ci": [
+      1.1698635747455417,
+      1.2109342502243532
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "restriction": "Official 16+12 validation plus A13: 42 bounded-context graph ABA/cache replays pass; true cross-graph overlap observed for full decode B32 only. Other six profiled paths did not overlap; general concurrent safety and same-graph overlap remain unverified.",
+    "native_ownership_probe": {
+      "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+      "report": "reviews/attention-v2/A13-RESULT.md",
+      "checked_replays": 42,
+      "passed": 42,
+      "actual_overlap_cases": [
+        "full_decode32"
+      ],
+      "all_paths_concurrency_verified": false
+    },
+    "selection": "rollback"
+  },
+  "projection_record_changed": false,
+  "decision": "Promote validated composition as working attention candidate; retain A2-11 exact source as rollback and fusion as direct control.",
+  "formal_entry": false,
+  "paid_limit_usd": "0",
+  "remaining_official_checks_observed": 2,
+  "next_validation": "reviews/attention-v2/fusion-lookahead-probe/NEXT_VALIDATION.md"
+}

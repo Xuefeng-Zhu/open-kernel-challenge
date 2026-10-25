@@ -1,0 +1,30 @@
+{
+  "observed_utc": "2026-10-25T21:27:58.453455+00:00",
+  "job_id": "5090b83f1d63407b",
+  "status": "done",
+  "mode": "check",
+  "cli_exit_code": 0,
+  "passed": true,
+  "speedup": 1.2336330588627955,
+  "speedup_ci": [
+    1.2151285629798536,
+    1.2521375547457374
+  ],
+  "result_keys": [
+    "baseline_us",
+    "checks",
+    "error",
+    "evaluator",
+    "flags",
+    "gpu",
+    "log_tail",
+    "machine",
+    "passed",
+    "records",
+    "returncode",
+    "score_us",
+    "speedup",
+    "speedup_ci",
+    "status"
+  ]
+}

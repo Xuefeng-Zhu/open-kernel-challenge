@@ -1,0 +1,61 @@
+{
+  "source_freeze": "c9062363c665e37535d3370c1b6bfb54e04fc7c8",
+  "raw_result_sha256": "5e6447008a1f55baff65939aa2af75521235891fad976434ac378b4dbc55395d",
+  "validation_passed": true,
+  "original_oracle_calls": 32,
+  "exact_return_A_checks": 10,
+  "cross_arm_cache_byte_comparisons": 30,
+  "checked_warmup_measured_replays": 64,
+  "fresh_seeds": [
+    135711,
+    135712
+  ],
+  "timings": [
+    {
+      "case": "full_B32_L1_scored",
+      "raw_median_us": {
+        "baseline": 313.55200707912445,
+        "candidate": 297.39201068878174
+      },
+      "reverse_order_pair_ratios": [
+        1.059204050334776,
+        1.047884606788414,
+        1.0549681885662585,
+        1.0526773252635144,
+        1.0472215178169513,
+        1.048662778923825
+      ],
+      "median_pair_ratio": 1.0506700520936696,
+      "paired_latency_reduction_percent": 4.822641703044583,
+      "paired_candidate_slowdown_percent": -4.822641703044583,
+      "positive_pairs": 6
+    },
+    {
+      "case": "full_B16_L8_fusion_unchanged",
+      "raw_median_us": {
+        "baseline": 203.8400024175644,
+        "candidate": 204.27200198173523
+      },
+      "reverse_order_pair_ratios": [
+        0.999529371251399,
+        0.993658287180791,
+        0.9974106028660914,
+        1.0002340472395999,
+        0.9959504194969394,
+        1.0015762306360447
+      ],
+      "median_pair_ratio": 0.9984699870587452,
+      "paired_latency_reduction_percent": -0.15323574680115026,
+      "paired_candidate_slowdown_percent": 0.15323574680115026,
+      "positive_pairs": 2
+    }
+  ],
+  "native_benefit_gate_passed": true,
+  "decision": "Supports one complete nonranking official check after serialized-slot coordination",
+  "qualifications": [
+    "One new session and two fresh fixtures, not an independent-session confidence interval or official aggregate.",
+    "The old A2-15 10% goal remains unmet; 4% was a new predeclared composition/replication gate.",
+    "Exact A2-15 producer functions were composed; page-address scheduling is not separately isolated from generated buffering.",
+    "No profiler, hardware counters or actual overlap/CTA occupancy measurements were used."
+  ]
+}

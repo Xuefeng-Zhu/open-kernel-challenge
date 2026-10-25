@@ -1,3 +1,38 @@
+# Working attention selection: fusion plus lookahead
+
+Attention now selects `reviews/attention-v2/fusion-lookahead-probe/candidate.py`
+SHA256 `3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`,
+frozen at `c9062363c665e37535d3370c1b6bfb54e04fc7c8`, on independent branch
+`attention-fusion-lookahead`. See the [complete report](reviews/attention-v2/fusion-lookahead-probe/RESULTS.md)
+and [selection/rollback record](reviews/attention-v2/fusion-lookahead-probe/WORKING_SELECTION.json).
+Official nonranking check `5090b83f1d63407b` passed 16 prerequisites and 12 shapes,
+score 1.233633059x, 95% interval [1.215128563, 1.252137555]. Native paired target
+latency fell 4.8226% against fusion; official target reference-normalized cross-run
+latency fell 3.8251%, with at most 1.8323% unchanged-path normalized regression.
+This supports a working engineering choice, not universal concurrency safety or
+a proven aggregate statistical difference. No ranked entry was made.
+
+A2-11 remains the immutable rollback source at
+`reviews/attention-v2/mixed_fa3_decode_parallel_merge.py`, SHA256
+`c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0`.
+To roll back, select that path/hash in the attention record; do not overwrite
+either source. Fusion remains the direct experimental control. Projection
+records and original checkout sources are unchanged by this selection.
+
+The native app `ap-EY8FNKYqqFMGgZAatYZXOQ` is independently stopped/tasks0;
+the official job is terminal and its serialized slot released. No new job is
+started by these records. A next local plan covers the actual DP multi-chunk
+lookahead/merge gap; same-address live-metadata replay is already covered.
+Remaining attention quota was 2 checks after this admission; duplicate/no-op
+checks do not follow from that quota. Artificial stage-credit ceilings are
+removed; use existing free credits with live paid cap $0, existing credentials,
+serial measurement slots and reviewed private pushes under the standing project
+scope. No payment, credential renewal, public visibility or formal entry.
+
+Earlier checkpoints below are historical and superseded for attention selection.
+
+---
+
 # Pro research completed; independent review saved
 
 Read [the Pro research review](reviews/attention-v2/next-plan/PRO_RESEARCH_REVIEW.md)
