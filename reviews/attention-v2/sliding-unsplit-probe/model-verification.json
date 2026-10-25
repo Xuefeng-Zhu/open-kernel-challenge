@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-10-25T20:38:31.642752+00:00",
+  "scope": "local score model and proposed measurement gates only",
+  "test_methods_passed": 4,
+  "model_execution": "passed frozen source/profile/official receipt gates; reconstructed1.2255554363764571",
+  "files_sha256": {
+    "model.py": "678e960c1610893c43c69aba603dbaa4de7eee57a2a211e5f1a50d4394f2b3ce",
+    "test_model.py": "134eb6acdf50b711203314a3bdcea9af2838102d6bf87813808d0ba949568e0f",
+    "model.json": "a420aa024de3fb47a3bf1d148c90b72254fd9fdca5907c7036d15ae77d694167",
+    "PLAN.md": "9db800cb473b1c04680497d1316d22d5becf59861194e35ce2539f9e6cd6d403"
+  },
+  "GPU_jobs_started": 0,
+  "Modal_apps_started": 0,
+  "official_checks_started": 0,
+  "cost_usd": "0",
+  "remaining_gate": "actual installed API/source identity and native combine removal, correctness/performance, parent serialized slot"
+}

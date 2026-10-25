@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-10-25T20:41:10.100639+00:00",
+  "tests_passed": 7,
+  "scope": "Offline controller guard/transport/layout tests with real allowlisted source bytes; mocked git commit reads, no launch",
+  "payload_file_count": 9,
+  "identity_helper_allowlisted": true,
+  "worker_deadline_seconds": 160,
+  "child_timeout_seconds": 170,
+  "function_timeout_seconds": 185,
+  "startup_timeout_seconds": 20,
+  "app_watchdog_seconds": 210,
+  "free_credit_reserve_usd": "0.58",
+  "actual_paid_limit_usd": "0",
+  "source_sha256": {
+    "controller.py": "a175c6265151aa8465c51f75c132f2f3f372c62d8a281663b5ad64c896e0a5d9",
+    "test_controller.py": "09edf64c55a8544f562c74ac0b379842f335e7628ff9294e96f5bd416e1a3f93",
+    "CONTROLLER.md": "f5d055438252ffefc9bf58d83d283f19bba57a05dfcecbfbf0e52244c8b2081a"
+  },
+  "Modal_imported": false,
+  "credential_read": false,
+  "network": false,
+  "GPU_launched": false,
+  "official_check": false,
+  "remaining_gate": "Actual reviewed committed freeze and fresh parent slot/billing admission are not performed by these local tests."
+}

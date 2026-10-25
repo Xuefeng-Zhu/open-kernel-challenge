@@ -1,0 +1,37 @@
+{
+  "observed_utc": "2026-10-25T20:49:47.010489+00:00",
+  "scope": "Local preparation only; stdlib tests do not identify installed FA3 or establish native behavior/performance",
+  "offline_tests_passed": {
+    "runtime_protocol": 9,
+    "identity_guards": 10
+  },
+  "files": {
+    "worker.py": "953537670113411a0de1445864bbaa52d4b3cfecb276da5a01ca5fdf0ee6d812",
+    "test_worker.py": "f99b1f3546e24cfe133dabdb51a429f895b153d6699be04704fd60731efddb72",
+    "identity.py": "46fd1727b4744ce74f4eb4514db704710451dffba527d28abefe2c8800e9e4a0",
+    "test_identity.py": "75cf807734e1047be52cc443b0a330125e3a0a7f2639b84b4449d1eae4570c41",
+    "PROTOCOL.md": "d4138a93d33b07fc6a565db3263b008d4feabe4260e9e84374e5923a7d606813"
+  },
+  "native_case_count": 7,
+  "sliding_prep_comparison_groups": 12,
+  "A_B_A_oracle_calls": 42,
+  "concurrent_oracle_calls": 4,
+  "planned_activity_sessions": 1,
+  "planned_activity_graph_replays": 4,
+  "planned_checked_timing_replays": 96,
+  "GPU_launched": false,
+  "Modal_job_started": false,
+  "official_check_started": false,
+  "network_or_credential_action": false,
+  "new_cost_usd": "0",
+  "bounds_seconds": {
+    "worker": 160,
+    "child": 170,
+    "function": 185,
+    "startup": 20,
+    "watchdog": 210
+  },
+  "free_credit_reserve_usd": "0.58",
+  "actual_paid_limit_usd": "0",
+  "strict_extension_identity": "At least one observed relevant loaded extension and every observed relevant extension fully hashed, no relevant omitted paths, loaded-library inventory available; 4GiB/file, 8GiB total; canonical aliases deduplicated; worker timeouts propagate."
+}
