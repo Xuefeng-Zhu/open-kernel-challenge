@@ -1,3 +1,11 @@
+# Completed focused follow-through
+
+App ap-DjbFQfnZXQjpr1Zgt3rtFK completed and is stopped/tasks0. See
+[PAIRED_RESULT.md](PAIRED_RESULT.md). The frozen prelaunch plan follows;
+do not relaunch its existing ledger.
+
+---
+
 # A2-15 focused execution follow-through
 
 Parent: frozen A2-13 `mixed_fa3_fp8_qk.py`; candidate: frozen A2-15

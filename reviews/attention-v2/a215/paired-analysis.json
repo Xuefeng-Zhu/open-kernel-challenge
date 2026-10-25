@@ -1,0 +1,55 @@
+{
+  "kind": "Offline paired audit; hypothetical aggregate is not an achieved score",
+  "result_sha256": "92b5ba197689c3e17ec3c86cefdefdb1edd4bfe0222171b0bd63bd67f000e867",
+  "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+  "graph_captures": 4,
+  "checked_aba_replays": 12,
+  "official_oracle_calls": 8,
+  "exact_A_return_checks": 4,
+  "timed_warmup_calls": 8,
+  "measured_calls": 24,
+  "timing_calls_checked_against_oracle_validated_bytes": 32,
+  "raw_median_us": {
+    "a213": 312.0319992303848,
+    "a215": 295.9040105342865
+  },
+  "raw_min_max_us": {
+    "a213": [
+      310.07999181747437,
+      313.9840066432953
+    ],
+    "a215": [
+      293.92001032829285,
+      297.7280020713806
+    ]
+  },
+  "raw_ratio_parent_over_candidate": 1.054731137854066,
+  "target_latency_reduction_percent": 5.189108000112796,
+  "sample_wins": 12,
+  "reverse_order_pair_ratios": [
+    1.0552069199888756,
+    1.0542553557192564,
+    1.0517753010207507,
+    1.0573142154499742,
+    1.0579793282536023,
+    1.0501475147181742
+  ],
+  "empty_graph_median_us": 3.103999886661768,
+  "calibrated_median_us": {
+    "a213": 308.92799934372306,
+    "a215": 292.80001064762473
+  },
+  "calibrated_ratio_parent_over_candidate": 1.055312047851983,
+  "predeclared_target_latency_reduction_percent": 10,
+  "predeclared_target_met": false,
+  "model": {
+    "basis": "Transfer same relative target cut to historical official A2-13; all other paths fixed",
+    "historical_full_D32_load_share": 0.844461647320441,
+    "equation": "(1/(1-full_share*target_cut))**(1/6)",
+    "aggregate_factor": 1.0074961443442925,
+    "aggregate_gain_percent": 0.7496144344292466,
+    "achieved_score": false,
+    "caveat": "Different environment and calibration; one session, two fixtures, no controls or independent repeat"
+  },
+  "decision": "Retain as modest promising experiment; do not replace selected A2-11 or claim official improvement"
+}

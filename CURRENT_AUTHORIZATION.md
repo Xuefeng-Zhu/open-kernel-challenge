@@ -1,3 +1,35 @@
+# A2-15 paired diagnostic complete; selected A2-11 unchanged
+
+Read [PAIRED_RESULT.md](reviews/attention-v2/a215/PAIRED_RESULT.md).
+App ap-DjbFQfnZXQjpr1Zgt3rtFK stopped at 2026-10-25 16:17:37 UTC;
+a separate 16:17:56 UTC read verified stopped, zero tasks and no active apps.
+Two B32/L1/full cases (scored-family page1 and page64/scale1/64 boundaries),
+both sources, four graphs: 12 ABA checks plus 32 warmup/timing calls passed.
+Eight ABA checks used the official oracle; four A returns matched exact bytes.
+All checked immutable inputs and untouched cache rows. No concurrency/control/
+full-suite coverage is claimed.
+
+Target raw medians: A2-13 312.032 us, A2-15 295.904 us. Median of six reverse-
+order pair ratios is 1.054731x, a 5.189% latency cut. All 12 measured comparisons
+favored A2-15. This misses the predeclared10% target and is not an official score.
+Holding other paths fixed models only +0.750% overall; selected A2-11 stays.
+
+Frozen worker/protocol source commit: 5cb8db07702dd9a69bd632b2e425198c0dfc5e91.
+Candidate hashes remain unchanged. No additional OKC check or GPU run.
+The 16:18:59 UTC billing snapshot increased $0.07, with $0 paid. This exceeds
+our time model, so conservative accounting uses $0.07: cumulative $1.919496218,
+remaining $0.080503782. Reservation released only after verified shutdown.
+No active/uncertain request. No further run fits the unchanged $0.14637 reserve;
+this bounded Modal cycle ends without spending on another small-score trial.
+
+The completed experiment is being committed and privately exported after review.
+Use the verified remote SHA receipt for delivery status; do not infer push from
+this header. Both earlier native evidence and all historical failures remain.
+
+Earlier checkpoints below are historical.
+
+---
+
 # A2-15 native diagnostic complete; no active GPU work
 
 Modal app `ap-TQMFJknnfH0UZbG8lOBcBe` stopped at 2026-10-25 15:52:43 UTC;

@@ -1,3 +1,15 @@
+# Current result: focused GPU correctness passes; target 5.19% faster
+
+[PAIRED_RESULT.md](PAIRED_RESULT.md) records the completed A2-13/A2-15 H200 test,
+raw samples, coverage, costs and shutdown. The target improved, but missed the
+predeclared 10% goal; modeled aggregate value is only +0.75%, not an official
+score. Keep A2-11 selected. Both tested cases and all 44 validated replays passed.
+No app is active. Conservative Modal accounting is $1.919496218 of $2.
+
+The native and local checkpoints below remain as historical evidence.
+
+---
+
 # Current result: native scheduling change verified
 
 The diagnostic completed on 2026-10-25. See [NATIVE_RESULT.md](NATIVE_RESULT.md)

@@ -1,0 +1,136 @@
+{
+  "experiment": "A2-15 paired correctness/timing",
+  "state": "terminal",
+  "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+  "created_utc": "2026-10-25T16:17:03.834137+00:00",
+  "source_commit": "5cb8db07702dd9a69bd632b2e425198c0dfc5e91",
+  "payload_sha256": {
+    "mixed_fa3_fp8_qk.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "mixed_fa3_page_lookahead.py": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+    "paired_worker.py": "8f7cfd52daf2af5f7b4ea23cb07b88b88668dc4e910ef63c47e07f4d5b7287fc",
+    "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "legal/LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "legal/THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+  },
+  "prior_conservative_cumulative_usd": "1.849496218",
+  "remaining_ceiling_usd": "0.150503782",
+  "conservative_reserve_usd": "0.146368320",
+  "billing_before": {
+    "metered_cost": "1.23000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-1.23000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.22868578",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "timeout": 60,
+    "startup_timeout": 15,
+    "worker_timeout": 55,
+    "internal_deadline": 52,
+    "app_watchdog": 75,
+    "stop_allowance": 15,
+    "retries": 0,
+    "explicit_invocations": 1
+  },
+  "accepted_utc": "2026-10-25T16:17:06.032249+00:00",
+  "remote_exit_code": 0,
+  "worker_wall_seconds": 23.756033781,
+  "result_sha256": "92b5ba197689c3e17ec3c86cefdefdb1edd4bfe0222171b0bd63bd67f000e867",
+  "result_retrieval_complete": true,
+  "worker_status": "complete",
+  "explicit_stop": {
+    "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+    "requested_utc": "2026-10-25T16:17:35.473806+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T16:17:36.466649+00:00",
+  "client_wall_seconds": 32.62989970901981,
+  "shutdown_observation": {
+    "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+    "description": "okc-a215-paired",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 09:17:04-07:00",
+    "stopped_at": "2026-10-25 09:17:37-07:00"
+  },
+  "shutdown_verified": true,
+  "billing_after": {
+    "metered_cost": "1.30000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.30000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.29655626"
+    }
+  },
+  "initial_shutdown_observation": {
+    "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+    "description": "okc-a215-paired",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 09:17:04-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified_utc": "2026-10-25T16:17:56.423203+00:00",
+  "active_apps_at_verification": 0,
+  "app_lifetime_seconds": 33.0,
+  "conservative_incremental_cost_upper_usd": "0.07000000",
+  "billing_settled": false,
+  "initial_billing_after": {
+    "metered_cost": "1.23000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-1.23000000",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.22868578",
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "billing_after_observed_utc": "2026-10-25T16:18:59.441502+00:00",
+  "billing_updated": true,
+  "modeled_incremental_cost_upper_usd": "0.064547328",
+  "observed_metered_delta_usd": "0.07000000",
+  "observed_ephemeral_delta_usd": "0.06787048",
+  "cost_method": "Maximum of time/resource allowance and observed workspace billing increases; workspace snapshots may include delayed usage and are not a final per-app invoice"
+}
