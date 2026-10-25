@@ -447,7 +447,7 @@
       "historical_authorization_fields",
       "dated pause/count statements"
     ],
-    "runner_compatibility": "cycle2_check.py still enforces maximum_new_experiments and recomputes remaining_authorized. Update enforcement after review before it reaches the historical hard cap; do not break numeric arithmetic, bypass daily quota/shared-slot checks or substitute an arbitrary large cap.",
+    "runner_compatibility": "Implemented: only explicit boolean current_authorization.personal_check_count_ceiling_removed=true bypasses the historical personal count cap and freezes maximum_new_experiments/remaining_authorized history. Missing/false/malformed policy keeps legacy capped behavior. Daily quota, rules, source/CPU hash, shared-slot and uncertainty guards are unchanged; no real admission by local tests.",
     "documentation": "CURRENT_AUTHORIZATION.md",
     "check_launched_by_this_update": false
   }

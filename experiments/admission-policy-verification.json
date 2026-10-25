@@ -1,0 +1,26 @@
+{
+  "kind": "local fake-CLI admission-policy verification",
+  "new_external_requests": 0,
+  "GPU_executed": false,
+  "python": "3.12.13 shared existing Mac environment",
+  "interpreter_path_redacted": "<primary-workspace>/.venv/bin/python",
+  "commands": [
+    "<primary-workspace>/.venv/bin/python -m unittest discover -s tests -p test_projection_admission_policy.py -v",
+    "<primary-workspace>/.venv/bin/python -m py_compile cycle2_check.py tests/test_projection_admission_policy.py",
+    "<primary-workspace>/.venv/bin/python -m unittest discover -s tests -v > results/admission-policy-tests.local.txt 2>&1"
+  ],
+  "focused_result": {
+    "tests": 12,
+    "seconds": 0.066,
+    "passed": true
+  },
+  "full_result": {
+    "tests": 143,
+    "seconds": 19.464,
+    "passed": true,
+    "includes_focused_tests": true
+  },
+  "source_changes": "Explicit current_authorization boolean removes personal hardcap only; dailyquota/rules/hash/sharedslot/uncertainty guards retained",
+  "historical_counters_preserved": true,
+  "raw_local_log_not_pushed": true
+}

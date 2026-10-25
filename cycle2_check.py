@@ -21,8 +21,15 @@ def now():
     return datetime.datetime.now(datetime.timezone.utc).isoformat()
 
 
+def personal_ceiling_removed(ledger):
+    """Only an explicit boolean authorization opts out of the legacy count cap."""
+    policy = ledger.get("current_authorization")
+    return (isinstance(policy, dict)
+            and policy.get("personal_check_count_ceiling_removed") is True)
+
+
 def save(path, value):
-    if path == LEDGER:
+    if path == LEDGER and not personal_ceiling_removed(value):
         value["remaining_authorized"] = value["maximum_new_experiments"] - len(value["requests"])
     temp = path.with_suffix(path.suffix + ".tmp")
     temp.write_text(json.dumps(value, indent=2) + "\n")
@@ -84,7 +91,7 @@ def main():
         if any(x["state"] in {"sending", "uncertain"} for x in entries):
             raise RuntimeError("Uncertain request reserved; inspect account jobs before any new POST")
         counted = [x for x in entries if x["state"] != "not_admitted"]
-        if len(counted) >= ledger["maximum_new_experiments"]:
+        if not personal_ceiling_removed(ledger) and len(counted) >= ledger["maximum_new_experiments"]:
             raise RuntimeError("New-experiment authorization exhausted")
         active = [x for x in entries if x.get("job_id") and x.get("status") not in TERMINAL]
         if len(active) >= ledger["max_active_jobs"]:
