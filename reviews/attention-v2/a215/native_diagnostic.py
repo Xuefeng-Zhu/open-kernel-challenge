@@ -17,6 +17,7 @@ import re
 import subprocess
 import threading
 import time
+import warnings
 import zlib
 
 SOURCES = {
@@ -44,6 +45,12 @@ def write_json(path, value):
 
 def cost_bound(seconds):
     return Decimal(math.ceil(seconds + 5)) * RATE * Decimal('1.1') + Decimal('.01')
+
+
+def suppress_credential_identifier_warning(category):
+    # The SDK's expiry warning contains a credential identifier. Expiry is
+    # checked from the protected local receipt; preserve all unrelated warnings.
+    warnings.filterwarnings('ignore', message=r'Your Modal token .* expires', category=category)
 
 
 def specialization(lookahead):
@@ -239,6 +246,8 @@ def make_remote_entry():
 
 def launch():
     import modal
+    from modal.exception import ServerWarning
+    suppress_credential_identifier_warning(ServerWarning)
     here = Path(__file__).resolve().parent
     root = here.parents[2]
     auth = root/'local-notes/modal-auth.toml'
@@ -411,7 +420,16 @@ def self_test():
     assert cost_bound(125) == Decimal('.196609280') and cost_bound(125) < LIMIT
     assert (86001+8191)//8192 == 11 and (2*16+2*2)*64 == 2304
     assert len(SOURCES) == 2 and all(len(v) == 64 for v in SOURCES.values())
-    print('6 local compile-protocol guards passed; no Modal or CUDA call.')
+    class MockServerWarning(UserWarning):
+        pass
+    with warnings.catch_warnings(record=True) as caught:
+        warnings.simplefilter('always')
+        suppress_credential_identifier_warning(MockServerWarning)
+        warnings.warn('Your Modal token TEST_IDENTIFIER expires soon', MockServerWarning)
+        warnings.warn('Unrelated server warning', MockServerWarning)
+        warnings.warn('Unrelated Python warning', UserWarning)
+        assert [str(w.message) for w in caught] == ['Unrelated server warning', 'Unrelated Python warning']
+    print('7 local compile-protocol/privacy guards passed; no Modal or CUDA call.')
 
 
 if __name__ == '__main__':
