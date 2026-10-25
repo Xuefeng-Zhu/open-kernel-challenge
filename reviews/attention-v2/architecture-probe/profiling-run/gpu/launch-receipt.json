@@ -1,0 +1,198 @@
+{
+  "experiment": "One activity session with optional bounded hardware counters",
+  "state": "function-terminal",
+  "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+  "created_utc": "2026-10-25T18:26:41.125124+00:00",
+  "source_commit": "e26bb0cf291dfdbfc6e70065b6d121bf315423ca",
+  "payload_sha256": {
+    "worker.py": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326",
+    "counters.py": "cdf06463a840d75ce8cd3e7ef497fa60c0481b63ff7de6300d4061b23ea12408",
+    "counter_target.py": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f",
+    "inventory.json": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382",
+    "candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "candidatecustomhelper.py": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+    "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "legal/LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "legal/THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+  },
+  "controller_sha256": "9f99fc05b8f8277e8102f9669c9ca0bb0736824d74a4c0f3b46d1f491dabf442",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "billing_before": {
+    "metered_cost": "1.37000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.37000000"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.36964424",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-1W3buQKnds7sDfi6eVnJIo",
+      "description": "okc-profile-cpu-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:17:43-07:00",
+      "stopped_at": "2026-10-25 11:17:50-07:00"
+    },
+    {
+      "app_id": "ap-Cox9fy63pE0bZocdwG9e0e",
+      "description": "okc-m64-bf16-paired",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:49:33-07:00",
+      "stopped_at": "2026-10-25 10:50:36-07:00"
+    },
+    {
+      "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+      "description": "okc-m64-bf16-compile-probe",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:42:53-07:00",
+      "stopped_at": "2026-10-25 10:43:26-07:00"
+    }
+  ],
+  "cost_reserve_usd": "0.65",
+  "modeled_reserve_usd": "0.3617424166666666666666666667",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "relevant_rates": {
+    "gpu_hour_cost_h200": "4.54000",
+    "cpu_hour_cost": "0.04730",
+    "mem_gib_hour_cost": "0.00800"
+  },
+  "verified_free_floor_usd": "28.63",
+  "actual_paid_limit_usd": "0",
+  "artificial_stage_ceiling_removed": true,
+  "billing_receipt_sha256": "97dbd5450837d0aa287da997d3e84932c940d496a0eb51ce6dc15252e52b9340",
+  "prior_inventory_app_id": "ap-1W3buQKnds7sDfi6eVnJIo",
+  "prior_inventory_result_sha256": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382",
+  "prior_inventory_shutdown_verified": true,
+  "counter_branch": "Reviewed optional helper; first permission denial stops both arms",
+  "max_hardware_counter_sessions": 2,
+  "max_activity_sessions": 1,
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_alarm": 165,
+    "child_hard_timeout": 175,
+    "function_timeout": 190,
+    "startup_timeout": 20,
+    "app_watchdog": 210,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "artifact_allowlist": [
+    "activity-trace.json",
+    "bf16_custom-counter-check.json",
+    "bf16_custom.ncu-rep",
+    "fa3-counter-check.json",
+    "fa3.ncu-rep",
+    "summary.json"
+  ],
+  "accepted_utc": "2026-10-25T18:26:43.430209+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 2,
+    "packed_bytes": 19176,
+    "raw_bytes": 110891,
+    "artifact_bytes": 83131,
+    "sha256": "4bba84f2296c68de5ed28814febc11f5a26936bd74910c9e162e1eec0bfe8e01",
+    "artifact_sha256": {
+      "activity-trace.json": "e49b1677de2dfbc9fcca43e63924a026cd7c101321e2bee1131f87ee41355ffc",
+      "summary.json": "a48846ac5a4a79de771822130eee0d46705fa5350c49fafff9508125d977ba15"
+    },
+    "exit_code": 0,
+    "worker_wall_seconds": 119.48607638099999
+  },
+  "artifacts_retrieved": true,
+  "exit_code": 0,
+  "worker_status": "complete",
+  "worker_passed": true,
+  "shutdown_observation": {
+    "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+    "description": "okc-profile-bounded-diagnostic",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 11:26:41-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": false,
+  "apps_after": [
+    {
+      "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+      "description": "okc-profile-bounded-diagnostic",
+      "state": "stopping...",
+      "tasks": "1",
+      "created_at": "2026-10-25 11:26:41-07:00",
+      "stopped_at": null
+    },
+    {
+      "app_id": "ap-1W3buQKnds7sDfi6eVnJIo",
+      "description": "okc-profile-cpu-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:17:43-07:00",
+      "stopped_at": "2026-10-25 11:17:50-07:00"
+    },
+    {
+      "app_id": "ap-Cox9fy63pE0bZocdwG9e0e",
+      "description": "okc-m64-bf16-paired",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:49:33-07:00",
+      "stopped_at": "2026-10-25 10:50:36-07:00"
+    },
+    {
+      "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+      "description": "okc-m64-bf16-compile-probe",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:42:53-07:00",
+      "stopped_at": "2026-10-25 10:43:26-07:00"
+    }
+  ],
+  "all_apps_stopped_zero_tasks": false,
+  "billing_after": {
+    "metered_cost": "1.54000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-1.54000000",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.54192761",
+      "volumes": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0.17192761",
+  "explicit_stop": {
+    "requested_utc": "2026-10-25T18:28:49.428545+00:00",
+    "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T18:28:52.244431+00:00",
+  "client_wall_seconds": 131.11781441699713
+}

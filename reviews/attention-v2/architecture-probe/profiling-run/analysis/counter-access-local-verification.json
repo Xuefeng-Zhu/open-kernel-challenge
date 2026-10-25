@@ -1,0 +1,15 @@
+{
+  "self_test_guards": 6,
+  "actual_published_transport_verified": true,
+  "actual_pre_post_oracles_and_exact_post_passed": true,
+  "timeout_not_admitted_as_metric_or_permission_proof": true,
+  "stdout_complete_verified_bytes": 272,
+  "stderr_complete_verified_bytes": 0,
+  "raw_report_absent": true,
+  "original_activity_hashes_unchanged": true,
+  "independent_read_only_review": "no material blockers",
+  "source_commit": "052665dd2496f12952d684ee6fd5a4b0e1075228",
+  "analyzer_sha256": "8b7ae58754fcec9342d3ff582115977b108c0fb3c5e015e45205904d73ba454d",
+  "raw_summary_sha256": "e9a7d7b60f4ef1b5726cdd8220868b849cdaf2fbb05e8f68cd0b846836bbb177",
+  "gpu_network_browser_calls": 0
+}

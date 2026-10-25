@@ -1,0 +1,31 @@
+{
+  "verified_utc": "2026-10-25T18:44:16.949229+00:00",
+  "profiling_apps": [
+    {
+      "app_id": "ap-mEXdTixH5oBF9hXapbXGxj",
+      "description": "okc-counter-access-final",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:39:36-07:00",
+      "stopped_at": "2026-10-25 11:40:40-07:00"
+    },
+    {
+      "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+      "description": "okc-profile-bounded-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:26:41-07:00",
+      "stopped_at": "2026-10-25 11:28:51-07:00"
+    },
+    {
+      "app_id": "ap-1W3buQKnds7sDfi6eVnJIo",
+      "description": "okc-profile-cpu-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:17:43-07:00",
+      "stopped_at": "2026-10-25 11:17:50-07:00"
+    }
+  ],
+  "profiling_slot_released": true,
+  "no_more_profiling_jobs": true
+}

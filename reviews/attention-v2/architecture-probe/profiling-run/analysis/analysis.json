@@ -1,0 +1,1028 @@
+{
+  "kind": "Offline activity/counter evidence audit, not benchmark latency or automatic bottleneck diagnosis",
+  "analyzer_sha256": "0d47f788f0aa50a146717da2beec14ab4b7a6d75c8eeec5089fd9a86ff846764",
+  "artifact_files": {
+    "activity-trace.json": {
+      "bytes": 62221,
+      "sha256": "e49b1677de2dfbc9fcca43e63924a026cd7c101321e2bee1131f87ee41355ffc"
+    },
+    "summary.json": {
+      "bytes": 20910,
+      "sha256": "a48846ac5a4a79de771822130eee0d46705fa5350c49fafff9508125d977ba15"
+    }
+  },
+  "source_provenance": {
+    "candidate.py": {
+      "local_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "reported_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "expected_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e"
+    },
+    "candidatecustomhelper.py": {
+      "local_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "reported_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "expected_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82"
+    },
+    "modal_worker.py": {
+      "local_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "reported_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "expected_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e"
+    },
+    "official/reference.py": {
+      "local_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "reported_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "expected_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b"
+    },
+    "official/checks.py": {
+      "local_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "reported_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "expected_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+    }
+  },
+  "execution_commit": "e26bb0cf291dfdbfc6e70065b6d121bf315423ca",
+  "profiler_payload_provenance": {
+    "worker.py": {
+      "expected_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326",
+      "local_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326"
+    },
+    "counters.py": {
+      "expected_sha256": "cdf06463a840d75ce8cd3e7ef497fa60c0481b63ff7de6300d4061b23ea12408",
+      "local_sha256": "cdf06463a840d75ce8cd3e7ef497fa60c0481b63ff7de6300d4061b23ea12408"
+    },
+    "counter_target.py": {
+      "expected_sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f",
+      "local_sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f"
+    },
+    "inventory.json": {
+      "expected_sha256": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382",
+      "local_sha256": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382"
+    }
+  },
+  "transport_audit": {
+    "published_receipt_present": true,
+    "receipt_sha256": "6e551833fb414660694eb2ffd2bbff4190290cb55b342603a0b7d8d04f84b55b",
+    "source_commit": "e26bb0cf291dfdbfc6e70065b6d121bf315423ca",
+    "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+    "artifact_hashes_reverified": true
+  },
+  "worker_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326",
+  "summary_status": "complete",
+  "summary_passed": true,
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "sm_count": 132,
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04",
+    "supported_activities": [
+      "ProfilerActivity.CPU",
+      "ProfilerActivity.CUDA"
+    ]
+  },
+  "input_metadata": {
+    "actual_lengths": [
+      75359,
+      74201,
+      76085,
+      80047,
+      75064,
+      85893,
+      80127,
+      85423,
+      80482,
+      75593,
+      84231,
+      84740,
+      78092,
+      75391,
+      77153,
+      85309,
+      76843,
+      79726,
+      79738,
+      84299,
+      80233,
+      78793,
+      77129,
+      85091,
+      85483,
+      79523,
+      78847,
+      75690,
+      74680,
+      80251,
+      75499,
+      85771
+    ],
+    "config": {
+      "batch": 32,
+      "q_len": 8,
+      "num_q_heads": 16,
+      "num_kv_heads": 2,
+      "head_dim": 64,
+      "page_size": 1,
+      "window": 0,
+      "rope_theta": 0.0,
+      "qk_scale_factor": 5.4730064863875,
+      "sm_scale": 0.125,
+      "kv_scale": 1.0
+    },
+    "page_table_shape": [
+      32,
+      86008
+    ],
+    "tensor_metadata": {
+      "qkv": {
+        "shape": [
+          32,
+          8,
+          2304
+        ],
+        "dtype": "torch.bfloat16",
+        "device": "cuda:0"
+      },
+      "positions": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.int64",
+        "device": "cuda:0"
+      },
+      "cache_loc": {
+        "shape": [
+          256
+        ],
+        "dtype": "torch.int64",
+        "device": "cuda:0"
+      },
+      "cache_seqlens": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0"
+      },
+      "cu_seqlens_q": {
+        "shape": [
+          33
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0"
+      },
+      "k_cache": {
+        "shape": [
+          2752256,
+          1,
+          2,
+          64
+        ],
+        "dtype": "torch.float8_e4m3fn",
+        "device": "cuda:0"
+      },
+      "v_cache": {
+        "shape": [
+          2752256,
+          1,
+          2,
+          64
+        ],
+        "dtype": "torch.float8_e4m3fn",
+        "device": "cuda:0"
+      },
+      "k_scale": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      },
+      "v_scale": {
+        "shape": [],
+        "dtype": "torch.float32",
+        "device": "cuda:0"
+      },
+      "page_table": {
+        "shape": [
+          32,
+          86008
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0"
+      },
+      "seq_lens": {
+        "shape": [
+          32
+        ],
+        "dtype": "torch.int32",
+        "device": "cuda:0"
+      }
+    }
+  },
+  "oracle_audit": {
+    "checks": [
+      {
+        "arm": "fa3",
+        "label": "pre_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "stable_addresses": true,
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "exact_output_newkv_equal_pre_profile": null
+      },
+      {
+        "arm": "bf16_custom",
+        "label": "pre_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.186e-02 (worst row 6.497e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "stable_addresses": true,
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "exact_output_newkv_equal_pre_profile": null
+      },
+      {
+        "arm": "fa3",
+        "label": "post_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "stable_addresses": true,
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "exact_output_newkv_equal_pre_profile": true
+      },
+      {
+        "arm": "bf16_custom",
+        "label": "post_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.186e-02 (worst row 6.497e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "stable_addresses": true,
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "exact_output_newkv_equal_pre_profile": true
+      }
+    ],
+    "passed": true,
+    "issues": []
+  },
+  "activity_evidence_admitted": true,
+  "audit_issues": [],
+  "activity": {
+    "trace_events": 239,
+    "display_time_unit": "ms",
+    "timestamp_duration_unit": "microseconds per Chrome trace event format",
+    "arms": {
+      "fa3": {
+        "cpu_annotation_span_us": 512.030029296875,
+        "cpu_span_qualification": "Includes launch, completion synchronization and profiler overhead; not unprofiled host launch latency.",
+        "gpu_activity_span_us": 396.2880859375,
+        "gpu_activity_union_us": 393.535888671875,
+        "gpu_kernel_union_us": 393.535888671875,
+        "gpu_activity_duration_sum_us": 397.184,
+        "uncovered_activity_span_us": 2.752197265625,
+        "missing_required_stages": [],
+        "kernel_count": 9,
+        "gpu_event_count": 9,
+        "stage_union_us": {
+          "qk_norm": 2.303955078125,
+          "fp8_conversion": 5.440185546875,
+          "kv_cache_store": 1.535888671875,
+          "length_schedule_prepare": 3.7119140625,
+          "fa3_mainloop": 378.751953125,
+          "fa3_combine": 3.2958984375,
+          "output_norm_gate": 2.14404296875
+        },
+        "stage_event_counts": {
+          "qk_norm": 1,
+          "fp8_conversion": 3,
+          "kv_cache_store": 1,
+          "length_schedule_prepare": 1,
+          "fa3_mainloop": 1,
+          "fa3_combine": 1,
+          "output_norm_gate": 1
+        },
+        "gpu_events": [
+          {
+            "name": "_qk_rms_norm_fwd_kernel",
+            "name_sha256": "96fd04ec88dafef2197628ec5816e648dd651f57e1e2b5c3090dbd771714213c",
+            "category": "kernel",
+            "stage": "qk_norm",
+            "start_us": 2095835580547.177,
+            "end_us": 2095835580549.481,
+            "duration_us": 2.304,
+            "relative_to_cpu_marker_us": 96.596923828125,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934592
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<8, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>, false>(int, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>)",
+            "name_sha256": "b0b0827fe2ed0b377179e0fd7ac10bc07404a0a94849e30a12c8e54854a15172",
+            "category": "kernel",
+            "stage": "fp8_conversion",
+            "start_us": 2095835580549.897,
+            "end_us": 2095835580551.049,
+            "duration_us": 1.152,
+            "relative_to_cpu_marker_us": 99.31689453125,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934593
+            }
+          },
+          {
+            "name": "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> >(at::TensorIteratorBase&, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> >(at::TensorIteratorBase&, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> const&)::{lambda(int)#1})",
+            "name_sha256": "d12646ba0b9fc70a2cf1087a719cf53bd3d5e0d757e5b4ae799a93cb69a7a0bc",
+            "category": "kernel",
+            "stage": "fp8_conversion",
+            "start_us": 2095835580551.433,
+            "end_us": 2095835580554.4092,
+            "duration_us": 2.976,
+            "relative_to_cpu_marker_us": 100.85302734375,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934594
+            }
+          },
+          {
+            "name": "void sglang::store_kvcache_kernel<128l, 128l, 32u, true, long>(sglang::StoreKVCacheParams)",
+            "name_sha256": "8a62a5f2843fa79bcfc4dbb621eb049a4c060f5bd4ec368f194cfa89b5e7fd1e",
+            "category": "kernel",
+            "stage": "kv_cache_store",
+            "start_us": 2095835580555.241,
+            "end_us": 2095835580556.7769,
+            "duration_us": 1.536,
+            "relative_to_cpu_marker_us": 104.660888671875,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934595
+            }
+          },
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<8, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>, false>(int, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>)",
+            "name_sha256": "b0b0827fe2ed0b377179e0fd7ac10bc07404a0a94849e30a12c8e54854a15172",
+            "category": "kernel",
+            "stage": "fp8_conversion",
+            "start_us": 2095835580557.161,
+            "end_us": 2095835580558.473,
+            "duration_us": 1.312,
+            "relative_to_cpu_marker_us": 106.580810546875,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934596
+            }
+          },
+          {
+            "name": "void flash::prepare_varlen_num_blocks_kernel<2, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+            "name_sha256": "c352d3414648484efd175f0c80de8b258729d7ffe79180007190152878de3ad2",
+            "category": "kernel",
+            "stage": "length_schedule_prepare",
+            "start_us": 2095835580559.049,
+            "end_us": 2095835580562.761,
+            "duration_us": 3.712,
+            "relative_to_cpu_marker_us": 108.468994140625,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934597
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "name_sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711",
+            "category": "kernel",
+            "stage": "fa3_mainloop",
+            "start_us": 2095835580560.009,
+            "end_us": 2095835580938.761,
+            "duration_us": 378.752,
+            "relative_to_cpu_marker_us": 109.428955078125,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934598
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "name_sha256": "ad58463a446be7672e8a7bb0b07b79191200eee44033f5a137b41d6d74bca43b",
+            "category": "kernel",
+            "stage": "fa3_combine",
+            "start_us": 2095835580937.865,
+            "end_us": 2095835580941.161,
+            "duration_us": 3.296,
+            "relative_to_cpu_marker_us": 487.284912109375,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934599
+            }
+          },
+          {
+            "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, true, false, true, true, true, true>(sglang::NormGateParams)",
+            "name_sha256": "d0881e22847938738de86881abc0026384fc3ec583dabd3d10aadaceae6575d1",
+            "category": "kernel",
+            "stage": "output_norm_gate",
+            "start_us": 2095835580941.321,
+            "end_us": 2095835580943.465,
+            "duration_us": 2.144,
+            "relative_to_cpu_marker_us": 490.740966796875,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934600
+            }
+          }
+        ],
+        "adjacent_recorded_event_separations": [
+          {
+            "from_stage": "qk_norm",
+            "to_stage": "fp8_conversion",
+            "previous_end_us": 2095835580549.481,
+            "next_start_us": 2095835580549.897,
+            "pairwise_separation_us": 0.416015625,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934592
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934593
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "fp8_conversion",
+            "to_stage": "fp8_conversion",
+            "previous_end_us": 2095835580551.049,
+            "next_start_us": 2095835580551.433,
+            "pairwise_separation_us": 0.384033203125,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934593
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934594
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "fp8_conversion",
+            "to_stage": "kv_cache_store",
+            "previous_end_us": 2095835580554.4092,
+            "next_start_us": 2095835580555.241,
+            "pairwise_separation_us": 0.831787109375,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934594
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934595
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "kv_cache_store",
+            "to_stage": "fp8_conversion",
+            "previous_end_us": 2095835580556.7769,
+            "next_start_us": 2095835580557.161,
+            "pairwise_separation_us": 0.384033203125,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934595
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934596
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "fp8_conversion",
+            "to_stage": "length_schedule_prepare",
+            "previous_end_us": 2095835580558.473,
+            "next_start_us": 2095835580559.049,
+            "pairwise_separation_us": 0.576171875,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934596
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934597
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "length_schedule_prepare",
+            "to_stage": "fa3_mainloop",
+            "previous_end_us": 2095835580562.761,
+            "next_start_us": 2095835580560.009,
+            "pairwise_separation_us": -2.751953125,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934597
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934598
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "fa3_mainloop",
+            "to_stage": "fa3_combine",
+            "previous_end_us": 2095835580938.761,
+            "next_start_us": 2095835580937.865,
+            "pairwise_separation_us": -0.89599609375,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934598
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934599
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          },
+          {
+            "from_stage": "fa3_combine",
+            "to_stage": "output_norm_gate",
+            "previous_end_us": 2095835580941.161,
+            "next_start_us": 2095835580941.321,
+            "pairwise_separation_us": 0.16015625,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934599
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 115,
+              "graph id": 2,
+              "graph node id": 8589934600
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          }
+        ],
+        "uncovered_recorded_gpu_activity_intervals": [
+          {
+            "start_us": 2095835580549.481,
+            "end_us": 2095835580549.897,
+            "duration_us": 0.416015625
+          },
+          {
+            "start_us": 2095835580551.049,
+            "end_us": 2095835580551.433,
+            "duration_us": 0.384033203125
+          },
+          {
+            "start_us": 2095835580554.4092,
+            "end_us": 2095835580555.241,
+            "duration_us": 0.831787109375
+          },
+          {
+            "start_us": 2095835580556.7769,
+            "end_us": 2095835580557.161,
+            "duration_us": 0.384033203125
+          },
+          {
+            "start_us": 2095835580558.473,
+            "end_us": 2095835580559.049,
+            "duration_us": 0.576171875
+          },
+          {
+            "start_us": 2095835580941.161,
+            "end_us": 2095835580941.321,
+            "duration_us": 0.16015625
+          }
+        ],
+        "cpu_api_events": [
+          {
+            "name": "cudaGraphLaunch",
+            "category": "cuda_runtime",
+            "start_us": 2095835580499.235,
+            "end_us": 2095835580544.665,
+            "duration_us": 45.43,
+            "available_ids": {
+              "correlation": 115
+            }
+          },
+          {
+            "name": "cudaDeviceSynchronize",
+            "category": "cuda_runtime",
+            "start_us": 2095835580562.842,
+            "end_us": 2095835580948.048,
+            "duration_us": 385.206,
+            "available_ids": {
+              "correlation": 120
+            }
+          }
+        ],
+        "cpu_graph_launch_api_events": [
+          {
+            "name": "cudaGraphLaunch",
+            "category": "cuda_runtime",
+            "start_us": 2095835580499.235,
+            "end_us": 2095835580544.665,
+            "duration_us": 45.43,
+            "available_ids": {
+              "correlation": 115
+            }
+          }
+        ],
+        "cpu_graph_launch_api_union_us": 45.429931640625,
+        "interpretation": "Instrumented activity layout only. Do not subtract these numbers from prior benchmark latency or equate uncovered recorded span with device stall counters."
+      },
+      "bf16_custom": {
+        "cpu_annotation_span_us": 630.0,
+        "cpu_span_qualification": "Includes launch, completion synchronization and profiler overhead; not unprofiled host launch latency.",
+        "gpu_activity_span_us": 589.697021484375,
+        "gpu_activity_union_us": 589.089111328125,
+        "gpu_kernel_union_us": 589.089111328125,
+        "gpu_activity_duration_sum_us": 589.089,
+        "uncovered_activity_span_us": 0.60791015625,
+        "missing_required_stages": [],
+        "kernel_count": 2,
+        "gpu_event_count": 2,
+        "stage_union_us": {
+          "other": 0.672119140625,
+          "integrated_producer_and_merge": 588.4169921875
+        },
+        "stage_event_counts": {
+          "other": 1,
+          "integrated_producer_and_merge": 1
+        },
+        "gpu_events": [
+          {
+            "name": "void at::native::vectorized_elementwise_kernel<4, at::native::FillFunctor<int>, std::array<char*, 1ul>, false>(int, at::native::FillFunctor<int>, std::array<char*, 1ul>)",
+            "name_sha256": "25eedc92dfa4acc1d9d02515f0297f79ab223a41e8e38bff9e811670b80a492f",
+            "category": "kernel",
+            "stage": "other",
+            "start_us": 2095835581595.21,
+            "end_us": 2095835581595.882,
+            "duration_us": 0.672,
+            "relative_to_cpu_marker_us": 28.65087890625,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 234,
+              "graph id": 5,
+              "graph node id": 21474836480
+            }
+          },
+          {
+            "name": "_fused",
+            "name_sha256": "8647f7f09fd7bb0e3b49e5e17503c07d3a722c5cea437b65288b9ec198e01674",
+            "category": "kernel",
+            "stage": "integrated_producer_and_merge",
+            "start_us": 2095835581596.49,
+            "end_us": 2095835582184.907,
+            "duration_us": 588.417,
+            "relative_to_cpu_marker_us": 29.930908203125,
+            "pid": 0,
+            "tid": 7,
+            "available_ids": {
+              "stream": 7,
+              "correlation": 234,
+              "graph id": 5,
+              "graph node id": 21474836481
+            }
+          }
+        ],
+        "adjacent_recorded_event_separations": [
+          {
+            "from_stage": "other",
+            "to_stage": "integrated_producer_and_merge",
+            "previous_end_us": 2095835581595.882,
+            "next_start_us": 2095835581596.49,
+            "pairwise_separation_us": 0.60791015625,
+            "from_ids": {
+              "stream": 7,
+              "correlation": 234,
+              "graph id": 5,
+              "graph node id": 21474836480
+            },
+            "to_ids": {
+              "stream": 7,
+              "correlation": 234,
+              "graph id": 5,
+              "graph node id": 21474836481
+            },
+            "interpretation": "Pairwise separation only: an earlier event may cover this interval. This is not a global idle gap or a causal handoff. IDs are preserved for explicit stream/graph matching."
+          }
+        ],
+        "uncovered_recorded_gpu_activity_intervals": [
+          {
+            "start_us": 2095835581595.882,
+            "end_us": 2095835581596.49,
+            "duration_us": 0.60791015625
+          }
+        ],
+        "cpu_api_events": [
+          {
+            "name": "cudaGraphLaunch",
+            "category": "cuda_runtime",
+            "start_us": 2095835581578.0,
+            "end_us": 2095835581592.263,
+            "duration_us": 14.263,
+            "available_ids": {
+              "correlation": 234
+            }
+          },
+          {
+            "name": "cudaDeviceSynchronize",
+            "category": "cuda_runtime",
+            "start_us": 2095835581602.422,
+            "end_us": 2095835582189.0222,
+            "duration_us": 586.6,
+            "available_ids": {
+              "correlation": 239
+            }
+          }
+        ],
+        "cpu_graph_launch_api_events": [
+          {
+            "name": "cudaGraphLaunch",
+            "category": "cuda_runtime",
+            "start_us": 2095835581578.0,
+            "end_us": 2095835581592.263,
+            "duration_us": 14.263,
+            "available_ids": {
+              "correlation": 234
+            }
+          }
+        ],
+        "cpu_graph_launch_api_union_us": 14.262939453125,
+        "interpretation": "Instrumented activity layout only. Do not subtract these numbers from prior benchmark latency or equate uncovered recorded span with device stall counters."
+      }
+    },
+    "issues": []
+  },
+  "counters": {
+    "recorded_branch": {
+      "status": "counter_session_timeout",
+      "sessions_attempted": 1,
+      "records": [
+        {
+          "arm": "fa3",
+          "command": [
+            "/usr/local/cuda-13.0/bin/ncu",
+            "--config-file",
+            "0",
+            "--replay-mode",
+            "application",
+            "--app-replay-match",
+            "grid",
+            "--app-replay-mode",
+            "strict",
+            "--nvtx",
+            "--nvtx-include",
+            "PROFILE_ONE/",
+            "--graph-profiling",
+            "node",
+            "--kernel-name-base",
+            "demangled",
+            "--kernel-name",
+            "regex:.*FlashAttnFwdSm90.*",
+            "--launch-count",
+            "1",
+            "--cache-control",
+            "none",
+            "--clock-control",
+            "none",
+            "--metrics",
+            "gpu__time_duration.sum,dram__bytes_read.sum,dram__bytes_write.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,sm__ctas_active.avg.per_cycle_active,smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct,smsp__warp_issue_stalled_barrier_per_warp_active.pct",
+            "--csv",
+            "--page",
+            "raw",
+            "-o",
+            "/tmp/ncu-bounded-nsanq4u8/fa3",
+            "/opt/sglang/bin/python",
+            "/opt/profiling-run/counter_target.py",
+            "--arm",
+            "fa3",
+            "--output",
+            "/tmp/ncu-bounded-nsanq4u8/fa3-counter-check.json"
+          ],
+          "status": "timeout",
+          "timeout_seconds": 60
+        }
+      ],
+      "exact_cta_trace": false,
+      "sampled_tail_measured": false,
+      "qualification": "Instrumented counters only. No benchmark latency or causal bottleneck claim. Aggregate residency is not exact CTA trace.",
+      "help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+      "query": {
+        "exit_code": 0,
+        "output_bytes": 143766,
+        "truncated": false
+      },
+      "selected_metrics": {
+        "duration": "gpu__time_duration.sum",
+        "dram_read_bytes": "dram__bytes_read.sum",
+        "dram_write_bytes": "dram__bytes_write.sum",
+        "tensor_active": "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed",
+        "warps_active": "sm__warps_active.avg.pct_of_peak_sustained_active",
+        "ctas_active": "sm__ctas_active.avg.per_cycle_active",
+        "long_scoreboard": "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct",
+        "barrier": "smsp__warp_issue_stalled_barrier_per_warp_active.pct"
+      },
+      "unavailable_semantics": []
+    },
+    "recorded_hardware_counter_sessions": 1,
+    "ncu_files": [],
+    "sessions": [
+      {
+        "arm": "fa3",
+        "status": "timeout",
+        "command": [
+          "/usr/local/cuda-13.0/bin/ncu",
+          "--config-file",
+          "0",
+          "--replay-mode",
+          "application",
+          "--app-replay-match",
+          "grid",
+          "--app-replay-mode",
+          "strict",
+          "--nvtx",
+          "--nvtx-include",
+          "PROFILE_ONE/",
+          "--graph-profiling",
+          "node",
+          "--kernel-name-base",
+          "demangled",
+          "--kernel-name",
+          "regex:.*FlashAttnFwdSm90.*",
+          "--launch-count",
+          "1",
+          "--cache-control",
+          "none",
+          "--clock-control",
+          "none",
+          "--metrics",
+          "gpu__time_duration.sum,dram__bytes_read.sum,dram__bytes_write.sum,sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,sm__warps_active.avg.pct_of_peak_sustained_active,sm__ctas_active.avg.per_cycle_active,smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct,smsp__warp_issue_stalled_barrier_per_warp_active.pct",
+          "--csv",
+          "--page",
+          "raw",
+          "-o",
+          "/tmp/ncu-bounded-nsanq4u8/fa3",
+          "/opt/sglang/bin/python",
+          "/opt/profiling-run/counter_target.py",
+          "--arm",
+          "fa3",
+          "--output",
+          "/tmp/ncu-bounded-nsanq4u8/fa3-counter-check.json"
+        ],
+        "exit_code": null,
+        "output_bytes": null,
+        "output_truncated": null,
+        "metrics_admitted": false,
+        "session_issues": [],
+        "validation_passed": false,
+        "binary_report_verified": false,
+        "parsed_csv": {
+          "raw_text_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "rows": [],
+          "row_count": 0,
+          "metric_names": [],
+          "literal_units": {},
+          "literal_pass_replay_fields": {},
+          "parse_issues": [
+            "No supported long/wide NCU metric CSV header found"
+          ],
+          "qualification": "Literal tool values/units retained. Kernel replay and metric collection are instrumented; do not compare their duration directly with unprofiled latency."
+        },
+        "returned_metrics": [],
+        "selected_metric_names": {
+          "duration": "gpu__time_duration.sum",
+          "dram_read_bytes": "dram__bytes_read.sum",
+          "dram_write_bytes": "dram__bytes_write.sum",
+          "tensor_active": "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed",
+          "warps_active": "sm__warps_active.avg.pct_of_peak_sustained_active",
+          "ctas_active": "sm__ctas_active.avg.per_cycle_active",
+          "long_scoreboard": "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct",
+          "barrier": "smsp__warp_issue_stalled_barrier_per_warp_active.pct"
+        },
+        "literal_semantic_values": {
+          "duration": [],
+          "dram_read_bytes": [],
+          "dram_write_bytes": [],
+          "tensor_active": [],
+          "warps_active": [],
+          "ctas_active": [],
+          "long_scoreboard": [],
+          "barrier": []
+        },
+        "numeric_metric_semantics_unavailable": [
+          "duration",
+          "dram_read_bytes",
+          "dram_write_bytes",
+          "tensor_active",
+          "warps_active",
+          "ctas_active",
+          "long_scoreboard",
+          "barrier"
+        ],
+        "selected_kernel_identity_verified": false,
+        "observed_kernel_names": [],
+        "observed_kernel_identity_fields": [],
+        "observed_pass_counts": [],
+        "pass_count_qualification": "Only explicit tool log counts; command/session count is not hardware replay/pass count.",
+        "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    ],
+    "audit_issues": [],
+    "permission_denial_sources": [],
+    "tool_messages": [],
+    "metrics_observed": false,
+    "availability": "unknown_or_not_collected:counter_session_timeout",
+    "unknown_without_validated_counters": [
+      "achieved DRAM throughput",
+      "tensor-pipe utilization",
+      "warp stall reasons",
+      "achieved residency/occupancy",
+      "per-CTA service-time distribution"
+    ],
+    "qualification": "Denial ends counter branch. Absence of data is not evidence of low throughput, low utilization or a bottleneck."
+  },
+  "benchmark_claim": false,
+  "exact_cta_trace": false,
+  "limitations": [
+    "One fixed input and one instrumented replay per unchanged arm; not an independent performance sample.",
+    "Stage unions/spans/handoffs are instrumented timestamps, not unprofiled wall latency or causal hardware-stall evidence.",
+    "Custom producer/softmax/merge remain integrated and cannot be timed internally from one kernel event.",
+    "No subtraction from previous paired benchmark and no automatic cause assignment from instruction or duration totals."
+  ]
+}

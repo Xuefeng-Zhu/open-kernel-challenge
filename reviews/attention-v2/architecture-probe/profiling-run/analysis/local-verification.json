@@ -1,0 +1,14 @@
+{
+  "cli_self_test_groups": 9,
+  "actual_four_oracle_admission": true,
+  "negative_post_exact_rejected": true,
+  "unknown_optional_counter_count_preserved": true,
+  "actual_counter_timeout_not_admitted": true,
+  "uncovered_interval_sums_match_span_minus_union": true,
+  "read_only_independent_review": "no material blockers",
+  "source_commit": "e26bb0cf291dfdbfc6e70065b6d121bf315423ca",
+  "analyzer_sha256": "0d47f788f0aa50a146717da2beec14ab4b7a6d75c8eeec5089fd9a86ff846764",
+  "raw_summary_sha256": "a48846ac5a4a79de771822130eee0d46705fa5350c49fafff9508125d977ba15",
+  "raw_trace_sha256": "e49b1677de2dfbc9fcca43e63924a026cd7c101321e2bee1131f87ee41355ffc",
+  "gpu_network_browser_calls": 0
+}
