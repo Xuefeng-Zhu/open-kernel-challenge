@@ -1,3 +1,31 @@
+# Common-PV runtime rejected; broad architecture work continues
+
+The [common-PV native result](reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md)
+passed all 39 original-oracle checks and replay/cache/diagnostic gates. Target
+alpha-one frequency was about 79.29%, but it won 0/6 paired timings; the two
+fresh seeds were 0.54976% and 0.47631% slower. The declared benefit gate failed.
+Stop this alpha-one route; no fresh confirmation or official check follows.
+
+App `ap-wE6ZSXzC1dnP253vX0kM5l` is independently stopped/tasks0 at
+22:51:11.150348 UTC. The closed delayed detailed workspace delta is $0.07047792,
+paid $0; it is not an exact app invoice. Working composition SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`
+remains selected at official 1.233633059x, with A2-11 rollback and Projection
+records preserved.
+
+The main effort now targets broad B1/sliding/full attention architecture and
+mainloop/data movement. The CPU-only [image identity audit](reviews/attention-v2/fa3-next-evidence/image-inventory/IMAGE_RESULT_REVIEW.md)
+confirmed Gluon Hopper APIs and rejected installed XQA for page1. Exact FA3 C++
+revision remains unknown; no missing FA3 mechanism is proved. Its app stopped/tasks0,
+with no GPU request, observed delayed workspace delta $0 and paid $0. A matched
+Gluon serial/overlap microprototype is local preparation, not a production change.
+Use existing free credits with actual paid cap $0, existing credentials and
+serialized measurement slots under the standing project scope.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # Alpha-one branch rejected before execution; working source unchanged
 
 The [compile-only alpha-one probe](reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md)

@@ -111,6 +111,107 @@
       "closure_utc": "2026-10-25T22:06:59.192653+00:00",
       "report": "reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md",
       "reason": "Predeclared register/resource and buffering gates fail; no measured slowdown or hardware bottleneck proof. No onward frequency/correctness/timing admission."
+    },
+    "last_rejected_native_probe": {
+      "kind": "native_correctness_frequency_and_paired_whole_call_timing",
+      "status": "completed_valid_negative_benefit",
+      "source_commit": "032c2ffaf494c4f847e0b9f4bc97b7dd23e627fc",
+      "source": "reviews/attention-v2/alpha-one-common-pv-probe/candidate.py",
+      "sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+      "control_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "diagnostic_sha256": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60",
+      "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+      "native_run_complete": true,
+      "execution_failed": false,
+      "correctness_passed": true,
+      "counts": {
+        "original_oracle_calls": 39,
+        "exact_return_A_checks": 12,
+        "cross_arm_cache_byte_comparisons": 36,
+        "concurrent_original_oracle_calls": 2,
+        "independent_setup_oracle_calls": 1,
+        "post_concurrent_isolation_checks": 4,
+        "extra_candidate_replays": 2,
+        "diagnostic_calls": 10,
+        "diagnostic_reference_replays": 10,
+        "cross_arm_output_newkv_ABA_comparisons": 18,
+        "checked_warmup_measured_replays": 64,
+        "cross_arm_output_newkv_timing_comparisons": 32
+      },
+      "scored_frequency_by_fixture": [
+        {
+          "case": "full_B32_L1_scored",
+          "input_version": 0,
+          "total": 79528,
+          "fast": 63056,
+          "slow": 16472,
+          "fast_fraction": 0.7928779800824867
+        },
+        {
+          "case": "full_B32_L1_scored",
+          "input_version": 1,
+          "total": 79604,
+          "fast": 63120,
+          "slow": 16484,
+          "fast_fraction": 0.7929249786442892
+        }
+      ],
+      "performance_tested": true,
+      "target_raw_median_us": {
+        "baseline": 296.207994222641,
+        "candidate": 297.4399924278259
+      },
+      "target_per_fixture_slowdown_percent": [
+        0.5497589680987902,
+        0.476309753904669
+      ],
+      "favorable_target_pairs": 0,
+      "target_pairs": 6,
+      "unchanged_control_raw_median_us": {
+        "baseline": 203.88800650835037,
+        "candidate": 203.91999930143356
+      },
+      "unchanged_control_per_fixture_slowdown_percent": [
+        -0.07786311959876446,
+        0.21449869137610822
+      ],
+      "predeclared_gate": "Each fresh fixture target latency reduction >=2%, all 6 favorable target pairs, unchanged-control slowdown <=2% each fixture.",
+      "benefit_gate_passed": false,
+      "decision": "Reject common-PV candidate and stop exact alpha-one route; no fresh confirmation, official check or selection promotion.",
+      "official_check": false,
+      "formal_entry": false,
+      "working_source_changed": false,
+      "actual_hardware_overlap_measured": false,
+      "direct_scratch_pointers_observed": false,
+      "stage_closed": true,
+      "app_stopped": true,
+      "tasks": 0,
+      "stopped_at_utc": "2026-10-25T22:50:11+00:00",
+      "closure_utc": "2026-10-25T22:51:11.150348+00:00",
+      "all_listed_apps_stopped_zero_tasks": true,
+      "initial_shutdown_observation_preserved": {
+        "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+        "description": "okc-attention-alpha-one-common-pv-native",
+        "state": "stopping...",
+        "tasks": "1",
+        "created_at": "2026-10-25 15:49:09-07:00",
+        "stopped_at": null
+      },
+      "worker_internal_wall_seconds": 51.296041322,
+      "client_wall_seconds": 63.18926241598092,
+      "costs": {
+        "accounting_cutoff_utc": "2026-10-25T22:53:22.201691+00:00",
+        "rounded_workspace_delta_usd": "0.07000000",
+        "detailed_workspace_delta_usd": "0.07047792",
+        "actual_paid_usd": "0E-8",
+        "conservative_closed_allowance_usd": "0.2001130000000000000000000000",
+        "reserved_free_credit_usd": "0.58",
+        "qualification": "Delayed workspace delta, not exact app invoice; initial zero metering was pending. Later apps excluded by closed no-new-app cutoff. No retries/extraofficialchecks."
+      },
+      "report": "reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md",
+      "independent_review": "reviews/attention-v2/alpha-one-common-pv-probe/runtime/RESULT_REVIEW.md",
+      "raw_result_sha256": "24c7ea033298ea155d31ef161e887ed086a3820860cb077919d8276990e3d0c9",
+      "qualification": "One native session and two fresh fixtures, not an official score or population confidence interval. Predicate frequency does not establish saved issue cycles; precise hardware cause and general serving concurrency remain unmeasured."
     }
   },
   "projection": {

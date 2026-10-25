@@ -1,0 +1,245 @@
+{
+  "source_freeze": "032c2ffaf494c4f847e0b9f4bc97b7dd23e627fc",
+  "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+  "source_sha256": {
+    "baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate.py": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5"
+  },
+  "raw_result_sha256": "24c7ea033298ea155d31ef161e887ed086a3820860cb077919d8276990e3d0c9",
+  "launch_receipt_sha256": "906bbc0fd4688a032004ccf1f7758ba5f71ce452a32e968a34ad2027ee5012c3",
+  "reconciliation_sha256": "51357b2756346a3be03b222f6d05a332f16784a3f4c2847c3ef6a8626f4117fa",
+  "stage_closed": true,
+  "app_stopped": true,
+  "app_tasks": 0,
+  "closure_observed_utc": "2026-10-25T22:51:11.150348+00:00",
+  "actual_paid_usd": "0E-8",
+  "automatic_performance_admission": false,
+  "official_check": false,
+  "native_run_complete": true,
+  "execution_failed": false,
+  "outcome": "timed",
+  "counts": {
+    "original_oracle_calls": 39,
+    "exact_return_A_checks": 12,
+    "cross_arm_cache_byte_comparisons": 36,
+    "concurrent_original_oracle_calls": 2,
+    "independent_setup_oracle_calls": 1,
+    "post_concurrent_isolation_checks": 4,
+    "extra_candidate_replays": 2,
+    "diagnostic_calls": 10,
+    "diagnostic_reference_replays": 10,
+    "cross_arm_output_newkv_ABA_comparisons": 18,
+    "checked_warmup_measured_replays": 64,
+    "cross_arm_output_newkv_timing_comparisons": 32
+  },
+  "diagnostic_frequencies": [
+    {
+      "case": "full_B32_L1_scored",
+      "input_version": 0,
+      "total": 79528,
+      "fast": 63056,
+      "slow": 16472,
+      "fast_fraction": 0.7928779800824867
+    },
+    {
+      "case": "full_B32_L1_scored",
+      "input_version": 1,
+      "total": 79604,
+      "fast": 63120,
+      "slow": 16484,
+      "fast_fraction": 0.7929249786442892
+    },
+    {
+      "case": "full_B32_L1_first_max",
+      "input_version": 0,
+      "total": 3120,
+      "fast": 3056,
+      "slow": 64,
+      "fast_fraction": 0.9794871794871794
+    },
+    {
+      "case": "full_B32_L1_first_max",
+      "input_version": 1,
+      "total": 3120,
+      "fast": 3056,
+      "slow": 64,
+      "fast_fraction": 0.9794871794871794
+    },
+    {
+      "case": "full_B32_L1_middle_max",
+      "input_version": 0,
+      "total": 3120,
+      "fast": 3032,
+      "slow": 88,
+      "fast_fraction": 0.9717948717948718
+    },
+    {
+      "case": "full_B32_L1_middle_max",
+      "input_version": 1,
+      "total": 3120,
+      "fast": 3032,
+      "slow": 88,
+      "fast_fraction": 0.9717948717948718
+    },
+    {
+      "case": "full_B32_L1_last_max",
+      "input_version": 0,
+      "total": 3120,
+      "fast": 3032,
+      "slow": 88,
+      "fast_fraction": 0.9717948717948718
+    },
+    {
+      "case": "full_B32_L1_last_max",
+      "input_version": 1,
+      "total": 3120,
+      "fast": 3032,
+      "slow": 88,
+      "fast_fraction": 0.9717948717948718
+    },
+    {
+      "case": "full_B32_L1_DP_boundary",
+      "input_version": 0,
+      "total": 24960,
+      "fast": 19603,
+      "slow": 5357,
+      "fast_fraction": 0.7853766025641026
+    },
+    {
+      "case": "full_B32_L1_DP_boundary",
+      "input_version": 1,
+      "total": 24960,
+      "fast": 19815,
+      "slow": 5145,
+      "fast_fraction": 0.7938701923076923
+    }
+  ],
+  "scored_fast_counts": [
+    63056,
+    63120
+  ],
+  "scored_opportunity": true,
+  "timings": [
+    {
+      "case": "full_B32_L1_scored",
+      "raw_median_us": {
+        "baseline": 296.207994222641,
+        "candidate": 297.4399924278259
+      },
+      "reverse_order_pair_geomeans": [
+        0.9945324685634184,
+        0.9952785464033114,
+        0.9933205046071434,
+        0.9952594820105227,
+        0.9981564919970168,
+        0.9948925908097479
+      ],
+      "pair_input_versions": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "median_reverse_order_pair_ratio": 0.9950760364101353,
+      "positive_reverse_order_pairs": 0,
+      "per_fixture": {
+        "0": {
+          "pair_ratios": [
+            0.9945324685634184,
+            0.9933205046071434,
+            0.9981564919970168
+          ],
+          "median_ratio": 0.9945324685634184,
+          "latency_reduction_percent": -0.5497589680987902,
+          "slowdown_percent": 0.5497589680987902,
+          "positive_pairs": 0
+        },
+        "1": {
+          "pair_ratios": [
+            0.9952785464033114,
+            0.9952594820105227,
+            0.9948925908097479
+          ],
+          "median_ratio": 0.9952594820105227,
+          "latency_reduction_percent": -0.476309753904669,
+          "slowdown_percent": 0.476309753904669,
+          "positive_pairs": 0
+        }
+      }
+    },
+    {
+      "case": "full_B16_L8_fusion_unchanged",
+      "raw_median_us": {
+        "baseline": 203.88800650835037,
+        "candidate": 203.91999930143356
+      },
+      "reverse_order_pair_geomeans": [
+        1.000779237934953,
+        1.0033518468610798,
+        1.0022728478065899,
+        0.9978596042072048,
+        0.9968069102076925,
+        0.9977153888005366
+      ],
+      "pair_input_versions": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1
+      ],
+      "median_reverse_order_pair_ratio": 0.9993194210710789,
+      "positive_reverse_order_pairs": 3,
+      "per_fixture": {
+        "0": {
+          "pair_ratios": [
+            1.000779237934953,
+            1.0022728478065899,
+            0.9968069102076925
+          ],
+          "median_ratio": 1.000779237934953,
+          "latency_reduction_percent": 0.07786311959876446,
+          "slowdown_percent": -0.07786311959876446,
+          "positive_pairs": 2
+        },
+        "1": {
+          "pair_ratios": [
+            1.0033518468610798,
+            0.9978596042072048,
+            0.9977153888005366
+          ],
+          "median_ratio": 0.9978596042072048,
+          "latency_reduction_percent": -0.21449869137610822,
+          "slowdown_percent": 0.21449869137610822,
+          "positive_pairs": 1
+        }
+      }
+    }
+  ],
+  "benefit_gate_passed": false,
+  "decision": "Reject performance: completed valid timing experiment missed a predeclared per-fixture gate.",
+  "actual_hardware_overlap_measured": false,
+  "direct_scratch_pointers_observed": false,
+  "worker_wall_seconds": 51.296041322,
+  "environment": {
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "triton": "3.8.0",
+    "python": "3.12.3"
+  },
+  "qualifications": [
+    "One session and two fresh fixtures; no score, interval or general serving-safety claim.",
+    "Diagnostic equality is uint8-exact observed output/newKV plus entire cache comparison; instrumented calls are never timed.",
+    "Fast frequency is not a cycle-saving estimate; predicated instruction issue costs remain a timing question.",
+    "A valid negative benefit/frequency result is a completed experiment, not an execution error.",
+    "No automatic official check, selection promotion or further launch follows."
+  ]
+}

@@ -1,0 +1,369 @@
+{
+  "scope": "Offline fixed-reference conditional score arithmetic, not a forecast or hardware ceiling",
+  "public_summary": {
+    "observed_utc": "2026-10-25T22:57:03.133322+00:00",
+    "leader_team": "pjmullin3",
+    "leader_speedup_public_rounded": 2.9097,
+    "ranked_count": 746,
+    "our_rank": null
+  },
+  "provenance": {
+    "public_CLI_raw_sha256": "eb728b106f0c1034609b5c02b5751b780a34ab39295fa118af2dbedb6be8404b",
+    "CLI_binary_sha256": "01a6b091bc827a54403bdb32db721f275489f07c2d3490199f5457e4da27b4e6",
+    "local_public_receipt_sha256": "55239187a95c2a3415f312a771c4a29700fa47cfe754a16e57ba5587d85828d8",
+    "own_official_result_sha256": "a66e15b71116d6758cd1aae75138f19c0a7db4cb2e89ba27394d6d09df2d61cb",
+    "TASK_sha256": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76"
+  },
+  "measured_current": {
+    "score": 1.2336330588627955,
+    "ci": [
+      1.2151285629798536,
+      1.2521375547457374
+    ],
+    "mode": "check",
+    "ranked_entry": false,
+    "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8"
+  },
+  "formula": "score = geomean_over_6_loads((46*R_sliding+16*R_full)/(46*C_sliding+16*C_full)); R fixed from own same job",
+  "leader_over_current": 2.358643017140169,
+  "all_paths_uniform_cut_needed_percent": 57.602740527793394,
+  "path_inputs": [
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "current_us": 11.47711384229471,
+      "fixed_reference_us": 20.576000679284334,
+      "weight": 46,
+      "TASK_floor_us": 0.1
+    },
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "current_us": 27.031302842677167,
+      "fixed_reference_us": 31.184000428766012,
+      "weight": 16,
+      "TASK_floor_us": 4.3
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "current_us": 13.92113651627598,
+      "fixed_reference_us": 26.400000788271427,
+      "weight": 46,
+      "TASK_floor_us": 1.6
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "current_us": 194.27190912323948,
+      "fixed_reference_us": 200.73599368333817,
+      "weight": 16,
+      "TASK_floor_us": 63.2
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "current_us": 20.10360388661608,
+      "fixed_reference_us": 30.97599931061268,
+      "weight": 46,
+      "TASK_floor_us": 3.3
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "current_us": 304.0318931739489,
+      "fixed_reference_us": 383.58399365097284,
+      "weight": 16,
+      "TASK_floor_us": 126.4
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "current_us": 16.988207220445705,
+      "fixed_reference_us": 23.007999639958143,
+      "weight": 46,
+      "TASK_floor_us": 0.1
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "current_us": 29.568835823566065,
+      "fixed_reference_us": 35.55200155824423,
+      "weight": 16,
+      "TASK_floor_us": 4.3
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "current_us": 21.740249752189822,
+      "fixed_reference_us": 28.687998186796904,
+      "weight": 46,
+      "TASK_floor_us": 1.9
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "current_us": 197.60213357126437,
+      "fixed_reference_us": 204.9119994044304,
+      "weight": 16,
+      "TASK_floor_us": 63.4
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "current_us": 27.46761932746471,
+      "fixed_reference_us": 34.33600161224604,
+      "weight": 46,
+      "TASK_floor_us": 3.7
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "current_us": 380.3807463402613,
+      "fixed_reference_us": 388.01600178703666,
+      "weight": 16,
+      "TASK_floor_us": 126.8
+    }
+  ],
+  "group_models": {
+    "four_large_full": {
+      "paths": [
+        {
+          "load": "decode 16",
+          "layer": "full"
+        },
+        {
+          "load": "decode 32",
+          "layer": "full"
+        },
+        {
+          "load": "verify 16",
+          "layer": "full"
+        },
+        {
+          "load": "verify 32",
+          "layer": "full"
+        }
+      ],
+      "score_if_selected_paths_halve": 1.7484783980404028,
+      "zero_selected_time_conditional_limit": 3.8239763942411273,
+      "target_reachable_without_floor_constraint": true,
+      "uniform_cut_needed_percent": 88.73678236248435,
+      "required_cut_task_floor_violations": [
+        {
+          "load": "decode 16",
+          "layer": "full",
+          "modeled_us": 21.881267933107093,
+          "task_floor_us": 63.2
+        },
+        {
+          "load": "decode 32",
+          "layer": "full",
+          "modeled_us": 34.243773815640964,
+          "task_floor_us": 126.4
+        },
+        {
+          "load": "verify 16",
+          "layer": "full",
+          "modeled_us": 22.256358360505892,
+          "task_floor_us": 63.4
+        },
+        {
+          "load": "verify 32",
+          "layer": "full",
+          "modeled_us": 42.84311131150999,
+          "task_floor_us": 126.8
+        }
+      ],
+      "score_if_selected_paths_at_TASK_floors": 2.041892272088711
+    },
+    "three_large_FA3_full": {
+      "paths": [
+        {
+          "load": "decode 16",
+          "layer": "full"
+        },
+        {
+          "load": "verify 16",
+          "layer": "full"
+        },
+        {
+          "load": "verify 32",
+          "layer": "full"
+        }
+      ],
+      "score_if_selected_paths_halve": 1.596670258934987,
+      "zero_selected_time_conditional_limit": 2.8167596079786894,
+      "target_reachable_without_floor_constraint": false,
+      "uniform_cut_needed_percent": null,
+      "required_cut_task_floor_violations": [],
+      "score_if_selected_paths_at_TASK_floors": 1.8245798586664288
+    },
+    "all_six_full": {
+      "paths": [
+        {
+          "load": "decode 1",
+          "layer": "full"
+        },
+        {
+          "load": "decode 16",
+          "layer": "full"
+        },
+        {
+          "load": "decode 32",
+          "layer": "full"
+        },
+        {
+          "load": "verify 1",
+          "layer": "full"
+        },
+        {
+          "load": "verify 16",
+          "layer": "full"
+        },
+        {
+          "load": "verify 32",
+          "layer": "full"
+        }
+      ],
+      "score_if_selected_paths_halve": 1.889069048170685,
+      "zero_selected_time_conditional_limit": 4.571864784861248,
+      "target_reachable_without_floor_constraint": true,
+      "uniform_cut_needed_percent": 81.08190103808026,
+      "required_cut_task_floor_violations": [
+        {
+          "load": "decode 16",
+          "layer": "full",
+          "modeled_us": 36.75255202314523,
+          "task_floor_us": 63.2
+        },
+        {
+          "load": "decode 32",
+          "layer": "full",
+          "modeled_us": 57.51705442644575,
+          "task_floor_us": 126.4
+        },
+        {
+          "load": "verify 16",
+          "layer": "full",
+          "modeled_us": 37.38256717987662,
+          "task_floor_us": 63.4
+        },
+        {
+          "load": "verify 32",
+          "layer": "full",
+          "modeled_us": 71.96080602473953,
+          "task_floor_us": 126.8
+        }
+      ],
+      "score_if_selected_paths_at_TASK_floors": 2.358505173652466
+    },
+    "two_full_verify": {
+      "paths": [
+        {
+          "load": "verify 16",
+          "layer": "full"
+        },
+        {
+          "load": "verify 32",
+          "layer": "full"
+        }
+      ],
+      "score_if_selected_paths_halve": 1.4603563608930075,
+      "zero_selected_time_conditional_limit": 2.098173108851382,
+      "target_reachable_without_floor_constraint": false,
+      "uniform_cut_needed_percent": null,
+      "required_cut_task_floor_violations": [],
+      "score_if_selected_paths_at_TASK_floors": 1.5915926277349621
+    }
+  },
+  "broad_engineering_scenario": {
+    "large_eight_path_cut_percent": 50.0,
+    "B1_four_path_cut_percent": 70.0,
+    "score": 2.9252674448444482,
+    "task_floor_violations": [],
+    "modeled_path_times": [
+      {
+        "load": "decode 1",
+        "layer": "sliding",
+        "time_us": 3.4431341526884136
+      },
+      {
+        "load": "decode 1",
+        "layer": "full",
+        "time_us": 8.109390852803152
+      },
+      {
+        "load": "decode 16",
+        "layer": "sliding",
+        "time_us": 6.96056825813799
+      },
+      {
+        "load": "decode 16",
+        "layer": "full",
+        "time_us": 97.13595456161974
+      },
+      {
+        "load": "decode 32",
+        "layer": "sliding",
+        "time_us": 10.05180194330804
+      },
+      {
+        "load": "decode 32",
+        "layer": "full",
+        "time_us": 152.01594658697445
+      },
+      {
+        "load": "verify 1",
+        "layer": "sliding",
+        "time_us": 5.096462166133712
+      },
+      {
+        "load": "verify 1",
+        "layer": "full",
+        "time_us": 8.87065074706982
+      },
+      {
+        "load": "verify 16",
+        "layer": "sliding",
+        "time_us": 10.870124876094911
+      },
+      {
+        "load": "verify 16",
+        "layer": "full",
+        "time_us": 98.80106678563219
+      },
+      {
+        "load": "verify 32",
+        "layer": "sliding",
+        "time_us": 13.733809663732355
+      },
+      {
+        "load": "verify 32",
+        "layer": "full",
+        "time_us": 190.19037317013064
+      }
+    ]
+  },
+  "required_B1_after_large_half": {
+    "cut_percent": 69.5159021913694,
+    "closed_form": "1 - 4/(leader/current)^3",
+    "score": 2.9097,
+    "task_floor_violations": []
+  },
+  "required_sliding_after_full_TASK_floors": {
+    "full_floor_only_score": 2.358505173652466,
+    "sliding_uniform_cut_percent": 32.83919973445669,
+    "score": 2.9097,
+    "task_floor_violations": []
+  },
+  "limitations": [
+    "Public leader is rounded; its confidence interval, per-shape times, kernel and private results were not requested or inferred.",
+    "Our result is a nonranking check; public you:null supplies no rank for us.",
+    "References and all untargeted paths are frozen at our one official run; future evaluator/input effects are not modeled.",
+    "TASK floors are optimistic published bandwidth/compute estimates, not proven attainable whole-call lower bounds or a true hardware ceiling.",
+    "Group zero-time limits are mathematical counterfactuals only; below-floor required cuts are not credible hardware targets.",
+    "The broad scenario gives necessary scale and an internally consistent engineering target, not an algorithm, forecast or evidence of achievable performance.",
+    "No new source candidate, GPU launch, service request, quota use or formal entry follows from this model."
+  ]
+}
