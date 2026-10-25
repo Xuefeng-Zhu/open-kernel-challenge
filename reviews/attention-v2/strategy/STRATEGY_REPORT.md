@@ -1,5 +1,10 @@
 # Attention strategy audit and A2-14 local prototype
 
+**Follow-up:** the separately approved A2-14 H200 check completed and was rejected
+for performance: 16+12 pass, target normalized latency +33.926%, score 1.168709×.
+See [actual result](../A2-14-RESULT.md). The original preflight analysis below
+is preserved as the hypothesis recorded before that result.
+
 2026-10-25. This is a local research result, not a new GPU result. No check,
 upload, push, Modal launch, credential action or formal entry was attempted.
 

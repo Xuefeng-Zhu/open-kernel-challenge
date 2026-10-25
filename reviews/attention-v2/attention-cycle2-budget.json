@@ -7,7 +7,7 @@
   "max_active_jobs": 1,
   "rules_version": "2026-10-22.1",
   "created_utc": "2026-10-25T02:11:08.267920+00:00",
-  "authorization": "Autonomous meaningful free off-board attention checks; user count ceiling removed explicitly; platform quota and serialized GPU mandatory. Reviewed private autopush authorized. No Modal/paid/ranked/new credentials.",
+  "authorization": "Current A2-14 exact-payload exception: completed one free off-board check; reviewed private source/tests/results push authorized. No other new upload, Modal, paid compute, ranked entry or credential action.",
   "previous_cycle": "attention-cycle-budget.json",
   "previous_cycle_last_job": "4f626ab7437a42be",
   "requests": [
@@ -699,6 +699,69 @@
           "left": 5
         }
       }
+    },
+    {
+      "experiment": "A2-14",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "6d6019056cbc4f81",
+      "candidate": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+      "source_commit": "2092957b1c8312b1fc90b43f64c3ed5eed8f4658",
+      "source_sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+      "parent_experiment": "A2-13",
+      "parent_job": "c2fb7b23433f4888",
+      "hypothesis": "Only full B32 L1 defers historical denominator reduction; target >=20% normalized latency cut, all 11 controls unchanged; extra register and FP32 work are unmeasured risks.",
+      "created_utc": "2026-10-25T07:44:36.285446+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 15,
+          "left": 5
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+        "--no-wait",
+        "--json"
+      ],
+      "max_paid_usd": 0,
+      "approval_scope": "One exact candidate off-board check plus reviewed source/tests/sanitized results to existing private repository; no other new upload.",
+      "sent_utc": "2026-10-25T07:44:40.422851+00:00",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T07:44:40.744236+00:00",
+      "last_checked_utc": "2026-10-25T07:50:25.502633+00:00",
+      "passed": true,
+      "speedup": 1.1687086418098815,
+      "speedup_ci": [
+        1.1511780121827333,
+        1.1862392714370296
+      ],
+      "observed_terminal_utc": "2026-10-25T07:50:25.502633+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 16,
+          "left": 4
+        }
+      },
+      "decision": "rejected_performance",
+      "target_normalized_latency_cut": -0.339263163,
+      "aggregate_relative_change": -0.03491534498234927,
+      "selected": false,
+      "result_report": "A2-14-RESULT.md"
     }
   ],
   "remaining": null,
@@ -946,12 +1009,26 @@
       "target_latency_cut": 0.1,
       "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression.",
       "target_goal_mode": "geometric_mean_latency_cut"
+    },
+    "A2-14": {
+      "candidate": "mixed_fa3_deferred_denom.py",
+      "parent_receipt": "A2-13-official-result.json",
+      "target_shapes": [
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2,
+      "target_goal_mode": "each_target",
+      "decision_predeclared": "20% normalized target latency cut; all correctness; investigate >5% controls; do not promote on noisy aggregate alone",
+      "source_sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-13 terminal16+12pass1.21099x; retained provisional, selectedA2-11 unchanged; exactcheckapprovalconsumed",
+  "current_phase": "A2-14 terminal: 16+12 pass, 1.16870864x; rejected target +33.9263% latency; A2-11 remains selected. Exact check grant consumed; reviewed A2-14 private push authorized.",
   "projection_checks_remaining": null,
-  "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
+  "counting_note": "Historical user count ceiling removed. Platform quota remains independent. Current A2-14 exact-payload grant allowed one check and its private push; no unrelated future upload follows.",
   "selection": {
     "source": "mixed_fa3_decode_parallel_merge.py",
     "source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
@@ -972,11 +1049,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 15,
-      "left": 5
+      "used": 16,
+      "left": 4
     }
   },
-  "quota_observed_utc": "2026-10-25T06:59:09.915941+00:00",
+  "quota_observed_utc": "2026-10-25T07:50:53.346544+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -1105,13 +1182,15 @@
     "score": 1.1876787560868445
   },
   "current_payload_approval": {
-    "experiment": "A2-13",
-    "candidate": "mixed_fa3_fp8_qk.py",
-    "user_message": "Sentinel_3f76007e45288191bebca69b3076f568",
-    "scope": "One official off-board check and reviewed source/tests/sanitized results push to existing private Xuefeng-Zhu/open-kernel-challenge; no unrelated future payload authorization from this approval",
-    "prior_denied_delegations_executed": false,
-    "completed_check_id": "c2fb7b23433f4888",
-    "check_consumed": true
+    "experiment": "A2-14",
+    "candidate": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+    "check_consumed": true,
+    "max_new_requests": 1,
+    "private_push_approved": true,
+    "scope": "One exact candidate off-board check plus reviewed source/tests/sanitized results to existing private repository; no other new upload.",
+    "completed_check_id": "6d6019056cbc4f81",
+    "check_status": "terminal",
+    "private_push_status": "pending reviewed export"
   },
   "provisional_fp8_candidate": {
     "experiment": "A2-13",

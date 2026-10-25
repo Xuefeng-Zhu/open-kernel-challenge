@@ -1,5 +1,5 @@
 {
-  "status": "pending separate approval; not executed",
+  "status": "check complete; rejected for performance; private push pending",
   "experiment": "A2-14",
   "payload": {
     "file": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
@@ -13,7 +13,6 @@
   "paid_cost_limit_usd": 0,
   "source_confidentiality": "Source leaves the private local environment; challenge terms do not promise confidentiality.",
   "excluded": [
-    "repository push",
     "ranked or formal submission",
     "Modal launch",
     "new credentials",
@@ -31,5 +30,15 @@
     "material_control_regression_threshold": 0.05,
     "all_correctness_required": true,
     "small_changes_with_overlapping_intervals": "inconclusive; do not claim adoption"
-  }
+  },
+  "approved_utc": "2026-10-25T07:44:36.285446+00:00",
+  "private_push": {
+    "repository": "Xuefeng-Zhu/open-kernel-challenge",
+    "visibility": "PRIVATE",
+    "branch": "attention-fa3-sanitized",
+    "scope": "Reviewed A2-14 source, tests, related analysis and sanitized results only"
+  },
+  "job_id": "6d6019056cbc4f81",
+  "check_permission_consumed": true,
+  "result_report": "../A2-14-RESULT.md"
 }

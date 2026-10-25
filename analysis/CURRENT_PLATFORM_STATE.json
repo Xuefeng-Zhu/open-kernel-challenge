@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-25T06:59:09.915941+00:00",
+  "observed_utc": "2026-10-25T07:50:53.346544+00:00",
   "problems": {
     "muse_bf16_proj": {
       "scored": {
@@ -21,13 +21,13 @@
       },
       "checks": {
         "per_day": 20,
-        "used": 15,
-        "left": 5
+        "used": 16,
+        "left": 4
       }
     }
   },
   "active_jobs_in_returned_history": [],
-  "jobs_returned": 36,
+  "jobs_returned": 37,
   "quota_reset_utc": "2026-10-26T00:00:00Z",
-  "note": "Read-only snapshot; no ranked or newcheck request. One A2-13 authorized check complete."
+  "note": "Read-only snapshot after the one approved A2-14 check completed; no new dispatch."
 }
