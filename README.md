@@ -1,3 +1,7 @@
+Latest two-track results: [DUAL_TRACK_RESULTS.md](DUAL_TRACK_RESULTS.md).
+Projection best remains1.14865×; attention selected mixed dispatch0.89195×.
+New experiments are local-only in separate branches; root starter is preserved.
+
 # Open Kernel Challenge — dense projections
 
 Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed candidate](BEST.md).

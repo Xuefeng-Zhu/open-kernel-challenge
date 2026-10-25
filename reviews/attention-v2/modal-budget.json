@@ -1210,7 +1210,7 @@
       "function_call_id": "fc-01M5R17P7CP6Q2P1J8R3CCKQ8N"
     }
   ],
-  "latest_billing_observed_utc": "2026-10-24T22:53:16.689935+00:00",
+  "latest_billing_observed_utc": "2026-10-25T00:36:14.613565+00:00",
   "stage_completed": true,
   "report_before_expanding": false,
   "final_app_states": [
@@ -1229,22 +1229,6 @@
       "tasks": "0",
       "created_at": "2026-10-24 15:33:57-07:00",
       "stopped_at": "2026-10-24 15:34:32-07:00"
-    },
-    {
-      "app_id": "ap-sS1X8nAzzsQPkNzcNIhBGq",
-      "description": "okc-attention-merge",
-      "state": "stopped",
-      "tasks": "0",
-      "created_at": "2026-10-24 14:57:36-07:00",
-      "stopped_at": "2026-10-24 14:59:34-07:00"
-    },
-    {
-      "app_id": "ap-KGuppwXiAqOLZIE6m75wS0",
-      "description": "okc-attention-baseline",
-      "state": "stopped",
-      "tasks": "0",
-      "created_at": "2026-10-24 14:47:23-07:00",
-      "stopped_at": "2026-10-24 14:49:53-07:00"
     }
   ],
   "legacy_high_water_note": "Earlier derived high-water field mixed in the conservative time guard; corrected to actual billing snapshots. Raw historical records preserved.",
@@ -1254,23 +1238,23 @@
     "billed_cost": "0E-8",
     "adjustments": {
       "plan_cost": "0E-8",
-      "reservation_adjustment": "-0E-8",
       "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
       "credits": "-1.15000000",
-      "free_storage": "-0E-8"
+      "reservation_adjustment": "-0E-8"
     },
     "metered_cost_breakdown": {
-      "volumes": "0E-8",
+      "network_egress": "0E-8",
       "llm_tokens": "0E-8",
-      "ephemeral_apps": "1.15008536",
-      "network_egress": "0E-8"
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.15008536"
     }
   },
-  "current_diagnostic": "Attention E0-E4 complete; A07 ABA passed, A09 return BlobCreate401 failed and result unavailable; all apps stopped; no more Modal runs",
+  "current_diagnostic": "E5 attention and P038 projection used serialized official checks only; no Modal launch, no retrieval retry or credential renewal",
   "prior_projection_authorization": "Autonomous remaining projection optimization, Modal-first screening and meaningful off-board checks within separate remaining quota; same cumulative USD2 free-credit stage, paid USD0, existing credentials, no push",
   "attention_branch_base_guard_usd": "1.146411930",
   "projection_snapshot_sha256": "678d740297055da1cde090b844c17c1d95835dae8026aa22723565b6703290fd",
-  "inventory_note": "CLI recent app list shrank; do not require historical total count. Both exact attention IDs reverified stopped; older snapshots preserve all prior shutdown evidence.",
+  "inventory_note": "Current recent app list contains A07/A09, both stopped/tasks0. Older apps have preserved stopped receipts and may be absent from the recent list.",
   "final_local_assertion": "Final source selected; no current GPU resource; cumulative guard unchanged; no credentials renewed or permissions broadened",
   "authorization_history": [
     "Attention corrected-v2 baseline then only full-attention separate final-merge if baseline passes; existing free credits, cumulative USD2 unchanged, paid USD0, no OKC/push/new credentials"
