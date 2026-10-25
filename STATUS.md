@@ -1,3 +1,32 @@
+# P046 terminal — promising, P039 remains selected
+
+Official job `41ba778763a5433b` passed 9+30 correctness, score 1.184139941×.
+Three targets reproduce gains (11.52%, 8.32%, 8.72%), GM9.53%, target-only
+model+1.553%. Declared gates pass; M128 original route is restored. But unchanged
+O M1/unpooler M1 regress5.62%/10.60% normalized and shift exists before calibration.
+Keep P039 selected at1.173238999× pending direct same-device control comparison.
+Read experiment046 and complete assessment/control artifacts. Never discard
+control samples or claim the aggregate win from its point alone.
+
+Slot released on21:58:55UTC terminal observation. Projection checks6/20used,
+14left; ranked0/10; reset00UTC. No active/uncertain Projection request. Finish
+reviewed result push, then continue localP047cuBLASLt capability audit. Exactjudge
+image isn't externally addressed by known tooling; do not run a different base
+image as proof or triggerFlashInfer import/JIT. Attention owns the nextGPUslot.
+
+## Previous checkpoint (historical)
+
+# P046 check accepted — 2026-10-25 21:57:30 UTC
+
+Track only `41ba778763a5433b`, plan `P2-09-pooler-column-batch2-hybrid`.
+Source `fa56f2b`, SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+One accepted request; never resend. Follow to terminal and release the shared
+measurement slot before report/push. Pre-admission quota was 5/20 used, 15 left.
+No P046 native result exists yet, and P039 remains selected. Capability research
+P047 is local metadata-only preparation, with no external probe or GPU action.
+
+## Previous checkpoint (historical)
+
 # P046 narrow pooler composition — local ready
 
 P045 is rejected and privately pushed through `7b1ca18`, remote verified at

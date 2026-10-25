@@ -495,7 +495,7 @@
   },
   "prepared_local_candidate": {
     "id": "P046",
-    "status": "local-preflight-passed-awaiting-serialized-slot",
+    "status": "terminal-promising-not-selected",
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
     "code_parent": "P045",
@@ -513,10 +513,13 @@
       "total": 7,
       "unittest_seconds": 8.192
     },
-    "gpu_executed": false,
-    "official_job": null,
+    "gpu_executed": true,
+    "official_job": "41ba778763a5433b",
     "report": "experiments/046-pooler-column-batch2-hybrid.md",
     "runner_plan": "P2-09-pooler-column-batch2-hybrid",
-    "updated_utc": "2026-10-25T21:46:30.030170+00:00"
+    "updated_utc": "2026-10-25T21:46:30.030170+00:00",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "accepted_utc": "2026-10-25T21:57:30.876492+00:00",
+    "assessment": "results/router-p046-official-assessment.json"
   }
 }

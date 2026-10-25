@@ -1,7 +1,6 @@
 # P046 — validate the three-path pooler composition
 
-Status: local preflight passed; ready for serialized validation. No request or GPU result exists. P039 remains
-selected. P045 remains a rejected broad candidate; its gates are not changed.
+Status: official check complete; declared local-path gates pass, control drift remains unresolved. P046 is promising; P039 remains selected. Preparation sections below are historical. P045 remains a rejected broad candidate; its gates are not changed.
 
 实验卡：P045 的 M8/M16/M32 路径分别快约 8.93%/6.04%/7.97%，但 M128 回退。
 本实验仅保留这三个小 M 的输出列 BMM，其他形状全部使用 P039。验证实际组合
@@ -152,3 +151,86 @@ python3 -B -m unittest discover -s tests -p test_projection_p046_assess.py -v
 ```
 
 These tools have not assessed an actual P046 result yet.
+
+
+## Official result — completed 2026-10-25 21:58:38 UTC
+
+One request was accepted at 21:57:30 UTC, job `41ba778763a5433b`, source commit
+`fa56f2b3958b0c8d358c906a0b6cbb8e741a150e`, exact SHA256
+`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+The H200 job ran from 21:57:52 to 21:58:38, about 46 seconds. All **9 prerequisite
+and 30 scored correctness cases passed**. No retry or duplicate admission.
+
+Official score **1.184139941×**, interval **[1.166377842, 1.201902040]**.
+P039 is **1.173238999×**; the point-score increase is **0.9291%**, with overlapping
+intervals. All 30 rows and 60 raw samples/ratios per shape are preserved in
+`results/remote-P2-09-pooler-column-batch2-hybrid.json` and its CSV.
+
+| Pooler M | P039 calibrated µs | P046 calibrated µs | Reference-normalized latency cut |
+|---:|---:|---:|---:|
+| 8 | 20.162 | 17.559 | +11.523% |
+| 16 | 19.932 | 18.043 | +8.317% |
+| 32 | 20.237 | 18.310 | +8.719% |
+| 128, restored control | 22.550 | 23.158 | +1.149% |
+
+All three target directions reproduce P045's gains. The target geometric-mean
+cut is **9.5311%**, each target improves, and the frozen-parent target-only model
+factor is **1.0155331934** (+1.5533%). Thus every predeclared correctness and
+numerical target gate passes. The original conditional P045 composition model
+was +1.2370%; neither model is the observed complete score change.
+
+### Actual route verification
+
+The three targets use the same single-main symbols observed in P045:
+
+- M8: `nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT`, 17.5 µs activity.
+- M16: `nvjet_sm90_tst_64x8_64x16_1x2_h_bz_NNT`, 18.1 µs.
+- M32: `nvjet_sm90_tst_64x16_64x16_1x2_h_bz_NNT`, 18.5 µs.
+
+M128 restores `nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT` plus
+`cublasLt::splitKreduce_kernel`, 20.9 + 3.0 µs activity. No separate copy is
+listed in these traces. These are instrumented samples, not calibrated medians,
+PTX/SASS, scratch allocation accounting or hardware-counter evidence.
+
+### Controls prevent an unqualified promotion
+
+All 27 controls are accounted for. Two unchanged M1 paths regress beyond 5%
+after reference normalization:
+
+| Control | P039 raw median µs | P046 raw median µs | Calibrated normalized regression |
+|---|---:|---:|---:|
+| O M1 | 10.848 | 10.976 | 5.621% |
+| Unpooler M1 | 7.712 | 8.064 | 10.599% |
+
+The raw paired reference-normalized increases are approximately **3.447%** and
+**3.762%** before overhead subtraction. Calibration amplifies the change but
+does not explain all of it. Unpooler's shift persists across both sample halves,
+so discarding a single outlier would not resolve it. The raw-pair formula and
+all derived pairs are saved in `results/router-p046-control-analysis.json`.
+No adjusted or synthetic score replaces the official score.
+
+Shared Triton helper ASTs and non-pooler `kernel_fn` computation exactly match
+P039. Control profile symbols are identical: the O library kernel and `_gemv`.
+Unpooler activity moves from 2.9 to 3.1 µs; the O activity sample moves opposite
+to its replay benchmark. Single profile samples cannot establish the cause.
+All P039/P045/P046 endpoint snapshots report SM 1980 MHz, memory 3201 MHz and
+700 W limit. Temperatures differ (P039 42→41°C, P045 31→33°C, P046 35→38°C).
+These are endpoint snapshots, not per-sample throttling, utilization or clock
+traces. They neither prove nor exclude transient runtime/hardware effects.
+
+**Decision: retain P046 as a promising, officially correct candidate; keep P039
+selected.** This follows the predeclared unresolved-control clause, not interval
+overlap alone. Independent review concurs. A direct same-device P039/P046 probe
+of the three targets, O M1, unpooler M1 and restored M128 is the minimal useful
+confirmation. Preserve balanced ordering, cold-L2 graphs, fresh inputs, raw
+samples and calibration separately. Do not request a nonce official rerun.
+
+The full file passed the official fresh-input graph protocol, with matching
+P039 evaluator/image digests. Dedicated same-address graph A→B→A/concurrency
+stress remains separately unverified for P046. CPU and inherited P045 evidence
+are not relabeled as this full file's GPU stress tests.
+
+Slot released at the 21:58:55 UTC terminal observation, before analysis/push.
+Actual Projection quota then: **6/20 checks used, 14 left**, ranked **0/10**;
+reset **00:00 UTC**. No Modal app, paid compute, credential action or formal
+entry occurred. There is no active or uncertain Projection job.

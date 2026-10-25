@@ -540,6 +540,60 @@
         1.1621656666550968,
         1.197561575284186
       ]
+    },
+    {
+      "experiment": "P2-09-pooler-column-batch2-hybrid",
+      "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+      "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+      "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "mode": "check",
+      "created_utc": "2026-10-25T21:57:30.644729+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "41ba778763a5433b",
+      "hypothesis": "Validate narrow composition: only canonical pooler M8/M16/M32 retains measured P045 column-batch BMM; restore P039 M128 and all other timed paths. No tile/math/precision/packing change. Test reproducibility of small-M gains with lower explicitly new-scope gates, not retroactive acceptance of P045.",
+      "control_job_id": "d5636ac8d1404abd",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_column_batch2_hybrid.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T21:57:30.876492+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T21:58:55.422889+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      },
+      "passed": true,
+      "speedup": 1.1841399408925375,
+      "speedup_ci": [
+        1.1663778417791495,
+        1.2019020400059255
+      ]
     }
   ],
   "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
@@ -608,11 +662,11 @@
     "source": "candidates/projection_router_m1_fp32_gemv.py"
   },
   "latest_decision": {
-    "experiment": "P2-08-pooler-column-batch2",
-    "decision": "Reject full candidate: only 4.52% target geomean gain, M128 regresses5.54%, modeled target-only score gain0.96%; preserve P039.",
-    "job_id": "b2c1e6c724144e87",
+    "experiment": "P2-09-pooler-column-batch2-hybrid",
+    "decision": "Target and original correctness gates pass; retain promising while P039 remains selected pending same-device unchanged-control confirmation.",
+    "job_id": "41ba778763a5433b",
     "status": "done",
-    "assessment": "results/router-p045-official-assessment.json"
+    "assessment": "results/router-p046-official-assessment.json"
   },
   "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
   "phase_history": [
@@ -684,5 +738,14 @@
     "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
     "job_id": "48b1357016134e52",
     "speedup": 1.1486499523461586
+  },
+  "promising_candidate": {
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
+    "selected": false,
+    "reason": "Three target gains reproduced, but unchanged O/unpooler M1 controls shifted and whole-score significance remains unresolved."
   }
 }
