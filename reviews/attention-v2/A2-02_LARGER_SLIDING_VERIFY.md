@@ -60,3 +60,14 @@ native dispatch; one shared GPU slot, no concurrent measurements. No Modal,
 paid compute, new credentials/terms or ranked entry. Automatic reviewed private
 pushes are now explicitly authorized; source is labeled GPU-unverified until
 the receipt exists. Failures count; never duplicate uncertain POST.
+
+
+## Accepted — native outcome pending
+
+Job3e85261cb8ed4899 accepted once2026-10-25T02:50:05.688335Z.
+Exact source790d4256fe311086eb9f899ae88b0915ce0eb5ab,
+SHA25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d.
+New attention2/10used,8left. Projection P039 was terminal first; projection6left.
+No native correctness/performance claimed until this job's terminal receipt.
+Monitor same ID, never resubmit an uncertain request. Reviewed source/acceptance
+may auto-push with GPU-pending label under explicit standing authorization.

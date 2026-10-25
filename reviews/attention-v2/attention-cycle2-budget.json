@@ -63,9 +63,43 @@
           "left": 17
         }
       }
+    },
+    {
+      "experiment": "A2-02",
+      "mode": "check",
+      "state": "accepted",
+      "status": "accepted",
+      "job_id": "3e85261cb8ed4899",
+      "candidate": "reviews/attention-v2/mixed_fa3_all_verify.py",
+      "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
+      "source_sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+      "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive",
+      "final": false,
+      "created_utc": "2026-10-25T02:50:05.125149+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_all_verify.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:50:05.688335+00:00"
     }
   ],
-  "remaining": 9,
+  "remaining": 8,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -100,8 +134,8 @@
       "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive"
     }
   },
-  "all_requests_terminal": true,
-  "current_phase": "A2-02 source/CPU ready; projectionP039terminal; commit before serialized dispatch",
+  "all_requests_terminal": false,
+  "current_phase": "A2-02 accepted3e85261cb8ed4899; only activeGPU; new2/10used8left",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {

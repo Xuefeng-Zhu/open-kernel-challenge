@@ -1,34 +1,34 @@
-# Active autonomous cycles — A2-01 adopted; next GPU is projection P039
+# Autonomous cycle — A2-02 active, P039 complete
 
-Attention selected mixed_fa3_verify1.py, source0309241/SHA2c7bd6a0,
-job6e761bdd1d9747ad passed16+12, score1.0002799616×,
-CI[.9852757622,1.0152841611]. +6.46% over E6, intervals do not overlap;
-not a statistically resolved win over SGLang1.0. Full verify1 normalized latency
-cut53.60%; all11controls below5%. See A2-01-RESULT/assessment/receipt.
-Old attention budget0; new independent attention-cycle2-budget.json1/10used,9left.
-Projection6checks left. P039 terminal passed9+30, highest point1.1732389990×,
-CIoverlaps previous1.14865; router target30.1%latencycut supported, totalgain
-unresolved. See projection results/router-p039-official-assessment.json. Candidate P039
-router m1 original-FP32 GEMV based on projection best, sourcecdf5bc2/SHA0c0c4111.
-Local125regressions+39oracles+6focused pass; nativecanonicalm1 now passes;
-explicitnative tails/strides/outlier stress and compiled resources unverified.
-Only coordinator dispatches, no duplicate uncertain requests.
+Only active GPU job: attention A2-02 3e85261cb8ed4899, source790d425/SHA25b35cc7,
+mixed_fa3_all_verify.py. Monitor check_cycle.py poll A2-02 --cycle2, NEVER resend.
+New attention2/10used,8left. Old six-request cycle exhausted separately.
+A2-01 remains selected until new result:1.0002799616×,CIincludes1.0; source0309241,
+job6e761bdd1d9747ad passed16+12. No statistically resolved win over SGLang.
 
-One-time user-requested private push VERIFIED:
-attention-fa3-sanitized cd19d4e0365263c92fce3380594448a18c06b670,
-projection-pipeline-preflight cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da.
-Repo remainsPRIVATE. Sanitized attention export preserves36experimental commits,
-redacts only historical Modal token identifier; original research branch unchanged.
-Source hashes identical; export mapping is analysis/PUSH_EXPORT_MAP.json on that
-branch. A2-01 was pending at initial push. User later granted standing AUTO-PUSH for
-reviewed experiment commits. Result40329d1 has now been exported/pushed on
-attention-fa3-sanitized6ddde17; source mapping retained, noforce/visibilitychange. No force push, main update or PR.
+Projection P039 d5636ac8d1404abd DONE9+30, highest verified point1.1732389990×,
+CI[1.1556404140,1.1908375840] overlaps previous1.14864995. Routerm1 target
+7.4688→5.2043us, normalizedlatencycut30.1% is supported; shifted unchangedcontrols
+mean not all2.14%totalgain is caused by P039. Frozen-parent target-only model
+1.1576659 is scenario, not achievedextraresult. Preserve previousbest. Projection6left.
+Sourcecdf5bc2, resultfdeb02d pushed/remoteSHAverified on projection-pipeline-preflight.
+P040 grouped8-output O m1 prototype is LOCAL-only research, no admission yet.
 
-Next attention local hypothesis: remaining B16/32 verify sliding could use the
-same verified official sliding FA3 adapter, retaining all decode and full paths.
-A2-02 mixed_fa3_all_verify.py/SHA25b35cc7 has9CPUtests passed; no request yet. No Modal/newcredentials/paid/ranked actions; reviewed private auto-push allowed.
-Explicit target GPU ABA/nonunit/untouched-row/concurrency limitations remain;
-CPU stand-ins are not GPU proof. Prior stopped-app/cost guard unchanged.
+Standing user authorization now allows automatic reviewed private pushes for this
+project. No force/public/PR/ranked/paid/newcredentials/Modal. Attention uses existing
+sanitized export branch; originalresearchbranch is never rewritten/pushed because
+historicalA09log contained tokenidentifier. Candidatebytes/perexperimentcommits
+preserved, analysis/PUSH_EXPORT_MAP.json maps original receipt-source IDs.
+analysis/safe_attention_export.py appends related commits fast-forward locally;
+review outgoing history, then normalpush and verifySHA. A2-01 result exported/pushed
+at6ddde17; later source/admission exports may advance it. Projection branch remote
+fdeb02d173ebe3944dbdfd3c251f210f4e83c11c. Repo remainsPRIVATE.
+
+A2-02 targets only B16/32slidingverify via existing officialFA3adapter,10controls
+unchanged.9CPUtests pass; native new target page64/nonunit/explicitABA/untouched
+rows not claimed. No GPUmetrics from CPU. All graph measurements serialized by
+primary ignored local-notes/gpu-slot.local.json. PriorModal stopped/costguard
+$1.708917914/$2 unchanged; no credentialrenewal or app launch permitted.
 
 The completed earlier-cycle checkpoint below is historical, not current status.
 
