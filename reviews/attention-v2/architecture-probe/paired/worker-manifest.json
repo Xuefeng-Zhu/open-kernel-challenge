@@ -1,0 +1,44 @@
+{
+  "status": "locally prepared; not executed by this subagent",
+  "payload": {
+    "worker.py": {
+      "source": "reviews/attention-v2/architecture-probe/paired/worker.py",
+      "sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7"
+    },
+    "candidatecustomhelper.py": {
+      "source": "reviews/attention-v2/architecture-probe/paired/candidatecustomhelper.py",
+      "sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82"
+    },
+    "candidate.py": {
+      "source": "reviews/attention-v2/architecture-probe/probe/candidate.py",
+      "sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e"
+    },
+    "modal_worker.py": {
+      "source": "reviews/attention-v2/modal_worker.py",
+      "sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e"
+    },
+    "official/reference.py": {
+      "source": "reviews/attention-v2/official/reference.py",
+      "sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b"
+    },
+    "official/checks.py": {
+      "source": "reviews/attention-v2/official/checks.py",
+      "sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+    },
+    "legal/LICENSE": {
+      "source": "LICENSE",
+      "sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747"
+    },
+    "legal/THIRD_PARTY_NOTICES.md": {
+      "source": "THIRD_PARTY_NOTICES.md",
+      "sha256": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+    }
+  },
+  "local_tests": 7,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "max_report_bytes": 200000,
+  "optional_profile_names_max_utf8_bytes": 16384,
+  "optional_profile_names_max_count": 64,
+  "worker_deadline_seconds": 110
+}
