@@ -1,13 +1,13 @@
 {
   "problem": "muse_attention_decode",
-  "maximum_new_checks": 10,
+  "maximum_new_checks": null,
   "reserved_final_checks": 1,
   "mode": "check",
   "max_spend_usd": 0,
   "max_active_jobs": 1,
   "rules_version": "2026-10-22.1",
   "created_utc": "2026-10-25T02:11:08.267920+00:00",
-  "authorization": "Ten new attention off-board requests authorized; standing reviewed private autopush subsequently authorized. No Modal/ranked/paid/new credentials.",
+  "authorization": "Autonomous meaningful free off-board attention checks; user count ceiling removed explicitly; platform quota and serialized GPU mandatory. Reviewed private autopush authorized. No Modal/paid/ranked/new credentials.",
   "previous_cycle": "attention-cycle-budget.json",
   "previous_cycle_last_job": "4f626ab7437a42be",
   "requests": [
@@ -436,7 +436,7 @@
       }
     }
   ],
-  "remaining": 2,
+  "remaining": null,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -557,11 +557,37 @@
       ],
       "target_latency_cut": 0.1,
       "hypothesis": "Only full B1L1 joins identical checked ROPE=False prologue/FA3 adapter, preserving supplied scheduler; >=10%normalized targetlatencycut; other11timedpathsunchanged"
+    },
+    "A2-09": {
+      "candidate": "mixed_fa3_local_tickets.py",
+      "expected_sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+      "final": false,
+      "parent_receipt": "A2-08-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": -0.05,
+      "hypothesis": "Remove cross-invocation counter aliasing with per-call zeroed tickets; no math or dispatch changes. Correctness repair, not speed claim. Measure cost on four scored fallback paths; flag >5%normalized path regression. Official check does not prove multistream stress."
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "Bounded fusion series complete; no active requests; retain2checks includingfinalreserve; documented evidence-led pause",
-  "projection_checks_remaining": 5,
+  "current_phase": "Audit complete; prepare isolated per-invocation ticket correction with explicit GPU stress limitations",
+  "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
     "source": "mixed_fa3_fused_full_small.py",
@@ -679,5 +705,13 @@
     ],
     "reason": "Target15.77%normalized cut exceeds10%goal; no>5%controls; million-context page64 passes; total1.09%gain has overlappingCI",
     "aggregate_vs_parent_inconclusive": true
+  },
+  "historical_user_check_ceiling": 10,
+  "historical_remaining_at_ceiling_removal": 2,
+  "user_check_ceiling_removed": true,
+  "authorization_update": {
+    "recorded_utc": "2026-10-25T05:10:40.221269+00:00",
+    "user_message": "Sentinel_26cefe33699481919e869a7bce3c3476",
+    "scope": "Free off-board checks for attention and projection no longer have a user count cap; daily platform limits, no paid/Modal/new credentials/ranked entry restrictions remain."
   }
 }

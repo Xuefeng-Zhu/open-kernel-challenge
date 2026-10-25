@@ -12,13 +12,14 @@ import check_cycle as runner
 
 
 class CycleLimits(unittest.TestCase):
-    def exercise(self, n, maximum, final=False, active=False, uncertain=False, reject=None):
+    def exercise(self, n, maximum, final=False, active=False, uncertain=False, reject=None,
+                 uncapped=False, quota_left=19):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder).resolve()
             slot = root/'slot.json'
             slot.write_text(json.dumps(dict(state='running' if active else 'terminal',
                                            problem='muse_attention_decode', experiment='older')))
-            cycle2 = maximum == 10
+            cycle2 = maximum == 10 or maximum is None
             ledger = root/('attention-cycle2-budget.json' if cycle2 else 'attention-cycle-budget.json')
             requests = [dict(experiment=f'old{i}', state='terminal', status='done') for i in range(n)]
             if uncertain:
@@ -26,12 +27,13 @@ class CycleLimits(unittest.TestCase):
             raw = b'# okc: problem=muse_attention_decode\ndef kernel_fn(data):\n    return data\n'
             (root/'candidate.py').write_bytes(raw)
             import hashlib
-            data = dict(maximum_new_checks=maximum, reserved_final_checks=1, requests=requests,
+            data = dict(maximum_new_checks=maximum, user_check_ceiling_removed=uncapped,
+                        reserved_final_checks=1, requests=requests,
                         max_active_jobs=1, rules_version='test', plans=dict(X=dict(candidate='candidate.py',
                         expected_sha256=hashlib.sha256(raw).hexdigest(), final=final, hypothesis='fake test')))
             ledger.write_text(json.dumps(data))
             cli_result = SimpleNamespace(returncode=0, stdout='{"job_id":"fake-accepted"}', stderr='')
-            quota = dict(checks=dict(left=19), scored=dict(used=0))
+            quota = dict(checks=dict(left=quota_left), scored=dict(used=0))
             args = ['check_cycle.py', 'send', 'X']+(['--cycle2'] if cycle2 else [])
             with patch.multiple(runner, HERE=root, PROJECT=root, LEDGER=ledger, GPU_SLOT=slot), \
                  patch('sys.argv', args), \
@@ -49,7 +51,7 @@ class CycleLimits(unittest.TestCase):
                     runner.main()
                     self.assertEqual(cli.call_count, 1)
                     saved = json.loads(ledger.read_text())
-                    self.assertEqual(saved['remaining'], maximum-n-1)
+                    self.assertEqual(saved['remaining'], None if maximum is None else maximum-n-1)
                     self.assertEqual(saved['requests'][-1]['job_id'], 'fake-accepted')
 
     def test_old_six_ceiling(self):
@@ -72,6 +74,21 @@ class CycleLimits(unittest.TestCase):
 
     def test_uncertain_request_prevents_post(self):
         self.exercise(1, 10, uncertain=True, reject='Uncertain')
+
+    def test_explicit_uncapped_policy_allows_later_checks(self):
+        self.exercise(12, None, uncapped=True)
+
+    def test_missing_uncapped_authorization_rejected(self):
+        self.exercise(12, None, reject='explicit uncapped')
+
+    def test_uncapped_still_obeys_daily_platform_limit(self):
+        self.exercise(12, None, uncapped=True, quota_left=0, reject='Daily attention')
+
+    def test_uncapped_still_reserves_uncertain_request(self):
+        self.exercise(12, None, uncapped=True, uncertain=True, reject='Uncertain')
+
+    def test_uncapped_still_serializes_gpu(self):
+        self.exercise(12, None, uncapped=True, active=True, reject='slot not free')
 
 
 if __name__ == '__main__':

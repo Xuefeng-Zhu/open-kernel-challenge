@@ -17,7 +17,10 @@ TERMINAL={'done','failed','rejected','duplicate'}
 
 def now():return datetime.now(timezone.utc).isoformat()
 def save(d):
-    d['remaining']=d['maximum_new_checks']-len(d['requests'])
+    maximum=d['maximum_new_checks']
+    if maximum is None and d.get('user_check_ceiling_removed') is not True:
+        raise RuntimeError('Missing explicit uncapped free-check authorization')
+    d['remaining']=None if maximum is None else maximum-len(d['requests'])
     d['all_requests_terminal']=all(e['state']=='terminal' for e in d['requests'])
     p=LEDGER.with_suffix('.tmp');p.write_text(json.dumps(d,indent=2)+'\n');p.replace(LEDGER)
 def gpu_slot(state,e):
@@ -63,9 +66,11 @@ def main():
         if any(e['experiment']==args.experiment for e in d['requests']):raise RuntimeError('Already reserved; inspect existing job, never duplicate')
         if any(e['state'] in ['sending','uncertain'] for e in d['requests']):raise RuntimeError('Uncertain request reserved, reconcile before POST')
         maximum=d['maximum_new_checks']
-        if len(d['requests'])>=maximum:raise RuntimeError('This cycle authorization exhausted')
+        if maximum is None and d.get('user_check_ceiling_removed') is not True:
+            raise RuntimeError('Missing explicit uncapped free-check authorization')
+        if maximum is not None and len(d['requests'])>=maximum:raise RuntimeError('This cycle authorization exhausted')
         plan=d['plans'][args.experiment]
-        if maximum-len(d['requests'])<=d['reserved_final_checks'] and not plan['final']:raise RuntimeError('Last check reserved for final complete candidate')
+        if maximum is not None and maximum-len(d['requests'])<=d['reserved_final_checks'] and not plan['final']:raise RuntimeError('Last check reserved for final complete candidate')
         if sum(e.get('status') not in TERMINAL for e in d['requests'])>=d['max_active_jobs']:raise RuntimeError('Active job limit')
         path=(HERE/plan['candidate']).resolve()
         if path.parent!=HERE or path.is_symlink():raise ValueError('Only intended standalone attention source')
