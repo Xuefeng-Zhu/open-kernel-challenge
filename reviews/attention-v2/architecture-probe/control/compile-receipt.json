@@ -1,0 +1,106 @@
+{
+  "experiment": "M64 BF16 QK compile-only",
+  "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+  "source_commit": "34c3ee1bda2ffccf7958588114d5896d1286ba39",
+  "payload_sha256": {
+    "candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "worker.py": "b980e6229db9043ea795aa1cd26c110cf9326c0ec757cb89294f6465889b0c4c"
+  },
+  "controller_sha256": "1a68508b367f276a2f56a411f9443b30023314fc3cbe487c3dbae845605aa680",
+  "explicit_invocations": 1,
+  "compile_status": "compiled",
+  "exit_code": 0,
+  "candidate_kernel_launches": 0,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "app_accepted_utc": "2026-10-25T17:42:55.212125+00:00",
+  "app_stop_requested": {
+    "requested_utc": "2026-10-25T17:43:24.177748+00:00",
+    "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+    "exit_code": 0
+  },
+  "initial_shutdown_observation": {
+    "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+    "description": "okc-m64-bf16-compile-probe",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 10:42:53-07:00",
+    "stopped_at": null
+  },
+  "final_observed_utc": "2026-10-25T17:46:05.444763+00:00",
+  "final_app_states": [
+    {
+      "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+      "description": "okc-m64-bf16-compile-probe",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:42:53-07:00",
+      "stopped_at": "2026-10-25 10:43:26-07:00"
+    },
+    {
+      "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+      "description": "okc-a215-paired",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 09:17:04-07:00",
+      "stopped_at": "2026-10-25 09:17:37-07:00"
+    },
+    {
+      "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+      "description": "okc-a215-native-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 08:52:13-07:00",
+      "stopped_at": "2026-10-25 08:52:43-07:00"
+    }
+  ],
+  "all_apps_stopped_zero_tasks": true,
+  "billing_before": {
+    "metered_cost": "1.26000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.26000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.26262102"
+    }
+  },
+  "billing_after": {
+    "metered_cost": "1.30000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-1.30000000"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.29655488",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "rounded_metered_delta_usd": "0.04000000",
+  "detailed_usage_delta_usd": "0.03393386",
+  "conservative_gross_delta_usd": "0.03737898",
+  "paid_usd": "0E-8",
+  "cost_reservation_upper_bound_usd": "0.1966388333333333333333333334",
+  "client_wall_seconds": 33.49154220800847,
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "conservative_time_allowance_usd": "0.06599165000000000000000000001",
+  "reservation_released": true,
+  "notes": [
+    "Initial immediate state was stopping with one task; preserved and independently reconciled to stopped/tasks0.",
+    "Billing is workspace-level and rounded; difference is observed usage, not exact per-app invoice.",
+    "No candidate kernel executed during compile-only probe."
+  ]
+}

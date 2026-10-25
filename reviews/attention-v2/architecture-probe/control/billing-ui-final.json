@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T17:53:27.788842+00:00",
+  "source": "Supported Chrome extension read-only reload of separate Modal Usage & billing Overview",
+  "workspace": "xuefeng-zhu",
+  "verified_credit_balance_usd": "28.63",
+  "verified_net_spend_cap_usd": "0",
+  "total_spend_usd": "0.00",
+  "summary_total_usage_usd": "1.37",
+  "ephemeral_usage_usd": "1.44",
+  "ephemeral_usage_raw": "1.442733645439148",
+  "changes_made": [],
+  "chatgpt_pro_tab_accessed": false,
+  "qualification": "Header credits/total usage lag CLI and ephemeral breakdown; record discrepancy, use highest observed gross usage for conservative accounting. No exact per-app invoice claimed."
+}

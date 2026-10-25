@@ -1,5 +1,5 @@
 {
-  "status": "locally prepared, not GPU compiled or executed",
+  "status": "Native compiled and gate passed; runtime follow-through loses to FA3, see ../paired/ANALYSIS.md",
   "source": {
     "original": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
     "payload": "candidate.py",
@@ -69,11 +69,13 @@
   },
   "local_evidence_sha256": {
     "test_probe.py": "e90a06d6f40e893b6ecbf1b3c7a9f60f4a247da1c15c6783b32ea4e015f38ae0",
-    "README.md": "c16a439dda4aec7f9734f9ee84c18010db5781d0c8b440302b861c556d4805e2",
+    "README.md": "9d74da26242b4b7aab044c085dc6ff3f483d65f106c5cfc5ba4b9ba4d94952bd",
     "local-verification.json": "ab8d25c429cb7fc8c167bec2aca60903fad1c9c64bb80854f63b6699bc8ca447"
   },
   "candidate_kernel_launches": 0,
-  "gpu_compiled": false,
+  "gpu_compiled": true,
   "correctness_tested": false,
-  "performance_tested": false
+  "performance_tested": false,
+  "native_summary_sha256": "4aef9c653af05a09276b7385e14bf2a3d5889fefdb66885f319715178e1ff6d7",
+  "native_analysis_sha256": "8cd757b873a925fce28ca65e5cc037af4dee77b3d8a6e4197ee7242d960785dc"
 }

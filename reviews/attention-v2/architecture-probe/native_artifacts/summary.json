@@ -1,0 +1,649 @@
+{
+  "kind": "M64 BF16 QK compile/disassembly only",
+  "status": "compiled",
+  "candidate_kernel_launches": 0,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+  "worker_sha256": "b980e6229db9043ea795aa1cd26c110cf9326c0ec757cb89294f6465889b0c4c",
+  "records": [
+    {
+      "label": "fp8.b16.fused",
+      "batch": 16,
+      "kernel": "fused producer/integrated merge",
+      "QK_DOT": "fp8",
+      "DOT": "bfloat16",
+      "options": {
+        "L": 8,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 64,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": false,
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid": [
+        16,
+        2,
+        11
+      ],
+      "compile_and_load_seconds": 2.0843688529999973,
+      "kernel_hash": "db7fd0ab988a78fb00f2cd624e50f9cd4ace35d7f680546a9154e23eb0d905b4",
+      "registers": 172,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 33024,
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm90",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/opt/sglang/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "db7fd0ab988a78fb00f2cd624e50f9cd4ace35d7f680546a9154e23eb0d905b4",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 1073741824,
+        "maxnreg": null,
+        "name": "_fused",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 33024,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=90, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.8.0",
+        "warp_size": 32
+      },
+      "artifacts": {
+        "ttir": {
+          "file": "fp8.b16.fused.ttir",
+          "bytes": 50693,
+          "sha256": "e108e42f4f5ffbe1f88cbddce25999d19f43f439d641e89175321c159fa105a2"
+        },
+        "ttgir": {
+          "file": "fp8.b16.fused.ttgir",
+          "bytes": 81500,
+          "sha256": "53dd02c9685f6d2d33b5614ccb7d72c229c79a8e7588fa94db38820f2e6d2a8c"
+        },
+        "llir": {
+          "file": "fp8.b16.fused.llir",
+          "bytes": 367107,
+          "sha256": "5615552e654e5e50f4e1258aae901c155c34e6da1131a67d0fc75093492290e4"
+        },
+        "ptx": {
+          "file": "fp8.b16.fused.ptx",
+          "bytes": 173499,
+          "sha256": "1faa58fcb6bcea0b5eb3be3d6affefe43a6ab6480498a03ae2a309ba79c0f631"
+        },
+        "cubin": {
+          "file": "fp8.b16.fused.cubin",
+          "bytes": 168264,
+          "sha256": "f94602cb9187574ded7bf232eeec42f0ca8f719393aaba4d5bb8f6acca722c23"
+        },
+        "sass": {
+          "file": "fp8.b16.fused.sass",
+          "bytes": 720519,
+          "sha256": "ba021e27ac355f26dd1f83ab18ca89e90068a6e7a1279dd996794944416070b7"
+        }
+      },
+      "sass_tool_exit_code": 0
+    },
+    {
+      "label": "fp8.b32.fused",
+      "batch": 32,
+      "kernel": "fused producer/integrated merge",
+      "QK_DOT": "fp8",
+      "DOT": "bfloat16",
+      "options": {
+        "L": 8,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 64,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": false,
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid": [
+        32,
+        2,
+        11
+      ],
+      "compile_and_load_seconds": 0.00015599700000024086,
+      "kernel_hash": "db7fd0ab988a78fb00f2cd624e50f9cd4ace35d7f680546a9154e23eb0d905b4",
+      "registers": 172,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 33024,
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm90",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/opt/sglang/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "db7fd0ab988a78fb00f2cd624e50f9cd4ace35d7f680546a9154e23eb0d905b4",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 1073741824,
+        "maxnreg": null,
+        "name": "_fused",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 33024,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=90, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.8.0",
+        "warp_size": 32
+      },
+      "artifacts": {
+        "ttir": {
+          "file": "fp8.b32.fused.ttir",
+          "bytes": 50693,
+          "sha256": "e108e42f4f5ffbe1f88cbddce25999d19f43f439d641e89175321c159fa105a2"
+        },
+        "ttgir": {
+          "file": "fp8.b32.fused.ttgir",
+          "bytes": 81500,
+          "sha256": "53dd02c9685f6d2d33b5614ccb7d72c229c79a8e7588fa94db38820f2e6d2a8c"
+        },
+        "llir": {
+          "file": "fp8.b32.fused.llir",
+          "bytes": 367107,
+          "sha256": "5615552e654e5e50f4e1258aae901c155c34e6da1131a67d0fc75093492290e4"
+        },
+        "ptx": {
+          "file": "fp8.b32.fused.ptx",
+          "bytes": 173499,
+          "sha256": "1faa58fcb6bcea0b5eb3be3d6affefe43a6ab6480498a03ae2a309ba79c0f631"
+        },
+        "cubin": {
+          "file": "fp8.b32.fused.cubin",
+          "bytes": 168264,
+          "sha256": "f94602cb9187574ded7bf232eeec42f0ca8f719393aaba4d5bb8f6acca722c23"
+        },
+        "sass": {
+          "file": "fp8.b32.fused.sass",
+          "bytes": 720519,
+          "sha256": "ba021e27ac355f26dd1f83ab18ca89e90068a6e7a1279dd996794944416070b7"
+        }
+      },
+      "sass_tool_exit_code": 0
+    },
+    {
+      "label": "bf16.b16.fused",
+      "batch": 16,
+      "kernel": "fused producer/integrated merge",
+      "QK_DOT": "bf16",
+      "DOT": "bfloat16",
+      "options": {
+        "L": 8,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 64,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": false,
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid": [
+        16,
+        2,
+        11
+      ],
+      "compile_and_load_seconds": 0.770701583000001,
+      "kernel_hash": "20390957268e67a85172fa1ec2c0f57ac41ea138caad39def36a6dea765bef95",
+      "registers": 135,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 24832,
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm90",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/opt/sglang/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "20390957268e67a85172fa1ec2c0f57ac41ea138caad39def36a6dea765bef95",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 1073741824,
+        "maxnreg": null,
+        "name": "_fused",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 24832,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=90, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.8.0",
+        "warp_size": 32
+      },
+      "artifacts": {
+        "ttir": {
+          "file": "bf16.b16.fused.ttir",
+          "bytes": 51039,
+          "sha256": "f452eb06851c19a59c2f4583e913ea4f7e9163b37392d7cdce42cc75c7000ba1"
+        },
+        "ttgir": {
+          "file": "bf16.b16.fused.ttgir",
+          "bytes": 80867,
+          "sha256": "0a20cc306052233edf7d39fe2ce70d66abdba7a172da29b9f6d786f3f2b8d104"
+        },
+        "llir": {
+          "file": "bf16.b16.fused.llir",
+          "bytes": 381720,
+          "sha256": "633ded2faf03cc8c626422d5771c362af277e3ecba514a0613d4b830899ed7b0"
+        },
+        "ptx": {
+          "file": "bf16.b16.fused.ptx",
+          "bytes": 177457,
+          "sha256": "88e1ca0b463f526de41d412d620d7f3928435a0bb131925a9ba7bafb0fc1a256"
+        },
+        "cubin": {
+          "file": "bf16.b16.fused.cubin",
+          "bytes": 163400,
+          "sha256": "6b1c2088463b7213fd5208e0edd7299b3569835e9cf22b95448abc6c5326d437"
+        },
+        "sass": {
+          "file": "bf16.b16.fused.sass",
+          "bytes": 667831,
+          "sha256": "5d52477287504fa5ad68a340bde1dc065feabb1e02a55fd83da0ae0d63e7f2e8"
+        }
+      },
+      "sass_tool_exit_code": 0
+    },
+    {
+      "label": "bf16.b32.fused",
+      "batch": 32,
+      "kernel": "fused producer/integrated merge",
+      "QK_DOT": "bf16",
+      "DOT": "bfloat16",
+      "options": {
+        "L": 8,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 64,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": false,
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid": [
+        32,
+        2,
+        11
+      ],
+      "compile_and_load_seconds": 0.00017904399999935094,
+      "kernel_hash": "20390957268e67a85172fa1ec2c0f57ac41ea138caad39def36a6dea765bef95",
+      "registers": 135,
+      "driver_spills_raw": 0,
+      "shared_memory_bytes": 24832,
+      "metadata": {
+        "allowed_dot_input_precisions": [
+          "tf32",
+          "tf32x3",
+          "ieee",
+          "bf16x3",
+          "bf16x6"
+        ],
+        "arch": "sm90",
+        "backend_name": "cuda",
+        "debug": false,
+        "default_dot_input_precision": "tf32",
+        "deprecated_fp8_dot_operand_dtypes": [
+          "fp8e4b15"
+        ],
+        "enable_fp_fusion": true,
+        "enable_reflect_ftz": true,
+        "extern_libs": [
+          [
+            "libdevice",
+            "/opt/sglang/lib/python3.12/site-packages/triton/backends/nvidia/lib/libdevice.10.bc"
+          ]
+        ],
+        "global_scratch_align": 1,
+        "global_scratch_size": 0,
+        "hash": "20390957268e67a85172fa1ec2c0f57ac41ea138caad39def36a6dea765bef95",
+        "instrumentation_mode": "",
+        "ir_override": null,
+        "launch_cooperative_grid": false,
+        "launch_pdl": false,
+        "max_num_imprecise_acc_default": 1073741824,
+        "maxnreg": null,
+        "name": "_fused",
+        "num_ctas": 1,
+        "num_stages": 3,
+        "num_warps": 4,
+        "profile_scratch_align": 1,
+        "profile_scratch_size": 0,
+        "ptx_options": null,
+        "ptx_version": null,
+        "sanitize_overflow": true,
+        "shared": 24832,
+        "supported_fp8_dtypes": [
+          "fp8e4b15",
+          "fp8e4nv",
+          "fp8e5"
+        ],
+        "target": "GPUTarget(backend='cuda', arch=90, warp_size=32)",
+        "tensordesc_meta": [],
+        "tmem_size": 0,
+        "triton_version": "3.8.0",
+        "warp_size": 32
+      },
+      "artifacts": {
+        "ttir": {
+          "file": "bf16.b32.fused.ttir",
+          "bytes": 51039,
+          "sha256": "f452eb06851c19a59c2f4583e913ea4f7e9163b37392d7cdce42cc75c7000ba1"
+        },
+        "ttgir": {
+          "file": "bf16.b32.fused.ttgir",
+          "bytes": 80867,
+          "sha256": "0a20cc306052233edf7d39fe2ce70d66abdba7a172da29b9f6d786f3f2b8d104"
+        },
+        "llir": {
+          "file": "bf16.b32.fused.llir",
+          "bytes": 381720,
+          "sha256": "633ded2faf03cc8c626422d5771c362af277e3ecba514a0613d4b830899ed7b0"
+        },
+        "ptx": {
+          "file": "bf16.b32.fused.ptx",
+          "bytes": 177457,
+          "sha256": "88e1ca0b463f526de41d412d620d7f3928435a0bb131925a9ba7bafb0fc1a256"
+        },
+        "cubin": {
+          "file": "bf16.b32.fused.cubin",
+          "bytes": 163400,
+          "sha256": "6b1c2088463b7213fd5208e0edd7299b3569835e9cf22b95448abc6c5326d437"
+        },
+        "sass": {
+          "file": "bf16.b32.fused.sass",
+          "bytes": 667831,
+          "sha256": "5d52477287504fa5ad68a340bde1dc065feabb1e02a55fd83da0ae0d63e7f2e8"
+        }
+      },
+      "sass_tool_exit_code": 0
+    }
+  ],
+  "started_utc": "2026-10-25T17:43:00.720429+00:00",
+  "deadline_seconds": 55,
+  "specialization_difference": {
+    "QK_DOT": [
+      "float8e4nv",
+      "bfloat16"
+    ]
+  },
+  "merge_semantics": "L8 integrated final-CTA ticket merge; no separate merge specialization",
+  "logical_fixture": {
+    "batches": [
+      16,
+      32
+    ],
+    "q_len": 8,
+    "heads": "tp8",
+    "layer": "full",
+    "spread": "agentic",
+    "ctx": 80000,
+    "page": 1,
+    "page_table_columns": 86008,
+    "qkv_width": 2304,
+    "splits": 11,
+    "chunk": 8192,
+    "qk_factor": 5.4730064863875,
+    "sm_scale": 0.125
+  },
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "triton_package_file": "/opt/sglang/lib/python3.12/site-packages/triton/__init__.py",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04",
+    "triton_git_revision": null,
+    "triton_compiler_source_sha256": "28ff26b7e752df455c410418d72fd0afc5b3bfa952ca4bca95b1cfd5a31a0e2f",
+    "triton_distribution": {
+      "version": "3.8.0",
+      "vcs_commit_id": null,
+      "metadata_sha256": "d97a89f102848d1b74c4ce40e76150c3bbbbced8912eb5e0f56c203914788bd0",
+      "record_sha256": "bd578657969c238daafa979493e06aad9167774f174320ee6efa93591cad58e0"
+    },
+    "torch_distribution": {
+      "version": "2.14.1",
+      "vcs_commit_id": null,
+      "metadata_sha256": "f1e9245037c999a2ff46ba37e329cff31dcb3678d400f656bdc61fa906e6e3e6",
+      "record_sha256": "b1df3c88290a1cfce91ee9ad60e93a6976d90e74347579cb18f5ad078034bc7a"
+    },
+    "sglang_distribution": {
+      "version": "0.0.0.dev0",
+      "vcs_commit_id": null,
+      "metadata_sha256": "e345ccfcb7bc6df9fb5a55037f03dc75fa243770524a9f7f6cfef6e1ba6e7128",
+      "record_sha256": "be67ebab80443db763b5f88a65f3b5ebda2cfe92c50be204a9f3ea4a7985bce6"
+    },
+    "sgl-kernel_distribution": null
+  },
+  "pointer_metadata": {
+    "qkv": {
+      "dtype": "torch.bfloat16",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "seq": {
+      "dtype": "torch.int32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "pt": {
+      "dtype": "torch.int32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "loc": {
+      "dtype": "torch.int64",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "kc": {
+      "dtype": "torch.float8_e4m3fn",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "vc": {
+      "dtype": "torch.float8_e4m3fn",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "ks": {
+      "dtype": "torch.float32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "vs": {
+      "dtype": "torch.float32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "po": {
+      "dtype": "torch.float32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "pm": {
+      "dtype": "torch.float32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "pl": {
+      "dtype": "torch.float32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "ticket": {
+      "dtype": "torch.int32",
+      "elements": 1,
+      "alignment_mod16": 0
+    },
+    "out": {
+      "dtype": "torch.bfloat16",
+      "elements": 1,
+      "alignment_mod16": 0
+    }
+  },
+  "runtime_scalars": [
+    1.0,
+    1e-05,
+    5.4730064863875,
+    0.125,
+    0,
+    1,
+    2304,
+    86008
+  ],
+  "installed_fa3": {
+    "actual_dispatch_verified": false,
+    "limitation": "No FA3 launch. Wrapper source and available files identify interfaces, not executed specialization.",
+    "flash_attn_with_kvcache": {
+      "module": "sgl_kernel.flash_attn",
+      "source_file": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+      "source_sha256": "6bbd808ae807ede41ae6d93d61f405d91301d6eed05bd13828379e1e734f87bd",
+      "snippet": "27:     rotary_interleaved=True,\n28:     scheduler_metadata=None,\n29:     num_splits=0,  # Can be tuned for speed\n30:     pack_gqa=None,  # Can be tuned for speed\n31:     only_qv=False,  # Only use QV (skip K matmul); requires qv. Used when qk rope dim is 0.\n82:     Arguments:\n83:         q: (batch_size, seqlen, nheads, headdim)\n84:         k_cache: (batch_size_cache, seqlen_cache, nheads_k, headdim) if there's no page_table,\n85:             or (num_blocks, page_block_size, nheads_k, headdim) if there's a page_table (i.e. paged KV cache)\n86:             page_block_size must be a multiple of 256.\n87:         v_cache: (batch_size_cache, seqlen_cache, nheads_k, headdim_v) if there's no page_table,\n88:             or (num_blocks, page_block_size, nheads_k, headdim_v) if there's a page_table (i.e. paged KV cache)\n89:         k [optional]: (batch_size, seqlen_new, nheads_k, headdim). If not None, we concatenate\n90:             k with k_cache, starting at the indices specified by cache_seqlens.\n91:         v [optional]: (batch_size, seqlen_new, nheads_k, headdim_v). Similar to k.\n92:         qv [optional]: (batch_size, seqlen, nheads, headdim_v)\n93:         rotary_cos [optional]: (seqlen_ro, rotary_dim / 2). If not None, we apply rotary embedding\n104:         softmax_scale: float. The scaling of QK^T before applying softmax.\n105:             Default to 1 / sqrt(headdim).\n106:         causal: bool. Whether to apply causal attention mask (e.g., for auto-regressive modeling).\n113:             (i.e. GPT-NeoX style).\n114:         num_splits: int. If > 1, split the key/value into this many chunks along the sequence.\n115:            If num_splits == 1, we don't split the key/value. If num_splits == 0, we use a heuristic\n116:            to automatically determine the number of splits.\n122:     Return:\n123:         out: (batch_size, seqlen, nheads, headdim).\n124:         softmax_lse [optional, if return_softmax_lse=True]: (batch_size, nheads, seqlen). The\n226:         rotary_interleaved,\n227:         scheduler_metadata,\n228:         num_splits,\n229:         pack_gqa,\n230:         sm_margin,"
+    },
+    "get_scheduler_metadata": {
+      "module": "sgl_kernel.flash_attn",
+      "source_file": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+      "source_sha256": "c500a4dccd3cf84468a5472c400a726d8af82c3690182c8c30a19d5782a283bd",
+      "snippet": "1: def get_scheduler_metadata(\n2:     batch_size: int,\n6:     num_heads_k: int,\n7:     headdim: int,\n8:     cache_seqlens: torch.Tensor,\n9:     qkv_dtype=torch.bfloat16,\n10:     headdim_v: Optional[int] = None,\n11:     cu_seqlens_q: Optional[torch.Tensor] = None,\n15:     leftpad_k: Optional[torch.Tensor] = None,\n16:     page_size: Optional[int] = None,\n17:     max_seqlen_k_new: int = 0,\n21:     has_softcap: bool = False,\n22:     num_splits: int = 0,\n23:     pack_gqa: Optional[bool] = None,\n24:     sm_margin: int = 0,\n28:     Call this once per batch (not per layer) and pass the result as\n29:     scheduler_metadata to flash_attn_with_kvcache / flash_attn_varlen_func.\n30:     This avoids the prepare_varlen_num_blocks kernel running on every layer.\n31:     \"\"\"\n32:     cache_seqlens = maybe_contiguous(cache_seqlens)\n33:     if headdim_v is None:\n34:         headdim_v = headdim\n35: \n36:     return torch.ops.sgl_kernel.get_scheduler_metadata(\n37:         batch_size,\n41:         num_heads_k,\n42:         headdim,\n43:         headdim_v,\n44:         qkv_dtype,\n50:         leftpad_k,\n51:         page_size,\n52:         max_seqlen_k_new,\n57:         has_softcap,\n58:         num_splits,\n59:         pack_gqa,\n60:         sm_margin,"
+    },
+    "package_file": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+    "package_file_sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+    "shared_objects_inspected": false
+  },
+  "worker_seconds": 21.180240737000002
+}

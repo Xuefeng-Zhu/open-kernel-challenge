@@ -1,6 +1,6 @@
 """Offline native-code audit; never imports CUDA, Triton, Modal, or candidate.
 
-Usage: python analyze_native.py [../control/native_artifacts] [--output FILE]
+Usage: python analyze_native.py [../native_artifacts] [--output FILE]
 No WGMMA is attributed to QK merely because WGMMA exists elsewhere. Dot roles
 are mapped from frozen source assignments through IR location aliases and PTX
 source locations. Missing/ambiguous mappings remain explicit review blockers.
@@ -93,7 +93,7 @@ def ir_dots(text, source_map):
         precision = re.search(r'(?:maxNumImpreciseAcc|max_num_imprecise_acc)\s*=\s*(\d+)',line)
         result.append(dict(artifact_line=number,op=match[1],role=role,
             mapped_source_dot_lines=mapped,locations=locations,
-            tensor_element_types=re.findall(r'tensor<[^>]*?\b(f8E4M3FN|f8E5M2|bf16|f16|f32)\b',line),
+            tensor_element_types=re.findall(r'tensor<[^>]*?(f8E4M3FN|f8E5M2|bf16|f16|f32)(?=[,>])',line),
             max_num_imprecise_acc_ir=(int(precision[1]) if precision else None),
             precision_attribute_state=('explicit' if precision else 'omitted_or_unavailable'),
             evidence=line.strip()))
@@ -110,7 +110,7 @@ def ptx_ops(text,source_map):
             indices=[(loc[1],loc[2],loc[3])]+re.findall(r'inlined_at\s+(\d+)\s+(\d+)\s+(\d+)',loc[4])
             active=[dict(source_file=files.get(int(i),f'<file-index:{i}>'),source_line=int(n),source_column=int(c))
                     for i,n,c in indices]
-        ins = re.match(r'\s*(?:@!?%\w+\s+)?(wgmma\.[\w.]+|mma\.sync[\w.]*|cp\.async[\w.]*)\s',line)
+        ins = re.match(r'\s*(?:@!?%\w+\s+)?(wgmma\.[\w.]+|mma\.sync[\w.]*|cp\.async[\w.]*)(?=\s|;)',line)
         if not ins:
             continue
         role,mapped=classify(active,source_map)
@@ -178,7 +178,12 @@ def analyze_record(row,folder,source_map):
     qk_ptx=[d for d in result.get('ptx',{}).get('instructions',[]) if d['role']=='QK'
             and (d['opcode'].startswith('mma.sync') or d['opcode'].startswith('wgmma.mma'))]
     ambiguous_ir=[d for d in result.get('ttgir',{}).get('dots',[]) if d['role']=='ambiguous']
+    expected_qk={line for line,info in source_map.items() if info['role']=='QK'}
+    ir_mapped={line for d in qk_ir for line in d['mapped_source_dot_lines']}
+    ptx_mapped={line for d in qk_ptx for line in d['mapped_source_dot_lines']}
+    mapping_incomplete=bool(ambiguous_ir or ir_mapped!=expected_qk or ptx_mapped!=expected_qk)
     qk_wgmma=bool(qk_ir and qk_ptx) and all('warp_group_dot' in d['op'] for d in qk_ir) and all(d['opcode'].startswith('wgmma.mma') for d in qk_ptx)
+    qk_wgmma_any=any('warp_group_dot' in d['op'] for d in qk_ir) and any(d['opcode'].startswith('wgmma.mma') for d in qk_ptx)
     qk_ttir=[d for d in result.get('ttir',{}).get('dots',[]) if d['role']=='QK']
     explicit=[d['max_num_imprecise_acc_ir'] for d in qk_ttir]
     source_zero=all(x['max_num_imprecise_acc_source_literal']==0 for x in source_map.values() if x['role']=='QK')
@@ -186,16 +191,24 @@ def analyze_record(row,folder,source_map):
     blockers=[]
     if result['missing']: blockers.append('Missing required artifacts')
     if result['hash_errors']: blockers.append('Artifact receipt hash mismatch/missing expected hash')
-    if ambiguous_ir or not qk_ir or not qk_ptx: blockers.append('QK/PV source mapping requires manual review')
+    if mapping_incomplete: blockers.append('QK/PV source mapping requires manual review')
     if not source_zero or contradiction: blockers.append('Precision contract not established or explicit IR contradiction')
     result['qk_wgmma_gate']=dict(qk_wgmma_mapped_in_ttgir_and_ptx=qk_wgmma,
+        any_qk_wgmma_mapped_in_ttgir_and_ptx=qk_wgmma_any,
+        expected_qk_source_lines=sorted(expected_qk),
+        per_source_dot_lowering={str(line):dict(source_role=info['role'],
+            ttgir_ops=sorted({d['op'] for d in result.get('ttgir',{}).get('dots',[]) if line in d['mapped_source_dot_lines']}),
+            ptx_matrix_ops=sorted({d['opcode'] for d in result.get('ptx',{}).get('instructions',[])
+                if line in d['mapped_source_dot_lines'] and (d['opcode'].startswith('mma.sync') or d['opcode'].startswith('wgmma.mma'))}))
+            for line,info in sorted(source_map.items())},
         source_qk_precision_literal_zero=source_zero,
         ttir_qk_precision_values=explicit,
         ttir_explicit_zero_for_all_qk=bool(explicit) and all(n==0 for n in explicit),
         precision_qualification=('Omitted TTIR attribute is not by itself zero proof; frozen source literals establish requested policy, and explicit nonzero IR would contradict it.'),
-        needs_manual_mapping=bool(ambiguous_ir or not qk_ir or not qk_ptx),blockers=blockers,
+        needs_manual_mapping=mapping_incomplete,blockers=blockers,
         disposition=('incomplete_or_requires_manual_review' if blockers else
             'QK_WGMMA_mechanism_observed_runtime_unqualified' if qk_wgmma else
+            'mixed_QK_lowering_requires_manual_mechanism_review' if qk_wgmma_any else
             'QK_WGMMA_not_observed_reject_this_operand_widening_hypothesis'))
     return result
 
@@ -215,19 +228,20 @@ def self_test():
     ptx='''.file 1 "/opt/probe/candidate.py"
 .loc 1 154 29
 wgmma.mma_async.sync.aligned.m64n64k16.f32.bf16.bf16 {%r0}, 0, 0, 1;
-wgmma.commit_group.sync.aligned ;
+wgmma.commit_group.sync.aligned;
 .loc 1 141 13
 mma.sync.aligned.m16n8k16.row.col.f32.f16.f16.f32 {%r0}, {%r1}, {%r2}, {%r0};'''
     p=ptx_ops(ptx,source)
     assert p['matrix_counts_by_role']['QK'] and not any(k.startswith('wgmma') for k in p['matrix_counts_by_role']['QK'])
     assert any(k.startswith('wgmma') for k in p['matrix_counts_by_role']['PV'])
+    assert p['wgmma_commit_count']==1
     assert len(sass_ops('/*0120*/ HGMMA.64x64x16.F32 R1, gdesc[UR2], R4; /* 0x00 */')['opcode_counts'])==1
     print('Semantic parser checks passed: recursive role mapping, precision omission, PV-only WGMMA does not establish QK, SASS counting.')
 
 
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('folder',nargs='?',type=Path,default=HERE.parent/'control/native_artifacts')
+    parser.add_argument('folder',nargs='?',type=Path,default=HERE.parent/'native_artifacts')
     parser.add_argument('--source',type=Path,default=HERE/'candidate.py')
     parser.add_argument('--output',type=Path,default=HERE/'native-analysis.json')
     parser.add_argument('--self-test',action='store_true')
@@ -239,6 +253,7 @@ def main():
     assert len(source_map)==4 and sum(x['role']=='QK' for x in source_map.values())==2
     summary_path=args.folder/'summary.json'
     summary=json.loads(summary_path.read_text())
+    assert summary.get('source_sha256')==SOURCE_HASH, 'Compiled source hash mismatch'
     records=summary.get('records',[])
     assert len({r['label'] for r in records})==len(records),'Duplicate specialization labels'
     report=dict(kind='Offline compile/disassembly evidence only; no runtime qualification',

@@ -1,0 +1,66 @@
+{
+  "observed_utc": "2026-10-25T17:51:51.641698+00:00",
+  "gpu_jobs": 2,
+  "official_checks": 0,
+  "formal_entries": 0,
+  "all_apps_stopped_zero_tasks": true,
+  "paid_usd": "0E-8",
+  "start_billing": {
+    "metered_cost": "1.26000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.26000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.26262102"
+    }
+  },
+  "final_cli_billing": {
+    "metered_cost": "1.44000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-1.44000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.44273359",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "final_ui": {
+    "observed_utc": "2026-10-25T17:53:27.788842+00:00",
+    "source": "Supported Chrome extension read-only reload of separate Modal Usage & billing Overview",
+    "workspace": "xuefeng-zhu",
+    "verified_credit_balance_usd": "28.63",
+    "verified_net_spend_cap_usd": "0",
+    "total_spend_usd": "0.00",
+    "summary_total_usage_usd": "1.37",
+    "ephemeral_usage_usd": "1.44",
+    "ephemeral_usage_raw": "1.442733645439148",
+    "changes_made": [],
+    "chatgpt_pro_tab_accessed": false,
+    "qualification": "Header credits/total usage lag CLI and ephemeral breakdown; record discrepancy, use highest observed gross usage for conservative accounting. No exact per-app invoice claimed."
+  },
+  "rounded_metered_delta_usd": "0.18000000",
+  "detailed_ephemeral_delta_usd": "0.18011257",
+  "highest_observed_gross_delta_usd": "0.180112625439148",
+  "conservative_test_allowance_usd": "0.2087252954391480000000000000",
+  "prior_historical_conservative_cumulative_usd": "1.919496218",
+  "new_conservative_cumulative_usd": "2.128221513439148000000000000",
+  "artificial_stage_ceiling_removed": true,
+  "active_reservation": null,
+  "paid_cap_usd": "0",
+  "billing_visibility_note": "The final UI header and CLI/ephemeral breakdown are not yet synchronized. Actual paid cost is consistently zero. Use max observed gross/time allowance; do not infer refunds or exact per-app charges."
+}

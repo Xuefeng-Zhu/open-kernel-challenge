@@ -1,0 +1,70 @@
+{
+  "kind": "Local saved-evidence audit; no new runtime or network access",
+  "source_sha256": {
+    "reviews/attention-v2/official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "reviews/attention-v2/official/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+    "reviews/attention-v2/mixed_fa3_fp8_qk.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "reviews/attention-v2/A2-13-official-result.json": "4e83463a594e6eb523b8654743dc1f28794f4f409c0f707002dbe3d94b01c084",
+    "reviews/attention-v2/a215/native_artifacts/summary.json": "0c523d393189997884ab0f4c99a8b137279f92d66af357d7fb9074e46d629b69"
+  },
+  "historical_modal_environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04",
+    "sglang": "0.0.0.dev0",
+    "sgl-kernel": null
+  },
+  "official_fa3_profiles": [
+    {
+      "case": {
+        "batch": 16,
+        "ctx": 80000,
+        "dist": "coherent",
+        "heads": "tp8",
+        "layer": "full",
+        "load": "verify 16",
+        "page": 1,
+        "q_len": 8,
+        "seed": 1078069075699666467,
+        "spread": "agentic",
+        "weight": 16
+      },
+      "receipt_record_index": 37,
+      "report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...     189.8 \u00b5s  91.8%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       3.7 \u00b5s   1.8%      1\nvoid at::native::elementwise_kernel<128, 4, at::native::g...       3.2 \u00b5s   1.5%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, true>(int...       3.1 \u00b5s   1.5%      1\nvoid at::native::vectorized_elementwise_kernel<8, at::nat...       2.2 \u00b5s   1.1%      2\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.9 \u00b5s   0.9%      1\n_qk_rms_norm_fwd_kernel                                            1.7 \u00b5s   0.8%      1\nvoid sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...       1.2 \u00b5s   0.6%      1\ntotal                                                            206.9 \u00b5s"
+    },
+    {
+      "case": {
+        "batch": 32,
+        "ctx": 80000,
+        "dist": "coherent",
+        "heads": "tp8",
+        "layer": "full",
+        "load": "verify 32",
+        "page": 1,
+        "q_len": 8,
+        "seed": 1078552714963451538,
+        "spread": "agentic",
+        "weight": 16
+      },
+      "receipt_record_index": 39,
+      "report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...     373.9 \u00b5s  95.5%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       3.7 \u00b5s   0.9%      1\nvoid flash::prepare_varlen_num_blocks_kernel<2, true>(int...       3.6 \u00b5s   0.9%      1\nvoid at::native::elementwise_kernel<128, 4, at::native::g...       3.0 \u00b5s   0.8%      1\nvoid at::native::vectorized_elementwise_kernel<8, at::nat...       2.3 \u00b5s   0.6%      2\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...       2.0 \u00b5s   0.5%      1\n_qk_rms_norm_fwd_kernel                                            1.9 \u00b5s   0.5%      1\nvoid sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...       1.3 \u00b5s   0.3%      1\ntotal                                                            391.6 \u00b5s"
+    }
+  ],
+  "exact_installed_fa3_specialization_verified": false,
+  "reason": "No sgl_kernel package or FA3 source found in local Mac venv/local-notes; historical package lookup was null, and official profile truncates cutlass template arguments. prepare_varlen kernel names establish per-call length-derived preparation, not exact persistent scheduler type.",
+  "candidate_full_verify_dispatch": "_fa3_full_verify for L8 B16/B32 tp8 D64 full; uses scheduler_metadata=None from public generator",
+  "candidate_full_decode32_dispatch": "custom _triton_fused; existing input FA3 metadata is ignored by this branch",
+  "not_claimed": [
+    "FA3 persistent scheduler is novel",
+    "Pinned upstream source is exact installed binary",
+    "prepare_varlen time can be subtracted from whole-call latency",
+    "H20 D128/page64 results predict MuseD64/page1"
+  ]
+}

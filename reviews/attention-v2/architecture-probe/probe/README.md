@@ -1,7 +1,8 @@
 # M64 BF16 QK compile probe
 
-Status: locally prepared; **not compiled on H200 and not executed**. No CUDA
-correctness, replay, performance, or official-score claim follows from this folder.
+Status: **compiled on H200; native gate passed**. See `native-audit.md`. The
+separate `../paired/ANALYSIS.md` reports correctness success and a substantial
+whole-call loss against FA3. The original compile-only protocol follows below.
 
 `candidate.py` is a byte-identical copy of exact A2-13
 `../../mixed_fa3_fp8_qk.py`, SHA256

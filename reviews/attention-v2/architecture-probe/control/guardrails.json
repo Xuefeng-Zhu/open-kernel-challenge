@@ -1,0 +1,52 @@
+{
+  "observed_utc": "2026-10-25T17:37:20.775106+00:00",
+  "workspace": "xuefeng-zhu",
+  "credential_copied": false,
+  "config_regular_owned_mode600_ignored_untracked": true,
+  "gpu_launch_attempted": false,
+  "browser_used": false,
+  "launch_admitted": false,
+  "missing_live_guardrails": [
+    "remaining_free_credit_balance",
+    "net_spend_limit_usd"
+  ],
+  "blocker_kind": "supported_read_capability_unavailable_pending_human_evidence",
+  "billing": {
+    "metered_cost": "1.26000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "credits": "-1.26000000",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.26262102",
+      "volumes": "0E-8"
+    }
+  },
+  "apps": [
+    {
+      "app_id": "ap-DjbFQfnZXQjpr1Zgt3rtFK",
+      "description": "okc-a215-paired",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 09:17:04-07:00",
+      "stopped_at": "2026-10-25 09:17:37-07:00"
+    },
+    {
+      "app_id": "ap-TQMFJknnfH0UZbG8lOBcBe",
+      "description": "okc-a215-native-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 08:52:13-07:00",
+      "stopped_at": "2026-10-25 08:52:43-07:00"
+    }
+  ],
+  "paid_cost_zero": true,
+  "all_apps_stopped_tasks_zero": true,
+  "state": "blocked_pending_fresh_credit_cap_evidence"
+}
