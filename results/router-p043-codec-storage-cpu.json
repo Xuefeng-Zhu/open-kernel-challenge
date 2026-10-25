@@ -1,0 +1,115 @@
+{
+  "kind": "P043 lossless weight-codec CPU storage/bit-pattern evidence, not native validation",
+  "recorded_utc": "2026-10-25T19:08:05.070004+00:00",
+  "measurement_date_utc": "2026-10-25",
+  "measurement_timestamp_qualification": "Exact per-seed execution timestamps were not logged; recorded_utc is artifact creation, not measurement time.",
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "device": "cpu",
+    "platform": "Darwin",
+    "machine": "arm64",
+    "torch_threads_during_storage_run": 4,
+    "numpy_installed": false
+  },
+  "source_sha256": {
+    "projection_weight_codec.py": "341d3a6572767cfe3257e2b5c125a7f4277e87fceec23c5f9a5b386caeec05de",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "tests/test_projection_weight_codec.py": "5c3948f3b2ea20b75b2cf8e0e1caed3afd277342c75258fe5137607bd7425121"
+  },
+  "storage_run": {
+    "command_template": "$OKC_PYTHON -B - <<'PY'\nfrom pathlib import Path\nimport torch,json,gc,ast\nfrom harness import load_module\nfrom projection_weight_codec import encode_weights,decode_weights,storage_report\ntorch.set_num_threads(4)\nr=load_module(Path('official/reference.py'),'p042_weight_codec_reference')\nfor seed in (5151,5152,7171):\n weights=r.generate_weights(seed,device='cpu')\n weight=weights['pooler']\n del weights\n before=weight.view(torch.int16).clone()\n encoded=encode_weights(weight)\n restored=decode_weights(encoded)\n assert torch.equal(restored.view(torch.int16),before)\n assert torch.equal(weight.view(torch.int16),before)\n result=storage_report(encoded)\n print(json.dumps({'seed':seed,'roundtrip_bits_exact':True,'input_unchanged':True,**result}))\n del encoded,restored,before,weight\n gc.collect()\nfor path in ('projection_weight_codec.py','tests/test_projection_weight_codec.py'):\n ast.parse(Path(path).read_text())\nprint('Both AST syntax checks pass; no GPU execution.')\nPY",
+    "qualification": "Actual executed script, with only the interpreter absolute path replaced by OKC_PYTHON to exclude personal paths."
+  },
+  "test_command": "$OKC_PYTHON -B -m unittest discover -s tests -p test_projection_weight_codec.py -v",
+  "results": [
+    {
+      "seed": 5151,
+      "shape": [
+        4096,
+        8192
+      ],
+      "original_bytes": 67108864,
+      "blocks": 131072,
+      "escape_blocks": 1963,
+      "escape_fraction": 0.01497650146484375,
+      "stream_bytes": {
+        "sign_mantissa": 33554432,
+        "exponent_delta": 16777216,
+        "exponent_base": 131072,
+        "escape_index": 524288,
+        "escape_exponents": 502528
+      },
+      "tensor_bytes": 51489536,
+      "scalar_header_bytes": 32,
+      "encoded_bytes": 51489568,
+      "byte_reduction": 0.23274564743041992,
+      "exact_bit_roundtrip": true,
+      "original_weights_unchanged": true
+    },
+    {
+      "seed": 5152,
+      "shape": [
+        4096,
+        8192
+      ],
+      "original_bytes": 67108864,
+      "blocks": 131072,
+      "escape_blocks": 1885,
+      "escape_fraction": 0.01438140869140625,
+      "stream_bytes": {
+        "sign_mantissa": 33554432,
+        "exponent_delta": 16777216,
+        "exponent_base": 131072,
+        "escape_index": 524288,
+        "escape_exponents": 482560
+      },
+      "tensor_bytes": 51469568,
+      "scalar_header_bytes": 32,
+      "encoded_bytes": 51469600,
+      "byte_reduction": 0.23304319381713867,
+      "exact_bit_roundtrip": true,
+      "original_weights_unchanged": true
+    },
+    {
+      "seed": 7171,
+      "shape": [
+        4096,
+        8192
+      ],
+      "original_bytes": 67108864,
+      "blocks": 131072,
+      "escape_blocks": 1885,
+      "escape_fraction": 0.01438140869140625,
+      "stream_bytes": {
+        "sign_mantissa": 33554432,
+        "exponent_delta": 16777216,
+        "exponent_base": 131072,
+        "escape_index": 524288,
+        "escape_exponents": 482560
+      },
+      "tensor_bytes": 51469568,
+      "scalar_header_bytes": 32,
+      "encoded_bytes": 51469600,
+      "byte_reduction": 0.23304319381713867,
+      "exact_bit_roundtrip": true,
+      "original_weights_unchanged": true
+    }
+  ],
+  "limits": [
+    "CPU bit representation only; no Triton/GPU decoder or speedup evidence",
+    "All fixed streams, escape rows, block metadata and specified32-byte scalar header counted; Python/allocator overhead excluded",
+    "Encoded arrays add about49.1MiB residency. Existing original64MiB and transposed64MiB P039 pooler weights remain needed for fallback; total pooler residency about177.1MiB, not a net memory reduction.",
+    "GPU-safe dummy escape row when E=0 is not needed in these three measured seeds; if added in future preparation count256 additional bytes",
+    "No activation/output caching or input mutation"
+  ],
+  "gpu_executed": false,
+  "local_tests": {
+    "passed": 9,
+    "failed": 0,
+    "runner": "unittest",
+    "reported_seconds": 0.077,
+    "scope": "CPU representation and independent flattened tile-address model; no GPU"
+  }
+}

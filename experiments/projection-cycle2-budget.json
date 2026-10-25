@@ -58,6 +58,13 @@
       "local_record": "experiments/042-p039-unchanged-official-recheck.md",
       "control_job_id": "d5636ac8d1404abd",
       "hypothesis": "No optimization change: user requested direct official baseline verification of exact P039. Same-source dedup may return the historical result; no nonce or modified source to force a run."
+    },
+    "P2-07-pooler-lossless-codec": {
+      "candidate": "candidates/projection_pooler_lossless_codec.py",
+      "cpu_report": "results/router-p043-lossless-codec-cpu.json",
+      "local_record": "experiments/043-pooler-lossless-codec.md",
+      "control_job_id": "d5636ac8d1404abd",
+      "hypothesis": "Only pooler2<=m<=32 uses exact BF16 static-weight codec decoded inside fixed S8/BM16/BN64/BK64 FP32-accumulating GEMM; require>=22%storedbyte reduction, >=10%normalized latency cut on each target and>=1.5%target-only modeled aggregate gain; preserve all otherP039paths. Raw matched control unmeasured; no codec causality claim."
     }
   },
   "requests": [
@@ -489,7 +496,7 @@
     "previous_best_job": "48b1357016134e52",
     "previous_best_preserved": true
   },
-  "current_phase": "P041 local diagnostics prepared; user redirected to one direct official unchanged-P039 check. P042 terminal duplicate; no new GPU evidence.",
+  "current_phase": "P043 lossless static pooler codec: local preflight passed; independent review complete; one official nonranking candidate check planned.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
