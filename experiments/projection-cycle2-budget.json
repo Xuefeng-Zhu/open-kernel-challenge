@@ -37,6 +37,13 @@
       "control_job_id": "48b1357016134e52",
       "cpu_report": "results/router-p038-pooler-m256-tma-cpu.json",
       "local_record": "experiments/038-pooler-m256-pipeline-local.md"
+    },
+    "P2-04-router-m1-fp32-gemv": {
+      "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+      "cpu_report": "results/router-p039-m1-fp32-gemv-cpu.json",
+      "local_record": "experiments/039-router-m1-fp32-gemv-local.md",
+      "control_job_id": "48b1357016134e52",
+      "hypothesis": "Only router m1 reuses unchanged single-call FP32 SIMT GEMV on original weights, removing padded16 hi/lo split32 + reducer; keep all other paths; aggregate value may be noise"
     }
   },
   "requests": [
@@ -204,7 +211,7 @@
     }
   ],
   "publication": "New work remains local; no push authorized",
-  "admission_paused": true,
+  "admission_paused": false,
   "admission_exception_history": [
     {
       "experiment": "P2-02-full-composition",
@@ -264,5 +271,14 @@
     "decision": "reject regression; no control/sweep follow-up",
     "remaining_authorized": 7
   },
-  "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00"
+  "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
+  "phase_history": [
+    {
+      "utc": "2026-10-25T02:34:41.545145+00:00",
+      "prior_admission_paused": true,
+      "prior_exception": null,
+      "reason": "Later explicit user autonomous iteration within remaining7 supersedes earlier intermediate pause; no Modal/newcredentials/push/ranked/paid"
+    }
+  ],
+  "latest_authorization_note": "User requests autonomous evidence-led iteration; projection7 remaining, reserve final where meaningful; GPU serialized across problems; no new Modal/push/ranked/paid/credentials"
 }

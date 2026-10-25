@@ -118,3 +118,29 @@ and decides admissions. Seven remaining projection checks are not a launch by
 this local experiment. No operation was denied, pending or uncertain.
 
 Final candidate SHA256: 0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc
+
+
+## Coordinator admission decision
+
+Source commitcdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da,
+SHA0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc.
+Coordinator independently reran6focused CPU tests and static checks: pass.
+One native check is justified by removal of the separate reducer using an
+already-tested kernel body, not a tile sweep or an assumption that aggregate
+0.5-1.2% will be statistically resolved. Source traffic is not hardware evidence.
+Attention A2-01 is terminal before this admission; shared GPU slot must be free.
+
+A first LOCAL preparation command used a missing worktree-relative .venv path;
+it did not run. The unchanged old admission-pause guard then rejected the wrapper
+BEFORE any CLI/network/quota/POST call. No reservation, upload, job or cost.
+Known-not-executed; fix is primary-workspace absolute Python plus the already
+authorized autonomous scope, not a new grant or bypass of a policy denial.
+
+Prospective exact wrapper command (existing CLI/shared slot; no credentials):
+
+```sh
+OKC_CLI=<primary-workspace>/bin/okc OKC_GPU_SLOT=<primary-workspace>/local-notes/gpu-slot.local.json <primary-workspace>/.venv/bin/python cycle2_check.py send P2-04-router-m1-fp32-gemv candidates/projection_router_m1_fp32_gemv.py
+```
+
+Projection7remaining before this request. Failures count; do not repeat uncertain
+POST. No additional push authorization; new admission/result commits stay local.
