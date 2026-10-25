@@ -1,0 +1,79 @@
+{
+  "status": "locally prepared, not GPU compiled or executed",
+  "source": {
+    "original": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+    "payload": "candidate.py",
+    "sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "candidate_source_diff_bytes": 0
+  },
+  "variants": [
+    {
+      "label": "fp8",
+      "QK_DOT": "float8e4nv"
+    },
+    {
+      "label": "bf16",
+      "QK_DOT": "bfloat16"
+    }
+  ],
+  "unchanged": {
+    "DOT": "bfloat16",
+    "q_encoding": "BF16 -> E4M3 -> QK_DOT",
+    "max_num_imprecise_acc": 0,
+    "softmax_partials": "float32",
+    "runtime_dispatch": "unchanged (full verify remains FA3)"
+  },
+  "specialization": {
+    "L": 8,
+    "G": 8,
+    "HQ": 16,
+    "HKV": 2,
+    "D": 64,
+    "BLOCK_M": 64,
+    "BLOCK_N": 64,
+    "BLOCK_L": 16,
+    "SPLITS": 11,
+    "ROPE": false,
+    "WINDOWED": false,
+    "CHUNK_SIZE": 8192,
+    "SEPARATE_MERGE": false,
+    "num_warps": 4,
+    "num_stages": 3
+  },
+  "grids": [
+    [
+      16,
+      2,
+      11
+    ],
+    [
+      32,
+      2,
+      11
+    ]
+  ],
+  "jit_independence": "B16/B32 differ only by grid and may use identical cached binary; kernel hashes must be compared",
+  "scalar_arguments": [
+    1.0,
+    1e-05,
+    5.4730064863875,
+    0.125,
+    0,
+    1,
+    2304,
+    86008
+  ],
+  "payload_sha256": {
+    "candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "worker.py": "b980e6229db9043ea795aa1cd26c110cf9326c0ec757cb89294f6465889b0c4c"
+  },
+  "local_evidence_sha256": {
+    "test_probe.py": "e90a06d6f40e893b6ecbf1b3c7a9f60f4a247da1c15c6783b32ea4e015f38ae0",
+    "README.md": "c16a439dda4aec7f9734f9ee84c18010db5781d0c8b440302b861c556d4805e2",
+    "local-verification.json": "ab8d25c429cb7fc8c167bec2aca60903fad1c9c64bb80854f63b6699bc8ca447"
+  },
+  "candidate_kernel_launches": 0,
+  "gpu_compiled": false,
+  "correctness_tested": false,
+  "performance_tested": false
+}

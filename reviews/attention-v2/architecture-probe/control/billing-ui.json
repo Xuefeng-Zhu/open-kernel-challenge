@@ -1,0 +1,17 @@
+{
+  "observed_utc": "2026-10-25T17:41:26Z",
+  "workspace": "xuefeng-zhu",
+  "source": "Read-only supported Chrome extension browser tab, live Usage & billing Overview AX state",
+  "url": "https://modal.com/settings/xuefeng-zhu/usage",
+  "tab_id": "1626951120",
+  "verified_credit_balance_usd": "28.74",
+  "verified_net_spend_cap_usd": "0",
+  "total_spend_usd": "0.00",
+  "total_usage_usd": "1.26",
+  "usage_limit_usd": "30",
+  "included_monthly_compute_credits_usd": "30",
+  "changes_made": [],
+  "auth_renewed": false,
+  "chatgpt_pro_tab_accessed": false,
+  "scope": "Parent explicitly relaxed browser restriction only for separate read-only Modal billing tab. Extension route succeeded; native desktop lock was not bypassed or unlocked."
+}
