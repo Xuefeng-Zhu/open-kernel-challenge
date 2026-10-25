@@ -78,7 +78,7 @@ def main():
                 if goal and not regressions and not overlaps and G > oldG
                 else 'inspect target evidence and controls; total gain may be inconclusive'))
         with (HERE/f'{exp}-per-shape.csv').open('w', newline='') as f:
-            writer = csv.DictWriter(f, fieldnames=list(rows[0]))
+            writer = csv.DictWriter(f, fieldnames=list(rows[0]), lineterminator='\n')
             writer.writeheader()
             writer.writerows(rows)
         text = [f'# {exp} actual official result', '',

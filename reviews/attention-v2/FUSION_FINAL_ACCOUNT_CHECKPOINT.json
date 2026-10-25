@@ -1,0 +1,78 @@
+{
+  "observed_utc": "2026-10-25T04:47:02.954905+00:00",
+  "actual_platform_quota": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 10,
+        "left": 10
+      }
+    }
+  },
+  "attention_jobs": [
+    {
+      "job_id": "6e761bdd1d9747ad",
+      "status": "done",
+      "experiment": "A2-01"
+    },
+    {
+      "job_id": "3e85261cb8ed4899",
+      "status": "done",
+      "experiment": "A2-02"
+    },
+    {
+      "job_id": "bdd11e743365439a",
+      "status": "done",
+      "experiment": "A2-03"
+    },
+    {
+      "job_id": "66b44d7586184708",
+      "status": "done",
+      "experiment": "A2-04"
+    },
+    {
+      "job_id": "50465a4c440f4b75",
+      "status": "done",
+      "experiment": "A2-05"
+    },
+    {
+      "job_id": "05b52e7834064b14",
+      "status": "done",
+      "experiment": "A2-06"
+    },
+    {
+      "job_id": "ba9e02c1d6584cc4",
+      "status": "done",
+      "experiment": "A2-07"
+    },
+    {
+      "job_id": "cf979895a3f24685",
+      "status": "done",
+      "experiment": "A2-08"
+    }
+  ],
+  "active_account_jobs": [],
+  "attention_user_remaining": 2,
+  "projection_user_remaining": 5,
+  "uncertain": 0,
+  "own_admitted_jobs_terminal": true,
+  "new_modal_launches": 0,
+  "paid_spend_usd": 0
+}

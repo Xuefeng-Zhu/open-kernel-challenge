@@ -1,52 +1,49 @@
-Latest selected source: [mixed_fa3.py](mixed_fa3.py), official E5
-0.8919466×,12.07% above E2; [experiment card/results](E5_MIXED_FA3.md).
-One user attention check remains. Prior E2 source/final file stays preserved.
+# Attention experiments
 
-# Attention v2 experiments
+Selected complete file: [mixed_fa3_fused_full_small.py](mixed_fa3_fused_full_small.py).
+Official off-board job`cf979895a3f24685`, source`f01799c`, **1.1557671624x**,
+CI[1.1384306550,1.1731036699]. All16prerequisites+12timedshapes passed.
+See [complete fusion-series evidence](FUSION_SERIES_RESULTS.md) and
+[reasoned next-step review](BOUNDED_NEXT_STEPS.md).
 
-Completed cycle: E0–E4, four of six conservatively counted **off-board attention requests**
-(three actual GPU checks and one duplicate). [Final report](CYCLE_REPORT.md).
-Projection's remaining eight checks are separate. No ranked entry or repository
-push is authorized. See `attention-cycle-budget.json` for exact accepted jobs,
-source hashes and current states; never resubmit a pending or uncertain request.
+| Experiment | Isolated change | Official score |
+|---|---|---:|
+| A2-01 | Full verify B1 to official FA3 |1.00027996x|
+| A2-02 | Sliding verify B16/32 to FA3 |1.01242697x|
+| A2-03 | Full decode B16 to FA3 |1.05852452x|
+| A2-04 | Full decode B1 to FA3 |1.07706589x|
+| [A2-05](A2-05-RESULT.md) | Fuse sliding verify B1 prologue |1.11579874x|
+| [A2-06](A2-06-RESULT.md) | Same fusion, other sliding verify batches |1.13811173x|
+| [A2-07](A2-07-RESULT.md) | Full verify B1 prologue, no RoPE |1.15053324x|
+| [A2-08](A2-08-RESULT.md) | Same full fusion, single-token decode |1.15576716x|
 
-- E0 compile-fixed v2: official correctness passed, 0.7224690513× SGLang;
-  [official result](E0_OFFICIAL.md), [receipt](E0-official-result.json).
-- E1 historical separate merge: Modal correctness passed, overall regression;
-  [report](REPORT.md). Not used as E2's parent; no new check spent on it.
-- E2 fixed8192 history chunks for full B16/32 only: [scope](E2_FIXED_CHUNKS.md).
-  Official job 7edded086c8a47f2 passed: 0.7958818006× SGLang, about 10.2% over E0.
-- E3 loop-scoped pipeline: correct, 0.797873×, only +0.25% over E2 and inconclusive.
-- **Selected final:** [final_attention.py](final_attention.py), exact E2 source; final
-  request a5ee77cedca44ab9 deduplicated to E2, no new measurement.
-- [Coverage audit](COVERAGE_AUDIT.md) distinguishes the older tests from the new
-  [explicit same-address A→B→A test](A07_REPLAY.md). New length vectors, page64,
-  non-unit scales, cache writes and untouched rows were checked on H200.
+A2-05..08 target normalized cuts:28.18%,23.46%/19.49%,15.77%,12.54%.
+A2-06..08 aggregate increments have overlapping intervals; do not call them
+individually significant. All raw samples, calibrated times, paired ratios,
+12shape CSVs and six46*sliding+16*full loads remain in each result/assessment.
+Each run has11shapes with60timing sample entries and fullverify32 with56,
+not a claimed exact number of underlying graph replays. Profile sums are not walltime.
 
-Only sequential graph replay is validated. The original per-device shared ticket
-map still has a simultaneous-invocation limitation; no concurrency pass is claimed.
-CPU/AST checks are separate from actual GPU compilation and correctness.
+New cycle8/10used,2left including final reserve; prior six-cycle separate.
+All accepted jobs terminal, uncertain0. Latest platform quota is in
+[ledger](attention-cycle2-budget.json); daily resets do not grant new user budget.
+Projection's five remaining checks are separate. No ranked entries/paid resources/
+new credentials/Modal launches. Reviewed automatic PRIVATE pushes are authorized.
 
-```sh
-.venv/bin/python reviews/attention-v2/check_cycle.py poll E0
-.venv/bin/python reviews/attention-v2/check_cycle.py poll E2
-.venv/bin/python reviews/attention-v2/summarize_official.py
-.venv/bin/python reviews/attention-v2/test_fixed_chunks.py
-.venv/bin/python reviews/attention-v2/test_pipeline.py
-.venv/bin/python reviews/attention-v2/test_modal_worker.py
+```
+.venv/bin/python reviews/attention-v2/summarize_fusion_series.py
 ```
 
-Official summaries use six loads, each 46×sliding +16×full, then their geometric
-mean. Complete receipts retain all twelve raw/adjusted timing rows and samples.
-Modal public-image measurements are diagnostic, not official scores.
+Source-specific CPU commands live in each card/preflight report. They use CPU
+models/stubs and do not execute Triton. Native new-path coverage includes sliding
+scale1/64 and mixed batches plus fullL8 million-context/page64. L1 full new path
+has nativepage1/scale1 with real supplied scheduler. Native bespoke same-address
+ABA, untouched-row stress and concurrent calls are not separately verified for
+these fused sources; E2 fallback shared-ticket concurrency limitations remain.
 
-The cumulative Modal ceiling is $2 free credits, net paid $0, across both projects.
-The authoritative ledger is `modal-budget.json`; do not reset it from older branches
-or lower it when billing lags. All new bundles use exact committed allowlists and
-existing authorized authentication; secrets/config and repository data are excluded.
-
-Historical initial review, original paste, formatting normalization and failed
-check bf4b49bd8bb34dae are preserved in REVIEW.md, REMOTE_CHECK.md, original files,
-and Git history. Their old pending/one-check restrictions describe that earlier
-stage. The subsequent minimal compiler repair is commit 05922b7, unchanged in E0.
-Root projection source/results and its best branch remain preserved.
+Historical E0..E4 [report](CYCLE_REPORT.md), E5/E6 receipts, original draft and
+compilation failurebf4b49bd8bb34dae are preserved. `final_attention.py` is historical
+E2, not current selection. Old Modal replay coverage does not transfer to new
+sources. Modal cost guard remains$1.708917914/$2, prior apps stopped; old A09 report
+retrieval401 unresolved, no restart/renewal. Original local research commit IDs
+map to private sanitized-export commits via analysis/PUSH_EXPORT_MAP.json.

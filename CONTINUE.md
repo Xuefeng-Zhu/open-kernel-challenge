@@ -1,37 +1,45 @@
-# Resumed attention and projection research
+# Completed bounded fusion series — no active external job
 
-Same task resumed after the Astra request. Available tools do not expose the
-configured model; no model identity claim is made. Read RESUME_REVIEW.md and
-both problem budget ledgers before any external action.
+Read reviews/attention-v2/FUSION_SERIES_RESULTS.md/.json and
+reviews/attention-v2/BOUNDED_NEXT_STEPS.md before a new experiment.
 
-Attention A2-06 accepted job `05b52e7834064b14`, source `58cf5cf`, SHA256
-`c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18`.
-A2-06 is DONE and selected:1.1381117300x, target23.46/19.49%cuts.
-Aggregate2.00% vsA2-05 has overlappingCIs. No active GPU. Refresh only if needed:
+Attention selected complete source:
+reviews/attention-v2/mixed_fa3_fused_full_small.py
+source commit f01799cea791006f109f09bd064f953eff6b584b
+SHA25634b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9
+job cf979895a3f24685 DONE,16prerequisites+12timedshapes pass,
+score1.1557671624x, CI[1.1384306550,1.1731036699].
+A2-05/06/07/08 all terminal, each isolated change met its target goal; their
+small aggregate increments have qualifications in individual reports. Series
+starts from A2-04 1.0770658900x; earlier source preserved. Historical
+final_attention.py remains E2 and is not the currently selected candidate.
 
-```
-.venv/bin/python reviews/attention-v2/check_cycle.py poll A2-06 --cycle2
-```
+Attention new cycle8/10 used,2left including final reserve. Old six-cycle separate.
+Projection second cycle5/10 used,5left; selectedP0391.173238999x; P040's higher
+point estimate was not promoted after missing its declared target. Projection
+worktree /tmp/okc-projection-pipeline-preflight remains clean ataf7f149.
 
-Attention6/10 used,4 left including one final reserve. Selected A2-05
-job50465a4c440f4b75, source535d602 is native-correct1.1157987383x, CI
-[1.0990617572,1.1386331074]. Target28.18% normalized latency cut; no>5%control
-regressions; overall3.60% over A2-04 with nonoverlap intervals. A2-06 only expands
-same sliding-L8 prologue to other batch sizes; all helpers unchanged. Six new
-CPU/static methods pass. Some official prerequisites now enter fused path; actual
-GPU16+12 passed including three new-path prerequisites. Possible full-B1L8 no-RoPE adapter is local preparation only,
-not a planned/admitted request yet. All model configuration claims remain unverified.
+Latest actual quota snapshot04:48:34UTC2026-10-25: attention10/20checksleft,
+projection17/20left,0scored each; no active account jobs or uncertain requests.
+Platform resets do not reset user budgets. Do not duplicate any accepted source.
 
-Projection remains clean at projection-pipeline-preflight/af7f149. P039 selected
-1.173238999x; P040 correct1.175871327x but failed declared target and was not
-promoted. Five checks remain; read experiments/PROJECTION_BOUNDED_REVIEW.md.
+This series is complete. Independent reviews found no high-value supported next
+core change: wider full-prologue savings model<~1.2%total, and exact core resource/
+traffic evidence is absent. Retain allowances for a defensible candidate/repair.
+This is not evidence that further speedups are impossible.
 
-One GPU measurement at a time; coordinator slot is ignored local-notes file.
-No Modal launches, paid resources, new credentials, ranked entries or force push.
-Standing reviewed automatic private pushes are authorized. NEVER push original
-attention-fa3-local history: use analysis/safe_attention_export.py then
+All GPU measurement is serialized. No new Modal, paid resources, credentials,
+ranked entries, public visibility or force pushes. Previous Modal apps stopped;
+no launches in this series; conservative historical cost$1.708917914/$2 unchanged.
+A09 BlobCreate401 report retrieval remains historical unresolved, not retried.
+New fusion native concurrency/explicitABA/untouched-row coverage limits and E2
+fallback shared-ticket limitations are preserved in the report.
+
+Standing reviewed automatic private pushes are authorized. Never push original
+attention-fa3-local history: use analysis/safe_attention_export.py, then
 analysis/audit_push.py attention-fa3-sanitized origin/attention-fa3-sanitized,
-then analysis/push_private_verified.py attention-fa3-sanitized. Manifest preserves
-source identity and experiment commits. Modal conservative cost remains
-$1.708917914/$2; all apps previously stopped, historical A09 report retrieval401
-unresolved and no retry/credential renewal authorized.
+then analysis/push_private_verified.py attention-fa3-sanitized. Manifest maps
+original receipt source IDs to exported commits. No credentials/local-notes push.
+
+Same task preserved after the Astra request. Available tools do not expose the
+configured model; no claim that model identity caused performance improvements.

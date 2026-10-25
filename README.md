@@ -1,6 +1,33 @@
-Latest two-track results: [DUAL_TRACK_RESULTS.md](DUAL_TRACK_RESULTS.md).
-Projection best remains1.14865×; attention selected mixed dispatch0.89195×.
-New experiments are local-only in separate branches; root starter is preserved.
+# Open Kernel Challenge experiments
+
+Current status lives in [CONTINUE.md](CONTINUE.md) and the two per-problem ledgers.
+The records below the historical heading describe earlier stages and do not set
+current permissions, budgets or selected candidates.
+
+| Track | Selected checked code | Official score | Current experiment |
+|---|---|---:|---|
+| Attention | [A2-08 combined fused paths](reviews/attention-v2/mixed_fa3_fused_full_small.py) | 1.15576716x | Four new experiments complete;2 checks remain |
+| Projection | P039, on [projection-pipeline-preflight branch](https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight) | 1.17323900x | Evidence-led pause;5 checks remain |
+
+Attention receipts,12shape rows and six weighted loads are in
+[its experiment README](reviews/attention-v2/README.md). Only official H200 checks
+establish native correctness/performance; CPU models remain explicitly separate.
+The [fusion series report](reviews/attention-v2/FUSION_SERIES_RESULTS.md) records
+A2-05 through A2-08: all four pass16prerequisites+12timedshapes, with source hashes,
+raw timings and CPU limitations. Selected score CI is[1.13843065,1.17310367]. The
+latest0.45% aggregate increment overlaps its parent CI; its12.54%target latency
+cut supports retention. Series point change versus its starting candidate is
++7.307%, not a claim that every small step has a resolved aggregate improvement.
+Projection P040's slightly higher point score was not promoted because it missed
+its predeclared target. No active jobs; separate user budgets remain authoritative.
+
+Standing reviewed automatic pushes go only to this private repository. Original
+attention research history stays local; `attention-fa3-sanitized` preserves source
+bytes and maps source commits via analysis/PUSH_EXPORT_MAP.json. Credentials and
+local-notes are excluded. No formal/ranked entries, paid compute, new credentials
+or Modal launches. Existing authorized budgets never reset with platform quota.
+
+## Historical projection baseline and first cycle
 
 # Open Kernel Challenge — dense projections
 

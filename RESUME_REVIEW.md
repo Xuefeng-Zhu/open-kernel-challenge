@@ -1,3 +1,5 @@
+Final status: see reviews/attention-v2/FUSION_SERIES_RESULTS.md. The audit below records the initial resume state.
+
 # Resume audit — 2026-10-24 21:09 PDT (2026-10-25 04:09 UTC)
 
 The same existing task resumed. The model configuration is unavailable through

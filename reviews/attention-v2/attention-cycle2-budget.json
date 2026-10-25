@@ -381,9 +381,62 @@
           "left": 11
         }
       }
+    },
+    {
+      "experiment": "A2-08",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "cf979895a3f24685",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+      "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+      "source_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+      "hypothesis": "Only full B1L1 joins identical checked ROPE=False prologue/FA3 adapter, preserving supplied scheduler; >=10%normalized targetlatencycut; other11timedpathsunchanged",
+      "final": false,
+      "created_utc": "2026-10-25T04:39:30.823748+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:39:31.278443+00:00",
+      "last_checked_utc": "2026-10-25T04:46:05.445466+00:00",
+      "passed": true,
+      "speedup": 1.1557671624359636,
+      "speedup_ci": [
+        1.138430654999424,
+        1.1731036698725028
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      }
     }
   ],
-  "remaining": 3,
+  "remaining": 2,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -507,20 +560,20 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-08 exact single-token dispatch source ready, no new accepted request yet",
+  "current_phase": "Bounded fusion series complete; no active requests; retain2checks includingfinalreserve; documented evidence-led pause",
   "projection_checks_remaining": 5,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
-    "source": "mixed_fa3_fused_full_verify1.py",
-    "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
-    "sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
-    "official_job": "ba9e02c1d6584cc4",
-    "score": 1.150533242033493,
+    "source": "mixed_fa3_fused_full_small.py",
+    "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "official_job": "cf979895a3f24685",
+    "score": 1.1557671624359633,
     "ci": [
-      1.1332752434029907,
-      1.1738497008309647
+      1.138430654999424,
+      1.1731036698725028
     ],
-    "reason": "Target15.77%normalized cut exceeds10%goal; no>5%controls; million-context page64 passes; total1.09%gain has overlappingCI",
+    "reason": "Target12.54%normalized cut exceeds10%goal, no>5%controls; total0.455%gain overlapsCI; complete combined source passes16+12",
     "aggregate_vs_parent_inconclusive": true
   },
   "last_platform_quota": {
@@ -531,11 +584,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 9,
-      "left": 11
+      "used": 10,
+      "left": 10
     }
   },
-  "quota_observed_utc": "2026-10-25T04:37:33.235385+00:00",
+  "quota_observed_utc": "2026-10-25T04:48:34.196775+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -612,6 +665,19 @@
       1.1598261225179742
     ],
     "reason": "Target normalized cuts23.46/19.49% exceed10%goal, no>5%controls; aggregate2.0%CIoverlap, retain qualified target gains",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "selection_before_A2_08": {
+    "source": "mixed_fa3_fused_full_verify1.py",
+    "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+    "sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+    "official_job": "ba9e02c1d6584cc4",
+    "score": 1.150533242033493,
+    "ci": [
+      1.1332752434029907,
+      1.1738497008309647
+    ],
+    "reason": "Target15.77%normalized cut exceeds10%goal; no>5%controls; million-context page64 passes; total1.09%gain has overlappingCI",
     "aggregate_vs_parent_inconclusive": true
   }
 }
