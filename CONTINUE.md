@@ -1,29 +1,29 @@
-# Autonomous cycle — A2-03 adopted, no active GPU at this checkpoint
+# Autonomous cycle — A2-04 adopted, no active GPU
 
-Attention selected mixed_fa3_decode16.py sourcec94ec71/SHA8e1db32f,
-jobbdd11e743365439a DONE16+12,1.0585245184×,
-CI[1.0426466506,1.0744023861]. Full decode16 normalizedlatencycut22.09%;
-whole-vs-parent4.55%andSGwinresolved byCI; notallgainattributedtosource.
-OldA2-02source790d425/1.012427 preserved. Newattention3/10used7left;
-lastplatform15/20left,0scored. Nextlocalhypothesis full decodeB1 existingFA3.
-No newcandidate/request yet. SharedGPUslotterminal.
+Attention selected mixed_fa3_decode_small.py source28991e7/SHA5ef5c9e9,
+job66b44d7586184708 DONE16+12,1.0770658900×,
+CI[1.0609099017,1.0932218784]. Full decode1normalizedcut22.34%supported;
+overall1.75%vsA2-03inconclusivewithCIoverlap; bothaboveSG. Parentc94preserved.
+Newattention4/10used6left, lastdaily14/20left0scored. Oldsixcycleexhausted.
+No activeGPU. NextlocalB1/L8/slidingprologuefusion component+5CPU/staticchecks
+ready; NOT GPUcompiled/executed. Do notclaimGPUmetrics fromstandins. Source
+notyetembedded/committed; cacheclamp448followsreference, row0islive, exactBF16
+beforeRoPE andbeforeFP8boundaries reviewed. Preserveallotherpaths.
 
-Projection P040d57d89967d1a408f DONE9+30,correct1.1758713×butnotpromoted:
-O m1 normalizedgain6.51%missed15%goal, total0.224%inconclusive. PreserveP039
-recommended1.173238999× andold1.14865; P039routerm1gain30.1%supported but
-whole-vs-oldoverlapsCI. Projection5checksleft, boundedpausewithreasonedreview
+ProjectionP040d57d89967d1a408fDONEcorrectbutfailed15%optimizationgoal(6.51%);
+retainP039sourcecdf5bc2,1.173238999× (global-vs-oldCIoverlap). P0401.1758713×
+pointnotpromoted. Projection5checksleft, boundedpause reasonedreview in
 experiments/PROJECTION_BOUNDED_REVIEW.md. No grouping/tile/nonce sweeps.
-P040resultaf7f149 pushed/remoteverifiedPRIVATE on projection-pipeline-preflight.
+Projectionremoteaf7f149872dda3afde8b8c6be459a261a6575f7b includesfullresult.
 
-Standing reviewed privateAUTO-PUSH allowed; noforce/public/PR/ranked/paid/
-newcredentials/Modal. Attention uses safe_attention_export.py, preservingoriginal
-researchref andcandidatebytes/per-experimenthistory; exportmanifestmapsoriginal
-receipt-sourceIDs. Auditoutgoinghistory beforepush, verifyPRIVATE/remoteSHA.
-Lastremoteattentionfe34f7a containsA2-02result; A2-03source/resultnextautopush.
-Projectionremoteaf7f149872dda3afde8b8c6be459a261a6575f7b. No rawauth/logs.
-PriorModalstopped receipts/costguard$1.708917914/$2 unchanged; no newapps.
-AllCPUstandinsseparatefromnativeproof; explicitnativeABA/nonunit/untouchedrows
-andE2concurrencylimitsremainclearlydocumented inexperimentcards.
+StandingreviewedprivateAUTO-PUSHallowed; noforce/public/PR/ranked/paid/
+newcredentials/Modal. Attention safe_attention_export.py preservesresearchref,
+candidatebytes/perexperimentcommits; exportmanifestmapsoriginalreceiptIDs.
+Auditoutgoinghistory then /tmp/okc_push_verified.py verifiesPRIVATE+FFancestry,
+pushnormal+remoteSHA; temphelperislocalonly, noauthsetup. Attentionremote86cbb9f
+includesA2-03result; A2-04source/resultnextautopush. GPUslotprimaryignoredfile
+ownsall scheduling serialized. No uncertainrequests. PriorModalstopped/costguard
+$1.708917914/$2unchanged. Allnativecoverage/concurrencylimitsinexperimentcards.
 
 The completed earlier-cycle checkpoint below is historical, not current status.
 

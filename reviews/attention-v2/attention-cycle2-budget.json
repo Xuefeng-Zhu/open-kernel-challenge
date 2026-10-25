@@ -169,9 +169,62 @@
           "left": 15
         }
       }
+    },
+    {
+      "experiment": "A2-04",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "66b44d7586184708",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_small.py",
+      "source_commit": "28991e79b6062602705bc25463139eec8c154903",
+      "source_sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+      "hypothesis": "Only full decodeB1 L1 joins unchanged official FA3 fulladapter and supplied scheduler_metadata; other11paths unchanged, >=20%normalizedlatencycut; totalmaybeinconclusive",
+      "final": false,
+      "created_utc": "2026-10-25T03:28:43.570817+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_small.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T03:28:43.890482+00:00",
+      "last_checked_utc": "2026-10-25T03:38:15.976853+00:00",
+      "passed": true,
+      "speedup": 1.0770658900270202,
+      "speedup_ci": [
+        1.060909901676615,
+        1.0932218783774255
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      }
     }
   ],
-  "remaining": 7,
+  "remaining": 6,
   "plans": {
     "A2-01": {
       "candidate": "mixed_fa3_verify1.py",
@@ -235,21 +288,21 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-04 localready; alljobs terminal; sourcecommit before nextserialGPU",
+  "current_phase": "A2-04 terminal/adoptshape-localwin; noactiveGPU; prepareone B1slidingverify fusedprologue localonly",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {
-    "source": "mixed_fa3_decode16.py",
-    "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
-    "sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
-    "official_job": "bdd11e743365439a",
-    "score": 1.0585245183573702,
+    "source": "mixed_fa3_decode_small.py",
+    "source_commit": "28991e79b6062602705bc25463139eec8c154903",
+    "sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+    "official_job": "66b44d7586184708",
+    "score": 1.07706589002702,
     "ci": [
-      1.0426466505820096,
-      1.0744023861327305
+      1.060909901676615,
+      1.0932218783774255
     ],
-    "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
-    "aggregate_vs_parent_inconclusive": false
+    "reason": "Target22.34%latencycut supported, other11controls no>5%regression; total1.75%vsparent hasoverlappingCI, stillaboveSG",
+    "aggregate_vs_parent_inconclusive": true
   },
   "last_platform_quota": {
     "scored": {
@@ -259,11 +312,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 5,
-      "left": 15
+      "used": 6,
+      "left": 14
     }
   },
-  "quota_observed_utc": "2026-10-25T03:19:09.238685+00:00",
+  "quota_observed_utc": "2026-10-25T03:38:15.976853+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -288,5 +341,18 @@
     ],
     "reason": "Two target latency cuts21.23/23.42% supported; ten controls no>5%regression; aggregate1.21%vsparent overlapsCI, provisional total improvement",
     "aggregate_vs_parent_inconclusive": true
+  },
+  "selection_before_A2_04": {
+    "source": "mixed_fa3_decode16.py",
+    "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+    "sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+    "official_job": "bdd11e743365439a",
+    "score": 1.0585245183573702,
+    "ci": [
+      1.0426466505820096,
+      1.0744023861327305
+    ],
+    "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
+    "aggregate_vs_parent_inconclusive": false
   }
 }
