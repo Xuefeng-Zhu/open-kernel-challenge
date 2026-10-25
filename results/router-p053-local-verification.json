@@ -1,0 +1,23 @@
+{
+  "verified_utc": "2026-10-25T23:51:32.457123+00:00",
+  "command": "python -B -m unittest tests.test_projection_p053_phase_screen tests.test_projection_p053_modal tests.test_projection_p053_analysis tests.test_flashinfer_capability_inventory",
+  "passed": 65,
+  "total": 65,
+  "seconds": 0.259,
+  "scope": "Local CPU/static/mock tests only; P053 GPU and P054 installed inventory unexecuted",
+  "checks": {
+    "p053_worker": 24,
+    "p053_controller": 17,
+    "p053_offline_analysis": 4,
+    "p054_inventory": 20
+  },
+  "guard_self_test_passed": 4,
+  "sources_sha256": {
+    "projection_p053_phase_screen.py": "e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db",
+    "projection_p053_modal.py": "047a790324ae4961b897f16aaff55b2e90aed3c524cb24eccc62a48a86c49a8f",
+    "projection_p053_analysis.py": "c44a93f2ee220ff835616bae9d1b7a054cf1216b0c6209fa58896a3ced7da5b5",
+    "flashinfer_capability_inventory.py": "7de966c2828ff275728bc412458c2e750bcdce61ea2ab55d746415fa2d89e6af"
+  },
+  "gpu_runs_added": 0,
+  "official_checks_added": 0
+}

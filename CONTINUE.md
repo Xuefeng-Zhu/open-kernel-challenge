@@ -1,3 +1,29 @@
+# P053 local diagnostic ready — no new GPU run
+
+P046 remains selected at official 1.1841399409×; P039 is preserved. P052's
+negative native screen remains rejected. No P053 app or official job exists.
+Attention owns the next GPU slot; wait for explicit coordinator release, then
+refresh existing authentication, credits, paid cap and stopped-app checks.
+
+P053 freezes P051/P052 math and compares whole versus partial-only graphs for
+M8/M7, with actual P046 as the decision control. It is a causal diagnostic,
+not a new submission: 580 planned oracle checks and 18 separate activity traces.
+Read experiments/053-phase-cost-attribution-local.md for exact thresholds,
+source hashes, timing protocol and limits. No counter or pure-compute claim.
+
+65 local CPU/static/mock tests and four payload guards passed. Independent
+worker/controller review found no concrete blocker. One prepared allowlist is
+16 files / 366,448 bytes; reserve floor $0.45788342 free credits, paid limit $0.
+This reserve has not been spent. No automatic retry or concurrent GPU launch.
+
+P054 pinned FlashInfer 0.7.0.post1 source confirms a private tactic interface,
+but JIT-free compatible artifact, reduction precision and exact judge eligibility
+remain unverified. Updated metadata-only probe has 20 passing fixture tests;
+no installed probe, package import, factory, binary load or compilation occurred.
+Read experiments/054-flashinfer-pinned-capability-local.md. P050 stays parked.
+
+## Previous checkpoint (historical)
+
 # P052 complete — correctness passed, performance rejected
 
 Source commit 39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0. Modal app

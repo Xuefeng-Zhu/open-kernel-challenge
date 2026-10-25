@@ -468,14 +468,29 @@
     "gpu_state_updated_utc": "2026-10-24T16:37:47.378717+00:00"
   },
   "current_cycle2_index": "experiments/projection-cycle2-index.json",
-  "current_status": "P052 terminal;390GPUoraclechecks pass but performancegatefailed; P046 selected1.1841399409. Allapps stopped/tasks0. No officialcheck.",
+  "current_status": "P053 local diagnostic reviewed and ready for coordinator slot; P054 source capability narrowed; no new external run; P046 selected",
   "current_local_verification": {
-    "verified_utc": "2026-10-25T23:35:45.509878+00:00",
-    "command": "python -B -m unittest tests.test_projection_p052_orientation_screen tests.test_projection_p052_modal tests.test_projection_p051_orientation tests.test_projection_p051_modal",
-    "passed": 59,
-    "total": 59,
-    "seconds": 0.317,
-    "scope": "CPU/static/mock tests; GPU evidence in current_diagnostic"
+    "verified_utc": "2026-10-25T23:51:32.457123+00:00",
+    "command": "python -B -m unittest tests.test_projection_p053_phase_screen tests.test_projection_p053_modal tests.test_projection_p053_analysis tests.test_flashinfer_capability_inventory",
+    "passed": 65,
+    "total": 65,
+    "seconds": 0.259,
+    "scope": "Local CPU/static/mock tests only; P053 GPU and P054 installed inventory unexecuted",
+    "checks": {
+      "p053_worker": 24,
+      "p053_controller": 17,
+      "p053_offline_analysis": 4,
+      "p054_inventory": 20
+    },
+    "guard_self_test_passed": 4,
+    "sources_sha256": {
+      "projection_p053_phase_screen.py": "e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db",
+      "projection_p053_modal.py": "047a790324ae4961b897f16aaff55b2e90aed3c524cb24eccc62a48a86c49a8f",
+      "projection_p053_analysis.py": "c44a93f2ee220ff835616bae9d1b7a054cf1216b0c6209fa58896a3ced7da5b5",
+      "flashinfer_capability_inventory.py": "7de966c2828ff275728bc412458c2e750bcdce61ea2ab55d746415fa2d89e6af"
+    },
+    "gpu_runs_added": 0,
+    "official_checks_added": 0
   },
   "current_diagnostic": {
     "id": "P052",
@@ -500,7 +515,7 @@
     "report": "experiments/050-qkv-only-expansion.md",
     "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd"
   },
-  "updated_utc": "2026-10-25T23:35:45.509878+00:00",
+  "updated_utc": "2026-10-25T23:51:32.457123+00:00",
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
@@ -545,7 +560,7 @@
   ],
   "previous_rejected_candidate": {
     "id": "P049",
-    "status": "local-source-reviewed-native-unverified",
+    "status": "terminal-correctness-pass-performance-rejected",
     "candidate": "candidates/projection_qkv_unpooler_zero_bias.py",
     "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
     "parent": "P046",
@@ -557,7 +572,7 @@
     "target_scored_count": 10,
     "cpu_report": "results/router-p049-cpu.json",
     "report": "experiments/049-zero-bias-lt-route.md",
-    "gpu_executed": false,
+    "gpu_executed": true,
     "official_job": null,
     "updated_utc": "2026-10-25T22:29:04.062114+00:00",
     "source_commit": "9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53",
@@ -568,5 +583,33 @@
     "result": "results/router-p049-assessment.json",
     "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
     "decision": "reject; no official check"
+  },
+  "prepared_diagnostic": {
+    "id": "P053",
+    "status": "local-prepared-native-unverified",
+    "worker": "projection_p053_phase_screen.py",
+    "worker_sha256": "e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db",
+    "controller": "projection_p053_modal.py",
+    "controller_sha256": "047a790324ae4961b897f16aaff55b2e90aed3c524cb24eccc62a48a86c49a8f",
+    "report": "experiments/053-phase-cost-attribution-local.md",
+    "analysis": "results/router-p053-local-analysis.json",
+    "native_app": null,
+    "official_job": null,
+    "planned_oracle_checks": 580,
+    "planned_activity_checks": 18,
+    "free_credit_reserve_floor_usd": "0.4578834167785",
+    "paid_limit_usd": "0",
+    "slot": "Attention owns next measurement; fresh coordinator grant required",
+    "independent_review": "Worker and controller independently reviewed; no concrete blocker"
+  },
+  "capability_audit": {
+    "id": "P054",
+    "source_commit": "ecf2eb2c7dddde5a18ae2967b9ffbe12f1ee68d8",
+    "report": "experiments/054-flashinfer-pinned-capability-local.md",
+    "probe_sha256": "7de966c2828ff275728bc412458c2e750bcdce61ea2ab55d746415fa2d89e6af",
+    "installed_probe_executed": false,
+    "api_callability_verified": false,
+    "jit_free_verified": false,
+    "official_judge_identity_verified": false
   }
 }
