@@ -1,4 +1,27 @@
-# Current phase: A2-15 local research only
+# Current phase: A2-15 approved native diagnostic blocked before upload
+
+The latest exact approval permits one Modal H200 native diagnostic, uploading
+only A2-13/A2-15 and one reviewed diagnostic program, at most $0.25 incremental
+free credits and $0 paid spending. Existing authentication only; if expired,
+stop without creating or renewing credentials. No OKC check or GitHub push.
+
+At 2026-10-25 08:31:05 UTC, the supported read-only Modal app-list command
+failed with `Token has expired` (exit 1). No upload, app, GPU execution or
+credential action occurred. No retry is pending. Current credits/cap/live apps
+could not be verified. The diagnostic allowance is unused and the historical
+conservative cumulative ledger remains $1.787819802. See
+reviews/attention-v2/a215/NATIVE_ATTEMPT.md and native-attempt.json.
+
+Valid existing authentication is a prerequisite; this scope cannot create or
+renew it. Complete local records only. Do not launch old wrappers: their
+payload and compile signature do not match this exact diagnostic. A2-15 and
+its parent remain unchanged, unvalidated by native compilation, and unpushed.
+
+The earlier local research scope follows as historical context.
+
+---
+
+# Historical phase: A2-15 local research only
 
 The completed A2-14 exact check/private-push permission is exhausted. The current
 instruction authorizes bounded local diagnosis, one next candidate or diagnostic,

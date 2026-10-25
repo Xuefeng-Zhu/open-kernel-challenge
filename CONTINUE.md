@@ -1,3 +1,31 @@
+# A2-15 Modal diagnostic blocked before upload; no active request
+
+At 2026-10-25 08:31:05 UTC, `modal app list --json` using the existing
+owner-only config failed with exit 1, `Token has expired`. No upload, app
+creation or GPU execution occurred; no new app ID or uncertain request.
+Incremental GPU credit use is $0. Do not create or renew credentials, retry
+through alternate authentication, launch an old wrapper, issue OKC checks or
+push. Read CURRENT_AUTHORIZATION.md and a215/NATIVE_ATTEMPT.md first.
+
+The exact diagnostic approval permits only A2-13/A2-15 plus one reviewed
+diagnostic program, with a $0.25 incremental free-credit ceiling and paid $0.
+The allowance is unused. Historical conservative cost remains $1.787819802;
+current credits, paid cap and active apps are not freshly verified. Prior
+stopped-app receipts do not prove current account state. No new app from this
+attempt needs shutdown. Required prerequisite: valid supported Modal auth,
+established through a separately authorized action.
+
+The source commit a2c9a91b1dd347d11cb333b2f96b8973951cfa03 and both candidate
+hashes are unchanged. Seven source/address and three diagnosis tests passed
+previously; native compiler resources, scheduling and GPU behavior remain
+unverified. The saved plan now excludes A2-14 and separate fixture uploads.
+A narrow diagnostic program still needs implementation; old replay compile
+arguments do not cover these candidates. All new A2-15 work remains local.
+
+The prior completed local checkpoint follows as historical context.
+
+---
+
 # A2-15 local diagnosis and prototype complete; no external operation pending
 
 Read CURRENT_AUTHORIZATION.md. No new OKC/GPU/Modal/push/credential operation
