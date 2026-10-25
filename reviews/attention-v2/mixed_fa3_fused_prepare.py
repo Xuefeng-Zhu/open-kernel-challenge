@@ -384,7 +384,7 @@ def _fa3_sliding_verify(data):
 RMSNorm/RoPE indexing adapted from official SGLang FusedQKNorm at commit
 a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f, Apache-2.0. The standalone parent
 retains full license/attribution. Added direct FP8 Q and scaled live-row KV stores.
-Cache clamp follows the official reference's finite E4M3 quantization bound.
+Use direct FP8 casts, preserving the parent conversion semantics without an added clamp.
 """
 
 
@@ -431,8 +431,6 @@ def _fa3_prepare_fused(QKV, POS, COS_SIN, LOC, KC, VC, KS, VS, Q,
         # Baseline Tensor(BF16)/scalar_tensor(FP32) produces BF16 before FP8.
         k = (k / ks).to(tl.bfloat16).to(tl.float32)
         v = (v / vs).to(tl.bfloat16).to(tl.float32)
-    k = tl.minimum(tl.maximum(k, -448.0), 448.0)
-    v = tl.minimum(tl.maximum(v, -448.0), 448.0)
     loc = tl.load(LOC + token, mask=row_ok, other=0).to(tl.int64)
     kv_head = tl.where(is_k, head - HQ, tl.maximum(head - HQ - HKV, 0))
     dst = (loc[:, None] * HKV + kv_head[:, None]) * D + cols[None, :]

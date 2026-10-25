@@ -30,8 +30,8 @@ def prepare_model(qkv, positions, table, scale_k, scale_v, cfg):
     if cfg['kv_scale'] != 1:
         k = (k.float()/scale_k).to(torch.bfloat16)
         v = (v.float()/scale_v).to(torch.bfloat16)
-    return (q.to(torch.float8_e4m3fn), k.float().clamp(-448, 448).to(torch.float8_e4m3fn),
-            v.float().clamp(-448, 448).to(torch.float8_e4m3fn))
+    return (q.to(torch.float8_e4m3fn), k.to(torch.float8_e4m3fn),
+            v.to(torch.float8_e4m3fn))
 
 
 def adapter(data, trace):
@@ -70,10 +70,15 @@ def adapter(data, trace):
 
 
 class FusedPrepare(unittest.TestCase):
-    def test_scalar_dtype_promotion_and_finite_quantization_bound(self):
+    def test_scalar_dtype_promotion_and_direct_quantization(self):
         self.assertEqual((torch.ones(1, dtype=torch.bfloat16)/torch.tensor(1/64)).dtype, torch.bfloat16)
-        x = torch.tensor([448., 512., -1000.]).clamp(-448, 448).to(torch.float8_e4m3fn).float()
-        self.assertTrue(torch.equal(x, torch.tensor([448., 448., -448.])))
+        x = torch.tensor([0., 1., 2., 448.])
+        expected = sliding.old.reference._quant(x, torch.tensor(1.)).view(torch.uint8)
+        self.assertTrue(torch.equal(x.to(torch.float8_e4m3fn).view(torch.uint8), expected))
+        # CPU overflow conversion is environment-specific; no CUDA conclusion from it.
+        overflow = torch.tensor([512., -1000.])
+        self.assertTrue(torch.equal(overflow.to(torch.float8_e4m3fn).view(torch.uint8),
+                                   sliding.old.reference._quant(overflow, 1.).view(torch.uint8)))
 
     def test_host_arguments_oracle_cache_zero_boundaries_and_overflow(self):
         for ctx, page, scale, overflow in [(2048, 1, 1., False), (64, 64, 1/64, False), (0, 1, 1/64, True)]:
@@ -91,6 +96,8 @@ class FusedPrepare(unittest.TestCase):
                 trace = []
                 ns, state = adapter(work, trace)
                 out = ns['_fa3_sliding_verify_fused'](work)
+                oracle = sliding.old.reference.ref_kernel(work)
+                self.assertTrue(all(torch.isfinite(v.float()).all() for v in oracle), "Nonfinite oracle cannot establish correctness")
                 ok, msg = sliding.old.reference.check_implementation(work, sliding.old.reference.collect(work, out))
                 self.assertTrue(ok, msg)
                 self.assertTrue(sliding.old.buffers.unchanged(work, fresh)[0])

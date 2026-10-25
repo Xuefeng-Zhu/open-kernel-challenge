@@ -7,7 +7,7 @@
   "max_active_jobs": 1,
   "rules_version": "2026-10-22.1",
   "created_utc": "2026-10-25T02:11:08.267920+00:00",
-  "authorization": "Ten NEW attention off-board requests authorized after E6; separate from prior six-request cycle; failures and accepted duplicate requests count; no Modal/push/ranked entry/paid compute/new credentials",
+  "authorization": "Ten new attention off-board requests authorized; standing reviewed private autopush subsequently authorized. No Modal/ranked/paid/new credentials.",
   "previous_cycle": "attention-cycle-budget.json",
   "previous_cycle_last_job": "4f626ab7437a42be",
   "requests": [
@@ -288,7 +288,7 @@
     },
     "A2-05": {
       "candidate": "mixed_fa3_fused_prepare.py",
-      "expected_sha256": "6515c03e17922ec8d660df7e98c83d6a00006f2e8c09b61ca4ea96bdb7223895",
+      "expected_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
       "final": false,
       "parent_receipt": "A2-04-official-result.json",
       "target_shapes": [
@@ -302,9 +302,9 @@
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "Safe Astra handoff requested: alljobs terminal; A2-05 prepared8CPU/statictests, NOT submitted; do notlaunch in outgoing turn",
-  "projection_checks_remaining": 7,
-  "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
+  "current_phase": "Resumed same task; A2-05 critical audit/local correction, no new job yet",
+  "projection_checks_remaining": 5,
+  "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
     "source": "mixed_fa3_decode_small.py",
     "source_commit": "28991e79b6062602705bc25463139eec8c154903",
@@ -369,5 +369,5 @@
     "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
     "aggregate_vs_parent_inconclusive": false
   },
-  "handoff_model_request": "User requested Astra on same task; current executing model/config not visible; next turn must critically audit before admission"
+  "handoff_model_request": "Same task resumed by parent; configured model not visible to tools. Critically audited A2-05 before possible admission."
 }

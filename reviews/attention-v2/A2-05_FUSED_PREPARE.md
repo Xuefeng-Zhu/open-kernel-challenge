@@ -29,11 +29,11 @@ and aggregateCIs separately. No metadata tuning/shape sweep on failure.
   unchanged config-only2^21float32table. No input-derived cache or host sync.
 - NewK follows the same BF16 norm/RoPE order. Scale division is BF16-rounded
   before FP8, matching PyTorch BF16/scalar-FP32 promotion. V stays raw BF16
-  before scale/FP8. Cache values clamp to±448 per the official reference's
-  finite E4M3 quantization, including overflow boundaries. This explicit clamp
-  can differ from a bare overflowing `.to(FP8)`; canonical finite-range casts
-  are unchanged, and no cache precision is reduced. Overflow unitcase passes
-  the reference oracle, not merely the previous backend's output.
+  before scale/FP8. K/V use direct FP8 casts, without an extra saturation operation. The earlier
+  preflight incorrectly attributed an explicit clamp to the official reference:
+  `_quant` actually uses a direct cast. The added clamp was removed before any
+  native admission. CPU Torch 2.14.1 saturates the chosen overflow examples; that
+  environment-specific observation does not establish CUDA conversion behavior.
 - Qrows and K/Vrows have separate masks. Cacheloc0 is LIVE, unlike vendor
   FusedQKNorm's optional fused KV-store path; use0<=loc<capacity, not loc!=0.
   Every required Q element and newKV entry is written once, no old row written.
@@ -59,7 +59,7 @@ count was made explicitly constexpr before first native admission. Exact final
 source/component/builder hashes are in A2-05-cpu-preflight.json.
 
 Three complete-file+five component tests pass on CPU. They prove AST preservation,
-host arguments, mathematical oracle/cache cases, symbolic ownership, FP8overflow,
+host arguments, mathematical oracle/cache cases, symbolic ownership, CPU FP8 overflow behavior,
 page64/nonunit/live0/untouchedrows and same-addressA→B→A length/content changes.
 Launch stub models math; it does NOT execute the Triton kernel. Initial suite
 had a test-only ImportError for a projection-branch validator; replaced with
@@ -84,15 +84,15 @@ No Modal/paid/newcredentials/terms/ranked entry. Reviewed private auto-push only
 never retry an uncertain upload or alter comments solely to evade deduplication.
 
 
-## Model-transition handoff — no admission
+## Resume audit before first admission
 
-User requested switching the SAME task to Astra before another experiment.
-Prepared source SHA6515c03e17922ec8d660df7e98c83d6a00006f2e8c09b61ca4ea96bdb7223895,
-exact assembly reproduction and8CPU/static tests pass. No A2-05 request/POST/job
-exists; attention remains4/10used,6left, projection5left. Do not charge this
-preparation as a GPU run, or confuse it with completed A2-04.
-Next Astra turn should critically review numeric dtype boundaries, cache clamp
-and row0 differences, ownership/masks, FP8 compilation, and measured prologue
-opportunity before deciding whether to use the existing authorized check. No
-assumption that a different model itself improves performance. Same constraints,
-no new Modal/credentials/paid/ranked action. All prior jobs terminal at handoff.
+Preparation commit451b475 was preserved. Its original explicit clamp and claim of
+reference saturation were corrected locally before any upload. Direct FP8 casts
+now match the parent; all other candidate math, dimensions and dispatch stay fixed.
+The CPU oracle now asserts finite reference tensors before claiming correctness.
+No GPU correctness or timing was inferred from CPU overflow behavior.
+
+The same task resumed after the model-transition request. The configured model is
+not exposed by available tools. Authentication and terminal prior jobs were read
+again; quota14attention/17projection, authorized budgets6/5 at the resume snapshot.
+The new source SHA and test evidence below are authoritative for first admission.
