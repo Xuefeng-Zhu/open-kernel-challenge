@@ -487,6 +487,41 @@
           "left": 9
         }
       }
+    },
+    {
+      "experiment": "A2-10",
+      "mode": "check",
+      "state": "accepted",
+      "status": "running",
+      "job_id": "08235841c4044048",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_merge.py",
+      "source_commit": "a0e49b48ed456536a5e72db7d5ee5bb767aa1823",
+      "source_sha256": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+      "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure.",
+      "final": false,
+      "created_utc": "2026-10-25T05:21:31.183833+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 11,
+          "left": 9
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_merge.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:21:31.803363+00:00",
+      "last_checked_utc": "2026-10-25T05:25:03.290922+00:00"
     }
   ],
   "remaining": null,
@@ -664,7 +699,7 @@
       "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure."
     }
   },
-  "all_requests_terminal": true,
+  "all_requests_terminal": false,
   "current_phase": "A2-09 standard native correctness passed; source-local ownership repair has measured sliding initialization cost; prepare isolated L1 separate-merge comparison",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",

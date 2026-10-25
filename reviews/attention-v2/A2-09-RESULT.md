@@ -55,3 +55,9 @@ math. E1 did not test sliding paths and used different fullD32partitioning; its
 prior full-path losses remain a warning. No assumed register/occupancy gain.
 Nearby L8 stays on A2-09's local counter. Full native concurrency/ABA remains a
 separate test requirement; the new local harness is not yet run on H200.
+
+Separate instrumented profiles show the expected extra elementwise initialization
+call: sliding B1 reports fused11.2us+elementwise1.0us; B16fused12.1us+elementwise0.8us.
+Parent profiles had only fused11.3/11.9us. This supports the initialization-cost
+mechanism, but these instrumented activities are not the calibrated whole-call
+benchmark medians and do not constitute hardware-counter evidence.

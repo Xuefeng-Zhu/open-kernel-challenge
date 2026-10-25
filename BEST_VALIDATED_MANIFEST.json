@@ -15,7 +15,7 @@
     ],
     "prerequisites": 16,
     "timed_shapes": 12,
-    "restriction": "Sequential official validation; device-global completion counter overlap risk in E2 fallback remains. A2-09 repair is pending, not selected yet."
+    "restriction": "Sequential official validation; global completion-counter overlap risk in E2 fallback. Counter-local A2-09 is a separately checked correctness repair with measured cost; A2-10 is pending."
   },
   "projection": {
     "source": "candidates/projection_router_m1_fp32_gemv.py",
@@ -32,5 +32,17 @@
     "timed_shapes": 30,
     "restriction": "P040 higher point estimate not selected after missed target and overlapping interval; kernel measurements exclude serving integration/collectives."
   },
-  "scope": "Free off-board checks, not ranked entries; no end-to-end serving performance measured"
+  "scope": "Free off-board checks, not ranked entries; no end-to-end serving performance measured",
+  "attention_counter_local_baseline": {
+    "source": "reviews/attention-v2/mixed_fa3_local_tickets.py",
+    "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
+    "sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "job_id": "3fb683ba982d448c",
+    "score": 1.1466598820556553,
+    "ci": [
+      1.1294599838248205,
+      1.1690678066480464
+    ],
+    "native_coverage": "16+12 official sequential; bespoke concurrency unverified"
+  }
 }

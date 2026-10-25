@@ -24,11 +24,17 @@ individually significant. All raw samples, calibrated times, paired ratios,
 Each run has11shapes with60timing sample entries and fullverify32 with56,
 not a claimed exact number of underlying graph replays. Profile sums are not walltime.
 
-New cycle8/10used,2left including final reserve; prior six-cycle separate.
-All accepted jobs terminal, uncertain0. Latest platform quota is in
-[ledger](attention-cycle2-budget.json); daily resets do not grant new user budget.
-Projection's five remaining checks are separate. No ranked entries/paid resources/
-new credentials/Modal launches. Reviewed automatic PRIVATE pushes are authorized.
+A2-09 (`mixed_fa3_local_tickets.py`) is an isolated per-invocation counter repair;
+its official job `3fb683ba982d448c` passed at 1.14665988x. Sliding decode
+B1/B16 normalized latency regressed 7.40/7.68%, supporting A2-10
+(`mixed_fa3_decode_merge.py`), job `08235841c4044048`, now running.
+The measured A2-08 remains the sequential-only performance reference. Five CPU ownership/protocol/AST tests pass,
+including 96 modeled interleavings; this is not a native concurrent-stream test.
+
+User count ceilings were removed explicitly; actual daily quotas remain enforced
+in the [ledger](attention-cycle2-budget.json). Historical ten-check and six-check
+cycles remain auditable records. No ranked entries, paid resources, new credentials
+or Modal launches. Reviewed automatic private pushes remain authorized.
 
 ```
 .venv/bin/python reviews/attention-v2/summarize_fusion_series.py
