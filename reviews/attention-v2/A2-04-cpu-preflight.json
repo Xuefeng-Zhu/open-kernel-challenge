@@ -1,0 +1,59 @@
+{
+  "observed_utc": "2026-10-25T03:26:49.977387+00:00",
+  "candidate": "mixed_fa3_decode_small.py",
+  "source_sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+  "parent_source_sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+  "parent_source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+  "parent_job": "bdd11e743365439a",
+  "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_decode_small.py",
+  "exit_code": 0,
+  "output": "test_all_controls_and_nearby_dispatch (__main__.FullDecode1.test_all_controls_and_nearby_dispatch) ... ok\ntest_changed_content_lengths_schedule_same_address_A_B_A (__main__.FullDecode1.test_changed_content_lengths_schedule_same_address_A_B_A) ... ok\ntest_new_path_oracle_cache_scales_heads_and_scheduler (__main__.FullDecode1.test_new_path_oracle_cache_scales_heads_and_scheduler) ... ok\ntest_only_decode_batch_membership_changes (__main__.FullDecode1.test_only_decode_batch_membership_changes) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.125s\n\nOK\n",
+  "environment": {
+    "python": "3.12.13",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda": false
+  },
+  "native_execution": false,
+  "target_parent": {
+    "load": "decode 1",
+    "layer": "full",
+    "target": false,
+    "weight": 16,
+    "parent_adjusted_candidate_us": 41.26414537734751,
+    "parent_adjusted_sglang_us": 30.815998557955027,
+    "new_adjusted_candidate_us": 41.44681206256183,
+    "new_adjusted_sglang_us": 31.776001676917076,
+    "parent_raw_candidate_us": 45.343998819589615,
+    "parent_raw_sglang_us": 35.00799834728241,
+    "new_raw_candidate_us": 45.69600149989128,
+    "new_raw_sglang_us": 35.93600168824196,
+    "parent_paired_ratio": 0.7467984196971125,
+    "new_paired_ratio": 0.7666693792746433,
+    "relative_speedup": 1.0266081971431997,
+    "normalized_latency_cut": 0.02591855122260256
+  },
+  "arithmetic_models_only": [
+    {
+      "name": "latency_minus20pct",
+      "target_us": 33.157449650049465,
+      "modeled_score": 1.0774249766085204
+    },
+    {
+      "name": "match_same_receipt_sglang",
+      "target_us": 31.776001676917076,
+      "modeled_score": 1.0808146187911265
+    }
+  ],
+  "coverage": [
+    "AllparenthelpersASTidentical; oneaddedbatchliteral;180dispatchconfigs",
+    "ctx0/64/3000,coherentattention,TP8/DPheads,page1/64,unit/nonunitscale,livecache0",
+    "CPU same-addressA-B-A changedactual lengths/content/opaque scheduler metadata; untouchedrows"
+  ],
+  "limitations": [
+    "No nativeexecution before admittedcheck",
+    "OpaqueCPU scheduler is argument-forwarding test only",
+    "Explicit nativeGPUABA/page64/nonunit/untouched-row/concurrency not separately executed"
+  ]
+}

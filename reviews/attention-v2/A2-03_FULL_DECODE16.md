@@ -77,7 +77,7 @@ A→B→A/page64/nonunit/untouched-old-cache/concurrency assertions were not sep
 run; prerequisites do not enter B16/L1/full. New-cache/output oracle and canonical
 page1/unit-scale graphs pass. No compiled resource/hardware-counter capture.
 
-See A2-03-RESULT.md, -assessment.json, -per-shape.csv and full-official-result.json
+See A2-03-RESULT.md, -assessment.json, -per-shape.csv and A2-03-official-result.json
 for all12raw/adjusted/paired samples and six46×sliding+16×full load arithmetic.
 Reproduce `.venv/bin/python reviews/attention-v2/assess_cycle2.py A2-03`.
 Attention new3/10used,7left; platform15/20checksleft,0scoredused. Projection5left,
