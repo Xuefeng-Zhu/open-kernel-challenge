@@ -1,28 +1,31 @@
-# Current Projection checkpoint — 2026-10-25
+# Current Projection checkpoint — 2026-10-25 18:48 UTC
 
-P039 is selected: source `cdf5bc2`, SHA256 `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`,
+P039 remains selected: source `cdf5bc2`, SHA256 `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`,
 job `d5636ac8d1404abd`, **1.173238998969285×**, 9+30 native correctness passed.
-P040 remains an unselected passing experiment; see BEST.md and immutable receipts.
+P040 remains an unselected passing experiment. See BEST.md and original receipts.
 
-P041 local analysis reconstructs that exact score from six equal-weight loads,
-each summing five family times at weight 62. It prepares unchanged-source
-profiling/correctness; **no new candidate or GPU run has been executed**.
+The user's direct-official request sent unchanged P039 once. Request
+**d9b940ff4fa14a1b** is terminal **duplicate**, pointing to the original P039 job;
+`result=null`. **No new GPU execution, score, correctness or per-shape measurement**
+was produced. No source nonce, second check or retry. See
+[experiment 042](experiments/042-p039-unchanged-official-recheck.md).
 
-All five cycle-two requests in the saved ledger are terminal; no new reservation
-or request was created here. Historical numeric user-count fields and dated
-quotas are not current platform availability. The last saved platform snapshot
-is 2026-10-25 03:07:24 UTC, 3/20 projection checks used, 17 left, scored 0/10;
-this is explicitly stale and must be freshly read before any official admission.
+Fresh platform observation at 18:48:29 UTC: checks **3/20 used, 17 remaining**,
+scored **0/10 used**; duplicate consumed zero quota. Daily reset is 00:00 UTC.
+Six request records, five non-duplicate results, all terminal. No uncertain request.
+Historical numeric allowance fields are not platform availability.
 
-The coordinator is still reconciling attention profiler app shutdown. Projection
-must wait for explicit release of the shared GPU slot. Ordinary Torch/CUPTI
-activity succeeded there, but both bounded NCU metric attempts timed out without
-metrics or a permission-denial message. Do not repeat the same NCU method or
-claim that measured bandwidth/occupancy/stalls are available.
+P041 local evidence reconstructs the exact six-load score and freezes five
+profiling representatives. Fifteen new offline/mock diagnostic tests and six
+related P039 tests passed. **The new worker has never executed on GPU.** No Modal
+app was created by this phase. The coordinator released the shared slot after
+attention shutdown, but the user then selected the direct official workflow.
+Do not automatically launch the deferred diagnostic.
 
-No account, credential, billing or resource-state action has been made here.
-Past cost caps, token expiry and app statements below are historical; current
-account credit and net-paid-$0 safeguards need a fresh read before provisioning.
+Ordinary activity evidence exists; both attention-owner NCU attempts timed out
+without metric values or a permission denial. Do not repeat that counter method
+or infer measured bandwidth/occupancy/stalls. No credentials or billing changed.
+Projection/attention sources outside this worktree were not modified.
 
 ## Historical checkpoint (superseded, preserved)
 

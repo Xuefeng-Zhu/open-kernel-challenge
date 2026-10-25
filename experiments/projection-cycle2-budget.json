@@ -51,6 +51,13 @@
       "local_record": "experiments/040-o-m1-group8-local.md",
       "control_job_id": "d5636ac8d1404abd",
       "hypothesis": "Only O m1 replaces one library kernel with fixed8-output SIMT FP32reduction/BF16out; >=15%targetnormalized latencycut, aggregate potential<=1.22%/likelyinconclusive; preserveP039router"
+    },
+    "P2-06-p039-unchanged-recheck": {
+      "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+      "cpu_report": "results/router-p039-m1-fp32-gemv-cpu.json",
+      "local_record": "experiments/042-p039-unchanged-official-recheck.md",
+      "control_job_id": "d5636ac8d1404abd",
+      "hypothesis": "No optimization change: user requested direct official baseline verification of exact P039. Same-source dedup may return the historical result; no nonce or modified source to force a run."
     }
   },
   "requests": [
@@ -323,9 +330,64 @@
         1.1582332567404696,
         1.1935093965396717
       ]
+    },
+    {
+      "experiment": "P2-06-p039-unchanged-recheck",
+      "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+      "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+      "submission_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+      "mode": "check",
+      "created_utc": "2026-10-25T18:48:18.266725+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "state": "terminal",
+      "status": "duplicate",
+      "job_id": "d9b940ff4fa14a1b",
+      "hypothesis": "No optimization change: user requested direct official baseline verification of exact P039. Same-source dedup may return the historical result; no nonce or modified source to force a run.",
+      "control_job_id": "d5636ac8d1404abd",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_router_m1_fp32_gemv.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T18:48:18.561841+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-25T18:48:29.693311+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "passed": null,
+      "speedup": null,
+      "speedup_ci": null,
+      "duplicate_of": "d5636ac8d1404abd",
+      "new_gpu_measurement": false,
+      "quota_consumed": 0,
+      "decision": "No new optimization or GPU measurement; preserve selected P039 and original receipt"
     }
   ],
-  "publication": "New work remains local; no push authorized",
+  "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
   "admission_paused": false,
   "admission_exception_history": [
     {
@@ -353,7 +415,7 @@
       "left": 17
     }
   },
-  "last_account_quota_utc": "2026-10-25T03:07:24.082063+00:00",
+  "last_account_quota_utc": "2026-10-25T18:48:29.693311+00:00",
   "admission_pause_reason": "M36 single-pass candidate failed performance decisively, no meaningful Modal-qualified next candidate. Remaining user allowance persists; scope exact source/evidence before any future dispatch.",
   "latest_stage_summary": "QKV_M128_SINGLEPASS_RESULTS.md",
   "historical_modal_first_pause": {
@@ -376,15 +438,25 @@
   ],
   "single_admission_exception": null,
   "current_preserved_best": {
-    "source": "candidates/projection_full_composition.py",
-    "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
-    "job_id": "48b1357016134e52",
-    "speedup": 1.1486499523461586
+    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "speedup": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "reason": "Retain P039 for correct native30%target latency reduction; highest verified point score, but aggregate gain over previous best is unresolved by overlapping CIs and shifted controls",
+    "previous_best_job": "48b1357016134e52",
+    "previous_best_preserved": true,
+    "source": "candidates/projection_router_m1_fp32_gemv.py"
   },
   "latest_decision": {
-    "experiment": "P2-03-pooler-m256-tma",
-    "decision": "reject regression; no control/sweep follow-up",
-    "remaining_authorized": 7
+    "experiment": "P2-06-p039-unchanged-recheck",
+    "decision": "No new optimization or GPU measurement; preserve selected P039 and original receipt",
+    "job_id": "d9b940ff4fa14a1b",
+    "status": "duplicate"
   },
   "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
   "phase_history": [
@@ -417,7 +489,7 @@
     "previous_best_job": "48b1357016134e52",
     "previous_best_preserved": true
   },
-  "current_phase": "P040 correct but goalmissed; retainP039, boundedpauseprojection for larger attentiongaps; fivechecks retained",
+  "current_phase": "P041 local diagnostics prepared; user redirected to one direct official unchanged-P039 check. P042 terminal duplicate; no new GPU evidence.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
@@ -450,5 +522,11 @@
     "runner_compatibility": "Implemented: only explicit boolean current_authorization.personal_check_count_ceiling_removed=true bypasses the historical personal count cap and freezes maximum_new_experiments/remaining_authorized history. Missing/false/malformed policy keeps legacy capped behavior. Daily quota, rules, source/CPU hash, shared-slot and uncertainty guards are unchanged; no real admission by local tests.",
     "documentation": "CURRENT_AUTHORIZATION.md",
     "check_launched_by_this_update": false
+  },
+  "historical_preserved_best_before_reconciliation": {
+    "source": "candidates/projection_full_composition.py",
+    "sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+    "job_id": "48b1357016134e52",
+    "speedup": 1.1486499523461586
   }
 }

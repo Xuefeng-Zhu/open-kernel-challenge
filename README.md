@@ -18,8 +18,10 @@ was 6.5077%, below the declared 15% gate. Both remain preserved.
 Current work is P041: source-bound profiling and correctness preparation for
 pooler, QKV and unpooler. Their average fractions within the six equal-weight
 loads are 32.62%, 22.54% and 20.93%. No hardware-counter diagnosis is claimed.
-GPU work waits for the coordinator's serialized slot. See the P041 experiment
-record for the exact local checks and unexecuted native plan.
+The diagnostic remains unexecuted after the user chose a direct official check.
+That unchanged-P039 request returned duplicate `d9b940ff4fa14a1b`, with no new
+measurement or quota use. See [experiment 042](experiments/042-p039-unchanged-official-recheck.md)
+and the P041 record for the prepared local analysis.
 
 Historical reports retain their original dated results: the earlier 1.148650×
 composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),

@@ -1,0 +1,112 @@
+{
+  "kind": "Official unchanged-source verification request; terminal duplicate, NOT a fresh benchmark",
+  "experiment": "P2-06-p039-unchanged-recheck",
+  "admission": {
+    "experiment": "P2-06-p039-unchanged-recheck",
+    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "submission_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "mode": "check",
+    "created_utc": "2026-10-25T18:48:18.266725+00:00",
+    "quota_before": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "state": "terminal",
+    "status": "duplicate",
+    "job_id": "d9b940ff4fa14a1b",
+    "hypothesis": "No optimization change: user requested direct official baseline verification of exact P039. Same-source dedup may return the historical result; no nonce or modified source to force a run.",
+    "control_job_id": "d5636ac8d1404abd",
+    "command": [
+      "bin/okc",
+      "check",
+      "candidates/projection_router_m1_fp32_gemv.py",
+      "--no-wait",
+      "--json"
+    ],
+    "cli_exit_code": 0,
+    "accepted_utc": "2026-10-25T18:48:18.561841+00:00",
+    "status_cli_exit_code": 0,
+    "last_checked_utc": "2026-10-25T18:48:29.693311+00:00",
+    "quota_after": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "passed": null,
+    "speedup": null,
+    "speedup_ci": null,
+    "duplicate_of": "d5636ac8d1404abd",
+    "new_gpu_measurement": false,
+    "quota_consumed": 0,
+    "decision": "No new optimization or GPU measurement; preserve selected P039 and original receipt"
+  },
+  "status": "duplicate",
+  "duplicate_of": "d5636ac8d1404abd",
+  "created_at_utc": "2026-10-25T18:48:18.549873+00:00",
+  "result": null,
+  "new_gpu_measurement": false,
+  "new_prerequisite_or_shape_tests": 0,
+  "new_score": null,
+  "new_per_shape_timings": null,
+  "quota_before": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 3,
+      "left": 17
+    }
+  },
+  "quota_after": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 3,
+      "left": 17
+    }
+  },
+  "quota_consumed": 0,
+  "historical_selected_receipt": "results/remote-P2-04-router-m1-fp32-gemv.json",
+  "historical_selected_score": 1.173238998969285,
+  "comparison": "No new timings exist; score, correctness and per-shape comparisons would only repeat the historical data. No statistical comparison or independent replication is possible.",
+  "local_preflight": {
+    "exact_source_committed_and_hashed": true,
+    "saved_full_cpu_pass_matches_source": true,
+    "related_tests_passed": 21,
+    "test_type": "CPU models / source / mock tests only",
+    "python": "3.12.13",
+    "cuda_executed": false
+  },
+  "redactions": [
+    "team",
+    "payload_ref",
+    "local account paths",
+    "raw ignored CLI response"
+  ],
+  "no_retry_or_source_nonce": true,
+  "modal_app_started": false,
+  "scored_submission": false
+}
