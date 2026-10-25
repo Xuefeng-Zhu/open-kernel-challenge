@@ -1,0 +1,136 @@
+{
+  "purpose": "One-time private push export; preserve original research branch and per-experiment commits",
+  "source_branch": "attention-fa3-local",
+  "source_snapshot": "9638575cd8382a823eb5fb66a4aca14247bae5d2",
+  "export_branch": "attention-fa3-sanitized",
+  "sanitized_snapshot": "9a96dc0b9eed6928ebf235fff23cdd1be76ff28f",
+  "changes": "Only historical non-secret Modal token identifier in A09 CLI warning replaced; no secret found; current tree/candidates identical",
+  "original_history_preserved": true,
+  "commit_mapping": {
+    "7eea86ba1f63cc18a229d276eb1e917b5b20dc74": "7eea86ba1f63cc18a229d276eb1e917b5b20dc74",
+    "01a79ff5fa367eb1d74429c18f238fe8cad49c9c": "01a79ff5fa367eb1d74429c18f238fe8cad49c9c",
+    "484f3921399cd87d8d7afe8df75c9ef8fc4b1dc4": "484f3921399cd87d8d7afe8df75c9ef8fc4b1dc4",
+    "75a9858a2d0ee5cde8f5cb4f70d21ae1e47085b5": "75a9858a2d0ee5cde8f5cb4f70d21ae1e47085b5",
+    "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32": "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32",
+    "cf36a6686689159dc87a24844b87f243f301cb5c": "cf36a6686689159dc87a24844b87f243f301cb5c",
+    "84e54d66887ff8f51465c3aa5590992c5ed7a20b": "84e54d66887ff8f51465c3aa5590992c5ed7a20b",
+    "3818c7255cd2d9aa5859b2e55ee83f2bd2f057d4": "3818c7255cd2d9aa5859b2e55ee83f2bd2f057d4",
+    "0524fdd06ab26fcf2f83c0b592aa845862896604": "0524fdd06ab26fcf2f83c0b592aa845862896604",
+    "eb0c0953ac5c982b03a64832fca47c64ec584a5b": "eb0c0953ac5c982b03a64832fca47c64ec584a5b",
+    "59e0f6a11b705fa2d964aa5229cecb851e48a977": "59e0f6a11b705fa2d964aa5229cecb851e48a977",
+    "b21b6bd93efc0092bf8430930c010802fb99cb56": "b21b6bd93efc0092bf8430930c010802fb99cb56",
+    "2613417dcd806d64e3744be9e3d8773396692765": "2613417dcd806d64e3744be9e3d8773396692765",
+    "9f2ebdf48a0c0105e51174f727dc578b2c6223c4": "9f2ebdf48a0c0105e51174f727dc578b2c6223c4",
+    "b311e0e3bbf1b6f2bc5e06bbd2182c445529ade0": "b311e0e3bbf1b6f2bc5e06bbd2182c445529ade0",
+    "bcc5847c4bd79dab5e97f1591a4cd5fad0645e2b": "bcc5847c4bd79dab5e97f1591a4cd5fad0645e2b",
+    "c4bf4c72015f474c138fdef8486ef274138d21cb": "c4bf4c72015f474c138fdef8486ef274138d21cb",
+    "268b86fc0e856f6f47daff533412f5fa8ad7cb7e": "268b86fc0e856f6f47daff533412f5fa8ad7cb7e",
+    "f009696f94855114dbd11728c8db3adfd11e2ab5": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+    "a20bc1651224482f87d4d4b8e2bef9597fe4c6e5": "ad5ea76904b6244afab2cf42abe898f5fb194929",
+    "7588adb1d4826d176374a52e4ad5239b6995640a": "218a084211b16f4d0fb3fa034f416c3d831737b7",
+    "c706909eee24733875aa18ec21d431e466d5c890": "b5776aa8dfe728d9b1ff071e2a3e465ba30c81d0",
+    "d26fd7a748d60244267323604d81083e9625cd20": "3de4dccbc9866cd856acb222fb63c15cbc1a5615",
+    "745e0e4efe05edd1f2a771418e51a0d501a353ac": "2a6962b8a1b5d97eb92f41e4b835e09ff092b0bf",
+    "fdd310e5139c58157985c7e730fefb54c5964b62": "0dd46fe0b8983852f8cb271bd604d0fec53a3e8c",
+    "51d7fca04ccc38a972039ef1b086011d8e456264": "f1437fb146015622327a9e8ac0aed8721d4e37f0",
+    "2391d53b112a23919f651337db3750b7213f8a71": "2435f86d84608b5151502f9a934df91210908433",
+    "86b6ed65967ac7276b31301e539a9603a9362c62": "763179c961743aca9a926a2b56423d46b84b7c8a",
+    "505383700dc9166523eeb02b5cabd7045e0d9dc4": "270dd5578e7136837f6c3521e157a7616aec7268",
+    "c5a1dadbf093f07f719b60942e6773a2f2c3efef": "0d0fae345a7c07c221fd2c0220bac3752f734b64",
+    "4ba7a2ff349ddfaba379996f8380c5e9079022d0": "b7af38fe2caa7bf2fe2a6cf0fc420e8da5cca848",
+    "5202cbea994771eebffa1f479e7e88915106ca14": "b7e7cd51477ecb494054098f73a8077daf24d201",
+    "d893c24f90dcd5e1e1a50a85d954895e2cc94c94": "1d0aa177feb67c94c5d42409166daec205570220",
+    "c0f29817f312d2815dce3c6a7a8939ea03f6093d": "4ae346bc0d4116bdaf3cf66176ec32eba47096b8",
+    "030924103fe180b6645122ec3b02b2ed2af10b59": "f4ba931e4b8bee28e753dead866bc53567c40fe6",
+    "9638575cd8382a823eb5fb66a4aca14247bae5d2": "9a96dc0b9eed6928ebf235fff23cdd1be76ff28f"
+  },
+  "historical_redacted_versions": [
+    {
+      "original_commit": "a20bc1651224482f87d4d4b8e2bef9597fe4c6e5",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "7588adb1d4826d176374a52e4ad5239b6995640a",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c706909eee24733875aa18ec21d431e466d5c890",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "d26fd7a748d60244267323604d81083e9625cd20",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "745e0e4efe05edd1f2a771418e51a0d501a353ac",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "fdd310e5139c58157985c7e730fefb54c5964b62",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "2391d53b112a23919f651337db3750b7213f8a71",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "86b6ed65967ac7276b31301e539a9603a9362c62",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "505383700dc9166523eeb02b5cabd7045e0d9dc4",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c5a1dadbf093f07f719b60942e6773a2f2c3efef",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "4ba7a2ff349ddfaba379996f8380c5e9079022d0",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "5202cbea994771eebffa1f479e7e88915106ca14",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "d893c24f90dcd5e1e1a50a85d954895e2cc94c94",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c0f29817f312d2815dce3c6a7a8939ea03f6093d",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    }
+  ],
+  "candidate_sha256": {
+    "mixed_fa3.py": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "mixed_fa3_sliding.py": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+    "mixed_fa3_verify1.py": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357"
+  },
+  "running_job_at_snapshot": "A2-01 6e761bdd1d9747ad, no result claimed",
+  "projection_unrelated_and_unchanged": true
+}
