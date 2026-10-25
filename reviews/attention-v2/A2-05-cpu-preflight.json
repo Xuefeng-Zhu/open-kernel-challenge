@@ -1,0 +1,82 @@
+{
+  "observed_utc": "2026-10-25T03:54:28.618698+00:00",
+  "candidate": "mixed_fa3_fused_prepare.py",
+  "source_sha256": "6515c03e17922ec8d660df7e98c83d6a00006f2e8c09b61ca4ea96bdb7223895",
+  "component_sha256": "289728f2f6a7f60d6eb4e2d7dfebeef80b9ba08c4bdf582cc47004b4cedd74a7",
+  "builder_sha256": "79c0aa10a681217d3d9491c7555513b86b3c1194f9d21744be072db93834c485",
+  "parent": "mixed_fa3_decode_small.py",
+  "parent_source_sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+  "parent_source_commit": "28991e79b6062602705bc25463139eec8c154903",
+  "parent_job": "66b44d7586184708",
+  "parent_score": 1.07706589002702,
+  "tests": [
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_fused_prepare.py",
+      "exit_code": 0,
+      "output": "test_actual_entrypoint_calls_fused_host_adapter_CPU_oracle (__main__.CompleteFused.test_actual_entrypoint_calls_fused_host_adapter_CPU_oracle) ... ok\ntest_all_parent_functions_and_component_bodies_preserved (__main__.CompleteFused.test_all_parent_functions_and_component_bodies_preserved) ... ok\ntest_exactly_one_scored_path_changes_and_nearby_fallback (__main__.CompleteFused.test_exactly_one_scored_path_changes_and_nearby_fallback) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.099s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_fused_prepare_component.py",
+      "exit_code": 0,
+      "output": "test_CPU_same_address_A_B_A_and_changed_lengths (__main__.FusedPrepare.test_CPU_same_address_A_B_A_and_changed_lengths) ... ok\ntest_host_arguments_oracle_cache_zero_boundaries_and_overflow (__main__.FusedPrepare.test_host_arguments_oracle_cache_zero_boundaries_and_overflow) ... ok\ntest_integer_ownership_indices_cover_exact_outputs_and_new_cache (__main__.FusedPrepare.test_integer_ownership_indices_cover_exact_outputs_and_new_cache) ... ok\ntest_scalar_dtype_promotion_and_finite_quantization_bound (__main__.FusedPrepare.test_scalar_dtype_promotion_and_finite_quantization_bound) ... ok\ntest_syntax_and_JIT_globals_without_native_import (__main__.FusedPrepare.test_syntax_and_JIT_globals_without_native_import) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.094s\n\nOK\n"
+    }
+  ],
+  "environment": {
+    "python": "3.12.13",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda": false,
+    "triton_not_imported": true
+  },
+  "native_execution": false,
+  "target_parent": {
+    "load": "verify 1",
+    "layer": "sliding",
+    "target": false,
+    "weight": 46,
+    "parent_adjusted_candidate_us": 23.36719841773226,
+    "parent_adjusted_sglang_us": 23.264000192284584,
+    "new_adjusted_candidate_us": 23.389947033808255,
+    "new_adjusted_sglang_us": 22.84800074994564,
+    "parent_raw_candidate_us": 27.535999193787575,
+    "parent_raw_sglang_us": 27.23200060427189,
+    "new_raw_candidate_us": 27.23200060427189,
+    "new_raw_sglang_us": 26.75200067460537,
+    "parent_paired_ratio": 0.9955836286574531,
+    "new_paired_ratio": 0.9768299482218034,
+    "relative_speedup": 0.9811631289468479,
+    "normalized_latency_cut": -0.019198510927913803
+  },
+  "arithmetic_models_only": [
+    {
+      "assumed_target_latency_cut": 0.15,
+      "target_us": 19.881454978737015,
+      "modeled_score": 1.0955944018802097
+    },
+    {
+      "assumed_target_latency_cut": 0.2,
+      "target_us": 18.711957627046605,
+      "modeled_score": 1.1022943834798087
+    }
+  ],
+  "parent_separate_profile": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...       8.1 \u00b5s  39.0%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       3.8 \u00b5s  18.3%      1\nvoid at::native::vectorized_elementwise_kernel<8, at::nat...       2.0 \u00b5s   9.6%      2\nvoid at::native::elementwise_kernel<128, 4, at::native::g...       1.8 \u00b5s   8.6%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, false>(in...       1.8 \u00b5s   8.6%      1\n_qk_rms_norm_fwd_kernel                                            1.2 \u00b5s   5.9%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.1 \u00b5s   5.4%      1\nvoid sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...       1.0 \u00b5s   4.6%      1\ntotal                                                             20.8 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        19.4 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more",
+  "profile_qualification": "Instrumented one-off source-stage evidence, not median or additive wall time: norm1/store1/threecasts are fused; FA3/preparation/combine/gate retained; PDLoverlap may change",
+  "numerical_policy": "FP32RMS -> BF16 -> interleavedRoPE -> BF16 -> FP8Q; K/V scale division BF16-rounded before FP8 cache; reference finite clamp448; slotzero live; qk_scale_factor only FA3softmax_scale",
+  "initial_test_fixture_failure": "First component suite:4passed,1ImportError for projection-only plain_jit_globals absent on attention branch; replaced that test dependency with stdlibsymtable globals check. No candidate GPU failure or code-math change.",
+  "coverage": [
+    "Allparenthelpers unchanged; exactlyone added B1L8sliding dispatch",
+    "96nearby dispatch configurations",
+    "CPU reference output/newcache oracle on windowedge/page64/nonunit/live0 and FP8overflow clamp",
+    "Independent symbolic output/newcache ownership sets for TP8/DP andT1/8/32",
+    "Same-address CPUA-B-A actual length/content changes and untouched-old-cache checks",
+    "NewJITbody references onlyformal args/locals/tl, allshapeheadcount explicitlyconstexpr"
+  ],
+  "limitations": [
+    "No H200 compiler/resource/correctness/performance yet",
+    "CPU launchstub uses mathmodel, not actual Tritonkernel",
+    "Explicit target GPUABA/page64/nonunit/untouchedrow/concurrency remains unverified",
+    "Officialreceipt pins image/evaluator/driver; installed compiler/packageversions are not exposed"
+  ],
+  "exact_assembly_reproduced": true
+}

@@ -203,7 +203,7 @@
       ],
       "cli_exit_code": 0,
       "accepted_utc": "2026-10-25T03:28:43.890482+00:00",
-      "last_checked_utc": "2026-10-25T03:38:15.976853+00:00",
+      "last_checked_utc": "2026-10-25T03:56:29.661403+00:00",
       "passed": true,
       "speedup": 1.0770658900270202,
       "speedup_ci": [
@@ -285,10 +285,24 @@
       ],
       "target_latency_cut": 0.2,
       "hypothesis": "Only full decodeB1 L1 joins unchanged official FA3 fulladapter and supplied scheduler_metadata; other11paths unchanged, >=20%normalizedlatencycut; totalmaybeinconclusive"
+    },
+    "A2-05": {
+      "candidate": "mixed_fa3_fused_prepare.py",
+      "expected_sha256": "6515c03e17922ec8d660df7e98c83d6a00006f2e8c09b61ca4ea96bdb7223895",
+      "final": false,
+      "parent_receipt": "A2-04-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-04 terminal/adoptshape-localwin; noactiveGPU; prepareone B1slidingverify fusedprologue localonly",
+  "current_phase": "Safe Astra handoff requested: alljobs terminal; A2-05 prepared8CPU/statictests, NOT submitted; do notlaunch in outgoing turn",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent",
   "selection": {
@@ -316,7 +330,7 @@
       "left": 14
     }
   },
-  "quota_observed_utc": "2026-10-25T03:38:15.976853+00:00",
+  "quota_observed_utc": "2026-10-25T03:58:26.736793+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -354,5 +368,6 @@
     ],
     "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
     "aggregate_vs_parent_inconclusive": false
-  }
+  },
+  "handoff_model_request": "User requested Astra on same task; current executing model/config not visible; next turn must critically audit before admission"
 }

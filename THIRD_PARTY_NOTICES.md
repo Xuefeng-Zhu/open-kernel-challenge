@@ -47,3 +47,13 @@ FA3 and output norm/gate API sequence. The candidate identifies the upstream
 commit and includes the applicable Apache-2.0 text. Its other paths retain our
 preserved E2 source. No competitor source is copied or executed; the high-level
 mixed-dispatch idea is independently implemented with the official contract.
+
+Attention A2-05 (`reviews/attention-v2/fa3_prologue_component.py`, embedded in
+`mixed_fa3_fused_prepare.py`) adapts RMSNorm/interleaved-RoPE equations and head
+indexing from SGLang's `fused_qk_norm.py` at the same pinned commit, Apache-2.0:
+https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/muse_spark_v12/fused_qk_norm.py.
+Local modifications add direct FP8 query output, scaled FP8 K/V stores, the
+reference's finite E4M3 clamp, and live cache-row-zero handling. The original
+vendor optional fused KV path reserves zero, which differs from this task.
+Applicable Apache-2.0 text remains in LICENSE and the standalone source. No
+competitor whole source/module is executed or imported.
