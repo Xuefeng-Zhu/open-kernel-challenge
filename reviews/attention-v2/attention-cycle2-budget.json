@@ -646,6 +646,59 @@
           "left": 6
         }
       }
+    },
+    {
+      "experiment": "A2-13",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "c2fb7b23433f4888",
+      "candidate": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+      "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+      "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression.",
+      "final": false,
+      "created_utc": "2026-10-25T06:51:04.336687+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 14,
+          "left": 6
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T06:51:04.639879+00:00",
+      "last_checked_utc": "2026-10-25T06:56:24.244508+00:00",
+      "passed": true,
+      "speedup": 1.210990803483977,
+      "speedup_ci": [
+        1.1928259414317173,
+        1.2291556655362366
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 15,
+          "left": 5
+        }
+      }
     }
   ],
   "remaining": null,
@@ -891,11 +944,12 @@
         ]
       ],
       "target_latency_cut": 0.1,
-      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression."
+      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression.",
+      "target_goal_mode": "geometric_mean_latency_cut"
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-13 exact FP8 QK candidate local preflight; no request yet; A2-11 selected",
+  "current_phase": "A2-13 terminal16+12pass1.21099x; retained provisional, selectedA2-11 unchanged; exactcheckapprovalconsumed",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
@@ -918,11 +972,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 14,
-      "left": 6
+      "used": 15,
+      "left": 5
     }
   },
-  "quota_observed_utc": "2026-10-25T05:55:57.862771+00:00",
+  "quota_observed_utc": "2026-10-25T06:59:09.915941+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -1055,6 +1109,22 @@
     "candidate": "mixed_fa3_fp8_qk.py",
     "user_message": "Sentinel_3f76007e45288191bebca69b3076f568",
     "scope": "One official off-board check and reviewed source/tests/sanitized results push to existing private Xuefeng-Zhu/open-kernel-challenge; no unrelated future payload authorization from this approval",
-    "prior_denied_delegations_executed": false
+    "prior_denied_delegations_executed": false,
+    "completed_check_id": "c2fb7b23433f4888",
+    "check_consumed": true
+  },
+  "provisional_fp8_candidate": {
+    "experiment": "A2-13",
+    "source": "mixed_fa3_fp8_qk.py",
+    "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+    "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "job_id": "c2fb7b23433f4888",
+    "score": 1.210990803483977,
+    "ci": [
+      1.1928259414317173,
+      1.2291556655362366
+    ],
+    "selected": false,
+    "reason": "Retain passing FP8 candidate as promising; fullD32 normalized cut12.671%, all4targets faster, but targetgeomean6.096%misses10%, aggregate+1.963%CIoverlap. Preserve A2-11 selection; no extra check authorized by this exact payload approval."
   }
 }

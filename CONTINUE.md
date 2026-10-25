@@ -1,61 +1,44 @@
-# A2-13 FP8 QK preflight; preserve A2-11
+# A2-13 complete: FP8 QK candidate retained provisionally
 
-Current work: isolated `reviews/attention-v2/mixed_fa3_fp8_qk.py` from A2-11.
-One exact off-board check and reviewed private push are newly approved after
-two denied delegations that executed no external actions. See the latest
-section of CURRENT_AUTHORIZATION.md. Check ledger before dispatch; no A2-13
-request was sent at this checkpoint. Local tests are not GPU validation.
-No Modal launch or new/renewed credentials. This approval covers this payload
-and its evidence only, not arbitrary future uploads.
+No active or uncertain official GPU request. Job `c2fb7b23433f4888` is DONE:
+16 prerequisite + 12 timed shapes pass, 1.2109908035x SGLang,95% interval
+[1.1928259414,1.2291556655]. Source `reviews/attention-v2/mixed_fa3_fp8_qk.py`,
+commit `21fefb946524a25d8a06562dd28b631d49cd5175`, SHA256
+`e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e`.
+Do not resubmit. Read the exact source/card/result/12-shape CSV under that folder.
 
-No active or uncertain GPU request. All A2-09 through A2-12 jobs are terminal.
-See reviews/attention-v2/OWNERSHIP_MERGE_CYCLE.md for exact commands, evidence,
-source identities and a reasoned stopping point. No job needs resubmission.
+Four fallback QK paths use E4M3 queries/keys, BF16PV and FP32 sums. Full decodeB32
+normalized latency fell12.671%; sliding decodeB1/B16/B32 fell5.584/3.533/2.243%.
+Aggregate+1.9628%has overlappingCIs. Four-target geometric cut6.096%misses10%goal;
+no path regressed>5%. Outputerrors3.935–9.903%passadaptivebounds but consume
+more tolerance than BF16fallback. No PTX/nativeFP8 instruction evidence. New-source
+ABA/concurrency/untouched-row stress remains unverified.
 
-Selected attention source: reviews/attention-v2/mixed_fa3_decode_parallel_merge.py
-Original source commit: 7e302d2366b194c32c433f6d6f9cc7b0b59b3928
-SHA256: c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0
-Job: cfa8a8670e394f80, DONE, 16+12 passed, 1.1876787561×.
-95% interval: [1.1698635747, 1.2109342502]. The +2.761% point gain over
-historical A2-08 has slight interval overlap; not statistically resolved.
-No device-global completion counter remains. A13 passed 42 bounded-context ABA/cache replays; actual cross-graph overlap was
-observed for full decode B32 only. Other paths remain concurrency-unverified.
+Keep A2-11 as the selected version pending a separate repeat/selection decision:
+`reviews/attention-v2/mixed_fa3_decode_parallel_merge.py`, source7e302d2366b194c32c433f6d6f9cc7b0b59b3928,
+SHA256c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0,
+jobcfa8a8670e394f80,1.1876787561x. A13 passed42boundedABA/cachechecks on this
+parent only, cross-graphoverlap observedfullD32only; do not transfer this to FP8.
 
-Rejected A2-12: b24bbd05419c499a, DONE, 16+12 passed, 1.1734299856×.
-Query preparation saved producer work but increased target whole-call normalized
-latency 8.676%. Source/result retained independently; no speculative tuning sweep.
+Projection P039 unchanged in its separate worktree/branch:
+`candidates/projection_router_m1_fp32_gemv.py`, sourcecdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da,
+jobd5636ac8d1404abd,1.1732389990x,9+30pass. Remoteprojectiontip
+bc70cf261e86ca4c4bf8d0ba63d198dad6024b39. Never overwrite the preserved baseline.
 
-Projection selected P039 remains unchanged:
-Worktree /tmp/okc-projection-pipeline-preflight, source
-candidates/projection_router_m1_fp32_gemv.py, commit
-cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da, job d5636ac8d1404abd,
-1.1732389990×, 9+30 passed. Policy-only changes passed 12 admission/143 full
-CPU tests. Verified private branch: bc70cf261e86ca4c4bf8d0ba63d198dad6024b39.
+Actualplatformsnapshot2026-10-25T06:59:09UTC: attention15/20used5left,
+projection3/20used17left,ranked0/10both. Reset2026-10-26T00:00UTC.
+The exact FP8 source-transfer approval was consumed by ONE accepted check.
+No future upload is authorized by this renewed payload approval. Prior denied
+delegations executed nothing; this named action succeeded after explicit approval.
+See CURRENT_AUTHORIZATION.md for latestscope. No paidcompute,Modal,newcredentials,
+rankedentry or additionalcheck in this turn. FifteenCPUtests and officialreceipt
+are separate evidence. SavedModalappsare stopped; no newModaloperationhere.
+ConservativehistoricalModalcostremains$1.787819802; no change this turn.
 
-Current authorization: free off-board attention/projection user count caps removed.
-Keep historical ledgers; actual daily limits still apply. Latest observed quota
-05:55:57 UTC: attention 14/20 used, 6 left; projection 3/20 used, 17 left;
-scored 0/10 each. Reset 2026-10-26 00:00 UTC. Verify again before any dispatch.
-No paid compute, Modal launches, new credentials, ranked entry or serving launch.
-Current authorization is in CURRENT_AUTHORIZATION.md.
-
-A13 exact-source Modal diagnostic is complete: ap-f1GBalg3lZ0sfNmXyjJ7bu,
-stopped/tasks0 verified. All 42 checked ABA/cache replays passed across seven
-reduced-context cases. Actual cross-graph kernel overlap was observed for full
-decode B32 only; other six profiled cases did not overlap. Default full-context
-30-replay plan remains unrun. No general concurrent-safety or new score claim.
-See reviews/attention-v2/A13-RESULT.md and A13-coverage.csv.
-Worker35.706s/app43s; observed usage about$0.05, conservative incremental
-$0.078901888 and cumulative$1.787819802, paid$0. One approved launch consumed;
-no further Modal run/credential renewal authorized. Earlier A09 large-result401
-remains historical; A13 small-result retrieval succeeded. Cleanup stop returned1
-while task count drained; subsequent stopped/tasks0 read resolved shutdown.
-No new OKC checks, algorithm changes or serving launch. Both best sources remain.
-Current-source compiler resources/counters remain absent; no speculative rewrite.
-
-Private autopush: never push attention-fa3-local original history. Use
-analysis/safe_attention_export.py, then audit_push.py attention-fa3-sanitized
-origin/attention-fa3-sanitized, then push_private_verified.py attention-fa3-sanitized.
-Sanitized export maps original per-experiment commits without changing source
-bytes. Keep credentials/local-notes untracked. Parent controls model configuration;
-current tools do not expose that identity.
+Source/test/results privatepush is authorized for this payload. Never push the
+original attention-fa3-local history. Use analysis/safe_attention_export.py,
+audit_push.py attention-fa3-sanitized origin/attention-fa3-sanitized, then
+push_private_verified.py attention-fa3-sanitized. Inspect outgoing history and
+verify remoteSHA. The export maps source/results commits without changing bytes.
+Final push receipts are kept only in ignored local-notes/auto-push-receipts.local.json;
+remote verification is reported in the task, avoiding recursive status commits.

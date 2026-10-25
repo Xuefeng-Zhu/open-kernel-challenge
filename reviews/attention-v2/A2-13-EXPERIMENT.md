@@ -25,7 +25,7 @@ its FP8 cast. Do not apply qk_scale_factor or k_scale twice.
 Unchanged: BF16 P/V operands, FP32 softmax/partials, key normalization and FP8
 cache writes, V scaling, masks, partition, new-token ownership, scratch/tickets,
 merge, warps/stages/tiles, all FA3 functions and dispatch. QK reduction D=64
-satisfies the pinned compiler's FP8 minimum K=32 even for new-token N=16; that
+satisfies the reviewed Triton3.8 source FP8 minimum K=32 even for new-token N=16; that
 is only a static compatibility check. Optional interpreter DOT conversion is
 preserved but no interpreter execution is claimed.
 
@@ -65,3 +65,22 @@ Primary contracts: [official task](https://openkernelchallenge.dev/api/v1/proble
 [NVIDIA PTX ISA](https://docs.nvidia.com/cuda/parallel-thread-execution/index.html).
 Saved reference.py307–312 places FP8 query rounding before qk_scale_factor.
 No third-party competitor software is executed or copied.
+
+## Official coverage audit before result
+
+The saved public checker collects output and new K/V cache locations. It checks
+new cache rows within8% relative L2, then compares output using our own new cache
+entries. Default oracle Q is BF16-rounded; its arithmetic uses FP32 and final
+output is BF16. The alternate E4M3 query oracle establishes the adaptive bound,
+not a bitwise target. The worst-row output check is a token row with all query
+heads concatenated, not an independent bound on each head.
+
+TASK documents fresh-input CUDAgraph comparisons, but this receipt cannot prove
+explicit same-address A/B/A, untouched cache rows, immutable input invariance or
+actual overlap of independent graphs. Those remain unverified for A2-13. The
+separate A13 diagnostic passed a limited subset on the exact A2-11 parent only.
+
+Source types/out_dtype/max_num_imprecise_acc request precise FP32 dot results;
+without this candidate's PTX/SASS or compiler metadata there is no evidence of
+native FP8 instructions, register savings, spills or a hardware bottleneck.
+The official pass/fail and whole-call timing will test usefulness directly.

@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-25T06:18:19.715663+00:00",
+  "observed_utc": "2026-10-25T06:58:36.556736+00:00",
   "attention": {
     "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
     "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
@@ -82,5 +82,22 @@
     "correctness_passed": true,
     "score": 1.1734299856044392,
     "reason": "Target normalized whole-call latency increased 8.676%; extra preparation launch did not pay for itself."
+  },
+  "attention_fp8_provisional": {
+    "experiment": "A2-13",
+    "source": "mixed_fa3_fp8_qk.py",
+    "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+    "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "job_id": "c2fb7b23433f4888",
+    "score": 1.210990803483977,
+    "ci": [
+      1.1928259414317173,
+      1.2291556655362366
+    ],
+    "selected": false,
+    "reason": "Retain passing FP8 candidate as promising; fullD32 normalized cut12.671%, all4targets faster, but targetgeomean6.096%misses10%, aggregate+1.963%CIoverlap. Preserve A2-11 selection; no extra check authorized by this exact payload approval.",
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "coverage": "Officialonly for newsource; explicitABA/concurrency unverified;parentA13nottransferred"
   }
 }

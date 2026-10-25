@@ -6,7 +6,7 @@ current permissions, budgets or selected candidates.
 
 | Track | Selected checked code | Official score | Current experiment |
 |---|---|---:|---|
-| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-11 retained; A2-12 rejected after passing correctness |
+| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-13 FP8 passes1.21099x; provisional, CIoverlap, A2-11retained |
 | Projection | P039, on [projection-pipeline-preflight branch](https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight) | 1.17323900x | Selected P039 preserved; serving interfaces audited |
 
 Attention receipts,12shape rows and six weighted loads are in
@@ -27,9 +27,15 @@ It improves2.761% over A2-08, with slightly overlapping confidence intervals. Se
 [best-version manifest](BEST_VALIDATED_MANIFEST.json) and
 [correctness/serving audit](CORRECTNESS_AND_SERVING_AUDIT.md).
 
+The [A2-13 FP8 result](reviews/attention-v2/A2-13-RESULT.md) records all16+12passes,
+12.67%full-decodeB32 normalized latencycut and a1.21099x pointscore. Its
++1.96%aggregate has overlapping intervals; the four-target10%goal was missed.
+This promising candidate uses more numerical tolerance; A2-11 remains selected.
+
 The [A13 H200 diagnostic](reviews/attention-v2/A13-RESULT.md) passed 42 replay/cache checks on the selected attention source. Actual concurrent-graph overlap was observed for full decode B32 only; broader concurrency remains unverified. The one approved Modal app is stopped.
 
-Standing reviewed automatic pushes go only to this private repository. Original
+The current exact FP8 source/tests/results push is approved for this private repository.
+The renewed payload approval does not authorize unrelated future uploads. Original
 attention research history stays local; `attention-fa3-sanitized` preserves source
 bytes and maps source commits via analysis/PUSH_EXPORT_MAP.json. Credentials and
 local-notes are excluded. No formal/ranked entries, paid compute, new credentials

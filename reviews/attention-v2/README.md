@@ -22,6 +22,7 @@ and qualifications are in [A2-11 result](A2-11-RESULT.md).
 | [A2-10](A2-10-RESULT.md) | Decode fallback independent serial merge |1.14054863x|
 | [A2-11](A2-11-RESULT.md) | Per-head parallel split merge |1.18767876x|
 | [A2-12](A2-12-RESULT.md) | Sliding decode B1 query hoist, rejected |1.17342999x|
+| [A2-13](A2-13-RESULT.md) | FP8 fallback QK, retained provisionally |1.21099080x|
 
 A2-05..08 target normalized cuts:28.18%,23.46%/19.49%,15.77%,12.54%.
 A2-06..08 aggregate increments have overlapping intervals; do not call them
@@ -34,10 +35,15 @@ A2-09 through A2-12 are all terminal. The [completed cycle report](OWNERSHIP_MER
 L8fallback retains invocation-local zeroed counters. No device-global completion
 counter remains. A13 subsequently passed 42 bounded-context native ABA/cache replays. Actual cross-graph overlap was observed for full decode B32 only; six other profiled paths did not overlap. See [A13 result](A13-RESULT.md) and [harness notes](NATIVE_OWNERSHIP_PROBE.md).
 
+A2-13 passed16+12: fullD32cut12.67%, targetgeomean6.10%below10%goal,
+aggregate+1.96%CIoverlap. No>5%regression. FP8 consumes more outputtolerance;
+parentA13ABA/concurrency evidence does not transfer. A2-11 remains selected.
+
 User count ceilings were removed explicitly; actual daily quotas remain enforced
 in the [ledger](attention-cycle2-budget.json). Historical ten-check and six-check
 cycles remain auditable records. No ranked entries, paid resources, new credentials
-or Modal launches. Reviewed automatic private pushes remain authorized.
+or Modal launches. The renewed exact FP8 payload approval covers this source,
+tests and sanitized results push; no unrelated future upload follows from it.
 
 ```
 .venv/bin/python reviews/attention-v2/summarize_fusion_series.py

@@ -67,10 +67,18 @@ def main():
         overlaps = max(ci[0], oldci[0]) <= min(ci[1], oldci[1])
         thresholds = {key: plan.get('target_latency_cuts', {}).get(
             '|'.join(key), plan.get('target_latency_cut', .2)) for key in targets}
-        goal = all(r['normalized_latency_cut'] >= thresholds[(r['load'], r['layer'])]
-                   for r in rows if r['target'])
+        target_geomean_cut = 1 - math.prod(
+            1-r['normalized_latency_cut'] for r in rows if r['target'])**(1/len(targets))
+        goal_mode = plan.get('target_goal_mode', 'each_target')
+        if goal_mode == 'geometric_mean_latency_cut':
+            goal = target_geomean_cut >= plan['target_latency_cut']
+        else:
+            assert goal_mode == 'each_target'
+            goal = all(r['normalized_latency_cut'] >= thresholds[(r['load'], r['layer'])]
+                       for r in rows if r['target'])
         report.update(parent_score=oldG, score=G, relative_score_change=G/oldG-1,
             ci=ci, parent_ci=oldci, aggregate_ci_overlap=overlaps, target_goal_met=goal,
+            target_goal_mode=goal_mode, target_geomean_latency_cut=target_geomean_cut,
             target_thresholds={'|'.join(k): v for k,v in sorted(thresholds.items())},
             shape_rows=rows, parent_loads=bloads, new_loads=aloads,
             unchanged_controls_over5pct_latency_regression=regressions,
@@ -105,7 +113,7 @@ def main():
                  'Separate jobs are not directly paired parent/candidate trials. No hardware-counter claim.',
                  'Native output/new-cache and fresh-input graph evidence is limited to actual receipt cases.',
                  'CPU ABA/page/scales/untouched-row tests remain stand-ins unless explicitly confirmed natively.',
-                 f"User attention count ceiling: {'removed; daily platform limits still apply' if ledger['remaining'] is None else str(ledger['remaining'])+' checks remaining'}; no ranked entry or Modal; reviewed private auto-push is authorized."]
+                 f"Historical user count ceiling: {'removed; daily platform limits still apply' if ledger['remaining'] is None else str(ledger['remaining'])+' checks remaining'}. Current payload/egress scope is governed by CURRENT_AUTHORIZATION.md; no ranked entry or Modal."]
         (HERE/f'{exp}-RESULT.md').write_text('\n'.join(text)+'\n')
     (HERE/f'{exp}-assessment.json').write_text(json.dumps(report, indent=2)+'\n')
     print(json.dumps({k:v for k,v in report.items() if k in ['experiment','job_id','passed','score','relative_score_change','target_goal_met','recommendation']}))

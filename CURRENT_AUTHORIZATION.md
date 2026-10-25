@@ -32,3 +32,8 @@ again, stop the action. No paid compute, Modal launch, credentials, ranked
 entry, force push or visibility change. Do not treat this renewed approval as
 permission for unrelated future uploads. Preserve the earlier historical
 authorization and usage, with this latest scope governing current egress.
+
+A2-13 check completed as c2fb7b23433f4888 (16+12pass) on2026-10-25.
+The one exact-check permission is consumed. Its reviewed source/tests/results
+private push remains covered; no further GPU launch or candidate upload follows
+from this approval. Current platform quota is recorded independently.
