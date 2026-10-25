@@ -1,3 +1,24 @@
+# Current Projection checkpoint — 2026-10-25 21:26 UTC
+
+P045 is local and ready for serialized GPU validation: output-column BMM,
+source SHA256 `c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58`.
+Thirteen bounded CPU/static tests passed; native CUDA correctness, graphs,
+actual tactic, and performance remain unverified. Targets: pooler M=8/16/32/128;
+all other scored paths stay P039. See experiment 045 for exact reduced-K limits.
+No new GPU request or app. Attention currently owns the measurement slot.
+
+P044 is complete and pushed privately through `aa730b8f1e7e0b000df41ea3abe7eb26da85efd9`,
+verified at 21:16:50 UTC. App `ap-pF3Ammg5fT5638UgFJTrox` is stopped with zero
+tasks. Its 610 oracle checks, 480 measured observations, ten sanitized traces,
+and billing/shutdown evidence are preserved. The earlier P044 denials were
+resolved by the explicit approved retries; neither operation remains pending.
+
+Selected P039 remains 1.173238999×, source `cdf5bc2`, job `d5636ac8d1404abd`.
+Latest historical quota read at 21:16 UTC: Projection checks 4/20 used, 16 left;
+reset 00:00 UTC. Recheck current state before dispatch. No formal entry.
+
+## Previous checkpoint (historical)
+
 # Current Projection checkpoint — 2026-10-25 21:10 UTC
 
 P044 diagnostic completed: frozen P039, app ap-pF3Ammg5fT5638UgFJTrox,

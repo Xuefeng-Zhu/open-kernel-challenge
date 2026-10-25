@@ -1,0 +1,38 @@
+{
+  "source_receipt": "results/remote-P2-04-router-m1-fp32-gemv.csv",
+  "source_receipt_sha256": "46d1b02db4d528cac4c26ff5933c46b12361440441567b11a62bf1b8d525564a",
+  "parent_job": "d5636ac8d1404abd",
+  "parent_score": 1.173238998969285,
+  "target_layer": "pooler",
+  "target_scored_m": [
+    8,
+    16,
+    32,
+    128
+  ],
+  "scoring": "Six equally weighted loads; within each load all five families have weight 62.",
+  "scenarios": [
+    {
+      "target_latency_cut_fraction": 0.05,
+      "modeled_score": 1.1854783333710386,
+      "modeled_relative_score_gain": 0.010432089636046804
+    },
+    {
+      "target_latency_cut_fraction": 0.1,
+      "modeled_score": 1.1980439344073919,
+      "modeled_relative_score_gain": 0.021142269784671708
+    },
+    {
+      "target_latency_cut_fraction": 0.2,
+      "modeled_score": 1.224211761781122,
+      "modeled_relative_score_gain": 0.04344618859125671
+    },
+    {
+      "target_latency_cut_fraction": 1.0,
+      "modeled_score": 1.5019306461828077,
+      "modeled_relative_score_gain": 0.28015745087086685
+    }
+  ],
+  "interpretation": "These hold every other time fixed and predict no actual speedup. The 100% cut is an impossible zero-latency algebraic ceiling, not a physically achievable or expected result.",
+  "gpu_executed": false
+}

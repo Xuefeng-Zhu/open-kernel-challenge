@@ -1,3 +1,22 @@
+# Resume Projection P045 local-ready candidate
+
+P044 diagnostic and private push are complete, remote verified at `aa730b8`.
+P045 source and 13-test bounded CPU preflight are ready; read experiment 045 and
+`prepared_local_candidate` in the index. P039 remains selected and immutable.
+P045 has never run on GPU and has no job ID. Keep its reduced-K model coverage
+separate from required full-size CUDA correctness.
+
+Attention has the serialized measurement slot. Do not dispatch until a fresh
+coordinator release; the old P044 terminal slot record is not a new grant.
+Before dispatch reconcile current account jobs/quota and exact committed source.
+Evaluate one fixed P045 BMM candidate with its predeclared gates; no shard sweep,
+no repeat of unchanged P039, and no fabricated score or split-K elimination.
+
+Earlier P044 launch and push retries both succeeded after explicit approval.
+No denied P044 operation is pending. Do not repeat either operation.
+
+## Historical handoff (superseded)
+
 # Resume Projection after P044
 
 P044 complete and exact app stopped/tasks0. Read experiment044 and published

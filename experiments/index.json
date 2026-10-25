@@ -492,5 +492,33 @@
     "official_score_produced": false,
     "shutdown_verified": true,
     "report": "experiments/044-projection-evidence-diagnostic.md"
+  },
+  "prepared_local_candidate": {
+    "id": "P045",
+    "status": "local-preflight-passed-awaiting-serialized-slot",
+    "candidate": "candidates/projection_pooler_column_batch2.py",
+    "source_sha256": "c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58",
+    "parent": "P039",
+    "parent_job": "d5636ac8d1404abd",
+    "target_scored_m": [
+      8,
+      16,
+      32,
+      128
+    ],
+    "local_tests": {
+      "passed": 13,
+      "total": 13,
+      "unittest_seconds": 5.75,
+      "wrapper_seconds": 6.721,
+      "command": "python -B -m unittest discover -s tests -p test_projection_pooler_column_batch2.py -v",
+      "scope": "CPU full K at M2/M7; larger M helper K131; static/packing/dispatch tests; no CUDA",
+      "coordinator_rerun_seconds": 5.674
+    },
+    "gpu_executed": false,
+    "official_job": null,
+    "report": "experiments/045-pooler-column-batch2-local.md",
+    "updated_utc": "2026-10-25T21:28:36.995293+00:00",
+    "cpu_report": "results/router-p045-cpu.json"
   }
 }
