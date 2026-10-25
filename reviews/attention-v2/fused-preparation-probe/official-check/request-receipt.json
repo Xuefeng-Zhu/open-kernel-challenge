@@ -1,0 +1,35 @@
+{
+  "state": "accepted",
+  "mode": "check",
+  "formal_entry": false,
+  "problem": "muse_attention_decode",
+  "experiment": "three-path-fused-preparation",
+  "source_commit": "0280972637e600e5f82a45f35778aed3f72886b1",
+  "source_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "created_utc": "2026-10-25T20:20:57.823094+00:00",
+  "quota_before": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 16,
+      "left": 4
+    }
+  },
+  "job_id": "2f5f1fb54b48486d",
+  "command": [
+    "/Users/frank/Documents/Codex/2026-10-23/task/bin/okc",
+    "check",
+    "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-fused-preparation/reviews/attention-v2/fused-preparation-probe/candidate.py",
+    "--no-wait",
+    "--json"
+  ],
+  "automatic_retries": 0,
+  "cli_exit_code": 0,
+  "accepted_utc": "2026-10-25T20:20:58.122060+00:00",
+  "request_provenance": "Exact single accepted request; no retry",
+  "cli_binary_sha256": "01a6b091bc827a54403bdb32db721f275489f07c2d3490199f5457e4da27b4e6"
+}

@@ -1,0 +1,57 @@
+{
+  "observed_utc": "2026-10-25T20:18:08.870706+00:00",
+  "app": {
+    "app_id": "ap-I6PNHOGgL6uRL1AjjG2yoV",
+    "description": "okc-attention-fused-preparation",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 13:16:14-07:00",
+    "stopped_at": "2026-10-25 13:17:43-07:00"
+  },
+  "all_apps": [
+    {
+      "app_id": "ap-I6PNHOGgL6uRL1AjjG2yoV",
+      "description": "okc-attention-fused-preparation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:16:14-07:00",
+      "stopped_at": "2026-10-25 13:17:43-07:00"
+    },
+    {
+      "app_id": "ap-mEXdTixH5oBF9hXapbXGxj",
+      "description": "okc-counter-access-final",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:39:36-07:00",
+      "stopped_at": "2026-10-25 11:40:40-07:00"
+    },
+    {
+      "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+      "description": "okc-profile-bounded-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:26:41-07:00",
+      "stopped_at": "2026-10-25 11:28:51-07:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "1.69000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.69000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.69054079",
+      "volumes": "0E-8"
+    }
+  },
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks": true,
+  "paid_limit_usd": "0"
+}
