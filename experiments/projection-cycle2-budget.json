@@ -1,7 +1,7 @@
 {
   "cycle": "projection-cycle2",
   "problem": "muse_bf16_proj",
-  "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
+  "authorization": "Current user personal count ceiling removed for free off-board attention/projection checks; actual daily quotas and one shared GPU slot still apply; no paid/Modal/newcredentials/ranked; reviewed private auto-push allowed via coordinator. See CURRENT_AUTHORIZATION.md.",
   "maximum_new_experiments": 10,
   "remaining_authorized": 5,
   "max_active_jobs": 1,
@@ -401,7 +401,7 @@
       "user_checks_remaining": 5
     }
   ],
-  "latest_authorization_note": "User requests autonomous evidence-led iteration; projection7 remaining, reserve final where meaningful; GPU serialized across problems; no new Modal/push/ranked/paid/credentials",
+  "latest_authorization_note": "Superseding user reference Sentinel_26cefe33699481919e869a7bce3c3476 removes personal free-check count ceiling across attention/projection. Legacy numeric allowance fields remain historical compatibility values; no new request is admitted by this documentation update.",
   "selection_before_P039": null,
   "selection": {
     "candidate": "candidates/projection_router_m1_fp32_gemv.py",
@@ -418,5 +418,37 @@
     "previous_best_preserved": true
   },
   "current_phase": "P040 correct but goalmissed; retainP039, boundedpauseprojection for larger attentiongaps; fivechecks retained",
-  "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md"
+  "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
+  "historical_authorization_fields": {
+    "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
+    "latest_authorization_note": "User requests autonomous evidence-led iteration; projection7 remaining, reserve final where meaningful; GPU serialized across problems; no new Modal/push/ranked/paid/credentials",
+    "current_phase": "P040 correct but goalmissed; retainP039, boundedpauseprojection for larger attentiongaps; fivechecks retained"
+  },
+  "current_authorization": {
+    "conversation_reference": "Sentinel_26cefe33699481919e869a7bce3c3476",
+    "scope": "Free off-board OKC attention and projection checks; evidence-led experiments only",
+    "personal_check_count_ceiling_removed": true,
+    "personal_check_count_ceiling": null,
+    "platform_daily_quotas_still_apply": true,
+    "shared_gpu_serialization_still_required": true,
+    "reviewed_private_auto_push_allowed": true,
+    "coordinator_owns_admissions_gpu_and_pushes": true,
+    "excluded_scope": [
+      "paid compute",
+      "Modal runs",
+      "new or renewed credentials",
+      "ranked submissions",
+      "new binding terms or account/payment/visibility changes"
+    ],
+    "legacy_fields_historical": [
+      "maximum_new_experiments",
+      "remaining_authorized",
+      "prior_budgets",
+      "historical_authorization_fields",
+      "dated pause/count statements"
+    ],
+    "runner_compatibility": "cycle2_check.py still enforces maximum_new_experiments and recomputes remaining_authorized. Update enforcement after review before it reaches the historical hard cap; do not break numeric arithmetic, bypass daily quota/shared-slot checks or substitute an arbitrary large cap.",
+    "documentation": "CURRENT_AUTHORIZATION.md",
+    "check_launched_by_this_update": false
+  }
 }
