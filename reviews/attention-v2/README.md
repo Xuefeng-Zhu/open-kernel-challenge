@@ -21,6 +21,7 @@ and qualifications are in [A2-11 result](A2-11-RESULT.md).
 | [A2-09](A2-09-RESULT.md) | Per-invocation fallback counter ownership |1.14665988x|
 | [A2-10](A2-10-RESULT.md) | Decode fallback independent serial merge |1.14054863x|
 | [A2-11](A2-11-RESULT.md) | Per-head parallel split merge |1.18767876x|
+| [A2-12](A2-12-RESULT.md) | Sliding decode B1 query hoist, rejected |1.17342999x|
 
 A2-05..08 target normalized cuts:28.18%,23.46%/19.49%,15.77%,12.54%.
 A2-06..08 aggregate increments have overlapping intervals; do not call them
@@ -29,7 +30,7 @@ individually significant. All raw samples, calibrated times, paired ratios,
 Each run has11shapes with60timing sample entries and fullverify32 with56,
 not a claimed exact number of underlying graph replays. Profile sums are not walltime.
 
-A2-09..11 are all terminal. A2-11 removes completion counters on L1fallback;
+A2-09 through A2-12 are all terminal. The [completed cycle report](OWNERSHIP_MERGE_CYCLE.md) records target results, commands, source identities and the exact next validation prerequisite. A2-12 passed correctness but slowed its target by 8.676%; A2-11 remains selected. A2-11 removes completion counters on L1fallback;
 L8fallback retains invocation-local zeroed counters. No device-global completion
 counter remains. Dedicated native independent-graph ABA/concurrency stress is
 still unrun; [prepared harness](NATIVE_OWNERSHIP_PROBE.md) has five CPU tests only.

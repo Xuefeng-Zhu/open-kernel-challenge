@@ -6,12 +6,13 @@ current permissions, budgets or selected candidates.
 
 | Track | Selected checked code | Official score | Current experiment |
 |---|---|---:|---|
-| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-11 retained; A2-12 query hoist running |
+| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-11 retained; A2-12 rejected after passing correctness |
 | Projection | P039, on [projection-pipeline-preflight branch](https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight) | 1.17323900x | Selected P039 preserved; serving interfaces audited |
 
 Attention receipts,12shape rows and six weighted loads are in
 [its experiment README](reviews/attention-v2/README.md). Only official H200 checks
 establish native correctness/performance; CPU models remain explicitly separate.
+The [ownership/merge cycle report](reviews/attention-v2/OWNERSHIP_MERGE_CYCLE.md) records the completed counter repair, merge improvement and rejected query hoist.
 The [fusion series report](reviews/attention-v2/FUSION_SERIES_RESULTS.md) records
 A2-05 through A2-08: all four pass16prerequisites+12timedshapes, with source hashes,
 raw timings and CPU limitations. The historical A2-08 score CI is[1.13843065,1.17310367]. The

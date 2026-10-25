@@ -1,5 +1,5 @@
 {
-  "observed_utc": "2026-10-25T05:51:19.659268+00:00",
+  "observed_utc": "2026-10-25T05:58:09.177342+00:00",
   "attention": {
     "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
     "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
@@ -60,13 +60,17 @@
     ],
     "prerequisites": 16,
     "timed_shapes": 12,
-    "restriction": "Sequential official validation; global completion-counter overlap risk in E2 fallback. Counter-local A2-09 is a separately checked correctness repair with measured cost; A2-10 is pending."
+    "restriction": "Historical A2-08 passed sequential official validation but shares device-global completion counters. A2-09 repaired ownership; selected A2-11 removes decode counters. Preserved for comparison, not selected."
   },
-  "pending_attention_experiment": {
+  "active_jobs": [],
+  "last_rejected_attention_experiment": {
     "experiment": "A2-12",
     "job_id": "b24bbd05419c499a",
-    "candidate": "mixed_fa3_decode_qhoist.py",
-    "status": "accepted",
-    "not_selected_until_result": true
+    "source": "reviews/attention-v2/mixed_fa3_decode_qhoist.py",
+    "source_commit": "e2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8",
+    "sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+    "correctness_passed": true,
+    "score": 1.1734299856044392,
+    "reason": "Target normalized whole-call latency increased 8.676%; extra preparation launch did not pay for itself."
   }
 }

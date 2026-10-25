@@ -1,0 +1,43 @@
+{
+  "observed_utc": "2026-10-25T05:55:57.862771+00:00",
+  "platform_quotas": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 14,
+        "left": 6
+      }
+    }
+  },
+  "active_jobs_in_returned_recent_jobs": [],
+  "returned_job_count": 35,
+  "next_reset_utc": "2026-10-26T00:00:00Z",
+  "reset_basis": "official TASK.md: daily limits reset at 00:00 UTC",
+  "user_free_check_count_ceiling": "removed",
+  "paid_or_ranked_authorization": false,
+  "gpu_slot": {
+    "state": "terminal",
+    "problem": "muse_attention_decode",
+    "experiment": "A2-12",
+    "job_id": "b24bbd05419c499a",
+    "source_sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+    "updated_utc": "2026-10-25T05:55:31.047445+00:00"
+  }
+}

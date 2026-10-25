@@ -1,43 +1,47 @@
-# A2-12 active; preserve A2-11 best
+# Completed ownership/merge cycle; preserve A2-11
 
-Current authorization: free off-board attention/projection user count ceilings
-removed; actual platform quotas, serialized GPU and all other restrictions remain.
-No paid/Modal/newcredentials/ranked entry. See CURRENT_AUTHORIZATION.md.
+No active or uncertain GPU request. All A2-09 through A2-12 jobs are terminal.
+See reviews/attention-v2/OWNERSHIP_MERGE_CYCLE.md for exact commands, evidence,
+source identities and a reasoned stopping point. No job needs resubmission.
 
-Selected attention complete source: reviews/attention-v2/mixed_fa3_decode_parallel_merge.py
-original source commit7e302d2366b194c32c433f6d6f9cc7b0b59b3928
-SHA256c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0
-jobcfa8a8670e394f80 DONE16+12pass,1.1876787561x,
-CI[1.1698635747,1.2109342502]. +2.761%versusA2-08withslightCIoverlap;
-alltargetgoalsmetvsA2-10andnocontrol>5%regression. No device-global completion
-counter; dedicated native concurrent graph/ABA stress remains unrun.
+Selected attention source: reviews/attention-v2/mixed_fa3_decode_parallel_merge.py
+Original source commit: 7e302d2366b194c32c433f6d6f9cc7b0b59b3928
+SHA256: c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0
+Job: cfa8a8670e394f80, DONE, 16+12 passed, 1.1876787561×.
+95% interval: [1.1698635747, 1.2109342502]. The +2.761% point gain over
+historical A2-08 has slight interval overlap; not statistically resolved.
+No device-global completion counter remains. Bespoke native stress is unrun.
 
-A2-09 localtickets passed1.14666xwithinitializationcost. A2-10 serialmerge
-passed1.14055xbutregressed. A2-11 parallelmerge measured improvement is retained.
-All source/results/failures/12timings/sixweightedloads are preserved.
+Rejected A2-12: b24bbd05419c499a, DONE, 16+12 passed, 1.1734299856×.
+Query preparation saved producer work but increased target whole-call normalized
+latency 8.676%. Source/result retained independently; no speculative tuning sweep.
 
-A2-12 ACTIVE jobb24bbd05419c499a accepted2026-10-25T05:49:30UTC.
-Candidate mixed_fa3_decode_qhoist.py, sourcee2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8,
-SHA25645003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597.
-Only B1/L1/sliding hoists exact repeated querynorm/RoPE/factor/finalBF16 into
-an invocation-local timedbuffer. Target>=15%normalizedwholecallcut, including
-extra launch. Other11computations preserved. Seven CPU/static tests pass;
-native result PENDING. Poll SAME ID with check_cycle.py poll A2-12 --cycle2;
-do not resubmit. Shared slot in ignored local-notes/gpu-slot.local.json.
+Projection selected P039 remains unchanged:
+Worktree /tmp/okc-projection-pipeline-preflight, source
+candidates/projection_router_m1_fp32_gemv.py, commit
+cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da, job d5636ac8d1404abd,
+1.1732389990×, 9+30 passed. Policy-only changes passed 12 admission/143 full
+CPU tests. Verified private branch: bc70cf261e86ca4c4bf8d0ba63d198dad6024b39.
 
-Projection selected P0391.173238999x: candidates/projection_router_m1_fp32_gemv.py,
-sourcecdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da,jobd5636ac8d1404abd.
-Worktree /tmp/okc-projection-pipeline-preflight. Candidate unchanged; policy
-runner/tests updated to explicit uncappedfreeauthorization.12admissiontests,
-143fullCPUtests passed. Remote branch verifiedbc70cf261e86ca4c4bf8d0ba63d198dad6024b39.
+Current authorization: free off-board attention/projection user count caps removed.
+Keep historical ledgers; actual daily limits still apply. Latest observed quota
+05:55:57 UTC: attention 14/20 used, 6 left; projection 3/20 used, 17 left;
+scored 0/10 each. Reset 2026-10-26 00:00 UTC. Verify again before any dispatch.
+No paid compute, Modal launches, new credentials, ranked entry or serving launch.
+Current authorization is in CURRENT_AUTHORIZATION.md.
 
-Native ownership harness prepared, five CPU tests only, ZERO native stress
-replays. NATIVE_OWNERSHIP_PROBE.md gives exact futurecommand and limitations.
-Needs separately permitted H200execution; no newModal launch allowed.
-Serving interface audit complete, no servingpatch/deployment/submission.
+Next priority: native_ownership_probe.py on the exact selected source with a
+permitted H200 environment and official dependencies. Five CPU tests pass;
+zero native probe replays executed. Planned 30 replays cover L1 independent
+captures/changed contents and lengths/cache; add L8 coverage separately.
+The Mac has no CUDA; no new Modal/credential grant exists. Current-source
+compiler resources/counters are also absent. Do not claim a measured bottleneck
+or native concurrency pass from old sources/CPU stand-ins. Serving audit is
+complete; no integration patch or end-to-end gain has been tested.
 
-Private autopush: NEVER push attention-fa3-local originalhistory. Use
-analysis/safe_attention_export.py; audit_push.py attention-fa3-sanitized
-origin/attention-fa3-sanitized; push_private_verified.py attention-fa3-sanitized.
-Source/hash mapping lives in exportmanifest. Preservecredentials/local-notes.
-Model configuration is controlled byparent; tools do not expose currentidentity.
+Private autopush: never push attention-fa3-local original history. Use
+analysis/safe_attention_export.py, then audit_push.py attention-fa3-sanitized
+origin/attention-fa3-sanitized, then push_private_verified.py attention-fa3-sanitized.
+Sanitized export maps original per-experiment commits without changing source
+bytes. Keep credentials/local-notes untracked. Parent controls model configuration;
+current tools do not expose that identity.
