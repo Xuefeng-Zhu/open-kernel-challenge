@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T05:21:12.620772+00:00",
+  "experiment": "A2-10",
+  "candidate_sha256": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "command": ".venv/bin/python -m unittest discover -s reviews/attention-v2 -p test_decode_merge.py -v",
+  "tests_passed": 5,
+  "CPU_float64_merge_cases": 120,
+  "GPU_or_interpreter_executed": false,
+  "source_only_invariants": "GPU attention math/partition/neutral writes and merge recurrence identical; only L1 merge orchestration changes"
+}

@@ -636,6 +636,32 @@
       ],
       "target_latency_cut": -0.05,
       "hypothesis": "Remove cross-invocation counter aliasing with per-call zeroed tickets; no math or dispatch changes. Correctness repair, not speed claim. Measure cost on four scored fallback paths; flag >5%normalized path regression. Official check does not prove multistream stress."
+    },
+    "A2-10": {
+      "candidate": "mixed_fa3_decode_merge.py",
+      "expected_sha256": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+      "final": false,
+      "parent_receipt": "A2-09-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.03,
+      "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure."
     }
   },
   "all_requests_terminal": true,
