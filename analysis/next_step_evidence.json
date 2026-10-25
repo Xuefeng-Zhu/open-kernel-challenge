@@ -1,0 +1,578 @@
+{
+  "method": "Saved official receipts only; six weighted loads. All future scenarios explicitly modeled, never achieved.",
+  "attention": {
+    "job_id": "e0b3cd9474084069",
+    "source_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "shapes": [
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "decode 1",
+          "page": 1,
+          "seed": 275664481042260695,
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 17.920000478625298,
+        "raw_sglang_us": 24.720000103116035,
+        "adjusted_candidate_us": 13.841368343660415,
+        "adjusted_sglang_us": 20.655999891459942,
+        "paired_sglang_over_candidate": 1.4923379956809506,
+        "weighted_signed_gap_us": -313.47305119877825,
+        "runs": 60,
+        "replay_overhead_ns": 4064.0002116560936
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "decode 1",
+          "page": 1,
+          "seed": 275826162368556614,
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 45.423999428749084,
+        "raw_sglang_us": 35.74400022625923,
+        "adjusted_candidate_us": 41.16680457906964,
+        "adjusted_sglang_us": 31.55200043693185,
+        "paired_sglang_over_candidate": 0.7664427870841782,
+        "weighted_signed_gap_us": 153.83686627420468,
+        "runs": 60,
+        "replay_overhead_ns": 4191.999789327383
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "decode 16",
+          "page": 1,
+          "seed": 275987843694852534,
+          "spread": "agentic",
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 19.920000806450844,
+        "raw_sglang_us": 30.832000076770782,
+        "adjusted_candidate_us": 15.429705324154225,
+        "adjusted_sglang_us": 26.57600026577711,
+        "paired_sglang_over_candidate": 1.7223919515931434,
+        "weighted_signed_gap_us": -512.7295673146527,
+        "runs": 60,
+        "replay_overhead_ns": 4255.999810993671
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "decode 16",
+          "page": 1,
+          "seed": 276149525021148455,
+          "spread": "agentic",
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 259.7440034151077,
+        "raw_sglang_us": 204.6079933643341,
+        "adjusted_candidate_us": 256.00498262015094,
+        "adjusted_sglang_us": 200.28799353167415,
+        "paired_sglang_over_candidate": 0.7823597473837169,
+        "weighted_signed_gap_us": 891.4718254156287,
+        "runs": 60,
+        "replay_overhead_ns": 4319.99983265996
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "decode 32",
+          "page": 1,
+          "seed": 276311206347444377,
+          "spread": "agentic",
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 24.335999973118305,
+        "raw_sglang_us": 35.151999443769455,
+        "adjusted_candidate_us": 19.75997636886611,
+        "adjusted_sglang_us": 30.863999389111996,
+        "paired_sglang_over_candidate": 1.5619451568647333,
+        "weighted_signed_gap_us": -510.7850589313108,
+        "runs": 60,
+        "replay_overhead_ns": 4288.000054657459
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "decode 32",
+          "page": 1,
+          "seed": 276472887673740300,
+          "spread": "agentic",
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 373.1200098991394,
+        "raw_sglang_us": 389.5359933376312,
+        "adjusted_candidate_us": 370.0632169685383,
+        "adjusted_sglang_us": 385.4399938136339,
+        "paired_sglang_over_candidate": 1.0415517569432007,
+        "weighted_signed_gap_us": -246.0284295215297,
+        "runs": 60,
+        "replay_overhead_ns": 4095.999523997307
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "verify 1",
+          "page": 1,
+          "q_len": 8,
+          "seed": 276634569000036224,
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 47.68000170588493,
+        "raw_sglang_us": 26.704000309109688,
+        "adjusted_candidate_us": 43.97646113367194,
+        "adjusted_sglang_us": 22.896000184118748,
+        "paired_sglang_over_candidate": 0.5206421706949884,
+        "weighted_signed_gap_us": 969.7012036794468,
+        "runs": 60,
+        "replay_overhead_ns": 3808.00012499094
+      },
+      {
+        "case": {
+          "batch": 1,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "verify 1",
+          "page": 1,
+          "q_len": 8,
+          "seed": 276796250326332149,
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 80.51200211048126,
+        "raw_sglang_us": 40.20800068974495,
+        "adjusted_candidate_us": 76.49069532425248,
+        "adjusted_sglang_us": 36.04800067842007,
+        "paired_sglang_over_candidate": 0.4712730159610736,
+        "weighted_signed_gap_us": 647.0831143333187,
+        "runs": 60,
+        "replay_overhead_ns": 4160.0000113248825
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "verify 16",
+          "page": 1,
+          "q_len": 8,
+          "seed": 276957931652628075,
+          "spread": "agentic",
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 41.05599969625473,
+        "raw_sglang_us": 33.28000009059906,
+        "adjusted_candidate_us": 36.99317936777094,
+        "adjusted_sglang_us": 29.152000322937965,
+        "paired_sglang_over_candidate": 0.7880371685039773,
+        "weighted_signed_gap_us": 360.6942360623169,
+        "runs": 60,
+        "replay_overhead_ns": 4127.999767661095
+      },
+      {
+        "case": {
+          "batch": 16,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "verify 16",
+          "page": 1,
+          "q_len": 8,
+          "seed": 277119612978924002,
+          "spread": "agentic",
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 209.27999913692474,
+        "raw_sglang_us": 208.8479995727539,
+        "adjusted_candidate_us": 204.30421711301776,
+        "adjusted_sglang_us": 204.2719991877675,
+        "paired_sglang_over_candidate": 0.9998423041594271,
+        "weighted_signed_gap_us": 0.5154868040040128,
+        "runs": 60,
+        "replay_overhead_ns": 4576.000384986401
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "dist": "soft",
+          "heads": "tp8",
+          "layer": "sliding",
+          "load": "verify 32",
+          "page": 1,
+          "q_len": 8,
+          "seed": 277281294305219930,
+          "spread": "agentic",
+          "weight": 46
+        },
+        "weight": 46,
+        "raw_candidate_us": 49.18399825692177,
+        "raw_sglang_us": 38.43200020492077,
+        "adjusted_candidate_us": 45.25566245236341,
+        "adjusted_sglang_us": 34.52800028026104,
+        "paired_sglang_over_candidate": 0.762954256091281,
+        "weighted_signed_gap_us": 493.472459916709,
+        "runs": 60,
+        "replay_overhead_ns": 3903.999924659729
+      },
+      {
+        "case": {
+          "batch": 32,
+          "ctx": 80000,
+          "dist": "coherent",
+          "heads": "tp8",
+          "layer": "full",
+          "load": "verify 32",
+          "page": 1,
+          "q_len": 8,
+          "seed": 277442975631515859,
+          "spread": "agentic",
+          "weight": 16
+        },
+        "weight": 16,
+        "raw_candidate_us": 393.8719928264618,
+        "raw_sglang_us": 393.887996673584,
+        "adjusted_candidate_us": 389.66071970641923,
+        "adjusted_sglang_us": 389.8559967055917,
+        "paired_sglang_over_candidate": 1.0005011462261826,
+        "weighted_signed_gap_us": -3.124431986759191,
+        "runs": 58,
+        "replay_overhead_ns": 4031.9999679923058
+      }
+    ],
+    "loads": {
+      "decode 1": {
+        "candidate_us": 1295.3718170734933,
+        "sglang_us": 1455.008001998067,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": -159.63618492457363,
+        "speedup": 1.1232358021229951
+      },
+      "decode 16": {
+        "candidate_us": 4805.846166833509,
+        "sglang_us": 4427.1039087325335,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": 378.74225810097596,
+        "speedup": 0.9211913480055225
+      },
+      "decode 32": {
+        "candidate_us": 6829.970384464454,
+        "sglang_us": 7586.7838729172945,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": -756.8134884528408,
+        "speedup": 1.110807726220058
+      },
+      "verify 1": {
+        "candidate_us": 3246.768337336949,
+        "sglang_us": 1629.9840193241835,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": 1616.7843180127657,
+        "speedup": 0.5020327445539654
+      },
+      "verify 16": {
+        "candidate_us": 4970.553724725747,
+        "sglang_us": 4609.3440018594265,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": 361.2097228663206,
+        "speedup": 0.9273300837551554
+      },
+      "verify 32": {
+        "candidate_us": 8316.331988111424,
+        "sglang_us": 7825.983960181475,
+        "shapes": [
+          "sliding",
+          "full"
+        ],
+        "signed_gap_us": 490.34802792994924,
+        "speedup": 0.9410379445372161
+      }
+    },
+    "score": 0.8919466283178157,
+    "one_shape_matching_ranking": [
+      {
+        "load": "verify 1",
+        "layer": "sliding",
+        "weighted_gap_us": 969.7012036794468,
+        "score_if_only_this_shape_matches_sglang": 0.9462766259181346,
+        "relative_score_change": 0.060911713633341025
+      },
+      {
+        "load": "verify 1",
+        "layer": "full",
+        "weighted_gap_us": 647.0831143333187,
+        "score_if_only_this_shape_matches_sglang": 0.9256084077861099,
+        "relative_score_change": 0.037739679034136
+      },
+      {
+        "load": "decode 16",
+        "layer": "full",
+        "weighted_gap_us": 891.4718254156287,
+        "score_if_only_this_shape_matches_sglang": 0.922975386619752,
+        "relative_score_change": 0.03478768495426188
+      },
+      {
+        "load": "decode 1",
+        "layer": "full",
+        "weighted_gap_us": 153.83686627420468,
+        "score_if_only_this_shape_matches_sglang": 0.9109399314570098,
+        "relative_score_change": 0.021294214851190096
+      },
+      {
+        "load": "verify 16",
+        "layer": "sliding",
+        "weighted_gap_us": 360.6942360623169,
+        "score_if_only_this_shape_matches_sglang": 0.9032161938959917,
+        "relative_score_change": 0.012634798115028545
+      },
+      {
+        "load": "verify 32",
+        "layer": "sliding",
+        "weighted_gap_us": 493.472459916709,
+        "score_if_only_this_shape_matches_sglang": 0.9010867060905118,
+        "relative_score_change": 0.010247337096765508
+      },
+      {
+        "load": "verify 16",
+        "layer": "full",
+        "weighted_gap_us": 0.5154868040040128,
+        "score_if_only_this_shape_matches_sglang": 0.8919620462692073,
+        "relative_score_change": 1.7285733139305037e-05
+      },
+      {
+        "load": "verify 32",
+        "layer": "full",
+        "weighted_gap_us": -3.124431986759191,
+        "score_if_only_this_shape_matches_sglang": 0.8918907900790323,
+        "relative_score_change": -6.260266815372173e-05
+      },
+      {
+        "load": "decode 32",
+        "layer": "full",
+        "weighted_gap_us": -246.0284295215297,
+        "score_if_only_this_shape_matches_sglang": 0.8867013703763567,
+        "relative_score_change": -0.005880685878426828
+      },
+      {
+        "load": "decode 32",
+        "layer": "sliding",
+        "weighted_gap_us": -510.7850589313108,
+        "score_if_only_this_shape_matches_sglang": 0.8812893980927127,
+        "relative_score_change": -0.01194828242716972
+      },
+      {
+        "load": "decode 16",
+        "layer": "sliding",
+        "weighted_gap_us": -512.7295673146527,
+        "score_if_only_this_shape_matches_sglang": 0.8770034214805121,
+        "relative_score_change": -0.016753476455744876
+      },
+      {
+        "load": "decode 1",
+        "layer": "sliding",
+        "weighted_gap_us": -313.47305119877825,
+        "score_if_only_this_shape_matches_sglang": 0.8603046042855811,
+        "relative_score_change": -0.035475243728327666
+      }
+    ],
+    "target_scenarios": [
+      {
+        "kind": "target_latency_minus20pct",
+        "assumed_target_us": 35.18116890693755,
+        "modeled_verify1_load_us": 2842.1848949071673,
+        "modeled_score": 0.911952106097244,
+        "relative_score_change": 0.022429007683069546,
+        "label": "Fixed-other-times arithmetic scenario; NOT achieved or forecast timing"
+      },
+      {
+        "kind": "target_matches_same_receipt_sglang",
+        "assumed_target_us": 22.896000184118748,
+        "modeled_verify1_load_us": 2277.0671336575024,
+        "modeled_score": 0.9462766259181346,
+        "relative_score_change": 0.060911713633341025,
+        "label": "Fixed-other-times arithmetic scenario; NOT achieved or forecast timing"
+      },
+      {
+        "kind": "unattainable_zero_target_time_ceiling",
+        "assumed_target_us": 0.0,
+        "modeled_verify1_load_us": 1223.85112518804,
+        "modeled_score": 1.0494441232707261,
+        "relative_score_change": 0.17657726365303494,
+        "label": "Fixed-other-times arithmetic scenario; NOT achieved or forecast timing"
+      }
+    ],
+    "raw_note": "Raw event medians are not official paired ratios; use baseline_ns and median_ns for score arithmetic. No guessed overhead subtraction."
+  },
+  "projection": {
+    "best_job": "48b1357016134e52",
+    "candidate_job": "6799753227ed463e",
+    "best_score": 1.1486499523461586,
+    "candidate_score": 1.1120410181725284,
+    "score_ratio": 0.9681287287751545,
+    "target_best_adjusted_us": 30.262860818780073,
+    "target_candidate_adjusted_us": 54.19139019280722,
+    "target_best_raw_us": 34.20799970626831,
+    "target_candidate_raw_us": 58.559998869895935,
+    "target_reference_normalized_speedup_ratio": 0.5483586307229009,
+    "unchanged_max_abs_ratio_change": 0.04691274409764956,
+    "best_profile": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_NNT                           29.2 \u00b5s 100.0%      1\ntotal                                                             29.2 \u00b5s",
+    "candidate_profile": "kernel                                                           GPU time  share  calls\n_pooler_pipeline                                                  56.5 \u00b5s 100.0%      1\ntotal                                                             56.5 \u00b5s",
+    "compiled_resources_for_THIS_candidate": {
+      "registers": null,
+      "shared_bytes": null,
+      "spills": null,
+      "ptx": null,
+      "sass": null,
+      "available_resource_fields": [],
+      "qualification": "Unavailable, not zero. Native path/correctness/timing passed; profiles give GPU durations only."
+    },
+    "available_gpu_telemetry": {
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 140.67,
+        "power.limit": 700,
+        "temperature.gpu": 33
+      },
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 122.83,
+        "power.limit": 700,
+        "temperature.gpu": 33
+      }
+    },
+    "earlier_different_kernel_resources_not_transferable": [
+      {
+        "runner": "bn128",
+        "source_sha256": "573f2f9e0e196c0c098ca9f9ca5a48e610df5482bc981933b1119d29fda75f3c",
+        "bm": 32,
+        "bn": 128,
+        "m": 256,
+        "registers": 95,
+        "shared_bytes": 40960,
+        "spills": 0
+      },
+      {
+        "runner": "bn32",
+        "source_sha256": "8269021351b0fc4ae659c11480a622c6a5fd93655978865bd33bd3e336788310",
+        "bm": 32,
+        "bn": 32,
+        "m": 256,
+        "registers": 45,
+        "shared_bytes": 16384,
+        "spills": 0
+      }
+    ],
+    "confounders": [
+      "cuBLAS library algorithm versus new hand-written descriptor GEMM; library internal schedule unknown.",
+      "Best reads prepared contiguous[K,N] pooler_t; prototype reads contiguous[N,K] original W then transposes each tile.",
+      "Prototype64/64/64,2D launch,4warps,3stages; library tile/pipeline/resources are not established by its kernel name.",
+      "Both target profiles show one kernel; no separate split-K reduction observed, and new source has none. Internal library details remain opaque.",
+      "The same-geometry ordinary-copy control has only CPU evidence, so TMA alone is not isolated.",
+      "Separate jobs/seeds and conditions; same-run SGLang normalization reduces but does not eliminate cross-run confounding."
+    ],
+    "absent_evidence": [
+      "Achieved occupancy",
+      "DRAM/cache traffic",
+      "Stall breakdown",
+      "THIS candidate register/shared/spill metrics",
+      "PTX/SASS instruction mix"
+    ]
+  },
+  "next_experiment": {
+    "problem": "muse_attention_decode",
+    "parent": "mixed_fa3.py at51d7fca04ccc38a972039ef1b086011d8e456264",
+    "target": "Only batch1 q_len8 sliding-window attention",
+    "hypothesis": "An official-baseline FA3 path can reduce this target normalized latency by at least20%, without changing the other11shapes.",
+    "isolated_change": "Add only this shape dispatch, with official QK norm+RoPE/config-only cos-sin table, cache store, native-required FP8 Q, causal window_size=(2047,0), and final RMSNorm/gate. Leave existing E5 full paths and fallback helpers unchanged.",
+    "falsification": "Reject goal if correctness/cache/replay fails, target reference-normalized latency reduction is below20%, or another shape regresses>5%; overlapping aggregate intervals must remain inconclusive, not a proven score win.",
+    "unverified": [
+      "No new source, native compile or benchmark in this analysis",
+      "RoPE-table initialization/memory and graph replay lifetime",
+      "Target page64/nonunit scales, fresh-position ABA and cache invariants",
+      "Single-run aggregate CI and unchanged-control noise"
+    ],
+    "authorization": "Recommendation only. No new benchmark authorization; existing attention1/projection7 budgets untouched."
+  },
+  "inputs": {
+    "root_sha256": {
+      "reviews/attention-v2/E5-official-result.json": "ee729cd2f5b2829333d6ad97b8b7cc72bfa9aec753ec5ab2a3cfd9aec8c98769",
+      "reviews/attention-v2/mixed_fa3.py": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+      "reviews/attention-v2/official/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+      "reviews/attention-v2/attention-cycle-budget.json": "9221764e184474ac57f947baa19d270ac10369cbfc1fbbecf86c895f8a324f61"
+    },
+    "projection_git_commit": "75d1dc117aa40c401cddab015402ee75f8a2f934",
+    "projection_sha256": {
+      "results/remote-P2-02-full-composition.json": "3efc065d04b893daf872a8e4baa0f73e63e9fd20e8890db53526e6c8430fb902",
+      "results/remote-P2-03-pooler-m256-tma.json": "1281ceec5f2bade3209d12de656f49ff383cc5da22d0cf97a1c82b2f8d1bceb0",
+      "results/remote-modal-M34-resource-probe-fixed.json": "55b775d4cf0dbeeaaf5d5010d213ed5d7dd257f9ecada039226b5c37c3e0295a",
+      "candidates/projection_full_composition.py": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+      "candidates/projection_pooler_m256_tma.py": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+      "candidates/projection_pooler_m256_copy.py": "1b6fe24df633fb8e01e69cfa0cc3d78992af6c8deae033f6b08093c668d457cb"
+    }
+  }
+}
