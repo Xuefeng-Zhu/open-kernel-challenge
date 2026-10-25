@@ -1,17 +1,137 @@
 # P044 — unchanged P039 activity and cache-sensitivity diagnostic
 
-Status: local preparation. No P044 GPU app or official check has been admitted.
-The measurement slot was released to the ready Attention probe at 20:11 UTC;
-Projection must receive a new coordinator grant before launching.
+Completed on H200. Exact app `ap-pF3Ammg5fT5638UgFJTrox` was accepted at
+2026-10-25 21:05:40 UTC and stopped at21:06:23 UTC with zero tasks. No new official
+check or score was produced. P039 remains selected at1.173238998969285×.
 
-Experiment card: preserve the selected computation and investigate its dominant
-paths before changing another kernel. Compare P039 with the official SGLang
-baseline on pooler m8/m128/m256, QKV m128, and unpooler m16. Capture preparation
-time separately, gross cold/warm CUDA-graph timings, and ordinary activity traces.
-This is a diagnostic, not a new optimization or an official score.
+实验卡：保持 P039 不变，检查五条主要路径的主计算、归约和冷／热缓存表现。
+五条路径全部通过正确性与重复图回放。发现部分路径有独立归约，但已有分片
+也加速了主计算；不能把“删除归约”直接当成收益，更不能从热缓存对照推断
+HBM 瓶颈。
 
-实验卡：先不改 P039。观察五条主要路径的主计算、归约和缓存敏感性，找出
-值得修改的重复工作；不把时间线当成 HBM 流量或占用率测量。
+## Observed result
+
+Source freeze/controller commit `b80c5941cc2856ab086e9e17c7bcadf9b1481fbc`
+(worker introduced in `b0b3007`). The exact P039 SHA below was checked in both
+processes. Environment: NVIDIA H200 SM90,132SMs, Torch2.14.1+cu130,
+CUDA13.0, Triton3.8.0, Python3.12.3. Timing and activity subprocesses took
+21.012s and14.302s; combined worker35.314s, client43.418s, app lifetime45s.
+No NCU attempt, new install, credential change or algorithm change occurred.
+
+All five representatives passed the original FP64 oracle in both modes:
+60 same-address ABA checks,60 retained but excluded warmup measurements,
+480 measured observations and10 post-activity checks —610 successful oracle
+checks in total. There are24 fresh-input rounds and12 reversed-order pairs
+per shape/cache condition. All10 nonempty traces and all15 original artifacts
+were hash-verified on receipt. Derived prepared-state tensors were not separately
+snapshot-compared; original weights and inputs were, and outputs used independently
+frozen weights. This does not establish all39 official cases or concurrent-call
+correctness anew.
+
+Ratio direction below is **baseline time / P039 time**; greater than1 favors P039.
+Times are gross CUDA-graph microseconds, not calibrated official times. Pair p10/p90
+are empirical percentiles, not confidence intervals. The ratio need not equal the
+ratio of individual medians.
+
+| Path | P039 cold median µs | Baseline cold median µs | Paired ratio median | Pair p10–p90 | P039 warm/cold median |
+|---|---:|---:|---:|---:|---:|
+| pooler m8 |24.320|25.584|1.05205|1.03048–1.06613|1.1030|
+| pooler m128 |28.128|29.728|1.05239|1.03492–1.07335|1.0886|
+| pooler m256 |33.344|35.264|1.07268|0.99137–1.10262|1.0246|
+| QKV m128 |21.888|22.112|1.01354|0.98384–1.04015|1.0801|
+| unpooler m16 |22.832|22.752|1.00500|0.98492–1.01692|1.1353|
+
+P039 won12/12 cold pairs at pooler m8/m128,10/12 at m256/QKV128 and9/12
+at unpooler16. These repetitions establish a limited same-run comparison,
+not a new full-workload selection or proof that small near-parity gaps are real.
+Warm repeats were slower by about8–14% on four paths in both runners. This
+control changes queue depth and cache history; host event/launch gaps and device
+state remain confounders. It therefore provides no evidence for an L2/HBM
+bottleneck. Preserve the slow/outlying samples; no post-hoc trimming was done.
+
+| Path | P039 main/reduction µs | Baseline main/reduction µs | P039 reducer share |
+|---|---:|---:|---:|
+| pooler m8 |17.919 /2.272|18.497 /2.080|11.25%|
+| pooler m128 |19.106 /3.360|23.839 /0|14.96%|
+| pooler m256 |29.296 /0|28.605 /0|0|
+| QKV m128 |13.603 /3.296|13.792 /3.264|19.50%|
+| unpooler m16 |18.110 /0|17.824 /0|0|
+
+These are single separate instrumented samples classified by visible symbol,
+not acceptance timing. In particular, the m256 activity ordering differs from
+the paired timing result; profiler overhead and single-sample variation were
+not estimated and must not be converted into a speedup claim. Candidate m128's
+main is faster in the trace despite its added reducer, so deleting split-K can
+lose useful parallelism (as previous failed single-pass experiments demonstrated).
+
+All main kernels report384threads/block and168registers/thread. Candidate
+shared-memory launch attributes are164292,213252,213268,221492,180692 bytes
+for the table order; grids contain128,128,128,96,128CTAs. Reducers report32
+registers/thread and zero shared memory. Trace device properties report65536
+registers and233472shared-memory bytes per SM. These constrain static residency;
+they do not measure achieved occupancy, spills, actual traffic or stalls.
+Trace blocks/warps-per-SM fields equal launch work divided by132SMs and are not
+occupancy counters. QKV and unpooler have identical visible symbols/grid/block/
+register/shared metadata for both runners; all five P039 main symbols match
+historical official profiles. **No exact vendor PTX/SASS or spill evidence was
+captured.** A loaded binary/symbol mapping is still needed for disassembly.
+
+Preparation is separate, ordered and not paired: timing mode P03947.316ms,
+baseline0.440ms; activity mode P03931.615ms, baseline18.864ms. These include
+initialization/order effects and are not per-call latency comparisons.
+
+## Cost, shutdown and evidence
+
+Latest preflight Mac browser: free credits$28.22, net spend cap$0, paid$0.
+Existing auth verified; no changes. Actual live-rate reserve was$0.709128,
+below the approved$0.71. Stop was explicitly requested once at21:06:20;
+initial list showed stopping/tasks1, then a read-only follow-up verified stopped/
+tasks0. No replacement app or second invocation was launched. GPU slot released.
+
+At21:07:32UTC workspace gross usage was$1.85074494, a$0.07047953 increase
+from the preflight snapshot, with paid usage$0. This is an observed workspace
+snapshot delta, potentially delayed, not a settled per-app invoice. A separate
+50-second exposure model plus margin estimates$0.09178417. The$0.709128 reserve
+is preserved in the ledger; delayed accounting is not interpreted as zero cost.
+
+`experiments/projection-p044-modal.json` retains admission, exact payload hashes,
+stop observations, rate/reserve and billing snapshots. `results/remote-P044-diagnostic/`
+contains every timing sample and sanitized traces; its publication manifest maps
+original hashes to published hashes. Only incidental trace host/name/ID metadata
+was removed; numerical/resource values are unchanged. Original15files remain
+in ignored local artifacts. Re-running the offline assessor against the published
+bundle passes, as does assessment of the original bytes.
+
+At21:16:04UTC official quota is Projection4/20 used,16left; Attention17/20
+used,3left; both ranked0/10. This diagnostic consumed no official check.
+The next reset is2026-10-26 00:00UTC.
+
+## Ordered next local queue — no further GPU admission
+
+1. **Pooler output-column-sharded library BMM.** Preserve BF16 weights, inputs,
+   full K and total arithmetic, but pack static output-column halves as a batch
+   in prepare. Expanded activation views and interleaved disjoint output views
+   can avoid explicit input/concatenation copies. Target only full4096×8192
+   pooler with2<=m<=128, preserving m256 and all other paths. The hypothesis is
+   that a different batched library decomposition may reduce the measured
+   split/reduction cost without the slow custom GEMM routes. Batching does not
+   automatically add CTAs, remove split-K or improve traffic. First gates are
+   API/address/precision proof and CPU fresh/ABA/edge checks. A native profile
+   must establish the actual tactic/copies before any mechanism claim. Reject
+   promotion on correctness failure, target regressions>5%, or less than10%
+   normalized target improvement and1.5% frozen-target overall benefit. Preserve
+   all control shifts and uncertainty. No shard/tile sweep is proposed.
+2. **Timing-control preflight.** Review preinitialized/reused CUDA events and
+   queue-depth controls before interpreting warm/cold differences. This is a
+   measurement reliability change, not an optimized candidate or score claim.
+
+Deleting only the two pooler reducers above, while freezing historical P039
+adjusted times, models+1.4521% overall. This deliberately mixes activity with
+adjusted timing only as a leverage illustration, not achievable savings. Uniform
+20% pooler reductions model+6.9829% over all six loads, or+4.3446% within the
+proposed m2–128 scope. These are conditional models; no new gains were achieved.
+
+## Historical pre-admission rationale and protocol
 
 ## Frozen parent and motivation
 

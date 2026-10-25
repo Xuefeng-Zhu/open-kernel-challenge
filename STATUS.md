@@ -1,3 +1,22 @@
+# Current Projection checkpoint — 2026-10-25 21:10 UTC
+
+P044 diagnostic completed: frozen P039, app ap-pF3Ammg5fT5638UgFJTrox,
+stopped/tasks0 verified, slot released. Five paths/610 oracle checks passed,
+480 measured observations and10 traces preserved. No new official score.
+P039 remains selected1.173238999×. See experiments/044-projection-evidence-diagnostic.md.
+
+Cold paired baseline/P039 ratios: pooler8/128/256=1.05205/1.05239/1.07268;
+QKV128=1.01354, unpooler16=1.00500. Warm controls were generally slower in both
+runners, so no L2/HBM claim. Actual launch resource fields were captured; exact
+vendor instructions, spills and hardware counters remain unavailable.
+
+Reserve$0.709128<$0.71, observed delayed workspace delta$0.07047953, actualpaid0.
+No new credentials, installs, NCU or officialcheck. Source/result push is now
+explicitly authorized; review pending results before the one approved push retry.
+Local output-column-sharded BMM prototype is being prepared; no GPU admission.
+
+## Previous checkpoint (historical)
+
 # Current Projection checkpoint — 2026-10-25 20:15 UTC
 
 P044 is local-only preparation for unchanged P039. No app or official check has

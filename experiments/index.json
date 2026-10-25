@@ -478,5 +478,19 @@
     "scope": "CPU models/static only; actual GPU evidence separate",
     "verified_utc": "2026-10-24T20:22:53.966811+00:00",
     "gpu_scope": "Actual CUDA/official results and budgets separately journaled in cycle-two index/ledgers, never inferred from CPU tests"
+  },
+  "current_diagnostic": {
+    "id": "P044",
+    "status": "completed",
+    "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+    "source_commit": "b80c5941cc2856ab086e9e17c7bcadf9b1481fbc",
+    "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "representatives": 5,
+    "oracle_checks": 610,
+    "traces": 10,
+    "local_tests": 44,
+    "official_score_produced": false,
+    "shutdown_verified": true,
+    "report": "experiments/044-projection-evidence-diagnostic.md"
   }
 }

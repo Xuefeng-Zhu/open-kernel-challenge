@@ -1,0 +1,89 @@
+{
+  "kind": "Sanitized publication of P044 results; original bytes retained in ignored local artifacts",
+  "removed_top_level_trace_fields": [
+    "host_name",
+    "trace_id",
+    "traceName"
+  ],
+  "original_to_published": {
+    "timing.json": {
+      "original_sha256": "91fd6610e2e892a22ad60f4b92e6929dbf2282793086fd27ee14990c4b2dfb9f",
+      "published_sha256": "91fd6610e2e892a22ad60f4b92e6929dbf2282793086fd27ee14990c4b2dfb9f",
+      "bytes": 108161,
+      "unchanged": true
+    },
+    "summary.json": {
+      "original_sha256": "fda2ddf9a1db54c6c7e97205ccc070471a2f36c11f7926a6c67e3565546b4534",
+      "published_sha256": "fda2ddf9a1db54c6c7e97205ccc070471a2f36c11f7926a6c67e3565546b4534",
+      "bytes": 207,
+      "unchanged": true
+    },
+    "activity.case00.pooler.m8.baseline.trace.json": {
+      "original_sha256": "893ba70a52c61263f8fbb2aa6de039902fd52f95da03d9954942f4efc36fd450",
+      "published_sha256": "40f5b051d4413ae9c18e216ad420470d025b964b043177b6bab5309e41137cdc",
+      "bytes": 15392,
+      "unchanged": false
+    },
+    "activity.case00.pooler.m8.candidate.trace.json": {
+      "original_sha256": "83dfebee377c9c22092686cdc48bb11046c49f301190d362fb8ce9f5cd37b7d9",
+      "published_sha256": "4c95a3a0c2d49ddb3a807470b56b4c3fa9d12698e33ee3c3bf2dcf0bef7fc16b",
+      "bytes": 15363,
+      "unchanged": false
+    },
+    "activity.case01.pooler.m128.baseline.trace.json": {
+      "original_sha256": "e12203210abb047e0d1ac3b6a87e9e157cbbdb21ae728db815e8544e6e3f628f",
+      "published_sha256": "762989ae9b5f0755842a7583b6c7a7d0fad11b74cad164ecb1d5e8a36565e415",
+      "bytes": 13638,
+      "unchanged": false
+    },
+    "activity.case01.pooler.m128.candidate.trace.json": {
+      "original_sha256": "aae5c3a619b247cf2f285bbce71935adbba50d656f9d0a554e7f09a7017d70f5",
+      "published_sha256": "b08ab6139ac9031f0acd7e9d3d01ab5a08dc811dfa6ab70ba3426fb4e5bcb688",
+      "bytes": 15402,
+      "unchanged": false
+    },
+    "activity.case02.pooler.m256.baseline.trace.json": {
+      "original_sha256": "f17c0f0c8aadf5a5f55f44fd9dda50a7bc0dbe3a66e604254406ff28b842da95",
+      "published_sha256": "de5c623d5c2b65bc659937b1720aaff75a5a870262670eaad1d659103683138d",
+      "bytes": 13643,
+      "unchanged": false
+    },
+    "activity.case02.pooler.m256.candidate.trace.json": {
+      "original_sha256": "6b3cee4fa6eb853c2a5edb1ed42dd6fbd581703030ba369b0ecf7421edbfebfe",
+      "published_sha256": "f4754d19cf4f61699bd526ad576d0ea8af7f443753564cc5b562a31240714834",
+      "bytes": 13641,
+      "unchanged": false
+    },
+    "activity.case03.qkv_gate.m128.baseline.trace.json": {
+      "original_sha256": "a9750bb99fa5262b296138564a4403c8d4e8c38ec55b9587bf84eacc9620b516",
+      "published_sha256": "c7f163b98e8346ed2e10dc5619af2e8a5c6c37d19bfaf87c6a6a7d34ff593e8e",
+      "bytes": 15400,
+      "unchanged": false
+    },
+    "activity.case03.qkv_gate.m128.candidate.trace.json": {
+      "original_sha256": "e7c5f922a95f77851479cbdd43b3322e08c3ee1807d85e3fd19cbaee55273dfe",
+      "published_sha256": "780497697aa807cacc2604af700c441135f0734a3ff05bb4e230c5e63ef9838e",
+      "bytes": 15401,
+      "unchanged": false
+    },
+    "activity.case04.unpooler.m16.baseline.trace.json": {
+      "original_sha256": "f9cc2c5181f4d6455977a251c6b9beb81c19bf17853b767b34b6cbb79df11dd8",
+      "published_sha256": "78b8958fd74240f452ce11386a15b20130d89757ea7825ce9ad1e5e48e31ebcb",
+      "bytes": 13644,
+      "unchanged": false
+    },
+    "activity.case04.unpooler.m16.candidate.trace.json": {
+      "original_sha256": "100f0124b1380953bd82ce83535fbca7d9e4a54d1f984d84b80679b8f2d50bda",
+      "published_sha256": "94e4420cba079e13d5bf4cb8f6a73fbd1de0874dfd12c60058efb587f451d419",
+      "bytes": 13640,
+      "unchanged": false
+    },
+    "activity.json": {
+      "original_sha256": "49ac162e6317eec9a83db86a1cc94540a14f76b270d0237e5fb7ac770f96d39d",
+      "published_sha256": "95512bcca1d2701f080af0bf7c2b67c54f7715ed785db84c8f4bdb9bab6efda1",
+      "bytes": 58802,
+      "unchanged": false,
+      "change": "Trace hashes/sizes point to sanitized trace copies; numerical/resource values unchanged"
+    }
+  }
+}

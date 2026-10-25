@@ -20,8 +20,10 @@ decoded them inside a split-K GEMM. Official H200 correctness passed9+30 cases,
 but score fell to **0.898429×**: the three target paths regressed sharply while
 all27 controls stayed within5% normalized movement. **Rejected; P039 is unchanged.**
 [Source, predeclared gates and full result](experiments/043-pooler-lossless-codec.md).
-P041's profiling worker remains unexecuted. The earlier unchanged-P039 recheck
-returned a duplicate with no new measurement; neither is an optimization result.
+P044 has now run the unchanged P039 diagnostic on H200: all five representative
+paths,610 oracle checks and10 activity traces passed. The app stopped with zero
+tasks; no new official score was produced. [Findings and limitations](experiments/044-projection-evidence-diagnostic.md).
+The earlier unchanged-P039 official recheck returned a duplicate with no new measurement.
 
 Historical reports retain their original dated results: the earlier 1.148650×
 composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),
@@ -42,7 +44,7 @@ uv pip install --python .venv/bin/python -r requirements-macos.lock
 
 The full-size suite covers the nine official prerequisite shapes plus all 30 scored
 shapes using the unmodified official FP64 reference, per-row limits and weight-column
-probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **95/95 tests**. The local
+probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. An earlier recorded combined contract/regression suite passed **95/95 tests**. The local
 Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
 The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
 

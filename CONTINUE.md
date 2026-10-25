@@ -1,3 +1,18 @@
+# Resume Projection after P044
+
+P044 complete and exact app stopped/tasks0. Read experiment044 and published
+assessment. Selected P039 unchanged; no official score/check was produced.
+Finish reviewed result commit/private push, preserving all raw samples and
+sanitization manifest. Current local queue is pooler output-column-sharded BMM
+(API/CPU preflight only), then timing-control audit. Do not start GPU until the
+coordinator releases the slot; attention composition now owns measurements.
+
+Both earlier external denials were pre-execution. The explicit21:04 approval
+covered exact P044 Modal payload/run and reviewed private push. Modal retry has
+completed once; do not launch another. One private push retry remains pending.
+
+## Historical handoff (superseded)
+
 # Resume Projection P044 diagnostic
 
 Read STATUS.md and experiments/044-projection-evidence-diagnostic.md. P039 is
