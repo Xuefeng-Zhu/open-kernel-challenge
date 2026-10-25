@@ -1,3 +1,23 @@
+# Current Projection checkpoint — 2026-10-25 20:15 UTC
+
+P044 is local-only preparation for unchanged P039. No app or official check has
+been admitted. The shared GPU slot was released to Attention at 20:11 UTC while
+this diagnostic launcher is completed; wait for a fresh coordinator grant.
+Selected P039 remains 1.173238999×, and P043 remains a rejected terminal result.
+
+The P041 worker now separately records synchronized preparation time and raw
+activity traces. Eighteen plan/worker tests pass. Every representative retains
+same-address A→outlier B→A and fresh-input oracle checks; no GPU result is implied.
+See experiments/044-projection-evidence-diagnostic.md and projection_p044_analysis.py.
+
+Fresh quota 20:05 UTC: Projection checks4/20,16left; Attention16/20,4left;
+both ranked0/10. Supported official show at20:11 UTC confirms reset00:00 UTC.
+Modal existing authentication works, browser credits28.40, net spend cap0,
+paid0; no live apps at20:08. Refresh state at admission; no credentials changed.
+Missing vendor instructions and hardware counters remain explicitly unverified.
+
+## Previous checkpoint (historical)
+
 # Current Projection checkpoint — 2026-10-25 19:14 UTC
 
 P043 is terminal **done**, job `128378586ebe4730`: H200 compilation and9 prerequisites+30 scored correctness checks passed. Score **0.898428982×** [0.884952547,0.911905417]; rejected for performance. Selected P039 remains **1.173238999×**, source `cdf5bc2`, job `d5636ac8d1404abd`, SHA256 `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`.

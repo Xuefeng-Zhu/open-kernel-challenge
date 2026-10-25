@@ -1,3 +1,19 @@
+# Resume Projection P044 diagnostic
+
+Read STATUS.md and experiments/044-projection-evidence-diagnostic.md. P039 is
+immutable and selected. P044 compares its five important paths to the official
+baseline without changing candidate code. Current worker/plan tests18passed;
+launcher preparation continues. No P044 app/check admitted. GPU slot released
+to Attention at20:11; do not launch until coordinator grants it again.
+
+Once ready, use the bounded allowlisted existing-image Modal diagnostic, preserve
+all raw samples/traces, verify stopped/tasks0 and cost. Empty trace/resource
+fields are missing evidence, not successful instruction capture. Do not retry
+NCU. No official checks during this diagnostic. Choose the next candidate only
+from its evidence. Local causal math: python3 -B projection_p044_analysis.py.
+
+## Historical handoff (superseded)
+
 # Resume Projection from P043 terminal result
 
 Read STATUS.md, BEST.md and experiments/043-pooler-lossless-codec.md first. Selected P039 is unchanged at1.173238999×. P043 job128378586ebe4730 completed0.898428982× with9+30 correctness pass but severe target regressions; no retry or tile sweep. Exact source commit10baddb and full receipt preserved. The raw matched control has no native measurement.

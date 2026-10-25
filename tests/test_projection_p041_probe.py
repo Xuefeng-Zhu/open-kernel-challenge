@@ -90,6 +90,59 @@ class P041ProbeTests(unittest.TestCase):
         with self.assertRaisesRegex(RuntimeError, 'address/content'):
             probe.assert_immutable(torch, {'x':x}, 'expected', {}, {}, 8)
 
+    def test_prepare_duration_includes_completion_and_excludes_prior_work(self):
+        events = []
+        torch, module = Mock(), Mock()
+        weights, state = object(), object()
+        torch.cuda.synchronize.side_effect = lambda: events.append('synchronize')
+        module.prepare.side_effect = lambda value: (events.append('prepare'), state)[1]
+        def clock():
+            events.append('clock')
+            return 10.0 if events.count('clock') == 1 else 12.5
+        with patch.object(probe.time, 'perf_counter', side_effect=clock):
+            result, elapsed = probe.prepare_with_timing(torch, module, weights)
+        self.assertIs(result, state)
+        self.assertEqual(elapsed, 2.5)
+        module.prepare.assert_called_once_with(weights)
+        self.assertEqual(events, ['synchronize', 'clock', 'prepare', 'synchronize', 'clock'])
+
+    def test_trace_preserves_raw_and_extracts_only_emitted_kernel_resources(self):
+        raw = dict(traceEvents=[
+            dict(ph='X', cat='cpu_op', name='aten::mm', dur=100, args={'grid':[99]}),
+            dict(ph='X', cat='kernel', name='library_kernel', dur=4.5, ts=123,
+                 args={'grid':[8,1,1], 'block':[128,1,1], 'registers per thread':64,
+                       'shared memory':4096, 'blocks per SM':0.5, 'stream':7}),
+            dict(ph='X', cat='cuda_kernel', name='unknown_resources', dur=1.0, args={}),
+            dict(ph='X', cat='gpu_memcpy', name='Memcpy', dur=1, args={}),
+        ])
+        with TemporaryDirectory() as folder:
+            path = Path(folder)/'activity.case00.pooler.m8.candidate.trace.json'
+            encoded = json.dumps(raw).encode()
+            prof = Mock()
+            prof.export_chrome_trace.side_effect = lambda target: Path(target).write_bytes(encoded)
+            result = probe.export_activity_trace(prof, path)
+            self.assertEqual(path.read_bytes(), encoded)
+            self.assertEqual(result['file'], path.name)
+            self.assertEqual(result['bytes'], len(encoded))
+            self.assertEqual(result['sha256'], probe.hashlib.sha256(encoded).hexdigest())
+            self.assertEqual(len(result['chrome_kernels']), 2)
+            kernel = result['chrome_kernels'][0]
+            self.assertEqual(kernel['duration_us'], 4.5)
+            self.assertEqual(kernel['trace_args'], raw['traceEvents'][1]['args'])
+            self.assertEqual(kernel['resources'], dict(grid=[8,1,1], block=[128,1,1],
+                registers_per_thread=64, shared_memory_bytes=4096, blocks_per_sm=0.5))
+            self.assertEqual(result['chrome_kernels'][1]['resources'], {})
+
+    def test_malformed_trace_fails_without_inventing_metadata(self):
+        for raw in (dict(traceEvents={}), dict(traceEvents=[dict(ph='X', cat='kernel', args=[])])):
+            with self.subTest(raw=raw), TemporaryDirectory() as folder:
+                path = Path(folder)/'trace.json'
+                prof = Mock()
+                prof.export_chrome_trace.side_effect = lambda target: Path(target).write_text(json.dumps(raw))
+                with self.assertRaises(ValueError):
+                    probe.export_activity_trace(prof, path)
+                self.assertEqual(json.loads(path.read_text()), raw)
+
     def test_cli_source_failure_never_calls_worker(self):
         with TemporaryDirectory() as folder:
             path = Path(folder)/'result.json'
@@ -107,8 +160,16 @@ class P041ProbeTests(unittest.TestCase):
         imports += [a.name for n in ast.walk(tree) if isinstance(n, ast.Import) for a in n.names]
         self.assertFalse(set(imports) & {'modal','subprocess','requests','urllib','socket'})
         self.assertEqual(probe.EVICTION_BYTES, 256*1024**2)
+        self.assertEqual(probe.WARMUP_REPLAYS, 6)
+        self.assertEqual(probe.MEASURED_ROUNDS, 24)
         self.assertEqual(probe.REPRESENTATIVES,
                          (('pooler',8),('pooler',128),('pooler',256),('qkv_gate',128),('unpooler',16)))
+        profiler_options = {kw.arg: ast.literal_eval(kw.value) for node in ast.walk(tree)
+                            if isinstance(node, ast.Call) and isinstance(node.func, ast.Attribute)
+                            and node.func.attr == 'profile' for kw in node.keywords
+                            if kw.arg in {'record_shapes', 'with_stack', 'profile_memory'}}
+        self.assertEqual(profiler_options, dict(record_shapes=False, with_stack=False,
+                                               profile_memory=False))
 
 
 if __name__ == '__main__':

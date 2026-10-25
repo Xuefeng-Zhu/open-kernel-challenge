@@ -91,6 +91,53 @@ def timed_replay(graph, eviction, condition, replay_us):
     return replay_us(graph, eviction)
 
 
+def prepare_with_timing(torch, module, weights):
+    """Host elapsed time including completion of this runner's untimed GPU work."""
+    torch.cuda.synchronize()
+    started = time.perf_counter()
+    state = module.prepare(weights)
+    torch.cuda.synchronize()
+    return state, time.perf_counter() - started
+
+
+def export_activity_trace(prof, path):
+    """Preserve the raw trace and extract only metadata actually emitted by Kineto."""
+    prof.export_chrome_trace(str(path))
+    raw = path.read_bytes()
+    events = json.loads(raw)["traceEvents"]
+    if not isinstance(events, list):
+        raise ValueError("Chrome traceEvents must be a list")
+    resource_names = {
+        "grid": "grid", "block": "block",
+        "registersperthread": "registers_per_thread",
+        "sharedmemory": "shared_memory_bytes",
+        "sharedmemorybytes": "shared_memory_bytes",
+        "staticsharedmemory": "static_shared_memory_bytes",
+        "dynamicsharedmemory": "dynamic_shared_memory_bytes",
+        "blockspersm": "blocks_per_sm",
+        "warpspersm": "warps_per_sm",
+    }
+    kernels = []
+    for event in events:
+        categories = {c.strip().lower() for c in str(event.get("cat", "")).split(",")}
+        if event.get("ph") != "X" or not categories.intersection({"kernel", "cuda_kernel"}):
+            continue
+        trace_args = event.get("args", {})
+        if not isinstance(trace_args, dict):
+            raise ValueError("Chrome kernel args must be an object")
+        resources = {}
+        for key, value in trace_args.items():
+            normalized = "".join(c for c in key.lower() if c.isalnum())
+            if normalized in resource_names:
+                resources[resource_names[normalized]] = value
+        kernels.append(dict(symbol=event.get("name"), duration_us=event.get("dur"),
+                            timestamp_us=event.get("ts"), trace_args=trace_args,
+                            resources=resources))
+    return dict(file=path.name, sha256=hashlib.sha256(raw).hexdigest(), bytes=len(raw),
+                chrome_kernels=kernels,
+                qualification="Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing")
+
+
 def assert_immutable(torch, data, expected_x, weights, frozen_weights, pointer):
     if data["x"].data_ptr() != pointer or not torch.equal(data["x"], expected_x):
         raise RuntimeError("Captured input address/content mutated")
@@ -127,7 +174,14 @@ def execute(args, report, save):
         gate()
         weights = reference.generate_weights(reference.WEIGHTS_SEED, device="cuda")
         frozen = {name: value.clone() for name, value in weights.items()}
-        states = {name: module.prepare(weights) for name, module in modules.items()}
+        states = {}
+        report["preparation"] = dict(runners={},
+            qualification="Untimed per-runner host elapsed time bracketed by CUDA synchronization; excludes weight generation/cloning and is not kernel latency")
+        for name, module in modules.items():
+            gate()
+            states[name], elapsed = prepare_with_timing(torch, module, weights)
+            report["preparation"]["runners"][name] = dict(synchronized_wall_seconds=elapsed)
+            save()
         eviction = torch.ones(EVICTION_BYTES//4, device="cuda", dtype=torch.float32)
         for case_index, (layer, m) in enumerate(REPRESENTATIVES):
             gate()
@@ -206,14 +260,17 @@ def execute(args, report, save):
                                                 profile_memory=False) as prof:
                         graphs[name].replay()
                         torch.cuda.synchronize()
+                    trace_path = args.output.with_name(
+                        f"{args.output.stem}.case{case_index:02d}.{layer}.m{m}.{name}.trace.json")
+                    trace = export_activity_trace(prof, trace_path)
                     output_check(torch, reference, inputs[name], outputs[name], fresh["x"],
                                  weights, frozen, pointers[name])
                     events = [dict(symbol=e.name, duration_us=e.device_time_total)
                               for e in prof.events() if e.device_type == torch.autograd.DeviceType.CUDA]
-                    item["activities"].append(dict(runner=name, cuda_events=events,
+                    item["activities"].append(dict(runner=name, cuda_events=events, trace=trace,
                         qualification="One instrumented activity sample, not acceptance timing or score",
-                        grid_block_metadata="not exposed by this ordinary activity capture",
-                        registers_shared_spills_ptx_sass="not captured; library resources remain unknown"))
+                        resource_metadata="See trace.chrome_kernels; missing fields are unavailable, not zero",
+                        instructions_spills="PTX/SASS and spills are not captured"))
             gate()
             item["passed"] = True
             save()
