@@ -177,5 +177,15 @@
     "at_utc": "2026-10-24T17:54:02.225263+00:00",
     "reason": "User changed workflow to Modal experiments before further official checks; no new official dispatch until instructed",
     "scope": "Single composition exception consumed; all other official admissions remain paused. No new Modal GPU run until the reported next hypothesis is directed."
-  }
+  },
+  "research_phases": [
+    {
+      "phase": "P037-pipeline-admission",
+      "kernel_source_changed": false,
+      "new_checks": 0,
+      "remaining_authorized": 8,
+      "result": "No admitted candidate: TMA pipeline/control not implemented or compiler-validated; frozen m256-only scenarios require27.01% latency reduction for1.5% aggregate.",
+      "report": "PROJECTION_PIPELINE_PREFLIGHT.md"
+    }
+  ]
 }
