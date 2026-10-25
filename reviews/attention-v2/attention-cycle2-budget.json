@@ -597,8 +597,8 @@
     {
       "experiment": "A2-12",
       "mode": "check",
-      "state": "accepted",
-      "status": "accepted",
+      "state": "terminal",
+      "status": "done",
       "job_id": "b24bbd05419c499a",
       "candidate": "reviews/attention-v2/mixed_fa3_decode_qhoist.py",
       "source_commit": "e2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8",
@@ -626,7 +626,26 @@
         "--json"
       ],
       "cli_exit_code": 0,
-      "accepted_utc": "2026-10-25T05:49:30.246168+00:00"
+      "accepted_utc": "2026-10-25T05:49:30.246168+00:00",
+      "last_checked_utc": "2026-10-25T05:55:30.762498+00:00",
+      "passed": true,
+      "speedup": 1.1734299856044392,
+      "speedup_ci": [
+        1.1558285358203726,
+        1.1910314353885056
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 14,
+          "left": 6
+        }
+      }
     }
   ],
   "remaining": null,
@@ -849,7 +868,7 @@
       "hypothesis": "Only B1L1 sliding hoists repeated exact Q norm/computed-trig RoPE/factor/finalBF16 into timed per-call buffer; keeps all KV/partition/merge math and other11computations. Target>=15%normalized whole-call cut including extra launch; native correctness first."
     }
   },
-  "all_requests_terminal": false,
+  "all_requests_terminal": true,
   "current_phase": "A2-11 selected best; A2-12 one-shape timed Q-hoist prepared locally, all prior jobs terminal",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
@@ -873,11 +892,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 10,
-      "left": 10
+      "used": 14,
+      "left": 6
     }
   },
-  "quota_observed_utc": "2026-10-25T04:48:34.196775+00:00",
+  "quota_observed_utc": "2026-10-25T05:55:57.862771+00:00",
   "selection_before_A2_02": {
     "source": "mixed_fa3_verify1.py",
     "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
@@ -997,5 +1016,12 @@
     ],
     "reason": "Target12.54%normalized cut exceeds10%goal, no>5%controls; total0.455%gain overlapsCI; complete combined source passes16+12",
     "aggregate_vs_parent_inconclusive": true
+  },
+  "selected_complete_candidate": {
+    "experiment": "A2-11",
+    "candidate": "mixed_fa3_decode_parallel_merge.py",
+    "job_id": "cfa8a8670e394f80",
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "score": 1.1876787560868445
   }
 }
