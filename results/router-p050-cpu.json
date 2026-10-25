@@ -1,0 +1,29 @@
+{
+  "verified_utc": "2026-10-25T22:50:36.750306+00:00",
+  "experiment": "P050 QKV-only zero-bias",
+  "candidate": "candidates/projection_qkv_zero_bias.py",
+  "sha256": "b08b6e371fef83851268a8dbfa1159d1b6d5a8e141a410a596dfc3f159e0da8b",
+  "commands": [
+    "python -B -m unittest tests.test_projection_qkv_zero_bias tests.test_projection_p050_qkv_screen tests.test_projection_p050_modal -v",
+    "python -B static_check.py --submission candidates/projection_qkv_zero_bias.py"
+  ],
+  "passed": 40,
+  "seconds": 1.532,
+  "candidate_tests": 13,
+  "launcher_tests": 6,
+  "static_passed": true,
+  "environment": {
+    "python": "3.12.13",
+    "os": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda": false
+  },
+  "scope": "CPU/static only. Full-K M2/M8 cases and M8 ABA; larger/nearby M arithmetic uses reduced K131; full39official metadata routes. No CUDA or hardware result.",
+  "previous_local_checkpoint": {
+    "passed": 19,
+    "seconds": 1.599,
+    "verified_utc": "2026-10-25T22:48:11.669514+00:00"
+  },
+  "worker_tests": 21
+}

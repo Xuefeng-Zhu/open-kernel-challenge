@@ -486,8 +486,19 @@
     "stopped_tasks0": true,
     "not_official_score": true
   },
-  "prepared_local_candidate": null,
-  "updated_utc": "2026-10-25T22:29:04.062114+00:00",
+  "prepared_local_candidate": {
+    "id": "P050",
+    "path": "candidates/projection_qkv_zero_bias.py",
+    "sha256": "b08b6e371fef83851268a8dbfa1159d1b6d5a8e141a410a596dfc3f159e0da8b",
+    "parent": "P046",
+    "design_predecessor": "P049 rejected",
+    "scope": "QKV M>1 only; restore every other P046 path",
+    "local_tests": 40,
+    "gpu_status": "not run; reviewed native harness ready; fresh coordinator slot required",
+    "report": "experiments/050-qkv-only-expansion.md",
+    "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd"
+  },
+  "updated_utc": "2026-10-25T22:50:36.750306+00:00",
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",

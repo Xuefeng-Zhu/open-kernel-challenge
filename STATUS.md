@@ -1,3 +1,23 @@
+# P050 QKV-only expansion — reviewed local freeze ready
+
+P049 rejected and result push verified at `4c438423a5f8f85ba4a8757326ea05f01c9ce375`
+on22:40:48UTC. P046 stays selected at official1.1841399409×, P039 preserved.
+P050 changes only canonical QKV M>1 to zero-bias addmm; unpooler fully restores
+P046. Candidate SHA256 `b08b6e371fef83851268a8dbfa1159d1b6d5a8e141a410a596dfc3f159e0da8b`.
+Forty local tests and independent reviews passed. Read experiment050 for fixed
+score/latency gates, fresh-input coverage and raw-to-official modeling limits.
+
+Nine-case native screen is ready: five scored QKV targets, nearby127/129,
+unchangedQKV1/unpooler16 controls. Full completion would check728oracle outputs.
+This has not run. No P050 app or official job exists. Attention owns the GPU
+slot; wait for a fresh coordinator grant, then verify existing auth, credits,
+paid cap$0 and stopped apps before one bounded invocation. Approximate reserve
+$0.408freecredits; no new credentials or formal entry. Do not treat prior terminal
+slot records as new authority. Passing native screen would warrant official
+comparison, never automatic selection.
+
+## Previous checkpoint (historical)
+
 # P049 complete — rejected; P046 remains selected
 
 P049 app `ap-qGKwQTPaVfoieaRJxN3Etw` completed and is independently stopped/tasks0;

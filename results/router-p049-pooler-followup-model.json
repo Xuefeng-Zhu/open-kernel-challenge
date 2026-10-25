@@ -1,0 +1,23 @@
+{
+  "source": "results/remote-P2-09-pooler-column-batch2-hybrid.csv",
+  "source_sha256": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+  "parent_job": "41ba778763a5433b",
+  "target_time_us": 23.157940944547853,
+  "load_time_weighted_us": 4951.677351181014,
+  "target_load_fraction": 0.28996080251866957,
+  "model": "(1 - target_load_fraction * target_cut)^(-1/6) - 1; other five loads and other target-load paths fixed",
+  "sensitivity": [
+    {
+      "target_cut": 0.1,
+      "whole_score_gain": 0.0049161739029586204
+    },
+    {
+      "target_cut": 0.2,
+      "whole_score_gain": 0.010006682373757014
+    }
+  ],
+  "target_cut_for_1_5pct_whole_gain": 0.29472193048101986,
+  "rounded_task_floor_us": 14.6,
+  "rounded_floor_sensitivity": 0.019069754402842864,
+  "qualification": "Algebraic sensitivity only, not native or official achieved speedup"
+}
