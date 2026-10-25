@@ -1,0 +1,40 @@
+{
+  "observed_utc": "2026-10-25T02:21:22.510644+00:00",
+  "candidate": "mixed_fa3_verify1.py",
+  "source_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+  "parent": "mixed_fa3_sliding.py",
+  "parent_source_commit": "5202cbea994771eebffa1f479e7e88915106ca14",
+  "parent_source_sha256": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+  "parent_job_id": "4f626ab7437a42be",
+  "parent_score": 0.9395909196258531,
+  "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_verify1.py",
+  "exit_code": 0,
+  "output": "test_dispatch_controls_and_nearby_shapes (__main__.FullVerify1.test_dispatch_controls_and_nearby_shapes) ... ok\ntest_full_boundaries_page_scale_cache_zero_and_coherent (__main__.FullVerify1.test_full_boundaries_page_scale_cache_zero_and_coherent) ... ok\ntest_full_same_address_A_B_A_changed_lengths (__main__.FullVerify1.test_full_same_address_A_B_A_changed_lengths) ... ok\ntest_only_one_condition_changes_and_other_functions_unchanged (__main__.FullVerify1.test_only_one_condition_changes_and_other_functions_unchanged) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.159s\n\nOK\n",
+  "environment": {
+    "python": "3.12.13",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda": false
+  },
+  "native_execution": false,
+  "target_parent_candidate_us": 76.34773505965256,
+  "target_parent_sglang_us": 35.42400058358908,
+  "arithmetic_models_only": [
+    {
+      "name": "latency_minus20pct",
+      "target_us": 61.07818804772205,
+      "score": 0.9576911166118638
+    },
+    {
+      "name": "match_same_receipt_sglang",
+      "target_us": 35.42400058358908,
+      "score": 0.9947650535484744
+    }
+  ],
+  "limitations": [
+    "CPU stand-ins not native FA3/CUDA",
+    "New target full B1L8 ctx1048576 is an official prerequisite; not executed locally",
+    "Explicit target native GPU same-address ABA/page64/nonunit/untouched old cache remains unverified without native receipt"
+  ]
+}

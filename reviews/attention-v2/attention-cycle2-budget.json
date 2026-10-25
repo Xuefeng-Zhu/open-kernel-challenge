@@ -12,9 +12,16 @@
   "previous_cycle_last_job": "4f626ab7437a42be",
   "requests": [],
   "remaining": 10,
-  "plans": {},
+  "plans": {
+    "A2-01": {
+      "candidate": "mixed_fa3_verify1.py",
+      "expected_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+      "final": false,
+      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged"
+    }
+  },
   "all_requests_terminal": true,
-  "current_phase": "Await old-cycle E6 terminal result before any new dispatch",
+  "current_phase": "A2-01 local preflight ready; E6 adopted; commit source before dispatch",
   "projection_checks_remaining": 7,
   "counting_note": "E6 belongs exclusively to old cycle; new requests not yet sent; daily limits are independent"
 }
