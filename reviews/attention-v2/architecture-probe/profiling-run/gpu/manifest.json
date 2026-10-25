@@ -1,0 +1,34 @@
+{
+  "status": "locally prepared; not GPU executed",
+  "counter_branch": "optional installed-NCU branch, separately reviewed, within same deadline",
+  "files": {
+    "worker.py": {
+      "bytes": 20319,
+      "sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326"
+    },
+    "test_worker.py": {
+      "bytes": 9672,
+      "sha256": "34347058153a8895ba9b56437d727c2bd05625d71e7bbbb2b9970f08dd0f55d1"
+    },
+    "PROTOCOL.md": {
+      "bytes": 5783,
+      "sha256": "17187feb203e3ea81a36d12f6d6555798593132ffd283639cc27b4a919ee86ad"
+    },
+    "local-verification.json": {
+      "bytes": 200,
+      "sha256": "3324d449e685bb9250da59255c088b50e6ce351911431dd9c1b34825274ecdd5"
+    },
+    "counters.py": {
+      "bytes": 10033,
+      "sha256": "cdf06463a840d75ce8cd3e7ef497fa60c0481b63ff7de6300d4061b23ea12408"
+    },
+    "counter_target.py": {
+      "bytes": 3510,
+      "sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f"
+    },
+    "inventory.json": {
+      "bytes": 16757,
+      "sha256": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382"
+    }
+  }
+}
