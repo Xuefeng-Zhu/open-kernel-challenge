@@ -1,0 +1,35 @@
+{
+  "status": "pending separate approval; not executed",
+  "experiment": "A2-14",
+  "payload": {
+    "file": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+    "sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+    "only_candidate_source": true
+  },
+  "destination": "https://openkernelchallenge.dev",
+  "operation": "one official off-board H200 check for muse_attention_decode",
+  "proposed_command": "bin/okc check reviews/attention-v2/mixed_fa3_deferred_denom.py --no-wait --json",
+  "max_new_accepted_requests": 1,
+  "paid_cost_limit_usd": 0,
+  "source_confidentiality": "Source leaves the private local environment; challenge terms do not promise confidentiality.",
+  "excluded": [
+    "repository push",
+    "ranked or formal submission",
+    "Modal launch",
+    "new credentials",
+    "paid compute"
+  ],
+  "preconditions": [
+    "separate explicit payload/destination approval",
+    "supported existing authentication",
+    "fresh read-only platform quota check",
+    "reconcile active and uncertain requests before any dispatch"
+  ],
+  "decision": {
+    "target_normalized_latency_cut_goal": 0.2,
+    "model_score_if_goal_only": 1.2489104,
+    "material_control_regression_threshold": 0.05,
+    "all_correctness_required": true,
+    "small_changes_with_overlapping_intervals": "inconclusive; do not claim adoption"
+  }
+}
