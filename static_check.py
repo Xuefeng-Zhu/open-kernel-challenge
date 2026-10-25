@@ -49,7 +49,10 @@ def main():
         if isinstance(node, ast.Import):
             assert all(n.name in {"torch", "triton", "triton.language"} for n in node.names), "Unexpected import"
         if isinstance(node, ast.ImportFrom):
-            assert node.module == "typing", "Unexpected import"
+            assert node.module == "typing" or (
+                node.module == "triton.tools.tensor_descriptor"
+                and [(n.name, n.asname) for n in node.names] == [("TensorDescriptor", None)]
+            ), "Unexpected import"
         if isinstance(node, ast.Call):
             name = node.func.attr if isinstance(node.func, ast.Attribute) else getattr(node.func, "id", "")
             assert name not in {"item", "cpu", "numpy", "synchronize", "print", "open", "eval", "exec"}, name

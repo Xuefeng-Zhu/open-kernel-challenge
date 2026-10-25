@@ -1,0 +1,35 @@
+{
+  "kind": "P038 local preflight only; no Triton/native compilation, CUDA correctness/capture or performance",
+  "base_commit": "983a45576ab307388c099ace270952a6a1bfb0e8",
+  "parent_sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+  "sources": {
+    "candidates/projection_pooler_m256_tma.py": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+    "candidates/projection_pooler_m256_copy.py": "1b6fe24df633fb8e01e69cfa0cc3d78992af6c8deae033f6b08093c668d457cb"
+  },
+  "cpu_oracles": {
+    "tma": {
+      "file": "results/router-p038-pooler-m256-tma-cpu.json",
+      "cases": 39,
+      "passed": true,
+      "weights_unchanged": true
+    },
+    "copy": {
+      "file": "results/router-p038-pooler-m256-copy-cpu.json",
+      "cases": 39,
+      "passed": true,
+      "weights_unchanged": true
+    }
+  },
+  "focused_tests_passed": 5,
+  "full_regression_tests_passed": 117,
+  "static_and_syntax_passed": true,
+  "gpu_launched": false,
+  "native_compilation_verified": false,
+  "native_correctness_verified": false,
+  "cuda_graph_capture_verified": false,
+  "performance_measured": false,
+  "official_check_admitted": false,
+  "notices": "Known missing NumPy warning retained in local test log; no package installation.",
+  "standalone_mit_and_apache_notices_embedded": true,
+  "full_regression_log": "results/p038-preflight-tests.local.txt"
+}

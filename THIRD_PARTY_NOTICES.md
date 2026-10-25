@@ -32,3 +32,13 @@ also govern any code uploaded to the challenge; an off-board check is still an u
 Official terms and technical rules must be reviewed at their original URLs before
 participation. No legal PDF, unrelated task bundle, CLI binary, account configuration,
 credential or private authentication record is included in this repository.
+
+P038 pooler pipeline prototypes (`candidates/projection_pooler_m256_tma.py`
+and `projection_pooler_m256_copy.py`) adapt the descriptor-load/dot API pattern
+from official Triton v3.8.0 tutorial 09, not competitor code:
+https://github.com/triton-lang/triton/blob/v3.8.0/python/tutorials/09-persistent-matmul.py.
+Copyright 2018-2020 Philippe Tillet; Copyright 2020-2022 OpenAI. Triton is MIT
+licensed; its notice is preserved in `licenses/Triton-MIT.txt`. The prototype
+uses BF16 output rather than the tutorial's FP16/FP8 selection, a fixed tile,
+ordinary masked stores and conservative fallbacks, without its autotuning,
+benchmark/profiler code, persistent scheduler or global allocator changes.

@@ -4,7 +4,7 @@
   "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
   "maximum_new_experiments": 10,
   "remaining_authorized": 8,
-  "max_active_jobs": 2,
+  "max_active_jobs": 1,
   "max_spend_usd": 0,
   "mode": "check",
   "rules_version": "2026-10-22.1",
@@ -30,6 +30,13 @@
       "control_job_id": "eeec05d897ef4946",
       "cpu_report": "results/router-cycle2-full-compose-cpu.json",
       "local_record": "experiments/024-official-full-composition.md"
+    },
+    "P2-03-pooler-m256-tma": {
+      "candidate": "candidates/projection_pooler_m256_tma.py",
+      "hypothesis": "Only pooler m256 dense aligned BF16 uses descriptor/TMA-fed64x64x64 FP32-accumulation kernel; preserve other paths; compare best first, do not attribute TMA cause without same-geometry control",
+      "control_job_id": "48b1357016134e52",
+      "cpu_report": "results/router-p038-pooler-m256-tma-cpu.json",
+      "local_record": "experiments/038-pooler-m256-pipeline-local.md"
     }
   },
   "requests": [
@@ -187,5 +194,14 @@
       "result": "No admitted candidate: TMA pipeline/control not implemented or compiler-validated; frozen m256-only scenarios require27.01% latency reduction for1.5% aggregate.",
       "report": "PROJECTION_PIPELINE_PREFLIGHT.md"
     }
-  ]
+  ],
+  "historical_admission_exceptions": [
+    null
+  ],
+  "single_admission_exception": {
+    "experiment": "P2-03-pooler-m256-tma",
+    "candidate": "candidates/projection_pooler_m256_tma.py",
+    "sha256": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+    "basis": "New parallel research authorization; source-reviewed documented v3.8 descriptor API, CPU39/static/regression gates; Modal unavailable, first official native compatibility/performance check only"
+  }
 }
