@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-25T05:14:02.682879+00:00",
+  "attention": {
+    "source": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+    "original_source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "exported_source_commit": "362561fa786234bf7853b63d87dae73af433e7ae",
+    "local_branch": "attention-fa3-local",
+    "private_export_branch": "attention-fa3-sanitized",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "job_id": "cf979895a3f24685",
+    "score": 1.1557671624359636,
+    "ci": [
+      1.138430654999424,
+      1.1731036698725028
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "restriction": "Sequential official validation; device-global completion counter overlap risk in E2 fallback remains. A2-09 repair is pending, not selected yet."
+  },
+  "projection": {
+    "source": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "branch": "projection-pipeline-preflight",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "score": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "prerequisites": 9,
+    "timed_shapes": 30,
+    "restriction": "P040 higher point estimate not selected after missed target and overlapping interval; kernel measurements exclude serving integration/collectives."
+  },
+  "scope": "Free off-board checks, not ranked entries; no end-to-end serving performance measured"
+}
