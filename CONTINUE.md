@@ -1,3 +1,24 @@
+# P048 complete — P046 selected, GPU slot released
+
+P046 source `candidates/projection_pooler_column_batch2_hybrid.py`, source commit
+`fa56f2b`, SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+Official job `41ba778763a5433b`,9+30pass,1.1841399409×, CI[1.1663778418,1.2019020400].
+P048 same-device H200 confirmation passed 480 oracle comparisons; three raw paired
+target cuts10.74%/10.87%/9.88%, controls all within 0.7% median movement. All samples
+and long tails retained. Select P046 based on target replication and controls,
+not official CI overlap or the whole-score point alone. P039 stays immutable.
+
+App `ap-lpXZhacMWtQNlM5oksAWRX` stopped/tasks0, all workspace apps stopped with zero tasks. Free-credit
+reserve $0.407635, paid $0; no official check consumed. Latest quota 6/20 used, 14 left
+at the ledger timestamp, reset 00:00 UTC. No active or uncertain Projection job.
+Read experiment048 for raw/correctness/cost limits. P047 capability audit is
+closed unresolved: exact judge image is internal, API/AOT unknown; no import,
+JIT, package install or CPU external inventory occurred. No workaround.
+Finish reviewed result push then continue bounded supported-mechanism research.
+Wait for coordinator's next GPU slot; terminal file is not a new slot grant.
+
+## Previous checkpoint (historical)
+
 # P046 terminal — promising, P039 remains selected
 
 Official job `41ba778763a5433b` passed 9+30 correctness, score 1.184139941×.

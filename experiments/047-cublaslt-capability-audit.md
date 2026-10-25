@@ -2,8 +2,9 @@
 
 Status: read-only research and local probe preparation. No FlashInfer import,
 JIT, installation, external probe, GPU run or official check has occurred here.
-This is not an implemented performance candidate. Selected Projection remains
-P039; P045 is rejected and P046 is officially correct and promising, awaiting a direct same-device control confirmation.
+This is not an implemented performance candidate. At audit time P039 was selected
+and P046 awaited direct confirmation. P048 subsequently selected P046; see BEST.md.
+The capability gate remains unresolved, and P045 remains rejected.
 
 实验卡：已测库内核不等于已经达到库的性能上限。下一条高信息量路线是检查
 已有绑定能否显式选择 cuBLASLt 算法，而不是继续改 tile。先证明固定环境里

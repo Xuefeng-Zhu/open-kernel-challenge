@@ -1,3 +1,28 @@
+# Selected Projection candidate: P046
+
+`candidates/projection_pooler_column_batch2_hybrid.py`
+
+- Source commit `fa56f2b3958b0c8d358c906a0b6cbb8e741a150e`.
+- SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+- Official off-board job `41ba778763a5433b`:9 prerequisites and 30scored shapes pass.
+- Official score **1.1841399408925375×**, CI[1.1663778417791495,1.2019020400059255].
+- Authoritative selection: `experiments/projection-cycle2-budget.json:selection`.
+- Full receipt: `results/remote-P2-09-pooler-column-batch2-hybrid.json`.
+
+Only pooler M8/M16/M32 uses full-K output-column BMM. Other paths retain P039.
+P045's broader M128 route regressed and remains rejected; P046 restores P039 M128.
+Direct P048 H200 comparison passed 480 oracle checks and reproduced all three
+target gains (10.74%/10.87%/9.88% raw latency cuts), with three controls within 0.7%.
+Long tails are preserved. The official whole-score point is0.929% above P039,
+but a statistically resolved whole-score difference is not established.
+
+The original starter and P039 fallback are preserved. Same-address sequential
+ABA/fresh inputs are tested in six cases; dedicated simultaneous graph/call
+coverage and all 30-shape native paired diagnostics are not claimed.
+See [P048 evidence](experiments/048-p046-paired-confirmation.md).
+
+## Previous selection (historical, preserved)
+
 # Selected Projection candidate: P039
 
 `candidates/projection_router_m1_fp32_gemv.py`

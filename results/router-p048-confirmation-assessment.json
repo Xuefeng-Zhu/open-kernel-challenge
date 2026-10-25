@@ -1,0 +1,518 @@
+{
+  "observed_utc": "2026-10-25T22:21:25.586822+00:00",
+  "experiment": "P048 direct P039/P046 confirmation",
+  "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+  "source_commit": "d72380a95df959714f4576a55aa6ea75fde51477",
+  "official_candidate_job": "41ba778763a5433b",
+  "passed": true,
+  "oracle_comparisons": 480,
+  "measured_observations": 288,
+  "excluded_warmup_observations": 72,
+  "pre_post_oracle_checks": 120,
+  "cases": [
+    {
+      "layer": "pooler",
+      "m": 8,
+      "target": true,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.1140350153105714,
+          2.255033458465476,
+          1.1328467116069478,
+          1.1270310454913093,
+          1.1200585383264199,
+          1.1068813640125479,
+          1.1194690808709618,
+          1.1139052413757948,
+          1.0560223445670038,
+          1.1211679601230773,
+          1.0895953886072294,
+          1.174231290306993,
+          2.082848791218088,
+          1.105726821790794,
+          1.05980525449215,
+          1.1502890742281449,
+          1.1194690808709618,
+          1.0442600441428238,
+          0.4826935325976823,
+          1.1244509581722146,
+          1.1251841063765164,
+          1.172514564892221,
+          1.1140350153105714,
+          1.1342182844004065
+        ],
+        "reverse_order_pair_ratios": [
+          1.5849877707501208,
+          1.1299351369719282,
+          1.113450458115065,
+          1.1166836959230255,
+          1.0881077234826417,
+          1.1311220089260117,
+          1.5175841901470817,
+          1.1041206478695607,
+          1.0812108174666202,
+          0.7367260041786193,
+          1.148605568901572,
+          1.1240813510718595
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.7367260041786193,
+          "p10": 1.0819005080682222,
+          "median": 1.1203825234974425,
+          "p90": 1.4806863280225309,
+          "maximum": 1.5849877707501208
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 24.09599907696247,
+            "p10": 24.12799932062626,
+            "median": 24.431999772787094,
+            "p90": 25.66399984061718,
+            "maximum": 53.75999957323074
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 21.63200080394745,
+            "p10": 21.695999428629875,
+            "median": 21.888000890612602,
+            "p90": 23.097599484026432,
+            "maximum": 50.84799975156784
+          }
+        },
+        "median_paired_raw_ratio": 1.1203825234974425,
+        "candidate_raw_latency_cut": 0.10744769841790314,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    },
+    {
+      "layer": "pooler",
+      "m": 16,
+      "target": true,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.1621233653314007,
+          1.1060171625867516,
+          1.0088607530582783,
+          1.1197183208286607,
+          1.1293952207662665,
+          1.1160839903201063,
+          1.1436700037955039,
+          1.0495979223765706,
+          1.1535211495078541,
+          1.1452991757728768,
+          1.0921985388143538,
+          1.123579575990266,
+          1.1305595309448038,
+          1.1120447706573398,
+          1.1412268182379801,
+          1.1280575249147635,
+          0.30229839310574586,
+          1.088426598434267,
+          1.1344777619679818,
+          1.1253561695312244,
+          1.08976151758553,
+          1.1144491644369692,
+          1.1378340217146503,
+          1.1203438354794697
+        ],
+        "reverse_order_pair_ratios": [
+          1.1337232409629798,
+          1.0628451761024997,
+          1.1227198780823613,
+          1.0956247806015367,
+          1.1494028109274514,
+          1.1077779430635997,
+          1.1212639360578684,
+          1.1346230651400873,
+          0.5736110282414659,
+          1.129907761114439,
+          1.1020362120678056,
+          1.1290550615567079
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.5736110282414659,
+          "p10": 1.0661231365524035,
+          "median": 1.121991907070115,
+          "p90": 1.1345330827223765,
+          "maximum": 1.1494028109274514
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 24.639999493956566,
+            "p10": 24.84159916639328,
+            "median": 25.391999632120132,
+            "p90": 25.910399854183197,
+            "maximum": 26.784000918269157
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 22.23999984562397,
+            "p10": 22.313600406050682,
+            "median": 22.544000297784805,
+            "p90": 24.387199245393276,
+            "maximum": 82.14399963617325
+          }
+        },
+        "median_paired_raw_ratio": 1.121991907070115,
+        "candidate_raw_latency_cut": 0.10872797415150293,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    },
+    {
+      "layer": "pooler",
+      "m": 32,
+      "target": true,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.0974930495350441,
+          1.0731382334377924,
+          1.1388101793818248,
+          1.1023842526810015,
+          1.1106441998146648,
+          1.0597610270088968,
+          1.124645848441766,
+          1.1024930453134532,
+          1.1166429364879071,
+          1.0945757908267642,
+          1.1089108103889227,
+          1.1281690075028037,
+          1.8151041295605472,
+          1.0686015671068665,
+          1.093706359516904,
+          1.1286713364137535,
+          1.1052631494084184,
+          1.1111111384002161,
+          1.1008402854392725,
+          1.0924369419065552,
+          1.1011235468216451,
+          0.5343771114640641,
+          1.140425525239502,
+          1.1084507112689295
+        ],
+        "reverse_order_pair_ratios": [
+          1.0852473231426525,
+          1.12044919944786,
+          1.0849043450171374,
+          1.113514358393144,
+          1.105554306796989,
+          1.1184984614945166,
+          1.3927035281460824,
+          1.111051312244473,
+          1.1081832863615098,
+          1.0966305644804992,
+          0.7670822774094158,
+          1.1243244569967195
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.7670822774094158,
+          "p10": 1.084938642829689,
+          "median": 1.1096172993029914,
+          "p90": 1.1239369312418335,
+          "maximum": 1.3927035281460824
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 24.960000067949295,
+            "p10": 25.087999179959297,
+            "median": 25.32800007611513,
+            "p90": 25.82399919629097,
+            "maximum": 44.60800066590309
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 22.495999932289124,
+            "p10": 22.592000663280487,
+            "median": 22.84800074994564,
+            "p90": 24.20799992978573,
+            "maximum": 47.00800031423569
+          }
+        },
+        "median_paired_raw_ratio": 1.1096172993029914,
+        "candidate_raw_latency_cut": 0.09878838350109331,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    },
+    {
+      "layer": "o",
+      "m": 1,
+      "target": false,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.0084985655851915,
+          1.0440771500053918,
+          1.028169064890639,
+          0.9859550311488647,
+          0.99714291843909,
+          1.0085227094210751,
+          0.9326425018919374,
+          0.9302949193449344,
+          0.9971671173225664,
+          0.9719887461931661,
+          1.022922643271524,
+          1.1221591106398643,
+          1.1647399677788621,
+          0.9395604602083083,
+          1.0225988784172646,
+          0.9723757208122542,
+          3.4245013460729066,
+          1.0747921656038528,
+          0.975069224385365,
+          0.9916666841828606,
+          1.0170454188421505,
+          0.9971830771144118,
+          1.0313390216535818,
+          0.48037889801316536
+        ],
+        "reverse_order_pair_ratios": [
+          1.0261336697237413,
+          1.0068408327042309,
+          1.0028166720713358,
+          0.9314679710409896,
+          0.9844974434255352,
+          1.0713925348008322,
+          1.046108799384327,
+          0.9971711595823409,
+          1.918496082315262,
+          0.9833329367996319,
+          1.0070652810648033,
+          0.7038703735063181
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.7038703735063181,
+          "p10": 0.9366544676168538,
+          "median": 1.0048287523877835,
+          "p90": 1.0688641612591816,
+          "maximum": 1.918496082315262
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 10.944000445306301,
+            "p10": 11.123199947178364,
+            "median": 11.408000253140926,
+            "p90": 12.57280008867383,
+            "maximum": 38.46399858593941
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 11.071999557316303,
+            "p10": 11.209599673748016,
+            "median": 11.359999887645245,
+            "p90": 11.849599797278643,
+            "maximum": 23.64799939095974
+          }
+        },
+        "median_paired_raw_ratio": 1.0048287523877835,
+        "candidate_raw_latency_cut": 0.004805547588391357,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    },
+    {
+      "layer": "unpooler",
+      "m": 1,
+      "target": false,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.0115829877206555,
+          1.0156250053290705,
+          1.0,
+          1.0,
+          1.019230803673172,
+          1.0269230579797555,
+          1.0117187255750935,
+          1.0188678478574804,
+          0.9846153794490242,
+          0.9961538168778038,
+          5.445312595035091,
+          0.16406737200941346,
+          1.6317830541696767,
+          0.35863511465531095,
+          1.1163614827145247,
+          0.2963870151503173,
+          1.4656689586957221,
+          2.102244442420321,
+          1.0383141322397726,
+          0.8774834746619836,
+          8.741697917486666,
+          1.045627392835655,
+          1.0149812787155073,
+          1.015747921425162
+        ],
+        "reverse_order_pair_ratios": [
+          1.013601981694288,
+          1.0,
+          1.0230697012888308,
+          1.0152869941862785,
+          0.9903677945060272,
+          0.9451974012010226,
+          0.7649932697251235,
+          0.5752173916794767,
+          1.7553331372836498,
+          0.9545174134338242,
+          3.0233357078595255,
+          1.015364527714421
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.5752173916794767,
+          "p10": 0.7830136828727134,
+          "median": 1.006800990847144,
+          "p90": 1.6821067936841683,
+          "maximum": 3.0233357078595255
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 8.191999979317188,
+            "p10": 8.287999778985977,
+            "median": 8.591999765485525,
+            "p90": 58.52159932255744,
+            "maximum": 89.21600133180618
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 8.128000423312187,
+            "p10": 8.211199846118689,
+            "median": 8.384000044316053,
+            "p90": 49.69279952347278,
+            "maximum": 54.17599901556969
+          }
+        },
+        "median_paired_raw_ratio": 1.006800990847144,
+        "candidate_raw_latency_cut": 0.006755049815179048,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "target": false,
+      "passed": true,
+      "summary": {
+        "round_parent_over_candidate_ratios": [
+          1.0219907060420832,
+          1.070520229113426,
+          0.727885452419183,
+          0.9611111376997962,
+          1.052143677551949,
+          0.9988452568184459,
+          6.494857170378674,
+          0.9919261209858619,
+          1.6639418502824947,
+          0.8789102068985771,
+          1.0068259243280542,
+          0.9524324478070783,
+          1.0611303282918698,
+          0.9696969993917267,
+          0.9565689334157468,
+          0.9942594949660063,
+          0.9590254812896858,
+          1.0203390066839497,
+          1.0,
+          0.7103559907127698,
+          1.0127020405683191,
+          1.016073467558017,
+          0.4585106319079412,
+          0.9407894707449387
+        ],
+        "reverse_order_pair_ratios": [
+          1.0459740555023163,
+          0.8364082826525164,
+          1.0251481462765666,
+          2.538191970551268,
+          1.2093202536545018,
+          0.979251591585836,
+          1.0143839979555,
+          0.9752321490999524,
+          0.9892073124293587,
+          0.8428261924695801,
+          1.0143863533995967,
+          0.6567815273921759
+        ],
+        "pair_distribution": {
+          "count": 12,
+          "minimum": 0.6567815273921759,
+          "p10": 0.8370500736342228,
+          "median": 1.0017956551924294,
+          "p90": 1.1929856338392832,
+          "maximum": 2.538191970551268
+        },
+        "raw_us": {
+          "parent": {
+            "count": 24,
+            "minimum": 27.456000447273254,
+            "p10": 27.561599388718605,
+            "median": 28.07999961078167,
+            "p90": 29.57440037280321,
+            "maximum": 181.85600638389587
+          },
+          "candidate": {
+            "count": 24,
+            "minimum": 27.55199931561947,
+            "p10": 27.65760011970997,
+            "median": 28.22399977594614,
+            "p90": 37.1583990752697,
+            "maximum": 60.15999987721443
+          }
+        },
+        "median_paired_raw_ratio": 1.0017956551924294,
+        "candidate_raw_latency_cut": 0.0017924365943516873,
+        "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+      }
+    }
+  ],
+  "assessment": {
+    "target_geomean_raw_latency_cut": 0.10499888372797106,
+    "target_gates": {
+      "geomean_cut_at_least3pct": true,
+      "no_individual_regression": true
+    },
+    "controls": [
+      {
+        "layer": "o",
+        "m": 1,
+        "raw_latency_movement": -0.004805547588391357
+      },
+      {
+        "layer": "unpooler",
+        "m": 1,
+        "raw_latency_movement": -0.006755049815179048
+      },
+      {
+        "layer": "pooler",
+        "m": 128,
+        "raw_latency_movement": -0.0017924365943516873
+      }
+    ],
+    "controls_requiring_investigation": [],
+    "automatic_selection": false,
+    "caveat": "Twelve pairs are a bounded diagnostic; small movements require repeatability/quantization review. Neither target gates nor absence of a control flag establish a full official score."
+  },
+  "selected_working_candidate": "P046",
+  "selection_reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+  "limitations": [
+    "Six selected cases only, not the full official suite or official score",
+    "Sequential graph replay, not concurrent execution",
+    "No hardware counters/profiler, instructions, clock traces or occupancy evidence",
+    "Event quantization and twelve-pair uncertainty require interpretation; no formal confidence interval",
+    "Internal deadline cannot interrupt a blocking CUDA operation"
+  ],
+  "resource_state": {
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "stopped": true,
+    "all_tasks_zero": true
+  },
+  "billing_record": "experiments/projection-p046-confirmation-modal.json"
+}

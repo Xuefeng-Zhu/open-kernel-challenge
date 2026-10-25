@@ -1,6 +1,6 @@
 {
-  "updated_utc": "2026-10-25T21:27:44.380771+00:00",
-  "best_official": "P2-04-router-m1-fp32-gemv",
+  "updated_utc": "2026-10-25T22:21:25.586822+00:00",
+  "best_official": "P2-09-pooler-column-batch2-hybrid",
   "followup_screens": [
     {
       "id": "M26-qkv-layout",
@@ -91,7 +91,7 @@
   "latest_official": {
     "experiment": "P2-09-pooler-column-batch2-hybrid",
     "job_id": "41ba778763a5433b",
-    "status": "terminal-promising-not-selected",
+    "status": "terminal-selected-after-paired-confirmation",
     "passed": true,
     "speedup": 1.1841399408925375,
     "assessment": "results/router-p046-official-assessment.json",
@@ -99,7 +99,7 @@
   },
   "prepared_local_candidate": {
     "id": "P046",
-    "status": "terminal-promising-not-selected",
+    "status": "terminal-selected-after-paired-confirmation",
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
     "code_parent": "P045",
@@ -125,5 +125,30 @@
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
     "accepted_utc": "2026-10-25T21:57:30.876492+00:00",
     "assessment": "results/router-p046-official-assessment.json"
+  },
+  "current_selection": {
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
+    "ci": [
+      1.1663778417791495,
+      1.2019020400059255
+    ],
+    "reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+    "paired_confirmation": "results/router-p048-confirmation-assessment.json",
+    "previous_best_job": "d5636ac8d1404abd",
+    "previous_best_preserved": true,
+    "selected_utc": "2026-10-25T22:21:25.586822+00:00"
+  },
+  "current_diagnostic": {
+    "id": "P048",
+    "status": "terminal-pass",
+    "report": "experiments/048-p046-paired-confirmation.md",
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "oracle_checks": 480,
+    "stopped_tasks0": true,
+    "not_official_score": true
   }
 }

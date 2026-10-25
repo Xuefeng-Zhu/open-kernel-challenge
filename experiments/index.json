@@ -468,34 +468,27 @@
     "gpu_state_updated_utc": "2026-10-24T16:37:47.378717+00:00"
   },
   "current_cycle2_index": "experiments/projection-cycle2-index.json",
-  "current_status": "STATUS.md",
+  "current_status": "P048 terminal; P046 selected after direct six-case paired confirmation, official score1.1841399409. No active Projection job.",
   "current_local_verification": {
-    "command": ".venv/bin/python -m unittest discover -s tests -v",
-    "passed": 112,
-    "total": 112,
-    "log": "results/m36-preflight-tests.local.txt",
-    "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
-    "scope": "CPU models/static only; actual GPU evidence separate",
-    "verified_utc": "2026-10-24T20:22:53.966811+00:00",
-    "gpu_scope": "Actual CUDA/official results and budgets separately journaled in cycle-two index/ledgers, never inferred from CPU tests"
+    "verified_utc": "2026-10-25T22:21:25.586822+00:00",
+    "command": "python -B -m unittest discover -s tests -p 'test_projection_p046_confirmation*.py'",
+    "passed": 29,
+    "total": 29,
+    "seconds": 0.044,
+    "scope": "P048 CPU mocks/static boundary tests; actual H200 evidence is in current_diagnostic"
   },
   "current_diagnostic": {
-    "id": "P044",
-    "status": "completed",
-    "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
-    "source_commit": "b80c5941cc2856ab086e9e17c7bcadf9b1481fbc",
-    "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
-    "representatives": 5,
-    "oracle_checks": 610,
-    "traces": 10,
-    "local_tests": 44,
-    "official_score_produced": false,
-    "shutdown_verified": true,
-    "report": "experiments/044-projection-evidence-diagnostic.md"
+    "id": "P048",
+    "status": "terminal-pass",
+    "report": "experiments/048-p046-paired-confirmation.md",
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "oracle_checks": 480,
+    "stopped_tasks0": true,
+    "not_official_score": true
   },
   "prepared_local_candidate": {
     "id": "P046",
-    "status": "terminal-promising-not-selected",
+    "status": "terminal-selected-after-paired-confirmation",
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
     "code_parent": "P045",
@@ -521,5 +514,22 @@
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
     "accepted_utc": "2026-10-25T21:57:30.876492+00:00",
     "assessment": "results/router-p046-official-assessment.json"
+  },
+  "updated_utc": "2026-10-25T22:21:25.586822+00:00",
+  "current_selection": {
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
+    "ci": [
+      1.1663778417791495,
+      1.2019020400059255
+    ],
+    "reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+    "paired_confirmation": "results/router-p048-confirmation-assessment.json",
+    "previous_best_job": "d5636ac8d1404abd",
+    "previous_best_preserved": true,
+    "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   }
 }

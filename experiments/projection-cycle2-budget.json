@@ -620,11 +620,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 4,
-      "left": 16
+      "used": 6,
+      "left": 14
     }
   },
-  "last_account_quota_utc": "2026-10-25T19:14:36.553292+00:00",
+  "last_account_quota_utc": "2026-10-25T22:20:11.065606+00:00",
   "admission_pause_reason": "M36 single-pass candidate failed performance decisively, no meaningful Modal-qualified next candidate. Remaining user allowance persists; scope exact source/evidence before any future dispatch.",
   "latest_stage_summary": "QKV_M128_SINGLEPASS_RESULTS.md",
   "historical_modal_first_pause": {
@@ -647,26 +647,27 @@
   ],
   "single_admission_exception": null,
   "current_preserved_best": {
-    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
-    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
-    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
-    "job_id": "d5636ac8d1404abd",
-    "speedup": 1.173238998969285,
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
     "ci": [
-      1.1556404139847458,
-      1.1908375839538243
+      1.1663778417791495,
+      1.2019020400059255
     ],
-    "reason": "Retain P039 for native correct router m1 normalized latency reduction of30.1%; P040 higher aggregate point missed its target gate and P043 regressed. Separate-run overall improvement is not wholly causal.",
-    "previous_best_job": "48b1357016134e52",
+    "reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+    "paired_confirmation": "results/router-p048-confirmation-assessment.json",
+    "previous_best_job": "d5636ac8d1404abd",
     "previous_best_preserved": true,
-    "source": "candidates/projection_router_m1_fp32_gemv.py"
+    "selected_utc": "2026-10-25T22:21:25.586822+00:00",
+    "source": "candidates/projection_pooler_column_batch2_hybrid.py"
   },
   "latest_decision": {
-    "experiment": "P2-09-pooler-column-batch2-hybrid",
-    "decision": "Target and original correctness gates pass; retain promising while P039 remains selected pending same-device unchanged-control confirmation.",
-    "job_id": "41ba778763a5433b",
-    "status": "done",
-    "assessment": "results/router-p046-official-assessment.json"
+    "experiment": "P048",
+    "decision": "Select P046 after direct paired confirmation; retain P039 fallback and all failed experiments.",
+    "official_job_id": "41ba778763a5433b",
+    "assessment": "results/router-p048-confirmation-assessment.json"
   },
   "bounded_phase_completed_utc": "2026-10-25T00:34:08.879550+00:00",
   "phase_history": [
@@ -686,20 +687,22 @@
   "latest_authorization_note": "Superseding user reference Sentinel_26cefe33699481919e869a7bce3c3476 removes personal free-check count ceiling across attention/projection. Legacy numeric allowance fields remain historical compatibility values; no new request is admitted by this documentation update.",
   "selection_before_P039": null,
   "selection": {
-    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
-    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
-    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
-    "job_id": "d5636ac8d1404abd",
-    "speedup": 1.173238998969285,
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
     "ci": [
-      1.1556404139847458,
-      1.1908375839538243
+      1.1663778417791495,
+      1.2019020400059255
     ],
-    "reason": "Retain P039 for native correct router m1 normalized latency reduction of30.1%; P040 higher aggregate point missed its target gate and P043 regressed. Separate-run overall improvement is not wholly causal.",
-    "previous_best_job": "48b1357016134e52",
-    "previous_best_preserved": true
+    "reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+    "paired_confirmation": "results/router-p048-confirmation-assessment.json",
+    "previous_best_job": "d5636ac8d1404abd",
+    "previous_best_preserved": true,
+    "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P043 completed: 9+30 H200 correctness pass, codec paths verified, severe target performance regressions; preserve selected P039. No active or uncertain job.",
+  "current_phase": "P048 terminal selected P046; no active or uncertain Projection measurement. P047 private binding capability unresolved, not absent. Continue only supported evidence-led mechanisms.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
@@ -739,7 +742,21 @@
     "job_id": "48b1357016134e52",
     "speedup": 1.1486499523461586
   },
-  "promising_candidate": {
+  "selection_before_P046": {
+    "candidate": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "speedup": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "reason": "Retain P039 for native correct router m1 normalized latency reduction of30.1%; P040 higher aggregate point missed its target gate and P043 regressed. Separate-run overall improvement is not wholly causal.",
+    "previous_best_job": "48b1357016134e52",
+    "previous_best_preserved": true
+  },
+  "promising_candidate_before_P048": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
     "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",

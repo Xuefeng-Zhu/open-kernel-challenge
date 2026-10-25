@@ -1,7 +1,7 @@
 # P048 — direct P039/P046 confirmation
 
-Status: source prepared; GPU execution not yet performed. This experiment changes
-no candidate code and consumes no official check. Selected P039 is preserved.
+Status: completed and selected P046 as working candidate after direct paired confirmation.
+No candidate code changed and no official check was consumed. P039 is preserved.
 
 实验卡：P046 的三个 pooler 小批量路径已在两次官方作业中显示收益，但未改动
 的 O/unpooler M1 也发生漂移。本次让 P039/P046 在同一 H200、同一输入地址上
@@ -66,3 +66,49 @@ The coordinator owns the serialized GPU slot. A durable exclusive record prevent
 relaunch after an uncertain outcome. No NCU counters or new packages are involved.
 Sequential A/B/A is tested; concurrency and all 30 shapes remain outside this
 six-case diagnostic and must not be represented as covered here.
+
+## Actual H200 result and selection
+
+App `ap-lpXZhacMWtQNlM5oksAWRX` completed and stopped with zero tasks; all
+workspace apps were also stopped. Frozen harness commit `d72380a95df959714f4576a55aa6ea75fde51477`.
+Worker execution 11.418 s; supervised child 12.452 s; client 21.556 s; app lifetime 23 s.
+All 480 original-oracle comparisons passed: 120 before/after probes, 72 warmups,
+288 measured replays. Immutable original/prepared weights and same-address
+A → outlier B → A checks passed. No simultaneous-call test was run.
+
+| Path | P039 raw median µs | P046 raw median µs | Paired raw latency cut | Improved pairs |
+|---|---:|---:|---:|---:|
+| pooler M8 | 24.432 | 21.888 | 10.745% | 11/12 |
+| pooler M16 | 25.392 | 22.544 | 10.873% | 11/12 |
+| pooler M32 | 25.328 | 22.848 | 9.879% | 11/12 |
+| o M1 | 11.408 | 11.360 | 0.481% | 7/12 |
+| unpooler M1 | 8.592 | 8.384 | 0.676% | 6/12 |
+| pooler M128 | 28.080 | 28.224 | 0.179% | 6/12 |
+
+The paired statistic is computed from raw samples, not the ratio of table medians.
+Target geometric latency reduction is 10.500%; all target gates pass. Control
+median movements are -0.481%, -0.676%, -0.179%, below the 2% diagnostic flag.
+Each target improves in 11/12 pairs. Keep all long tails: candidate pooler M16
+maximum 82.144 µs; parent pooler M128 maximum 181.856 µs. These tails and twelve pairs
+limit claims about small differences or latency predictability. No samples were
+removed, no fixed overhead subtracted, and no new official score computed.
+
+Select P046 as the working candidate. This rests on the official full correctness
+pass, two official observations of the small-M mechanism, direct paired target
+reproduction and structurally unchanged controls without reproduced median loss.
+It does not prove the official whole-score difference statistically significant
+or explain the previous cross-job drift's hardware cause. Preserve P039 intact.
+The selected official score remains 1.1841399408925375×, CI
+[1.1663778417791495,1.2019020400059255], job 41ba778763a5433b.
+
+Local 29 tests passed in 0.044 s before launch; no candidate code changed.
+H200 SM90, Torch 2.14.1+cu130, CUDA 13.0, Triton 3.8.0, Python 3.12.3.
+The Modal image is not the exact official judge overlay. Source hashes and all
+raw observations are in `results/remote-P048-confirmation/timing.json`.
+
+Cost reserve $0.407634500099 remains recorded; the 30 s conservative exposure
+model is approximately $0.0631, not an invoice. Billing observations may lag;
+read the ledger's latest workspace delta, not a claimed settled per-app charge.
+Latest delayed workspace gross delta was $0.02179635, not a settled per-app invoice.
+Actual paid usage remains $0. No official request was created; quota snapshot
+remains 6/20 checks used, 14 left, reset 00:00 UTC. No credential change occurred.

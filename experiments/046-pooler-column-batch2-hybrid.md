@@ -234,3 +234,12 @@ Slot released at the 21:58:55 UTC terminal observation, before analysis/push.
 Actual Projection quota then: **6/20 checks used, 14 left**, ranked **0/10**;
 reset **00:00 UTC**. No Modal app, paid compute, credential action or formal
 entry occurred. There is no active or uncertain Projection job.
+
+## Subsequent selection after P048 (2026-10-25)
+
+The earlier promising/not-selected decision was preserved through the direct
+P039/P046 confirmation. P048 then passed 480 oracle comparisons and reproduced
+all three target gains, while unchanged control median movements stayed below
+0.7%. P046 is now the selected working candidate; P039 remains preserved.
+See experiment 048 and the authoritative selection ledger. This does not change
+the official receipt or claim a statistically resolved whole-score difference.

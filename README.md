@@ -1,29 +1,27 @@
 # Open Kernel Challenge — dense projections
 
-Current selected candidate: **P039, 1.173238999× SGLang**, official 95% interval
-**[1.155640414, 1.190837584]**, off-board job `d5636ac8d1404abd`.
-[Source](candidates/projection_router_m1_fp32_gemv.py),
+Current selected candidate: **P046, 1.184139941× SGLang**, official 95% interval
+**[1.166377842,1.201902040]**, off-board job `41ba778763a5433b`.
+[Source](candidates/projection_pooler_column_batch2_hybrid.py),
 [selection and limits](BEST.md), [current state](STATUS.md),
-[immutable receipt](results/remote-P2-04-router-m1-fp32-gemv.json).
-All **9 prerequisites and 30 scored shapes passed**. Original `submission.py`
-remains the PyTorch starter; it is not the selected optimized source.
+[official receipt](results/remote-P2-09-pooler-column-batch2-hybrid.json).
+All **9 prerequisites and 30scored shapes passed**. Original `submission.py`
+remains the PyTorch starter; P039 is the preserved fallback.
 
-P039 changes only router m1 to original-FP32 SIMT GEMV. The measured
-reference-normalized target reduction is **30.1058%** (7.468829→5.204267 µs
-adjusted time across runs). Its whole-score point movement is not wholly causal:
-unchanged paths also moved, and there is no independent paired candidate repeat.
-P040's higher 1.175871327 point is **not selected**: its O-m1 target improvement
-was 6.5077%, below the declared 15% gate. Both remain preserved.
+P046 uses full-K output-column batched matrix multiplication only for pooler
+M8/M16/M32. P045's broader M128 route regressed and was rejected. The narrower
+P046 passed its predeclared official gates. A direct H200 P039/P046 confirmation
+then passed 480 oracle comparisons, reproduced 10.74%/10.87%/9.88% raw target
+latency cuts and found three unchanged controls within 0.7% median movement.
+[Protocol, all samples, long tails and limits](experiments/048-p046-paired-confirmation.md).
+This supports working-version selection; it does not turn Modal diagnostics
+into an official score or prove the 0.929% whole-score point gain statistically.
 
-Latest experiment P043 losslessly compressed pooler weights by about23.3% and
-decoded them inside a split-K GEMM. Official H200 correctness passed9+30 cases,
-but score fell to **0.898429×**: the three target paths regressed sharply while
-all27 controls stayed within5% normalized movement. **Rejected; P039 is unchanged.**
-[Source, predeclared gates and full result](experiments/043-pooler-lossless-codec.md).
-P044 has now run the unchanged P039 diagnostic on H200: all five representative
-paths,610 oracle checks and10 activity traces passed. The app stopped with zero
-tasks; no new official score was produced. [Findings and limitations](experiments/044-projection-evidence-diagnostic.md).
-The earlier unchanged-P039 official recheck returned a duplicate with no new measurement.
+P043 compression and the broad P045 remain failed performance experiments.
+P044's activity/resource evidence motivated the output-column experiment; no
+measured HBM/occupancy cause is inferred. P047's explicit cuBLASLt binding
+capability is unresolved because the exact judge package/AOT inventory is not
+available; no unsupported import/JIT workaround was attempted.
 
 Historical reports retain their original dated results: the earlier 1.148650×
 composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),
