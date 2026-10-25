@@ -799,10 +799,24 @@
         "decode 32|full": -0.01
       },
       "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required."
+    },
+    "A2-12": {
+      "candidate": "mixed_fa3_decode_qhoist.py",
+      "expected_sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+      "final": false,
+      "parent_receipt": "A2-11-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only B1L1 sliding hoists repeated exact Q norm/computed-trig RoPE/factor/finalBF16 into timed per-call buffer; keeps all KV/partition/merge math and other11computations. Target>=15%normalized whole-call cut including extra launch; native correctness first."
     }
   },
   "all_requests_terminal": true,
-  "current_phase": "A2-11 retained as complete counter-local best; all admitted requests terminal; only evidence-backed follow-on may be prepared",
+  "current_phase": "A2-11 selected best; A2-12 one-shape timed Q-hoist prepared locally, all prior jobs terminal",
   "projection_checks_remaining": null,
   "counting_note": "Old six-request cycle exhausted including E6. New cycle requests alone consume this10-check budget; daily quota is independent.",
   "selection": {
