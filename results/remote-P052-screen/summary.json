@@ -1,0 +1,1 @@
+{"stages": [{"mode": "correctness", "exit_code": 0, "wall_seconds": 7.522602412}, {"mode": "timing", "exit_code": 0, "wall_seconds": 5.285087732000001}], "gate_error": null, "complete": true, "worker_wall_seconds": 12.808808087000001}

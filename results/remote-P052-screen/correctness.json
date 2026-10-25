@@ -1,0 +1,1043 @@
+{
+  "cases": [
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 42,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m8.control.ptx",
+          "ptx_sha256": "52585b4ff075faa979b41e2dafec473d8050680b794bc4ecfa1c065b5837c8ab",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 20,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m8.reduce.ptx",
+          "ptx_sha256": "fb38b5cfd5d564b43b88b763f66aba505079f17bc0d8d031b3f780a4abdc91a3",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 2048
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 36,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m8.weight_first.ptx",
+          "ptx_sha256": "33f026ba67533f15e5d1d48e89da883758cf504e09dabfd2ba660f8e9a6581ee",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 20480
+        }
+      },
+      "complete": true,
+      "concurrent_calls_tested": false,
+      "correctness": [
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 3.335e-05 (worst row 6.283e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 3.335e-05 (worst row 6.283e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 8.874e-05 (worst row 1.532e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 8.874e-05 (worst row 1.532e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 8 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 8 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 8.242e-05 (worst row 1.281e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 8.242e-05 (worst row 1.281e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 3.871e-05 (worst row 7.349e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 3.871e-05 (worst row 7.349e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 8.242e-05 (worst row 1.281e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 8.242e-05 (worst row 1.281e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        }
+      ],
+      "correctness_status": "passed",
+      "coverage": "official scored shape",
+      "generated_kernel_executed": true,
+      "k": 8192,
+      "lowering_differs": true,
+      "m": 8,
+      "n": 4096,
+      "name": "pooler_m8",
+      "partial_buffers_isolated": true,
+      "same_address_sequential_graph_ABA": true
+    },
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 42,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m7.control.ptx",
+          "ptx_sha256": "efe59da6ccaffcd00dccf8ace6a62c585cd456ab90d0afebf14f6b4e1363aeae",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 20,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m7.reduce.ptx",
+          "ptx_sha256": "9c002cd8e5d82b06c30952dc925408a2901c1d21323466a566b5feae8a68f88f",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 2048
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 16,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 34,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.pooler_m7.weight_first.ptx",
+          "ptx_sha256": "64f0fc4f979a0a17ead154783675dc807e49b3bf0388a775a92bf367c40ef345",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 20480
+        }
+      },
+      "complete": true,
+      "concurrent_calls_tested": false,
+      "correctness": [
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 3.668e-05 (worst row 6.452e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 3.668e-05 (worst row 6.452e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 6.114e-05 (worst row 1.263e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 6.114e-05 (worst row 1.263e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 7 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 7 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 1.236e-05 (worst row 3.051e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 1.236e-05 (worst row 3.051e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 1.079e-04 (worst row 1.506e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 1.079e-04 (worst row 1.506e-04); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 1.236e-05 (worst row 3.051e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 1.236e-05 (worst row 3.051e-05); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        }
+      ],
+      "correctness_status": "passed",
+      "coverage": "official prerequisite shape",
+      "generated_kernel_executed": true,
+      "k": 8192,
+      "lowering_differs": true,
+      "m": 7,
+      "n": 4096,
+      "name": "pooler_m7",
+      "partial_buffers_isolated": true,
+      "same_address_sequential_graph_ABA": true
+    },
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 48,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.masked_edges.control.ptx",
+          "ptx_sha256": "50a3aeff55aea48d12175a4f321a0249d51d104e6a52ef7b7112ea86ad47afe5",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 14,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.masked_edges.reduce.ptx",
+          "ptx_sha256": "06103b533edee8a48dee2b62b22a5d7320e002e6de72ea4642004018ac10a652",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 0
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 48,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.masked_edges.weight_first.ptx",
+          "ptx_sha256": "8331e3f15773fea40804eaa3142528a211bdaf11b48166ec7c8ab86da14f4ebe",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        }
+      },
+      "complete": true,
+      "concurrent_calls_tested": false,
+      "correctness": [
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 15 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 15 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        }
+      ],
+      "correctness_status": "passed",
+      "coverage": "synthetic address/empty-split case",
+      "generated_kernel_executed": true,
+      "k": 131,
+      "lowering_differs": true,
+      "m": 15,
+      "n": 65,
+      "name": "masked_edges",
+      "partial_buffers_isolated": true,
+      "same_address_sequential_graph_ABA": true
+    },
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 47,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.short_k.control.ptx",
+          "ptx_sha256": "f4bf7d09ac54d583f3b243650a964e43373718205e0c8574bcefb0ae4d88aa3a",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 14,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.short_k.reduce.ptx",
+          "ptx_sha256": "2ab36a00b97b95e5adcfaffcaef0c5c047e50887716fcc980832c76ade633ebe",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 0
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 44,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.short_k.weight_first.ptx",
+          "ptx_sha256": "1918b3291be1eaf76d80843385ba5576d98289b0d10286ed6a9df7ed12b638e1",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        }
+      },
+      "complete": true,
+      "concurrent_calls_tested": false,
+      "correctness": [
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        }
+      ],
+      "correctness_status": "passed",
+      "coverage": "synthetic short-K/empty-split case",
+      "generated_kernel_executed": true,
+      "k": 1,
+      "lowering_differs": true,
+      "m": 1,
+      "n": 63,
+      "name": "short_k",
+      "partial_buffers_isolated": true,
+      "same_address_sequential_graph_ABA": true
+    },
+    {
+      "compiled": {
+        "control": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 8,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [
+            "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+          ],
+          "n_regs_per_thread": 168,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.split_tail.control.ptx",
+          "ptx_sha256": "2876eb8385e95c4342ad28699a70b02461261c5254646cda12b08f47f54a325e",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        },
+        "reduce": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_reduce",
+            "num_ctas": 1,
+            "num_stages": 3,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 0
+          },
+          "mma_mnemonics": [],
+          "n_regs_per_thread": 20,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.split_tail.reduce.ptx",
+          "ptx_sha256": "979d13ef1c5c1b1919136ffb5620a01b3b1bede4ae887b10161059130d613133",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 2048
+        },
+        "weight_first": {
+          "binary_handle_initialization": {
+            "attempted": true,
+            "error": null,
+            "loaded": true
+          },
+          "compiler_metadata": {
+            "maxnreg": null,
+            "name": "_partial_weight_first",
+            "num_ctas": 1,
+            "num_stages": 2,
+            "num_warps": 4,
+            "warp_size": 32
+          },
+          "instruction_counts": {
+            "async_copy": 0,
+            "local_load": 0,
+            "local_store": 0,
+            "mma_sync": 0,
+            "tma_tensor": 0,
+            "wgmma": 4
+          },
+          "mma_mnemonics": [
+            "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+          ],
+          "n_regs_per_thread": 164,
+          "n_spills_driver_raw": 0,
+          "ptx_file": "correctness.split_tail.weight_first.ptx",
+          "ptx_sha256": "23f025eefc3e7971b9af1bd467e4e2cb62eb58e677a992961c76bbfa44a92634",
+          "qualification": "Static PTX text only; not SASS, achieved overlap, hardware traffic or dynamic instruction counts",
+          "resource_qualification": "Reported compiler/driver metadata; missing values stay null. Triton3.8 n_spills is LOCAL_SIZE_BYTES/4, not measured spill traffic. No achieved occupancy claim.",
+          "shared_bytes": 10240
+        }
+      },
+      "complete": true,
+      "concurrent_calls_tested": false,
+      "correctness": [
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "normal",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "outliers",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 16 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "sparse",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 16 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "zero",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00)",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A1",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_B",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "control",
+          "passed": true
+        },
+        {
+          "label": "graph_A2",
+          "oracle_message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00",
+          "orientation": "weight_first",
+          "passed": true
+        }
+      ],
+      "correctness_status": "passed",
+      "coverage": "synthetic split-tail case",
+      "generated_kernel_executed": true,
+      "k": 521,
+      "lowering_differs": true,
+      "m": 16,
+      "n": 67,
+      "name": "split_tail",
+      "partial_buffers_isolated": true,
+      "same_address_sequential_graph_ABA": true
+    }
+  ],
+  "compile_only": false,
+  "complete": true,
+  "environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA H200",
+    "multiprocessor_count": 132,
+    "python": "3.12.3",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "kind": "P051 matched orientation compiler/correctness diagnostic",
+  "limitations": [
+    "Not the full 9-prerequisite/30-scored official suite",
+    "M9..16 are diagnostic tile-envelope extensions, not historical R06 dispatch",
+    "No simultaneous streams/calls test; graph ABA is sequential",
+    "An internal deadline cannot interrupt blocked CUDA/compiler operations"
+  ],
+  "limits": {
+    "internal_seconds": 65.0,
+    "required_external_timeout_seconds": 80.0
+  },
+  "measurement": "No timings, overhead subtraction, performance gate or official score",
+  "native_imports_completed": true,
+  "precision": "Original BF16 operands, FP32 partials and reduction, BF16 output",
+  "provenance_note": "sources_sha256 contains only locally verified files; provenance_reference_hashes records pinned local development references, including any omitted compile-only oracle files",
+  "provenance_reference_hashes": {
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d"
+  },
+  "sources_sha256": {
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db"
+  },
+  "started_utc": "2026-10-25T23:32:25.603981+00:00",
+  "wall_seconds": 6.969844151999999
+}

@@ -1,0 +1,332 @@
+{
+  "experiment": "P052",
+  "decision": "reject narrow orientation variant; P046 remains selected",
+  "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+  "source_commit": "39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0",
+  "original_oracle_comparisons": 390,
+  "gpu_correctness_passed": true,
+  "performance_gate_passed": false,
+  "official_checks_used": 0,
+  "official_score": null,
+  "artifact_sha256": {
+    "correctness.json": "057400331f717576d5260c7c88bab5430dad679fa5e2f6cab3c3857b3434313e",
+    "correctness.log": "f5b9c2f28705430960f00b38cda36f6923ad98e29492eaa1b955438e4fef9e1e",
+    "correctness.masked_edges.control.ptx": "50a3aeff55aea48d12175a4f321a0249d51d104e6a52ef7b7112ea86ad47afe5",
+    "correctness.masked_edges.reduce.ptx": "06103b533edee8a48dee2b62b22a5d7320e002e6de72ea4642004018ac10a652",
+    "correctness.masked_edges.weight_first.ptx": "8331e3f15773fea40804eaa3142528a211bdaf11b48166ec7c8ab86da14f4ebe",
+    "correctness.pooler_m7.control.ptx": "efe59da6ccaffcd00dccf8ace6a62c585cd456ab90d0afebf14f6b4e1363aeae",
+    "correctness.pooler_m7.reduce.ptx": "9c002cd8e5d82b06c30952dc925408a2901c1d21323466a566b5feae8a68f88f",
+    "correctness.pooler_m7.weight_first.ptx": "64f0fc4f979a0a17ead154783675dc807e49b3bf0388a775a92bf367c40ef345",
+    "correctness.pooler_m8.control.ptx": "52585b4ff075faa979b41e2dafec473d8050680b794bc4ecfa1c065b5837c8ab",
+    "correctness.pooler_m8.reduce.ptx": "fb38b5cfd5d564b43b88b763f66aba505079f17bc0d8d031b3f780a4abdc91a3",
+    "correctness.pooler_m8.weight_first.ptx": "33f026ba67533f15e5d1d48e89da883758cf504e09dabfd2ba660f8e9a6581ee",
+    "correctness.short_k.control.ptx": "f4bf7d09ac54d583f3b243650a964e43373718205e0c8574bcefb0ae4d88aa3a",
+    "correctness.short_k.reduce.ptx": "2ab36a00b97b95e5adcfaffcaef0c5c047e50887716fcc980832c76ade633ebe",
+    "correctness.short_k.weight_first.ptx": "1918b3291be1eaf76d80843385ba5576d98289b0d10286ed6a9df7ed12b638e1",
+    "correctness.split_tail.control.ptx": "2876eb8385e95c4342ad28699a70b02461261c5254646cda12b08f47f54a325e",
+    "correctness.split_tail.reduce.ptx": "979d13ef1c5c1b1919136ffb5620a01b3b1bede4ae887b10161059130d613133",
+    "correctness.split_tail.weight_first.ptx": "23f025eefc3e7971b9af1bd467e4e2cb62eb58e677a992961c76bbfa44a92634",
+    "summary.json": "49ab6effffd39e8eadac0df0fcafcb65b0b5db1a7a256dd33d1177b93a209050",
+    "timing.json": "2ae054ec40d6f39a119dfe0c97fd330dfde09e315ba51d45b0cffb6cc71cd30f",
+    "timing.log": "4469a15c98ff6a43b7c94ff96e9a84a95aeeeec7ca5f0166b0a496cc2632b96b"
+  },
+  "assessment": {
+    "automatic_selection": false,
+    "cases": [
+      {
+        "gates": {
+          "matched_at_least10_of12_pairs_win": false,
+          "matched_raw_latency_cut_at_least10pct": false,
+          "selected_regression_at_most5pct": false
+        },
+        "m": 8,
+        "matched_latency_cut": 0.022448410332357005,
+        "selected_latency_regression": 0.21317685150515553
+      },
+      {
+        "gates": {
+          "matched_at_least10_of12_pairs_win": false,
+          "matched_raw_latency_cut_at_least10pct": false,
+          "selected_regression_at_most5pct": true
+        },
+        "m": 7,
+        "matched_latency_cut": 0.017574473373943467,
+        "selected_latency_regression": 0.048785314681344394
+      }
+    ],
+    "official_score": null,
+    "qualification": "Bounded two-case mechanism screen; twelve order-balanced pairs, no formal confidence interval. Passing does not promote P046 or establish a whole-score gain.",
+    "screen_passed": false
+  },
+  "cases": [
+    {
+      "m": 8,
+      "actual_p046_route": "column_batch2",
+      "series": {
+        "matched": {
+          "raw_median_us": {
+            "candidate": 26.176000013947487,
+            "parent": 26.83199942111969
+          },
+          "raw_tail_distributions": {
+            "candidate": {
+              "count": 24,
+              "maximum": 27.615999802947044,
+              "median": 26.176000013947487,
+              "minimum": 25.82399919629097,
+              "p10": 25.843199342489243,
+              "p90": 27.424000203609467
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 28.12799997627735,
+              "median": 26.83199942111969,
+              "minimum": 26.464000344276428,
+              "p10": 26.559999212622643,
+              "p90": 28.00000086426735
+            }
+          },
+          "paired_ratio": 1.0229639136897002,
+          "candidate_latency_cut": 0.022448410332357005,
+          "wins": 9,
+          "pairs": 12
+        },
+        "selected": {
+          "raw_median_us": {
+            "candidate": 26.304000057280064,
+            "parent": 21.727999672293663
+          },
+          "raw_tail_distributions": {
+            "candidate": {
+              "count": 24,
+              "maximum": 27.68000029027462,
+              "median": 26.304000057280064,
+              "minimum": 25.696000084280968,
+              "p10": 25.919999927282333,
+              "p90": 27.609599754214287
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 22.975999861955643,
+              "median": 21.727999672293663,
+              "minimum": 21.376000717282295,
+              "p10": 21.52319997549057,
+              "p90": 21.983999758958817
+            }
+          },
+          "paired_ratio": 0.8242821306385192,
+          "candidate_latency_cut": -0.21317685150515553,
+          "wins": 0,
+          "pairs": 12
+        }
+      }
+    },
+    {
+      "m": 7,
+      "actual_p046_route": "pretransposed_mm",
+      "series": {
+        "matched": {
+          "raw_median_us": {
+            "candidate": 26.367999613285065,
+            "parent": 26.81600023061037
+          },
+          "raw_tail_distributions": {
+            "candidate": {
+              "count": 24,
+              "maximum": 29.311999678611755,
+              "median": 26.367999613285065,
+              "minimum": 25.696000084280968,
+              "p10": 25.961600244045258,
+              "p90": 27.619199827313423
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 30.047999694943428,
+              "median": 26.81600023061037,
+              "minimum": 26.11199952661991,
+              "p10": 26.268800161778927,
+              "p90": 28.003199584782124
+            }
+          },
+          "paired_ratio": 1.0178888606796481,
+          "candidate_latency_cut": 0.017574473373943467,
+          "wins": 9,
+          "pairs": 12
+        },
+        "selected": {
+          "raw_median_us": {
+            "candidate": 26.30399912595749,
+            "parent": 25.087999179959297
+          },
+          "raw_tail_distributions": {
+            "candidate": {
+              "count": 24,
+              "maximum": 28.00000086426735,
+              "median": 26.30399912595749,
+              "minimum": 25.98400041460991,
+              "p10": 25.993600487709045,
+              "p90": 27.44000032544136
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 51.67999863624573,
+              "median": 25.087999179959297,
+              "minimum": 24.351999163627625,
+              "p10": 24.58560038357973,
+              "p90": 26.147199794650078
+            }
+          },
+          "paired_ratio": 0.9534839838063837,
+          "candidate_latency_cut": -0.048785314681344394,
+          "wins": 1,
+          "pairs": 12
+        }
+      }
+    }
+  ],
+  "ptx_evidence": {
+    "pooler_m8": {
+      "control": {
+        "n_regs_per_thread": 42,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "52585b4ff075faa979b41e2dafec473d8050680b794bc4ecfa1c065b5837c8ab",
+        "mma_mnemonics": [
+          "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+        ]
+      },
+      "reduce": {
+        "n_regs_per_thread": 20,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 2048,
+        "ptx_sha256": "fb38b5cfd5d564b43b88b763f66aba505079f17bc0d8d031b3f780a4abdc91a3",
+        "mma_mnemonics": []
+      },
+      "weight_first": {
+        "n_regs_per_thread": 36,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 20480,
+        "ptx_sha256": "33f026ba67533f15e5d1d48e89da883758cf504e09dabfd2ba660f8e9a6581ee",
+        "mma_mnemonics": [
+          "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+        ]
+      }
+    },
+    "pooler_m7": {
+      "control": {
+        "n_regs_per_thread": 42,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "efe59da6ccaffcd00dccf8ace6a62c585cd456ab90d0afebf14f6b4e1363aeae",
+        "mma_mnemonics": [
+          "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+        ]
+      },
+      "reduce": {
+        "n_regs_per_thread": 20,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 2048,
+        "ptx_sha256": "9c002cd8e5d82b06c30952dc925408a2901c1d21323466a566b5feae8a68f88f",
+        "mma_mnemonics": []
+      },
+      "weight_first": {
+        "n_regs_per_thread": 34,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 20480,
+        "ptx_sha256": "64f0fc4f979a0a17ead154783675dc807e49b3bf0388a775a92bf367c40ef345",
+        "mma_mnemonics": [
+          "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+        ]
+      }
+    },
+    "masked_edges": {
+      "control": {
+        "n_regs_per_thread": 48,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "50a3aeff55aea48d12175a4f321a0249d51d104e6a52ef7b7112ea86ad47afe5",
+        "mma_mnemonics": [
+          "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+        ]
+      },
+      "reduce": {
+        "n_regs_per_thread": 14,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 0,
+        "ptx_sha256": "06103b533edee8a48dee2b62b22a5d7320e002e6de72ea4642004018ac10a652",
+        "mma_mnemonics": []
+      },
+      "weight_first": {
+        "n_regs_per_thread": 48,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "8331e3f15773fea40804eaa3142528a211bdaf11b48166ec7c8ab86da14f4ebe",
+        "mma_mnemonics": [
+          "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+        ]
+      }
+    },
+    "short_k": {
+      "control": {
+        "n_regs_per_thread": 47,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "f4bf7d09ac54d583f3b243650a964e43373718205e0c8574bcefb0ae4d88aa3a",
+        "mma_mnemonics": [
+          "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+        ]
+      },
+      "reduce": {
+        "n_regs_per_thread": 14,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 0,
+        "ptx_sha256": "2ab36a00b97b95e5adcfaffcaef0c5c047e50887716fcc980832c76ade633ebe",
+        "mma_mnemonics": []
+      },
+      "weight_first": {
+        "n_regs_per_thread": 44,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "1918b3291be1eaf76d80843385ba5576d98289b0d10286ed6a9df7ed12b638e1",
+        "mma_mnemonics": [
+          "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+        ]
+      }
+    },
+    "split_tail": {
+      "control": {
+        "n_regs_per_thread": 168,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "2876eb8385e95c4342ad28699a70b02461261c5254646cda12b08f47f54a325e",
+        "mma_mnemonics": [
+          "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+        ]
+      },
+      "reduce": {
+        "n_regs_per_thread": 20,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 2048,
+        "ptx_sha256": "979d13ef1c5c1b1919136ffb5620a01b3b1bede4ae887b10161059130d613133",
+        "mma_mnemonics": []
+      },
+      "weight_first": {
+        "n_regs_per_thread": 164,
+        "n_spills_driver_raw": 0,
+        "shared_bytes": 10240,
+        "ptx_sha256": "23f025eefc3e7971b9af1bd467e4e2cb62eb58e677a992961c76bbfa44a92634",
+        "mma_mnemonics": [
+          "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+        ]
+      }
+    }
+  },
+  "limitations": [
+    "Two pooler shapes timed, five shapes correctness-tested; not official9+30suite",
+    "Sequential graph ABA only, no simultaneous streams/calls",
+    "No calibrated overhead subtraction, achieved occupancy/HBM counters or measured pipeline overlap",
+    "Timing uses same frozen kernel bodies and launch settings; saved PTX/resources are from prerequisite stage, not a second capture-process binary dump",
+    "P046M7 one51.68us slow sample retained; no outlier removal",
+    "Delayed workspace billing is not a settled per-app invoice; conservative reserve retained"
+  ]
+}

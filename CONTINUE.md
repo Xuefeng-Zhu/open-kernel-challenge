@@ -1,3 +1,28 @@
+# P052 complete — correctness passed, performance rejected
+
+Source commit 39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0. Modal app
+ap-tarMKbDOkq7ba0yqmHM3UH is stopped/tasks0; all apps independently verified
+stopped at 23:33:07 UTC. Shared measurement slot released. No uncertain request.
+
+390 original-oracle comparisons passed, including five edge/prerequisite cases,
+fresh inputs, immutable weights and sequential same-address graph A→B→A.
+At M8/M7 the weight-first kernel cuts only 2.2448%/1.7574% versus its matched
+control (9/12 wins each), and is 21.3177%/4.8785% slower than actual P046.
+Reject this narrow variant; no official check or promotion. All samples retained.
+
+P046 stays selected at official 1.1841399409×, P039 rollback. P050 remains parked.
+Read experiments/052-orientation-execution-screen.md and
+results/router-p052-assessment.json; raw evidence is in results/remote-P052-screen/.
+59 local tests pass. Source/body and compiler scheduling changes are verified,
+but achieved overlap, phase costs and hardware bottleneck causality are not.
+
+Paid usage remains $0. Delayed workspace billing is not a per-app invoice; retain
+$0.38609925 reserve. All admitted work is terminal. Do not repeat the screen or
+send this rejected variant to the official runner. Continue bounded local causal
+analysis before another mechanism; a new GPU stage needs coordinator scheduling.
+
+## Previous checkpoint (historical)
+
 # P051 compile gate passed — P046 remains selected
 
 Native app ap-Iu9K2yefCGuDlalnHrLuhd completed and was independently verified
