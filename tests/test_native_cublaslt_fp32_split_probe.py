@@ -67,7 +67,7 @@ class FP32SplitProbeTests(unittest.TestCase):
                          "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc")
         self.assertEqual(hashlib.sha256(split.FROZEN_SOURCE.encode()).hexdigest(), split.FROZEN_BINDING_SHA256)
         source = frozen.CUDA_SOURCE
-        self.assertEqual(len(split.REPLACEMENTS), 6)
+        self.assertEqual(len(split.REPLACEMENTS), 7)
         for before, after in split.REPLACEMENTS:
             self.assertEqual(source.count(before), 1)
             source = source.replace(before, after, 1)
@@ -84,6 +84,20 @@ class FP32SplitProbeTests(unittest.TestCase):
         with patch.object(split, "REPLACEMENTS", (("absent", "x"),)):
             with self.assertRaisesRegex(ValueError, "exactly one"):
                 split.derive_source(frozen.CUDA_SOURCE)
+
+    def test_only_new_binding_is_module_local_and_native_body_is_unchanged(self):
+        global_binding = '  py::class_<Plan, std::shared_ptr<Plan>>(module, "Plan")'
+        local_binding = '  py::class_<Plan, std::shared_ptr<Plan>>(module, "Plan", py::module_local())'
+        self.assertEqual(frozen.CUDA_SOURCE.count(global_binding), 1)
+        self.assertNotIn("py::module_local", frozen.CUDA_SOURCE)
+        self.assertEqual(split.CUDA_SOURCE.count(local_binding), 1)
+        self.assertEqual(split.CUDA_SOURCE.count("py::module_local"), 1)
+        policy_only = frozen.CUDA_SOURCE
+        for before, after in split.REPLACEMENTS[:-1]:
+            policy_only = policy_only.replace(before, after, 1)
+        self.assertEqual(split.CUDA_SOURCE.replace(local_binding, global_binding, 1), policy_only)
+        self.assertEqual(split.CUDA_SOURCE.split("PYBIND11_MODULE", 1)[0],
+                         policy_only.split("PYBIND11_MODULE", 1)[0])
 
     def test_native_precision_mask_filter_and_names_are_header_based(self):
         source = split.CUDA_SOURCE

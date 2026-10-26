@@ -1,6 +1,6 @@
 # P059 — admit FP32 split-K with descriptors held fixed
 
-Status: local preparation, no admission. Parent P057 compiled and passed 444
+Status: ready for coordinated GPU slot, no admission. Parent P057 compiled and passed 444
 oracle comparisons, but its four sampled no-split tactics failed the performance
 gate. P046 remains selected at 1.1841399409×. P058's independently reviewed
 column-layout prototype is parked; this experiment does not incorporate it.
@@ -92,7 +92,8 @@ P059 只放开 FP32 工作区归并，保持布局和精度；若没有真实 sp
 python -B -m unittest tests.test_native_cublaslt_fp32_split_probe -v
 ```
 
-Twelve CPU/source/metadata/mock tests passed in 0.002 s. The native body is
+Thirteen CPU/source/metadata/mock tests passed; together with the worker's
+nineteen tests, the coordinator rerun passed 32 tests in 0.019 s. The native body is
 hash-derived from the frozen original; only reduction preference/filter and
 its diagnostic metadata change. Layout, pointers, FP32 compute, BF16 storage,
 stream, full algorithm object and runtime workspace guards are identical.
@@ -103,7 +104,66 @@ from BF16 partial storage. These are models, not CUDA correctness or native
 availability evidence. The builder is mocked; no Torch/native execution occurs.
 
 Source `native_cublaslt_fp32_split_probe.py`, SHA256
-`2f369143631f28a98695875a077ed2dc51795e87b2d5b26e103b08fe04b5cafd`.
+`bb2a54cd7cc14bde5ec3a170a6bf8172032abbcade890ee3d6a0262001e614af`.
 Derived native-body SHA256
-`996ad67db33a2e22b10c525a234ddb65d6996ef7113eca3aa64e02521267e91f`.
-The bounded worker/controller remains in local preparation; no GPU admission.
+`e3493f7e6d56c18bea112587b620a8bda0bda93cf20bb0d8ade3994ac2865c0c`.
+
+The initial source is preserved in commit
+`3c74fa908e8b315c2d69b1c7b8e3b016e8e75123`. A subsequent integration review
+found a potential duplicate global pybind `Plan` registration when loading both
+extensions in one interpreter. Only P059 now registers `Plan` with
+`py::module_local()`; the frozen P057 control and shared ownership remain
+unchanged. A regression test reverses that one binding edit and checks the prior
+native body exactly. This is a preflight risk fix, not an observed GPU failure.
+[Pybind documents global/local coexistence](https://pybind11.readthedocs.io/en/stable/advanced/classes.html#module-local-class-bindings).
+
+The worker `projection_p059_native_screen.py` is frozen at SHA256
+`f3ea106e4a3f713c2559d2c102a2aab93b4e375369e16aa1f58e018fb34a5e0f`.
+It selects configurations before execution, runs four named paired series,
+retains six excluded warmups and 24 samples per series, and records 298 original
+oracle comparisons on a completed screen. A→B→A and separate-stream independent
+graphs use private mutable buffers. Actual kernel overlap is not established.
+Four activity captures occur after all acceptance timing and are not performance
+samples. Nearby M127 and all other shapes remain explicitly untested.
+
+```bash
+python -B -m unittest tests.test_native_cublaslt_fp32_split_probe tests.test_projection_p059_native_screen -v
+```
+
+## Frozen execution harness
+
+Controller `projection_p059_modal.py`, SHA256
+`564d26f1c1a6cb8cd48c6ba5f01146fb117a66d4c2e80668c42c634cd3fc55c1`.
+The coordinator's complete local rerun passed **54 tests in 0.073 s**, followed
+by four local controller guards. No SDK import, native build or GPU action was
+performed by these commands:
+
+```bash
+python -B -m unittest tests.test_native_cublaslt_fp32_split_probe tests.test_projection_p059_native_screen tests.test_projection_p059_modal -v
+python -B projection_p059_modal.py self-test --control-root /path/to/control-workspace
+```
+
+The payload contains exactly 17 reviewed files: the two native interfaces,
+their frozen provenance, P046, worker, local harness, official oracle/spec and
+licenses. It excludes credentials, the controller, P058 and unrelated code.
+The controller preserves a capability-only absence separately from compilation,
+correctness or successful execution. Safe raw failure receipts are retained.
+
+One H200, 2 CPU and 8 GiB RAM, zero idle containers, one invocation and no retry.
+Internal gate 240 s, child hard timeout 270 s, function timeout 300 s, startup
+45 s and app watchdog 345 s. The conservative reserve includes 375 s at the
+higher of the documented floor and current rates, plus 10% and $0.02:
+**$0.5583812501375 at the floor**. Fresh actual free-credit/paid-$0 verification,
+existing valid auth and a released serialized GPU slot are mandatory before
+launch. An exclusive ledger prevents duplicate or uncertain relaunches. Explicit
+stop and independent stopped/tasks-zero reconciliation remain required.
+
+Planned command after those prerequisites, using this report's committed source:
+
+```bash
+python -B projection_p059_modal.py launch --frozen-head <reviewed-commit> --control-root /path/to/control-workspace
+```
+
+No P059 GPU admission, official check, observed GPU result or incurred run cost
+exists at this checkpoint. Nearby-shape correctness, actual split availability,
+native co-loading and performance remain unverified until execution.

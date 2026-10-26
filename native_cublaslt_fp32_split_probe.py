@@ -12,6 +12,11 @@ code compares named header enums and exports their actual compiled values.
 Python never assumes their integer encodings. Documentation:
 https://docs.nvidia.com/cuda/archive/13.0.0/cublas/index.html#cublasltreductionscheme-t
 
+The P059 Plan binding is module-local so it can coexist with the frozen P057
+global Plan binding in the same interpreter. This changes Python type
+registration only, not native computation or object ownership:
+https://pybind11.readthedocs.io/en/stable/advanced/classes.html#module-local-class-bindings
+
 Import is Python string construction only. Tests are source/metadata/arithmetic
 models and mocked host builds; no native availability, accuracy, graph safety or
 performance claim follows from them.
@@ -72,6 +77,8 @@ REPLACEMENTS = (
      '      reason = "outside_fp32_reduction_policy";'),
     ('  inventory["policy"] = "metadata-only; FP32 compute; no split-K; no benchmark";',
      _NATIVE_SCHEME_INVENTORY),
+    ('  py::class_<Plan, std::shared_ptr<Plan>>(module, "Plan")',
+     '  py::class_<Plan, std::shared_ptr<Plan>>(module, "Plan", py::module_local())'),
 )
 
 
