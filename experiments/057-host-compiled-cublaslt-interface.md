@@ -1,8 +1,11 @@
-# P057 — host compilation of the unchanged native cuBLASLt binding
+# P057 — native interface passes; measured no-split tactics rejected
 
 Parent experiment: P056, frozen execution commit `113e05e`, terminal result
 commit `fb36441`. Performance decision control remains P046 at 1.1841399409×.
 This is a build/interface repair and bounded diagnostic, not a new submission.
+
+The preparation below is historical. The terminal result and limits are recorded
+at the end; no official score or new selected candidate results from this probe.
 
 ## Evidence and single change
 
@@ -121,3 +124,82 @@ python -B -m unittest tests.test_native_cublaslt_host_probe \
 python -B projection_p057_modal.py self-test \
   --frozen-head <committed-source-sha> --control-root /path/to/control-workspace
 ```
+
+
+## Actual native result — 2026-10-26 00:46:25 UTC
+
+Source freeze `5542653a08ac5bb8ceb34f52ccb1346e3de3dd2d`; app
+`ap-1P4IYSdup9e7ZBjImQj1ZM`, accepted at 00:45:15.211205 UTC.
+Host compilation succeeded in 25.784488 s. The worker-internal report is
+35.234701 s; the outer supervisor records 35.883874 s. These wall
+durations are not an allocated-GPU billing interval.
+
+**444 recorded original-oracle comparisons passed** (72 explicit adversarial/ABA,
+12 independent-graph and 360 warmup/measured comparisons), over both representative
+shapes, all four selected native configurations, P046 controls, fresh input
+families, column probes, zero/cancellation/outliers, poisoned outputs, same-address
+A→B→A and pre/post timing checks. Independent graphs used separate streams and
+private mutable buffers, three repeats per case; actual simultaneous kernel
+overlap was not instrumented. Nearby M127/M15 were explicitly skipped. This is
+bounded diagnostic coverage, not full challenge correctness or a concurrency
+proof. Original tolerances were unchanged.
+
+Raw whole-call CUDA graph timings, with six warmups excluded by protocol and all
+24 measured samples retained in twelve reversed pairs:
+
+| Shape / selected plan | P046 median (µs) | Native median (µs) | Median paired P046/native | Winning pairs |
+|---|---:|---:|---:|---:|
+| QKV M128, algo 41 / tile 21 | 22.112 | 194.704 | 0.113495 | 0/12 |
+| QKV M128, algo 42 / tile 21 | 21.952 | 1971.376 | 0.011136 | 0/12 |
+| Unpooler M16, algo 66 / tile 312 | 22.688 | 22.784 | 1.004913 | 6/12 |
+| Unpooler M16, algo 66 / tile 134 | 22.816 | 24.240 | 0.934772 | 0/12 |
+
+Ratio greater than one favors native. The paired ratio is calculated per
+reversed pair; it is not the quotient of the two column medians. No fixed graph
+overhead is subtracted. There is no formal confidence interval or official
+score here. Unpooler native0's +0.49% paired latency cut is inconclusive, with
+P046 tail samples up to 50.880 µs versus native0 maximum 27.840 µs. All tails
+remain in the evidence. Native1 loses to native0 in both cases as well.
+
+No representative satisfies the predeclared >=10% latency cut and >=10/12
+winning-pair gate. **Reject promotion and do not spend an official check.**
+P046 remains the working candidate, official score 1.1841399409×.
+
+The interface gate is cleared: explicit cuBLASLt plan enumeration, complete
+configuration retention, build/link, BF16/FP32 arithmetic and tested graph
+replay work on this image. The heuristic query returned seven no-split QKV
+plans and three no-split unpooler plans; only the predeclared two per shape were
+executed. All selected plans required zero workspace. Their reported waves are
+heuristic estimates, not occupancy measurements. No native instruction, hardware
+counter or activity trace was collected, so the severe QKV loss cannot yet be
+attributed to SIMT, Tensor Core choice, memory traffic or occupancy.
+
+This result rejects the measured descriptor-layout/no-split/selection subset,
+not cuBLASLt as a whole. Candidate causes are descriptor orientation and the
+no-split restriction (which excludes potentially valid FP32 split-K). Compare
+those against PyTorch's actual library setup before implementing one isolated
+next control; do not change both at once or sweep arbitrary tactics.
+
+Exact app stopped at 00:45:59 UTC; an independent read at 00:46:25.461792 UTC
+confirmed stopped/tasks 0 and all apps stopped/tasks 0. Measurement slot released.
+Paid usage remains $0. The workspace billing snapshot still reports a zero
+gross delta; billing can lag, so retain the $0.55838125 free-credit reserve.
+No new credentials, package installs, official checks or ranked submissions.
+
+Reproduction uses the committed source and guarded existing authentication:
+
+```bash
+python -B projection_p057_modal.py launch \
+  --frozen-head 5542653a08ac5bb8ceb34f52ccb1346e3de3dd2d \
+  --control-root /path/to/existing/control-workspace
+```
+
+The same ledger deliberately refuses a duplicate launch. Source-bound raw
+receipts and every timing sample are in `results/remote-P057-native/`;
+`results/router-p057-assessment.json` and `results/router-p057-paired.csv` contain
+the summarized gate calculations. The three published receipts are byte-identical
+to the allowlisted returned artifacts, verified against their transport hashes.
+
+实验结论：编译入口修复有效，444 次原始正确性检查通过；但这一小组不拆 K
+算法没有胜过 P046。QKV 严重退步，unpooler 基本持平或变慢。保留 P046，不跑
+无价值的官方检查；下一步先隔离描述符布局与算法过滤的影响。

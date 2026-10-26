@@ -1,3 +1,22 @@
+# P057 interface passed, performance subset rejected; P046 preserved
+
+Source freeze `5542653`; app `ap-1P4IYSdup9e7ZBjImQj1ZM` completed. Host build
+succeeded and 444 recorded original-oracle comparisons passed. QKV M128 native
+plans were far slower than P046; unpooler M16 was near-flat/noisy or slower.
+No >=10% / >=10-of-12-pair performance gate passed; no official check or promotion.
+P046 remains selected at 1.1841399409×. Read experiment 057 and its full receipts.
+
+Independent status at 2026-10-26T00:46:25.461792 UTC confirmed exact app and all
+apps stopped/tasks 0. GPU slot released; no uncertain request. Paid usage $0,
+workspace billing delta still delayed; retain $0.55838125 reserve.
+
+Next local diagnosis: inspect PyTorch descriptor orientation and precision-safe
+split-K selection versus this no-split subset; do not claim hardware causality
+without missing instruction/activity evidence. No new GPU until coordinated slot.
+Latest verified private SHA is 5542653 at 00:43:15 UTC; terminal results await push.
+
+## Previous checkpoint (historical)
+
 # P056 terminal compiler failure; P046 preserved
 
 P056 app `ap-EaioKmzLxCQFWKWwyp9cmP` reached NVCC compilation and failed an
