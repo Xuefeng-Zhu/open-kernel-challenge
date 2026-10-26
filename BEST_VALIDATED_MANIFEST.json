@@ -271,9 +271,47 @@
       "delayed_workspace_cost_usd": ".01044102",
       "paid_usd": "0",
       "report": "reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md",
-      "native_execution_state": "local_preparation_reviewed_not_admitted; slot released to Projection P056 at parent request",
+      "native_execution_state": "completed native diagnostic; production replacement rejected, no official check",
       "official_check": false,
-      "formal_entry": false
+      "formal_entry": false,
+      "runtime_screen": {
+        "source_freeze": "c55d14c507b9d5cc2254441531d4f0e1a18714d5",
+        "raw_result_sha256": "38946bec2ddf7c749f9890fb7bae677cb4bedf11c03a07e55f0b7391b9b74da5",
+        "app_id": "ap-Hy5O3TPhVTVKu0XyfsgJWT",
+        "status": "complete",
+        "original_oracle_calls": 30,
+        "checked_timing_replays": 48,
+        "correctness_replay_cache_passed": true,
+        "mechanism_gate_passed": true,
+        "mechanism_per_seed_reduction_percent": [
+          5.035468439868507,
+          3.888285730090746
+        ],
+        "favorable_mechanism_pairs": 6,
+        "actual_FA3_gate_passed": false,
+        "candidate_over_FA3_paired_latency_ratio_per_seed": [
+          3.8228764720610857,
+          3.8165385561226075
+        ],
+        "favorable_actual_FA3_pairs": 0,
+        "raw_median_us": {
+          "FA3": 40.063999593257904,
+          "v_after_wait": 161.1040011048317,
+          "v_before_wait": 153.4240022301674
+        },
+        "geometry": "B32/L8/TP8/full/page1/noRoPE, nominalctx4096 padded page-table stride86008; not scored80K",
+        "decision": "Production replacement NO-GO; preserve local mechanism, no official check or promotion",
+        "report": "reviews/attention-v2/gluon-vstage-probe/RESULTS.md",
+        "app_stopped": true,
+        "tasks": 0,
+        "closure_utc": "2026-10-26T00:40:48.399511+00:00",
+        "delayed_workspace_cost_usd": ".05258797",
+        "paid_usd": "0",
+        "exact_app_invoice": false,
+        "actual_hardware_overlap_measured": false,
+        "official_check": false,
+        "formal_entry": false
+      }
     }
   },
   "projection": {

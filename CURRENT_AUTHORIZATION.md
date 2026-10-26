@@ -1,3 +1,27 @@
+# V-stage runtime complete: local benefit, actual FA3 replacement rejected
+
+The [runtime result](reviews/attention-v2/gluon-vstage-probe/RESULTS.md) passed
+30 original-oracle checks plus replay/cache/isolation gates and48 checked
+warmup/timing replays. The publication variant reduced paired prototype
+latency5.0355%/3.8883% on two fresh fixtures,6/6 pairs, but remained3.82×
+actual FA3 latency (raw medians153.424us vs40.064us). The production gate fails;
+no official check, promotion or further incremental scheduling branch follows.
+These are padded nearbyctx4096 calls, not scored80K or whole-suite results.
+
+App `ap-Hy5O3TPhVTVKu0XyfsgJWT` independently stopped/tasks0 at
+2026-10-26 00:40:48.399511UTC; slot released before report polishing.
+No-new-app delayed workspace usage increased$0.05258797,paid$0,not exact invoice.
+Working source3da22a/official1.233633059, A2-11 rollback and Projection remain
+unchanged. Main local research now follows the source-bound B1/sliding
+32-producer/16-merge budget and7.8us/1.7us activity evidence; GQA,FP8QK,
+exact window pruning and fused preparation already exist. New work needs one
+prospective architecture falsifier against actual3da, not a win over a weak
+prototype. Parent assigns serialized GPU slots; P057 owns the next slot.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # V-stage native publication gate passes; execution prepared, slot released
 
 The [revised compile result](reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md)
