@@ -38,5 +38,12 @@ class OfflineSourceContract(unittest.TestCase):
         self.assertEqual(p.CONSTANTS['M'],16)
         self.assertEqual(p.CONSTANTS['K'],8192)
 
+    def test_compile_path_never_calls_device_binder_or_launcher(self):
+        tree=ast.parse(Path(p.__file__).read_text())
+        attrs=[n.func.attr for n in ast.walk(tree) if isinstance(n,ast.Call) and isinstance(n.func,ast.Attribute)]
+        for forbidden in ('create_binder','_init_handles','get_current_target','warmup'):
+            self.assertNotIn(forbidden,attrs)
+        self.assertFalse(any(isinstance(n,ast.Call) and isinstance(n.func,ast.Subscript) for n in ast.walk(tree)))
+
 
 if __name__=='__main__':unittest.main()

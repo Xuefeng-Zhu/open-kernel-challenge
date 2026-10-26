@@ -95,7 +95,8 @@ def compile_payload(directory):
     sys.modules[spec.name] = module
     spec.loader.exec_module(module)
     kernel = getattr(module, KERNEL)
-    kernel.create_binder()
+    # JITFunction.__init__ already defines params/arg_names. create_binder()
+    # discovers the active device and must not be called in this offline path.
     tools = {k: Path(getattr(triton.knobs.nvidia,k).path) for k in ("ptxas","cuobjdump")}
     versions = {k: subprocess.run([str(p),"--version"],capture_output=True,text=True,
                                   check=True,timeout=10).stdout for k,p in tools.items()}

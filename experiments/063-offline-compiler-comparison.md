@@ -87,3 +87,19 @@ Primary references: [official task API](https://openkernelchallenge.dev/api/v1/p
 [NVIDIA backend](https://github.com/triton-lang/triton/blob/v3.8.0/third_party/nvidia/backend/compiler.py),
 [AOT CLI](https://github.com/triton-lang/triton/blob/v3.8.0/python/triton/tools/compile.py),
 [official release files](https://pypi.org/project/triton/3.8.0/#files).
+
+## Attempt 1: driver discovery failed before compilation
+
+Frozen source `6faa720` installed the verified wheel into the disposable
+CPU-only container, then failed at `kernel.create_binder()`. Triton3.8
+`runtime/jit.py:694` calls `driver.active.get_current_target()` there and raised
+`RuntimeError: 0 active drivers ([]). There should only be one.` No IR, cubin,
+GPU execution or performance result was produced. The container exited1 and
+`docker ps --all --filter name=okc-p063-offline` returned no container.
+
+This was our unnecessary use of a runtime binder, missed during static review,
+not a failure of explicit-target compilation or a reason to fake a GPU driver.
+`JITFunction.__init__` already creates params/arg_names; `ASTSource` needs no
+runtime binder. Remove only that call, retain the failure, add a regression
+guard against device-binder/launcher calls, and repeat the otherwise identical
+offline diagnostic. No dependency, precision, kernel or resource option changes.
