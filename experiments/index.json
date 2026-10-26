@@ -649,7 +649,7 @@
   },
   "native_interface_probe": {
     "id": "P056",
-    "status": "reviewed-execution-preparation-no-admission-yet",
+    "status": "terminal-native-build-failure",
     "report": "experiments/056-native-cublaslt-interface-local.md",
     "source": "native_cublaslt_probe.py",
     "source_sha256": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
@@ -663,6 +663,16 @@
     "controller": "projection_p056_modal.py",
     "controller_sha256": "ea8b99f4b6b7df4027e4d0d93498f67b358e6833403f3151530c7b5704f0ff22",
     "local_tests": 50,
-    "local_payload_guards": 4
+    "local_payload_guards": 4,
+    "source_commit": "113e05e2085f08497c58e1f67af0454b8a4a85eb",
+    "app_id": "ap-EaioKmzLxCQFWKWwyp9cmP",
+    "result": "results/router-p056-assessment.json",
+    "ledger": "experiments/projection-p056-native-modal.json",
+    "oracle_checks": 0,
+    "shutdown_verified_utc": "2026-10-26T00:33:36.348385+00:00",
+    "stopped_tasks0": true,
+    "paid_after_zero": true,
+    "cost_reserve_usd": "0.5583812501375",
+    "cost_settled": false
   }
 }

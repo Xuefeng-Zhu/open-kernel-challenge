@@ -1,4 +1,4 @@
-# P056 — owned cuBLASLt interface, local preflight only
+# P056 — owned cuBLASLt interface; native compilation failed
 
 Parent and decision control: unchanged P046,
 `candidates/projection_pooler_column_batch2_hybrid.py`, SHA256
@@ -6,6 +6,9 @@ Parent and decision control: unchanged P046,
 P055 corrected the blanket compilation prohibition. This experiment prepares a
 small owned diagnostic interface through the documented `load_inline` route;
 it is not a replacement submission or a measured optimization.
+
+The sections below describe the predeclared preparation. The terminal result is
+recorded at the end; a Modal worker was admitted, but no native GEMM executed.
 
 ## Experiment card
 
@@ -116,25 +119,25 @@ No third-party implementation was copied; these sources inform API usage.
 
 The explicit next diagnostic uses projection_p056_native_screen.py and
 projection_p056_modal.py. Fifty local native/worker/controller tests passed
-in0.088s, plus four local payload guards. Independent frozen-source review
+in 0.088 s, plus four local payload guards. Independent frozen-source review
 found no blocker. The first combined test invocation preceded creation of the
 worker test file and failed with missing-module; the completed files then passed.
 
-Worker SHA25617baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f.
-Controller SHA256ea8b99f4b6b7df4027e4d0d93498f67b358e6833403f3151530c7b5704f0ff22.
-One13-file allowlist includes native interface, worker, P046, official oracle,
+Worker SHA256 17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f.
+Controller SHA256 ea8b99f4b6b7df4027e4d0d93498f67b358e6833403f3151530c7b5704f0ff22.
+One 13-file allowlist includes native interface, worker, P046, official oracle,
 required harness helpers and notices; it excludes credentials and the controller.
 Only report.json, summary.json and a bounded screen.log return. Fixed-worker
 supervision is separate from the candidate; native compilation is exclusively
-load_inline. Internal240s, childhard270s, function300s, startup45s, watchdog345s.
-Conservative reserve$0.55838125 freecredits, paidcap$0; oneH200,2CPU,8GiB, max1,
-nondetached, no retry. Fresh account preflight at00:25:03UTC verified existing
-authentication, all9apps stopped/tasks0 and sufficientfreecredits.
+load_inline. Internal 240 s, child hard limit 270 s, function 300 s, startup 45 s, watchdog 345 s.
+Conservative reserve $0.55838125 free credits, paid cap $0; one H200, 2 CPU, 8 GiB, max 1,
+nondetached, no retry. Fresh account preflight at 00:25:03 UTC verified existing
+authentication, all 9 apps stopped with tasks 0 and sufficient free credits.
 
-Two plans percase maximum, firsteligible control and differentalgorithmID
-preferred forsecond; otherwise distinctrecordedconfiguration is explicitly
+Two plans per case maximum, first eligible control and a different algorithm ID
+preferred for the second; otherwise a distinct recorded configuration is explicitly
 labeled. Nearby native shapes are skipped by this bounded plan, not implicitly
-passed. Independent graph/privatebuffers run fornative0; native1concurrency
+passed. Independent graphs with private buffers run for native0; native1 concurrency
 and actual simultaneous kernel overlap are not proven. No official check.
 
 ```bash
@@ -142,3 +145,63 @@ python -B -m unittest tests.test_projection_p056_native_screen tests.test_projec
 python -B projection_p056_modal.py self-test --control-root /path/to/control-workspace
 python -B projection_p056_modal.py launch --frozen-head <reviewed-source-commit> --control-root /path/to/control-workspace
 ```
+
+
+## Terminal result — 2026-10-26 00:33:36 UTC
+
+Frozen execution commit: `113e05e2085f08497c58e1f67af0454b8a4a85eb`.
+App: `ap-EaioKmzLxCQFWKWwyp9cmP`, accepted at 00:32:24.515351 UTC.
+The worker reached `native_build`; NVCC exited 134 with an internal assertion
+in `lexical.c:22316`, `find_allocated_name_reference`, at
+`__location->~_Tp()`. The generated host `main.o` compilation step had completed,
+but the native CUDA translation unit did not compile. This is a technical
+compiler failure, not an access denial, precision failure or algorithm result.
+The sanitized diagnostic does not identify the originating header, so a specific
+standard-library/header incompatibility remains a hypothesis.
+
+Actual image evidence: Torch 2.14.1+cu130, Torch CUDA 13.0, C++11 ABI enabled,
+CUDA header version 13000 and cuBLAS API header version 13.1.1.3. Header hashes
+are preserved in the raw receipt and assessment. The build used C++20 through
+PyTorch. No package, toolchain, credential or permission was changed.
+
+- Native compilation completed: **no**.
+- Native execution and oracle checks: **none / 0**.
+- Plan enumeration, graph/replay, independent workspaces and timings: **not reached**.
+- Official check or score: **none**. P046 remains selected at 1.1841399409×.
+- Worker wall time: 22.283691 s; this is not an allocated-GPU billing duration.
+
+Explicit stop was requested at 00:32:51.319705 UTC. The immediate status was
+transitional (`stopping`, one task); the controller correctly required follow-up.
+An independent read at 00:33:36.348385 UTC confirmed this exact app stopped with
+zero tasks and all workspace apps stopped with zero tasks. The measurement slot
+was released. No request was duplicated or retried.
+
+Paid billing remained $0. The observed workspace gross delta was $0, but billing
+can lag and is not a per-app invoice. Retain the conservative **$0.55838125 free-credit
+reserve** rather than claiming a free execution or a settled cost.
+
+Exact launch, using the project's existing Python environment:
+
+```bash
+python -B projection_p056_modal.py launch \
+  --frozen-head 113e05e2085f08497c58e1f67af0454b8a4a85eb \
+  --control-root /path/to/existing/control-workspace
+```
+
+The control-root placeholder contains ignored local authentication; it is not
+uploaded. Receipt: `experiments/projection-p056-native-modal.json`. Raw bounded
+worker artifacts: `results/remote-P056-native/{report.json,summary.json,screen.log}`.
+Assessment and exact artifact hashes: `results/router-p056-assessment.json`.
+These copies are byte-identical to the returned artifacts; error paths were
+already sanitized by the worker.
+
+Next local repair P057 retains this failed source and its exact native binding
+bytes. The binding uses host CUDA/cuBLASLt APIs and has no device kernel, so the
+supported `load_inline(cpp_sources=..., cuda_sources=None, with_cuda=True)` route
+may avoid unnecessary NVCC parsing while preserving CUDA headers/linking. This
+is a new build-route hypothesis, not a demonstrated fix; all native validation
+remains required. No GPU retry occurs until a fresh coordinated slot.
+
+实验结果：P056 在 NVCC 编译阶段失败，尚未运行矩阵计算，不能据此否定
+cuBLASLt 算法路线。原始失败版本和回执已保留；P057 仅改变编译单元归属，
+不改计算和精度，先完成本地审查，再验证真实编译。

@@ -1,3 +1,24 @@
+# P056 terminal compiler failure; P046 preserved
+
+P056 app `ap-EaioKmzLxCQFWKWwyp9cmP` reached NVCC compilation and failed an
+internal compiler assertion. No native GEMM, oracle check, graph or timing ran.
+Frozen source commit `113e05e`; full receipt and source-bound assessment are in
+experiment 056 and `results/router-p056-assessment.json`. This is not a cuBLASLt
+algorithm or precision rejection. P046 remains selected at 1.1841399409×.
+
+Independent status at 2026-10-26T00:33:36.348385 UTC confirmed exact app stopped,
+tasks 0 and all apps stopped. Slot released; Attention owns subsequent GPU work.
+Paid cost is $0; delayed workspace billing showed no delta, so retain the
+$0.55838125 free-credit reserve. No official quota was consumed or request retried.
+
+P057 local repair preserves the exact native C++ body and uses documented host
+C++ compilation with CUDA headers/linkage. Seven mock/source tests pass; native
+compile/link, correctness and performance remain unverified. Complete review and
+source-bound preparation, then await coordinator slot release. Never resend P056.
+Latest verified private remote remains fd1c495 at 00:11:27 UTC pending result push.
+
+## Previous checkpoint (historical)
+
 # P056 native interface prepared locally; no GPU admission
 
 P055 audit is committed c52ce10. Official load_inline/nvcc compilation exception
