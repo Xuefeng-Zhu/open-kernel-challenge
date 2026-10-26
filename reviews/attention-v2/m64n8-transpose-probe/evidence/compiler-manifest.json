@@ -1,0 +1,94 @@
+{
+  "status": "offline_compile_complete_pending_dataflow_review",
+  "manifest": {
+    "kernel_sha256": "118cdd776cf0f4668a2e3a31539c56f3f7d449748ae3881f9c0adf500344d033",
+    "helper_sha256": "e7a489a899d7eae222250ca546d00bfefbb3435cf4ad25c8a79c96d0a099fc37",
+    "body_ast_sha256": "c7f53b7d02890736cc470ce73fe51682bb940a2d54bc10ffb792f5d1fd684b18",
+    "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "kernel": "m64n8_history_tile",
+    "pointers": {
+      "Q": "*bf16",
+      "K": "*fp8e4nv",
+      "V": "*fp8e4nv",
+      "KScale": "*fp32",
+      "VScale": "*fp32",
+      "Out": "*fp32",
+      "RowMax": "*fp32",
+      "RowSum": "*fp32"
+    },
+    "constants": {
+      "QK_FACTOR": 5.4730064863875,
+      "SM_SCALE": 0.125
+    },
+    "options": {
+      "num_warps": 4,
+      "num_stages": 3
+    },
+    "target": [
+      "cuda",
+      90,
+      32
+    ],
+    "alignment_bytes": 16,
+    "dependency": {
+      "filename": "triton-3.8.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "a9c404c69ed4a39e8ec632eaf6b9fe058a060bf98979c177f6ef666f06bb8d50",
+      "size": 226474486
+    },
+    "API_source_sha256": {
+      "triton/experimental/gluon/_runtime.py": "739a9c208c3c73ff5d4ec2d38a4051c20140e4f149c442a05cc37010443d5684",
+      "triton/experimental/gluon/language/_layouts.py": "817880af6cd4814150a7312b5fc5484da75c1e876013a95afdc2e045a3d225bb",
+      "triton/experimental/gluon/language/nvidia/hopper/__init__.py": "c427a1f7fa5277d701d6cced0dc05ac3af4e5a32f9dc2675699fa254023a99dc"
+    },
+    "scope": "One full historical tile only; no producer/tail/online carry/merge/GPU loading/execution/numerical/performance or judge-binary claim"
+  },
+  "python": "3.12.15",
+  "host_machine": "aarch64",
+  "triton": "3.8.0",
+  "compiler_API_source_sha256": {
+    "triton/experimental/gluon/_runtime.py": "739a9c208c3c73ff5d4ec2d38a4051c20140e4f149c442a05cc37010443d5684",
+    "triton/experimental/gluon/language/_layouts.py": "817880af6cd4814150a7312b5fc5484da75c1e876013a95afdc2e045a3d225bb",
+    "triton/experimental/gluon/language/nvidia/hopper/__init__.py": "c427a1f7fa5277d701d6cced0dc05ac3af4e5a32f9dc2675699fa254023a99dc"
+  },
+  "tool_sha256": {
+    "ptxas": "d07db8b5fd19692ad6fc9643ad3449cc27190fad1f1ad6c6b8338fdec95ea72e",
+    "cuobjdump": "892ae8d0a7bd7cee42db000bbc9be72681952e73a2b2921d1ba3de51b4c472f4"
+  },
+  "tool_versions": {
+    "ptxas": "ptxas: NVIDIA (R) Ptx optimizing assembler\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:20:53_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0\n",
+    "cuobjdump": "cuobjdump: NVIDIA (R) fat binary listing tool\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Nov__7_07:24:07_PM_PST_2025\nCuda compilation tools, release 13.1, V13.1.80\nBuild cuda_13.1.r13.1/compiler.36836380_0\n"
+  },
+  "metadata": {
+    "name": "m64n8_history_tile",
+    "num_warps": 4,
+    "num_ctas": 1,
+    "shared": 18432,
+    "global_scratch_size": 0,
+    "global_scratch_align": 1,
+    "tmem_size": 0,
+    "arch": "sm90",
+    "enable_fp_fusion": true
+  },
+  "artifact_sha256": {
+    "ttgir": "fd5c306f61b722dce5d0a6eccad711501d53ccd07c3b1d6b5a6f0692824f45b5",
+    "llir": "58dc06e04ff219edce9aabba7ba3010d3fce3d9a8d656cf8fa8cf4e40784e262",
+    "ptx": "822c2b004ffb9066ecec394e3c6448ed68b9f26bc7effe13f123b1ed97a77ecd",
+    "cubin": "449d38c546da620b172d6ba50782fd79ed0801022527d4023b5e5712c0155ac7",
+    "ptxas.txt": "bc5fc1e29c3ea6cdc0dcde46c6a27109e8ac51525e3d15d0685b8706e355ec2a",
+    "resources.txt": "2f2b092782dbe8f6f308d08435027ff18d9bda6ace2e21522465dfabf60fe046",
+    "sass": "3000d4eaef7b3f4bba348c84336d7aaf991518c591000a25865dfde787515e87"
+  },
+  "instruction_inventory": {
+    "wgmma_m64n8k16_sites": 8,
+    "mma_sync_sites": 0,
+    "local_load_sites": 0,
+    "local_store_sites": 0,
+    "sass_hgmma_sites": 8,
+    "qualification": "Static sites only; verify both QK/PV dataflow separately, not executed counts or performance"
+  },
+  "compile_and_disasm_wall_seconds": 0.7644782090000035,
+  "gpu_execution": false,
+  "numerical_correctness": false,
+  "performance": false,
+  "resource_gate": "Both native64x8+strict precision+0spill/local; registers/shared recorded, not a whole-producer admission"
+}

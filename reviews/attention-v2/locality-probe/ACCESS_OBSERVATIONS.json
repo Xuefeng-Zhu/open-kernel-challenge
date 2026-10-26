@@ -1,0 +1,55 @@
+{
+  "scope": "Root-owner observations from completed tool calls in this audit; sanitized restatement, not raw transcript or independent service verification",
+  "date_utc": "2026-10-26",
+  "modal": {
+    "action": "read-only app list --json using existing protected xuefeng-zhu profile",
+    "observed_utc": "2026-10-26 22:14:47 UTC",
+    "exit_code": 1,
+    "result": "expired token; service call rejected authentication",
+    "app_admitted": false,
+    "credential_action_in_this_audit": false,
+    "raw_output_retained_here": false
+  },
+  "standard_config": {
+    "standard_user_config_present": false,
+    "Modal_credential_environment_variables_present": false,
+    "known_protected_profile_names": [
+      "xuefeng-zhu"
+    ],
+    "observed_fields": "names/presence only; values were not printed or copied",
+    "scope_limit": "Not an exhaustive search for credentials or accounts"
+  },
+  "existing_ssh": {
+    "target_alias": "hermes-ts",
+    "action": "one read-only GPU inventory connection attempt",
+    "exit_code": 255,
+    "connect_timeout_seconds": 8,
+    "elapsed_seconds_approx": 8,
+    "state": "transport unavailable; no usable response; authentication and GPU inventory unknown",
+    "BatchMode": true,
+    "strict_existing_host_trust": true,
+    "host_key_updates": false,
+    "agent_or_port_forwarding": false,
+    "retry": false,
+    "credential_or_trust_changes": false,
+    "raw_connection_details_retained_here": false
+  },
+  "notebooks": {
+    "source": "https://modal.com/docs/guide/notebooks",
+    "retrieval_method": "read-only web documentation tool",
+    "observation": "Official notebook editor shut down; cannot create or run notebooks",
+    "authenticated_browser_inspected": false
+  },
+  "official_access_snapshot": {
+    "observed_utc": "2026-10-26 22:42:37 UTC",
+    "attention_checks_remaining": 19,
+    "attention_checks_used_today": 1,
+    "ranked_entries_today": 0,
+    "additional_checks_in_this_audit": 0,
+    "qualification": "Snapshot only, not a continuously refreshed balance"
+  },
+  "no_new_cloud_resource_in_this_audit": true,
+  "prior_denial_scope": "Earlier modal token new request was denied before process creation and not retried; this audit only checks existing access",
+  "paid_spending_usd": 0,
+  "independently_reproducible_current_offline_result": "../m64n8-transpose-probe/evidence/execution-receipt.json"
+}
