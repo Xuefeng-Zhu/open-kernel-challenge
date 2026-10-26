@@ -88,7 +88,7 @@ the API design; compilation against the actual headers remains necessary.
    scratch. Unsupported alignment/stride inputs must fail or take an explicit
    future fallback, never silently copy. Include nearby dimensions before a
    complete candidate claims contract coverage.
-4. Only after those gates, compare at most four preselected eligible plans
+4. Only after those gates, compare at most two preselected eligible plans per case (four total)
    through identical native descriptors/workspace/precision. First eligible is
    the native control; P046 is a separate real-performance anchor. Use predefined
    six warmups and twelve reversed cold-L2 graph pairs, retaining all samples.
@@ -111,3 +111,34 @@ No third-party implementation was copied; these sources inform API usage.
 实验卡：不再只换 PyTorch 包装函数，先把库内的具体算法选择显式暴露出来。
 先验证接口、原精度和 graph 行为，再以相同布局比较算法，并保留 P046 作真实
 基线。18 项本地检查通过；尚无编译成功或 GPU 加速结论。
+
+## Reviewed execution freeze, 2026-10-26
+
+The explicit next diagnostic uses projection_p056_native_screen.py and
+projection_p056_modal.py. Fifty local native/worker/controller tests passed
+in0.088s, plus four local payload guards. Independent frozen-source review
+found no blocker. The first combined test invocation preceded creation of the
+worker test file and failed with missing-module; the completed files then passed.
+
+Worker SHA25617baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f.
+Controller SHA256ea8b99f4b6b7df4027e4d0d93498f67b358e6833403f3151530c7b5704f0ff22.
+One13-file allowlist includes native interface, worker, P046, official oracle,
+required harness helpers and notices; it excludes credentials and the controller.
+Only report.json, summary.json and a bounded screen.log return. Fixed-worker
+supervision is separate from the candidate; native compilation is exclusively
+load_inline. Internal240s, childhard270s, function300s, startup45s, watchdog345s.
+Conservative reserve$0.55838125 freecredits, paidcap$0; oneH200,2CPU,8GiB, max1,
+nondetached, no retry. Fresh account preflight at00:25:03UTC verified existing
+authentication, all9apps stopped/tasks0 and sufficientfreecredits.
+
+Two plans percase maximum, firsteligible control and differentalgorithmID
+preferred forsecond; otherwise distinctrecordedconfiguration is explicitly
+labeled. Nearby native shapes are skipped by this bounded plan, not implicitly
+passed. Independent graph/privatebuffers run fornative0; native1concurrency
+and actual simultaneous kernel overlap are not proven. No official check.
+
+```bash
+python -B -m unittest tests.test_projection_p056_native_screen tests.test_projection_p056_modal tests.test_native_cublaslt_probe
+python -B projection_p056_modal.py self-test --control-root /path/to/control-workspace
+python -B projection_p056_modal.py launch --frozen-head <reviewed-source-commit> --control-root /path/to/control-workspace
+```

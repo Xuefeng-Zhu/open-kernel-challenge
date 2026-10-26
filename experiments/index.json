@@ -649,7 +649,7 @@
   },
   "native_interface_probe": {
     "id": "P056",
-    "status": "local-source-and-tests-only",
+    "status": "reviewed-execution-preparation-no-admission-yet",
     "report": "experiments/056-native-cublaslt-interface-local.md",
     "source": "native_cublaslt_probe.py",
     "source_sha256": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
@@ -657,6 +657,12 @@
     "native_compiled": false,
     "gpu_executed": false,
     "official_job": null,
-    "parent": "P046"
+    "parent": "P046",
+    "worker": "projection_p056_native_screen.py",
+    "worker_sha256": "17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f",
+    "controller": "projection_p056_modal.py",
+    "controller_sha256": "ea8b99f4b6b7df4027e4d0d93498f67b358e6833403f3151530c7b5704f0ff22",
+    "local_tests": 50,
+    "local_payload_guards": 4
   }
 }
