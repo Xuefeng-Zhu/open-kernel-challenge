@@ -1,0 +1,20 @@
+{
+  "experiment": "P057",
+  "verified_utc": "2026-10-26T00:42:33.949994+00:00",
+  "python": "3.12.13",
+  "command": "python -B -m unittest tests.test_native_cublaslt_host_probe tests.test_projection_p057_native_screen tests.test_projection_p057_modal -v",
+  "passed": 33,
+  "seconds": 0.07,
+  "payload_guards": 4,
+  "native_compile": false,
+  "native_execution": false,
+  "official_check": false,
+  "hashes": {
+    "native_cublaslt_host_probe.py": "a91663d9b64291657d7b64e7bba7d7c4ffaeb2777964f8357dd2225adea9a300",
+    "projection_p057_native_screen.py": "e22e220b69330f1b614fffd69596a945d2a8b91bee8fcd6f70f426f9b645b4af",
+    "projection_p057_modal.py": "73391150a82c8b17ede2fbb487bdf21b13af0d2f6647c52b6c7eca6c9e53f4d2",
+    "tests/test_native_cublaslt_host_probe.py": "51a2220395e14c4442d0c33673e08d795eef097a10f47271d36acc2645831dc4",
+    "tests/test_projection_p057_native_screen.py": "fd1916ee803bf3cfabb50f8bfb4bfe562014a4caa3f9b2f44bcc3c82b8945db7",
+    "tests/test_projection_p057_modal.py": "67bd5e4c6e46760b680dff5dbbadeb983690166fd9fca36b2da05bf7d94a8464"
+  }
+}

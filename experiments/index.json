@@ -674,5 +674,31 @@
     "paid_after_zero": true,
     "cost_reserve_usd": "0.5583812501375",
     "cost_settled": false
+  },
+  "native_interface_repair": {
+    "id": "P057",
+    "status": "local-host-translation-repair-no-gpu",
+    "parent_experiment": "P056",
+    "selected_parent": "P046",
+    "source": "native_cublaslt_host_probe.py",
+    "source_sha256": "a91663d9b64291657d7b64e7bba7d7c4ffaeb2777964f8357dd2225adea9a300",
+    "worker": "projection_p057_native_screen.py",
+    "worker_sha256": "e22e220b69330f1b614fffd69596a945d2a8b91bee8fcd6f70f426f9b645b4af",
+    "native_body_sha256": "0e427a632fe12c410b2f0389deadf9c3757b919999287fea5705a892aad69fc8",
+    "tests": 33,
+    "native_compiled": false,
+    "gpu_executed": false,
+    "report": "experiments/057-host-compiled-cublaslt-interface.md",
+    "local_payload_guards": 4,
+    "controller": "projection_p057_modal.py",
+    "controller_sha256": "73391150a82c8b17ede2fbb487bdf21b13af0d2f6647c52b6c7eca6c9e53f4d2",
+    "local_verification": "results/router-p057-local-verification.json",
+    "state": "reviewed-preparation-awaiting-measurement-slot"
+  },
+  "last_verified_private_push": {
+    "branch": "projection-pipeline-preflight",
+    "sha": "fb36441ee9fb9185ae1ffbb813e1fcfb7cbcfa5f",
+    "visibility": "PRIVATE",
+    "verified_utc": "2026-10-26T00:40:46.501381+00:00"
   }
 }
