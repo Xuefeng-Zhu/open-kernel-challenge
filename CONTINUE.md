@@ -1,3 +1,27 @@
+# V-stage native publication gate passes; execution prepared, slot released
+
+The [revised compile result](reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md)
+passes the prospectively declared remaining conversion/shared-publication gate.
+Both arms prefetch raw K and V; no V-load serialization is claimed. Resources
+are166/168 registers,32KiB shared,zero spill/local,3 legal CTA/SM each.
+Compile app `ap-XzBXIhHnYx5BgeBYIoyAkL` independently stopped/tasks0 at
+00:10:53.666428 UTC; delayed workspace delta$0.01044102,paid$0,not exact invoice.
+The older fully-serial contrast remains failed and preserved.
+
+The [runtime worker/card](reviews/attention-v2/gluon-vstage-probe/runtime/CARD.md)
+and independent semantic/controller reviews are ready for source freeze and
+preflight:30 original-oracle checks before48 complete-call timing replays,
+with actual unchanged FA3 as a third arm. Fixtures are padded nearbyctx4096,
+not scored80K; no score or promotion is implied. No numerical job is admitted.
+The parent requested slot handoff to Projection P056; no new GPU launch until
+coordination. Working source3da22a/official1.233633059 and A2-11 rollback stay
+unchanged. B1 route/window budget and rules-compilation audits are local evidence;
+no checker was relaxed and no formal entry was made.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
 # Gluon compile: resource/ownership pass, strict native control fails
 
 The [Gluon attention-core result](reviews/attention-v2/gluon-overlap-probe/RESULTS.md)

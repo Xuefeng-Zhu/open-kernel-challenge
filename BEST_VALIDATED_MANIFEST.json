@@ -244,6 +244,36 @@
       "exact_app_invoice": false,
       "official_check": false,
       "formal_entry": false
+    },
+    "vstage_compile_probe": {
+      "source_commit": "048bd62de599831edbb40b118df9a6047f6f1043",
+      "source": "reviews/attention-v2/gluon-vstage-probe/kernel.py",
+      "sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+      "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+      "raw_compile_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+      "compile_complete": true,
+      "qualified_native_gate_passed": true,
+      "claim": "Conversion completion and shared publication around QK drain; BOTH arms prefetch K/V. No serialized V-load claim.",
+      "registers": {
+        "v_after_wait": 166,
+        "v_before_wait": 168
+      },
+      "shared_bytes_each": 32768,
+      "spill_local_each": 0,
+      "legal_max_CTA_per_SM_each": 3,
+      "actual_residency_measured": false,
+      "candidate_invocations": 0,
+      "correctness_tested": false,
+      "performance_tested": false,
+      "app_stopped": true,
+      "tasks": 0,
+      "closure_utc": "2026-10-26T00:10:53.666428+00:00",
+      "delayed_workspace_cost_usd": ".01044102",
+      "paid_usd": "0",
+      "report": "reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md",
+      "native_execution_state": "local_preparation_reviewed_not_admitted; slot released to Projection P056 at parent request",
+      "official_check": false,
+      "formal_entry": false
     }
   },
   "projection": {

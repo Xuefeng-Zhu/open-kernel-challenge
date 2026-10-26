@@ -1,0 +1,113 @@
+{
+  "observed_utc": "2026-10-26T00:10:53.666428+00:00",
+  "app": {
+    "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+    "description": "okc-attention-gluon-vstage-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 17:09:45-07:00",
+    "stopped_at": "2026-10-25 17:10:01-07:00"
+  },
+  "shutdown_verified": true,
+  "all_listed_apps_stopped_zero_tasks": true,
+  "apps": [
+    {
+      "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+      "description": "okc-attention-gluon-vstage-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 17:09:45-07:00",
+      "stopped_at": "2026-10-25 17:10:01-07:00"
+    },
+    {
+      "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+      "description": "okc-projection-p053-phase-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:54:48-07:00",
+      "stopped_at": "2026-10-25 16:55:58-07:00"
+    },
+    {
+      "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+      "description": "okc-attention-gluon-overlap-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:43:22-07:00",
+      "stopped_at": "2026-10-25 16:43:37-07:00"
+    },
+    {
+      "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+      "description": "okc-projection-p052-screen-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:32:18-07:00",
+      "stopped_at": "2026-10-25 16:32:42-07:00"
+    },
+    {
+      "app_id": "ap-I3MCH1onTGtkhqXUtej9Ru",
+      "description": "okc-attention-fa3-cpu-image-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:26:02-07:00",
+      "stopped_at": "2026-10-25 16:26:15-07:00"
+    },
+    {
+      "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+      "description": "okc-projection-p051-compile-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:17:08-07:00",
+      "stopped_at": "2026-10-25 16:17:25-07:00"
+    },
+    {
+      "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+      "description": "okc-attention-alpha-one-common-pv-native",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:49:09-07:00",
+      "stopped_at": "2026-10-25 15:50:11-07:00"
+    },
+    {
+      "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+      "description": "okc-projection-p049-screen-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:37:01-07:00",
+      "stopped_at": "2026-10-25 15:37:17-07:00"
+    },
+    {
+      "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+      "description": "okc-attention-alpha-one-common-pv-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:27:24-07:00",
+      "stopped_at": "2026-10-25 15:28:11-07:00"
+    },
+    {
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "description": "okc-projection-p046-confirmation-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:18:38-07:00",
+      "stopped_at": "2026-10-25 15:19:01-07:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "2.25000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-2.25000000",
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "2.25126190",
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "paid_after_usd": "0E-8"
+}

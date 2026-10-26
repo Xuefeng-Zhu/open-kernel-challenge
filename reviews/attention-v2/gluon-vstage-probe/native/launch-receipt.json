@@ -1,0 +1,185 @@
+{
+  "experiment": "attention-gluon-vstage-compile",
+  "state": "function-terminal",
+  "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+  "created_utc": "2026-10-26T00:09:45.366949+00:00",
+  "source_commit": "048bd62de599831edbb40b118df9a6047f6f1043",
+  "payload_sha256": {
+    "reviews/attention-v2/gluon-vstage-probe/native/worker.py": "19b135581617337b159944e000425d34fe9e0a13a4c7037a2b982f886d02a254",
+    "reviews/attention-v2/gluon-vstage-probe/native/resources.py": "1590dcf51f1c0ce59419d9d90ee397747556e50af8c2fb773f95b5a2fa5f1c59",
+    "reviews/attention-v2/gluon-vstage-probe/kernel.py": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+    "reviews/attention-v2/gluon-vstage-probe/config.py": "686bee98df915e75ea938ba3c0cb691718527497fa5e5401ead36e9ef8b59fc0",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "reviews/attention-v2/gluon-vstage-probe/native/controller.py": "4d81fbd625f3674a8929742581e23d5e3738e99e6fc6afe79c35b336da601585"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "billing_before": {
+    "metered_cost": "2.25000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.25000000",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.25126190"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+      "description": "okc-projection-p053-phase-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:54:48-07:00",
+      "stopped_at": "2026-10-25 16:55:58-07:00"
+    },
+    {
+      "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+      "description": "okc-attention-gluon-overlap-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:43:22-07:00",
+      "stopped_at": "2026-10-25 16:43:37-07:00"
+    },
+    {
+      "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+      "description": "okc-projection-p052-screen-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:32:18-07:00",
+      "stopped_at": "2026-10-25 16:32:42-07:00"
+    },
+    {
+      "app_id": "ap-I3MCH1onTGtkhqXUtej9Ru",
+      "description": "okc-attention-fa3-cpu-image-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:26:02-07:00",
+      "stopped_at": "2026-10-25 16:26:15-07:00"
+    },
+    {
+      "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+      "description": "okc-projection-p051-compile-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:17:08-07:00",
+      "stopped_at": "2026-10-25 16:17:25-07:00"
+    },
+    {
+      "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+      "description": "okc-attention-alpha-one-common-pv-native",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:49:09-07:00",
+      "stopped_at": "2026-10-25 15:50:11-07:00"
+    },
+    {
+      "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+      "description": "okc-projection-p049-screen-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:37:01-07:00",
+      "stopped_at": "2026-10-25 15:37:17-07:00"
+    },
+    {
+      "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+      "description": "okc-attention-alpha-one-common-pv-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:27:24-07:00",
+      "stopped_at": "2026-10-25 15:28:11-07:00"
+    },
+    {
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "description": "okc-projection-p046-confirmation-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:18:38-07:00",
+      "stopped_at": "2026-10-25 15:19:01-07:00"
+    }
+  ],
+  "cost_reserve_usd": "0.40",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "conservative_free_credit_floor_usd": "27.75",
+  "slot_receipt_sha256": "e616db12e2e430b64f21e09f6d067801213c2178291aa9926f3dad9099638833",
+  "billing_guardrail_receipt_sha256": "8cc1c42a98ebe13157932ec74aee92dddf75f4c38833e2993f645236d7beaea6",
+  "paid_limit_usd": "0",
+  "artificial_stage_ceiling_removed": true,
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 90,
+    "child_timeout": 100,
+    "function_timeout": 115,
+    "startup_timeout": 20,
+    "watchdog": 140,
+    "retry_policy": 0,
+    "explicit_invocations": 1
+  },
+  "compile_only": true,
+  "kernel_launches": 0,
+  "correctness_measurement": false,
+  "performance_measurement": false,
+  "official_check": false,
+  "formal_entry": false,
+  "accepted_utc": "2026-10-26T00:09:47.694770+00:00",
+  "artifact_files": 10,
+  "artifacts_retrieved": true,
+  "result_retrieved": true,
+  "exit_code": 0,
+  "worker_status": "compiled",
+  "worker_passed": true,
+  "report_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+  "worker_wall_seconds": 6.503754483,
+  "shutdown_observation": {
+    "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+    "description": "okc-attention-gluon-vstage-compile",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 17:09:45-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": false,
+  "all_apps_stopped_zero_tasks": false,
+  "billing_after": {
+    "metered_cost": "2.25000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-2.25000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.25126190"
+    }
+  },
+  "observed_gross_delta_usd": "0",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+    "requested_utc": "2026-10-26T00:09:59.343560+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-26T00:10:02.033964+00:00",
+  "client_wall_seconds": 16.666516792029142
+}

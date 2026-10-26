@@ -1,0 +1,113 @@
+{
+  "raw_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+  "source_commit": "048bd62de599831edbb40b118df9a6047f6f1043",
+  "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+  "compile_complete": true,
+  "candidate_kernel_launches": 0,
+  "artifact_files": 10,
+  "resource_gate": {
+    "status": "pass",
+    "reasons": [],
+    "execution_admitted": false,
+    "qualification": "Resource pass alone is not instruction-order, ownership, correctness or performance admission"
+  },
+  "revised_publication_mechanism_gate": "PASS per independent reviews",
+  "V_load_serialization": false,
+  "qualified_claim": "BOTH arms prefetch raw K/V; only remaining conversion completion and shared publication around QK drain is established",
+  "kernels": [
+    {
+      "arm": "v_after_wait",
+      "registers": 166,
+      "shared_memory_bytes": 32768,
+      "driver_spills_raw": 0,
+      "cuda_resources": {
+        "status": "complete",
+        "kernel_launched": false,
+        "qualification": "CUDA occupancy legal maximum, not achieved residency",
+        "header": "/usr/local/cuda/include/cuda.h",
+        "header_sha256": "64025f81a9d6d2b10e9e11654f3523e5b046d01b883f0b9ca474e463274b80d4",
+        "device_limits": {
+          "warp_size": 32,
+          "max_threads_block": 1024,
+          "max_threads_sm": 2048,
+          "max_registers_block": 65536,
+          "max_registers_sm": 65536,
+          "max_shared_sm": 233472,
+          "max_shared_block_optin": 232448,
+          "max_blocks_sm": 32
+        },
+        "function_attributes": {
+          "static_shared_bytes": 0,
+          "local_bytes": 0,
+          "registers_per_thread": 166
+        },
+        "threads_per_block": 128,
+        "dynamic_shared_bytes": 32768,
+        "total_shared_bytes": 32768,
+        "static_max_cta_per_sm": 3,
+        "dynamic_shared_basis": "Triton launch metadata.shared; CUDA API accounts for static function shared allocation"
+      },
+      "instruction_inventory": {
+        "ptx_wgmma_async": 8,
+        "ptx_wgmma_commit": 2,
+        "ptx_wgmma_wait": 2,
+        "ptx_local_access": 0,
+        "sass_hgmma": 8,
+        "sass_ldg": 51,
+        "sass_cvt": 288,
+        "sass_stsm": 0,
+        "sass_shared_store": 48,
+        "sass_local_access": 0
+      }
+    },
+    {
+      "arm": "v_before_wait",
+      "registers": 168,
+      "shared_memory_bytes": 32768,
+      "driver_spills_raw": 0,
+      "cuda_resources": {
+        "status": "complete",
+        "kernel_launched": false,
+        "qualification": "CUDA occupancy legal maximum, not achieved residency",
+        "header": "/usr/local/cuda/include/cuda.h",
+        "header_sha256": "64025f81a9d6d2b10e9e11654f3523e5b046d01b883f0b9ca474e463274b80d4",
+        "device_limits": {
+          "warp_size": 32,
+          "max_threads_block": 1024,
+          "max_threads_sm": 2048,
+          "max_registers_block": 65536,
+          "max_registers_sm": 65536,
+          "max_shared_sm": 233472,
+          "max_shared_block_optin": 232448,
+          "max_blocks_sm": 32
+        },
+        "function_attributes": {
+          "static_shared_bytes": 0,
+          "local_bytes": 0,
+          "registers_per_thread": 168
+        },
+        "threads_per_block": 128,
+        "dynamic_shared_bytes": 32768,
+        "total_shared_bytes": 32768,
+        "static_max_cta_per_sm": 3,
+        "dynamic_shared_basis": "Triton launch metadata.shared; CUDA API accounts for static function shared allocation"
+      },
+      "instruction_inventory": {
+        "ptx_wgmma_async": 8,
+        "ptx_wgmma_commit": 2,
+        "ptx_wgmma_wait": 2,
+        "ptx_local_access": 0,
+        "sass_hgmma": 8,
+        "sass_ldg": 51,
+        "sass_cvt": 288,
+        "sass_stsm": 0,
+        "sass_shared_store": 48,
+        "sass_local_access": 0
+      }
+    }
+  ],
+  "numerical_correctness_tested": false,
+  "performance_tested": false,
+  "official_check": false,
+  "formal_entry": false
+}

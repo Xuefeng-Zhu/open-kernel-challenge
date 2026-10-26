@@ -1,0 +1,14 @@
+{
+  "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+  "source_commit": "048bd62de599831edbb40b118df9a6047f6f1043",
+  "reserve_usd": "0.40",
+  "worker_wall_seconds": 6.503754483,
+  "client_wall_seconds": 16.666516792029142,
+  "accounting_cutoff_utc": "2026-10-26T00:14:23.579875+00:00",
+  "delayed_workspace_delta_usd": "0.01044102",
+  "actual_paid_usd": "0E-8",
+  "exact_app_invoice": false,
+  "app_stopped_zero_tasks": true,
+  "closure_utc": "2026-10-26T00:10:53.666428+00:00",
+  "new_other_app_ids": []
+}

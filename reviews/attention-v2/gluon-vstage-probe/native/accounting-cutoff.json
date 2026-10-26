@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-10-26T00:14:23.579875+00:00",
+  "app": {
+    "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+    "description": "okc-attention-gluon-vstage-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 17:09:45-07:00",
+    "stopped_at": "2026-10-25 17:10:01-07:00"
+  },
+  "app_stopped_zero_tasks": true,
+  "all_listed_apps_stopped_zero_tasks": true,
+  "new_other_app_ids": [],
+  "billing": {
+    "metered_cost": "2.26000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-2.26000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.26170292"
+    }
+  },
+  "delayed_workspace_gross_delta_usd": "0.01044102",
+  "paid_usd": "0E-8",
+  "per_app_invoice": false,
+  "qualification": "Delayed workspace delta at cutoff, not an exact app invoice."
+}
