@@ -705,8 +705,20 @@
   },
   "last_verified_private_push": {
     "branch": "projection-pipeline-preflight",
-    "sha": "5542653a08ac5bb8ceb34f52ccb1346e3de3dd2d",
+    "sha": "5cbe7c61c6f02ad1adbdcc03f568442fac65d00d",
     "visibility": "PRIVATE",
-    "verified_utc": "2026-10-26T00:43:15.756023+00:00"
+    "verified_utc": "2026-10-26T00:49:22.038625+00:00"
+  },
+  "parked_native_orientation": {
+    "id": "P058",
+    "status": "local-prototype-parked",
+    "source": "native_cublaslt_column_probe.py",
+    "source_sha256": "55cf1aacfdc6590c9a1dbf5f0a314d0c9a64ac9119e3f38b693614e3d296f807",
+    "tests": 11,
+    "native_compiled": false,
+    "gpu_executed": false,
+    "official_job": null,
+    "report": "experiments/058-native-column-orientation-local.md",
+    "decision": "Park orientation change; prioritize P059 precision-safe split mask on unchanged descriptors"
   }
 }

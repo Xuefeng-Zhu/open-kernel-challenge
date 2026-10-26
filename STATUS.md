@@ -13,7 +13,9 @@ workspace billing delta still delayed; retain $0.55838125 reserve.
 Next local diagnosis: inspect PyTorch descriptor orientation and precision-safe
 split-K selection versus this no-split subset; do not claim hardware causality
 without missing instruction/activity evidence. No new GPU until coordinated slot.
-Latest verified private SHA is 5542653 at 00:43:15 UTC; terminal results await push.
+P057 terminal results were privately pushed and verified at 5cbe7c6,
+00:49:22 UTC. P058 column orientation is a local parked prototype; historical
+P049 same-source activity favors a separate FP32 split-mask-only test first.
 
 ## Previous checkpoint (historical)
 
