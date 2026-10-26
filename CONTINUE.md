@@ -1,3 +1,32 @@
+# P059 terminal; methods audit prepared; P046 preserved
+
+P059 source freeze `6856cc2cb72d398c88c78b63a375bb3d2e8628e0`, app
+`ap-vbrU0sPpoRjkmN7e7OgK4R`, passed 298 original-oracle comparisons. Actual
+FP32 split-K exists, but paired latency was 0.324% slower than P046 (6/12 wins).
+It beat the no-split ID66 control by 51.804% while also changing tile/custom
+configuration. This is not a split-only causal effect or a project speedup.
+P046 and the native split show the same visible main/reducer symbols; exact
+tactic identity is unproved. P046 remains selected at 1.1841399409×.
+
+Independent 2026-10-26T01:10:24.310883 UTC observation verified the exact app
+stopped/tasks0 and all apps stopped/tasks0. Slot released to the coordinator;
+Attention owns subsequent GPU work. No active or uncertain Projection job,
+official check, new credentials or paid usage. Provisional workspace gross
+increment $0.05740071; reserve $0.55838125 retained, not a settled invoice.
+Reviewed P059 result commit `082827863ded14083c58e9dddcab17a6b4db302e` was
+verified on the PRIVATE remote at 01:15:02.367139 UTC.
+
+Latest user priority is an optimization-methods handoff for ChatGPT, not another
+candidate branch. Finish/read `experiments/060-selected-baseline-methods-audit.md`
+and reproduce its source-bound family/score matrix with
+`python -B projection_baseline_matrix.py`. It records what P046 already does,
+actual phase evidence, failed/confounded proposals and missing vendor instruction
+evidence. Do not rediscover its existing split-K, static layouts, one-BMM pooler
+or one-wide-GEMM router as new capabilities. P058 and P050 remain parked.
+No new GPU or official check from this audit, and no ChatGPT message sent here.
+
+## Previous checkpoint (historical)
+
 # P057 interface passed, performance subset rejected; P046 preserved
 
 Source freeze `5542653`; app `ap-1P4IYSdup9e7ZBjImQj1ZM` completed. Host build
