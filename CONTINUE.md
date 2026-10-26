@@ -1,3 +1,23 @@
+# P061 local compression audit complete; P046 preserved
+
+Read `experiments/061-compression-consumer-audit.md` and reproduce the immutable
+source/address/score analysis with `python -B projection_compression_audit.py`.
+The exact raw P043 control exists but has no GPU result. P043 already decodes
+inside its dot loop; no new missing fusion is established. Stored-byte savings
+are not measured traffic or latency savings. Three target paths cut by 20%
+would model only +3.024% whole score on current P046.
+
+Decision: do not relaunch unchanged P043 as an optimization. The report specifies
+a three-arm causal protocol only if its attribution changes the next architecture
+decision; no diagnostic is scheduled. P046 and every candidate remain unchanged.
+22 CPU codec/score tests passed in 0.681 s; no Triton/GPU execution. The coordinator
+reported Modal token expiry at 07:27 UTC; do not attempt service calls or credential
+renewal under this local task. Attention holds diagnostic priority. No new app,
+official check, cost or uncertain request was created. The last Projection
+shutdown evidence remains the independently verified P059 record below.
+
+## Previous checkpoint (historical)
+
 # P059 terminal; methods audit prepared; P046 preserved
 
 P059 source freeze `6856cc2cb72d398c88c78b63a375bb3d2e8628e0`, app

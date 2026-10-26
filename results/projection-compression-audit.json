@@ -1,0 +1,188 @@
+{
+  "kind": "Local source, address and conditional score audit; no new measurement",
+  "selected": "P046",
+  "selected_job": "41ba778763a5433b",
+  "selected_score": 1.1841399408925375,
+  "source_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "candidates/projection_pooler_lossless_codec.py": "9598c7d1ebe6373b56f9ced2c0405b855f3a6895628f771c2eb8af314003b837",
+    "candidates/projection_pooler_lossless_raw_control.py": "8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de"
+  },
+  "matched_raw_diff": "Only POOLER_COMPRESSED True versus False",
+  "matched_raw_gpu_evidence": false,
+  "p043_codegen_available": false,
+  "old_candidate_comparison": [
+    {
+      "m": 16,
+      "p046_calibrated_us": 18.042685545384167,
+      "p043_calibrated_us": 51.9121623458673,
+      "p043_over_p046_reference_normalized_latency": 2.8620770115162024,
+      "p043_own_cut_needed_for_p046_parity": 0.6506033918806944
+    },
+    {
+      "m": 32,
+      "p046_calibrated_us": 18.309500237135,
+      "p043_calibrated_us": 98.95269945610202,
+      "p043_over_p046_reference_normalized_latency": 5.298012384796525,
+      "p043_own_cut_needed_for_p046_parity": 0.8112499693527224
+    },
+    {
+      "m": 8,
+      "p046_calibrated_us": 17.559286898252424,
+      "p043_calibrated_us": 52.638910455528794,
+      "p043_over_p046_reference_normalized_latency": 2.920405402913254,
+      "p043_own_cut_needed_for_p046_parity": 0.6575817867606844
+    }
+  ],
+  "coverage": {
+    "existing_three_pooler_targets": {
+      "shapes": 3,
+      "mean_load_share": 0.14456022851053915,
+      "scenarios": [
+        {
+          "uniform_target_cut": 0.1,
+          "modeled_score": 1.2016414394565194,
+          "modeled_gain": 0.014779924196113292
+        },
+        {
+          "uniform_target_cut": 0.2,
+          "modeled_score": 1.2199497112305606,
+          "modeled_gain": 0.030241164157533307
+        },
+        {
+          "uniform_target_cut": 0.23274564743041992,
+          "modeled_score": 1.2261309045866557,
+          "modeled_gain": 0.035461149686808024
+        },
+        {
+          "uniform_target_cut": 1.0,
+          "modeled_score": 1.405154775278535,
+          "modeled_gain": 0.1866458741518413
+        }
+      ]
+    },
+    "all_pooler_hypothetical_extension": {
+      "shapes": 6,
+      "mean_load_share": 0.31046655994349287,
+      "scenarios": [
+        {
+          "uniform_target_cut": 0.1,
+          "modeled_score": 1.2220944430332976,
+          "modeled_gain": 0.032052378971485496
+        },
+        {
+          "uniform_target_cut": 0.2,
+          "modeled_score": 1.2625922302843224,
+          "modeled_gain": 0.06625254894506138
+        },
+        {
+          "uniform_target_cut": 0.23274564743041992,
+          "modeled_score": 1.276450391640986,
+          "modeled_gain": 0.07795569388434798
+        },
+        {
+          "uniform_target_cut": 1.0,
+          "modeled_score": 1.7210450472064698,
+          "modeled_gain": 0.45341356014834155
+        }
+      ]
+    },
+    "three_families_hypothetical_extension": {
+      "shapes": 18,
+      "mean_load_share": 0.7580078137920214,
+      "scenarios": [
+        {
+          "uniform_target_cut": 0.1,
+          "modeled_score": 1.2812624931163246,
+          "modeled_gain": 0.08201948846568041
+        },
+        {
+          "uniform_target_cut": 0.2,
+          "modeled_score": 1.395746020410701,
+          "modeled_gain": 0.17870022977070343
+        },
+        {
+          "uniform_target_cut": 0.23274564743041992,
+          "modeled_score": 1.4378165225785042,
+          "modeled_gain": 0.21422854928342305
+        },
+        {
+          "uniform_target_cut": 1.0,
+          "modeled_score": 4.904560153153623,
+          "modeled_gain": 3.1418754522010666
+        }
+      ]
+    }
+  },
+  "per_seed_address_models": [
+    {
+      "seed": 5151,
+      "stored_byte_reduction": 0.23274564743041992,
+      "raw_weight_bytes": 67108864,
+      "distinct_addresses_summed_per_iteration_bytes": 53204352,
+      "distinct_address_ratio": 0.7928066253662109,
+      "scalar_operand_bytes": 69730304,
+      "scalar_operand_ratio": 1.0390625,
+      "qualification": "Logical source address accounting only; compiler reuse/vectorization, transactions, caches, spills and hardware traffic are unknown."
+    },
+    {
+      "seed": 5152,
+      "stored_byte_reduction": 0.23304319381713867,
+      "raw_weight_bytes": 67108864,
+      "distinct_addresses_summed_per_iteration_bytes": 53194368,
+      "distinct_address_ratio": 0.7926578521728516,
+      "scalar_operand_bytes": 69730304,
+      "scalar_operand_ratio": 1.0390625,
+      "qualification": "Logical source address accounting only; compiler reuse/vectorization, transactions, caches, spills and hardware traffic are unknown."
+    },
+    {
+      "seed": 7171,
+      "stored_byte_reduction": 0.23304319381713867,
+      "raw_weight_bytes": 67108864,
+      "distinct_addresses_summed_per_iteration_bytes": 53194368,
+      "distinct_address_ratio": 0.7926578521728516,
+      "scalar_operand_bytes": 69730304,
+      "scalar_operand_ratio": 1.0390625,
+      "qualification": "Logical source address accounting only; compiler reuse/vectorization, transactions, caches, spills and hardware traffic are unknown."
+    }
+  ],
+  "geometry": {
+    "8": {
+      "ctas": 512,
+      "iterations_per_cta": 16,
+      "weight_decode_passes": 1,
+      "partial_scratch_bytes": 1048576,
+      "partial_write_plus_read_bytes": 2097152
+    },
+    "16": {
+      "ctas": 512,
+      "iterations_per_cta": 16,
+      "weight_decode_passes": 1,
+      "partial_scratch_bytes": 2097152,
+      "partial_write_plus_read_bytes": 4194304
+    },
+    "32": {
+      "ctas": 1024,
+      "iterations_per_cta": 16,
+      "weight_decode_passes": 2,
+      "partial_scratch_bytes": 4194304,
+      "partial_write_plus_read_bytes": 8388608
+    }
+  },
+  "optimistic_storage_only_screen": {
+    "ratio": 0.7672543525695801,
+    "max_raw_over_p046_for_parity": 1.303348748235759,
+    "max_raw_over_p046_for_ten_percent_target_cut": 1.1730138734121833,
+    "qualification": "Assume ALL raw time scales with stored weight bytes and zero incremental decode cost. Not a hardware bound or prediction; a reason to deprioritize slow consumers, not proof of impossibility."
+  },
+  "evidence_hashes": {
+    "results/remote-P2-09-pooler-column-batch2-hybrid.csv": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+    "results/remote-P2-09-pooler-column-batch2-hybrid.json": "984c9e0dcaea6bc41fff9b12103eb9a13e137f3c42b3021035f2245255288850",
+    "results/router-p043-codec-storage-cpu.json": "c583ca22ead3c4e0ab2a3972317c0c5d487548d80f61a62eaa8fe876b38aec15",
+    "results/remote-P2-07-pooler-lossless-codec.json": "ae52d2c8037077e7f7826f42acf6eae7b7fd47ae921db0a5efca39a55d28601e",
+    "TASK.md": "deb9118fa75cbc03c2ebd16b283e72a0314168d40299fa7501373eb1960a2bc4"
+  },
+  "decision": "Do not relaunch unchanged P043 as an optimization. Preserve optional three-arm attribution protocol; no distinct competitive consumer-aligned mechanism has been demonstrated.",
+  "no_gpu_launch": true,
+  "no_official_check": true
+}
