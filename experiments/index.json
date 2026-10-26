@@ -646,5 +646,17 @@
     "gpu_executed": false,
     "rules_version": "2026-10-22.1",
     "selected_unchanged": "P046"
+  },
+  "native_interface_probe": {
+    "id": "P056",
+    "status": "local-source-and-tests-only",
+    "report": "experiments/056-native-cublaslt-interface-local.md",
+    "source": "native_cublaslt_probe.py",
+    "source_sha256": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+    "local_verification": "results/router-p056-local-verification.json",
+    "native_compiled": false,
+    "gpu_executed": false,
+    "official_job": null,
+    "parent": "P046"
   }
 }

@@ -1,0 +1,26 @@
+{
+  "experiment": "P056",
+  "observed_utc": "2026-10-26T00:21:00.511944+00:00",
+  "parent": "P046",
+  "source_sha256": {
+    "native_cublaslt_probe.py": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+    "tests/test_native_cublaslt_probe.py": "f9e0229a462b77a6adbcbc3b4a37b1d78cd4236731ae47aa6697f1d44b5176a4"
+  },
+  "embedded_cuda_source_sha256": "0e427a632fe12c410b2f0389deadf9c3757b919999287fea5705a892aad69fc8",
+  "environment": "Mac local Python 3.12.13; no native compiler or CUDA execution",
+  "command": "python -B -m unittest tests.test_native_cublaslt_probe tests.test_native_compilation_policy tests.test_projection_gap_model tests.test_contract",
+  "passed": 33,
+  "probe_specific_tests": 18,
+  "test_seconds": 0.439,
+  "warning": "Torch NumPy initialization warning; no NumPy package; all tests passed; no install",
+  "native_compiled": false,
+  "gpu_executed": false,
+  "official_check": null,
+  "private_push": false,
+  "limitations": [
+    "Addressing and static guards do not establish CUDA correctness",
+    "Actual headers/ABI, eligible algorithms, oracle accuracy, capture and concurrency unverified",
+    "No-split preference is intentionally narrower than every permitted FP32 reduction algorithm"
+  ],
+  "independent_review": "Frozen source, tests and causal protocol reviewed; no blocker for local preparation; native behavior unverified"
+}
