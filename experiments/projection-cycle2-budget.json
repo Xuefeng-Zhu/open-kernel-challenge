@@ -103,6 +103,24 @@
       "preflight_state": "local-ready-awaiting-fresh-coordinator-slot-release",
       "created_utc": "2026-10-25T21:46:30.030170+00:00",
       "dispatched": false
+    },
+    "P2-10-p043-raw-control": {
+      "candidate": "candidates/projection_pooler_lossless_raw_control.py",
+      "source_sha256": "8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de",
+      "cpu_report": "results/router-p062-raw-control-cpu.json",
+      "local_record": "experiments/062-raw-consumer-official-screen.md",
+      "control_job_id": "41ba778763a5433b",
+      "compressed_control_job_id": "128378586ebe4730",
+      "hypothesis": "Measure the previously untested exact P043 raw consumer to distinguish an uncompetitive S8/BM16/BN64/BK64 backend from the complete encoded branch. No source change except the historical false codec flag; no automatic promotion or same-run causal claim.",
+      "predeclared_gates": {
+        "original_correctness_required": true,
+        "raw_partial_and_reducer_profiles_required": true,
+        "controls_count": 27,
+        "control_movement_reporting_threshold": 0.05,
+        "near_selected_latency_ratio": 1.05,
+        "optimistic_model_only_raw_ratio": 1.303348748235759,
+        "preserve_selected": true
+      }
     }
   },
   "requests": [
