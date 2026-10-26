@@ -1,0 +1,27 @@
+{
+  "phase": "local preparation only; remote CPU image audit not admitted",
+  "official_access": {
+    "observed_utc": "2026-10-26T22:14:50.678909+00:00",
+    "operation": "okc problems --json",
+    "exit_code": 0,
+    "problem": "muse_attention_decode",
+    "nonranking_checks_remaining": 20,
+    "ranked_entries_used": 0,
+    "submission_attempted": false
+  },
+  "modal_access": {
+    "observed_utc": "2026-10-26T22:14:47.758507+00:00",
+    "operation": "existing profile read-only app list",
+    "profile": "xuefeng-zhu",
+    "exit_code": 1,
+    "status": "rejected",
+    "reason": "expired authentication token",
+    "credential_action_attempted": false,
+    "token_new_retried": false,
+    "remote_CPU_or_GPU_app_created": false
+  },
+  "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "paid_limit_usd": 0,
+  "new_modal_cost_usd": 0,
+  "limitation": "Current global Modal app state could not be read because authentication failed. Local worker tests do not inspect the remote image."
+}

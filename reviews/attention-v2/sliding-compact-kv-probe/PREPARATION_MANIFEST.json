@@ -1,0 +1,35 @@
+{
+  "status": "reviewed preflight; no official job yet",
+  "base_commit": "7651ce0a434205a1b94f1d9bc056cfd1f5710244",
+  "candidate_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "selected_baseline_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "CPU_tests_passed": {
+    "candidate": 17,
+    "CPU_metadata_worker": 13
+  },
+  "secret_scan_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "one distinct nonranking compact-window experiment; no ranked entry or credential action",
+  "files": {
+    "reviews/attention-v2/sliding-compact-kv-probe/baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reviews/attention-v2/sliding-compact-kv-probe/candidate.py": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+    "reviews/attention-v2/sliding-compact-kv-probe/test_source.py": "c287be8ba250ba6c0aa57f38db4c138f6fb4cc52771c4c75350456993a2ccc04",
+    "reviews/attention-v2/sliding-compact-kv-probe/test_geometry.py": "1b3a681e42568172dae87865f693801df05108c70526d5d9d6fb3d7fc278edb8",
+    "reviews/attention-v2/sliding-compact-kv-probe/README.md": "0c982481e6dd1e3be2e1b6728bc66900a1335c277251e399278f211eed58a9a9",
+    "reviews/attention-v2/sliding-compact-kv-probe/SOURCE_MANIFEST.json": "34e5e6fd9f293e429d17855edcbd9f4feaa2b665b66ccfb913efa6329073c759",
+    "reviews/attention-v2/sliding-compact-kv-probe/EXPERIMENT_CARD.md": "3dfe8928c3449ff4717f8d88ee21d07a6a96467c4c504f62dfab2a29ef72fc28",
+    "reviews/attention-v2/sliding-compact-kv-probe/REVIEW.md": "a0d8416b20f9f1e8fe1e74dd3aecc384e7747762294102d9d7a7545cb7990396",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/worker.py": "29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/test_worker.py": "876940168deb668f34af146f5c6d29e9609ba879c6029d0ab3b394505677ee2b",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/README.md": "581dea67f812e85b61a41ce392ee6e1c0999f69af9056e862bca996d7132741e",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/PREPARATION_MANIFEST.json": "73a90c116930fb0a6b7e18582b7f0e85422e3f356bff446ad03bc571f8363c2e",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/REVIEW.md": "0c18dfb99bb779de15fb64767e78253bfb86c1b4bcfad7b68f993f39508245ec",
+    "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/ACCESS_STATE.json": "532c4490232aa901533dc82316d5366dff3d83969d9611fb6e2b756e13fad436"
+  }
+}

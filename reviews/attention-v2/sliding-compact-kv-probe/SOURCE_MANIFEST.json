@@ -1,0 +1,21 @@
+{
+  "status": "LOCAL_SOURCE_PREPARATION_ONLY; native compilation/API/correctness/performance untested",
+  "selected_baseline_changed": false,
+  "target": "anybatch L8/sliding2048/rope500000/page1/HQ16/HKV2/D64",
+  "candidate_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "local_tests": {
+    "source_ast_dispatch_metadata": 6,
+    "geometry_byte_address_aba": 11,
+    "passed": 17
+  },
+  "GPU_launches": 0,
+  "official_jobs": 0,
+  "files": {
+    "baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate.py": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+    "test_source.py": "c287be8ba250ba6c0aa57f38db4c138f6fb4cc52771c4c75350456993a2ccc04",
+    "test_geometry.py": "1b3a681e42568172dae87865f693801df05108c70526d5d9d6fb3d7fc278edb8",
+    "README.md": "0c982481e6dd1e3be2e1b6728bc66900a1335c277251e399278f211eed58a9a9"
+  },
+  "import_time_metadata": "one bounded scalar Torch/CUDA/op_schema print; no native operator invocation, no input access; actual runtime metadata unobserved"
+}
