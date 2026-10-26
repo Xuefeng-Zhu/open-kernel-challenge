@@ -1,0 +1,42 @@
+{
+  "status": "reviewed source-bound methods handoff; B1 parked before admission; no new GPU",
+  "base_commit": "350ae96bbde5287078f293b313326c31785aa235",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "A2_11_rollback_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "CPU_tests_passed": {
+    "B1_source_geometry": 21,
+    "B1_compile_harness": 6,
+    "gap_arithmetic": 5
+  },
+  "matrix_reproduced": true,
+  "secret_scan_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files": {
+    "reviews/attention-v2/b1-simt-probe/EXPERIMENT_CARD.md": "7672a57a349b84f48f5e9c09ed8ecb480daad2514a792d9d0e1b0852c643f501",
+    "reviews/attention-v2/b1-simt-probe/PREPARATION_MANIFEST.json": "15f079a5932122b41e6fa8256b1e759ce8fac87a97f16b028f332dc62b26c4a0",
+    "reviews/attention-v2/b1-simt-probe/SOURCE_REVIEW.md": "ecf1b1090db2d4ffd9b4fb8d8d2fdc4245cffaea94438b3f08bacb9e39e630b9",
+    "reviews/attention-v2/b1-simt-probe/STATUS.md": "c40960561c8e85c373e2eaffbf0448e831b3ef7fd088c211cab64f414bfea8ca",
+    "reviews/attention-v2/b1-simt-probe/baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reviews/attention-v2/b1-simt-probe/candidate.py": "f5161be2e91b05fceb01e28564f96eecff471244704d036fa4cc7950dbe0ef34",
+    "reviews/attention-v2/b1-simt-probe/native/CARD.md": "6f7448fe95227246cf6d5968c3e61bd1396fff86a756402cbdc1246b597a1259",
+    "reviews/attention-v2/b1-simt-probe/native/HARNESS_REVIEW.md": "557b5b3e1384a08ec8a684ca9b932e94be8096f03e97b82e590f8a4dcd258786",
+    "reviews/attention-v2/b1-simt-probe/native/test_worker.py": "eecddfe583352f70364a247be0d54233b79f6defccd8ad05fa8f9247830c7319",
+    "reviews/attention-v2/b1-simt-probe/native/worker.py": "e75d54a10342fe0d982a85d1db68a21422dc63714abf4320bd27ce14956797f8",
+    "reviews/attention-v2/b1-simt-probe/test_geometry.py": "67afd5419565856ff29cd9bae3c110694901d07206d8b8ae8866e703e906978f",
+    "reviews/attention-v2/b1-simt-probe/test_source.py": "a43d723e2d931aa7ffda37dfa74d23bf5f614371c7058750cdedb8471c9f000f",
+    "reviews/attention-v2/fa3-next-evidence/B1_PUBLIC_STRUCTURE_NOTES.md": "a7bc8a8ee4760859666a421d6682c148430edc87c41d0f9ec43a1e5e48677c26",
+    "reviews/attention-v2/fa3-next-evidence/B1_SINGLE_FALSIFIER.md": "55dabdab2dc3c7c39d5e6f140839bb20941472de52b0bbb514d20d0c082d8ca1",
+    "reviews/attention-v2/fa3-next-evidence/BASELINE_MATRIX_REVIEW.md": "1953a3826ec1b39a7ead00575625bf8d037429c0e5a3a7c16ba8f4e816834928",
+    "reviews/attention-v2/fa3-next-evidence/BASELINE_METHODS_AUDIT.md": "dfd66b8e1027daef3e8978465c415a92942894bb5d25852f850971319dca91c4",
+    "reviews/attention-v2/fa3-next-evidence/METHODS_HANDOFF_ATTENTION.md": "0ba0bc9c594576338c4c58ba6ff8c40c0cffda24adba379064b908fb9e530e5c",
+    "reviews/attention-v2/fa3-next-evidence/METHODS_RESOURCE_CLOSURE.json": "bc17742f37b537487e4630cf6aa9b4d9eeacafc7f2788db9ec8f0eeb1b623fad",
+    "reviews/attention-v2/fa3-next-evidence/baseline_matrix.json": "71cef53426c36790a7cd8a109452eba33248e6fdb70ab218ca554f89e9741fa2",
+    "reviews/attention-v2/fa3-next-evidence/build_baseline_matrix.py": "08784483ca28b7e4919b61a60f4a2dfb643bd17c64e818a369461ccd76795af2"
+  }
+}
