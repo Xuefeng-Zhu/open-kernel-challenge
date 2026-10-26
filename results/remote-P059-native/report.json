@@ -1,0 +1,3465 @@
+{
+  "kind": "P059 fixed-layout FP32 split-K capability and one-case screen",
+  "status": "completed",
+  "complete": true,
+  "passed": true,
+  "phase": "cleanup",
+  "native_build_complete": true,
+  "native_execution": true,
+  "oracle_checks": 298,
+  "selected_configurations": 3,
+  "cases": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "n": 2304,
+      "k": 8192,
+      "passed": true,
+      "selected": [
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 0,
+          "algorithm_id": 41,
+          "tile_id": 21,
+          "stages_id": 35,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 6,
+          "algorithm_id": 66,
+          "tile_id": 20,
+          "stages_id": 35,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 2359312,
+          "heuristic_position": 0,
+          "algorithm_id": 66,
+          "tile_id": 27,
+          "stages_id": 35,
+          "split_k": 2,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 2,
+          "waves_count_estimate": 0.3636363744735718,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        }
+      ],
+      "runner_names": [
+        "p046",
+        "row41",
+        "row66",
+        "split"
+      ],
+      "activities": {
+        "p046": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 14.625,
+              "kind": "kernel_or_other"
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.3920000000000528,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One post-timing instrumented replay; names/durations only, not acceptance timing, instructions, counters or achieved occupancy. Empty events mean unavailable.",
+          "correctness_passed": true
+        },
+        "row41": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "sm90_xmma_gemm_bf16bf16_bf16f32_f32_tn_n_tilesize64x256x64_cgasize1x1x1_warpgroupsize1x1x1_aligna4_alignc4_execute_segment_k_off_kernel__5x_cublas",
+              "duration_us": 192.18200000000002,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One post-timing instrumented replay; names/durations only, not acceptance timing, instructions, counters or achieved occupancy. Empty events mean unavailable.",
+          "correctness_passed": true
+        },
+        "row66": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNN",
+              "duration_us": 39.906000000000176,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One post-timing instrumented replay; names/durations only, not acceptance timing, instructions, counters or achieved occupancy. Empty events mean unavailable.",
+          "correctness_passed": true
+        },
+        "split": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 13.7349999999999,
+              "kind": "kernel_or_other"
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.3530000000000655,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One post-timing instrumented replay; names/durations only, not acceptance timing, instructions, counters or achieved occupancy. Empty events mean unavailable.",
+          "correctness_passed": true
+        }
+      },
+      "correctness": [
+        {
+          "phase": "before",
+          "label": "A",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "B",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "B",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "B",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "B",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A-return",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A-return",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A-return",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "A-return",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "column_probes",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "column_probes",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "column_probes",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "column_probes",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "zero",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "zero",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "zero",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "zero",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "cancel",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "cancel",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "cancel",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "before",
+          "label": "cancel",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "B",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "B",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "B",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "B",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A-return",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A-return",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A-return",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "A-return",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "column_probes",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "column_probes",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "column_probes",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "column_probes",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "zero",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "zero",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "zero",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "zero",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "cancel",
+          "runner": "p046",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "cancel",
+          "runner": "row41",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "cancel",
+          "runner": "row66",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        },
+        {
+          "phase": "after",
+          "label": "cancel",
+          "runner": "split",
+          "passed": true,
+          "output_poison": "NaN",
+          "same_input_address": true
+        }
+      ],
+      "series": {
+        "anchor_row41": {
+          "runner_mapping": {
+            "parent": "p046",
+            "candidate": "row41"
+          },
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 5901000,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.6879995316267,
+                "candidate": 198.04799556732178
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 5901001,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 197.50399887561798,
+                "parent": 21.503999829292297
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 5901002,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.304000332951546,
+                "candidate": 198.2080042362213
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 5901003,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 196.28800451755524,
+                "parent": 22.016000002622604
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 5901004,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.695999428629875,
+                "candidate": 197.05599546432495
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 5901005,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 196.54400646686554,
+                "parent": 21.60000056028366
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 5901100,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.727999672293663,
+                "candidate": 195.68000733852386
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 5901101,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 195.10400295257568,
+                "parent": 21.568000316619873
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 5901102,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.75999991595745,
+                "candidate": 196.83200120925903
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 5901103,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 198.08000326156616,
+                "parent": 21.568000316619873
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 5901104,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.91999927163124,
+                "candidate": 197.28000462055206
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 5901105,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 195.5839991569519,
+                "parent": 22.87999913096428
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 5901106,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.31200022995472,
+                "candidate": 195.77600061893463
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 5901107,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 195.68000733852386,
+                "parent": 22.784000262618065
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 5901108,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.175999358296394,
+                "candidate": 197.05599546432495
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 5901109,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 197.88800179958344,
+                "parent": 21.695999428629875
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 5901110,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.60000056028366,
+                "candidate": 197.28000462055206
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 5901111,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 198.2399970293045,
+                "parent": 21.824000403285027
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 5901112,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.888000890612602,
+                "candidate": 197.11999595165253
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 5901113,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 198.55999946594238,
+                "parent": 23.104000836610794
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 5901114,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.888000890612602,
+                "candidate": 198.2399970293045
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 5901115,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 197.63199985027313,
+                "parent": 21.43999934196472
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 5901116,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.695999428629875,
+                "candidate": 198.36799800395966
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 5901117,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 196.19199633598328,
+                "parent": 21.695999428629875
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 5901118,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.135999217629433,
+                "candidate": 198.55999946594238
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 5901119,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 198.68800044059753,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 5901120,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.943999618291855,
+                "candidate": 198.04799556732178
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 5901121,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 196.9279944896698,
+                "parent": 21.824000403285027
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 5901122,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.048000246286392,
+                "candidate": 195.6160068511963
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 5901123,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 195.3279972076416,
+                "parent": 21.503999829292297
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "passed": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              0.11103842425099927,
+              0.11054617019755586,
+              0.11055112879141857,
+              0.10888529867469339,
+              0.11111110481668997,
+              0.11698298035415247,
+              0.10885910511287415,
+              0.11643499288714784,
+              0.1125365371707817,
+              0.10963777101859415,
+              0.10948905137055859,
+              0.11008878495926798,
+              0.11103896783754529,
+              0.11635778051345967,
+              0.11041162842318367,
+              0.10848445271113867,
+              0.10937247765235196,
+              0.11058554800306421,
+              0.11651893271483307,
+              0.11000161357748015,
+              0.11585070352551273,
+              0.11082223459311084,
+              0.11271061402995589,
+              0.11009174381915497
+            ],
+            "reverse_order_pair_ratios": [
+              0.1107920238361922,
+              0.10971505219101937,
+              0.11400924608074127,
+              0.11258334303758608,
+              0.11107769845273026,
+              0.10978850865062185,
+              0.1136672681473528,
+              0.10944379873905458,
+              0.10997734029170843,
+              0.11321338529943126,
+              0.11330857798013928,
+              0.11139348295787127
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.10944379873905458,
+              "p10": 0.10972239783697962,
+              "median": 0.11123559070530076,
+              "p90": 0.11363139913063144,
+              "maximum": 0.11400924608074127
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.31200022995472,
+                "p10": 21.52319997549057,
+                "median": 21.824000403285027,
+                "p90": 22.924799472093582,
+                "maximum": 23.135999217629433
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 195.10400295257568,
+                "p10": 195.59360146522522,
+                "median": 197.2000002861023,
+                "p90": 198.50239902734756,
+                "maximum": 198.68800044059753
+              }
+            },
+            "median_paired_raw_ratio": 0.11123559070530076,
+            "candidate_raw_latency_cut": -7.989928436208201,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "winning_pairs": 0
+          }
+        },
+        "anchor_row66": {
+          "runner_mapping": {
+            "parent": "p046",
+            "candidate": "row66"
+          },
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 5901200,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 45.152001082897186
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 5901201,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.24800181388855,
+                "parent": 22.784000262618065
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 5901202,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.63200080394745,
+                "candidate": 45.152001082897186
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 5901203,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.31199857592583,
+                "parent": 21.75999991595745
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 5901204,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.943999618291855,
+                "candidate": 45.24800181388855
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 5901205,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 44.95999962091446,
+                "parent": 21.568000316619873
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 5901300,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.60000056028366,
+                "candidate": 46.1760014295578
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 5901301,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.27999833226204,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 5901302,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.63200080394745,
+                "candidate": 45.471999794244766
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 5901303,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 46.36799916625023,
+                "parent": 21.695999428629875
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 5901304,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.75999991595745,
+                "candidate": 45.69600149989128
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 5901305,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.21600157022476,
+                "parent": 21.824000403285027
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 5901306,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.63200080394745,
+                "candidate": 46.14400118589401
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 5901307,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.31199857592583,
+                "parent": 21.824000403285027
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 5901308,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.727999672293663,
+                "candidate": 45.98399996757507
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 5901309,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 46.01600021123886,
+                "parent": 21.727999672293663
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 5901310,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.695999428629875,
+                "candidate": 46.33599892258644
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 5901311,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.05600035190582,
+                "parent": 21.75999991595745
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 5901312,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.824000403285027,
+                "candidate": 45.27999833226204
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 5901313,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.08800059556961,
+                "parent": 22.112000733613968
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 5901314,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.568000316619873,
+                "candidate": 44.95999962091446
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 5901315,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 44.95999962091446,
+                "parent": 22.175999358296394
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 5901316,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.727999672293663,
+                "candidate": 45.9199994802475
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 5901317,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.3759990632534,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 5901318,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.663999184966087,
+                "candidate": 45.343998819589615
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 5901319,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 46.04800045490265,
+                "parent": 22.431999444961548
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 5901320,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.663999184966087,
+                "candidate": 45.08800059556961
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 5901321,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 46.23999819159508,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 5901322,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.63200080394745,
+                "candidate": 45.343998819589615
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 5901323,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 45.24800181388855,
+                "parent": 21.43999934196472
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "passed": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              0.4677754654273128,
+              0.4826855444333441,
+              0.475721342844599,
+              0.46790889878253994,
+              0.47619045872119076,
+              0.48266099711161486,
+              0.46879334795440847,
+              0.48163844211630236,
+              0.4725121713555766,
+              0.4721835790279499,
+              0.4682320427552967,
+              0.48295453981718167,
+              0.4819788252451283,
+              0.4904187464854388,
+              0.4797153135781364,
+              0.49323842404973195,
+              0.4731707299265099,
+              0.4816643401389776,
+              0.4777699309485417,
+              0.48714383302984987,
+              0.480482587358172,
+              0.4726643923381797,
+              0.47706425033254773,
+              0.4738330640577341
+            ],
+            "reverse_order_pair_ratios": [
+              0.4751720269569153,
+              0.47179895046276593,
+              0.47941481164165883,
+              0.47517249266266137,
+              0.472347846618299,
+              0.47553631905096716,
+              0.4861804719538211,
+              0.4864298770242253,
+              0.4773986462099895,
+              0.48243411515841134,
+              0.4765574573781494,
+              0.4754459122628745
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.47179895046276593,
+              "p10": 0.4726302646521606,
+              "median": 0.4760468882145583,
+              "p90": 0.4858058362742801,
+              "maximum": 0.4864298770242253
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.43999934196472,
+                "p10": 21.609600633382797,
+                "median": 21.727999672293663,
+                "p90": 22.035200707614422,
+                "maximum": 22.431999444961548
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 44.95999962091446,
+                "p10": 45.06560042500496,
+                "median": 45.35999894142151,
+                "p90": 46.220799162983894,
+                "maximum": 46.36799916625023
+              }
+            },
+            "median_paired_raw_ratio": 0.4760468882145583,
+            "candidate_raw_latency_cut": -1.1006334139701206,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "winning_pairs": 0
+          }
+        },
+        "anchor_split": {
+          "runner_mapping": {
+            "parent": "p046",
+            "candidate": "split"
+          },
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 5901400,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.344000473618507,
+                "candidate": 22.943999618291855
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 5901401,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.08000048995018,
+                "parent": 21.983999758958817
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 5901402,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 21.63200080394745
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 5901403,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.79200015962124,
+                "parent": 21.695999428629875
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 5901404,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 21.695999428629875
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 5901405,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.568000316619873,
+                "parent": 21.376000717282295
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 5901500,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.983999758958817,
+                "candidate": 21.983999758958817
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 5901501,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.072000592947006,
+                "parent": 23.360000923275948
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 5901502,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.143999114632607,
+                "candidate": 21.824000403285027
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 5901503,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.75999991595745,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 5901504,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.47199958562851,
+                "candidate": 22.304000332951546
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 5901505,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.856000646948814,
+                "parent": 21.91999927163124
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 5901506,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.47199958562851,
+                "candidate": 21.568000316619873
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 5901507,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.272000089287758,
+                "parent": 21.856000646948814
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 5901508,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.975999861955643,
+                "candidate": 21.91999927163124
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 5901509,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.727999672293663,
+                "parent": 21.91999927163124
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 5901510,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.016000002622604,
+                "candidate": 21.60000056028366
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 5901511,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.568000316619873,
+                "parent": 21.727999672293663
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 5901512,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.175999358296394,
+                "candidate": 21.568000316619873
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 5901513,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.824000403285027,
+                "parent": 22.048000246286392
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 5901514,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.568000316619873,
+                "candidate": 23.00800010561943
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 5901515,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.943999618291855,
+                "parent": 21.79200015962124
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 5901516,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 21.856000646948814
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 5901517,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.112000733613968,
+                "parent": 21.663999184966087
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 5901518,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.824000403285027,
+                "candidate": 21.983999758958817
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 5901519,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.08000048995018,
+                "parent": 21.75999991595745
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 5901520,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.75999991595745,
+                "candidate": 21.60000056028366
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 5901521,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.63200080394745,
+                "parent": 21.663999184966087
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 5901522,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 21.536000072956085
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 5901523,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 51.61599814891815,
+                "parent": 23.04000034928322
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "passed": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              1.0,
+              1.0124826769646054,
+              1.014662697279799,
+              1.004411798316275,
+              0.9626972410821815,
+              1.0029281946736839,
+              0.9955489275972706,
+              0.9813218641940008,
+              1.0481752110133997,
+              1.0088365059938031,
+              1.0192592329420513,
+              1.0074183676430355,
+              1.0281898661327453,
+              1.0102639222352492,
+              0.9374130831715419,
+              0.949790817737279,
+              0.9970717201028034,
+              0.9797394385951316,
+              0.9927220088506148,
+              0.9855072207023555,
+              1.0074073773853498,
+              1.00147921504389,
+              1.011887076792251,
+              0.4463732403819866
+            ],
+            "reverse_order_pair_ratios": [
+              1.0062219819525935,
+              1.0095242366873838,
+              0.9826068420359633,
+              0.9884097983762059,
+              1.0283177609805616,
+              1.013321505079002,
+              1.0191874837152402,
+              0.9435816545604958,
+              0.9883675871317325,
+              0.9891080365017911,
+              1.004438922749066,
+              0.672070913943174
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.672070913943174,
+              "p10": 0.9474841733080426,
+              "median": 0.9967734796254286,
+              "p90": 1.0186008858516165,
+              "maximum": 1.0283177609805616
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.47199958562851,
+                "p10": 21.596799977123737,
+                "median": 21.84000052511692,
+                "p90": 22.735999710857868,
+                "maximum": 23.360000923275948
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 21.536000072956085,
+                "p10": 21.568000316619873,
+                "median": 21.856000646948814,
+                "p90": 22.988799959421158,
+                "maximum": 51.61599814891815
+              }
+            },
+            "median_paired_raw_ratio": 0.9967734796254286,
+            "candidate_raw_latency_cut": -0.003236964506503348,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "winning_pairs": 6
+          }
+        },
+        "row66_vs_split": {
+          "runner_mapping": {
+            "parent": "row66",
+            "candidate": "split"
+          },
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 5901600,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 46.08000069856644,
+                "candidate": 21.663999184966087
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 5901601,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.663999184966087,
+                "parent": 45.21600157022476
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 5901602,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.40799930691719,
+                "candidate": 21.856000646948814
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 5901603,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.552000522613525,
+                "parent": 45.1200008392334
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 5901604,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.184001326560974,
+                "candidate": 21.983999758958817
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 5901605,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.503999829292297,
+                "parent": 45.31199857592583
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 5901700,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 46.271998435258865,
+                "candidate": 21.79200015962124
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 5901701,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.824000403285027,
+                "parent": 46.112000942230225
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 5901702,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.05600035190582,
+                "candidate": 21.888000890612602
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 5901703,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.43999934196472,
+                "parent": 46.46399989724159
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 5901704,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 44.92799937725067,
+                "candidate": 21.63200080394745
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 5901705,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.112000733613968,
+                "parent": 44.73600164055824
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 5901706,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.024000108242035,
+                "candidate": 21.824000403285027
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 5901707,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 24.032000452280045,
+                "parent": 46.14400118589401
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 5901708,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.184001326560974,
+                "candidate": 21.63200080394745
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 5901709,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.784000262618065,
+                "parent": 45.27999833226204
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 5901710,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 46.112000942230225,
+                "candidate": 21.79200015962124
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 5901711,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.272000089287758,
+                "parent": 46.01600021123886
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 5901712,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 46.751998364925385,
+                "candidate": 21.536000072956085
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 5901713,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.75999991595745,
+                "parent": 45.024000108242035
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 5901714,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.1200008392334,
+                "candidate": 22.752000018954277
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 5901715,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.75999991595745,
+                "parent": 45.184001326560974
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 5901716,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.72800174355507,
+                "candidate": 21.536000072956085
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 5901717,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.048000246286392,
+                "parent": 44.99199986457825
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 5901718,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 46.33599892258644,
+                "candidate": 21.503999829292297
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 5901719,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.16799946129322,
+                "parent": 46.592000871896744
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 5901720,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.184001326560974,
+                "candidate": 22.207999601960182
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 5901721,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.695999428629875,
+                "parent": 45.3759990632534
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 5901722,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 45.3759990632534,
+                "candidate": 21.888000890612602
+              },
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 5901723,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.79200015962124,
+                "parent": 44.95999962091446
+              },
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "passed": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              2.1233479302646585,
+              2.1129032299362165,
+              2.0584794644827333,
+              2.167164240826125,
+              2.0769229709464567,
+              2.023154855116841,
+              2.0630498202091703,
+              1.9201065378440472,
+              2.0887573801456085,
+              1.9873594544568796,
+              2.1160059014533195,
+              2.0660919552245933,
+              2.170876588342623,
+              2.0691176600246304,
+              1.9831223981032327,
+              2.076470657218422,
+              2.123328454153294,
+              2.040638577739329,
+              2.1547618717643644,
+              2.0110498081518866,
+              2.0345822287646667,
+              2.0914454396313995,
+              2.073099288053959,
+              2.0631424050841187
+            ],
+            "reverse_order_pair_ratios": [
+              2.1181191421009764,
+              2.112122886079759,
+              2.049862627683625,
+              1.9902953167009196,
+              2.037427723257676,
+              2.090899990482679,
+              2.119386488272901,
+              2.029259832878479,
+              2.081572952542578,
+              2.0816660272062677,
+              2.062817908567053,
+              2.0681148544347865
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 1.9902953167009196,
+              "p10": 2.030076621916399,
+              "median": 2.0748439034886825,
+              "p90": 2.1175195164988545,
+              "maximum": 2.119386488272901
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 44.73600164055824,
+                "p10": 44.969599694013596,
+                "median": 45.32799869775772,
+                "p90": 46.42559960484505,
+                "maximum": 46.751998364925385
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 21.43999934196472,
+                "p10": 21.536000072956085,
+                "median": 21.808000281453133,
+                "p90": 22.77440018951893,
+                "maximum": 24.032000452280045
+              }
+            },
+            "median_paired_raw_ratio": 2.0748439034886825,
+            "candidate_raw_latency_cut": 0.5180360323402735,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "winning_pairs": 12
+          }
+        }
+      },
+      "independent_graphs": {
+        "checks": [
+          {
+            "repeat": 0,
+            "runner": "original",
+            "passed": true
+          },
+          {
+            "repeat": 0,
+            "runner": "independent",
+            "passed": true
+          },
+          {
+            "repeat": 1,
+            "runner": "original",
+            "passed": true
+          },
+          {
+            "repeat": 1,
+            "runner": "independent",
+            "passed": true
+          },
+          {
+            "repeat": 2,
+            "runner": "original",
+            "passed": true
+          },
+          {
+            "repeat": 2,
+            "runner": "independent",
+            "passed": true
+          }
+        ],
+        "complete": true,
+        "separate_streams": true,
+        "distinct_mutable_buffers": true,
+        "kernel_overlap_verified": false,
+        "qualification": "Distinct-stream graph submissions with shared immutable plan/W and private input/output/workspace; hardware overlap not instrumented."
+      },
+      "same_address_aba": true,
+      "native_private_workspaces": true
+    }
+  ],
+  "nearby": [
+    {
+      "layer": "qkv_gate",
+      "m": 127,
+      "executed": false,
+      "reason": "One canonical case only; nearby/full official coverage requires a separate validation",
+      "correctness": []
+    }
+  ],
+  "protocol": {
+    "cases": [
+      {
+        "layer": "qkv_gate",
+        "m": 128
+      }
+    ],
+    "maximum_configurations": 3,
+    "selection": "Exact historical row41 and row66 NONE controls; first actual split>1 COMPUTE_TYPE plan by heuristic position; no timing-based selection or fallback",
+    "warmup_rounds": 6,
+    "measured_rounds": 24,
+    "reverse_order_pairs": 12,
+    "capture_eager_warmups_per_graph": 3,
+    "oracle_count_scope": "Recorded oracle comparisons only; excludes three untimed eager warmups per successful captured graph (15 for five graphs on a completed screen)",
+    "eviction_bytes": 268435456,
+    "workspace_limit_bytes": 67108864,
+    "calibration": "none; gross graph times only",
+    "raw_samples_retained": true,
+    "original_oracle": "FP64 and original column-probe tolerances, unmodified",
+    "internal_deadline_seconds": 240.0,
+    "external_supervisor_timeout_seconds": 270.0
+  },
+  "limitations": [
+    "Not full official correctness or score; nearby shapes explicitly reported",
+    "Post-timing activity names/durations only; no hardware counters or native assembly inspection",
+    "Separate-stream submissions do not establish actual kernel overlap",
+    "One fixed layout and one metadata-selected actual FP32 split; other tactics, shapes and layouts untested",
+    "Internal gate cannot interrupt native compiler/CUDA; external hard timeout required"
+  ],
+  "source_hashes": {
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "native_cublaslt_probe.py": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+    "native_cublaslt_host_probe.py": "a91663d9b64291657d7b64e7bba7d7c4ffaeb2777964f8357dd2225adea9a300",
+    "projection_p056_native_screen.py": "17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f",
+    "projection_p057_native_screen.py": "e22e220b69330f1b614fffd69596a945d2a8b91bee8fcd6f70f426f9b645b4af",
+    "native_cublaslt_fp32_split_probe.py": "bb2a54cd7cc14bde5ec3a170a6bf8172032abbcade890ee3d6a0262001e614af",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "projection_p059_native_screen.py": "f3ea106e4a3f713c2559d2c102a2aab93b4e375369e16aa1f58e018fb34a5e0f",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true
+  },
+  "toolchain": {
+    "torch": "2.14.1+cu130",
+    "torch_cuda": "13.0",
+    "cxx11_abi": true,
+    "headers": [
+      {
+        "name": "cuda.h",
+        "available": true,
+        "size_bytes": 1146681,
+        "sha256": "64025f81a9d6d2b10e9e11654f3523e5b046d01b883f0b9ca474e463274b80d4",
+        "version_defines": {
+          "CUDA_VERSION": "13000"
+        }
+      },
+      {
+        "name": "cuda_runtime_api.h",
+        "available": true,
+        "size_bytes": 607504,
+        "sha256": "3f91d3f84f1aafb17cccc475803f9c489b6474f2a3bf0fbc75a5380821c966e0",
+        "version_defines": {}
+      },
+      {
+        "name": "cublasLt.h",
+        "available": true,
+        "size_bytes": 109928,
+        "sha256": "8be43fbf48625b98b8562d7df394e6af0d7ee1c05beeb5333577d5e33182fa3e",
+        "version_defines": {}
+      },
+      {
+        "name": "cublas_api.h",
+        "available": true,
+        "size_bytes": 331797,
+        "sha256": "f6b443f43358de591584d38810d60fcf7c1080677a6ba1605a99e8b58b349890",
+        "version_defines": {
+          "CUBLAS_VER_MAJOR": "13",
+          "CUBLAS_VER_MINOR": "1",
+          "CUBLAS_VER_PATCH": "1",
+          "CUBLAS_VER_BUILD": "3"
+        }
+      }
+    ],
+    "qualification": "Header hashes and framework ABI metadata; no compiler-version subprocess. Native build success establishes only this image's compile/link compatibility."
+  },
+  "native_source_string_sha256": {
+    "no_split": "0e427a632fe12c410b2f0389deadf9c3757b919999287fea5705a892aad69fc8",
+    "fp32_split": "e3493f7e6d56c18bea112587b620a8bda0bda93cf20bb0d8ade3994ac2865c0c"
+  },
+  "compile": {
+    "started_utc": "2026-10-26T01:09:08.130180+00:00",
+    "complete": true,
+    "elapsed_start_seconds": 2.579701365,
+    "builders": {
+      "no_split": {
+        "complete": true,
+        "wall_seconds": 23.99664466
+      },
+      "fp32_split": {
+        "complete": true,
+        "wall_seconds": 22.5686569
+      }
+    },
+    "wall_seconds": 46.566654175
+  },
+  "inventories": {
+    "no_split": {
+      "requested": 32,
+      "returned": 7,
+      "rejected": [],
+      "eligible": [
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 0,
+          "algorithm_id": 41,
+          "tile_id": 21,
+          "stages_id": 35,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 1,
+          "algorithm_id": 42,
+          "tile_id": 21,
+          "stages_id": 35,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 2,
+          "algorithm_id": 21,
+          "tile_id": 5,
+          "stages_id": 13,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.27272728085517883,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 3,
+          "algorithm_id": 23,
+          "tile_id": 5,
+          "stages_id": 13,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.27272728085517883,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 4,
+          "algorithm_id": 24,
+          "tile_id": 11,
+          "stages_id": 7,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.24242424964904785,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 5,
+          "algorithm_id": 16,
+          "tile_id": 0,
+          "stages_id": 0,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 0,
+          "heuristic_position": 6,
+          "algorithm_id": 66,
+          "tile_id": 20,
+          "stages_id": 35,
+          "split_k": 1,
+          "reduction_scheme": 0,
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.13636364042758942,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        }
+      ]
+    },
+    "fp32_split": {
+      "requested": 32,
+      "returned": 8,
+      "rejected": [],
+      "eligible": [
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 2359312,
+          "heuristic_position": 0,
+          "algorithm_id": 66,
+          "tile_id": 27,
+          "stages_id": 35,
+          "split_k": 2,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 2,
+          "waves_count_estimate": 0.3636363744735718,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 3538960,
+          "heuristic_position": 1,
+          "algorithm_id": 66,
+          "tile_id": 18,
+          "stages_id": 35,
+          "split_k": 3,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 3,
+          "waves_count_estimate": 0.27272728085517883,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 3538960,
+          "heuristic_position": 2,
+          "algorithm_id": 66,
+          "tile_id": 17,
+          "stages_id": 35,
+          "split_k": 3,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.27272728085517883,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 4718608,
+          "heuristic_position": 3,
+          "algorithm_id": 66,
+          "tile_id": 28,
+          "stages_id": 35,
+          "split_k": 4,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.1818181872367859,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 4718608,
+          "heuristic_position": 4,
+          "algorithm_id": 66,
+          "tile_id": 135,
+          "stages_id": 35,
+          "split_k": 4,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.21969696879386902,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 3538960,
+          "heuristic_position": 5,
+          "algorithm_id": 66,
+          "tile_id": 15,
+          "stages_id": 35,
+          "split_k": 3,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 3,
+          "waves_count_estimate": 0.5454545617103577,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 4718608,
+          "heuristic_position": 6,
+          "algorithm_id": 66,
+          "tile_id": 208,
+          "stages_id": 35,
+          "split_k": 4,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 3,
+          "waves_count_estimate": 0.1818181872367859,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        },
+        {
+          "m": 128,
+          "n": 2304,
+          "k": 8192,
+          "device": 0,
+          "workspace_limit_bytes": 67108864,
+          "workspace_required_bytes": 7077904,
+          "heuristic_position": 7,
+          "algorithm_id": 66,
+          "tile_id": 165,
+          "stages_id": 35,
+          "split_k": 6,
+          "reduction_scheme": 2,
+          "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+          "cta_swizzle": 0,
+          "custom_option": 0,
+          "waves_count_estimate": 0.15909090638160706,
+          "cublaslt_version": 130101,
+          "compute": "CUBLAS_COMPUTE_32F",
+          "scale": "CUDA_R_32F",
+          "input_output": "CUDA_R_16BF",
+          "measured": false
+        }
+      ],
+      "reduction_scheme_constants": {
+        "CUBLASLT_REDUCTION_SCHEME_NONE": 0,
+        "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE": 2,
+        "CUBLASLT_REDUCTION_SCHEME_INPLACE": 1,
+        "CUBLASLT_REDUCTION_SCHEME_OUTPUT_TYPE": 4
+      }
+    }
+  },
+  "assessment": {
+    "screen_passed": false,
+    "target_latency_cut": -0.003236964506503348,
+    "winning_pairs": 6,
+    "minimum_latency_cut": 0.1,
+    "minimum_winning_pairs": 10,
+    "automatic_selection": false,
+    "official_score": false,
+    "qualification": "Only justifies broader correctness/shape coverage; never promotes this one-case diagnostic. Same-interface contrast is descriptive, not a claim of isolated algorithm identity."
+  },
+  "wall_seconds": 53.669639986
+}

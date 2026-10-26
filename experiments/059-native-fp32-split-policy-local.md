@@ -1,6 +1,8 @@
 # P059 — admit FP32 split-K with descriptors held fixed
 
-Status: ready for coordinated GPU slot, no admission. Parent P057 compiled and passed 444
+Status: completed on H200; correctness passed, performance gate rejected.
+P059 source freeze is `6856cc2cb72d398c88c78b63a375bb3d2e8628e0`.
+Parent P057 compiled and passed 444
 oracle comparisons, but its four sampled no-split tactics failed the performance
 gate. P046 remains selected at 1.1841399409×. P058's independently reviewed
 column-layout prototype is parked; this experiment does not incorporate it.
@@ -78,8 +80,8 @@ Native building remains exclusively the documented host `load_inline` path
 validated by P057. No credentials, installs, downloads, arbitrary subprocesses
 or public/formal submission. Exact source freeze, allowlisted payload, current
 existing authentication, verified free credits / paid cap $0, bounded supervisor
-and independent stopped/tasks-zero confirmation are required. No P059 job,
-request, cost or GPU result exists yet; wait for coordinated measurement slot.
+and independent stopped/tasks-zero confirmation are required. These were the
+predeclared prerequisites; the execution result is recorded below.
 
 实验卡：P046 的已保存时间线显示 split-K，而首轮接口实验主动禁用了它。
 P059 只放开 FP32 工作区归并，保持布局和精度；若没有真实 split-K 算法，就
@@ -164,6 +166,102 @@ Planned command after those prerequisites, using this report's committed source:
 python -B projection_p059_modal.py launch --frozen-head <reviewed-commit> --control-root /path/to/control-workspace
 ```
 
-No P059 GPU admission, official check, observed GPU result or incurred run cost
-exists at this checkpoint. Nearby-shape correctness, actual split availability,
-native co-loading and performance remain unverified until execution.
+At source freeze there was no P059 admission or cost. The following section
+records the subsequent run without altering that frozen payload.
+
+## H200 result — 2026-10-26
+
+App `ap-vbrU0sPpoRjkmN7e7OgK4R` was accepted at **01:09:00.804116 UTC**.
+Both host-built extensions loaded successfully: 23.997 s for the old interface
+and 22.569 s for the split interface, 46.567 s total. Python 3.12.3,
+Torch 2.14.1+cu130, CUDA 13.0, cuBLASLt 130101, NVIDIA H200 (SM90).
+No precision globals were changed. The native descriptors explicitly use FP32
+compute and scalar types with BF16 input/output and compute-type reduction.
+
+**298 original-oracle comparisons passed**: 48 adversarial/ABA comparisons,
+6 independent-graph comparisons, 240 warmup/measured comparisons and four
+post-timing activity replays. Fresh content, sparse column probes, zeros,
+cancellation/outliers, poisoned output and immutable state passed. Separate
+streams had private input/output/workspace buffers; hardware overlap was not
+instrumented. Nearby M127 and all other shapes were not executed.
+
+The expanded preference returned eight eligible FP32 split plans. The chosen
+metadata-first plan was ID66, tile27, stages35, split2, COMPUTE_TYPE (native enum2),
+custom2, workspace **2,359,312 bytes**. The no-split controls were the exact prior
+ID41/tile21 and previously unmeasured ID66/tile20 configurations. No plan was
+selected by timing. The other seven returned split plans remain unmeasured.
+
+Times below are gross whole-call graph medians in microseconds; **R = paired
+parent/candidate**, so R>1 favors the candidate. Each series has six excluded
+warmups and 24 measured samples grouped into 12 order-reversed pairs. No samples
+were deleted, and no fixed-overhead calibration was applied.
+
+| Series | Parent median | Candidate median | Paired R | Candidate paired latency change | Wins |
+|---|---:|---:|---:|---:|---:|
+| P046 / row41 | 21.824 | 197.200 | 0.111235591 | +798.993% | 0/12 |
+| P046 / row66 | 21.728 | 45.360 | 0.476046888 | +110.063% | 0/12 |
+| P046 / FP32 split | 21.840 | 21.856 | 0.996773480 | +0.324% | 6/12 |
+| row66 / FP32 split | 45.328 | 21.808 | 2.074843903 | −51.804% | 12/12 |
+
+The split candidate's 51.616 us tail is retained. In the separate row66/split
+series, their raw medians changed by −0.071%/−0.220%, respectively; this does not
+show a large systematic drift. The result fails the predeclared 10% reduction
+and 10/12-win gate against the actual P046 anchor. **Preserve P046; no official
+check or promotion.** Correctness is established only for this stated coverage.
+
+Post-timing activity reported the same symbol pair for P046 and the native split:
+`nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN` plus the float-typed cuBLASLt
+split-K reducer. Their individual instrumented durations were 14.625+3.392 us
+and 13.735+3.353 us. These single instrumented replays are not acceptance timing.
+The no-split ID66 used `nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNN` (39.906 us),
+and row41 used a distinct `sm90_xmma_gemm_bf16bf16_bf16f32...` kernel (192.182 us).
+No copy event was reported. No instructions, hardware counters, achieved
+occupancy, HBM throughput or stall measurements were obtained.
+
+The useful causal result is that the no-split restriction excluded the route
+needed to recover P046-level performance. The 51.8% reduction versus row66
+also changes tile20→27 and custom0→2, not just split count; it cannot be assigned
+to splitting alone. Equal kernel symbols do not prove identical complete
+algorithm objects or launch geometry. The row layout is therefore not sufficient
+to explain P057's extreme loss: at that same layout, a precision-safe permitted
+plan now reaches P046. P058 stays parked. This does not prove the broader vendor
+ceiling, but it removes the premise that merely exposing this native route is a
+competitive gain. A next experiment needs a distinct algorithm/dataflow
+mechanism with score leverage; a sweep of the remaining seven configurations or
+an official check of this flat result is not justified by this evidence alone.
+
+## Shutdown, cost and reproducibility
+
+The supervisor completed in 54.623 s; worker internal wall time was 53.670 s,
+including compilation and validation. These are not billed GPU durations.
+Stop was requested at 01:10:00.019570 UTC. The first observation was transitional
+(`stopping...`, tasks1), so it was not claimed stopped. Independent read-only
+confirmation at **01:10:24.310883 UTC** showed this app stopped/tasks0 and all
+workspace apps stopped/tasks0. The shared GPU slot was released.
+
+Preflight free-credit lower bound was $27.60740071, paid cap and billed cost $0.
+Observed later workspace gross delta was **$0.05740071**; billing can lag and
+this is not a settled app invoice. Retain the **$0.5583812501375** conservative
+reserve. No new credentials, official check, formal entry or paid resource.
+The controller's exit1 reflected the immediate transitional shutdown state;
+subsequent reconciliation verified completion and did not relaunch the app.
+
+Raw bytes are preserved in `results/remote-P059-native/`; report SHA256 is
+`dcd514c6c4ae2a905b87fe904e582e26ecf55c5778c1057db91eb2c1aa217227`.
+The receipt and actual command are bound to the source freeze in
+`experiments/projection-p059-native-modal.json`.
+
+```bash
+python -B projection_p059_modal.py launch --frozen-head 6856cc2cb72d398c88c78b63a375bb3d2e8628e0 --control-root /path/to/control-workspace
+# Historical execution command, not a retry instruction. Existing ledger blocks reruns.
+python -B projection_p059_assess.py
+```
+
+The read-only assessment rebuilds the JSON decision and 120-row CSV containing
+all warmup and measured samples, verifies the receipt, and makes no external
+call. Independent review reproduced every paired result and found no sensitive
+paths or credential values in the three raw artifacts.
+
+实验结论：FP32 split-K 的能力和正确性已确认，但只追平了 P046。
+不能把相对慢对照的 2.07× 当作项目进步。保留 P046，保存失败证据，
+不花官方额度验证这次没有收益的版本。
