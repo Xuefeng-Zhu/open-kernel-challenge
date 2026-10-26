@@ -1,3 +1,32 @@
+# P063 offline SM90 compiler comparison complete; P046 preserved
+
+The compiler access gap is resolved locally, without Modal or GPU. Read
+`experiments/063-offline-compiler-comparison.md`; exact raw/encoded M16 artifacts
+are in `evidence/p063`, assessment in `results/router-p063-offline-assessment.json`.
+The first attempt at `6faa720` failed on unnecessary device-binder discovery;
+`fe2c034` removed that call and both offline compiles passed. No fake GPU or
+credential action. Both disposable local containers exited and were removed.
+OrbStack was restored to its initial stopped state; local dependency/image
+caches are retained for reproduction.
+
+Actual static evidence: raw 38 versus encoded 120 registers, zero spills in both;
+same BF16 HMMA family; Triton shared launch request 10240 versus 18688 bytes.
+Encoded TTGIR materializes the reconstructed BF16 operand through shared memory
+before dot consumption; raw does not need that decoded-operand conversion.
+This supports a focused compiler-only operand-layout repair gate, not a new
+GPU speedup or a general compression win. The raw backend remains behind P046.
+Nine local source/parser/model checks passed; full IR/PTX/SASS retained, including
+hash-bound assembler resource logs and a tamper-rejection regression test.
+
+Next: establish exact decoding and eliminate the identified extra staging in
+offline lowering before considering any substantive official candidate. Do not
+run unchanged logs, tile sweeps or claim that register counts measure occupancy.
+No new official check this phase; P046 remains selected at 1.1841399409×.
+Modal remains expired, but is not needed for CPU-only compilation. See P063 for
+the pinned image/wheel, exact command and limitations versus judge codegen.
+
+## Previous checkpoint (historical)
+
 # P062 raw-consumer diagnostic terminal; P046 preserved
 
 Read `experiments/062-raw-consumer-official-screen.md` and reproduce its analysis

@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-26T22:47:15.936312+00:00",
+  "source_commit": "fe2c034",
+  "image": "python@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70",
+  "local_cpu_only": true,
+  "network_during_execution": false,
+  "gpu_execution": false,
+  "official_check": false,
+  "attempts": [
+    {
+      "source_commit": "6faa720",
+      "exit_code": 1,
+      "stage": "JITFunction.create_binder before compilation",
+      "error": "RuntimeError: 0 active drivers ([]). There should only be one.",
+      "artifacts_created": false
+    },
+    {
+      "source_commit": "fe2c034",
+      "exit_code": 0,
+      "stage": "Both explicit-target compilations and cuobjdump completed",
+      "artifacts_created": true
+    }
+  ],
+  "container_name": "okc-p063-offline",
+  "all_containers_removed": true,
+  "linux_machines": [],
+  "paid_cost": 0,
+  "successful_manifest_mtime_utc": "2026-10-26T22:41:13.997572+00:00",
+  "note": "mtime records local artifact creation, not a GPU runtime. Dependency/image caches retained locally for reproduction; temporary installed packages removed with container.",
+  "orbstack_restored_stopped": true,
+  "cleanup_status_note": "Final orbctl status returned Stopped after docker ps --all returned no containers and orbctl list returned an empty machine list."
+}

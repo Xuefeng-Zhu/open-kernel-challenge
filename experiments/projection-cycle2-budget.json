@@ -777,7 +777,7 @@
     "previous_best_preserved": true,
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P062 terminal raw-consumer diagnostic, 9+30 pass at 1.1365058657x; preserve selected P046 1.1841399409x. No active/uncertain Projection job. Exact raw/encoded compiler comparison is blocked by unavailable native diagnostic access; no Modal credential action.",
+  "current_phase": "P063 exact-source offline SM90 compilation complete on local CPU; no new official check or GPU execution. Raw 38 / encoded 120 registers, zero spills, same BF16 HMMA, decoded shared staging identified. Preserve P046. Offline layout repair is next gate; Modal expiry no longer blocks compiler inspection.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",

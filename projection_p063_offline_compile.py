@@ -124,6 +124,7 @@ def compile_payload(directory):
             (out/f"{label}.{ext}").write_bytes(data)
             hashes[ext] = sha(data)
         (out/f"{label}.ptxas.txt").write_text(capture.getvalue())
+        hashes["ptxas.txt"] = sha(capture.getvalue().encode())
         for flag,ext in (("--dump-resource-usage","resources.txt"),("--dump-sass","sass")):
             r = subprocess.run([str(tools["cuobjdump"]),flag,str(out/f"{label}.cubin")],
                                capture_output=True,text=True,check=True,timeout=30)
