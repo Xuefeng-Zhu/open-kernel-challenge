@@ -705,9 +705,9 @@
   },
   "last_verified_private_push": {
     "branch": "projection-pipeline-preflight",
-    "sha": "5cbe7c61c6f02ad1adbdcc03f568442fac65d00d",
+    "sha": "e006304cc1ea8681b1326d11a6370e1582934593",
     "visibility": "PRIVATE",
-    "verified_utc": "2026-10-26T00:49:22.038625+00:00"
+    "verified_utc": "2026-10-26T00:56:23.130610+00:00"
   },
   "parked_native_orientation": {
     "id": "P058",
@@ -720,5 +720,19 @@
     "official_job": null,
     "report": "experiments/058-native-column-orientation-local.md",
     "decision": "Park orientation change; prioritize P059 precision-safe split mask on unchanged descriptors"
+  },
+  "native_fp32_split_preparation": {
+    "id": "P059",
+    "source": "native_cublaslt_fp32_split_probe.py",
+    "source_sha256": "2f369143631f28a98695875a077ed2dc51795e87b2d5b26e103b08fe04b5cafd",
+    "native_body_sha256": "996ad67db33a2e22b10c525a234ddb65d6996ef7113eca3aa64e02521267e91f",
+    "status": "local-interface-tested-worker-preparation",
+    "tests": 12,
+    "native_compiled": false,
+    "gpu_executed": false,
+    "official_job": null,
+    "report": "experiments/059-native-fp32-split-policy-local.md",
+    "parent": "P057",
+    "preserved_selected": "P046"
   }
 }
