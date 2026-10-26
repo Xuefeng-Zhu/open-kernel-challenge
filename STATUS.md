@@ -1,3 +1,22 @@
+# Current: P067 baseline audit complete, P046 remains selected
+
+Working candidate: P046 `projection_pooler_column_batch2_hybrid.py`, source SHA
+`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`,
+official job `41ba778763a5433b`, 1.1841399409×; 9 prerequisite + 30 scored passes.
+P048 independently confirmed its three small-pooler gains. P039 is rollback.
+
+P065 passed correctness but regressed all three targets; not selected. P066/P067
+performed only local analysis and public primary-source reads, no new GPU/check.
+Saved evidence establishes vendor kernel sequences and selected launch resources,
+not exact P046 internal scheduling, instructions, occupancy or stalls. Pinned
+Quack comparison and dispatch traps are documented in experiment 067, with a
+bounded future profiling procedure under `docs/`. Source-bound audit reproduces
+30 official profiles and six P046 traces. Current Modal credential is expired;
+no renewal/service call attempted. No new job was admitted or left uncertain.
+See CONTINUE.md for the current handoff; all older headings below are historical.
+
+## Previous checkpoint (historical)
+
 # P057 interface passed, performance subset rejected; P046 preserved
 
 Source freeze `5542653`; app `ap-1P4IYSdup9e7ZBjImQj1ZM` completed. Host build

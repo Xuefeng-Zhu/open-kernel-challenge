@@ -1,3 +1,29 @@
+# P067 baseline and Quack audit complete; live profiling blocked
+
+P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
+No new GPU/official request, credential action or candidate change in P066/P067.
+Read `experiments/067-baseline-dispatch-and-quack-audit.md` and
+`docs/P067_BASELINE_PROFILING_PROCEDURE.md`. Reproduce the saved-data audit with
+`python -B projection_p067_audit.py --output results/projection-p067-audit.json`.
+It verifies 30 official profiles, six exact-source P046 traces and score arithmetic.
+
+Quack's pinned SM90 design differs from P052/P053 through explicit producer/MMA
+warpgroups, staged buffer ownership and persistent scheduling; P052 already had
+WGMMA overlap. Whether the vendor P046 already has these mechanisms is unknown.
+Quack's SM90 default is static persistent, not automatically dynamic/Stream-K.
+CUTLASS Stream-K class can select ordinary Split-K; DeepGEMM default BF16 can
+select cuBLASLt. Check actual dispatch and package versions before testing names.
+
+Existing Modal credential expired at 2026-10-26 03:39:46 UTC; no renewal attempted.
+No live inventory was queried, so old stopped-app receipts remain historical.
+No P046 vendor SASS/hardware counters are saved, and official status exposes no
+documented native-artifact export. The profiling document is a preregistered
+procedure, not an executed native collector. Do not repeat unchanged NCU timeouts.
+No further speculative performance candidate is ready. P065 rejected only its
+tested direct-load implementation; matched Gluon raw GPU timing remains missing.
+
+## Previous checkpoint (historical)
+
 # P065 completed and rejected; P046 selected
 
 Official off-board job `291edcd1469a414c` is terminal. 9 prerequisites + 30 scored

@@ -1,0 +1,83 @@
+{
+  "kind": "Read-only primary-source provenance; no third-party execution or installation",
+  "quack": {
+    "repository": "https://github.com/Dao-AILab/quack",
+    "commit": "77a750c0d9548d4a6e23c0f64062d61b3ea420ff",
+    "commit_date": "2026-10-15T16:30:52Z",
+    "license": "Apache-2.0",
+    "files": [
+      {
+        "path": "README.md",
+        "blob_sha1": "189d94f418517d0219cc5958122c10696c0a5ea8",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/README.md"
+      },
+      {
+        "path": "pyproject.toml",
+        "blob_sha1": "87f913ce6149da19950a751fcd1a1712b15cd10e",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/pyproject.toml"
+      },
+      {
+        "path": "LICENSE",
+        "blob_sha1": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/LICENSE"
+      },
+      {
+        "path": "quack/gemm_sm90.py",
+        "blob_sha1": "eee6a463679db414f64f31bce808c4d28fa9a922",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/gemm_sm90.py"
+      },
+      {
+        "path": "quack/gemm_interface.py",
+        "blob_sha1": "315684ab53c6085ab8c6fdb2d103879e21c674c3",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/gemm_interface.py"
+      },
+      {
+        "path": "quack/gemm.py",
+        "blob_sha1": "a5705024da7e02c7413a2d54bc563f318c70b4c9",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/gemm.py"
+      },
+      {
+        "path": "quack/gemm_base.py",
+        "blob_sha1": "fa59a08fc24984c4bc011d5bcd6f13c21c7a6d44",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/gemm_base.py"
+      },
+      {
+        "path": "quack/gemm_config.py",
+        "blob_sha1": "3156c2be4d7bd5b52bd5cd301aeb709b9e7829a3",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/gemm_config.py"
+      },
+      {
+        "path": "quack/tile_scheduler.py",
+        "blob_sha1": "dc1f6cb3d013b2d450a3b0dafb3f7df4a72138e7",
+        "url": "https://github.com/Dao-AILab/quack/blob/77a750c0d9548d4a6e23c0f64062d61b3ea420ff/quack/tile_scheduler.py"
+      }
+    ]
+  },
+  "cutlass": {
+    "commit": "91843b71d90737e0a9b86f7d9df213cff5a3526f",
+    "version": "v4.8.1",
+    "license": "BSD-3-Clause"
+  },
+  "deepgemm": {
+    "commit": "5081f8513af57e61696de4f4f04b0e707ffb503e",
+    "repository": "deepseek-ai/DeepGEMM",
+    "license_review": "No code reused; exact license must be retained if future reuse occurs"
+  },
+  "zipserv": {
+    "commit": "6f8a209bfe46b0905f90d61b0796e352147ff041",
+    "repository": "HPMLL/ZipServ_ASPLOS26",
+    "license": "Apache-2.0"
+  },
+  "unweight": {
+    "commit": "db0e6d3d4505cf71379f6b9b4567acf598bc186c",
+    "repository": "cloudflareresearch/unweight-kernels",
+    "license": "BSD-3-Clause",
+    "thunderkittens_submodule": "6fd51f22b5489c544e4f33fb1a21b3d39a79984a"
+  },
+  "execution": {
+    "gpu": false,
+    "official_check": false,
+    "third_party_code": false
+  },
+  "qualification": "Public source describes these revisions, not the official judge packages, our selected vendor executable, or achieved speedup."
+}

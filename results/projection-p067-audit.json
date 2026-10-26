@@ -1,0 +1,798 @@
+{
+  "kind": "P067 saved baseline evidence audit; no new execution",
+  "selected": {
+    "kind": "selected-receipt recalculation and conditional models, not new timing",
+    "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "receipt_sha256": "984c9e0dcaea6bc41fff9b12103eb9a13e137f3c42b3021035f2245255288850",
+    "job_id": "41ba778763a5433b",
+    "score": 1.1841399408925375,
+    "measured_loads": [
+      {
+        "load": "decode 1",
+        "total_one_of_each_us": 46.36165405823383,
+        "weighted_load_us": 2874.4225516104975,
+        "calibrated_us": {
+          "qkv_gate": 11.950748491914062,
+          "o": 6.8973552840336305,
+          "pooler": 18.310103472242716,
+          "unpooler": 4.073096341114692,
+          "router": 5.13035046892873
+        }
+      },
+      {
+        "load": "decode 16",
+        "total_one_of_each_us": 67.47543003760647,
+        "weighted_load_us": 4183.476662331601,
+        "calibrated_us": {
+          "qkv_gate": 14.83713422526362,
+          "o": 6.87088906468001,
+          "pooler": 18.042685545384167,
+          "unpooler": 18.345687172639767,
+          "router": 9.379034029638914
+        }
+      },
+      {
+        "load": "decode 32",
+        "total_one_of_each_us": 68.78537851983027,
+        "weighted_load_us": 4264.693468229477,
+        "calibrated_us": {
+          "qkv_gate": 15.257672389830963,
+          "o": 6.9452557538672774,
+          "pooler": 18.309500237135,
+          "unpooler": 18.62495055155297,
+          "router": 9.647999587444058
+        }
+      },
+      {
+        "load": "verify 1",
+        "total_one_of_each_us": 52.6070567635516,
+        "weighted_load_us": 3261.637519340199,
+        "calibrated_us": {
+          "qkv_gate": 14.04006072641958,
+          "o": 6.4568205791244235,
+          "pooler": 17.559286898252424,
+          "unpooler": 7.0978832579391495,
+          "router": 7.4530053018160185
+        }
+      },
+      {
+        "load": "verify 16",
+        "total_one_of_each_us": 79.86576372872604,
+        "weighted_load_us": 4951.677351181014,
+        "calibrated_us": {
+          "qkv_gate": 18.19320102617776,
+          "o": 7.575373123172978,
+          "pooler": 23.157940944547853,
+          "unpooler": 20.20800815783727,
+          "router": 10.731240476990173
+        }
+      },
+      {
+        "load": "verify 32",
+        "total_one_of_each_us": 93.09608801885155,
+        "weighted_load_us": 5771.957457168796,
+        "calibrated_us": {
+          "qkv_gate": 19.85973819810843,
+          "o": 9.033626177724505,
+          "pooler": 28.90973331553156,
+          "unpooler": 24.140202384163178,
+          "router": 11.152787943323874
+        }
+      }
+    ],
+    "mean_within_load_family_share": {
+      "pooler": 0.31046655994349287,
+      "qkv_gate": 0.23458087406188363,
+      "unpooler": 0.21296037978664498,
+      "o": 0.11103240159766962,
+      "router": 0.13095978461030888
+    },
+    "models": {
+      "three_families_all": {
+        "case_count": 18,
+        "load_fractions": {
+          "decode 1": 0.7405678033433701,
+          "decode 16": 0.7591727376133467,
+          "decode 32": 0.7587676960078423,
+          "verify 1": 0.7355901140134159,
+          "verify 16": 0.7707827140757856,
+          "verify 32": 0.7831658176983686
+        },
+        "mean_share": 0.7580078137920215,
+        "conditional_score_gain": {
+          "0.1": 0.08201948846568063,
+          "0.2": 0.17870022977070343,
+          "0.3": 0.29436086367816916,
+          "0.5": 0.6104557900663314
+        },
+        "uniform_cut_for_5pct_score": 0.0628205838853817
+      },
+      "three_families_m_gt1": {
+        "case_count": 15,
+        "load_fractions": {
+          "decode 1": 0.0,
+          "decode 16": 0.7591727376133467,
+          "decode 32": 0.7587676960078423,
+          "verify 1": 0.7355901140134159,
+          "verify 16": 0.7707827140757856,
+          "verify 32": 0.7831658176983686
+        },
+        "mean_share": 0.6345798465681265,
+        "conditional_score_gain": {
+          "0.1": 0.0682325544403668,
+          "0.2": 0.1476258419783163,
+          "0.3": 0.24127913790102484,
+          "0.5": 0.49098385173102277
+        },
+        "uniform_cut_for_5pct_score": 0.07467734268180645
+      },
+      "observed_vendor_split_paths": {
+        "case_count": 6,
+        "load_fractions": {
+          "decode 1": 0.0,
+          "decode 16": 0.21988943556186827,
+          "decode 32": 0.22181563463276283,
+          "verify 1": 0.4018081467542582,
+          "verify 16": 0.5177580485072414,
+          "verify 32": 0.0
+        },
+        "mean_share": 0.22687854424268847,
+        "conditional_score_gain": {
+          "0.1": 0.023409849625902535,
+          "0.2": 0.04837373369910969,
+          "0.3": 0.07507842852782742,
+          "0.5": 0.13463985411536994
+        },
+        "uniform_cut_for_5pct_score": 0.20628987046551286
+      },
+      "qkv128_only": {
+        "case_count": 1,
+        "load_fractions": {
+          "decode 1": 0.0,
+          "decode 16": 0.0,
+          "decode 32": 0.0,
+          "verify 1": 0.0,
+          "verify 16": 0.22779724598857184,
+          "verify 32": 0.0
+        },
+        "mean_share": 0.037966207664761976,
+        "conditional_score_gain": {
+          "0.1": 0.00384791618405278,
+          "0.2": 0.0078019311562045335,
+          "0.3": 0.011867609665648482,
+          "0.5": 0.020358448493049464
+        },
+        "uniform_cut_for_5pct_score": null
+      }
+    },
+    "no_gpu_or_official_check": true
+  },
+  "source_and_receipt_hashes": {
+    "results/remote-P2-09-pooler-column-batch2-hybrid.json": "984c9e0dcaea6bc41fff9b12103eb9a13e137f3c42b3021035f2245255288850",
+    "results/remote-P049-screen/timing.json": "6e78fffd4dfdafe53eb7b5d63102bbeffdf97d84ccab5956773944a7b60fa512",
+    "results/remote-P053-phase/timing.json": "f6f52fd366d74e2e912a6ea761055b2a1d2f3073b90d3d4cb27230a140a1da95",
+    "results/remote-P053-phase/activity.json": "e5adaabc3ba123dc250aa5dd3c3696a808959e2c44e2931be4a6c27380f5aa2b",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e"
+  },
+  "official_evaluator": {
+    "code_sha256": "986ed3ebb096eab83d16797609f4c0e7895248d6bce33252d25dd306cbe5d018",
+    "files": {
+      "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+      "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+      "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+      "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+      "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+      "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+      "problems/muse_bf16_proj/baseline.py": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574",
+      "problems/muse_bf16_proj/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+      "problems/muse_bf16_proj/task.yml": "18e9da6357144b0a1348434a18bd2d1938b1948d9f2130876f6b6706588470c9"
+    },
+    "image_digest": "sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+  },
+  "official_profiles": [
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "decode 1",
+        "m": 1,
+        "seed": 2121668273310171956,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\n_gemv                                                              9.6 \u00b5s 100.0%      1\ntotal                                                              9.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "decode 1",
+        "m": 1,
+        "seed": 2121807156490970157,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT                             4.6 \u00b5s 100.0%      1\ntotal                                                              4.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "decode 1",
+        "m": 1,
+        "seed": 2121946039671768359,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\n_gemv                                                             17.9 \u00b5s 100.0%      1\ntotal                                                             17.9 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "decode 1",
+        "m": 1,
+        "seed": 2122084922852566562,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\n_gemv                                                              3.1 \u00b5s 100.0%      1\ntotal                                                              3.1 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "decode 1",
+        "m": 1,
+        "seed": 2122223806033364766,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\n_gemv                                                              3.7 \u00b5s 100.0%      1\ntotal                                                              3.7 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "decode 16",
+        "m": 16,
+        "seed": 2122362689214162971,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x16_64x16_4x1_v_bz_splitK_TNT                     8.3 \u00b5s  83.9%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       1.6 \u00b5s  16.1%      1\ntotal                                                              9.9 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "decode 16",
+        "m": 16,
+        "seed": 2122501572394961177,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT                            4.5 \u00b5s 100.0%      1\ntotal                                                              4.5 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "decode 16",
+        "m": 16,
+        "seed": 2122640455575759384,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_1x2_h_bz_NNT                            18.1 \u00b5s 100.0%      1\ntotal                                                             18.1 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "decode 16",
+        "m": 16,
+        "seed": 2122779338756557592,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT                           18.3 \u00b5s 100.0%      1\ntotal                                                             18.3 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "decode 16",
+        "m": 16,
+        "seed": 2122918221937355801,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tss_64x16_64x16_4x1_v_bz_splitK_NNT                     4.1 \u00b5s  55.6%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, fl...       1.8 \u00b5s  24.8%      1\nvoid at::native::elementwise_kernel<128, 2, at::native::g...       1.4 \u00b5s  19.6%      1\ntotal                                                              7.4 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "decode 32",
+        "m": 32,
+        "seed": 2123057105118154011,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x32_64x16_4x1_v_bz_splitK_TNT                    10.3 \u00b5s  83.6%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       2.0 \u00b5s  16.4%      1\ntotal                                                             12.3 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "decode 32",
+        "m": 32,
+        "seed": 2123195988298952222,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT                            5.2 \u00b5s 100.0%      1\ntotal                                                              5.2 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "decode 32",
+        "m": 32,
+        "seed": 2123334871479750434,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x16_64x16_1x2_h_bz_NNT                           18.5 \u00b5s 100.0%      1\ntotal                                                             18.5 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "decode 32",
+        "m": 32,
+        "seed": 2123473754660548647,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x32_64x16_2x1_v_bz_TNT                           18.6 \u00b5s 100.0%      1\ntotal                                                             18.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "decode 32",
+        "m": 32,
+        "seed": 2123612637841346861,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tss_64x32_64x16_4x1_v_bz_splitK_NNT                     4.2 \u00b5s  55.7%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, fl...       1.9 \u00b5s  24.5%      1\nvoid at::native::elementwise_kernel<128, 2, at::native::g...       1.5 \u00b5s  19.8%      1\ntotal                                                              7.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "verify 1",
+        "m": 8,
+        "seed": 2123751521022145076,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT                     9.6 \u00b5s  85.0%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       1.7 \u00b5s  15.0%      1\ntotal                                                             11.3 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "verify 1",
+        "m": 8,
+        "seed": 2123890404202943292,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_2x1_v_bz_TNT                             4.6 \u00b5s 100.0%      1\ntotal                                                              4.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "verify 1",
+        "m": 8,
+        "seed": 2124029287383741509,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT                            17.5 \u00b5s 100.0%      1\ntotal                                                             17.5 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "verify 1",
+        "m": 8,
+        "seed": 2124168170564539727,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_4x1_v_bz_splitK_TNT                      4.0 \u00b5s  71.6%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       1.6 \u00b5s  28.4%      1\ntotal                                                              5.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "verify 1",
+        "m": 8,
+        "seed": 2124307053745337946,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\n_partial                                                           3.3 \u00b5s  70.1%      1\n_reduce                                                            1.4 \u00b5s  29.9%      1\ntotal                                                              4.7 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "verify 16",
+        "m": 128,
+        "seed": 2124445936926136166,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN                    13.5 \u00b5s  81.3%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       3.1 \u00b5s  18.7%      1\ntotal                                                             16.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "verify 16",
+        "m": 128,
+        "seed": 2124584820106934387,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT                            6.3 \u00b5s 100.0%      1\ntotal                                                              6.3 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "verify 16",
+        "m": 128,
+        "seed": 2124723703287732609,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT                    20.9 \u00b5s  87.5%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       3.0 \u00b5s  12.5%      1\ntotal                                                             23.9 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "verify 16",
+        "m": 128,
+        "seed": 2124862586468530832,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT                           19.8 \u00b5s 100.0%      1\ntotal                                                             19.8 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "verify 16",
+        "m": 128,
+        "seed": 2125001469649329056,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tss_64x32_64x16_1x2_h_bz_splitK_NNT                     5.3 \u00b5s  63.0%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, fl...       1.6 \u00b5s  18.9%      1\nvoid at::native::elementwise_kernel<128, 2, at::native::g...       1.5 \u00b5s  18.1%      1\ntotal                                                              8.5 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "qkv_gate",
+        "load": "verify 32",
+        "m": 256,
+        "seed": 2125140352830127281,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_96x64_64x10_2x4_h_bz_TNN                           19.6 \u00b5s 100.0%      1\ntotal                                                             19.6 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "o",
+        "load": "verify 32",
+        "m": 256,
+        "seed": 2125279236010925507,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT                           8.2 \u00b5s 100.0%      1\ntotal                                                              8.2 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "pooler",
+        "load": "verify 32",
+        "m": 256,
+        "seed": 2125418119191723734,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_NNT                           30.4 \u00b5s 100.0%      1\ntotal                                                             30.4 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "unpooler",
+        "load": "verify 32",
+        "m": 256,
+        "seed": 2125557002372521962,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNT                          25.5 \u00b5s 100.0%      1\ntotal                                                             25.5 \u00b5s"
+    },
+    {
+      "case": {
+        "layer": "router",
+        "load": "verify 32",
+        "m": 256,
+        "seed": 2125695885553320191,
+        "weight": 62
+      },
+      "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tss_64x64_64x13_2x1_v_bz_splitK_NNT                     6.3 \u00b5s  64.1%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, fl...       1.9 \u00b5s  19.4%      1\nvoid at::native::elementwise_kernel<128, 2, at::native::g...       1.6 \u00b5s  16.5%      1\ntotal                                                              9.9 \u00b5s"
+    }
+  ],
+  "p049_actual_p046_activity": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "activity": {
+        "available": true,
+        "cuda_events": [
+          {
+            "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+            "duration_us": 14.527000000000044,
+            "kind": "kernel_or_other"
+          },
+          {
+            "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "duration_us": 3.326999999999998,
+            "kind": "kernel_or_other"
+          }
+        ],
+        "copy_events": [],
+        "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+        "correctness_passed": true
+      }
+    },
+    {
+      "layer": "unpooler",
+      "m": 16,
+      "activity": {
+        "available": true,
+        "cuda_events": [
+          {
+            "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+            "duration_us": 17.951999999999998,
+            "kind": "kernel_or_other"
+          }
+        ],
+        "copy_events": [],
+        "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+        "correctness_passed": true
+      }
+    }
+  ],
+  "p053_actual_p046_traces": [
+    {
+      "m": 8,
+      "repeat": 0,
+      "published_trace_sha256": "64999f7500307486fb279c55a8a694e4ee7605f5f0e9d11d6b3d4f2ae72fe1a5",
+      "raw_trace_sha256": "2dae990ff6d7c20a5b40b17a6669da02b38f80b49be60f9ed321210acbd9d96e",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "duration_us": 17.551,
+          "stream": 7,
+          "grid": [
+            4,
+            16,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164308,
+          "grid_blocks_divided_by_sms": 0.48484848484848486
+        }
+      ],
+      "inter_kernel_gaps_us": [],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    },
+    {
+      "m": 8,
+      "repeat": 1,
+      "published_trace_sha256": "edef768660d6aa8554900f7ed3c030868a8b8cef64dc0840785125c37aadd03a",
+      "raw_trace_sha256": "e5b6b64d9d70695eb2f6ac464e856c82c238cdba6b2e81e0da309a5fd2e1ea52",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "duration_us": 17.152,
+          "stream": 7,
+          "grid": [
+            4,
+            16,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164308,
+          "grid_blocks_divided_by_sms": 0.48484848484848486
+        }
+      ],
+      "inter_kernel_gaps_us": [],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    },
+    {
+      "m": 8,
+      "repeat": 2,
+      "published_trace_sha256": "e63031ad5bddb70d6e93095e3fa0ed894cffd4192b818ab3d796b9ea6dd63414",
+      "raw_trace_sha256": "6bb3fb1363d397133aee2813e9f20a7afe2451aef36feded7a0cefc6fed3adbe",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "duration_us": 17.394,
+          "stream": 7,
+          "grid": [
+            4,
+            16,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164308,
+          "grid_blocks_divided_by_sms": 0.48484848484848486
+        }
+      ],
+      "inter_kernel_gaps_us": [],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    },
+    {
+      "m": 7,
+      "repeat": 0,
+      "published_trace_sha256": "136fda27bd60360f8c745e729397aa13ca729553c49712edd7c2b02e025ace5e",
+      "raw_trace_sha256": "1b2833fe51fec32a497b8a464dfb299829873d9c49d90bf528aedaad012f61a5",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "duration_us": 18.278,
+          "stream": 7,
+          "grid": [
+            2,
+            64,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164292,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        },
+        {
+          "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "duration_us": 2.261,
+          "stream": 7,
+          "grid": [
+            128,
+            1,
+            1
+          ],
+          "block": [
+            32,
+            16,
+            1
+          ],
+          "registers_per_thread": 32,
+          "reported_shared_bytes": 0,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        }
+      ],
+      "inter_kernel_gaps_us": [
+        0.3189238281250013
+      ],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    },
+    {
+      "m": 7,
+      "repeat": 1,
+      "published_trace_sha256": "f90eac219d2872dc19c69ee9d1b70d78b89e864ce32f87ee8f6c3e1706652592",
+      "raw_trace_sha256": "23e72034c0363426dc5e9726d2ec905c267c40d44d2505dfe12792f43939330a",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "duration_us": 17.557,
+          "stream": 7,
+          "grid": [
+            2,
+            64,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164292,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        },
+        {
+          "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "duration_us": 2.194,
+          "stream": 7,
+          "grid": [
+            128,
+            1,
+            1
+          ],
+          "block": [
+            32,
+            16,
+            1
+          ],
+          "registers_per_thread": 32,
+          "reported_shared_bytes": 0,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        }
+      ],
+      "inter_kernel_gaps_us": [
+        0.3180000000000014
+      ],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    },
+    {
+      "m": 7,
+      "repeat": 2,
+      "published_trace_sha256": "08a468466a4565d13cb1c0ba0f687f3bc9d8b0f5589236c4e759bf84ad791f52",
+      "raw_trace_sha256": "16bc49b5f3cd92781a26efc153f2fcce9633521340e6bdce4363de2b4983b4ab",
+      "kernels": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "duration_us": 17.892,
+          "stream": 7,
+          "grid": [
+            2,
+            64,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "registers_per_thread": 168,
+          "reported_shared_bytes": 164292,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        },
+        {
+          "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "duration_us": 2.208,
+          "stream": 7,
+          "grid": [
+            128,
+            1,
+            1
+          ],
+          "block": [
+            32,
+            16,
+            1
+          ],
+          "registers_per_thread": 32,
+          "reported_shared_bytes": 0,
+          "grid_blocks_divided_by_sms": 0.9696969696969697
+        }
+      ],
+      "inter_kernel_gaps_us": [
+        0.32015820312500054
+      ],
+      "scope": "Instrumented intervals and static launch metadata; no counters or achieved occupancy"
+    }
+  ],
+  "historical_modal_environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "gpu": "NVIDIA H200",
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "unknowns": [
+    "Exact P046 vendor tactic and instruction binary",
+    "Per-CTA tile/K work assignment and persistence",
+    "Internal buffer ownership and synchronization",
+    "Achieved occupancy, HBM/L2 bytes and stalls",
+    "Pinned Quack dependencies available in exact official image"
+  ],
+  "live_execution": {
+    "attempted": false,
+    "new_jobs": 0,
+    "credential_actions": 0,
+    "blocker": "Existing Modal CLI credential expired; no renewal authorized in this audit. Official status/profile interface has no documented native artifact/counter export."
+  }
+}
