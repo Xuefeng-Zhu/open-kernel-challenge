@@ -1,0 +1,145 @@
+{
+  "manifest": {
+    "sources": {
+      "projection_p065_explicit_operand.py": "79fc79207f097ae016c907699c828820fc91c27c9d19c1fe5142b44e8188fd0e"
+    },
+    "kernel": "_pooler_codec_partial",
+    "body_ast_sha256": "d3eb5fbd0f6a888ee24c96d35e3df7f1352a1e09a771fe243813de44b6deb573",
+    "module_sha256": "75e6055a708fdf3ab745973b62638a07e799980ce62ef7b99f36326a624dfa63",
+    "target": [
+      "cuda",
+      90,
+      32
+    ],
+    "pointers": {
+      "X": "*bf16",
+      "W": "*bf16",
+      "SM": "*u8",
+      "DELTA": "*u8",
+      "BASE": "*u8",
+      "ESC_IDX": "*i32",
+      "ESC_EXP": "*u8",
+      "P": "*fp32"
+    },
+    "constants": {
+      "M": 16,
+      "N": 4096,
+      "K": 8192,
+      "WN": 4096,
+      "KP": 8192,
+      "S": 8,
+      "BM": 16,
+      "BN": 64,
+      "BK": 64
+    },
+    "options": {
+      "num_warps": 4,
+      "num_stages": 2
+    },
+    "alignment_bytes": 16,
+    "variants": [
+      false,
+      true
+    ],
+    "scope": "Offline code generation only; no GPU execution, correctness, timing or judge-artifact identity claim."
+  },
+  "python": "3.12.15",
+  "host_machine": "aarch64",
+  "triton": "3.8.0",
+  "versions": {
+    "ptxas": "ptxas: NVIDIA (R) Ptx optimizing assembler\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:20:53_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0\n",
+    "cuobjdump": "cuobjdump: NVIDIA (R) fat binary listing tool\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Nov__7_07:24:07_PM_PST_2025\nCuda compilation tools, release 13.1, V13.1.80\nBuild cuda_13.1.r13.1/compiler.36836380_0\n"
+  },
+  "tool_sha256": {
+    "ptxas": "d07db8b5fd19692ad6fc9643ad3449cc27190fad1f1ad6c6b8338fdec95ea72e",
+    "cuobjdump": "892ae8d0a7bd7cee42db000bbc9be72681952e73a2b2921d1ba3de51b4c472f4"
+  },
+  "gpu_execution": false,
+  "benchmark": false,
+  "variants": [
+    {
+      "label": "raw",
+      "constants": {
+        "M": 16,
+        "N": 4096,
+        "K": 8192,
+        "WN": 4096,
+        "KP": 8192,
+        "S": 8,
+        "BM": 16,
+        "BN": 64,
+        "BK": 64,
+        "COMPRESSED": false
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "metadata": {
+        "name": "_pooler_codec_partial",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 4096,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "hashes": {
+        "ttgir": "08e0a5daa57b57e097023bb859093ef1134da9a3d4e1acbcf49b070febf75917",
+        "llir": "91e4f284e6c76db22a419dddd0f36082f4caa263661a0ed482cf3952603df8d9",
+        "ptx": "7a550e026320f1253b20efbe4987f8f075c3b0a726f4a58658fcb3c3e71d380b",
+        "cubin": "a68953c41b34bb6d33b3fce10a804414e28dafacfc5a5a21c5a640cc9d3649f9",
+        "ptxas.txt": "99321135ae000c59a3ed9b003d719f1f0d4c5c5105d9deeffd8e2baf3f5e53b6",
+        "resources.txt": "8a170b21c51ddc2f53483c1e64276f256c1a89a15d2ff5fd33ab4d69b946f64a",
+        "sass": "896bb317a3293935c662c7c3e2ac4148536a1a24dadd2eeaf1075cfcf66b9f04"
+      },
+      "compile_and_disasm_wall_seconds": 0.856583999999998,
+      "resource_source": "Bundled ptxas log and cuobjdump static cubin metadata, not a device-loaded kernel."
+    },
+    {
+      "label": "encoded",
+      "constants": {
+        "M": 16,
+        "N": 4096,
+        "K": 8192,
+        "WN": 4096,
+        "KP": 8192,
+        "S": 8,
+        "BM": 16,
+        "BN": 64,
+        "BK": 64,
+        "COMPRESSED": true
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 2
+      },
+      "metadata": {
+        "name": "_pooler_codec_partial",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 4096,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "hashes": {
+        "ttgir": "15c04cddbdc600837551f9efa150cbc518c9f9d0754596a32dad82a1bb345256",
+        "llir": "afc0a44a3e7e7e2e7756ea1c8fd369c0b4b1ed283a05f7c493d8d1d129f84e40",
+        "ptx": "2b796558aab60ab8296ee5a7aff17790531fe84de62fa8c2f9291096357201ca",
+        "cubin": "73e713305b005fa9fbdc1a32409bc72be28fc7b64ff0aafd1bd86362127229ce",
+        "ptxas.txt": "9cdce009b4366f98e97c78dd28a75f046dcf6635fc6cd932818d01d714bb7245",
+        "resources.txt": "71eceee4dba9b42bb3545ae1ab28d223116f14d2c78b5cd993572668dc059995",
+        "sass": "1848f392d9e2f477ff82a8b51d8a0d6ca7da218f4c71bacd1b82519eeac88663"
+      },
+      "compile_and_disasm_wall_seconds": 0.49765800000000127,
+      "resource_source": "Bundled ptxas log and cuobjdump static cubin metadata, not a device-loaded kernel."
+    }
+  ],
+  "source_language": "Language.GLUON",
+  "source_extension": "ttgir"
+}

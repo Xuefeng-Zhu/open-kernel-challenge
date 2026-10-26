@@ -121,6 +121,29 @@
         "optimistic_model_only_raw_ratio": 1.303348748235759,
         "preserve_selected": true
       }
+    },
+    "P2-11-p065-explicit-consumer": {
+      "candidate": "candidates/projection_pooler_codec_explicit.py",
+      "cpu_report": "results/router-p065-explicit-cpu.json",
+      "hypothesis": "Explicit kw2 consumer layout removes decoded BF16 shared roundtrip; test whether savings offset direct-load and decode costs versus selected P046. Matched raw native timing is unavailable.",
+      "control_job_id": "41ba778763a5433b",
+      "source_sha256": "9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff",
+      "native_gate": "Original official correctness and actual codec dispatch first; reject performance candidate if targets materially slower. Promotion requires all three target normalized times improve, geometric target improvement >=5%, whole score >=1%, no >5% unchanged-control regression unexplained; one cross-run point alone insufficient.",
+      "target_cases": [
+        {
+          "layer": "pooler",
+          "m": 8
+        },
+        {
+          "layer": "pooler",
+          "m": 16
+        },
+        {
+          "layer": "pooler",
+          "m": 32
+        }
+      ],
+      "compiler_gate_passed": true
     }
   },
   "requests": [
@@ -777,7 +800,7 @@
     "previous_best_preserved": true,
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P064 local CPU SM90 compile gate failed: exact decoding/20 preflight checks pass; raw instructions identical, encoded registers 120 to 80 but decoded shared staging and 18688-byte request remain. No GPU or official check. Preserve P046.",
+  "current_phase": "P065 explicit consumer compile gate passed; standalone source and original local oracle preflight, no GPU admission yet. P046 preserved.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",

@@ -14,6 +14,17 @@ class NativeCompilationPolicyTests(unittest.TestCase):
                      "def prepare(weights):\n    return load_inline(name='probe', cpp_sources='source')"):
             self.assertEqual(self.errors("from torch.utils.cpp_extension import load_inline\n" + body), [])
 
+    def test_reviewed_gluon_api_only(self):
+        allowed = """import triton.experimental.gluon as gluon
+import triton.experimental.gluon.language as gl
+from triton.experimental.gluon.language import DotOperandLayout, NVMMADistributedLayout, BlockedLayout, SliceLayout
+from triton.experimental.gluon.language.nvidia.ampere import mma_v2
+"""
+        self.assertEqual(self.errors(allowed), [])
+        for source in ("import triton.runtime.driver", "from triton.experimental.gluon._runtime import GluonASTSource",
+                       "from triton.experimental.gluon.language import *", "import subprocess"):
+            self.assertTrue(self.errors(source), source)
+
     def test_timed_compile_stays_rejected(self):
         for body in ("def kernel_fn(data):\n    return load_inline()",
                      "def kernel_fn(data):\n    def prepare():\n        return load_inline()\n    return prepare()"):

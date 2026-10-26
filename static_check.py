@@ -14,6 +14,8 @@ def local_policy_errors(tree):
     compilation exception. Keep that exception narrow: exact import and a
     direct call at module initialization or in prepare, never kernel_fn.
     This does not authorize subprocess imports, downloads or harness access.
+    P065 adds only reviewed public Gluon layout/MMA imports from the pinned
+    Triton package; it does not allow runtime internals or arbitrary submodules.
     Ordinary non-tensor diagnostics are allowed outside kernel_fn; AST alone
     cannot establish whether a value hides a synchronization.
     """
@@ -31,12 +33,21 @@ def local_policy_errors(tree):
         visit_AsyncFunctionDef = visit_FunctionDef
 
         def visit_Import(self, node):
-            if not all(n.name in {"torch", "triton", "triton.language"} for n in node.names):
+            if not all(n.name in {"torch", "triton", "triton.language",
+                                       "triton.experimental.gluon", "triton.experimental.gluon.language"} for n in node.names):
                 errors.append("Unexpected import")
 
         def visit_ImportFrom(self, node):
             imports = [(n.name, n.asname) for n in node.names]
             allowed = node.module == "typing" or (
+                node.module == "triton.experimental.gluon.language"
+                and bool(imports) and all(name in {"DotOperandLayout", "NVMMADistributedLayout",
+                                                 "BlockedLayout", "SliceLayout"} and alias is None
+                                         for name, alias in imports)
+            ) or (
+                node.module == "triton.experimental.gluon.language.nvidia.ampere"
+                and imports == [("mma_v2", None)]
+            ) or (
                 node.module == "triton.tools.tensor_descriptor" and imports == [("TensorDescriptor", None)]
             ) or (
                 node.module == "torch.utils.cpp_extension" and imports == [("load_inline", None)]

@@ -83,3 +83,62 @@ finite full raw/encoded models are oracle-checked across M2/7/17/32/33 and K
 1/65/257/513, with partial N tiles and empty splits. Native correctness remains
 unverified. Independent review caught the wrong offline AST wrapper before any
 execution; the helper now selects Gluon explicitly and records language/extension.
+
+## Offline outcome and standalone admission
+
+Frozen kernel source commit `aa920eb`. Both specializations compile successfully
+using `GluonASTSource`, pinned Triton 3.8.0, explicit SM90, bundled ptxas 12.9.86.
+CPU-only container `okc-p065-offline` exited 0, was removed, and the previously
+stopped local engine was restored stopped. No GPU execution or cloud spend.
+
+| Static compiled evidence | Raw | Encoded |
+|---|---:|---:|
+| Registers/thread | 28 | 116 |
+| Stack/spill store/spill load bytes | 0/0/0 | 0/0/0 |
+| Requested shared bytes | 4096 | 4096 |
+| SASS instruction sites | 192 | 896 |
+| BF16 HMMA sites | 8 | 8 |
+| PRMT sites | 0 | 146 |
+
+Encoded TTGIR reconstruction stays in operand-1 kw2 and feeds `tt.dot` directly.
+There is no decoded local allocation/reload. The one remaining layout conversion
+is FP32 accumulator output handling; SASS shared stores/loads are after the loop.
+Both variants lack the previous automatic async-copy pipeline. Thus the capability
+gate passes, but native correctness and performance are unknown. These counts
+are static code, not measured instructions, memory traffic, occupancy or stalls.
+Raw artifacts and byte hashes are in `evidence/p065`; cubins stay local with hashes.
+
+The standalone encoded file is `candidates/projection_pooler_codec_explicit.py`;
+matched raw is `candidates/projection_pooler_codec_explicit_raw.py`. Kernel AST
+is exactly the frozen compiler source. All other functions match P043, with only
+the required Gluon imports added. An independent reviewer found no admission
+blocker. P046 differs on the three intended scored pooler targets; all other
+paths preserve the earlier parent. Static profitability fallback is unchanged.
+
+Our local import checker predates Gluon. Its initial four import rejections were
+local policy findings, not official validator or tool permission denials. It now
+allows only the reviewed public Gluon modules/layouts/mma_v2. Runtime internals,
+wildcard imports, subprocesses and other restrictions remain rejected. Official
+runner package compatibility is still a native gate; no arbitrary import bypass.
+
+Commands (project Python environment):
+```sh
+python -B -m unittest tests.test_projection_p065_explicit tests.test_projection_p065_standalone tests.test_native_compilation_policy -v
+python -B -m unittest tests.test_p065_compiler_gate -v
+python -B static_check.py --submission candidates/projection_pooler_codec_explicit.py
+python -B check.py --submission candidates/projection_pooler_codec_explicit.py --suite all --seed-offset 65065 --weight-seed 65065 --output results/router-p065-explicit-cpu.json
+```
+17 source/CPU/policy tests and 3 artifact tests pass. Full oracle result is recorded
+in the linked JSON once complete. CPU checks never establish physical lane mapping,
+tensor-core numerics, native CUDA graphs or timing.
+
+The single encoded official check is a bounded falsifier against actual P046,
+not a predicted win. Required: original correctness plus profile-confirmed codec
+route. A promotion screen requires all three target normalized latencies improve,
+geometric target improvement >=5%, whole score >=1%, and no unexplained >5%
+control regression. Passing these screens still requires uncertainty/reproduction
+assessment. A failing candidate is retained as evidence. Native matched-Gluon-raw
+cost, dedicated same-address ABA, concurrent calls and exact judge codegen remain
+unverified by this one check.
+
+Standalone source SHA256: `9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff`.

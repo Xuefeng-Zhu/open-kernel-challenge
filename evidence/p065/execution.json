@@ -1,0 +1,12 @@
+{
+  "observed_utc": "2026-10-26T23:18:50.626005+00:00",
+  "container": "okc-p065-offline",
+  "exit_code": 0,
+  "removed": true,
+  "engine_restored_stopped": true,
+  "gpu_execution": false,
+  "cloud_cost": 0,
+  "scope": "Local Linux ARM64 CPU-only explicit SM90 code generation and disassembly; no kernel load or execution.",
+  "source_commit": "aa920eb",
+  "standalone_sha256": "9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff"
+}
