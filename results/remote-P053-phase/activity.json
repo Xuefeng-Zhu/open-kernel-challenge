@@ -1,0 +1,719 @@
+{
+  "cases": [
+    {
+      "capture": {
+        "control_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            8,
+            4096
+          ]
+        },
+        "p046_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            8,
+            4096
+          ]
+        },
+        "weight_first_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            8,
+            4096
+          ]
+        }
+      },
+      "correctness": [],
+      "m": 8,
+      "p046_route": "column_batch2",
+      "passed": true,
+      "series": {
+        "partial": {
+          "samples": [],
+          "warmup": []
+        },
+        "selected_partial": {
+          "samples": [],
+          "warmup": []
+        },
+        "selected_whole": {
+          "samples": [],
+          "warmup": []
+        },
+        "whole": {
+          "samples": [],
+          "warmup": []
+        }
+      }
+    },
+    {
+      "capture": {
+        "control_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            7,
+            4096
+          ]
+        },
+        "p046_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            7,
+            4096
+          ]
+        },
+        "weight_first_whole": {
+          "dtype": "torch.bfloat16",
+          "output_shape": [
+            7,
+            4096
+          ]
+        }
+      },
+      "correctness": [],
+      "m": 7,
+      "p046_route": "pretransposed_mm",
+      "passed": true,
+      "series": {
+        "partial": {
+          "samples": [],
+          "warmup": []
+        },
+        "selected_partial": {
+          "samples": [],
+          "warmup": []
+        },
+        "selected_whole": {
+          "samples": [],
+          "warmup": []
+        },
+        "whole": {
+          "samples": [],
+          "warmup": []
+        }
+      }
+    }
+  ],
+  "comparisons": {
+    "partial": [
+      "control_partial",
+      "weight_first_partial"
+    ],
+    "selected_partial": [
+      "p046_whole",
+      "weight_first_partial"
+    ],
+    "selected_whole": [
+      "p046_whole",
+      "weight_first_whole"
+    ],
+    "whole": [
+      "control_whole",
+      "weight_first_whole"
+    ]
+  },
+  "complete": true,
+  "environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "gpu": "NVIDIA H200",
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "event_initialization": "Timing uses the frozen initialized event pair; no event-median subtraction",
+  "inherited_p052": {
+    "correctness_receipt_sha256": "057400331f717576d5260c7c88bab5430dad679fa5e2f6cab3c3857b3434313e",
+    "full_tail_coverage": "Inherited P052 five-case primitive execution only; not rerun by P053",
+    "path": "results/remote-P052-screen/timing.json",
+    "prior_original_oracle_checks": 390,
+    "prior_screen_passed": false,
+    "sha256": "2ae054ec40d6f39a119dfe0c97fd330dfde09e315ba51d45b0cffb6cc71cd30f"
+  },
+  "kind": "P053 fixed-math phase-cost diagnostic",
+  "limitations": [
+    "Partial-only includes compiler layout conversion and FP32 scratch stores; not pure mainloop time",
+    "Partial-only is incomplete math; original reducer is executed solely for untimed oracle validation",
+    "No subtraction of event medians to estimate reducer cost; activity intervals are separately instrumented",
+    "Primitive full/tail coverage inherited from P052; current validation covers only M8/M7",
+    "No official score, promotion, NCU, hardware counters or achieved-overlap claim",
+    "Untimed graph-capture setup calls not individually checked; concurrency not tested"
+  ],
+  "limits": {
+    "external_seconds": 105.0,
+    "internal_seconds": 90.0
+  },
+  "mode": "activity",
+  "oracle_checks": 18,
+  "preparation": {
+    "actual_p046_prepare_calls": 1,
+    "scope": "Unmodified official weights and P046.prepare; every original/prepared tensor frozen",
+    "weight_keys": [
+      "qkv_gate",
+      "o",
+      "pooler",
+      "unpooler",
+      "router"
+    ]
+  },
+  "profiles": [
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.60791015625
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 23.001,
+          "end_us": 2115526819235.363,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115526819212.362
+        },
+        {
+          "duration_us": 1.791,
+          "end_us": 2115526819237.762,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115526819235.971
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "control",
+      "trace_file": "activity.pooler_m8.control.repeat0.trace.json",
+      "trace_sha256": "d4c049f3700a817ea1a6b98d195cb262a196172fa893f2eb2184195ac35aa26a"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.646728515625
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 21.789,
+          "end_us": 2115528036671.4822,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115528036649.693
+        },
+        {
+          "duration_us": 1.814,
+          "end_us": 2115528036673.9429,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528036672.129
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "control",
+      "trace_file": "activity.pooler_m8.control.repeat1.trace.json",
+      "trace_sha256": "3e262e0a0295630a34ddd0fc49b169dd51448bf79ae5f31657703d47cb01e8dd"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.639892578125
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 21.153,
+          "end_us": 2115528066586.0562,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115528066564.903
+        },
+        {
+          "duration_us": 1.824,
+          "end_us": 2115528066588.52,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528066586.696
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "control",
+      "trace_file": "activity.pooler_m8.control.repeat2.trace.json",
+      "trace_sha256": "7a694f3557968ecb6a9d2b07f73364cdba657956e00ce3d3ec8551cd436169c3"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.575927734375
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 20.064,
+          "end_us": 2115528079088.887,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115528079068.823
+        },
+        {
+          "duration_us": 1.728,
+          "end_us": 2115528079091.191,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528079089.463
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m8.weight_first.repeat0.trace.json",
+      "trace_sha256": "543a4c61dc83d36ab6ac929e8270acb24bad16ac9fc80ea1f496796cbf6d2483"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.575927734375
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 19.777,
+          "end_us": 2115528086650.5042,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115528086630.727
+        },
+        {
+          "duration_us": 1.76,
+          "end_us": 2115528086652.84,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528086651.08
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m8.weight_first.repeat1.trace.json",
+      "trace_sha256": "9d7226fd3c9e8dcc1b0048bd6c839e1d83f7908e0ffa2ca8d8910882cb91031a"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.800048828125
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 19.957,
+          "end_us": 2115528095514.126,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115528095494.169
+        },
+        {
+          "duration_us": 1.759,
+          "end_us": 2115528095516.685,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528095514.926
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m8.weight_first.repeat2.trace.json",
+      "trace_sha256": "3c5a4123735ae2a1a44aca7f024de2b0328279c8926809a489d4aaad39ff28a1"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [],
+      "kernel_intervals": [
+        {
+          "duration_us": 17.551,
+          "end_us": 2115528114388.872,
+          "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "role": "library_or_other",
+          "start_us": 2115528114371.321
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m8.p046.repeat0.trace.json",
+      "trace_sha256": "2dae990ff6d7c20a5b40b17a6669da02b38f80b49be60f9ed321210acbd9d96e"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [],
+      "kernel_intervals": [
+        {
+          "duration_us": 17.152,
+          "end_us": 2115528137744.4102,
+          "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "role": "library_or_other",
+          "start_us": 2115528137727.258
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m8.p046.repeat1.trace.json",
+      "trace_sha256": "e5b6b64d9d70695eb2f6ac464e856c82c238cdba6b2e81e0da309a5fd2e1ea52"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [],
+      "kernel_intervals": [
+        {
+          "duration_us": 17.394,
+          "end_us": 2115528158392.543,
+          "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "role": "library_or_other",
+          "start_us": 2115528158375.149
+        }
+      ],
+      "m": 8,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m8.p046.repeat2.trace.json",
+      "trace_sha256": "6bb3fb1363d397133aee2813e9f20a7afe2451aef36feded7a0cefc6fed3adbe"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.576904296875
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 21.311,
+          "end_us": 2115528543842.102,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115528543820.791
+        },
+        {
+          "duration_us": 1.728,
+          "end_us": 2115528543844.407,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528543842.679
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "control",
+      "trace_file": "activity.pooler_m7.control.repeat0.trace.json",
+      "trace_sha256": "adbbb11dee531bbad5d25014ab2713afb53d1e36a828be17947b363124b408ec"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.576171875
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 21.376,
+          "end_us": 2115528705612.68,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115528705591.304
+        },
+        {
+          "duration_us": 1.728,
+          "end_us": 2115528705614.9841,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115528705613.256
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "control",
+      "trace_file": "activity.pooler_m7.control.repeat1.trace.json",
+      "trace_sha256": "87cdc5bd0ebd0c0ddf9bca5e278585892629f630d4b977b0c3dc8bded3f2af09"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.575927734375
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 21.6,
+          "end_us": 2115529082488.987,
+          "name": "_partial",
+          "role": "partial",
+          "start_us": 2115529082467.387
+        },
+        {
+          "duration_us": 1.824,
+          "end_us": 2115529082491.387,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115529082489.563
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "control",
+      "trace_file": "activity.pooler_m7.control.repeat2.trace.json",
+      "trace_sha256": "babd68f801a767505e4bc24e0167bd1bd504386e7394a0015222188b20b2d596"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.64013671875
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 20.992,
+          "end_us": 2115529098205.557,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115529098184.565
+        },
+        {
+          "duration_us": 1.792,
+          "end_us": 2115529098207.989,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115529098206.197
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m7.weight_first.repeat0.trace.json",
+      "trace_sha256": "999961bee5b00fb3d5ccf7a1ab87d263c1c958d4e3b54095d54db0514a920867"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.800048828125
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 19.776,
+          "end_us": 2115529110087.9338,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115529110068.158
+        },
+        {
+          "duration_us": 1.76,
+          "end_us": 2115529110090.494,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115529110088.734
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m7.weight_first.repeat1.trace.json",
+      "trace_sha256": "f822d5a27bd31f6b64b7450e22b7fa146865df4482b9fd39e1f944144cf82db8"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.60791015625
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 19.872,
+          "end_us": 2115529319813.894,
+          "name": "_partial_weight_first",
+          "role": "partial",
+          "start_us": 2115529319794.022
+        },
+        {
+          "duration_us": 1.825,
+          "end_us": 2115529319816.327,
+          "name": "_reduce",
+          "role": "reducer",
+          "start_us": 2115529319814.502
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "weight_first",
+      "trace_file": "activity.pooler_m7.weight_first.repeat2.trace.json",
+      "trace_sha256": "ba4e8ee2021592c8f0eed783f851e373cba04528c45fa252b9ad7a6a270930da"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.31884765625
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 18.278,
+          "end_us": 2115529387124.5461,
+          "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "role": "library_or_other",
+          "start_us": 2115529387106.268
+        },
+        {
+          "duration_us": 2.261,
+          "end_us": 2115529387127.126,
+          "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "role": "library_or_other",
+          "start_us": 2115529387124.865
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 0,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m7.p046.repeat0.trace.json",
+      "trace_sha256": "1b2833fe51fec32a497b8a464dfb299829873d9c49d90bf528aedaad012f61a5"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.318115234375
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 17.557,
+          "end_us": 2115529411542.8809,
+          "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "role": "library_or_other",
+          "start_us": 2115529411525.324
+        },
+        {
+          "duration_us": 2.194,
+          "end_us": 2115529411545.393,
+          "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "role": "library_or_other",
+          "start_us": 2115529411543.199
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 1,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m7.p046.repeat1.trace.json",
+      "trace_sha256": "23e72034c0363426dc5e9726d2ec905c267c40d44d2505dfe12792f43939330a"
+    },
+    {
+      "cuda_copy_intervals": [],
+      "inter_kernel_gaps_us": [
+        0.320068359375
+      ],
+      "kernel_intervals": [
+        {
+          "duration_us": 17.892,
+          "end_us": 2115529432333.103,
+          "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+          "role": "library_or_other",
+          "start_us": 2115529432315.211
+        },
+        {
+          "duration_us": 2.208,
+          "end_us": 2115529432335.631,
+          "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "role": "library_or_other",
+          "start_us": 2115529432333.423
+        }
+      ],
+      "m": 7,
+      "passed": true,
+      "qualification": "Separately instrumented single-replay CUPTI intervals and signed timeline gaps only. Not acceptance timing, hardware counters, pure dot time or achieved pipeline overlap.",
+      "repeat": 2,
+      "runner": "p046",
+      "trace_file": "activity.pooler_m7.p046.repeat2.trace.json",
+      "trace_sha256": "16bc49b5f3cd92781a26efc153f2fcce9633521340e6bdce4363de2b4983b4ab"
+    }
+  ],
+  "protocol": {
+    "activity_capture_calls": 6,
+    "activity_profiles": 18,
+    "activity_replays": 18,
+    "activity_untimed_capture_warmups": 18,
+    "capture_calls": 10,
+    "measured_replays": 384,
+    "oracle_checks": 580,
+    "prepost_replays": 100,
+    "untimed_capture_warmups": 30,
+    "untimed_partial_validator_reducers": 220,
+    "warmup_replays": 96
+  },
+  "sources_sha256": {
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+    "projection_p052_orientation_screen.py": "042c395d20ffa6b191629aa79d9b68b9766cb92ea94df56d7763e741d46cdd59",
+    "projection_p053_phase_screen.py": "e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db"
+  },
+  "timing_receipt": {
+    "environment": {
+      "bf16_reduced_precision_reduction": true,
+      "capability": [
+        9,
+        0
+      ],
+      "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+      "cuda_available": true,
+      "cuda_runtime": "13.0",
+      "device": "cuda",
+      "gpu": "NVIDIA H200",
+      "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+      "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+      "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+      "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "tf32_allowed": false,
+      "torch": "2.14.1+cu130",
+      "triton": "3.8.0"
+    },
+    "filename": "timing.json",
+    "oracle_checks": 580,
+    "sha256": "f6f52fd366d74e2e912a6ea761055b2a1d2f3073b90d3d4cb27230a140a1da95"
+  },
+  "wall_seconds": 19.513962541000005
+}

@@ -1,3 +1,32 @@
+# P053 terminal — reducer-only rescue rejected; P046 preserved
+
+P053 app ap-UShS6clh30RqRtKHHcoB4A completed with 598 original-oracle checks
+passing. Independent status at 2026-10-25T23:56:28.401787UTC confirmed exact app
+stopped/tasks0 and all workspace apps stopped/tasks0. Measurement slot released;
+no active or uncertain Projection request. No official check was consumed.
+
+M8 weight-first partial-only is still 14.5968% slower than actual P046 whole;
+matched partial gain is only 1.4593% (9/12 pairs). M7 matched partial regresses
+0.9310%. Declared follow-up gates fail: reject reducer-only rescue of this fixed
+route. P046 official 1.1841399409× remains selected; P039 preserved.
+
+All raw samples, tails and 18 separately instrumented traces are saved. No
+subtraction of graph medians, official-score claim or hardware-counter inference.
+Read experiments/053-phase-cost-attribution-local.md and
+results/router-p053-assessment.json. Source freeze e6804b0; code from8ee2fa7.
+
+Paid usage $0; delayed workspace gross delta $0.07830934 is not a settled per-app
+invoice. Conservative reserve $0.45788342 retained. Launcher initially saw a
+transitional stopping/tasks1 state; independent read resolved it without retry.
+
+P054 metadata-only probe remains unexecuted. It is the next eligibility
+prerequisite for the precompiled tactic route, not an assumed legal runtime.
+P050 remains parked. Prior private push was denied before execution, not retried;
+new source/results remain local. Last verified remote f646eae is historical.
+Read experiments/053-private-push-blocked.md before any push attempt.
+
+## Previous checkpoint (historical)
+
 # P053 local diagnostic ready — private push blocked
 
 Source freeze 8ee2fa7; P054 commit ecf2eb2. The reviewed private push was rejected

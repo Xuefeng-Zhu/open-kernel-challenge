@@ -468,7 +468,7 @@
     "gpu_state_updated_utc": "2026-10-24T16:37:47.378717+00:00"
   },
   "current_cycle2_index": "experiments/projection-cycle2-index.json",
-  "current_status": "P053 reviewed local preparation complete; private push denied before execution; Attention owns GPU slot; P046 selected",
+  "current_status": "P053 completed and stopped; reducer-only rescue rejected; P046 selected; private push still blocked",
   "current_local_verification": {
     "verified_utc": "2026-10-25T23:51:32.457123+00:00",
     "command": "python -B -m unittest tests.test_projection_p053_phase_screen tests.test_projection_p053_modal tests.test_projection_p053_analysis tests.test_flashinfer_capability_inventory",
@@ -493,13 +493,13 @@
     "official_checks_added": 0
   },
   "current_diagnostic": {
-    "id": "P052",
-    "status": "terminal-correctness-pass-performance-rejected",
-    "report": "experiments/052-orientation-execution-screen.md",
-    "result": "results/router-p052-assessment.json",
-    "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
-    "source_commit": "39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0",
-    "oracle_checks": 390,
+    "id": "P053",
+    "status": "terminal-correctness-pass-reducer-only-followup-rejected",
+    "report": "experiments/053-phase-cost-attribution-local.md",
+    "result": "results/router-p053-assessment.json",
+    "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+    "source_commit": "e6804b0d7909a6401396d2ef8a854967477fcdf8",
+    "oracle_checks": 598,
     "stopped_tasks0": true,
     "not_official_score": true
   },
@@ -515,7 +515,7 @@
     "report": "experiments/050-qkv-only-expansion.md",
     "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd"
   },
-  "updated_utc": "2026-10-25T23:53:08.373735+00:00",
+  "updated_utc": "2026-10-26T00:00:57.210298+00:00",
   "current_selection": {
     "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
     "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
@@ -556,6 +556,17 @@
       "oracle_checks": 480,
       "stopped_tasks0": true,
       "not_official_score": true
+    },
+    {
+      "id": "P052",
+      "status": "terminal-correctness-pass-performance-rejected",
+      "report": "experiments/052-orientation-execution-screen.md",
+      "result": "results/router-p052-assessment.json",
+      "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+      "source_commit": "39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0",
+      "oracle_checks": 390,
+      "stopped_tasks0": true,
+      "not_official_score": true
     }
   ],
   "previous_rejected_candidate": {
@@ -586,20 +597,20 @@
   },
   "prepared_diagnostic": {
     "id": "P053",
-    "status": "local-prepared-native-unverified",
+    "status": "completed; see current_diagnostic",
     "worker": "projection_p053_phase_screen.py",
     "worker_sha256": "e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db",
     "controller": "projection_p053_modal.py",
     "controller_sha256": "047a790324ae4961b897f16aaff55b2e90aed3c524cb24eccc62a48a86c49a8f",
     "report": "experiments/053-phase-cost-attribution-local.md",
     "analysis": "results/router-p053-local-analysis.json",
-    "native_app": null,
+    "native_app": "ap-UShS6clh30RqRtKHHcoB4A",
     "official_job": null,
     "planned_oracle_checks": 580,
     "planned_activity_checks": 18,
     "free_credit_reserve_floor_usd": "0.4578834167785",
     "paid_limit_usd": "0",
-    "slot": "Attention owns next measurement; fresh coordinator grant required",
+    "slot": "released after independent stopped/tasks0 observation",
     "independent_review": "Worker and controller independently reviewed; no concrete blocker",
     "source_commit": "8ee2fa7eafe80891e79b64cb9def5502ef9a081c"
   },

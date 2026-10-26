@@ -1,8 +1,10 @@
 # P053 — distinguish partial-kernel cost from reducer and launch cost
 
-Status: local analysis and diagnostic preparation only. No P053 app, GPU launch,
-official check or new score. Attention owns the measurement slot. P046 remains
-selected at official 1.1841399409×, with P039 preserved as rollback.
+Status: diagnostic completed. All 598 current oracle comparisons passed; the
+predeclared reducer-only rescue gate failed. App stopped/tasks0 and measurement
+slot released. No official check or new score. P046 remains selected at official
+1.1841399409×, with P039 preserved as rollback. The following plan and its gates
+were committed before execution; terminal findings are appended below.
 
 实验卡：P052 证明了指令变化和正确性，却没有得到足够速度。下一步不改
 tile，也不凭 WGMMA 名字继续重写。用完全相同的计算主体，分别测“写出
@@ -165,3 +167,97 @@ Worker SHA256: `e494b809981de64afde229b12bee43035ec408fce85dee85f314c5bb457ee7db
 Launcher SHA256: `047a790324ae4961b897f16aaff55b2e90aed3c524cb24eccc62a48a86c49a8f`.
 The reviewed allowlist is 16 files, 366,448 bytes at this preparation point.
 The actual launch requires an exact committed HEAD and revalidates every byte.
+
+
+## Terminal result — 2026-10-25 23:56 UTC
+
+Frozen launch commit `e6804b0d7909a6401396d2ef8a854967477fcdf8` contains the
+reviewed P053 source from `8ee2fa7`. App `ap-UShS6clh30RqRtKHHcoB4A` was admitted
+at 23:54:50.811138 UTC. Timing took 30.9143 s; separate activity took 20.5335 s.
+Worker wall time was 51.4524 s and client wall time 69.2823 s, including lifecycle
+and result transport. These are not measured allocated-GPU seconds.
+
+All 580 timing oracle checks and 18 activity checks passed. Original tolerances,
+sparse/outlier/zero fixtures, fresh inputs, same-address A→B→A and immutable
+weights were retained. Earlier P052 prerequisite coverage was inherited, not
+rerun. Concurrent calls and the complete official 9+30 suite were not tested.
+An independent reviewer reproduced all eight paired summaries and verified
+all source/receipt/18 trace bindings. The Mac performed analysis, not CUDA.
+
+The table reports `1 - 1 / median(opponent/candidate paired ratio)`. Positive
+means weight-first reduces latency; negative means it is slower. Twelve reversed
+pairs use all 24 measured samples. Six warmup rounds were predefined/excluded.
+
+| M | Partial vs matched control | Whole vs matched control | Partial vs P046 whole | Whole vs P046 |
+|---|---:|---:|---:|---:|
+| 8 | +1.4593%, 9/12 wins | +0.3135%, 6/12 | −14.5968%, 1/12 | −22.5155%, 2/12 |
+| 7 | −0.9310%, 6/12 | −1.4756%, 6/12 | −0.6417%, 6/12 | −4.5991%, 5/12 |
+
+**Decision: stop reducer-only rescue of this fixed mainloop.** At M8, even the
+incomplete partial-only computation is 14.6% slower than the actual P046 whole
+call. It needs a materially different main-kernel design, not merely a cheaper
+final reduction. M7 provides no robust contrary evidence. This rejects the
+specific tested route; it does not prove every fused or asynchronous design loses.
+All tails remain, including candidate M8 whole 70.624 µs and M7 partial 67.584 µs.
+
+Separate instrumented medians, three single replays per row:
+
+| M/path | Main/partial µs | Reducer µs | Actual observed sequence |
+|---|---:|---:|---|
+| 8 control | 21.789 | 1.814 | custom partial → custom reducer |
+| 8 weight-first | 19.957 | 1.759 | custom partial → custom reducer |
+| 8 P046 | 17.394 | none | one vendor kernel |
+| 7 control | 21.376 | 1.728 | custom partial → custom reducer |
+| 7 weight-first | 19.872 | 1.792 | custom partial → custom reducer |
+| 7 P046 | 17.892 | 2.208 | vendor main → vendor reducer |
+
+These traces explain actual sequencing; their apparently larger main-kernel
+improvement is not a replacement for uninstrumented paired statistics. No graph
+median subtraction, hardware-counter inference or achieved-overlap claim is made.
+No visible copy events occurred; this does not prove absence of hidden work.
+
+Resource metadata in actual traces agrees with the earlier custom compilation:
+M8 control 42 registers/10,240 shared bytes; weight-first 36/20,480; M7 weight-first
+34/20,480; custom reducer 20/2,048. Both custom partial grids are [64,8,1] with
+128 threads. P046 M8 has grid [4,16,1], 384 threads, 168 registers and 164,308
+shared bytes. Its M7 main uses [2,64,1], same threads/registers and 164,292 shared
+bytes. Geometry and resource allocation are observed metadata, not measured
+occupancy, bandwidth, transaction efficiency or stall attribution. Profiler
+occupancy estimates were deliberately excluded from conclusions.
+
+## Reproduction, shutdown and costs
+
+```bash
+python -B projection_p053_modal.py launch --frozen-head e6804b0d7909a6401396d2ef8a854967477fcdf8 --control-root /PATH/TO/LOCAL/CONTROL
+```
+
+This is the historical single launch, **not an instruction to launch again**.
+The durable record rejects duplicates. Source/controller hashes and the exact
+16-file payload are in `experiments/projection-p053-phase-modal.json`.
+
+An offline publication/audit command is:
+
+```bash
+python -B projection_p053_result.py --raw local-notes/projection-p053-phase-artifacts --dest results/remote-P053-phase --ledger experiments/projection-p053-phase-modal.json --output results/router-p053-assessment.json
+```
+
+It refuses to overwrite a publication. All 23 returned artifacts are retained;
+published trace copies remove only top-level container hostname and trace ID.
+Every event, timing and resource field is preserved. Assessment maps original and
+published SHA256 values; the activity receipt's hashes refer to original raw
+traces, retained in ignored local storage. Timing/activity receipts are unchanged.
+
+The explicit stop succeeded. The first immediate postcheck still saw
+`stopping.../tasks1`, so the launcher correctly exited 1 and required reconciliation.
+A separate read at **23:56:28.401787 UTC** verified the exact app `stopped/tasks0`
+and all workspace apps stopped/tasks0; its recorded stop time is 23:55:58 UTC.
+The shared slot was released. No retry, duplicate invocation or repeated stop.
+
+Paid usage remains $0. Delayed workspace gross delta at 23:59:15 UTC was
+$0.07830934; it is not a settled per-app invoice. The $0.45788342 reserve remains
+in the conservative ledger. No official quota was consumed.
+
+No new performance candidate is justified by this result. The next high-information
+prerequisite is P054's bounded metadata inspection for a genuinely precompiled
+vendor-tactic route; it remains unexecuted and is not proof of judge eligibility.
+The prior GitHub push denial remains unresolved; completed results stay local.
