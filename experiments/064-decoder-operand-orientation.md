@@ -64,4 +64,78 @@ bounds assertions; BF16 tensor-core multiplication is not executed. NumPy is
 absent locally; the Torch warning did not prevent these tests.
 
 Independent read-only review verified the candidate hash and unchanged executable
-AST outside the single native kernel. Native raw/encoded compilation is pending.
+AST outside the single native kernel. At source freeze, native raw/encoded
+compilation was pending; the completed offline result follows below.
+
+## Offline result: gate failed; no official check
+
+Frozen source `7579660` completed in the CPU-only `okc-p064-offline` container,
+exit 0, with the pinned P063 image/wheel/toolchain and unchanged compile options.
+Both variants produced hashed IR/PTX/cubin/SASS and assembler/resource reports.
+Generated text is retained in `evidence/p064`; cubins remain in ignored local
+artifacts with their hashes preserved. No kernel was loaded or executed.
+
+| Static evidence | P063 encoded | P064 encoded |
+|---|---:|---:|
+| Registers/thread from ptxas | 120 | 80 |
+| Stack/spill store/spill load bytes | 0/0/0 | 0/0/0 |
+| Dynamic shared request, bytes | 18,688 | 18,688 |
+| Static SASS instruction sites | 944 | 888 |
+| PRMT sites | 162 | 33 |
+| Scalar LDG.E.U8 sites | 18 | 33 |
+| BF16 HMMA sites | 8 | 8 |
+
+The raw control retains 38 registers, 10,240 bytes shared, zero spills and an
+identical normalized SASS instruction sequence, including registers, predicates,
+order and branch operands. Only headers/encoding comments are excluded from
+that comparison. Instruction sequence SHA256:
+`2bac291adaf10b752c1b27c9a06c94699dad3da4e33a3f1dca584efeea73d5c7`.
+
+P064 encoded TTGIR lines 269–271 still allocate the reconstructed BF16 tensor
+into shared memory and reload it into a kWidth 4 dot operand. The explicit
+`memdesc_trans` disappeared, but its underlying materialization did not. SASS
+still contains the corresponding shared stores/reloads. Treating the removed
+view operation as removal of data movement would be incorrect. Other conversions
+and scalar load sites also changed; lower registers/PRMT counts do not prove
+lower runtime. Both variants retain the same BF16 HMMA/FP32 accumulation family.
+
+**Reject P064 for official admission.** It fails the predicted shared-staging
+removal and shared-request gates. The register/instruction reductions are useful
+compiler evidence but do not waive those gates. No GPU correctness or timing
+result exists. P046 remains selected; no check quota was spent.
+
+```sh
+python -B assess_p064.py
+python -B -m unittest tests.test_p064_assessment -v
+```
+
+The three artifact/gate tests passed in 0.012 seconds. They cover the saved
+rejection, source-valued shared allocation detection without a transpose, and
+instruction comparison that preserves predicates/register/order. The assessment
+verifies the generated file hashes, including the assembler resource logs.
+
+## Source audit and next boundary
+
+The pinned [Triton MMA pass](https://github.com/triton-lang/triton/blob/v3.8.0/lib/Dialect/TritonGPU/Transforms/AccelerateMatmul.cpp#L328-L395)
+walks through pure elementwise/view operations and uses the smallest upstream
+load width when choosing dot encodings. That is consistent with both decoded
+variants retaining kWidth 4 from byte inputs. The [inline-assembly operation](https://github.com/triton-lang/triton/blob/v3.8.0/include/triton/Dialect/Triton/IR/TritonOps.td#L791-L805)
+is itself elementwise; a proposed pure packed identity assembly operation
+therefore lacks the claimed basis for stopping that traversal. It was not added
+or benchmarked. This source reading is not proof of runtime cost.
+
+A different follow-up would need explicit consumer-layout control, including
+coordinates/loads and integer reconstruction, with a matched raw implementation.
+Applying a layout conversion only after decoding can simply recreate the same
+roundtrip. Such a port must expose changes to pipeline/load scheduling instead
+of presenting them as an otherwise identical decoder. No broader port or new
+candidate is claimed complete here, and a win over P043 alone remains insufficient.
+
+## Cleanup and coordination
+
+The exact container exited and was removed. Inventory showed no other containers
+or Linux machines; OrbStack was restored to its initial Stopped state. No cloud,
+credential, paid resource, official check or GPU operation occurred. Cached image
+and wheel remain local; temporary installation/cache vanished with the container.
+`docs/OFFLINE_SM90_COMPILATION.md` gives the reproducible setup and per-track
+isolation rules so Attention can reuse it without touching Projection's files.

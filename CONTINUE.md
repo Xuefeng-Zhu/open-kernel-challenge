@@ -1,3 +1,33 @@
+# P064 operand-orientation compiler gate failed; P046 preserved
+
+Source freeze `7579660`, candidate `candidates/projection_pooler_codec_kn.py`.
+20 preflight CPU tests passed, including actual integer-decode AST execution on
+all BF16 bit patterns and rectangular/tail/escape cases. These are not GPU tests.
+Both raw and encoded explicit SM90 offline compilations succeeded on local CPU.
+Raw SASS instruction text matches P063 exactly. Encoded registers fell 120→80,
+static sites 944→888, but the decoded BF16 shared materialization/reload remains
+and shared request is unchanged at 18,688 bytes. Both have zero spills and the
+same BF16 HMMA family. The predeclared gate therefore FAILS; no official check.
+
+Read `experiments/064-decoder-operand-orientation.md`, reproduce with
+`python -B assess_p064.py`; full evidence is in `evidence/p064/`.
+Three artifact/gate tests passed. Containers removed and OrbStack restored to
+Stopped after confirming no other containers or Linux machines. Paid cost $0.
+No Modal/credential action or new GPU/official job; P046 remains 1.1841399409×.
+
+Attention reuse: `docs/OFFLINE_SM90_COMPILATION.md` documents the pinned local
+image/wheel and isolation rules. Use unique per-track staging/container/cache,
+not Projection's mutable artifacts or constants; coordinate engine lifecycle.
+
+Next genuinely different compiler-only step would require explicit consumer
+layouts and a matched raw implementation, rather than another expression tweak.
+Do not relax the P064 gate or claim a latency gain from lower register counts.
+The pure inline-asm identity proposal was not tried: pinned compiler source
+traverses pure elementwise operations back to byte loads, so it does not supply
+the proposed barrier to width inference. Preserve this negative finding.
+
+## Previous checkpoint (historical)
+
 # P063 offline SM90 compiler comparison complete; P046 preserved
 
 The compiler access gap is resolved locally, without Modal or GPU. Read

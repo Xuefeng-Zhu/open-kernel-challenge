@@ -777,7 +777,7 @@
     "previous_best_preserved": true,
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P063 exact-source offline SM90 compilation complete on local CPU; no new official check or GPU execution. Raw 38 / encoded 120 registers, zero spills, same BF16 HMMA, decoded shared staging identified. Preserve P046. Offline layout repair is next gate; Modal expiry no longer blocks compiler inspection.",
+  "current_phase": "P064 local CPU SM90 compile gate failed: exact decoding/20 preflight checks pass; raw instructions identical, encoded registers 120 to 80 but decoded shared staging and 18688-byte request remain. No GPU or official check. Preserve P046.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",
