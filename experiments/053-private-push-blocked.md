@@ -25,3 +25,15 @@ A materially new specific confirmation is needed before one retry of this
 known-not-executed push. No further permission is inferred from a quota reset.
 
 Observed UTC: 2026-10-25T23:53:08.373735+00:00
+
+## Resolved by one specifically authorized retry
+
+On 2026-10-26 a new explicit user-authored private-push authorization was supplied.
+The same helper ran once, checked PRIVATE visibility and fast-forward ancestry,
+and verified remote projection-pipeline-preflight at
+fd1c495e3d19a7e965daecd3b5a96045c18fc731 at 00:11:27.470752 UTC.
+The original rejection was known not executed; no alternate route was used.
+The initial local AGENTS contained the official contest instructions, not the
+new GitHub authorization. The reviewer internal context cannot be inspected.
+The initial checkpoint above predates P053 GPU execution; that diagnostic later
+completed and independently stopped/tasks0. See its separate result report.

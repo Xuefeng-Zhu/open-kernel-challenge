@@ -7,6 +7,57 @@ from pathlib import Path
 from harness import ROOT, file_hash
 
 
+def local_policy_errors(tree):
+    """Project preflight conventions, not an official legality/security proof.
+
+    The 2026-10-26 rules audit verified the explicit load_inline/nvcc
+    compilation exception. Keep that exception narrow: exact import and a
+    direct call at module initialization or in prepare, never kernel_fn.
+    This does not authorize subprocess imports, downloads or harness access.
+    Ordinary non-tensor diagnostics are allowed outside kernel_fn; AST alone
+    cannot establish whether a value hides a synchronization.
+    """
+    errors = []
+
+    class Policy(ast.NodeVisitor):
+        def __init__(self):
+            self.functions = []
+
+        def visit_FunctionDef(self, node):
+            self.functions.append(node.name)
+            self.generic_visit(node)
+            self.functions.pop()
+
+        visit_AsyncFunctionDef = visit_FunctionDef
+
+        def visit_Import(self, node):
+            if not all(n.name in {"torch", "triton", "triton.language"} for n in node.names):
+                errors.append("Unexpected import")
+
+        def visit_ImportFrom(self, node):
+            imports = [(n.name, n.asname) for n in node.names]
+            allowed = node.module == "typing" or (
+                node.module == "triton.tools.tensor_descriptor" and imports == [("TensorDescriptor", None)]
+            ) or (
+                node.module == "torch.utils.cpp_extension" and imports == [("load_inline", None)]
+            )
+            if not allowed:
+                errors.append("Unexpected import")
+
+        def visit_Call(self, node):
+            name = node.func.attr if isinstance(node.func, ast.Attribute) else getattr(node.func, "id", "")
+            if name in {"item", "cpu", "numpy", "synchronize", "open", "eval", "exec"}:
+                errors.append(name)
+            if name == "print" and "kernel_fn" in self.functions:
+                errors.append("print inside kernel_fn requires manual synchronization review")
+            if name == "load_inline" and self.functions not in ([], ["prepare"]):
+                errors.append("load_inline must be direct initialization/prepare code in this preflight")
+            self.generic_visit(node)
+
+    Policy().visit(tree)
+    return errors
+
+
 def plain_jit_globals(tree):
     """Flag a known target-compiler error class; not a Triton compilation proof."""
     globals_by_name = {}
@@ -45,17 +96,7 @@ def main():
     assert not plain_jit_globals(tree), "; ".join(plain_jit_globals(tree))
     functions = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
     assert {"prepare", "kernel_fn"} <= functions
-    for node in ast.walk(tree):
-        if isinstance(node, ast.Import):
-            assert all(n.name in {"torch", "triton", "triton.language"} for n in node.names), "Unexpected import"
-        if isinstance(node, ast.ImportFrom):
-            assert node.module == "typing" or (
-                node.module == "triton.tools.tensor_descriptor"
-                and [(n.name, n.asname) for n in node.names] == [("TensorDescriptor", None)]
-            ), "Unexpected import"
-        if isinstance(node, ast.Call):
-            name = node.func.attr if isinstance(node.func, ast.Attribute) else getattr(node.func, "id", "")
-            assert name not in {"item", "cpu", "numpy", "synchronize", "print", "open", "eval", "exec"}, name
+    assert not local_policy_errors(tree), "; ".join(local_policy_errors(tree))
     manifest = json.loads((ROOT / "official/manifest.json").read_text())
     for name, expected in manifest["sha256"].items():
         assert file_hash(ROOT / "official" / name) == expected, f"Official snapshot changed: {name}"

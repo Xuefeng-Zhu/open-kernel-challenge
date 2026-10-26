@@ -1,3 +1,25 @@
+# P055 rules correction and leader-gap audit complete; P046 preserved
+
+Current official rules explicitly permit load_inline/nvcc native compilation.
+The universal AOT-only assumption in P047/P054 was overstrict; it is superseded,
+not a license for arbitrary subprocesses, network access or evaluator inspection.
+Our preflight now narrowly allows the documented initialization exception.
+Read experiments/055-rules-correction-and-leader-gap.md.
+
+Public leader at 2026-10-26T00:06:43UTC is 1.6238×; P046 remains 1.1841399409×.
+The conditional cut needed is 27.0760% across all paths, or 35.7169% across
+pooler/QKV/unpooler with the rest fixed. This is cross-run score arithmetic,
+not a measured bottleneck or forecast. Next: minimal owned native cuBLASLt
+interface for metadata/precision/graph validation, no broad algorithm rewrite.
+Attention owns the next GPU slot; no Projection compilation/run admitted here.
+
+P053's rejected push was retried once after specific new authorization and
+verified PRIVATE remote fd1c495e3d19a7e965daecd3b5a96045c18fc731 at
+2026-10-26T00:11:27.470752UTC. New P055/P056 preparation is not in that receipt.
+P053 app remains terminal, independently stopped/tasks0; no uncertain request.
+
+## Previous checkpoint (historical)
+
 # P053 terminal — reducer-only rescue rejected; P046 preserved
 
 P053 app ap-UShS6clh30RqRtKHHcoB4A completed with 598 original-oracle checks

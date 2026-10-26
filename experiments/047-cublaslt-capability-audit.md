@@ -1,5 +1,12 @@
 # P047 — capability gate for explicit cuBLASLt tactic selection
 
+> Correction, 2026-10-26: the official global rules explicitly allow native CUDA
+> through PyTorch load_inline/nvcc. The earlier universal precompiled-only/no-compiler
+> gate below is superseded by P055. Loader/source observations remain historical
+> facts; actual API availability, precision, graph behavior and time limits still
+> need verification. No arbitrary process/network exception is implied.
+> See [P055](055-rules-correction-and-leader-gap.md).
+
 Status: read-only research and local probe preparation. No FlashInfer import,
 JIT, installation, external probe, GPU run or official check has occurred here.
 This is not an implemented performance candidate. At audit time P039 was selected

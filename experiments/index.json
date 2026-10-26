@@ -622,14 +622,29 @@
     "installed_probe_executed": false,
     "api_callability_verified": false,
     "jit_free_verified": false,
-    "official_judge_identity_verified": false
+    "official_judge_identity_verified": false,
+    "universal_aot_requirement": "superseded: official load_inline/nvcc exception verified in P055"
   },
   "pending_private_push": {
-    "state": "denied-before-execution",
+    "state": "resolved-one-authorized-retry-verified",
     "report": "experiments/053-private-push-blocked.md",
     "attempted_utc": "2026-10-25T23:53:08.373735+00:00",
-    "executed": false,
-    "retried": false,
-    "last_verified_remote_sha": "f646eaeee9cb6d0d188654a661b15d112feb0db7"
+    "retried": true,
+    "last_verified_remote_sha": "fd1c495e3d19a7e965daecd3b5a96045c18fc731",
+    "retry_succeeded": true,
+    "verified_utc": "2026-10-26T00:11:27.470752+00:00",
+    "visibility": "PRIVATE",
+    "force": false,
+    "initial_attempt_executed": false,
+    "retry_executed": true
+  },
+  "strategic_audit": {
+    "id": "P055",
+    "report": "experiments/055-rules-correction-and-leader-gap.md",
+    "model": "results/router-p055-score-model.json",
+    "public_snapshot": "results/router-p055-public-leader.json",
+    "gpu_executed": false,
+    "rules_version": "2026-10-22.1",
+    "selected_unchanged": "P046"
   }
 }

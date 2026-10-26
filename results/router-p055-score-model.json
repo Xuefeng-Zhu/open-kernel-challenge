@@ -1,0 +1,320 @@
+{
+  "kind": "P055 conditional score arithmetic, not achieved speedups",
+  "observed_utc": "2026-10-26T00:06:43.166237+00:00",
+  "selected_score": 1.1841399408925375,
+  "leader": {
+    "rank": 1,
+    "team": "colinlikescode",
+    "speedup": 1.6238,
+    "first": true,
+    "ahead": 0
+  },
+  "leader_over_selected": 1.3712906253090928,
+  "required_latency_cuts": {
+    "all_paths": 0.2707599822068373,
+    "three_main_all_m": 0.35716858864850887,
+    "three_main_m_gt_1": 0.4141281762022374
+  },
+  "per_load_fractions": {
+    "decode 1": {
+      "pooler": 0.3949406863103678,
+      "qkv_gate": 0.2577722631919689,
+      "unpooler": 0.08785485384103353,
+      "o": 0.14877284739172633,
+      "router": 0.11065934926490355
+    },
+    "decode 16": {
+      "pooler": 0.2673963772491458,
+      "qkv_gate": 0.21988943556186824,
+      "unpooler": 0.2718869248023326,
+      "o": 0.10182801444689744,
+      "router": 0.13899924793975588
+    },
+    "decode 32": {
+      "pooler": 0.2661830265549316,
+      "qkv_gate": 0.2218156346327628,
+      "unpooler": 0.2707690348201478,
+      "o": 0.10096994307976391,
+      "router": 0.14026236091239386
+    },
+    "verify 1": {
+      "pooler": 0.3337819672591576,
+      "qkv_gate": 0.26688550149315954,
+      "unpooler": 0.1349226452610986,
+      "o": 0.12273677670555376,
+      "router": 0.14167310928103047
+    },
+    "verify 16": {
+      "pooler": 0.28996080251866957,
+      "qkv_gate": 0.2277972459885718,
+      "unpooler": 0.25302466556854414,
+      "o": 0.0948513201339146,
+      "router": 0.13436596579029983
+    },
+    "verify 32": {
+      "pooler": 0.3105364997686849,
+      "qkv_gate": 0.21332516350297046,
+      "unpooler": 0.25930415442671334,
+      "o": 0.09703550782816177,
+      "router": 0.11979867447346966
+    }
+  },
+  "equal_load_mean_fractions": {
+    "pooler": 0.31046655994349287,
+    "qkv_gate": 0.23458087406188363,
+    "unpooler": 0.21296037978664498,
+    "o": 0.11103240159766964,
+    "router": 0.13095978461030888
+  },
+  "scenarios": [
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.1,
+      "modeled_score": 1.2812624931163246,
+      "score_gain": 0.08201948846568041
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.2,
+      "modeled_score": 1.395746020410701,
+      "score_gain": 0.17870022977070343
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.3,
+      "modeled_score": 1.532704396609481,
+      "score_gain": 0.29436086367816916
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.1,
+      "modeled_score": 1.2649368338745004,
+      "score_gain": 0.0682325544403668
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.2,
+      "modeled_score": 1.3589495966869518,
+      "score_gain": 0.14762584197831607
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.3,
+      "modeled_score": 1.4698482049852597,
+      "score_gain": 0.24127913790102506
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.1,
+      "modeled_score": 1.2396384909639793,
+      "score_gain": 0.046868235885709764
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.2,
+      "modeled_score": 1.3006443765562632,
+      "score_gain": 0.09838738787571955
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.3,
+      "modeled_score": 1.368027851216746,
+      "score_gain": 0.15529238054887706
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.1,
+      "modeled_score": 1.2323925495817858,
+      "score_gain": 0.04074907620536661
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.2,
+      "modeled_score": 1.2852090127658433,
+      "score_gain": 0.08535230371262181
+    },
+    {
+      "families": [
+        "qkv_gate",
+        "unpooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.3,
+      "modeled_score": 1.3432952014775237,
+      "score_gain": 0.1344057869250015
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.1,
+      "modeled_score": 1.2220944430332976,
+      "score_gain": 0.032052378971485496
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.2,
+      "modeled_score": 1.2625922302843224,
+      "score_gain": 0.06625254894506138
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 1,
+      "cut": 0.3,
+      "modeled_score": 1.3059013201247338,
+      "score_gain": 0.10282684928304975
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.1,
+      "modeled_score": 1.2139145339694053,
+      "score_gain": 0.025144488458370473
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.2,
+      "modeled_score": 1.2453955696781331,
+      "score_gain": 0.05173005881333981
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "minimum_m": 2,
+      "cut": 0.3,
+      "modeled_score": 1.2787398753101724,
+      "score_gain": 0.07988915089404958
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 1,
+      "cut": 0.1,
+      "modeled_score": 1.2135075380793265,
+      "score_gain": 0.02480078255333007
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 1,
+      "cut": 0.2,
+      "modeled_score": 1.244372625448823,
+      "score_gain": 0.050866187750482794
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 1,
+      "cut": 0.3,
+      "modeled_score": 1.2768530469514843,
+      "score_gain": 0.07829573419258606
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 2,
+      "cut": 0.1,
+      "modeled_score": 1.2082028543246282,
+      "score_gain": 0.02032100480788901
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 2,
+      "cut": 0.2,
+      "modeled_score": 1.2333713093983958,
+      "score_gain": 0.04157563376229878
+    },
+    {
+      "families": [
+        "o",
+        "router"
+      ],
+      "minimum_m": 2,
+      "cut": 0.3,
+      "modeled_score": 1.2597260459886814,
+      "score_gain": 0.06383207126614732
+    }
+  ],
+  "source_sha256": {
+    "results/remote-P2-09-pooler-column-batch2-hybrid.csv": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+    "results/router-p055-public-leader.json": "30839b22baab3e74e3c2aa0b589d378f162352319b0514966534be8ba3bc1b65"
+  },
+  "limitations": [
+    "Public leaderboard rounded and provisional; not a same-run paired comparison",
+    "Each hypothetical holds all untargeted paths fixed; no competitor architecture inferred",
+    "No new GPU run, official check or score"
+  ]
+}

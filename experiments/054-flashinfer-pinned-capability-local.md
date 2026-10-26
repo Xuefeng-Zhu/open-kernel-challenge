@@ -1,5 +1,12 @@
 # P054 — pinned FlashInfer tactic capability, local/source evidence only
 
+> Correction, 2026-10-26: the official global rules explicitly allow native CUDA
+> through PyTorch load_inline/nvcc. The earlier universal precompiled-only/no-compiler
+> gate below is superseded by P055. Loader/source observations remain historical
+> facts; actual API availability, precision, graph behavior and time limits still
+> need verification. No arbitrary process/network exception is implied.
+> See [P055](055-rules-correction-and-leader-gap.md).
+
 Status: source audit and bounded metadata-probe update complete; installed probe
 not executed. No FlashInfer package import, factory call, build, binary load,
 GPU or official check. This is not an implemented submission. P046 is unchanged.
