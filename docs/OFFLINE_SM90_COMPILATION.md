@@ -57,3 +57,14 @@ cloud invocation, account or credential operation is needed. Record failures
 and exit status; verify the exact container is absent after `--rm`. Keep hashes
 for all evidence, including resource logs. Static instructions, registers and
 shared-memory requests do not measure dynamic counts, occupancy or performance.
+
+## Gluon sources (P065)
+
+Use `triton.experimental.gluon._runtime.GluonASTSource` for owned `@gluon.jit`
+source. It marks `Language.GLUON` and starts at TTGIR; ordinary `ASTSource`
+selects the wrong pipeline. P065's reviewed helper demonstrates this and has
+a regression test. Absence of TTIR is expected. Gluon also does not inherit
+ordinary Triton's automatic coalescing/layout/software-pipeline passes: a shared
+`num_stages` value is not evidence of equal buffering. Preserve matched controls.
+P065's direct-operand layout removed the decoded shared roundtrip but failed
+real performance; offline resource improvement alone is never a promotion gate.

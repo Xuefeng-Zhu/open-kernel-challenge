@@ -500,3 +500,8 @@ billingreads. No cost/quota blocker. Stop this candidate for measured regression
 No newcredential/cap/payment/terms/push/rankedentry. Existingtokenexpiry06:26:47UTC
 Oct25. Stagecomplete,no denied/pending/uncertainoperation. No broadpipeline rewrite
 implemented; further architectural experiment would need separate source/evidence.
+
+
+## P065 explicit consumer result
+
+Reject P065: at least one intended target materially regresses versus P046. Compiler capability is real but this consumer is not competitive. Official job `291edcd1469a414c` passed 9+30, score 0.8423398309×. Target normalized latency 3.14/3.53/7.43× versus P046; 27 controls within 5%. Compiler gate removed decoded shared staging, but direct-load design is slower. Source 5adcb20; full evidence in experiment 065 and results/projection-p065-assessment.json. P046 stays selected. No active jobs or Modal launches; local compiler cleaned up.

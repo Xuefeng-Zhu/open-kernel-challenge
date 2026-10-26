@@ -692,6 +692,60 @@
       "decision": "Diagnostic only; preserve P046. Raw consumer is 28.5-41.0% slower on targets; historical encoded/raw difference is 2.23-3.76x, with unchanged-control drift and no native compiler artifacts. No source promotion or automatic repeat.",
       "assessment": "results/projection-p062-assessment.json",
       "report": "experiments/062-raw-consumer-official-screen.md"
+    },
+    {
+      "experiment": "P2-11-p065-explicit-consumer",
+      "candidate": "candidates/projection_pooler_codec_explicit.py",
+      "source_commit": "5adcb2040879632757be03581e1fe32d4409aec0",
+      "submission_sha256": "9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff",
+      "mode": "check",
+      "created_utc": "2026-10-26T23:19:27.537824+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "291edcd1469a414c",
+      "hypothesis": "Explicit kw2 consumer layout removes decoded BF16 shared roundtrip; test whether savings offset direct-load and decode costs versus selected P046. Matched raw native timing is unavailable.",
+      "control_job_id": "41ba778763a5433b",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_codec_explicit.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-26T23:19:27.958289+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-26T23:20:48.217716+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "passed": true,
+      "speedup": 0.8423398309299085,
+      "speedup_ci": [
+        0.8297047334659599,
+        0.854974928393857
+      ]
     }
   ],
   "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
@@ -718,11 +772,11 @@
     },
     "checks": {
       "per_day": 20,
-      "used": 6,
-      "left": 14
+      "used": 2,
+      "left": 18
     }
   },
-  "last_account_quota_utc": "2026-10-25T22:20:11.065606+00:00",
+  "last_account_quota_utc": "2026-10-26T23:20:48.217716+00:00",
   "admission_pause_reason": "M36 single-pass candidate failed performance decisively, no meaningful Modal-qualified next candidate. Remaining user allowance persists; scope exact source/evidence before any future dispatch.",
   "latest_stage_summary": "QKV_M128_SINGLEPASS_RESULTS.md",
   "historical_modal_first_pause": {
@@ -800,7 +854,7 @@
     "previous_best_preserved": true,
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P065 explicit consumer compile gate passed; standalone source and original local oracle preflight, no GPU admission yet. P046 preserved.",
+  "current_phase": "P065 rejected after explicit-layout offline gate passed but official291edcd1469a414c returned9+30 correctness,0.842339831x, target regressions3.14/3.53/7.43x vsP046; all27controlswithin5%. PreserveP046; close direct-load consumer, matched raw native timing unresolved.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",

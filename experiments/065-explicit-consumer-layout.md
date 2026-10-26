@@ -128,8 +128,8 @@ python -B -m unittest tests.test_p065_compiler_gate -v
 python -B static_check.py --submission candidates/projection_pooler_codec_explicit.py
 python -B check.py --submission candidates/projection_pooler_codec_explicit.py --suite all --seed-offset 65065 --weight-seed 65065 --output results/router-p065-explicit-cpu.json
 ```
-17 source/CPU/policy tests and 3 artifact tests pass. Full oracle result is recorded
-in the linked JSON once complete. CPU checks never establish physical lane mapping,
+17 source/CPU/policy tests and 3 artifact tests pass. All 39 original CPU oracle cases pass with fresh seeds 65065; weights and
+activations remain unchanged, as recorded in the linked JSON. CPU checks never establish physical lane mapping,
 tensor-core numerics, native CUDA graphs or timing.
 
 The single encoded official check is a bounded falsifier against actual P046,
@@ -142,3 +142,69 @@ cost, dedicated same-address ABA, concurrent calls and exact judge codegen remai
 unverified by this one check.
 
 Standalone source SHA256: `9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff`.
+
+## Official terminal outcome — reject this implementation
+
+Source commit `5adcb2040879632757be03581e1fe32d4409aec0` was submitted once:
+```sh
+OKC_CLI=<existing-cli> OKC_GPU_SLOT=<coordinator-slot> python -B cycle2_check.py send P2-11-p065-explicit-consumer candidates/projection_pooler_codec_explicit.py
+OKC_CLI=<existing-cli> OKC_GPU_SLOT=<coordinator-slot> python -B cycle2_check.py poll P2-11-p065-explicit-consumer
+python -B summarize_check.py P2-11-p065-explicit-consumer --ledger experiments/projection-cycle2-budget.json
+python -B assess_p065.py
+python -B -m unittest tests.test_p065_assessment -v
+```
+Accepted job **291edcd1469a414c**, mode **check**, at 2026-10-26 23:19:27 UTC.
+Observed terminal done at 23:20:48 UTC. **9/9 prerequisites and 30/30 scored cases
+pass**, including the official fresh-input/CUDA-graph evaluation. Score
+**0.8423398309×**, 95% CI **[0.8297047335, 0.8549749284]**. Selected P046 remains
+**1.1841399409×**. The score point is 28.865% lower, not an optimization win.
+All 12 local/source tests, 5 policy tests, 3 compiler tests, static check, and
+39 CPU oracle cases passed; 5 analysis arithmetic/error-path tests pass separately.
+
+| Target pooler M | P065 calibrated µs | P046 historical calibrated µs | Normalized P065/P046 latency | Normalized P065/P043 latency |
+|---:|---:|---:|---:|---:|
+| 8 | 55.9219 | 17.5593 | 3.13959 | 1.07505 |
+| 16 | 63.5939 | 18.0427 | 3.52996 | 1.23336 |
+| 32 | 136.7504 | 18.3095 | 7.43012 | 1.40244 |
+
+Ratios above 1 mean slower. Normalization uses each receipt's paired SGLang ratio,
+not division of cross-run displayed times. All 27 unchanged controls stay within
+5%; evaluator digest and code identity match. Profiles confirm `_pooler_codec_partial`
+and `_reduce` ran on all three targets; the main kernel accounts for 97.4–98.0%
+of profiled target time. Profile activity time is not the calibrated graph metric.
+
+Six loads are recomputed using all five families at weight 62 and geometric mean,
+exactly reproducing the official score. Holding P046 controls fixed while applying
+observed normalized target ratios models a score factor **0.7102102**; actual
+cross-run score factor is **0.7113516**. This supports target regressions as the
+reason to reject, not a claim that normalization removes all cross-run uncertainty.
+Complete 30-shape timings, six loads, all samples and profiles are retained in
+`results/remote-P2-11-p065-explicit-consumer.json`/`.csv` and the assessment JSON.
+
+**Conclusion:** explicit reconstruction-to-dot lane control is supported and
+correct under official cases, but this direct-load consumer is uncompetitive.
+The predicted compiler change happened and did not improve latency. Compared to
+P043 it also changed pipelining/load mapping; missing native matched-Gluon-raw
+results prevent isolated decoder-cost attribution. 116 registers and many static
+permutes are costs, not measured occupancy/stall evidence. No register/tile sweep
+or extra raw check is justified merely to explain this losing implementation.
+Close this bounded branch, preserve both raw/encoded prototypes and P046. Reopening
+would require a distinct consumer with baseline-competitive raw performance and
+explicit pipeline/layout costs, rather than assuming less shared memory is faster.
+
+No Modal/cloud app was launched. The CPU compiler container was removed, local
+engine restored stopped, official job terminal, shared measurement slot terminal.
+Observed account quota after completion: **2/20 checks used, 18 left; 0/10 ranked
+runs used** on 2026-10-26 UTC. No paid resources, credentials or ranked entry.
+No tool approval denial in this phase; the initial local static import rejection
+was corrected narrowly and tested. Matched raw native timing, dedicated all-bit
+GPU decoding, same-address ABA and concurrent invocation tests remain unverified.
+
+### 工程实验卡
+
+问题：精确解码之后的 shared-memory 转换是否是可消除的成本？
+改动：仅把解码与原始权重读取放入明确的 MMA operand lane layout，保留数学、
+分区和 reducer；原始/编码两份实现使用同一直接加载主循环。
+结果：离线编译确认转换消失，官方 9+30 正确性通过，但三个目标比 P046 慢
+3.14/3.53/7.43 倍。这个实现被否决，P046 保留。减少一种开销不代表总开销下降；
+当前证据不能把退化单独归因于解码、寄存器或流水线中的某一项。

@@ -1,3 +1,26 @@
+# P065 completed and rejected; P046 selected
+
+Official off-board job `291edcd1469a414c` is terminal. 9 prerequisites + 30 scored
+cases pass; score 0.8423398309× versus selected P046 1.1841399409×. All 27 controls
+within 5%, targets normalized latency 3.13959/3.52996/7.43012× for pooler M8/16/32.
+No pending/uncertain request. Quota observed at 23:20:48 UTC on 26 Oct: 2/20 used, 18 left.
+
+The explicit Gluon consumer-layout compiler gate passed (no decoded BF16 shared
+roundtrip, BF16 HMMA, FP32 accumulation, zero spills). Native performance failed.
+Do not promote it or infer a general compression result: raw Gluon native timing
+is missing and the direct-load port also removed the automatic async pipeline.
+No extra raw check is justified merely to explain an uncompetitive implementation.
+
+Source commit `5adcb20`; source SHA `9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff`.
+See `experiments/065-explicit-consumer-layout.md`, `evidence/p065`,
+`results/projection-p065-assessment.json`, and sanitized full receipt/CSV.
+39 CPU oracle cases,20 source/compiler/policy tests and 5 analysis tests pass.
+No Modal launched; local compiler container removed/engine stopped; GPU slot terminal.
+Attention reuse notes: `docs/OFFLINE_SM90_COMPILATION.md`. Gluon must use its
+`GluonASTSource`, not ordinary `ASTSource`, and produces TTGIR directly.
+
+---
+
 # P064 operand-orientation compiler gate failed; P046 preserved
 
 Source freeze `7579660`, candidate `candidates/projection_pooler_codec_kn.py`.
