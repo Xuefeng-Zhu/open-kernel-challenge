@@ -76,4 +76,5 @@ class RawControlAssessment(unittest.TestCase):
         row['paired_ratio']/=1.06
         out=assess(self.synthetic,self.compressed,self.parent)
         self.assertEqual(len(out['controls_over5pct']),1)
-        self.assertIn('limit attribution',out['decision'])
+        self.assertIn('limits attribution',out['decision'])
+        self.assertIn('Evaluator identity matches',out['decision'])

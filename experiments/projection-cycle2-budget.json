@@ -612,6 +612,63 @@
         1.1663778417791495,
         1.2019020400059255
       ]
+    },
+    {
+      "experiment": "P2-10-p043-raw-control",
+      "candidate": "candidates/projection_pooler_lossless_raw_control.py",
+      "source_commit": "10baddbce8a690814cbf24452529b9836b404d51",
+      "submission_sha256": "8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de",
+      "mode": "check",
+      "created_utc": "2026-10-26T22:22:55.463074+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 0,
+          "left": 20
+        }
+      },
+      "state": "terminal",
+      "status": "done",
+      "job_id": "de8dcd1a4d5a43b2",
+      "hypothesis": "Measure the previously untested exact P043 raw consumer to distinguish an uncompetitive S8/BM16/BN64/BK64 backend from the complete encoded branch. No source change except the historical false codec flag; no automatic promotion or same-run causal claim.",
+      "control_job_id": "41ba778763a5433b",
+      "command": [
+        "bin/okc",
+        "check",
+        "candidates/projection_pooler_lossless_raw_control.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-26T22:22:55.773632+00:00",
+      "status_cli_exit_code": 0,
+      "last_checked_utc": "2026-10-26T22:24:04.095666+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "passed": true,
+      "speedup": 1.1365058656832991,
+      "speedup_ci": [
+        1.1194582776980497,
+        1.1535534536685486
+      ],
+      "decision": "Diagnostic only; preserve P046. Raw consumer is 28.5-41.0% slower on targets; historical encoded/raw difference is 2.23-3.76x, with unchanged-control drift and no native compiler artifacts. No source promotion or automatic repeat.",
+      "assessment": "results/projection-p062-assessment.json",
+      "report": "experiments/062-raw-consumer-official-screen.md"
     }
   ],
   "publication": "Delivery status is recorded by verified private push receipt; prior no-push text was historical.",
@@ -720,7 +777,7 @@
     "previous_best_preserved": true,
     "selected_utc": "2026-10-25T22:21:25.586822+00:00"
   },
-  "current_phase": "P048 terminal selected P046; no active or uncertain Projection measurement. P047 private binding capability unresolved, not absent. Continue only supported evidence-led mechanisms.",
+  "current_phase": "P062 terminal raw-consumer diagnostic, 9+30 pass at 1.1365058657x; preserve selected P046 1.1841399409x. No active/uncertain Projection job. Exact raw/encoded compiler comparison is blocked by unavailable native diagnostic access; no Modal credential action.",
   "bounded_review": "experiments/PROJECTION_BOUNDED_REVIEW.md",
   "historical_authorization_fields": {
     "authorization": "Up to ten NEW official off-board projection checks, autonomous meaningful experiments, $0; no scored entry, paid compute, new credentials, new terms or publishing/push",

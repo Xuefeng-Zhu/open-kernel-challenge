@@ -1,3 +1,28 @@
+# P062 raw-consumer diagnostic terminal; P046 preserved
+
+Read `experiments/062-raw-consumer-official-screen.md` and reproduce its analysis
+with `python -B assess_p062.py`. Job `de8dcd1a4d5a43b2` finished 2026-10-26
+22:23:56 UTC: original 9 prerequisites + 30 scored shapes passed, 1.1365058657×.
+The exact P043 raw control was tested once; no source rewrite or compression
+retry. It is 28.5–41.0% slower than selected P046 on target pooler M8/16/32 after
+reference normalization, and 2.23–3.76× faster than historical compressed P043.
+These are cross-run comparisons, not a same-input three-arm causal experiment.
+Evaluator identity matches; unchanged-control drift beyond 5% limits attribution.
+P046 remains selected at 1.1841399409×. Neither post-hoc threshold changes nor
+a new tile sweep are justified.
+
+All samples and profiles are saved; source freeze is `4025e73`, raw SHA
+`8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de`.
+No active or uncertain Projection job; shared slot terminal. Post-run quota
+at 22:24:04 UTC is 1/20 checks used, 19 left; zero ranked runs. No Modal call,
+credential action or paid spend. The exact compiler/layout comparison remains
+blocked: Mac has no Triton/CUDA and the existing Modal login is expired.
+Do not renew credentials or invent compiler evidence. Next native diagnostic,
+if access is restored, is the exact-source M16 raw/encoded compiler comparison
+specified in P062, followed only by a result-justified fix against actual P046.
+
+## Previous checkpoint (historical)
+
 # P061 local compression audit complete; P046 preserved
 
 Read `experiments/061-compression-consumer-audit.md` and reproduce the immutable

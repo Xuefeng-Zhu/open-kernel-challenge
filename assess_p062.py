@@ -75,8 +75,10 @@ def assess(raw, compressed, selected):
     same_evaluator = result["evaluator"] == compressed["result"]["evaluator"] == selected["result"]["evaluator"]
     if not executed:
         decision = "Fallback or missing profile evidence; raw-consumer performance question remains unresolved."
-    elif not same_evaluator or drift:
-        decision = "Report observed differences, but changed evaluator/controls limit attribution; preserve P046."
+    elif not same_evaluator:
+        decision = "Changed evaluator identity and any control drift limit attribution; preserve P046."
+    elif drift:
+        decision = "Evaluator identity matches, but unchanged-control movement beyond 5% limits attribution; preserve P046."
     elif all(r["raw_over_selected"]>1.303348748235759 for r in targets):
         decision = "All raw targets exceed the optimistic storage-only parity screen; deprioritize this custom consumer, not all compression architectures. Preserve P046."
     elif all(r["raw_over_selected"]<=1.05 for r in targets):
