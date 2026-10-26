@@ -1,0 +1,17 @@
+{
+  "verified_utc": "2026-10-26T22:42:37.933520+00:00",
+  "job_id": "92fb22b141fc4d67",
+  "status": "done",
+  "mode": "check",
+  "passed": true,
+  "source_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "new_Modal_apps": [],
+  "new_Modal_CPU_or_GPU_jobs": 0,
+  "global_Modal_app_state": "not reverified; existing authentication expired",
+  "official_checks_used_this_experiment": 1,
+  "official_checks_remaining": 19,
+  "ranked_entries_used": 0,
+  "actual_paid_spending_usd": 0,
+  "credential_actions": 0,
+  "further_jobs_for_this_hypothesis": false
+}

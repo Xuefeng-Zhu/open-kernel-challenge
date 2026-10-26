@@ -1,0 +1,17 @@
+{
+  "json": {
+    "name": "candidate.92fb22b141fc4d67.json",
+    "bytes": 78986,
+    "sha256": "705de818f748610d80e8695792740e7ddb9e0943f67662e9e88a231c267c6584"
+  },
+  "text": {
+    "name": "candidate.92fb22b141fc4d67.txt",
+    "bytes": 10337,
+    "sha256": "8370fee76c93090d601deb9e4d8842fa68f52791df528f7b84d56326ec608b48"
+  },
+  "log": {
+    "name": "candidate.92fb22b141fc4d67.log",
+    "bytes": 816,
+    "sha256": "f39cda8c0b8a605fa8f51bfb037b83fb412703a109cde04b2ec72b2e6607786f"
+  }
+}
