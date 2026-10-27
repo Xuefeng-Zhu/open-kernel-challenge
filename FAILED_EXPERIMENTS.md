@@ -35,9 +35,9 @@ excluded. This index is not a retry queue or a new selection decision.
 
 ## Attention
 
-Attention evidence is linked to immutable committed snapshots so this index does
-not read or modify its active working files. The active check is not classified
-here. Source snapshot: `04447c1cc8f64fdb489b74e1e942a64e0fae3cbb`.
+Attention evidence is linked to immutable committed snapshots; ongoing jobs are
+excluded. Default snapshot: `04447c1cc8f64fdb489b74e1e942a64e0fae3cbb`;
+the M64N8 link pins its later terminal result.
 
 | Experiment | Outcome and reason | Takeaway | Original evidence |
 |---|---|---|---|
@@ -52,7 +52,7 @@ here. Source snapshot: `04447c1cc8f64fdb489b74e1e942a64e0fae3cbb`.
 | Common-PV alpha-one | **Benefit gate missed:** correct, but zero of six target pairs improved and the required gain was absent. | Frequent `alpha=1` does not guarantee whole-call savings. | [Result][a-common] |
 | Gluon overlap with nominal serial control | **Static codegen gate rejection:** both arms already prefetched K; no native timing followed. | Reject the claimed causal contrast, not overlap as a general mechanism. | [Compiler result][a-overlap] |
 | Gluon V-stage publication | **Slower versus selected path:** improved over its prototype control but remained about 3.82× FA3 latency. | A local scheduling gain is not a production win. | [Result][a-vstage] |
-| M64N8 integrated producer | **Compile/resource gate rejection:** sliding B1 violated the absolute zero-local-memory gate; runtime untested. | The selected control had the same local-memory count, so this is not evidence of newly introduced spilling. | [Compiler result][a-n8] |
+| M64N8 integrated producer | **Official performance rejection:** job `3e0a7ef51d4849c6` passes 16 prerequisites + 12 timed shapes; score 1.09955× versus selected 1.23363×. Four changed paths regress 21.1/20.7/29.5/79.6% after reference normalization; eight controls drift at most 1.90%. | Reject this implementation, not all transposed mappings. | [Official result][a-n8] |
 | Sliding compact KV | **Inconclusive / not adopted:** correctness passed and the benefit screen missed, but a changed driver confounded historical timing comparison. | Do not turn worse descriptive timings into a matched causal slowdown claim. | [Result][a-compact] |
 
 [a-v2]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/REMOTE_CHECK.md
@@ -65,5 +65,5 @@ here. Source snapshot: `04447c1cc8f64fdb489b74e1e942a64e0fae3cbb`.
 [a-common]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md
 [a-overlap]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/gluon-overlap-probe/RESULTS.md
 [a-vstage]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/gluon-vstage-probe/RESULTS.md
-[a-n8]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/m64n8-producer-probe/RESULTS.md
+[a-n8]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/bf0ca4627c895b48d42fbf2caecf457de1523d33/reviews/attention-v2/m64n8-producer-probe/official-check/RESULTS.md
 [a-compact]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/04447c1cc8f64fdb489b74e1e942a64e0fae3cbb/reviews/attention-v2/sliding-compact-kv-probe/RESULTS.md
