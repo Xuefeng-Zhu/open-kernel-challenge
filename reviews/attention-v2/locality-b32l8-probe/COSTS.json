@@ -1,0 +1,8 @@
+{
+  "app_id": "ap-HPcxoqismBdiogLGQ1HejU",
+  "observed_account_gross_delta_usd": "0.04288947",
+  "paid_after_usd": "0E-8",
+  "cost_reserve_usd": "0.70",
+  "worker_seconds": 54.683767253,
+  "qualification": "In-flight controller accounting only; no additional billing/balance query. Provisional account delta is not an exact per-app invoice."
+}
