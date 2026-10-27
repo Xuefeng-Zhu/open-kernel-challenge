@@ -1,0 +1,87 @@
+{
+  "prepared_utc": "2026-10-25T18:07:36.493656+00:00",
+  "source_head": "d51f83bd635ccb39e7292d0da046552ce1e8649f",
+  "mode": "local preparation only",
+  "executed": {
+    "gpu_jobs": 0,
+    "remote_container_jobs": 0,
+    "installs": 0,
+    "credential_changes": 0,
+    "billing_changes": 0,
+    "algorithm_edits": 0,
+    "repository_pushes": 0,
+    "incremental_compute_cost_usd": "0"
+  },
+  "case": {
+    "batch": 32,
+    "q_len": 8,
+    "head_dim": 64,
+    "num_q_heads": 16,
+    "num_kv_heads": 2,
+    "ctx": 80000,
+    "spread": "agentic",
+    "page_size": 1,
+    "kv_scale": 1,
+    "dist": "coherent",
+    "seed": 135701
+  },
+  "arms": [
+    "unchanged FA3 candidate.kernel_fn",
+    "rejected BF16 custom helper.bf16_custom_fn"
+  ],
+  "tool_status": {
+    "torch_cuda_activity": "demonstrated on existing image",
+    "cuobjdump": "demonstrated",
+    "ncu": "remote installation/version unknown",
+    "nsys": "remote installation/version unknown",
+    "hardware_counter_permission": "unknown, not attempted or denied",
+    "exact_per_cta_trace": "not demonstrated or admitted"
+  },
+  "future_envelope": {
+    "gpu": "H200",
+    "cpu_cores": 2,
+    "memory_gib": 8,
+    "max_containers": 1,
+    "retries": 0,
+    "worker_alarm_s": 165,
+    "child_kill_s": 175,
+    "function_timeout_s": 190,
+    "startup_timeout_s": 20,
+    "app_watchdog_s": 210,
+    "each_ncu_subprocess_timeout_s": 60,
+    "max_ncu_mainloop_sessions": 2,
+    "max_activity_sessions": 1,
+    "last_verified_rate_usd_per_s": "0.001305166666666666666666666667",
+    "conservative_billed_window_s": 235,
+    "billing_model_safety_multiplier": 2,
+    "additional_allowance_usd": ".02",
+    "computed_planning_reserve_usd": "0.6334283333333333333333333334",
+    "rounded_planning_reserve_usd": ".65",
+    "paid_cap_usd": "0",
+    "fresh_guardrails_required_before_future_launch": true
+  },
+  "source_sha256": {
+    "reviews/attention-v2/architecture-probe/probe/candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "reviews/attention-v2/architecture-probe/paired/candidatecustomhelper.py": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+    "reviews/attention-v2/architecture-probe/paired/worker.py": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+    "reviews/attention-v2/official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "reviews/attention-v2/official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+  },
+  "blocker": {
+    "action": "Admit hardware-counter or temporal-residency diagnostic",
+    "target": "Modal image im-cPTbGpNiX3RarKResPgX7h on H200",
+    "state": "capability/permission unknown; not denied or submitted",
+    "reason": "Existing records lack remote Nsight inventory and an actual counter access result; current preparation scope excludes new remote/GPU jobs. Exact CTA tracing is not supplied by demonstrated ordinary activity path."
+  },
+  "next_action": "Separately allowed bounded existing-image tool inventory, then one counter admission test only if an installed tool supports it; no installation/privilege expansion.",
+  "future_cpu_inventory": {
+    "gpu": null,
+    "cpu_cores": 2,
+    "memory_gib": 8,
+    "timeout_s": 30,
+    "retries": 0,
+    "planning_reserve_usd": ".02"
+  },
+  "future_combined_planning_reserve_usd": ".67",
+  "review": "Independent read-only review found no blocking scope, source-hash, capability, replay, cost or CTA-claim issue."
+}

@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-25T18:33:30.320460+00:00",
+  "task_reservation_usd": ".67",
+  "prior_cpu_time_allowance_usd": "0.01158600000000000000000000000",
+  "prior_gpu_time_allowance_usd": "0.3776156666666666666666666668",
+  "remaining_counter_reserve_usd": ".28",
+  "total_conservative_with_remaining_reserve_usd": "0.6692016666666666666666666668",
+  "within_original_reservation": true,
+  "activity_sessions_used": 1,
+  "counter_sessions_used": 1,
+  "counter_sessions_remaining": 1,
+  "prior_gpu_app_stopped": true,
+  "reason": "First NCU collection timed out without retaining logs. One remaining diagnostic session uses a single already-supported hardware metric and standalone parent with no Torch/CUPTI context; no new activity capture or algorithm change."
+}

@@ -1,0 +1,509 @@
+{
+  "kind": "Offline audit of bounded BF16 custom/unchanged FA3 representative run",
+  "analyzer_sha256": "a8a7b993813e17b7b0af790863e42fa30939086a5b5715d9725f1e5f3b3249a8",
+  "result_sha256": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9",
+  "launch_receipt_sha256": "640de3af133ef350ded5c812b064fbb03f51b88513f67dfaca4a60670a739cda",
+  "source_commit": "7c544c918996739863f126771f4ebe8fcdc7f122",
+  "app_id": "ap-Cox9fy63pE0bZocdwG9e0e",
+  "payload_provenance": {
+    "worker.py": {
+      "expected_sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+      "local_sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+      "result_sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+      "launch_sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7"
+    },
+    "candidatecustomhelper.py": {
+      "expected_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "local_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "result_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "launch_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82"
+    },
+    "candidate.py": {
+      "expected_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "local_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "result_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "launch_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e"
+    },
+    "modal_worker.py": {
+      "expected_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "local_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "result_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "launch_sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e"
+    },
+    "official/reference.py": {
+      "expected_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "local_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "result_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "launch_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b"
+    },
+    "official/checks.py": {
+      "expected_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "local_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "result_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "launch_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+    }
+  },
+  "recorded_status": "complete",
+  "recorded_passed": true,
+  "official_oracle_calls": 18,
+  "oracle_replays_passed": 18,
+  "exact_returning_a_checks": 6,
+  "all_18_oracles_admitted": true,
+  "timing_complete_gate": true,
+  "performance_results_admitted": true,
+  "audit_issues": [],
+  "failures": [],
+  "cases": [
+    {
+      "case": "full_verify16_page64_boundary",
+      "passed": true,
+      "records": 6,
+      "oracle_calls": 6,
+      "errors": [
+        {
+          "arm": "fa3",
+          "replay": "A1",
+          "message": "relative L2 error 5.953e-02 (worst row 1.013e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A1",
+          "message": "relative L2 error 5.907e-02 (worst row 1.014e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "B",
+          "message": "relative L2 error 5.964e-02 (worst row 1.245e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "B",
+          "message": "relative L2 error 5.858e-02 (worst row 1.256e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "A2",
+          "message": "relative L2 error 5.953e-02 (worst row 1.013e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A2",
+          "message": "relative L2 error 5.907e-02 (worst row 1.014e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]"
+        }
+      ],
+      "input_lengths": [
+        [
+          0,
+          1,
+          63,
+          64,
+          65,
+          8191,
+          8192,
+          8193,
+          0,
+          1,
+          63,
+          64,
+          65,
+          8191,
+          8192,
+          8193
+        ],
+        [
+          8193,
+          8192,
+          8191,
+          65,
+          64,
+          63,
+          1,
+          0,
+          8193,
+          8192,
+          8191,
+          65,
+          64,
+          63,
+          1,
+          0
+        ]
+      ],
+      "page_table_shape": [
+        16,
+        129
+      ]
+    },
+    {
+      "case": "full_verify16_scored_family",
+      "passed": true,
+      "records": 6,
+      "oracle_calls": 6,
+      "errors": [
+        {
+          "arm": "fa3",
+          "replay": "A1",
+          "message": "relative L2 error 3.321e-02 (worst row 8.489e-02) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A1",
+          "message": "relative L2 error 3.014e-02 (worst row 7.555e-02) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "B",
+          "message": "relative L2 error 2.977e-02 (worst row 6.131e-02) [bound 0.079: 2.5 x the reference's 0.026 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "B",
+          "message": "relative L2 error 2.674e-02 (worst row 5.699e-02) [bound 0.079: 2.5 x the reference's 0.026 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "A2",
+          "message": "relative L2 error 3.321e-02 (worst row 8.489e-02) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A2",
+          "message": "relative L2 error 3.014e-02 (worst row 7.555e-02) [bound 0.089: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]"
+        }
+      ],
+      "input_lengths": [
+        [
+          75359,
+          74201,
+          76085,
+          80047,
+          75064,
+          85893,
+          80127,
+          85423,
+          80482,
+          75593,
+          84231,
+          84740,
+          78092,
+          75391,
+          77153,
+          85309
+        ],
+        [
+          80382,
+          77816,
+          84651,
+          85717,
+          74923,
+          82268,
+          79030,
+          79567,
+          85863,
+          74916,
+          76540,
+          74083,
+          80043,
+          82084,
+          79407,
+          75442
+        ]
+      ],
+      "page_table_shape": [
+        16,
+        86008
+      ]
+    },
+    {
+      "case": "full_verify32_scored_family",
+      "passed": true,
+      "records": 6,
+      "oracle_calls": 6,
+      "errors": [
+        {
+          "arm": "fa3",
+          "replay": "A1",
+          "message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A1",
+          "message": "relative L2 error 3.186e-02 (worst row 6.497e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "B",
+          "message": "relative L2 error 3.416e-02 (worst row 6.760e-02) [bound 0.081: 2.5 x the reference's 0.026 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "B",
+          "message": "relative L2 error 2.681e-02 (worst row 6.424e-02) [bound 0.081: 2.5 x the reference's 0.026 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "fa3",
+          "replay": "A2",
+          "message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]"
+        },
+        {
+          "arm": "bf16_custom",
+          "replay": "A2",
+          "message": "relative L2 error 3.186e-02 (worst row 6.497e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]"
+        }
+      ],
+      "input_lengths": [
+        [
+          75359,
+          74201,
+          76085,
+          80047,
+          75064,
+          85893,
+          80127,
+          85423,
+          80482,
+          75593,
+          84231,
+          84740,
+          78092,
+          75391,
+          77153,
+          85309,
+          76843,
+          79726,
+          79738,
+          84299,
+          80233,
+          78793,
+          77129,
+          85091,
+          85483,
+          79523,
+          78847,
+          75690,
+          74680,
+          80251,
+          75499,
+          85771
+        ],
+        [
+          80382,
+          77816,
+          84651,
+          85717,
+          74923,
+          82268,
+          79030,
+          79567,
+          85863,
+          74916,
+          76540,
+          74083,
+          80043,
+          82084,
+          79407,
+          75442,
+          84200,
+          83438,
+          85967,
+          83334,
+          76983,
+          84456,
+          76046,
+          74949,
+          76546,
+          82262,
+          83543,
+          80968,
+          82368,
+          75111,
+          85487,
+          79783
+        ]
+      ],
+      "page_table_shape": [
+        32,
+        86008
+      ]
+    }
+  ],
+  "timings": [
+    {
+      "case": "full_verify16_scored_family",
+      "complete_and_valid": true,
+      "warmup_two_arm_samples": 4,
+      "measured_two_arm_samples": 12,
+      "validated_replays": 32,
+      "separate_empty_graph_median_us": 3.2319999299943447,
+      "recomputed_summary": {
+        "raw_median_us": {
+          "fa3": 211.58400177955627,
+          "bf16_custom": 342.48000383377075
+        },
+        "raw_min_max_us": {
+          "fa3": [
+            209.98400449752808,
+            212.67199516296387
+          ],
+          "bf16_custom": [
+            339.4879996776581,
+            344.4800078868866
+          ]
+        },
+        "fa3_over_bf16_custom_ratios": [
+          0.6147617143894367,
+          0.615886621073018,
+          0.6148314094814846,
+          0.6227510964551535,
+          0.625070543782458,
+          0.6173710819026595,
+          0.617364531784389,
+          0.6169460215312418,
+          0.6220190588857646,
+          0.6160924079065274,
+          0.6211751763275871,
+          0.6152551735064931
+        ],
+        "reverse_order_pair_geomeans": [
+          0.6153239106684917,
+          0.6187785826850037,
+          0.6212088842575094,
+          0.617155241182376,
+          0.6190486408616716,
+          0.6182080886638058
+        ],
+        "median_reverse_order_pair_ratio": 0.6184933356744048,
+        "paired_candidate_latency_change_fraction": 0.6168322960337165,
+        "custom_faster_measured_comparisons": 0,
+        "qualification": "Within-session whole-call measurements, two input versions, six reverse-order pair ratios; no confidence interval or official score"
+      }
+    },
+    {
+      "case": "full_verify32_scored_family",
+      "complete_and_valid": true,
+      "warmup_two_arm_samples": 4,
+      "measured_two_arm_samples": 12,
+      "validated_replays": 32,
+      "separate_empty_graph_median_us": 3.1999999191612005,
+      "recomputed_summary": {
+        "raw_median_us": {
+          "fa3": 396.08000218868256,
+          "bf16_custom": 588.4000062942505
+        },
+        "raw_min_max_us": {
+          "fa3": [
+            392.9919898509979,
+            399.83999729156494
+          ],
+          "bf16_custom": [
+            584.5440030097961,
+            602.1760106086731
+          ]
+        },
+        "fa3_over_bf16_custom_ratios": [
+          0.6768222776218878,
+          0.6700449887717354,
+          0.658040162382111,
+          0.6761956485978281,
+          0.6692278249204892,
+          0.6750654328267844,
+          0.6703677611778882,
+          0.666058545733363,
+          0.6773963775544072,
+          0.6757111446731418,
+          0.6693271987504672,
+          0.6729251881626391
+        ],
+        "reverse_order_pair_geomeans": [
+          0.673425107498687,
+          0.6670561403700529,
+          0.6721402913750056,
+          0.668209679753799,
+          0.6765532363936545,
+          0.6711237822946899
+        ],
+        "median_reverse_order_pair_ratio": 0.6716320368348478,
+        "paired_candidate_latency_change_fraction": 0.4889105122391546,
+        "custom_faster_measured_comparisons": 0,
+        "qualification": "Within-session whole-call measurements, two input versions, six reverse-order pair ratios; no confidence interval or official score"
+      }
+    }
+  ],
+  "environment": {
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "triton": "3.8.0",
+    "python": "3.12.3"
+  },
+  "phases": [
+    {
+      "name": "imports_and_hashes",
+      "wall_seconds": 11.963349282000001
+    },
+    {
+      "name": "full_verify16_page64_boundary_capture_aba",
+      "wall_seconds": 21.757571669999997
+    },
+    {
+      "name": "full_verify16_scored_family_capture_aba",
+      "wall_seconds": 6.942672590999997
+    },
+    {
+      "name": "full_verify32_scored_family_capture_aba",
+      "wall_seconds": 12.143648186999997
+    },
+    {
+      "name": "full_verify16_scored_family_paired_timing",
+      "wall_seconds": 0.09306451999999865
+    },
+    {
+      "name": "full_verify32_scored_family_paired_timing",
+      "wall_seconds": 0.11262383199999704
+    }
+  ],
+  "worker_wall_seconds": 53.066670009,
+  "unchanged_fa3_control": {
+    "exact_candidate_hash": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "frozen_worker_function_binding": "fa3 = candidate.kernel_fn; bf16_custom = separate helper",
+    "formal_dispatch_modified": false
+  },
+  "fa3_profiler": {
+    "attempted": true,
+    "kernel_names": [
+      "_qk_rms_norm_fwd_kernel",
+      "void at::native::elementwise_kernel<128, 4, at::native::gpu_kernel_impl_nocast<at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> >(at::TensorIteratorBase&, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> const&)::{lambda(int)#1}>(int, at::native::gpu_kernel_impl_nocast<at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> >(at::TensorIteratorBase&, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16> const&)::{lambda(int)#1})",
+      "void at::native::vectorized_elementwise_kernel<8, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>, false>(int, at::native::ConvertToFloat8E4M3fnOp<c10::BFloat16>, std::array<char*, 2ul>)",
+      "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+      "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+      "void flash::prepare_varlen_num_blocks_kernel<2, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+      "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, true, false, true, true, true, true>(sglang::NormGateParams)",
+      "void sglang::store_kvcache_kernel<128l, 128l, 32u, true, long>(sglang::StoreKVCacheParams)"
+    ],
+    "kernel_names_utf8_bytes": 2829,
+    "omitted_kernel_name_count": 0,
+    "kernel_names_truncated": false,
+    "actual_scheduler_verified": false,
+    "wall_seconds": 0.03212075199999731,
+    "qualification": "One unchanged FA3 B32/L8/page1 graph outside timing; names require template/source matching before scheduler claims"
+  },
+  "observed_named_schedulers": [
+    {
+      "literal_scheduler_template": "flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true>",
+      "full_event_name_sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711"
+    },
+    {
+      "literal_scheduler_template": "flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true>",
+      "full_event_name_sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711"
+    }
+  ],
+  "limitations": [
+    "Representative cases only: not full official prerequisite suite, all shapes, concurrency, or independent-session confirmation.",
+    "Raw complete-call graph timings primary; separate empty-graph calibration is not official judge calibration.",
+    "No official score, confidence interval, selected-candidate promotion, or scheduler novelty claim."
+  ]
+}

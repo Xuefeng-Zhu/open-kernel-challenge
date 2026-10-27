@@ -1,0 +1,10 @@
+{
+  "positive_complete_gate": true,
+  "negative_failed_oracle_suppresses_timings": true,
+  "negative_missing_sample_suppresses_timings": true,
+  "negative_mismatched_summary_suppresses_timings": true,
+  "result_sha256": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9",
+  "launch_receipt_sha256": "640de3af133ef350ded5c812b064fbb03f51b88513f67dfaca4a60670a739cda",
+  "analyzer_sha256": "a8a7b993813e17b7b0af790863e42fa30939086a5b5715d9725f1e5f3b3249a8",
+  "gpu_network_browser_calls": 0
+}

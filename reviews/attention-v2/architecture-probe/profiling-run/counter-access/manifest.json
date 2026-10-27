@@ -1,0 +1,11 @@
+{
+  "status": "prepared_not_launched",
+  "source_sha256": {
+    "access_worker.py": "7c2b3cfd6b53151cc69d0d17b7673d6f481be5ecbe891d3c851440d3df88f9f7",
+    "controller.py": "55a28b5363376a55f1c148a6d964c3b004213e0385395bc86b171113d6a12c9e",
+    "test_access.py": "64c0fb83f526bd9ac374df34d0dc7db7d9c48288be4010b1fa46daa33fb6f85f",
+    "local-verification.json": "94c86078507e515422f089ca9ac3d06e910e67ec8a3329200d9274d13e5bd515"
+  },
+  "one_remaining_counter_session": true,
+  "additional_activity_sessions": 0
+}

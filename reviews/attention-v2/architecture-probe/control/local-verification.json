@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "tests_run": 6,
+  "gpu_launched": false,
+  "network_called": false,
+  "controller_sha256": "1a68508b367f276a2f56a411f9443b30023314fc3cbe487c3dbae845605aa680"
+}

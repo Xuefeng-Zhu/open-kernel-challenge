@@ -1,0 +1,13 @@
+{
+  "local_tests": 6,
+  "passed": true,
+  "gpu_launches": 0,
+  "nsight_executions": 0,
+  "network_calls": 0,
+  "files": {
+    "counters.py": "cdf06463a840d75ce8cd3e7ef497fa60c0481b63ff7de6300d4061b23ea12408",
+    "counter_target.py": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f",
+    "test_counters.py": "b7f09fe0ea6f6a3f1e49df805821ed3ba2c791b5f8f99ff336d0045e0d7635a9",
+    "COUNTERS.md": "ab643710b17a29a2c981cbcfb805f66b94b34a05dfbd0963bbd13a46f1d22461"
+  }
+}

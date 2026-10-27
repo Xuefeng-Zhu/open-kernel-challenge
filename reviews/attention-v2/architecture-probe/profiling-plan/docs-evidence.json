@@ -1,0 +1,82 @@
+{
+  "prepared_utc": "2026-10-25T18:02:29.644002+00:00",
+  "scope": "Official documentation research; no GPU, install, credentials, browser UI or algorithm changes",
+  "sources": [
+    {
+      "id": "ncu_cli",
+      "url": "https://docs.nvidia.com/nsight-compute/NsightComputeCli/index.html"
+    },
+    {
+      "id": "ncu_guide",
+      "url": "https://docs.nvidia.com/nsight-compute/ProfilingGuide/index.html"
+    },
+    {
+      "id": "nsys_guide",
+      "url": "https://docs.nvidia.com/nsight-systems/UserGuide/index.html"
+    },
+    {
+      "id": "counter_permission",
+      "url": "https://developer.nvidia.com/nvidia-development-tools-solutions-err_nvgpuctrperm-permission-issue-performance-counters"
+    },
+    {
+      "id": "cupti_kernel13_0",
+      "url": "https://docs.nvidia.com/cupti/13.0.0/api/structCUpti__ActivityKernel9.html"
+    },
+    {
+      "id": "cupti_pc13_0",
+      "url": "https://docs.nvidia.com/cupti/13.0.0/main/main.html#cupti-pc-sampling-api"
+    },
+    {
+      "id": "pytorch_profiler2_14",
+      "url": "https://docs.pytorch.org/docs/2.14/profiler.html"
+    },
+    {
+      "id": "modal_profiling",
+      "url": "https://modal.com/docs/examples/torch_profiling"
+    },
+    {
+      "id": "modal_cuda",
+      "url": "https://modal.com/docs/guide/cuda"
+    }
+  ],
+  "local_source_sha256": {
+    "probe/candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "paired/candidatecustomhelper.py": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+    "paired/worker.py": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+    "paired/result.json": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9",
+    "native_artifacts/summary.json": "4aef9c653af05a09276b7385e14bf2a3d5889fefdb66885f319715178e1ff6d7",
+    "paired/FA3_PROFILE.md": "0e8d3e5a930a302af3ccf2707a070f183b6546403cf9acedace8ee5f26e92deb"
+  },
+  "capabilities": {
+    "torch_cuda_activity": "Observed successful in prior recorded H200 run, not a hardware-counter permission test",
+    "ncu_nsys_installed": "Not established by documentation; local/image audit owns this fact",
+    "hardware_counter_access": "Unknown; no counter probe run",
+    "exact_cta_sm_start_end_trace": "Not provided by ordinary CUPTI kernel activity record; unestablished under existing tool-only constraint",
+    "sampled_tail": "Conditional NCU PM Sampling, supported metric query and permission needed; aggregate not exact CTA trace",
+    "warp_stalls": "Conditional NCU/CUPTI PC sampling, no time resolution for individual samples in documented path"
+  },
+  "version_policy": "Current docs describe features that installed tool versions may lack. Record --version and help, gate every optional flag/metric/section on installed support. No auto-install or permission escalation.",
+  "future_commands_are_templates": true,
+  "no_commands_executed_on_gpu": true,
+  "updated_utc": "2026-10-25T18:05:13.479044+00:00",
+  "documentation_sha256": "23107ebbe152e387f2e8d29e5d44055752fb3df92d3b42ddb697a9c468cb1dbd",
+  "future_ncu_policy": {
+    "query": "--query-metrics --query-metrics-mode all --devices 0",
+    "query_mode_implies_query_in_current_docs": true,
+    "replay_mode": "application",
+    "app_replay_mode": "strict",
+    "app_replay_match": "grid",
+    "cache_control": "none",
+    "clock_control": "none",
+    "worker_status": "Template only; no worker implemented or run in this preparation turn",
+    "determinism": "Fresh state and identical filtered kernel name/grid/block/order across application passes",
+    "mutable_state": "Application reruns reinitialize caches and tickets; no blind individual-kernel replay assumption",
+    "stop": "Missing option, kernel mismatch, nonzero target exit, permission error or deadline",
+    "caveats": [
+      "Whole application setup repeats per pass and must remain within cost/watchdog bound",
+      "Cache history and actual physical clocks still vary; profile durations are not benchmark latency",
+      "Record installed-version-specific boost-control defaults",
+      "PM sampling is aggregate, not exact CTA-to-SM tracing"
+    ]
+  }
+}

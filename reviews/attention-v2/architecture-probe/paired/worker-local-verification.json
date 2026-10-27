@@ -1,0 +1,8 @@
+{
+  "status": "passed",
+  "tests_run": 7,
+  "gpu_launched": false,
+  "network_called": false,
+  "worker_sha256": "3818221cb069ed1d605c37871183aebc5cf711bdcf22fd28fcc6768b3dc120c7",
+  "helper_sha256": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82"
+}

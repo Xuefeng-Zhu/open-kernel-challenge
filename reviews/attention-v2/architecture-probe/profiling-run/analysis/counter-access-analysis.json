@@ -1,0 +1,189 @@
+{
+  "kind": "Separate final single-metric FA3 access supplement; no performance or BF16 comparison",
+  "status": "timeout_partial_logs_preserved",
+  "analyzer_sha256": "8b7ae58754fcec9342d3ff582115977b108c0fb3c5e015e45205904d73ba454d",
+  "base_parser_sha256": "0d47f788f0aa50a146717da2beec14ab4b7a6d75c8eeec5089fd9a86ff846764",
+  "artifact_files": {
+    "fa3-counter-check.json": {
+      "bytes": 1627,
+      "sha256": "f3d97ad6843844d6622dd7e74bd798d08bd094dd958d9c076084f45d9446b688"
+    },
+    "summary.json": {
+      "bytes": 4141,
+      "sha256": "e9a7d7b60f4ef1b5726cdd8220868b849cdaf2fbb05e8f68cd0b846836bbb177"
+    }
+  },
+  "source_provenance": {
+    "access_worker.py": {
+      "local_sha256": "7c2b3cfd6b53151cc69d0d17b7673d6f481be5ecbe891d3c851440d3df88f9f7",
+      "reported_sha256": "7c2b3cfd6b53151cc69d0d17b7673d6f481be5ecbe891d3c851440d3df88f9f7",
+      "expected_sha256": "7c2b3cfd6b53151cc69d0d17b7673d6f481be5ecbe891d3c851440d3df88f9f7"
+    },
+    "worker.py": {
+      "local_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326",
+      "reported_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326",
+      "expected_sha256": "07c6c36b06995df46b49b90208b0454eba1aa3efb17787c7a2fbdf67b1efa326"
+    },
+    "counter_target.py": {
+      "local_sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f",
+      "reported_sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f",
+      "expected_sha256": "910e0b3613681edf318d43df25356d8c9ed286b416c2757063d4c0d431142c3f"
+    }
+  },
+  "transport_audit": {
+    "published_receipt_present": true,
+    "receipt_sha256": "f5022567757decb4527c3fa53de374036aab08f6ce6cfeb06685e2a9efbd0b82",
+    "source_commit": "052665dd2496f12952d684ee6fd5a4b0e1075228",
+    "app_id": "ap-mEXdTixH5oBF9hXapbXGxj",
+    "artifact_hashes_reverified": true
+  },
+  "execution_commit": "052665dd2496f12952d684ee6fd5a4b0e1075228",
+  "original_activity_summary_sha256": "a48846ac5a4a79de771822130eee0d46705fa5350c49fafff9508125d977ba15",
+  "original_activity_trace_sha256": "e49b1677de2dfbc9fcca43e63924a026cd7c101321e2bee1131f87ee41355ffc",
+  "recorded_status": "timeout_partial_logs_preserved",
+  "recorded_passed": false,
+  "exit_code": 124,
+  "timeout_seconds": 55,
+  "timed_out": true,
+  "hardware_counter_sessions": 1,
+  "prior_counter_sessions": 1,
+  "protocol_verified": true,
+  "audit_issues": [],
+  "logs": {
+    "stdout": {
+      "available": true,
+      "verified": true,
+      "text": "==WARNING== Note: Running with uncontrolled GPU caches. Profiling results may be inconsistent.\n==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.\n==PROF== Connected to process 29 (/usr/bin/python3.12)\n",
+      "original_bytes": 272,
+      "preserved_bytes": 272,
+      "truncated": false,
+      "preserved_sha256": "0c6de48bfc23084b72c67270b949f697417ac844baee517a3e804ae05540fe8f",
+      "qualification": "Truncated logs retain head and tail; absence of a marker in such logs does not prove it never appeared."
+    },
+    "stderr": {
+      "available": true,
+      "verified": true,
+      "text": "",
+      "original_bytes": 0,
+      "preserved_bytes": 0,
+      "truncated": false,
+      "preserved_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "qualification": "Truncated logs retain head and tail; absence of a marker in such logs does not prove it never appeared."
+    }
+  },
+  "permission_denied": false,
+  "denial_evidence": [],
+  "tool_messages": [
+    "==WARNING== Note: Running with uncontrolled GPU caches. Profiling results may be inconsistent.",
+    "==WARNING== Note: Running with unmodified GPU clocks. If not controlled otherwise, profiling results may be inconsistent.",
+    "==PROF== Connected to process 29 (/usr/bin/python3.12)"
+  ],
+  "observed_pass_counts": [],
+  "target_validation": {
+    "arm": "fa3",
+    "passed": true,
+    "checks": [
+      {
+        "label": "pre_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "stable_addresses": true,
+        "exact_output_newkv_return": null
+      },
+      {
+        "label": "post_profile",
+        "passed": true,
+        "oracle_called": true,
+        "oracle_message": "relative L2 error 3.814e-02 (worst row 7.371e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+        "immutable_inputs_and_untouched_rows": true,
+        "immutable_message": "immutable inputs and non-new cache rows unchanged",
+        "stable_addresses": true,
+        "exact_output_newkv_return": true
+      }
+    ],
+    "source_sha256": {
+      "candidate.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "candidatecustomhelper.py": "59fa2bf6aa1e97e55a23b821b56bdd5573b3fdf2edb0613913c2e93dc7acde82",
+      "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+      "official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+    },
+    "algorithm_changed": false,
+    "case": {
+      "batch": 32,
+      "q_len": 8,
+      "ctx": 80000,
+      "heads": "tp8",
+      "layer": "full",
+      "page": 1,
+      "kv_scale": 1.0,
+      "spread": "agentic",
+      "dist": "coherent",
+      "seed": 135701
+    },
+    "actual_lengths": [
+      75359,
+      74201,
+      76085,
+      80047,
+      75064,
+      85893,
+      80127,
+      85423,
+      80482,
+      75593,
+      84231,
+      84740,
+      78092,
+      75391,
+      77153,
+      85309,
+      76843,
+      79726,
+      79738,
+      84299,
+      80233,
+      78793,
+      77129,
+      85091,
+      85483,
+      79523,
+      78847,
+      75690,
+      74680,
+      80251,
+      75499,
+      85771
+    ]
+  },
+  "target_oracles_passed": true,
+  "raw_report_verified": false,
+  "raw_counter_access_completed": false,
+  "metric_value_admitted": false,
+  "parsed_csv": {
+    "raw_text_sha256": "0c6de48bfc23084b72c67270b949f697417ac844baee517a3e804ae05540fe8f",
+    "rows": [],
+    "row_count": 0,
+    "metric_names": [],
+    "literal_units": {},
+    "literal_pass_replay_fields": {},
+    "parse_issues": [
+      "No supported long/wide NCU metric CSV header found"
+    ],
+    "qualification": "Literal tool values/units retained. Kernel replay and metric collection are instrumented; do not compare their duration directly with unprofiled latency."
+  },
+  "exact_metric_rows": [],
+  "selected_kernel_names": [],
+  "benchmark_claim": false,
+  "bf16_comparison": false,
+  "bandwidth_claim": false,
+  "limitations": [
+    "One FA3 DRAM-byte counter only, not a complete-call measurement or a two-arm comparison.",
+    "Bytes alone do not establish bytes/second without a matched elapsed-time measurement.",
+    "No tensor utilization, stall, achieved residency, exact CTA tail or causal bottleneck inference.",
+    "The original activity session and its first 60-second counter timeout remain unchanged."
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "status": "prepared_not_launched",
+  "gpu_requested": false,
+  "incremental_compute_cost_usd": "0",
+  "blocker": "Parent reports fresh billing UI verification denied; do not launch or bypass.",
+  "payload_allowlist": [
+    "worker.py"
+  ],
+  "source_sha256": {
+    "worker.py": "71f82bcab0c1010992eee53f2224e4492560d193cf731d0cde353e58d8de9d61",
+    "controller.py": "80a9219fe21a3de1baad71e6841ccb979e6c37ec491134b78d877a5d413ef380",
+    "test_inventory.py": "9341c6e8914b16534389e1c5112b346c356d54d792b8094ecb07d2bd16f05ea0",
+    "README.md": "1fd5bf13c8c8feb47e9130b16c8e1f2bdc9d14724e6d8573297363c864f4cb9e",
+    "local-verification.json": "73fee79a437a838b224bc3cc2c0b4e00b33ab5d903e97819e45f4b8dd73ca12d"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "tests_run": 5,
+  "gpu_compiled": false,
+  "gpu_launched": false,
+  "correctness_tested": false,
+  "performance_tested": false,
+  "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+  "worker_sha256": "b980e6229db9043ea795aa1cd26c110cf9326c0ec757cb89294f6465889b0c4c"
+}

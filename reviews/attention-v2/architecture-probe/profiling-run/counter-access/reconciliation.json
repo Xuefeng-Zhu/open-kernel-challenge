@@ -1,0 +1,62 @@
+{
+  "observed_utc": "2026-10-25T18:41:49.410275+00:00",
+  "billing": {
+    "metered_cost": "1.63000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.63000000"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.62789268",
+      "network_egress": "0E-8"
+    }
+  },
+  "apps": [
+    {
+      "app_id": "ap-mEXdTixH5oBF9hXapbXGxj",
+      "description": "okc-counter-access-final",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:39:36-07:00",
+      "stopped_at": "2026-10-25 11:40:40-07:00"
+    },
+    {
+      "app_id": "ap-aLYZMcYLfYZoshhSzwyZ7y",
+      "description": "okc-profile-bounded-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:26:41-07:00",
+      "stopped_at": "2026-10-25 11:28:51-07:00"
+    },
+    {
+      "app_id": "ap-1W3buQKnds7sDfi6eVnJIo",
+      "description": "okc-profile-cpu-inventory",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 11:17:43-07:00",
+      "stopped_at": "2026-10-25 11:17:50-07:00"
+    },
+    {
+      "app_id": "ap-Cox9fy63pE0bZocdwG9e0e",
+      "description": "okc-m64-bf16-paired",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:49:33-07:00",
+      "stopped_at": "2026-10-25 10:50:36-07:00"
+    },
+    {
+      "app_id": "ap-9WHeLVDCItf6dndN7LpuIn",
+      "description": "okc-m64-bf16-compile-probe",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 10:42:53-07:00",
+      "stopped_at": "2026-10-25 10:43:26-07:00"
+    }
+  ]
+}
