@@ -1,0 +1,30 @@
+{
+  "prepared_utc": "2026-10-27T03:54:47.158897+00:00",
+  "independent_review": "REVIEW.md",
+  "cpu_tests": {
+    "new": 34,
+    "unchanged_cpu_identity_helper": 13,
+    "passed": true
+  },
+  "source_files": {
+    "CARD.md": "268d05c1e241382deead959e6041e024be6e438b4fe7854c65be6dfdff3c5fe5",
+    "REVIEW.md": "b658d48a0703da8be4d38b9f96a50c5012410abef9e4807e2237d20851b74de4",
+    "controller.py": "a94656000581bf099409beb6a5b1fefb1e789038341928c1ce1ddc5b1686eeec",
+    "counter_gate.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "test_controller.py": "acefc07c15271667e34ba690d6f37103522a0118a3970712cec956c8131b9d55",
+    "test_counter_gate.py": "1455917d51f6e91f9af21add8f8e83affa7e86535d4b2ea284d1b607868f09a7",
+    "test_worker.py": "3b18e9b2f4b642ce6ed427d3723de5a54c0b6160b60155dd8b9dac744192a8a5",
+    "worker.py": "3246f1905812f591c02299d952587c7648cefad228adcabc4c9130b2e47fce40"
+  },
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "scope": "One unchanged selected-baseline two-case Modal diagnostic; no official check/candidate change",
+  "max_free_credit_reserve_usd": "0.70",
+  "actual_paid_limit_usd": "0"
+}
