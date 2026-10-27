@@ -1,0 +1,145 @@
+{
+  "created_utc": "2026-10-27T06:04:10.093699+00:00",
+  "parent_commit": "d4101a0c92bd9c3a7fb66e36d47e15afe637998b",
+  "scope": "Offline executor integration only",
+  "native_gpu_apps_created": 0,
+  "modal_or_credential_operations": 0,
+  "paid_compute_usd": "0",
+  "new_official_checks": 0,
+  "new_ranked_entries": 0,
+  "selected_candidate_changed": false,
+  "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "cpu_tests_passed": 31,
+  "end_to_end_dry_run_passed": true,
+  "native_ncu_report_validated": false,
+  "version_help_contract_cpu_validated": true,
+  "native_runtime_version_rechecked": false,
+  "prior_artifact_files_unchanged": 40,
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "remaining_native_check": "One expected NCU row and real nonempty report; successful actual import/retrieval and original correctness. Graph ABI/internal-state equivalence is separately unresolved.",
+  "payload": {
+    "worker.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/worker.py",
+      "bytes": 35395,
+      "sha256": "d3712de360fe435c9a3f8761aa431af899803cd7ebeb92739b51e0bd1adc9c34"
+    },
+    "selected.py": {
+      "repository_path": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+      "bytes": 40538,
+      "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8"
+    },
+    "reference.py": {
+      "repository_path": "reviews/attention-v2/official/reference.py",
+      "bytes": 19275,
+      "sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b"
+    },
+    "checks.py": {
+      "repository_path": "reviews/attention-v2/official/checks.py",
+      "bytes": 2484,
+      "sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+    },
+    "modal_worker.py": {
+      "repository_path": "reviews/attention-v2/modal_worker.py",
+      "bytes": 12654,
+      "sha256": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e"
+    },
+    "counter_helper.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/baseline-runtime-identity/counter_gate.py",
+      "bytes": 9847,
+      "sha256": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637"
+    },
+    "cli_contract.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/eager-counter-repair/worker.py",
+      "bytes": 8654,
+      "sha256": "7391280b4577a2d1f242bdffdc42777a26a180b1cdcd6e021dc47c2866c1137a"
+    },
+    "trace_helpers.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/baseline-runtime-identity/analyze_partial.py",
+      "bytes": 12713,
+      "sha256": "d89e2f6dac4d8afd9105b713ce255407df8e9253c330a1e727d8193a220c5ec8"
+    },
+    "cpu_identity.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/dispatch-identity-cpu/worker.py",
+      "bytes": 18296,
+      "sha256": "29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92"
+    },
+    "csv_helpers.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/csv_helpers.py",
+      "bytes": 6245,
+      "sha256": "a00f901febe900e4ed9f48680b990acf813f0c0d76680b1c798a664f017759df"
+    },
+    "capture_plan.py": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/capture_plan.py",
+      "bytes": 11028,
+      "sha256": "be067afbc933020f41ea12f103c15263bc0e1c991c4a80ec1a1b6c1b763c26db"
+    },
+    "expected-native.json": {
+      "repository_path": "reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/expected-native.json",
+      "bytes": 2371,
+      "sha256": "f0ac3f62f101201d15e66534ce62b1534cbceaa71243d97c72c2865ad2170795"
+    },
+    "LICENSE": {
+      "repository_path": "LICENSE",
+      "bytes": 11346,
+      "sha256": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "repository_path": "THIRD_PARTY_NOTICES.md",
+      "bytes": 5543,
+      "sha256": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+    }
+  },
+  "files": {
+    "DRY_RUN_SUMMARY.json": {
+      "bytes": 8467,
+      "sha256": "95e406c4045098bd1fdb2d8e0c11f75f2349ca4f8a4c346f5d10150f3450e8bd"
+    },
+    "READY.md": {
+      "bytes": 2696,
+      "sha256": "8e356c29bb6c62061a6546c29a2b11e627c538f3a97bbffee012e3223b1c0439"
+    },
+    "REVIEW.md": {
+      "bytes": 4347,
+      "sha256": "e0c3872384de45a1adae05d64c0f6114700b7b098f5a18831c8d77a28ef63721"
+    },
+    "capture_plan.py": {
+      "bytes": 11028,
+      "sha256": "be067afbc933020f41ea12f103c15263bc0e1c991c4a80ec1a1b6c1b763c26db"
+    },
+    "controller.py": {
+      "bytes": 37167,
+      "sha256": "46ce63fc7f804f295c9e779e92200929c660d38d02e1906d12004d2b847ea74e"
+    },
+    "csv_helpers.py": {
+      "bytes": 6245,
+      "sha256": "a00f901febe900e4ed9f48680b990acf813f0c0d76680b1c798a664f017759df"
+    },
+    "dry_run.py": {
+      "bytes": 10614,
+      "sha256": "80e84a4be82fcd4f5cce7aa5f5d4b7cf7aabf754bc9770b3af037468538bb55b"
+    },
+    "expected-native.json": {
+      "bytes": 2371,
+      "sha256": "f0ac3f62f101201d15e66534ce62b1534cbceaa71243d97c72c2865ad2170795"
+    },
+    "test_controller.py": {
+      "bytes": 17138,
+      "sha256": "cb93ada1488eb995bbfd3f33bca621888e179e62e333a9e51cd564b1de51ed11"
+    },
+    "test_worker.py": {
+      "bytes": 13223,
+      "sha256": "df778b67896aa8fc386f15268c5cd93f09aefdc4d7476de29659665f269d4606"
+    },
+    "worker.py": {
+      "bytes": 35395,
+      "sha256": "d3712de360fe435c9a3f8761aa431af899803cd7ebeb92739b51e0bd1adc9c34"
+    }
+  }
+}

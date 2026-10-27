@@ -1,0 +1,30 @@
+{
+  "kernel_name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<(int)2, cute::tuple<cute::C<(int)1>, cute::C<(int)1>, cute::C<(int)1>>, cute::tuple<cute::C<(int)64>, cute::C<(int)128>, cute::C<(int)64>>, (int)64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, (bool)1, (bool)0, (bool)0, (bool)1, (bool)1, (bool)0, (bool)0, (bool)0, (bool)1, (bool)1, (bool)1, (bool)1, (bool)0, cutlass::bfloat16_t, (bool)0, (int)1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<(int)64>, cute::C<(int)64>, cute::C<(int)128>>, cute::tuple<cute::C<(int)1>, cute::C<(int)1>, cute::C<(int)1>>, cutlass::bfloat16_t, cutlass::arch::Sm90, (int)128, (bool)1, (bool)1, (bool)1, (bool)1>, flash::VarlenDynamicPersistentTileScheduler<(int)64, (int)128, (int)128, (int)128, (bool)1, (bool)1, (bool)1, (bool)1, (bool)1, (bool)1>>>>(T1::Params)",
+  "grid": [
+    132,
+    1,
+    1
+  ],
+  "block": [
+    256,
+    1,
+    1
+  ],
+  "bindings": {
+    "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reference_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "wrapper_sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+    "binary_sha256": "cdea0997a51412b8db8bf8da49d896a6c9d12a39bb1b548d840bb8dc428f13ef",
+    "fixture.qkv": "0f20c9862c802766cf3a6fe77de43a60ff89a55e2edb219684490dbd2488648a",
+    "fixture.positions": "69fd5eb7062b371267d65c41c08b2a6b7a133ccd47de09db3d3c48782b332e83",
+    "fixture.cache_loc": "7c482835571cbb587024516254bc835124ed2eae1d3ec35fb226ec6bf6f63fa1",
+    "fixture.cache_seqlens": "f1c8b9fad92ab0fbcc7b38651ce7bdb3ba5121218b969d1acf623c8e0aab851a",
+    "fixture.cu_seqlens_q": "bbaf4b51f7ac63c32f48216edfa5f6d875c10322c5e4654d265577d98caaa82d",
+    "fixture.k_cache": "362683220555d5b22b86c8c3372121ebda9daf6a8cd23b194143d0456960dabd",
+    "fixture.v_cache": "a065c371bd401e00495c5e6283f42394c6094c82582f1cbc51ebf92cbd637a6c",
+    "fixture.k_scale": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+    "fixture.v_scale": "e00e5eb9444182f352323374ef4e08ebcb784725fdd4fd612d7730540b3e0c8c",
+    "fixture.page_table": "a4150aae12f6bdef65b5441f6e3919a8810e7a0e98138447916de63a232ddf79",
+    "fixture.seq_lens": "26181b4b904485b0be42891352218d35b8b57f7123c66f841d832b29dce211da"
+  }
+}
