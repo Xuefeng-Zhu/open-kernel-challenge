@@ -82,6 +82,11 @@
     "worker.py": {
       "bytes": 6841,
       "sha256": "1c41881f3aba41325ea8cc2e45813a78567b24ca07f19594bcd827b99aa3f538"
+    },
+    "accounting-cutoff.json": {
+      "bytes": 1233,
+      "sha256": "e019c6555af850436c8d891b1f7d66e29289f0ca0eb7a86cf0141442240b04ed"
     }
-  }
+  },
+  "later_accounting_note": "Additional read-only cutoff04:19:54UTC observes account ephemeral delta0.00522074, paid0; provisional account-wide value, not final per-app invoice"
 }

@@ -1,0 +1,37 @@
+{
+  "prepared_utc": "2026-10-27T04:13:29.022803+00:00",
+  "read_only": true,
+  "submitted": false,
+  "uploaded": false,
+  "files": {
+    "preflight-problems.json": {
+      "bytes": 1547,
+      "sha256": "2cbfc9724b52c53ebf7714fcc6ac512880446067431fc6b9740e8f1bccf854f7"
+    },
+    "preflight-jobs.json": {
+      "bytes": 13115,
+      "sha256": "501e1d4d4fb30e7d1f246b1ed49fd45c8821ef27103bdfbafdd5f17e17967e33"
+    },
+    "preflight-leaderboard.json": {
+      "bytes": 181116,
+      "sha256": "c76c07230a6687185769868490543c80d4104419acba7e43521da3095bb26b04"
+    },
+    "preflight-read-receipt.json": {
+      "bytes": 554,
+      "sha256": "a4082fb42b134673c6096658daab8432aaf85a3b9b97d73727be5e479f32a18a"
+    },
+    "preflight-show.json": {
+      "bytes": 57050,
+      "sha256": "1bd1a46241e816933f43196a5e2cbf6815296ab1da4ad820968b03aa37f9bc64"
+    },
+    "PREFLIGHT_SUMMARY.json": {
+      "bytes": 6606,
+      "sha256": "91e1266dd12d03d37a628e206e346fa2e3f99d3d961b6d9bbbac57f5dfe7fe84"
+    },
+    "PREFLIGHT.md": {
+      "bytes": 1779,
+      "sha256": "9e2a3ab1d3c0ecd83617ccb2fe3feb2dd35fefd19a70348ebe8ac685f3ecfe8f"
+    }
+  },
+  "scope": "Only this read-only reviewer preflight; root-owned admission/stdout/stderr files excluded"
+}

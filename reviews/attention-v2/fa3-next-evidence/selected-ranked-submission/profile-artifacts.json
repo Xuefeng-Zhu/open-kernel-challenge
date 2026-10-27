@@ -1,0 +1,25 @@
+{
+  "job_id": "2404e0d81bff4441",
+  "artifacts": [
+    {
+      "source": "reviews/attention-v2/fusion-lookahead-probe/profiles/candidate.2404e0d81bff4441.json",
+      "saved": "reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/artifacts/candidate.2404e0d81bff4441.json",
+      "bytes": 79034,
+      "sha256": "56c16b0a35025a0bf9f9faf45f852ddc36391a965838f85259efadc0ef1368d8"
+    },
+    {
+      "source": "reviews/attention-v2/fusion-lookahead-probe/profiles/candidate.2404e0d81bff4441.log",
+      "saved": "reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/artifacts/candidate.2404e0d81bff4441.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "reviews/attention-v2/fusion-lookahead-probe/profiles/candidate.2404e0d81bff4441.txt",
+      "saved": "reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/artifacts/candidate.2404e0d81bff4441.txt",
+      "bytes": 10242,
+      "sha256": "e13e3ad0c4b6023d656d6fd7a52056ade58c80ddef7db4743aa652c42db5f030"
+    }
+  ],
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_unchanged": true
+}

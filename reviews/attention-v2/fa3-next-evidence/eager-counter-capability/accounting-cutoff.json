@@ -1,0 +1,42 @@
+{
+  "observed_utc": "2026-10-27T04:19:54.087659+00:00",
+  "billing": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.59000000"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.59319380",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "baseline_billing_before": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-2.59000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.58797306",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "observed_account_ephemeral_breakdown_delta_usd": "0.00522074",
+  "actual_billed_usd": "0E-8",
+  "qualification": "Account-wide metering observation; may include delayed prior usage, not a final per-app invoice",
+  "nominal_app_lifetime_seconds": 10,
+  "reserve_usd": "0.32"
+}

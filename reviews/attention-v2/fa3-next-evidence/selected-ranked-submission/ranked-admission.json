@@ -1,0 +1,28 @@
+{
+  "state": "client_returned",
+  "mode": "submit",
+  "track": "muse_attention_decode",
+  "candidate_path": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+  "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "successful_check_job": "5090b83f1d63407b",
+  "successful_check_score": 1.2336330588627955,
+  "prepared_utc": "2026-10-27T04:13:10.111763+00:00",
+  "argv": [
+    "/Users/frank/Documents/Codex/2026-10-23/task/bin/okc",
+    "submit",
+    "muse_attention_decode",
+    "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+    "--no-wait",
+    "--json"
+  ],
+  "explicit_attempts": 1,
+  "formal_ranked_submission": true,
+  "candidate_changed": false,
+  "paid_resources_requested": false,
+  "returncode": 0,
+  "returned_utc": "2026-10-27T04:13:10.417259+00:00",
+  "response": {
+    "job_id": "2404e0d81bff4441",
+    "problem": "muse_attention_decode"
+  }
+}
