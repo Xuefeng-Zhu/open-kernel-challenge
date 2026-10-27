@@ -1,0 +1,16 @@
+{
+  "archive_sha256": "2702d954222431d7808ffe43d35c0cffe759ad3840c0af7fbc025088de1645eb",
+  "sources": {
+    "submission.py": "3217faeb32320829eea5b381c4713f6045307e8f966292d08fe90fd888bc25fc",
+    "submission_v3b.py": "ca81f61380c5cc148767862b9bb086071e85a853c4e71a037e939ea568b833bb"
+  },
+  "modified": false,
+  "requests": "Exactly two original-source official off-board checks; no ranked entry",
+  "local_test_run": false,
+  "review_notes": [
+    "LOG2E is a plain module global consumed inside JIT; known compile risk",
+    "Device-global ticket scratch is unsafe for overlapping graph invocations; serialized check does not certify concurrency",
+    "Bundled local_test_v3.py relaxes CACHE_TOL from official0.08 to0.25; not executed",
+    "v3/v3b differ only PREFETCH1/0; BF16QK/PV andFP32state withFP8cache are within precision policy"
+  ]
+}

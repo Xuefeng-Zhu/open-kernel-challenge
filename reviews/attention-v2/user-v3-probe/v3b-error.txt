@@ -1,0 +1,204 @@
+/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
+Traceback (most recent call last):
+  File "/tmp/muse_attention_decode-7f0e_06a/run/worker.py", line 484, in child_main
+    out = kernel()(state.get("data"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_attention_decode-7f0e_06a/run/submission.py", line 408, in kernel_fn
+    _attn_pair[(batch, pairs, splits)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 374, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 757, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
+Traceback (most recent call last):
+  File "/tmp/muse_attention_decode-7f0e_06a/run/worker.py", line 484, in child_main
+    out = kernel()(state.get("data"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_attention_decode-7f0e_06a/run/submission.py", line 408, in kernel_fn
+    _attn_pair[(batch, pairs, splits)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 374, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 757, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
+Traceback (most recent call last):
+  File "/tmp/muse_attention_decode-7f0e_06a/run/worker.py", line 484, in child_main
+    out = kernel()(state.get("data"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_attention_decode-7f0e_06a/run/submission.py", line 408, in kernel_fn
+    _attn_pair[(batch, pairs, splits)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 374, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 757, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
+Traceback (most recent call last):
+  File "/tmp/muse_attention_decode-7f0e_06a/run/worker.py", line 484, in child_main
+    out = kernel()(state.get("data"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_attention_decode-7f0e_06a/run/submission.py", line 408, in kernel_fn
+    _attn_pair[(batch, pairs, splits)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 374, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 757, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
+Traceback (most recent call last):
+  File "/tmp/muse_attention_decode-7f0e_06a/run/worker.py", line 484, in child_main
+    out = kernel()(state.get("data"))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/tmp/muse_attention_decode-7f0e_06a/run/submission.py", line 408, in kernel_fn
+    _attn_pair[(batch, pairs, splits)](
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 374, in <lambda>
+    return lambda *args, **kwargs: self.run(grid=grid, warmup=False, *args, **kwargs)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 757, in run
+    kernel = self._do_compile(key, signature, device, constexprs, options, attrs, warmup)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/runtime/jit.py", line 902, in _do_compile
+    kernel = self.compile(src, target=target, options=options.__dict__)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 307, in compile
+    module = src.make_ir(target, options, codegen_fns, module_map, context)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/sglang/lib/python3.12/site-packages/triton/compiler/compiler.py", line 80, in make_ir
+    return ast_to_ttir(self.fn, self, context=context, options=options, codegen_fns=codegen_fns,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+triton.compiler.errors.CompilationError: at 36:31:
+    tok = (b * L + j).to(tl.int64)
+    tok_base = qkv_ptr + tok[:, None] * stride_tok
+    q0 = _norm_rope(tok_base + ((h0 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    q1 = _norm_rope(tok_base + ((h1 * G + g) * D)[:, None], offs_d, qpos[:, None], theta, eps,
+                    ROPE, D, row_ok[:, None])
+    # As the reference: RMSNorm * qk_scale_factor (RoPE is linear), rounded to BF16.
+    q0 = (q0 * qk_factor).to(tl.bfloat16).to(DOT)
+    q1 = (q1 * qk_factor).to(tl.bfloat16).to(DOT)
+    ks = tl.load(ks_ptr)
+    vs = tl.load(vs_ptr)
+    qk_scale = sm_scale * ks * LOG2E
+                               ^
+NameError("Cannot access global variable LOG2E from within @jit'ed function. Triton kernels can only access global variables that are instanstiated as constexpr (`x = triton.language.constexpr(42)`). Note that this is different from annotating a variable as constexpr (`x: triton.language.constexpr = 42`), which is not supported.  Alternatively, set the envvar TRITON_ALLOW_NON_CONSTEXPR_GLOBALS=1, but we do not promise to support this forever.")
