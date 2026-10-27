@@ -1,0 +1,5 @@
+{
+  "kernel_sha256": "69fae3a2f522ecf77451011e25649a8a5866ba6f9c213758c155e97e890e2cd3",
+  "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "scope": "Explicit2D dual head; generic i32-stride/page CPU SM90 compiler evidence only, not correctness or judge binary."
+}

@@ -1,0 +1,141 @@
+{
+  "job_id": "56ff7ccdaf66426f",
+  "mode": "check",
+  "status": "done",
+  "passed": true,
+  "speedup": 0.5318192309109179,
+  "speedup_ci": [
+    0.5238419424472541,
+    0.5397965193745816
+  ],
+  "score_reconstructed": 0.5318192309109179,
+  "champion_offboard_speedup": 1.2336330588627955,
+  "point_score_change_percent": -56.8899984407708,
+  "same_evaluator": true,
+  "test_passes": 16,
+  "benchmark_passes": 12,
+  "profiles": 12,
+  "checks": {
+    "flagged": [],
+    "ok": true,
+    "rejected": []
+  },
+  "flags": [],
+  "source_sha256": "48ea78ddcd8384fad8ef6fe0a60f27cec1e9ca5fca9fb1d1b658c4c2e5fa7e91",
+  "source_commit": "f877c25c6983e006b70b9b528b79c2adabab2af6",
+  "raw_result_sha256": "abdd5f7167401cf959940b78c5a17dcb3253d63be508db8f061e5e105c9c6c8c",
+  "shapes": [
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "candidate_us": 11.625614619850136,
+      "reference_us": 20.655999891459942,
+      "paired_speedup": 1.7767662671520945,
+      "champion_saved_us": 11.47711384229471,
+      "reference_normalized_latency_change_percent": 0.9015820871154379
+    },
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "candidate_us": 36.73188157791242,
+      "reference_us": 31.263998709619045,
+      "paired_speedup": 0.8511406812445645,
+      "champion_saved_us": 27.031302842677167,
+      "reference_normalized_latency_change_percent": 35.53875778181379
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "candidate_us": 14.556586205804221,
+      "reference_us": 26.832000352442265,
+      "paired_speedup": 1.8432893518497768,
+      "champion_saved_us": 13.92113651627598,
+      "reference_normalized_latency_change_percent": 2.881131771280221
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "candidate_us": 481.4877066238024,
+      "reference_us": 200.95999725162983,
+      "paired_speedup": 0.4173730595548612,
+      "champion_saved_us": 194.27190912323948,
+      "reference_normalized_latency_change_percent": 147.56590395326253
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "candidate_us": 20.290657601195818,
+      "reference_us": 31.200000550597906,
+      "paired_speedup": 1.5376534937319701,
+      "champion_saved_us": 20.10360388661608,
+      "reference_normalized_latency_change_percent": 0.20581580724932103
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "candidate_us": 876.0102968847817,
+      "reference_us": 384.33599565178156,
+      "paired_speedup": 0.43873456398690236,
+      "champion_saved_us": 304.0318931739489,
+      "reference_normalized_latency_change_percent": 187.56728867516412
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "candidate_us": 17.167589541630555,
+      "reference_us": 22.784000728279352,
+      "paired_speedup": 1.3271519960929448,
+      "champion_saved_us": 16.988207220445705,
+      "reference_normalized_latency_change_percent": 2.049445080801493
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "candidate_us": 47.09067036616198,
+      "reference_us": 36.11200116574764,
+      "paired_speedup": 0.7668610551719115,
+      "champion_saved_us": 29.568835823566065,
+      "reference_normalized_latency_change_percent": 56.788118162513655
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "candidate_us": 22.5049310090053,
+      "reference_us": 29.10400042310357,
+      "paired_speedup": 1.2932277113605755,
+      "champion_saved_us": 21.740249752189822,
+      "reference_normalized_latency_change_percent": 2.0377124364262533
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "candidate_us": 1076.698753424604,
+      "reference_us": 204.60800360888243,
+      "paired_speedup": 0.19003273010031407,
+      "champion_saved_us": 197.60213357126437,
+      "reference_normalized_latency_change_percent": 445.69170698575016
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "candidate_us": 27.689549297434095,
+      "reference_us": 34.46399932727218,
+      "paired_speedup": 1.2446572877394522,
+      "champion_saved_us": 27.46761932746471,
+      "reference_normalized_latency_change_percent": 0.4335732582416263
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "candidate_us": 1921.4327090466857,
+      "reference_us": 389.296003151685,
+      "paired_speedup": 0.20260714898771204,
+      "champion_saved_us": 380.3807463402613,
+      "reference_normalized_latency_change_percent": 403.473184682241
+    }
+  ],
+  "decision": "REJECT performance; preserve selected champion",
+  "comparison_limitation": "Reference-normalized historical champion comparison, not same-session paired champion A/B. Each current candidate/reference pair is same-run official graph timing.",
+  "published_result_sha256": "c0befed3e26d5ca4e4c273e299660d0cf6093ff107704c76fddb2590ad503ee7",
+  "sanitization": "Only output/profile local filesystem paths made relative; result data unchanged."
+}

@@ -1,0 +1,7 @@
+ptxas info    : 11 bytes gmem
+ptxas info    : Compiling entry function '_dual_merge' for 'sm_90a'
+ptxas info    : Function properties for _dual_merge
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 96 registers, used 1 barriers
+ptxas info    : Compile time = 13.271 ms
+

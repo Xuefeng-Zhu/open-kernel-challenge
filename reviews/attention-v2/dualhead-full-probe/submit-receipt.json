@@ -1,0 +1,9 @@
+{
+  "job_id": "56ff7ccdaf66426f",
+  "mode": "check",
+  "problem": "muse_attention_decode",
+  "source_sha256": "48ea78ddcd8384fad8ef6fe0a60f27cec1e9ca5fca9fb1d1b658c4c2e5fa7e91",
+  "source_commit": "f877c25c6983e006b70b9b528b79c2adabab2af6",
+  "selected_champion_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "paid_modal_jobs": 0
+}

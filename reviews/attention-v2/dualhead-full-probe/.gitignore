@@ -1,3 +1,9 @@
 __pycache__/
 offline/artifacts/
 offline/v2/artifacts/
+offline/compile*.py
+offline/kernel_source.py
+offline/source.json
+official-result.json
+*.local.txt
+profiles/

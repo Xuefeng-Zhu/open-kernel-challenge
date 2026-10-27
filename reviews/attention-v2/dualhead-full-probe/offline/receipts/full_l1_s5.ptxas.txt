@@ -1,0 +1,7 @@
+ptxas info    : 11 bytes gmem
+ptxas info    : Compiling entry function '_dual_full' for 'sm_90a'
+ptxas info    : Function properties for _dual_full
+    0 bytes stack frame, 0 bytes spill stores, 0 bytes spill loads
+ptxas info    : Used 240 registers, used 1 barriers
+ptxas info    : Compile time = 146.176 ms
+
