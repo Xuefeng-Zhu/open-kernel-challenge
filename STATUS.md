@@ -1,4 +1,17 @@
-# Current: P067 baseline audit complete, P046 remains selected
+# Current: P068 collector ready locally, Projection paused pending access
+
+P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
+`projection_p068_collector.py` is an independently reviewed diagnostic, not a
+candidate: 38 CPU tests and frozen 12-file dry-run validation pass. No native/GPU
+run, official check, service/credential operation or candidate edit occurred.
+See experiment 068 and CONTINUE.md for the exact ready-to-run command and limits.
+Expired Modal access, external app watchdog and current billing/app preflight
+remain required. Native vendor instruction binding and counters are unverified.
+No new active/uncertain request; older cloud shutdown receipts are historical.
+
+## Previous checkpoint (historical)
+
+# P067 baseline audit complete, P046 remains selected
 
 Working candidate: P046 `projection_pooler_column_batch2_hybrid.py`, source SHA
 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`,

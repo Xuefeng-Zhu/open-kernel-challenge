@@ -1,9 +1,9 @@
 # P067 — minimal baseline profiling procedure
 
-Status: **preregistered procedure, not a completed native run**. The saved-data
-audit is executable now; a two-target baseline-only native collector still needs
-to be assembled and reviewed from the existing helpers below. No launch command
-is supplied for a nonexistent worker. Expired Modal access must be resolved before
+Status: **preregistered procedure, not a completed native run**. P068 has now
+assembled and CPU-tested the baseline-only collector from the helpers below;
+see [its commands, coverage and limits](../experiments/068-baseline-native-collector.md).
+No native execution occurred. Expired Modal access must be resolved before
 live capture, without automatic credential renewal. Counter-dependent conclusions
 require functioning counters; activity/code-only capture can still be useful if
 counters remain unavailable. This is not an instruction to rerun the failed NCU recipe.
@@ -50,11 +50,12 @@ The second analyzes owned custom PTX, **not vendor P046 instructions**.
 2. **Correctness and uninstrumented repeatability.** Reuse `benchmark.capture`,
    `projection_p046_confirmation`'s frozen-state/input/oracle helpers and
    `ColdGraphTimer`. Capture two independently owned graphs of identical P046
-   (A/A noise control), separate outputs/scratch, the same X address. For each of
+   (A/A noise control), separate outputs, the same X address. For each of
    the three fixed shapes run A→B(outliers)→A, all-sparse power-of-two and zero
    inputs before and after. Require exact input/config/weight immutability, original
-   FP64 oracle tolerances and exact A-return output reproduction. No graph shares
-   mutable output or scratch. This diagnoses sequential replay, not concurrency.
+   FP64 oracle tolerances and exact A-return output reproduction. Output aliasing
+   is rejected; hidden vendor workspace independence remains unverified. This
+   diagnoses sequential replay, not concurrency.
    Use six predefined warmup rounds, then 24 reversed-order rounds; a 256 MiB L2
    eviction precedes **every** measured replay. Retain all event samples, including
    tails; no guessed fixed-cost subtraction or outlier deletion. Copy fresh X
@@ -146,8 +147,9 @@ reserve from actual rates/credits, one H200, no retries/detach/deploy, internal
 watchdog covering startup and cleanup. Stop after the minimum answer or a stage
 failure; never consume a further stage automatically after auth/counter failure.
 Stop the app and independently verify stopped/tasks0; unknown stop or transport
-outcomes must be reconciled before another launch. Do not imply these suggested
-bounds are a cost quote or that a controller implementing them has already run.
+outcomes must be reconciled before another launch. These bounds are not a cost
+quote or evidence of native execution. P068 implements and CPU-tests process
+supervision; cloud provisioning/shutdown still needs an external app watchdog.
 
 Current exact blockers: expired Modal credential, no documented official-runner
 native-artifact export, and no working counter capture established. The completed

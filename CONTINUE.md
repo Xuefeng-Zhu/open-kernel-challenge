@@ -1,3 +1,24 @@
+# P068 collector CPU-tested; Projection paused pending runtime access
+
+P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
+No native/GPU run, official check, credential operation or candidate change.
+Read `experiments/068-baseline-native-collector.md`. The collector and original
+helper/model suites passed 38 CPU tests; independent review fixes are covered.
+
+Dry run: `python -B projection_p068_collector.py plan --output-dir /tmp/p068-baseline`.
+After separately authorized H200 access and billing/app preflight, native entry:
+`python -B projection_p068_collector.py run --output-dir /tmp/p068-baseline`.
+Run only inside an ephemeral Linux H200 container with the 12-file allowlist and
+external app/cost watchdog; stop and verify tasks0 afterward. This collector
+does not provision/stop an app. No run was admitted, so no new uncertain job.
+
+The existing Modal credential expired at 2026-10-26 03:39:46 UTC; do not renew it
+without authorization. Actual vendor binary/work assignment and working counters
+remain unavailable; DSO hashes/activity cannot substitute. No unchanged NCU
+retry or speculative GPU candidate. Stop Projection here pending runtime access.
+
+## Previous checkpoint (historical)
+
 # P067 baseline and Quack audit complete; live profiling blocked
 
 P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
