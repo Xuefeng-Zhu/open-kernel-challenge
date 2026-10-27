@@ -1,0 +1,25 @@
+{
+  "classification": "Preparation protocol failure before compiler import or invocation; producer codegen/resource gates not exercised",
+  "host_default_python": "3.14.3",
+  "container_python": "3.12.15",
+  "corrected_preparation_python": "3.12.13",
+  "observed_difference": "Only AST-serialized function digests differ; exact control bytes and every other module contract field agree",
+  "old_validation_error": "ValueError: Control contract changed",
+  "old_actual_compiler_invocations": 0,
+  "kernel_changed": false,
+  "candidate_changed": false,
+  "helper_changed": false,
+  "options_or_gates_changed": false,
+  "old_receipt_sha256": "c2f99c4d15fb6e8391772951285475df878d9ad589e020489059bee619e39fd6",
+  "old_stderr_sha256": "02debd4b55ea91b40784265e4dbee5bcfa1f756693e2619a8a051c7128d112bc",
+  "old_manifest_sha256": "32774b9cdcd4b8c14813ea4dc8e116e19efc3a891e5bcfb2c04e67107d603c64",
+  "new_manifest_sha256": "f1bef1b5686f1ea5f0a8f5d55e6f6d5c42457bd0b15d7a28dbee10423953c7ce",
+  "CPU_tests_under_3_12_passed": 32,
+  "fixed_before_actual_compiler_gate": true,
+  "frozen_utc": "2026-10-27T00:00:21.745476+00:00",
+  "source_sha256": {
+    "kernel.py": "eae6ca35c88a5a45612f13ee5fa7696e86dc67b0fcf4fdcb14aceed1b9f43480",
+    "control.py": "cfefc9b9a9b2b175945fe7e6990d7c5fe46efb6e752acf88683c0dee4bb05356",
+    "offline_compile.py": "f8cc6a6b72a0ba9076d2a4ece018a4ecce2140a9161ac8aa35b4eb9e4442f5fd"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "status": "frozen before one CPU-only compiler invocation",
+  "frozen_utc": "2026-10-26T23:55:45.699850+00:00",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "independent_source_review": "PASS",
+  "independent_helper_review": "PASS",
+  "CPU_tests_passed": 32,
+  "native_compile_started_at_freeze": false,
+  "GPU_execution": false,
+  "official_checks": 0,
+  "paid_spending_usd": 0,
+  "files_sha256": {
+    "EXPERIMENT_CARD.md": "57f06c43e3aa6ce1ea3cbceaa1e33e51ff53ebcb82dc9196eb294d43680e5264",
+    "HELPER_REVIEW.md": "3baad6a36d1e951487ff707f5470f8f23bf3c7e550d685eb0896a6c6e44641cb",
+    "IMPLEMENTATION_NOTE.md": "2b8b0647ee03b7055c0a2fbca36cbbc623d164297e15685450750e75739afb88",
+    "SOURCE_REVIEW.md": "d604e51f2effcaa32c24170d9b5d4a140684a68f8dae5e068f3383e11e992e8a",
+    "XQA_MAPPING_AUDIT.md": "b85daec00d34fd1d0bc771881e57a99834b71499302c6669054311a835d5bd22",
+    "build_candidate.py": "de1da53203a166d43d04c425ce81c4af855ca6d20453a406507b26d46bc5b93f",
+    "candidate.py": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+    "kernel.py": "eae6ca35c88a5a45612f13ee5fa7696e86dc67b0fcf4fdcb14aceed1b9f43480",
+    "offline_compile.py": "f8cc6a6b72a0ba9076d2a4ece018a4ecce2140a9161ac8aa35b4eb9e4442f5fd",
+    "test_contract.py": "e872828b1604a393062bebf4b4daea28b20a50f9cbab9ed2a45462740203a236",
+    "test_offline_compile.py": "ac24e146e5969e6bb187a439cb2ed37e339b8bf6bb756126a1a5972d92bfdb8d"
+  },
+  "single_run_controller_sha256": "6a1256a05847d339e0ab08e80217b3f540d9496e32315d10e864899a97d6486d"
+}

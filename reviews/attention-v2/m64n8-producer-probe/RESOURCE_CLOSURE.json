@@ -1,0 +1,41 @@
+{
+  "stage": "m64n8 full producer integration; declared resource gate failed and branch stopped",
+  "recorded_utc": "2026-10-27T00:07:47.049990+00:00",
+  "container_name": "okc-attention-m64n8-producer-offline",
+  "container_sessions": 2,
+  "first_session": "manifest validation failure before importing Triton or invoking compiler",
+  "actual_compiler_sessions": 1,
+  "triton_compile_API_calls": 6,
+  "compiled_control_units": 4,
+  "compiled_candidate_units": 2,
+  "uncompiled_candidate_units": [
+    "D16slide",
+    "D32slide"
+  ],
+  "receipts": [
+    {
+      "sha256": "c2f99c4d15fb6e8391772951285475df878d9ad589e020489059bee619e39fd6",
+      "container_exit_code": 1,
+      "removed_verified": true
+    },
+    {
+      "sha256": "bd8aacd5e2d792f7ba92a7b2364e6d074eba552d41449c4941bdd2ee040b2f99",
+      "container_exit_code": 1,
+      "removed_verified": true
+    }
+  ],
+  "additional_root_exact_name_absence_query": "Empty listing after resource-gate exit, while engine was available",
+  "shared_engine_latest_observation": "Stopped",
+  "shared_engine_observed_utc": "2026-10-27 00:05:16 UTC",
+  "shared_engine_stop_requested_by_this_task": false,
+  "engine_stop_actor_known": false,
+  "new_GPU_or_Modal_apps": 0,
+  "official_checks_attempted": 0,
+  "ranked_submissions": 0,
+  "credential_actions": 0,
+  "new_downloads": 0,
+  "host_package_installs": 0,
+  "paid_spending_usd": 0,
+  "global_Modal_tasks_freshly_verified": false,
+  "qualification": "Expired existing Modal authentication prevents fresh global inventory; this stage created no app. Local CPU compile is not a GPU correctness or timing result."
+}
