@@ -1,4 +1,28 @@
-# P068 — baseline collector assembled; native access still required
+# P068 — baseline collector and bounded native diagnostic
+
+## Resumed acquisition, 2026-10-27
+
+Existing runtime access was restored separately. The unchanged collector's 12
+allowlisted files total 138,546 bytes; selected P046 remains frozen at SHA-256
+`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+The resumed batch is a baseline diagnostic, not an optimization or official run.
+Its three cases are QKV M128, pooler M128 and pooler M8. The planned checks remain
+240 original-oracle timing comparisons and 18 activity/eager comparisons.
+
+The external launcher adds one ephemeral H200, fixed 2 CPU / 8 GiB limits,
+300-second function and 45-second startup limits, no retries, and a 330-second
+app watchdog. A 390-second reserve with 10% margin plus $0.02 covers the planned
+lifecycle at the verified resource rate: $0.579916500143 of free credit.
+This is a conservative reservation, not a settled charge. The collector retains
+its own 90-second internal / 120-second hard limit for each of two stages.
+App shutdown and tasks 0 must be verified independently, even if a child or
+transport step fails. No counter query, permission change, credential creation,
+package installation or candidate edit is part of this batch.
+
+The existing 38 collector/helper/model CPU tests passed again before launch.
+Native results and actual cleanup will be appended only after execution.
+
+## Original preparation checkpoint (historical)
 
 Status at 2026-10-27 00:00 UTC: **CPU-tested diagnostic tooling, no native run**.
 P046 remains selected at official 1.1841399409× (job `41ba778763a5433b`).
