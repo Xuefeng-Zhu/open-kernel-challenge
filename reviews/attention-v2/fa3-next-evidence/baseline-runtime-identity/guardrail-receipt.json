@@ -1,0 +1,11 @@
+{
+  "workspace": "xuefeng-zhu",
+  "observed_utc": "2026-10-27T03:50:59.745649+00:00",
+  "verified_credit_balance_usd": "27.51",
+  "verified_net_spend_cap_usd": "0",
+  "total_usage_usd": "2.49",
+  "total_spend_usd": "0",
+  "changes_made": false,
+  "source": "Visible Modal Usage & billing, Credits and Usage limit tabs",
+  "url": "https://modal.com/settings/xuefeng-zhu/usage?tab=budgets"
+}
