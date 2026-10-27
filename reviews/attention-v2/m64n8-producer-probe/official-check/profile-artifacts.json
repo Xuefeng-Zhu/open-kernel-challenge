@@ -1,0 +1,17 @@
+{
+  "json": {
+    "name": "candidate.3e0a7ef51d4849c6.json",
+    "bytes": 78870,
+    "sha256": "8fb24b19b2bcc0517baa980b974692e9e98b7862b316e5bbb7db842626bd36f1"
+  },
+  "text": {
+    "name": "candidate.3e0a7ef51d4849c6.txt",
+    "bytes": 10240,
+    "sha256": "0151685d622b85fdc6ac0ecaaf2911e0c7e34ce031257c4f05dad50071f22339"
+  },
+  "log": {
+    "name": "candidate.3e0a7ef51d4849c6.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

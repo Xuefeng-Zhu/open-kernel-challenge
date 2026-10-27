@@ -1,0 +1,31 @@
+{
+  "verified_utc": "2026-10-27T02:40:21.508209+00:00",
+  "job_id": "3e0a7ef51d4849c6",
+  "status": "done",
+  "mode": "check",
+  "passed": true,
+  "prerequisites_passed": 16,
+  "benchmarks_passed": 12,
+  "source_sha256": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+  "service_content_hash_identifier": "1f75f98c7d3ef6188613f72da7d6e0a8aa36ad3d68c63e7762d054b8c1819890",
+  "classification": "performance_rejected",
+  "official_speedup": 1.0995474217354162,
+  "official_speedup_ci": [
+    1.083054210409385,
+    1.1160406330614474
+  ],
+  "working_selected_score_preserved": 1.2336330588627955,
+  "working_selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "POST_attempts": 1,
+  "official_checks_used_this_experiment": 1,
+  "official_checks_remaining": 19,
+  "ranked_entries_today": 0,
+  "active_official_jobs_at_final_query": [],
+  "new_Modal_apps": 0,
+  "credential_actions": 0,
+  "actual_paid_spending_usd": 0,
+  "read_wait_client_finished": true,
+  "further_jobs_for_this_candidate": false,
+  "global_Modal_tasks": "not queried; no Modal use in this runner experiment",
+  "official_result_sha256": "e61d99b67ebbf917cfc4e5a5ad29848e37b92be60a08e9825728e0bd428b81c0"
+}

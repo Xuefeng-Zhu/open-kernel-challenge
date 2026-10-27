@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-27 02:15:54 UTC",
+  "problem": "muse_attention_decode",
+  "limits": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 0,
+      "left": 20
+    }
+  },
+  "mode_authorized": "check",
+  "expected_monetary_cost_usd": 0,
+  "cost_basis": "Free daily official off-board check quota; no Modal or paid resource created"
+}

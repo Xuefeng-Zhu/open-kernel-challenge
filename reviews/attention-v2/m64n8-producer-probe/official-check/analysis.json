@@ -1,0 +1,415 @@
+{
+  "job_id": "3e0a7ef51d4849c6",
+  "mode": "check",
+  "terminal_status": "done",
+  "selected_job_id": "5090b83f1d63407b",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_source_sha256": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+  "automatic_promotion": false,
+  "working_selected_changed": false,
+  "expected_changed_shapes": 4,
+  "expected_unchanged_controls": 8,
+  "source_request_receipt_verified": true,
+  "observed_result_passed": true,
+  "observed_result_error": null,
+  "new_metadata": {
+    "status": "UNKNOWN",
+    "reason": "metadata marker absent from returned log",
+    "resolved_pack_gqa": "UNKNOWN",
+    "resolved_splits": "UNKNOWN",
+    "internal_QK_PV_dtype": "UNKNOWN",
+    "binary_identity": "UNKNOWN"
+  },
+  "qualification": "Official pairs candidate with its own SGLang reference. Historical normalized selected comparison is descriptive, not a paired candidate-versus-selected experiment.",
+  "correctness": {
+    "prerequisites_recorded": 16,
+    "prerequisites_passed": 16,
+    "prerequisites_failed": 0,
+    "benchmarks_recorded": 12,
+    "benchmarks_passed": 12,
+    "benchmarks_failed": 0,
+    "first_failed_benchmark_case": null,
+    "first_failed_benchmark_message": null,
+    "first_failed_case": null,
+    "first_failed_message": null,
+    "result_passed": true,
+    "returncode": 0,
+    "checks_ok": true,
+    "error": null
+  },
+  "profile_agreement": {
+    "new": true,
+    "new_reason": "complete profile and raw records agree",
+    "selected": true,
+    "selected_reason": "complete profile and raw records agree"
+  },
+  "official_speedup": 1.0995474217354162,
+  "official_speedup_ci": [
+    1.083054210409385,
+    1.1160406330614474
+  ],
+  "selected_speedup": 1.2336330588627955,
+  "official_point_score_delta_percent": -10.869166983169531,
+  "loads": [
+    {
+      "load": "decode 1",
+      "reference_weighted_us": 1444.991946220398,
+      "candidate_weighted_us": 1074.5925917536536,
+      "speedup": 1.3446881704835512
+    },
+    {
+      "load": "decode 16",
+      "reference_weighted_us": 4437.888046726584,
+      "candidate_weighted_us": 3891.9906002009006,
+      "speedup": 1.1402617587250865
+    },
+    {
+      "load": "decode 32",
+      "reference_weighted_us": 7557.087849825621,
+      "candidate_weighted_us": 9930.080375415158,
+      "speedup": 0.7610298773145301
+    },
+    {
+      "load": "verify 1",
+      "reference_weighted_us": 1627.8400169685483,
+      "candidate_weighted_us": 1250.7984107767736,
+      "speedup": 1.30144074612121
+    },
+    {
+      "load": "verify 16",
+      "reference_weighted_us": 4597.248055972159,
+      "candidate_weighted_us": 4172.309419724717,
+      "speedup": 1.1018473448394146
+    },
+    {
+      "load": "verify 32",
+      "reference_weighted_us": 7812.960208393633,
+      "candidate_weighted_us": 7397.849729047116,
+      "speedup": 1.0561123156795975
+    }
+  ],
+  "shapes": [
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 27.51646406948537,
+      "new_reference_us": 31.615999527275562,
+      "new_candidate_vs_own_reference_paired_ratio": 1.1489848204128963,
+      "selected_candidate_us": 27.031302842677167,
+      "selected_reference_us": 31.184000428766012,
+      "historical_reference_normalized_latency_ratio": 1.0040389445005775,
+      "historical_reference_normalized_latency_change_percent": 0.40389445005775126
+    },
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 13.789764492214948,
+      "new_reference_us": 20.415998995304108,
+      "new_candidate_vs_own_reference_paired_ratio": 1.480518322617476,
+      "selected_candidate_us": 11.47711384229471,
+      "selected_reference_us": 20.576000679284334,
+      "historical_reference_normalized_latency_ratio": 1.2109173160228779,
+      "historical_reference_normalized_latency_change_percent": 21.091731602287787
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 194.16615448653997,
+      "new_reference_us": 200.2720022574067,
+      "new_candidate_vs_own_reference_paired_ratio": 1.031446509238509,
+      "selected_candidate_us": 194.27190912323948,
+      "selected_reference_us": 200.73599368333817,
+      "historical_reference_normalized_latency_ratio": 1.001771181044784,
+      "historical_reference_normalized_latency_change_percent": 0.17711810447840204
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 17.07243757426655,
+      "new_reference_us": 26.81600023061037,
+      "new_candidate_vs_own_reference_paired_ratio": 1.570718892012842,
+      "selected_candidate_us": 13.92113651627598,
+      "selected_reference_us": 26.400000788271427,
+      "historical_reference_normalized_latency_ratio": 1.2073433105349325,
+      "historical_reference_normalized_latency_change_percent": 20.73433105349325
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "target": true,
+      "new_candidate_us": 546.0326309741536,
+      "new_reference_us": 383.5839950479567,
+      "new_candidate_vs_own_reference_paired_ratio": 0.7024928059035975,
+      "selected_candidate_us": 304.0318931739489,
+      "selected_reference_us": 383.58399365097284,
+      "historical_reference_normalized_latency_ratio": 1.7959715452389617,
+      "historical_reference_normalized_latency_change_percent": 79.59715452389618
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 25.9469191267109,
+      "new_reference_us": 30.86399845778942,
+      "new_candidate_vs_own_reference_paired_ratio": 1.1895053245846312,
+      "selected_candidate_us": 20.10360388661608,
+      "selected_reference_us": 30.97599931061268,
+      "historical_reference_normalized_latency_ratio": 1.2953436994666985,
+      "historical_reference_normalized_latency_change_percent": 29.534369946669848
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 29.924441813748114,
+      "new_reference_us": 36.14400094375014,
+      "new_candidate_vs_own_reference_paired_ratio": 1.2078421100955872,
+      "selected_candidate_us": 29.568835823566065,
+      "selected_reference_us": 35.55200155824423,
+      "historical_reference_normalized_latency_ratio": 0.9954504875062546,
+      "historical_reference_normalized_latency_change_percent": -0.45495124937453557
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 16.782768299060955,
+      "new_reference_us": 22.816000040620565,
+      "new_candidate_vs_own_reference_paired_ratio": 1.3594896642824528,
+      "selected_candidate_us": 16.988207220445705,
+      "selected_reference_us": 23.007999639958143,
+      "historical_reference_normalized_latency_ratio": 0.9962203339783873,
+      "historical_reference_normalized_latency_change_percent": -0.37796660216127265
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 196.76338148498374,
+      "new_reference_us": 204.1600034572184,
+      "new_candidate_vs_own_reference_paired_ratio": 1.037591455871575,
+      "selected_candidate_us": 197.60213357126437,
+      "selected_reference_us": 204.9119994044304,
+      "historical_reference_normalized_latency_ratio": 0.999423080103291,
+      "historical_reference_normalized_latency_change_percent": -0.05769198967090494
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 22.26294165141256,
+      "new_reference_us": 28.928000014275312,
+      "new_candidate_vs_own_reference_paired_ratio": 1.299379051844205,
+      "selected_candidate_us": 21.740249752189822,
+      "selected_reference_us": 28.687998186796904,
+      "historical_reference_normalized_latency_ratio": 1.0155465961940855,
+      "historical_reference_normalized_latency_change_percent": 1.5546596194085494
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 381.78187306083794,
+      "new_reference_us": 389.45601135492325,
+      "new_candidate_vs_own_reference_paired_ratio": 1.0201008451044569,
+      "selected_candidate_us": 380.3807463402613,
+      "selected_reference_us": 388.01600178703666,
+      "historical_reference_normalized_latency_ratio": 0.9999723755722139,
+      "historical_reference_normalized_latency_change_percent": -0.0027624427786143713
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 28.02912521899367,
+      "new_reference_us": 34.384000580757856,
+      "new_candidate_vs_own_reference_paired_ratio": 1.226723999129943,
+      "selected_candidate_us": 27.46761932746471,
+      "selected_reference_us": 34.33600161224604,
+      "historical_reference_normalized_latency_ratio": 1.0190179614831454,
+      "historical_reference_normalized_latency_change_percent": 1.9017961483145385
+    }
+  ],
+  "target_only_fixed_reference_modeled_score": 1.1006272179140026,
+  "target_only_fixed_reference_modeled_gain_percent": -10.78163721320845,
+  "target_only_modeled_loads": [
+    {
+      "load": "decode 1",
+      "reference_weighted_us": 1445.4400381073356,
+      "candidate_weighted_us": 1071.801296404459,
+      "speedup": 1.348608219598457
+    },
+    {
+      "load": "decode 16",
+      "reference_weighted_us": 4426.175935193896,
+      "candidate_weighted_us": 3881.4997341784233,
+      "speedup": 1.1403262239642435
+    },
+    {
+      "load": "decode 32",
+      "reference_weighted_us": 7562.239866703749,
+      "candidate_weighted_us": 9934.411588799414,
+      "speedup": 0.7612166859716002
+    },
+    {
+      "load": "verify 1",
+      "reference_weighted_us": 1627.2000083699822,
+      "candidate_weighted_us": 1254.5589053175593,
+      "speedup": 1.2970295786614328
+    },
+    {
+      "load": "verify 16",
+      "reference_weighted_us": 4598.239907063544,
+      "candidate_weighted_us": 4161.685625740962,
+      "speedup": 1.1048984283249066
+    },
+    {
+      "load": "verify 32",
+      "reference_weighted_us": 7787.712102755904,
+      "candidate_weighted_us": 7349.602430507557,
+      "speedup": 1.0596099824978005
+    }
+  ],
+  "evaluator": {
+    "identical_code_image_files_dictionary": true,
+    "differences": [],
+    "selected": {
+      "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+      "files": {
+        "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+        "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+        "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+        "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+        "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+        "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+        "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+      },
+      "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+    },
+    "new": {
+      "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+      "files": {
+        "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+        "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+        "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+        "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+        "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+        "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+        "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+      },
+      "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+    }
+  },
+  "gpu_environment": {
+    "stable_fields_known": true,
+    "stable_identity_clock_limit_fields_equal": true,
+    "stable_field_differences": [],
+    "all_reported_machine_differences": [
+      {
+        "field": "gpu_after.power.draw",
+        "selected": 126.97,
+        "new": 123.64
+      },
+      {
+        "field": "gpu_after.temperature.gpu",
+        "selected": 37,
+        "new": 33
+      },
+      {
+        "field": "gpu_before.power.draw",
+        "selected": 147.53,
+        "new": 131.94
+      },
+      {
+        "field": "gpu_before.temperature.gpu",
+        "selected": 36,
+        "new": 32
+      },
+      {
+        "field": "node",
+        "selected": "n-i3rdb5ks34a6fp3m52rhc7cstu",
+        "new": "n-tyjmfajcegskfoydlmojkcfmco"
+      }
+    ],
+    "selected_machine": {
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 126.97,
+        "power.limit": 700,
+        "temperature.gpu": 37
+      },
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 147.53,
+        "power.limit": 700,
+        "temperature.gpu": 36
+      },
+      "node": "n-i3rdb5ks34a6fp3m52rhc7cstu"
+    },
+    "new_machine": {
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 123.64,
+        "power.limit": 700,
+        "temperature.gpu": 33
+      },
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 131.94,
+        "power.limit": 700,
+        "temperature.gpu": 32
+      },
+      "node": "n-tyjmfajcegskfoydlmojkcfmco"
+    },
+    "qualification": "Node, temperature and instantaneous draw are retained as context; static identity is not measured utilization."
+  },
+  "gates": {
+    "all16_prerequisites_and12_shapes_pass": true,
+    "source_request_receipt_verified": true,
+    "raw_profile_corroboration_verified": true,
+    "same_evaluator": true,
+    "compatible_reported_GPU": true,
+    "target_only_modeled_gain_at_least3_percent": false,
+    "no_target_normalized_regression_above3_percent": false,
+    "no_unchanged_absolute_normalized_drift_above3_percent": true
+  },
+  "worst_target_normalized_latency_change_percent": 79.59715452389618,
+  "unchanged_control_drift_flags": [],
+  "classification": "performance_rejected",
+  "reason": "Declared target regression/model-score gate failed",
+  "artifact_sha256": {
+    "job": "e61d99b67ebbf917cfc4e5a5ad29848e37b92be60a08e9825728e0bd428b81c0",
+    "profile": "8fb24b19b2bcc0517baa980b974692e9e98b7862b316e5bbb7db842626bd36f1",
+    "request": "df9206618a8bfdad2d17b80dfdc0e2f2132b969a8d14104ca2efc4b971737e3d",
+    "selected_job": "a66e15b71116d6758cd1aae75138f19c0a7db4cb2e89ba27394d6d09df2d61cb",
+    "selected_profile": "3a9f9f841665ef0c678001aa62396b44557a375ce20d5e830548d257ff6f1300",
+    "candidate_source": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+    "analyzer": "b50f7043890f97039ad20442f6db2f1615c6df19b50c2e755f1dcea0a0e60eb3"
+  }
+}
