@@ -85,7 +85,7 @@ def main():
     assert not subprocess.check_output(['git','ls-files',str(auth)],cwd=CONTROL)
     os.environ.update(MODAL_CONFIG_PATH=str(auth),MODAL_PROFILE='xuefeng-zhu')
     apps=cli(CONTROL,'app','list','--env','main','--json')
-    assert all(a.get('state')=='stopped' and a.get('tasks',0)==0 for a in apps),'Active app; do not overlap'
+    assert all(a.get('state')=='stopped' and int(a.get('tasks',0))==0 for a in apps),'Active app; do not overlap'
     prior={}
     if args.stage=='native':
         assert args.prior
@@ -94,8 +94,11 @@ def main():
         assert receipt['quack_commit']==p.PIN and receipt['source_hashes']==p.source_hashes()
         assert receipt.get('review',{}).get('ready_for_execution') is True
         assert all(hashlib.sha256(prior[n]).hexdigest()==digest for n,digest in receipt['objects'].items())
+    import warnings
+    from modal.exception import ServerWarning
+    warnings.filterwarnings('ignore',message=r'Your Modal token .* expires',category=ServerWarning)
     import modal
-    image=modal.Image.from_id(IMAGE).apt_install('git').run_commands(
+    image=modal.Image.from_id(IMAGE).run_commands(
         'git clone --filter=blob:none --no-checkout https://github.com/Dao-AILab/quack.git /opt/p070-quack',
         'git -C /opt/p070-quack checkout --detach '+p.PIN)
     for name in PAYLOAD:image=image.add_local_file(ROOT/name,'/opt/p070/'+name,copy=False)
@@ -149,7 +152,7 @@ def main():
                 apps=cli(CONTROL,'app','list','--env','main','--json')
                 exact=next((a for a in apps if a.get('app_id')==app.app_id),None)
                 record['shutdown']={k:exact.get(k) for k in ('app_id','state','tasks')} if exact else None
-                if exact and exact.get('state')=='stopped' and exact.get('tasks',0)==0:break
+                if exact and exact.get('state')=='stopped' and int(exact.get('tasks',0))==0:break
                 time.sleep(2)
         except Exception as error:record['shutdown_error']=type(error).__name__
         save();print(json.dumps(record),flush=True)
