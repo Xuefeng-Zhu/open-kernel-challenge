@@ -1,0 +1,92 @@
+{
+  "scope": "Bounded local source and saved-runtime evidence; no new runtime, job, browser or credential access",
+  "source_hashes": {
+    "baseline.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "candidate.py": "586074a4bbff57ff28c53070dfcdfcf881631b9aeffeb016032a7a07b32309cf",
+    "official_fusion_result": "46f9818a029a68995d6bad8b99c79a72f390ab09e464c01eb9a79b64bb160001",
+    "Modal_cpu_inventory": "f7f114b91ef6fded836f4502e15dbd4e0972a2872ac3e1142c20ad8ad847c382",
+    "prior_full_B32_complete_symbols": "b55b87101004742d43d33272a632250d094a2345f1a3e37fce64589f76d931e9"
+  },
+  "candidate_isolation": "Entire AST identical after removing one target-only **kwargs IfExp from fused sliding FA3 call",
+  "added_keyword_ast": "IfExp(test=BoolOp(op=And(), values=[Compare(left=Name(id='batch', ctx=Load()), ops=[In()], comparators=[Tuple(elts=[Constant(value=16), Constant(value=32)], ctx=Load())]), Compare(left=Name(id='length', ctx=Load()), ops=[Eq()], comparators=[Constant(value=8)])]), body=Dict(keys=[Constant(value='num_splits')], values=[Constant(value=1)]), orelse=Dict())",
+  "installed_API_verified": false,
+  "installed_FA3_binary_source_hash": null,
+  "blocker_state": "unknown_not_denied; runtime filesystem unavailable locally and this preparation phase forbids new Modal/GPU jobs",
+  "actual_official_job_id": "2f5f1fb54b48486d",
+  "actual_profiles": [
+    {
+      "case": {
+        "batch": 16,
+        "ctx": 80000,
+        "dist": "soft",
+        "heads": "tp8",
+        "layer": "sliding",
+        "load": "verify 16",
+        "page": 1,
+        "q_len": 8,
+        "seed": 7960680715078502386,
+        "spread": "agentic",
+        "weight": 46
+      },
+      "event": "profile",
+      "index": 8,
+      "report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      10.5 \u00b5s  53.5%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.2 \u00b5s  21.3%      1\n_fa3_prepare_fused                                                 1.8 \u00b5s   9.3%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, false>(in...       1.8 \u00b5s   9.1%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.3 \u00b5s   6.8%      1\ntotal                                                             19.7 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        18.3 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "case": {
+        "batch": 32,
+        "ctx": 80000,
+        "dist": "soft",
+        "heads": "tp8",
+        "layer": "sliding",
+        "load": "verify 32",
+        "page": 1,
+        "q_len": 8,
+        "seed": 7961024009382764997,
+        "spread": "agentic",
+        "weight": 46
+      },
+      "event": "profile",
+      "index": 10,
+      "report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      14.1 \u00b5s  58.5%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.4 \u00b5s  18.1%      1\n_fa3_prepare_fused                                                 2.4 \u00b5s   9.8%      1\nvoid flash::prepare_varlen_num_blocks_kernel<2, false>(in...       1.8 \u00b5s   7.4%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...       1.5 \u00b5s   6.1%      1\ntotal                                                             24.2 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        22.7 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    }
+  ],
+  "baseline_split_count": "Unknown; combine event observed but template name is truncated and prep template integers are not split counts",
+  "future_compute_gate": [
+    "Inspect actual callable signature/source/module and extension hashes before candidate invocation",
+    "Require supported num_splits named keyword and preserved default for control",
+    "Record complete actual sliding B16/B32 mainloop/combine/preparation names in one separate activity session",
+    "If control combine is absent or candidate combine persists, reject elimination hypothesis before timing",
+    "Record scheduler prep and other kernels even if combine disappears",
+    "Only then original-tolerance correctness/replay/cache and unprofiled paired whole-call timings"
+  ],
+  "parallelism_model": {
+    "packed_query_rows_per_KV_head": 64,
+    "KV_heads": 2,
+    "assumed_minimum_M_tile": 64,
+    "conditional_logical_tiles_B16": 32,
+    "conditional_logical_tiles_B32": 64,
+    "qualification": "Conditional useful logical tiles, not actual launched CTAs, occupancy, residency or SM utilization. Installed sliding tile/packing must be identified."
+  },
+  "primary_pinned_sources": {
+    "Dao_API": "https://github.com/Dao-AILab/flash-attention/blob/060c9188beec3a8b62b33a3bfa6d5d2d44975fab/hopper/flash_api.cpp",
+    "Dao_wrapper": "https://github.com/Dao-AILab/flash-attention/blob/060c9188beec3a8b62b33a3bfa6d5d2d44975fab/hopper/flash_attn_interface.py",
+    "Dao_launch": "https://github.com/Dao-AILab/flash-attention/blob/060c9188beec3a8b62b33a3bfa6d5d2d44975fab/hopper/flash_fwd_launch_template.h",
+    "Dao_tile": "https://github.com/Dao-AILab/flash-attention/blob/060c9188beec3a8b62b33a3bfa6d5d2d44975fab/hopper/tile_size.h",
+    "SGLang_wrapper": "https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/attention/flash_attention.py"
+  },
+  "guard_host_checks": {
+    "configurations": 340,
+    "nonempty_override_pairs": [
+      [
+        16,
+        8
+      ],
+      [
+        32,
+        8
+      ]
+    ],
+    "qualification": "Host expression evaluation only; no FA3 import or execution"
+  }
+}

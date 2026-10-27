@@ -1,0 +1,71 @@
+{
+  "admitted": true,
+  "reason": "explicit_keyword_capable_num_splits",
+  "exact_observed_extensions_verified": true,
+  "callable_module": "sgl_kernel.flash_attn",
+  "callable_qualname": "flash_attn_with_kvcache",
+  "follow_wrapped": false,
+  "limits": {
+    "source_text_bytes": 65536,
+    "inspect_file_bytes": 1048576,
+    "per_file_hash_bytes": 4294967296,
+    "total_hash_bytes": 8589934592,
+    "loaded_binaries": 16
+  },
+  "qualification": "Installed API/provenance only; not upstream identity or executed split/combine proof",
+  "signature": "(q, k_cache, v_cache, k=None, v=None, qv=None, rotary_cos=None, rotary_sin=None, cache_seqlens: Union[int, torch.Tensor, NoneType] = None, cache_batch_idx: Optional[torch.Tensor] = None, cache_leftpad: Optional[torch.Tensor] = None, page_table: Optional[torch.Tensor] = None, cu_seqlens_q: Optional[torch.Tensor] = None, cu_seqlens_k_new: Optional[torch.Tensor] = None, max_seqlen_q: Optional[int] = None, rotary_seqlens: Optional[torch.Tensor] = None, q_descale: Optional[torch.Tensor] = None, k_descale: Optional[torch.Tensor] = None, v_descale: Optional[torch.Tensor] = None, softmax_scale=None, causal=False, window_size=(-1, -1), attention_chunk: Optional[int] = None, softcap=0.0, rotary_interleaved=True, scheduler_metadata=None, num_splits=0, pack_gqa=None, only_qv=False, sm_margin=0, return_softmax_lse=False, sinks=None, score_mod=None, aux_tensors=None, ver=3, out=None)",
+  "num_splits_kind": "POSITIONAL_OR_KEYWORD",
+  "num_splits_default": "0",
+  "packages": {
+    "torch": {
+      "status": "found",
+      "version": "2.14.1"
+    },
+    "triton": {
+      "status": "found",
+      "version": "3.8.0"
+    },
+    "sglang": {
+      "status": "found",
+      "version": "0.0.0.dev0"
+    },
+    "sgl-kernel": {
+      "status": "not_installed"
+    }
+  },
+  "loaded_binaries": [
+    {
+      "path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+      "sha256": "cdea0997a51412b8db8bf8da49d896a6c9d12a39bb1b548d840bb8dc428f13ef",
+      "resolved_path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+      "bytes": 1122619328,
+      "mtime_ns": 1792012921000000000,
+      "observed_paths": [
+        "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so"
+      ],
+      "discovered_by": [
+        "module:sgl_kernel.flash_ops"
+      ],
+      "module": "sgl_kernel.flash_ops"
+    }
+  ],
+  "loaded_binary_paths_omitted": 0,
+  "loaded_library_discovery": {
+    "status": "observed",
+    "relevant_paths": 0
+  },
+  "hashed_file_bytes": 1122635488,
+  "extension_identity_reason": "all_observed_relevant_extensions_fully_hashed",
+  "binary_identity_qualification": "Hashes identify observed loaded files; no claim that every transitive GPU binary was discovered",
+  "same_callable_in_both_modules": true,
+  "source": {
+    "path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+    "sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+    "resolved_path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+    "bytes": 16160,
+    "mtime_ns": 1792012917000000000,
+    "available": true,
+    "file_text_sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+    "function_source_sha256": "6bbd808ae807ede41ae6d93d61f405d91301d6eed05bd13828379e1e734f87bd"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "source_freeze": "5e494062a91a643df674887140125b9333f2fb92",
+  "raw_result_sha256": "46aed5e3fba5b978d3206de15106ce7bd5961fd63b1bc8e76ac887073fb4f0ab",
+  "validation_and_mechanism_passed": true,
+  "oracle_calls": 46,
+  "exact_return_A_checks": 14,
+  "prep_groups": 12,
+  "timed_replay_checks": 96,
+  "activity_replay_checks": 4,
+  "installed_wrapper_sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+  "observed_extension_hashes": [
+    {
+      "path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+      "sha256": "cdea0997a51412b8db8bf8da49d896a6c9d12a39bb1b548d840bb8dc428f13ef",
+      "resolved_path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+      "bytes": 1122619328,
+      "mtime_ns": 1792012921000000000,
+      "observed_paths": [
+        "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so"
+      ],
+      "discovered_by": [
+        "module:sgl_kernel.flash_ops"
+      ],
+      "module": "sgl_kernel.flash_ops"
+    }
+  ],
+  "mechanism": [
+    {
+      "case": "sliding_B16_L8_scored",
+      "arms": {
+        "baseline": {
+          "recognized_kernel_counts": {
+            "mainloop": 1,
+            "combine": 1,
+            "schedule_prepare": 1
+          },
+          "physical_kernel_count": 5,
+          "CUDA_marker_annotations": 1,
+          "instrumented_mainloop_us": 13.855000000000018
+        },
+        "candidate": {
+          "recognized_kernel_counts": {
+            "mainloop": 1,
+            "combine": 0,
+            "schedule_prepare": 1
+          },
+          "physical_kernel_count": 4,
+          "CUDA_marker_annotations": 1,
+          "instrumented_mainloop_us": 25.66300000000001
+        }
+      }
+    },
+    {
+      "case": "sliding_B32_L8_scored",
+      "arms": {
+        "baseline": {
+          "recognized_kernel_counts": {
+            "mainloop": 1,
+            "combine": 1,
+            "schedule_prepare": 1
+          },
+          "physical_kernel_count": 5,
+          "CUDA_marker_annotations": 1,
+          "instrumented_mainloop_us": 17.695000000000164
+        },
+        "candidate": {
+          "recognized_kernel_counts": {
+            "mainloop": 1,
+            "combine": 0,
+            "schedule_prepare": 1
+          },
+          "physical_kernel_count": 4,
+          "CUDA_marker_annotations": 1,
+          "instrumented_mainloop_us": 26.07900000000018
+        }
+      }
+    }
+  ],
+  "timings": [
+    {
+      "case": "sliding_B16_L8_scored",
+      "raw_median_us": {
+        "baseline": 27.087999507784843,
+        "candidate": 35.5679988861084
+      },
+      "balanced_ratios": [
+        0.7879063794612934,
+        0.7729044338553409,
+        0.7627211362637167,
+        0.758256094749059,
+        0.7485816797796327,
+        0.7554216396287876
+      ],
+      "median_balanced_ratio": 0.7604886155063879,
+      "paired_candidate_slowdown_percent": 31.494407622937025,
+      "balanced_mean_savings_us": [
+        -7.455999031662941,
+        -8.144001476466656,
+        -8.432000875473022,
+        -8.623999543488026,
+        -9.056000038981438,
+        -8.719999343156815
+      ],
+      "median_balanced_mean_saving_us": -8.528000209480524,
+      "positive_pairs": 0
+    },
+    {
+      "case": "sliding_B32_L8_scored",
+      "raw_median_us": {
+        "baseline": 32.99199976027012,
+        "candidate": 35.80800071358681
+      },
+      "balanced_ratios": [
+        0.9406491215004508,
+        0.9527444490497554,
+        0.9314995147062161,
+        0.9097572492528393,
+        0.9105960820364799,
+        0.922842804109907
+      ],
+      "median_balanced_ratio": 0.9271711594080616,
+      "paired_candidate_slowdown_percent": 7.854951036056268,
+      "balanced_mean_savings_us": [
+        -2.09600105881691,
+        -1.6960017383098602,
+        -2.4480000138282776,
+        -3.2960008829832077,
+        -3.216000273823738,
+        -2.7519986033439636
+      ],
+      "median_balanced_mean_saving_us": -2.5999993085861206,
+      "positive_pairs": 0
+    },
+    {
+      "case": "full_B16_L8_unchanged_control",
+      "raw_median_us": {
+        "baseline": 204.41600680351257,
+        "candidate": 203.77599447965622
+      },
+      "balanced_ratios": [
+        1.0107098743205585,
+        1.0050219982750108,
+        1.0027536270764528,
+        1.0017301121431876,
+        1.0002359711989286,
+        0.9990651220311741
+      ],
+      "median_balanced_ratio": 1.0022418696098203,
+      "paired_candidate_slowdown_percent": -0.22368548728592952,
+      "balanced_mean_savings_us": [
+        2.1760016679763794,
+        1.024007797241211,
+        0.5600005388259888,
+        0.35200268030166626,
+        0.048004090785980225,
+        -0.19200146198272705
+      ],
+      "median_balanced_mean_saving_us": 0.4560016095638275,
+      "positive_pairs": 5
+    }
+  ],
+  "official_check_admitted": false,
+  "decision": "Reject combined sliding num_splits=1; no official check",
+  "qualifications": [
+    "One session, two fixtures and six balanced pairs per family; no independent-session confidence interval.",
+    "Profiler event groups contain CUDA marker annotations; physical kernel counts exclude them.",
+    "Mainloop activity grows, but no CTA/occupancy/stall cause was measured.",
+    "The installed Modal environment identity is not asserted identical to the official judge image."
+  ]
+}
