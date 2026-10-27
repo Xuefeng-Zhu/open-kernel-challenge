@@ -1,0 +1,16 @@
+Device NVIDIA H200 (GH100)
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+Metric Name                                                                 Metric Type     Metric Unit     Metric Description                                                    
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+smsp__warp_issue_stalled_long_scoreboard_per_warp_active.max_rate           Ratio                           proportion of warps per cycle, waiting for a scoreboard dependency on 
+                                                                                                            L1TEX (local, global, surface, tex) operation (This ratio metric      
+                                                                                                            represents the ratio's maximum value across all sub-unit instances)   
+smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct                Ratio           %               proportion of warps per cycle, waiting for a scoreboard dependency on 
+                                                                                                            L1TEX (local, global, surface, tex) operation (This ratio metric      
+                                                                                                            represents the value expressed as a percentage across all sub-unit    
+                                                                                                            instances)                                                            
+smsp__warp_issue_stalled_long_scoreboard_per_warp_active.ratio              Ratio                           proportion of warps per cycle, waiting for a scoreboard dependency on 
+                                                                                                            L1TEX (local, global, surface, tex) operation (This ratio metric      
+                                                                                                            represents the value expressed as a ratio across all sub-unit         
+                                                                                                            instances)                                                            
+

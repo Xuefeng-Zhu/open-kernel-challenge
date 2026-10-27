@@ -1,0 +1,10 @@
+{
+  "workspace": "xuefeng-zhu",
+  "observed_utc": "2026-10-27T04:55:52.929423+00:00",
+  "verified_credit_balance_usd": "27.43",
+  "verified_net_spend_cap_usd": "0",
+  "total_usage_usd": "2.57",
+  "total_spend_usd": "0",
+  "changes_made": false,
+  "source": "Visible Modal Credits and Usage limit tabs; live CLI gross increase is subtracted for conservative free-credit floor"
+}
