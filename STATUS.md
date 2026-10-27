@@ -1,3 +1,13 @@
+# Latest: P046 ranked submission complete (2026-10-27)
+
+One authorized ranked Projection job `497a0b5130e548c1` passed 9 prerequisites
+and 30 scored cases: **1.1897129769×**, CI [1.1718672822, 1.2075586715].
+Independent board snapshot: **rank 678/1,114**. Exact selected P046 source remains
+unchanged. One ranked request used, none active/uncertain; platform quota 1/10 used,
+9 remaining, checks 0/20. No new Modal or credential operation.
+See [complete receipt and score calculation](experiments/069-p046-ranked-submission.md).
+The single ranked-action allowance is complete; do not repeat it automatically.
+
 # P068 native baseline diagnostic complete; P046 preserved
 
 App `ap-Hw1HKh6pn7adn4Tc5E0lXE` completed 240 timing + 18 activity oracle

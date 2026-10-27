@@ -2,6 +2,10 @@
 
 `candidates/projection_pooler_column_batch2_hybrid.py`
 
+Latest ranked verification: **1.1897129769×**, job `497a0b5130e548c1`, all 9+30 cases pass.
+Board snapshot: rank **678/1,114** on 2026-10-27. Source unchanged.
+See [ranked result](experiments/069-p046-ranked-submission.md); the earlier off-board score below is preserved.
+
 - Source commit `fa56f2b3958b0c8d358c906a0b6cbb8e741a150e`.
 - SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
 - Official off-board job `41ba778763a5433b`:9 prerequisites and 30scored shapes pass.

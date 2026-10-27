@@ -1,0 +1,70 @@
+{
+  "experiment": "P046-ranked-once",
+  "problem": "muse_bf16_proj",
+  "mode": "run",
+  "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+  "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+  "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "previous_check_job": "41ba778763a5433b",
+  "previous_check_speedup": 1.1841399408925375,
+  "created_utc": "2026-10-27T04:14:18.743591+00:00",
+  "rules_version": "2026-10-22.1",
+  "quota_before": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 0,
+      "left": 20
+    }
+  },
+  "state": "terminal",
+  "status": "done",
+  "job_id": "497a0b5130e548c1",
+  "maximum_requests": 1,
+  "command": [
+    "okc",
+    "submit",
+    "muse_bf16_proj",
+    "candidates/projection_pooler_column_batch2_hybrid.py",
+    "--no-wait",
+    "--json"
+  ],
+  "cli_exit_code": 0,
+  "accepted_utc": "2026-10-27T04:14:19.010926+00:00",
+  "admission": {
+    "job_id": "497a0b5130e548c1",
+    "problem": "muse_bf16_proj"
+  },
+  "last_observed_utc": "2026-10-27T04:26:23.648443+00:00",
+  "passed": true,
+  "speedup": 1.1897129768845947,
+  "speedup_ci": [
+    1.1718672822313256,
+    1.2075586715378634
+  ],
+  "quota_after": {
+    "scored": {
+      "per_day": 10,
+      "used": 1,
+      "left": 9
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 0,
+      "left": 20
+    }
+  },
+  "leaderboard_observed_utc": "2026-10-27T04:26:24.525161+00:00",
+  "leaderboard": {
+    "rank": 678,
+    "ranked": 1114,
+    "speedup": 1.1897,
+    "ahead": 677,
+    "to_first": 1.3757
+  },
+  "active_or_uncertain_projection_requests": 0
+}
