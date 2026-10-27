@@ -1,3 +1,12 @@
+# Integration and P070 completion — 2026-10-27
+
+Projection remains P046. P070 passed 240 native oracle checks but both Quack
+variants lost to P046; all apps stopped. See
+[completed P070 evidence](experiments/070-quack-finalization-preflight.md).
+Both tracks now have their selected sources and all remote-branch evidence on
+`main`; [README](README.md) is the current entrypoint. Dated records below are
+preserved and are not live quota, access or authorization statements.
+
 # Latest: P046 ranked submission complete (2026-10-27)
 
 One authorized ranked Projection job `497a0b5130e548c1` passed 9 prerequisites

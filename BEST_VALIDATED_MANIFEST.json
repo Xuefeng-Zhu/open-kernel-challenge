@@ -40,7 +40,7 @@
     },
     "report": "reviews/attention-v2/fusion-lookahead-probe/RESULTS.md",
     "rollback_key": "attention_rollback_A2_11",
-    "restriction": "Best validated working choice, not a ranked entry or proven aggregate statistical superiority. Same-address live metadata ABA and two DP B32 multi-chunk cases (SPLITS2/3, BS2/4) passed. Independent disjoint-cache/output graph submissions and retained-state isolation passed with distinct observed graph pools; actual hardware overlap and internal scratch pointers unmeasured. General serving concurrency/coverage remains unestablished. A2-11 and fusion sources preserved unchanged as rollback/control.",
+    "restriction": "Best validated working choice with separate same-source ranked evidence; aggregate statistical superiority over its controls is not established. Same-address live metadata ABA and two DP B32 multi-chunk cases (SPLITS2/3, BS2/4) passed. Independent disjoint-cache/output graph submissions and retained-state isolation passed with distinct observed graph pools; actual hardware overlap and internal scratch pointers unmeasured. General serving concurrency/coverage remains unestablished. A2-11 and fusion sources preserved unchanged as rollback/control.",
     "dp_multichunk_validation": {
       "observed_utc": "2026-10-25T21:52:08.731188+00:00",
       "source_commit": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
@@ -312,24 +312,52 @@
         "official_check": false,
         "formal_entry": false
       }
+    },
+    "ranked_result": {
+      "job_id": "2404e0d81bff4441",
+      "mode": "run",
+      "score": 1.242924596353655,
+      "ci": [
+        1.2242807274083503,
+        1.2615684652989598
+      ],
+      "observed_utc": "2026-10-27T04:24:00Z",
+      "report": "reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/RESULTS.md"
     }
   },
   "projection": {
-    "source": "candidates/projection_router_m1_fp32_gemv.py",
-    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
-    "branch": "projection-pipeline-preflight",
-    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
-    "job_id": "d5636ac8d1404abd",
-    "score": 1.173238998969285,
+    "selection": "working",
+    "experiment": "P046 pooler column-batch2 hybrid",
+    "source": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "branch": "main",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "mode": "check",
+    "score": 1.1841399408925375,
     "ci": [
-      1.1556404139847458,
-      1.1908375839538243
+      1.1663778417791495,
+      1.2019020400059255
     ],
     "prerequisites": 9,
     "timed_shapes": 30,
-    "restriction": "P040 higher point estimate not selected after missed target and overlapping interval; kernel measurements exclude serving integration/collectives."
+    "report": "BEST.md",
+    "rollback_key": "projection_rollback_P039",
+    "selection_ledger": "experiments/projection-cycle2-budget.json",
+    "ranked_result": {
+      "job_id": "497a0b5130e548c1",
+      "mode": "run",
+      "score": 1.1897129768845947,
+      "ci": [
+        1.1718672822313256,
+        1.2075586715378634
+      ],
+      "observed_utc": "2026-10-27T04:26:23.648443+00:00",
+      "report": "experiments/069-p046-ranked-submission.md"
+    },
+    "restriction": "Ranked and check scores measure unchanged source; no new performance claim follows from branch integration. P070 remains rejected; P039 preserved."
   },
-  "scope": "Free off-board checks, not ranked entries; no end-to-end serving performance measured",
+  "scope": "Recorded kernel checks, native diagnostics and explicitly completed ranked entries. This manifest is evidence, not authorization for future actions. No end-to-end serving performance measured.",
   "attention_counter_local_baseline": {
     "source": "reviews/attention-v2/mixed_fa3_local_tickets.py",
     "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
@@ -414,5 +442,27 @@
       "all_paths_concurrency_verified": false
     },
     "selection": "rollback"
+  },
+  "projection_rollback_P039": {
+    "source": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "branch": "projection-pipeline-preflight",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "score": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "prerequisites": 9,
+    "timed_shapes": 30,
+    "restriction": "P040 higher point estimate not selected after missed target and overlapping interval; kernel measurements exclude serving integration/collectives."
+  },
+  "integration": {
+    "observed_utc": "2026-10-27T21:32:10.231491+00:00",
+    "default_branch": "main",
+    "repository_visibility": "public",
+    "kernel_sources_changed": false,
+    "historical_branch_fields": "Track-local/export branch names and older timestamps are retained as provenance."
   }
 }

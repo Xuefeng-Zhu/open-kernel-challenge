@@ -1,3 +1,13 @@
+# Selected Projection source
+
+Use [P046](projection_pooler_column_batch2_hybrid.py), SHA256
+`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+Latest ranked same-source result is 1.1897129769×; [BEST.md](../BEST.md) contains
+receipts, rollback and qualifications. Other candidates below are historical.
+P070 Quack SERIAL/SEPARATE configurations were rejected after native testing.
+
+## Historical candidate catalog
+
 Latest source projection_qkv_m128_singlepass.py (035/M36) passed fullCUDA and
 nearby/layout correctness but target~2.5xslower; rejected/noofficialcheck. Best
 projection_full_composition.py unchanged.112localCPUtests pass,all11apps stopped.

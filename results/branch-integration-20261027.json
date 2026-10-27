@@ -1,0 +1,53 @@
+{
+  "observed_utc": "2026-10-27T21:34:58.953369+00:00",
+  "repository": "Xuefeng-Zhu/open-kernel-challenge",
+  "target": "main",
+  "remote_heads_reviewed": {
+    "origin": "5c5235c9f9a4dbf35ff9987acbb44b794f9fc19b",
+    "origin/attention-architecture-probe": "ad46ee907952d0bec8b3fc98e429417328776420",
+    "origin/attention-fa3-sanitized": "ebb80b91c58032641bf5341927261eb64929f14e",
+    "origin/attention-fused-preparation": "05c9cc08948c42fed9e09aae1cd2b41edf966c74",
+    "origin/attention-fusion-lookahead": "8d2f196d3360b2047381a34096fa392a58eafda2",
+    "origin/attention-sliding-unsplit": "51bd5db1c7836e67aa65a4e1843bb78826eb23e5",
+    "origin/main": "5c5235c9f9a4dbf35ff9987acbb44b794f9fc19b",
+    "origin/projection-pipeline-preflight": "d55496b422e996807614a2661346d589144bc1ba"
+  },
+  "local_tests": {
+    "root_suite": {
+      "passed": 718,
+      "command": "python -B -m unittest discover -s tests -p 'test_*.py' -v"
+    },
+    "attention_focused": {
+      "passed": 41,
+      "per_script": [
+        8,
+        4,
+        7,
+        7,
+        7,
+        8
+      ]
+    },
+    "python_ast": {
+      "passed": 466
+    }
+  },
+  "initial_suite": {
+    "run": 716,
+    "errors": 14,
+    "causes": [
+      "Historical P041 tests used live P046 selection rather than a period-correct fixture.",
+      "P068 collector pinned an older THIRD_PARTY_NOTICES hash."
+    ],
+    "resolution": "Isolate historical test fixture, retain changed-selection rejection, refresh only exact notices digest, add notice tamper rejection test."
+  },
+  "selected_sources": {
+    "submission.py": "78bd5697391a335d5ba771035624bde12e36ecfa5f3058f3db08d00fbe08ae3e",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "reviews/attention-v2/fusion-lookahead-probe/candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8"
+  },
+  "all_pending_tips_ancestors": true,
+  "branches_deleted": false,
+  "new_gpu_or_official_checks": false,
+  "review": "Independent read-only Attention and Projection reviewers; repair diff separately reviewed."
+}

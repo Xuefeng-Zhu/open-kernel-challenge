@@ -1,3 +1,18 @@
+# Integrated handoff — 2026-10-27
+
+All existing remote experiment branches are represented on `main`; branch names
+and immutable evidence remain. Follow the current [README](README.md) and
+[best-source manifest](BEST_VALIDATED_MANIFEST.json), rather than dated snapshots.
+Projection P046 and Attention fusion + lookahead remain selected with their
+latest ranked receipts. P070 completed and was rejected; see
+[its result](experiments/070-quack-finalization-preflight.md).
+No new GPU run, official check, credential action or selection promotion occurs
+in this integration. Historical authorization documents are records, not fresh
+permission. Projection handoff history remains in [STATUS.md](STATUS.md) and
+its branch's Git history. Attention checkpoints follow below.
+
+## Historical Attention checkpoints
+
 # V-stage runtime complete: local benefit, actual FA3 replacement rejected
 
 The [runtime result](reviews/attention-v2/gluon-vstage-probe/RESULTS.md) passed

@@ -1,5 +1,30 @@
 # Open Kernel Challenge experiments
 
+Both tracks and their experiment history are integrated on `main`. This merge
+changes no kernel, oracle, scoring rule, or selected source.
+
+| Track | Selected source | Latest ranked result | Earlier off-board check |
+|---|---|---:|---:|
+| Projection | [P046](candidates/projection_pooler_column_batch2_hybrid.py) | [1.189712977×](experiments/069-p046-ranked-submission.md) | 1.184139941× |
+| Attention | [Fusion + lookahead](reviews/attention-v2/fusion-lookahead-probe/candidate.py) | [1.242924596×](reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/RESULTS.md) | 1.233633059× |
+
+Ranked and check results above use identical source within each track; score
+movement between runs is not a new optimization. Exact hashes, rollback sources
+and limitations are in [BEST_VALIDATED_MANIFEST.json](BEST_VALIDATED_MANIFEST.json).
+The root `submission.py` remains the original Projection starter; use the
+explicit selected source paths above. Failed candidates are retained as evidence,
+not selected implementations. See [FAILED_EXPERIMENTS.md](FAILED_EXPERIMENTS.md).
+
+Latest Projection diagnostic [P070](experiments/070-quack-finalization-preflight.md)
+passed 240 H200 oracle checks but rejected both tested Quack configurations;
+P046 remains selected. [Integration review](docs/BRANCH_INTEGRATION_20261027.md)
+records branch coverage and local validation. Repository visibility is public.
+Historical permission/quota/status statements below do not authorize new actions.
+
+## Historical branch overviews (preserved)
+
+# Open Kernel Challenge experiments
+
 Current status lives in [CONTINUE.md](CONTINUE.md) and the two per-problem ledgers.
 The records below the historical heading describe earlier stages and do not set
 current permissions, budgets or selected candidates.

@@ -1,11 +1,36 @@
 """Frozen receipt/traffic-model validation; never executes CUDA kernels."""
 import math
+import json
+from pathlib import Path
+import shutil
+import tempfile
 import unittest
 from unittest.mock import patch
 import projection_p041_plan as plan
 
 
 class ProjectionEvidence(unittest.TestCase):
+    def setUp(self):
+        # This historical P039 analysis must not depend on today's P046 selection.
+        temp = tempfile.TemporaryDirectory()
+        self.addCleanup(temp.cleanup)
+        root = Path(temp.name)
+        for name in (plan.SOURCE, plan.RECEIPT, plan.CSV, "official/reference.py", "TASK.md"):
+            target = root / name
+            target.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copyfile(plan.ROOT / name, target)
+        (root / "experiments").mkdir()
+        self.ledger = root / "experiments/projection-cycle2-budget.json"
+        self.ledger.write_text(json.dumps({"selection": {"sha256": plan.SOURCE_SHA256}}))
+        scope = patch.object(plan, "ROOT", root)
+        scope.start()
+        self.addCleanup(scope.stop)
+
+    def test_changed_selection_still_blocks_historical_plan(self):
+        self.ledger.write_text(json.dumps({"selection": {"sha256": "different-selection"}}))
+        with self.assertRaisesRegex(ValueError, "Selection changed"):
+            plan.build()
+
     def test_frozen_score_and_parent(self):
         report = plan.build()
         self.assertAlmostEqual(report['score'], 1.173238998969285, places=12)

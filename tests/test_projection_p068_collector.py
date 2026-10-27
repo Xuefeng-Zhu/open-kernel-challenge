@@ -38,6 +38,11 @@ class FakeTensor:
 
 
 class CollectorTests(unittest.TestCase):
+    def test_notice_hash_tampering_still_rejected(self):
+        with patch.dict(c.FROZEN, {"THIRD_PARTY_NOTICES.md": "wrong"}):
+            with self.assertRaisesRegex(ValueError, "Frozen source mismatch: THIRD_PARTY_NOTICES"):
+                c.sources()
+
     def test_dry_run_no_native_import_or_process(self):
         script="import sys, unittest.mock as m; import projection_p068_collector as c; " \
                "p=m.patch('subprocess.Popen', side_effect=AssertionError('spawn')); p.start(); " \

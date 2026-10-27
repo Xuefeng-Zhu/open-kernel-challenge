@@ -1,3 +1,13 @@
+# Historical workflow authorization snapshot
+
+This file preserves an earlier Projection workflow record. It is not a fresh
+authorization or current quota/credential/visibility statement. The repository
+is now public, and individual ranked entries recorded in the manifest have
+already completed. Consult the current user's instructions before consequential
+new actions; earlier Attention variants remain in Git history.
+
+## Original Projection record
+
 # Current authorization
 
 The latest user instruction removes the self-imposed count ceiling for **free,

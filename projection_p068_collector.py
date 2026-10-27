@@ -33,7 +33,8 @@ FROZEN = {
     "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
     "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
     "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
-    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    # Integration refresh: combined notices only; all computational inputs remain frozen.
+    "THIRD_PARTY_NOTICES.md": "77dcaee42d3b5c94a0700174ba0f6d807646f939558f7d790562209fdd189d3b",
     "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5",
     "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
 }
