@@ -1,0 +1,219 @@
+{
+  "experiment": "P044 unchanged P039 diagnostic",
+  "state": "terminal",
+  "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+  "created_utc": "2026-10-25T21:05:38.289912+00:00",
+  "source_commit": "b80c5941cc2856ab086e9e17c7bcadf9b1481fbc",
+  "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "candidates/projection_router_m1_fp32_gemv.py": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "projection_p041_probe.py": "191a22ed1e8fdf65b5c2b0ce4e6ea9b06c837a59579115e8e54d7a75744f5ba2",
+    "projection_p041_plan.py": "005fabed110d0182e73c638ee7e367250f5b3a75842be0215fe4d398e9a554a3",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/baseline.py": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "cost_reserve_usd": "0.7091280000000000000000000002",
+  "verified_free_credit_floor_usd": "28.21973459",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "1.78000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.78000000",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.78026541",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "preflight_sha256": "70d2d1ecaba460befd3389722632bdd655768a0198afe177909fd0b79790e7a9",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 390,
+    "startup_timeout": 45,
+    "child_internal_timeout": 150,
+    "child_hard_timeout": 180,
+    "app_watchdog": 420,
+    "stop_allowance": 15,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-25T21:05:40.319561+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 3,
+    "packed_bytes": 37667,
+    "encoded_bytes": 395875,
+    "artifact_bytes": 296400,
+    "sha256": "b0df0b52e55c9f2212ce8a7e9043d69cc1d8d65355b5155baf27acd413e9606d",
+    "artifact_sha256": {
+      "activity.case00.pooler.m8.baseline.trace.json": "893ba70a52c61263f8fbb2aa6de039902fd52f95da03d9954942f4efc36fd450",
+      "activity.case00.pooler.m8.candidate.trace.json": "83dfebee377c9c22092686cdc48bb11046c49f301190d362fb8ce9f5cd37b7d9",
+      "activity.case01.pooler.m128.baseline.trace.json": "e12203210abb047e0d1ac3b6a87e9e157cbbdb21ae728db815e8544e6e3f628f",
+      "activity.case01.pooler.m128.candidate.trace.json": "aae5c3a619b247cf2f285bbce71935adbba50d656f9d0a554e7f09a7017d70f5",
+      "activity.case02.pooler.m256.baseline.trace.json": "f17c0f0c8aadf5a5f55f44fd9dda50a7bc0dbe3a66e604254406ff28b842da95",
+      "activity.case02.pooler.m256.candidate.trace.json": "6b3cee4fa6eb853c2a5edb1ed42dd6fbd581703030ba369b0ecf7421edbfebfe",
+      "activity.case03.qkv_gate.m128.baseline.trace.json": "a9750bb99fa5262b296138564a4403c8d4e8c38ec55b9587bf84eacc9620b516",
+      "activity.case03.qkv_gate.m128.candidate.trace.json": "e7c5f922a95f77851479cbdd43b3322e08c3ee1807d85e3fd19cbaee55273dfe",
+      "activity.case04.unpooler.m16.baseline.trace.json": "f9cc2c5181f4d6455977a251c6b9beb81c19bf17853b767b34b6cbb79df11dd8",
+      "activity.case04.unpooler.m16.candidate.trace.json": "100f0124b1380953bd82ce83535fbca7d9e4a54d1f984d84b80679b8f2d50bda",
+      "activity.json": "49ac162e6317eec9a83db86a1cc94540a14f76b270d0237e5fb7ac770f96d39d",
+      "activity.log": "198f73c5e2c1f1e8c1ab8bf77d4889c2d79ef7338e0f491584c3b2dad9159e14",
+      "summary.json": "fda2ddf9a1db54c6c7e97205ccc070471a2f36c11f7926a6c67e3565546b4534",
+      "timing.json": "91fd6610e2e892a22ad60f4b92e6929dbf2282793086fd27ee14990c4b2dfb9f",
+      "timing.log": "d00a426e5d499cc680642f219883973f41815948ea45bbabf9f46f15a7cf8952"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "timing",
+      "exit_code": 0,
+      "wall_seconds": 21.012441694
+    },
+    {
+      "mode": "activity",
+      "exit_code": 0,
+      "wall_seconds": 14.301519034999995
+    }
+  ],
+  "worker_wall_seconds": 35.314047503,
+  "explicit_stop": {
+    "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+    "requested_utc": "2026-10-25T21:06:20.627435+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T21:06:21.709919+00:00",
+  "client_wall_seconds": 43.41813345788978,
+  "shutdown_observation": {
+    "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 14:05:38-07:00",
+    "stopped_at": "2026-10-25 14:06:23-07:00"
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "1.78000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.78000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.78026541"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0.07047953",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "initial_shutdown_observation": {
+    "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 14:05:38-07:00",
+    "stopped_at": null
+  },
+  "shutdown_reconciled_utc": "2026-10-25T21:06:53.052374+00:00",
+  "shutdown_note": "Initial stop acknowledgement preceded completed teardown; one read-only follow-up confirmed stopped/tasks0. No repeat launch or repeat stop.",
+  "billing_reconciled": {
+    "metered_cost": "1.85000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-1.85000000",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.85074494"
+    }
+  },
+  "billing_reconciled_utc": "2026-10-25T21:07:32.368611+00:00",
+  "publication": {
+    "directory": "results/remote-P044-diagnostic",
+    "raw_artifacts_preserved_locally": true,
+    "sanitization": "Remove incidental trace host/name/ID metadata; preserve all numerical samples and kernel resource fields"
+  },
+  "exposure_model": {
+    "seconds": 50,
+    "reason": "ceil(max(app lifetime45s,client43.418s)+5s teardown margin)",
+    "estimate_usd": "0.0917841667",
+    "qualification": "Resource-rate model with10% margin plus$0.02; not a provider invoice"
+  },
+  "approved_max_reserve_usd": "0.71",
+  "official_quota_snapshot": {
+    "observed_utc": "2026-10-25T21:16:04.479477+00:00",
+    "reset_utc": "2026-10-26T00:00:00Z",
+    "problems": {
+      "muse_bf16_proj": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "muse_attention_decode": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 17,
+          "left": 3
+        }
+      }
+    },
+    "requests_from_this_diagnostic": 0
+  }
+}

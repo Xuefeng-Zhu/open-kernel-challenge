@@ -1,0 +1,152 @@
+{
+  "experiment": "P057 native cuBLASLt diagnostic",
+  "state": "terminal",
+  "app_id": "ap-1P4IYSdup9e7ZBjImQj1ZM",
+  "created_utc": "2026-10-26T00:45:13.133892+00:00",
+  "source_commit": "5542653a08ac5bb8ceb34f52ccb1346e3de3dd2d",
+  "worker_sha256": "e22e220b69330f1b614fffd69596a945d2a8b91bee8fcd6f70f426f9b645b4af",
+  "native_source_sha256": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+  "bridge_source_sha256": "a91663d9b64291657d7b64e7bba7d7c4ffaeb2777964f8357dd2225adea9a300",
+  "previous_worker_sha256": "17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f",
+  "parent_source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "projection_p057_native_screen.py": "e22e220b69330f1b614fffd69596a945d2a8b91bee8fcd6f70f426f9b645b4af",
+    "native_cublaslt_probe.py": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+    "native_cublaslt_host_probe.py": "a91663d9b64291657d7b64e7bba7d7c4ffaeb2777964f8357dd2225adea9a300",
+    "projection_p056_native_screen.py": "17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "73391150a82c8b17ede2fbb487bdf21b13af0d2f6647c52b6c7eca6c9e53f4d2",
+  "cost_reserve_usd": "0.5583812501375",
+  "verified_free_credit_floor_usd": "27.65699642",
+  "resource_rate_usd_per_second": "0.001305166667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "2.34000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-2.34000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "ephemeral_apps": "2.34300358",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "authentication_expiry_utc": "2026-10-26T03:39:46+00:00",
+  "preflight_sha256": "0e31eac43a84c2faf0825ad359e23dd826621783a7002ccd5a2fd7dc2499882d",
+  "shared_controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 300,
+    "startup_timeout": 45,
+    "child_internal_timeout": 240,
+    "child_hard_timeout": 270,
+    "app_watchdog": 345,
+    "stop_allowance": 30,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "compile_only_requested": false,
+  "performance_measurement_requested": true,
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-26T00:45:15.211205+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 2,
+    "packed_bytes": 21063,
+    "encoded_bytes": 180025,
+    "artifact_bytes": 134974,
+    "sha256": "83c521e776cb6bfc03feea0e49619ea1ba1ff8033a05895150b848ec04586d72",
+    "artifact_sha256": {
+      "report.json": "f7edcbd92613ca11c116a0df8d5480efeaca12a1c137f7eb9a878233d31faeaf",
+      "screen.log": "99c1c5fe78cd39cf91df042a09f2783c491c96cea8c1ed80ad876ade0aac3a40",
+      "summary.json": "8ffdc355eddcfa6688ca6414b0bf1a2e3a004549f706e660dbc65f725962cf33"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "screen",
+      "exit_code": 0,
+      "wall_seconds": 35.883862036000004
+    }
+  ],
+  "worker_wall_seconds": 35.883874246000005,
+  "receipt_validation_error": null,
+  "explicit_stop": {
+    "app_id": "ap-1P4IYSdup9e7ZBjImQj1ZM",
+    "requested_utc": "2026-10-26T00:45:56.740660+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-26T00:45:57.735843+00:00",
+  "client_wall_seconds": 44.60058854194358,
+  "shutdown_observation": {
+    "app_id": "ap-1P4IYSdup9e7ZBjImQj1ZM",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 17:45:13-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "2.34000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.34000000",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.34300358",
+      "network_egress": "0E-8"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "independent_shutdown_observation": {
+    "app_id": "ap-1P4IYSdup9e7ZBjImQj1ZM",
+    "description": "okc-projection-p057-native-diagnostic",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 17:45:13-07:00",
+    "stopped_at": "2026-10-25 17:45:59-07:00"
+  },
+  "independent_shutdown_observed_utc": "2026-10-26T00:46:25.461792+00:00"
+}

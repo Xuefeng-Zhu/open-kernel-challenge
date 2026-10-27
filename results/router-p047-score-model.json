@@ -1,0 +1,36 @@
+{
+  "model_only": true,
+  "parent_job": "d5636ac8d1404abd",
+  "parent_score": 1.173238998969285,
+  "receipt_sha256": "46d1b02db4d528cac4c26ff5933c46b12361440441567b11a62bf1b8d525564a",
+  "target_layers": [
+    "qkv_gate",
+    "unpooler"
+  ],
+  "target_m": [
+    8,
+    16,
+    32,
+    128,
+    256
+  ],
+  "scenarios": [
+    {
+      "target_latency_cut_fraction": 0.05,
+      "modeled_score": 1.1959708802936384,
+      "relative_score_gain": 0.019375320241079352
+    },
+    {
+      "target_latency_cut_fraction": 0.1,
+      "modeled_score": 1.2196988927654149,
+      "relative_score_gain": 0.03959968415382176
+    },
+    {
+      "target_latency_cut_fraction": 0.2,
+      "modeled_score": 1.270427571094264,
+      "relative_score_gain": 0.08283782947068863
+    }
+  ],
+  "limitation": "Uniform conditional cuts holding all other shape times fixed; no binding has been executed or improvement predicted.",
+  "receipt_path": "results/remote-P2-04-router-m1-fp32-gemv.csv"
+}

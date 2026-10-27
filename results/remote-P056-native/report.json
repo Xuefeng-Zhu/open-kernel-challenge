@@ -1,0 +1,127 @@
+{
+  "kind": "P056 native cuBLASLt interface and two-case screen",
+  "complete": false,
+  "passed": false,
+  "phase": "native_build",
+  "native_build_complete": false,
+  "native_execution": false,
+  "oracle_checks": 0,
+  "selected_configurations": 0,
+  "cases": [],
+  "nearby": [],
+  "protocol": {
+    "cases": [
+      {
+        "layer": "qkv_gate",
+        "m": 128
+      },
+      {
+        "layer": "unpooler",
+        "m": 16
+      }
+    ],
+    "maximum_configurations": 4,
+    "selection": "First eligible native control; prefer a second different algorithm_id, otherwise distinct metadata configuration; no timing-based selection",
+    "warmup_rounds": 6,
+    "measured_rounds": 24,
+    "reverse_order_pairs": 12,
+    "capture_eager_warmups_per_graph": 3,
+    "oracle_count_scope": "Recorded oracle comparisons only; excludes three untimed eager warmups per successful captured graph (at most24 for eight graphs)",
+    "eviction_bytes": 268435456,
+    "workspace_limit_bytes": 67108864,
+    "calibration": "none; gross graph times only",
+    "raw_samples_retained": true,
+    "original_oracle": "FP64 and original column-probe tolerances, unmodified",
+    "internal_deadline_seconds": 240.0,
+    "external_supervisor_timeout_seconds": 270.0
+  },
+  "limitations": [
+    "Not full official correctness or score; nearby shapes explicitly reported",
+    "No profiler/hardware counters or native assembly inspection",
+    "Separate-stream submissions do not establish actual kernel overlap",
+    "No-split policy excludes potentially useful FP32 split-K tactics",
+    "Internal gate cannot interrupt native compiler/CUDA; external hard timeout required"
+  ],
+  "source_hashes": {
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "native_cublaslt_probe.py": "a40916423e9eb7da4b93258e7e986b55777a56ca93268e9c2e3105f437b409cc",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "projection_p056_native_screen.py": "17baa53ba3c3c54201f570cb2a08d9415f8cd0ef4db625625ac7399962843a2f",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true
+  },
+  "toolchain": {
+    "torch": "2.14.1+cu130",
+    "torch_cuda": "13.0",
+    "cxx11_abi": true,
+    "headers": [
+      {
+        "name": "cuda.h",
+        "available": true,
+        "size_bytes": 1146681,
+        "sha256": "64025f81a9d6d2b10e9e11654f3523e5b046d01b883f0b9ca474e463274b80d4",
+        "version_defines": {
+          "CUDA_VERSION": "13000"
+        }
+      },
+      {
+        "name": "cuda_runtime_api.h",
+        "available": true,
+        "size_bytes": 607504,
+        "sha256": "3f91d3f84f1aafb17cccc475803f9c489b6474f2a3bf0fbc75a5380821c966e0",
+        "version_defines": {}
+      },
+      {
+        "name": "cublasLt.h",
+        "available": true,
+        "size_bytes": 109928,
+        "sha256": "8be43fbf48625b98b8562d7df394e6af0d7ee1c05beeb5333577d5e33182fa3e",
+        "version_defines": {}
+      },
+      {
+        "name": "cublas_api.h",
+        "available": true,
+        "size_bytes": 331797,
+        "sha256": "f6b443f43358de591584d38810d60fcf7c1080677a6ba1605a99e8b58b349890",
+        "version_defines": {
+          "CUBLAS_VER_MAJOR": "13",
+          "CUBLAS_VER_MINOR": "1",
+          "CUBLAS_VER_PATCH": "1",
+          "CUBLAS_VER_BUILD": "3"
+        }
+      }
+    ],
+    "qualification": "Header hashes and framework ABI metadata; no compiler-version subprocess. Native build success establishes only this image's compile/link compatibility."
+  },
+  "native_source_string_sha256": "0e427a632fe12c410b2f0389deadf9c3757b919999287fea5705a892aad69fc8",
+  "compile": {
+    "started_utc": "2026-10-26T00:32:32.058558+00:00",
+    "complete": false,
+    "elapsed_start_seconds": 2.5835697799999995
+  },
+  "failure": {
+    "type": "RuntimeError",
+    "message": "Error building extension 'okc_lt_probe_0e427a632fe12c41': [1<path> ccache c++ -MMD -MF main.o.d -DTORCH_EXTENSION_NAME=okc_lt_probe_0e427a632fe12c41 -DTORCH_API_INCLUDE_EXTENSION_H -isystem <path> -isystem <path> -isystem <path> -isystem <path> -fPIC -std=c++20 -c <path> -o main.o \n[2<path> ccache <path> -MD -MF cuda.cuda.o.d -DTORCH_EXTENSION_NAME=okc_lt_probe_0e427a632fe12c41 -DTORCH_API_INCLUDE_EXTENSION_H -isystem <path> -isystem <path> -isystem <path> -isystem <path> -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -O3 -gencode=arch=compute_90,code=sm_90 -std=c++20 -c <path> -o cuda.cuda.o \nFAILED: [code=134] cuda.cuda.o \nccache <path> -MD -MF cuda.cuda.o.d -DTORCH_EXTENSION_NAME=okc_lt_probe_0e427a632fe12c41 -DTORCH_API_INCLUDE_EXTENSION_H -isystem <path> -isystem <path> -isystem <path> -isystem <path> -D__CUDA_NO_HALF_OPERATORS__ -D__CUDA_NO_HALF_CONVERSIONS__ -D__CUDA_NO_BFLOAT16_CONVERSIONS__ -D__CUDA_NO_HALF2_OPERATORS__ --expt-relaxed-constexpr --compiler-options '-fPIC' -O3 -gencode=arch=compute_90,code=sm_90 -std=c++20 -c <path> -o cuda.cuda.o \n<path>: internal error: assertion failed at: \"lexical.c\", line 22316 in find_allocated_name_reference\n\n   __location->~_Tp();\n   ^\n\n1 catastrophic error detected in the compilation of \"<path>\".\nCompilation aborted.\nAborted\nninja: build stopped: subcommand failed.\n"
+  }
+}

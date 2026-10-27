@@ -1,0 +1,3907 @@
+{
+  "kind": "P041 unchanged-source diagnostic; not official score",
+  "mode": "timing",
+  "passed": true,
+  "cases": [
+    {
+      "layer": "pooler",
+      "m": 8,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "warmup": [
+        {
+          "round": 0,
+          "runner": "candidate",
+          "gross_us": 26.016000658273697,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 0,
+          "runner": "baseline",
+          "gross_us": 26.399999856948853,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "baseline",
+          "gross_us": 25.82399919629097,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "candidate",
+          "gross_us": 24.351999163627625,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "candidate",
+          "gross_us": 23.93599972128868,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "baseline",
+          "gross_us": 26.1439997702837,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "baseline",
+          "gross_us": 27.135999873280525,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "candidate",
+          "gross_us": 23.903999477624893,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "candidate",
+          "gross_us": 24.09599907696247,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "baseline",
+          "gross_us": 26.784000918269157,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "baseline",
+          "gross_us": 25.567999109625816,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "candidate",
+          "gross_us": 24.288000538945198,
+          "excluded_by_predeclared_protocol": true
+        }
+      ],
+      "conditions": {
+        "cold": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4100200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.599999353289604,
+                "baseline": 26.240000501275063
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4100201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.536000728607178,
+                "candidate": 24.032000452280045
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4100202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.312000885605812,
+                "baseline": 25.66399984061718
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4100203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.760000571608543,
+                "candidate": 24.512000381946564
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4100204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.12799932062626,
+                "baseline": 25.95200017094612
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4100205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 27.39199995994568,
+                "candidate": 25.37599951028824
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4100206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.383999407291412,
+                "baseline": 25.50400048494339
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4100207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.599999353289604,
+                "candidate": 24.000000208616257
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4100208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.18399991095066,
+                "baseline": 25.82399919629097
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4100209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.688000187277794,
+                "candidate": 24.064000695943832
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4100210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.064000695943832,
+                "baseline": 25.66399984061718
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4100211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.407999753952026,
+                "candidate": 24.25600029528141
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4100212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.064000695943832,
+                "baseline": 25.567999109625816
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4100213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.79200081527233,
+                "candidate": 24.224000051617622
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4100214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.079999282956123,
+                "baseline": 25.472000241279602
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4100215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.472000241279602,
+                "candidate": 24.064000695943832
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4100216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.312000885605812,
+                "baseline": 25.34399926662445
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4100217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.82399919629097,
+                "candidate": 24.351999163627625
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4100218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.54400062561035,
+                "baseline": 25.599999353289604
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4100219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.567999109625816,
+                "candidate": 24.288000538945198
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4100220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.383999407291412,
+                "baseline": 25.567999109625816
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4100221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.439999997615814,
+                "candidate": 23.871999233961105
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4100222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.96799996495247,
+                "baseline": 25.407999753952026
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4100223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.567999109625816,
+                "candidate": 25.50400048494339
+              }
+            }
+          ],
+          "acceptance_eligible": true,
+          "pair_ratios": [
+            1.0436224709293207,
+            1.0322442925086293,
+            1.0775192913032328,
+            1.0562483386414503,
+            1.0664082481063666,
+            1.0569486779540267,
+            1.0636139948592436,
+            1.0167761411848641,
+            1.030430665684399,
+            1.0478516216217864,
+            1.0570853626619863,
+            1.0308929220740575
+          ],
+          "median_paired_gross_ratio": 1.0520499801316183,
+          "median_gross_us": {
+            "candidate": 24.31999985128641,
+            "baseline": 25.58399923145771
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score"
+        },
+        "warm": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4100200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.39199995994568,
+                "baseline": 27.23200060427189
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4100201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.7279991209507,
+                "candidate": 26.528000831604004
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4100202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.744000777602196,
+                "baseline": 28.863999992609024
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4100203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.9280004799366,
+                "candidate": 26.59199945628643
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4100204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.103999629616737,
+                "baseline": 27.55199931561947
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4100205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.12799997627735,
+                "candidate": 26.655999943614006
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4100206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.424000203609467,
+                "baseline": 28.60799990594387
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4100207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.76799926161766,
+                "candidate": 26.87999978661537
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4100208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.775999158620834,
+                "baseline": 27.327999472618103
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4100209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.79999950528145,
+                "candidate": 26.43200010061264
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4100210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.75200067460537,
+                "baseline": 28.192000463604927
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4100211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.9280004799366,
+                "candidate": 27.008000761270523
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4100212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.43200010061264,
+                "baseline": 27.488000690937042
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4100213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.672000393271446,
+                "candidate": 26.72000043094158
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4100214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.063999488949776,
+                "baseline": 28.575999662280083
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4100215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 38.784001022577286,
+                "candidate": 26.976000517606735
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4100216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.43200010061264,
+                "baseline": 27.615999802947044
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4100217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.543999418616295,
+                "candidate": 26.1439997702837
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4100218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.295999228954315,
+                "baseline": 27.807999402284622
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4100219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.384000062942505,
+                "candidate": 26.59199945628643
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4100220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.424000203609467,
+                "baseline": 27.744000777602196
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4100221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 27.871999889612198,
+                "candidate": 27.712000533938408
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4100222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.744000777602196,
+                "baseline": 27.871999889612198
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4100223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 28.575999662280083,
+                "candidate": 26.623999699950218
+              }
+            }
+          ],
+          "acceptance_eligible": false,
+          "pair_ratios": [
+            1.0555005922580156,
+            1.0638427182360621,
+            1.0356948226347198,
+            1.056619314440564,
+            1.035381263555281,
+            1.0624238292612966,
+            1.0563730899383879,
+            1.2099389518882444,
+            1.0680381558803527,
+            1.0427895660512363,
+            1.008716834178852,
+            1.0383973903250485
+          ],
+          "median_paired_gross_ratio": 1.0559368410982017,
+          "median_gross_us": {
+            "candidate": 26.928000152111053,
+            "baseline": 28.4639997407794
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score; warm-cache sensitivity only, not scored or acceptance evidence"
+        }
+      }
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "warmup": [
+        {
+          "round": 0,
+          "runner": "candidate",
+          "gross_us": 29.920000582933426,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 0,
+          "runner": "baseline",
+          "gross_us": 29.664000496268272,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "baseline",
+          "gross_us": 30.592000111937523,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "candidate",
+          "gross_us": 28.192000463604927,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "candidate",
+          "gross_us": 28.416000306606293,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "baseline",
+          "gross_us": 29.600000008940697,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "baseline",
+          "gross_us": 31.168000772595406,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "candidate",
+          "gross_us": 28.00000086426735,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "candidate",
+          "gross_us": 28.16000021994114,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "baseline",
+          "gross_us": 29.53599952161312,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "baseline",
+          "gross_us": 30.079999938607216,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "candidate",
+          "gross_us": 28.31999957561493,
+          "excluded_by_predeclared_protocol": true
+        }
+      ],
+      "conditions": {
+        "cold": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4101200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 29.888000339269638,
+                "baseline": 30.688000842928886
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4101201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.69600073993206,
+                "candidate": 28.511999174952507
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4101202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.031999245285988,
+                "baseline": 29.53599952161312
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4101203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.632000252604485,
+                "candidate": 27.744000777602196
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4101204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 29.343999922275543,
+                "baseline": 29.311999678611755
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4101205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.37600016593933,
+                "candidate": 28.063999488949776
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4101206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 29.24799919128418,
+                "baseline": 29.791999608278275
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4101207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.952000826597214,
+                "candidate": 27.744000777602196
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4101208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.095999732613564,
+                "baseline": 30.62400035560131
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4101209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 30.688000842928886,
+                "candidate": 27.68000029027462
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4101210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 29.37600016593933,
+                "baseline": 30.719999223947525
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4101211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.21600081026554,
+                "candidate": 27.807999402284622
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4101212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.16000021994114,
+                "baseline": 29.40800040960312
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4101213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 31.007999554276466,
+                "candidate": 29.37600016593933
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4101214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.904000133275986,
+                "baseline": 29.40800040960312
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4101215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.759999364614487,
+                "candidate": 27.712000533938408
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4101216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.583999559283257,
+                "baseline": 29.85600009560585
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4101217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.343999922275543,
+                "candidate": 29.24799919128418
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4101218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.351999819278717,
+                "baseline": 30.208000913262367
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4101219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.952000826597214,
+                "candidate": 28.511999174952507
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4101220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.96800062060356,
+                "baseline": 29.600000008940697
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4101221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 30.7839997112751,
+                "candidate": 28.224000707268715
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4101222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.351999819278717,
+                "baseline": 29.503999277949333
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4101223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 29.632000252604485,
+                "candidate": 27.712000533938408
+              }
+            }
+          ],
+          "acceptance_eligible": true,
+          "pair_ratios": [
+            1.0341201886844689,
+            1.0608274282703425,
+            1.022550148893393,
+            1.0486489378771733,
+            1.099284157372845,
+            1.0481894408617292,
+            1.0499218272125987,
+            1.0638540093873081,
+            1.0420744996740499,
+            1.0579575172945546,
+            1.0744058918839992,
+            1.0548607683563795
+          ],
+          "median_paired_gross_ratio": 1.0523912977844891,
+          "median_gross_us": {
+            "candidate": 28.12799997627735,
+            "baseline": 29.728000052273273
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score"
+        },
+        "warm": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4101200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 28.896000236272812,
+                "baseline": 29.311999678611755
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4101201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.80000016093254,
+                "candidate": 30.719999223947525
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4101202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 31.71199932694435,
+                "baseline": 31.775999814271927
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4101203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.00000151991844,
+                "candidate": 31.74399957060814
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4101204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.62400035560131,
+                "baseline": 31.71199932694435
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4101205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 30.880000442266464,
+                "candidate": 29.472000896930695
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4101206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 32.127998769283295,
+                "baseline": 31.456001102924347
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4101207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 33.055998384952545,
+                "candidate": 31.42400085926056
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4101208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.592000111937523,
+                "baseline": 29.7279991209507
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4101209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 31.775999814271927,
+                "candidate": 29.279999434947968
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4101210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 31.55200183391571,
+                "baseline": 33.1839993596077
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4101211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.48000144958496,
+                "candidate": 31.26399964094162
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4101212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.01599945127964,
+                "baseline": 32.51200169324875
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4101213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 34.07999873161316,
+                "candidate": 30.208000913262367
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4101214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 33.24799984693527,
+                "baseline": 31.775999814271927
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4101215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 31.55200183391571,
+                "candidate": 31.456001102924347
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4101216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 31.71199932694435,
+                "baseline": 30.97599931061268
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4101217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.44800120592117,
+                "candidate": 29.279999434947968
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4101218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 32.127998769283295,
+                "baseline": 31.55200183391571
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4101219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.70399942994118,
+                "candidate": 30.848000198602676
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4101220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.30399978160858,
+                "baseline": 30.208000913262367
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4101221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.09599852561951,
+                "candidate": 30.719999223947525
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4101222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 31.74399957060814,
+                "baseline": 31.647998839616776
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4101223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.70399942994118,
+                "candidate": 31.26399964094162
+              }
+            }
+          ],
+          "acceptance_eligible": false,
+          "pair_ratios": [
+            1.0407110845921808,
+            1.005036831308675,
+            1.0416329015749235,
+            1.0148557548170023,
+            1.0269350663133978,
+            1.045289662368577,
+            1.1054376247020596,
+            0.979103388898897,
+            1.0404214418603925,
+            1.020372035553001,
+            1.0205302004547465,
+            1.0212227225673534
+          ],
+          "median_paired_gross_ratio": 1.0240788944403756,
+          "median_gross_us": {
+            "candidate": 31.055999919772148,
+            "baseline": 31.775999814271927
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score; warm-cache sensitivity only, not scored or acceptance evidence"
+        }
+      }
+    },
+    {
+      "layer": "pooler",
+      "m": 256,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "warmup": [
+        {
+          "round": 0,
+          "runner": "candidate",
+          "gross_us": 33.695999532938,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 0,
+          "runner": "baseline",
+          "gross_us": 35.77600046992302,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "baseline",
+          "gross_us": 32.607998698949814,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "candidate",
+          "gross_us": 32.32000023126602,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "candidate",
+          "gross_us": 30.01599945127964,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "baseline",
+          "gross_us": 32.255999743938446,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "baseline",
+          "gross_us": 37.087999284267426,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "candidate",
+          "gross_us": 34.17599946260452,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "candidate",
+          "gross_us": 34.71999987959862,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "baseline",
+          "gross_us": 36.83200106024742,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "baseline",
+          "gross_us": 33.40800106525421,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "candidate",
+          "gross_us": 32.00000151991844,
+          "excluded_by_predeclared_protocol": true
+        }
+      ],
+      "conditions": {
+        "cold": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4102200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.623999148607254,
+                "baseline": 36.12799942493439
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4102201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.96799820661545,
+                "candidate": 30.7839997112751
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4102202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 35.392001271247864,
+                "baseline": 33.215999603271484
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4102203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 36.06399893760681,
+                "candidate": 35.80800071358681
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4102204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.65599939227104,
+                "baseline": 36.06399893760681
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4102205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 37.18400001525879,
+                "candidate": 34.78400036692619
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4102206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 33.344000577926636,
+                "baseline": 35.10399907827377
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4102207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 37.151999771595,
+                "candidate": 33.24799984693527
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4102208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.04799848794937,
+                "baseline": 35.42400151491165
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4102209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.896000891923904,
+                "candidate": 33.63199904561043
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4102210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 32.09599852561951,
+                "baseline": 35.0399985909462
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4102211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.999998450279236,
+                "candidate": 33.344000577926636
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4102212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.719999223947525,
+                "baseline": 33.695999532938
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4102213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.64799949526787,
+                "candidate": 31.328000128269196
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4102214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 33.215999603271484,
+                "baseline": 34.65599939227104
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4102215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.19999980926514,
+                "candidate": 32.6399989426136
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4102216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 33.055998384952545,
+                "baseline": 32.48000144958496
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4102217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 34.78400036692619,
+                "candidate": 34.912001341581345
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4102218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 32.80000016093254,
+                "baseline": 35.32800078392029
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4102219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 33.535998314619064,
+                "candidate": 33.59999880194664
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4102220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 29.56799976527691,
+                "baseline": 36.639999598264694
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4102221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 33.1839993596077,
+                "candidate": 34.68799963593483
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4102222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.33600068092346,
+                "baseline": 35.13599932193756
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4102223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.77600046992302,
+                "candidate": 31.039999797940254
+              }
+            }
+          ],
+          "acceptance_eligible": true,
+          "pair_ratios": [
+            1.1041522283649352,
+            0.9722277367091079,
+            1.0547171720626087,
+            1.0846204300312143,
+            1.008784096026887,
+            1.0856728640527693,
+            1.1171971447750184,
+            1.0607470017770613,
+            0.9894304490708072,
+            1.0368324867945482,
+            1.088783403568545,
+            1.086016289659697
+          ],
+          "median_paired_gross_ratio": 1.0726837159041378,
+          "median_gross_us": {
+            "candidate": 33.344000577926636,
+            "baseline": 35.26400029659271
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score"
+        },
+        "warm": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4102200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 30.94400092959404,
+                "baseline": 33.59999880194664
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4102201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.64799949526787,
+                "candidate": 34.04799848794937
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4102202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 37.18400001525879,
+                "baseline": 32.15999901294708
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4102203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 38.24000060558319,
+                "candidate": 35.392001271247864
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4102204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 31.168000772595406,
+                "baseline": 32.735999673604965
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4102205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.00799834728241,
+                "candidate": 33.28000009059906
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4102206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 38.11199963092804,
+                "baseline": 34.81600061058998
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4102207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 37.76000067591667,
+                "candidate": 32.255999743938446
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4102208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.84800085425377,
+                "baseline": 34.752000123262405
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4102209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.19199925661087,
+                "candidate": 34.4959981739521
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4102210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 36.3520011305809,
+                "baseline": 35.87200120091438
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4102211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 38.047999143600464,
+                "candidate": 31.231999397277832
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4102212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.52799841761589,
+                "baseline": 33.63199904561043
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4102213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 35.58399900794029,
+                "candidate": 35.32800078392029
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4102214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 35.10399907827377,
+                "baseline": 33.88800099492073
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4102215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 36.80000081658363,
+                "candidate": 31.199999153614044
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4102216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 32.92800113558769,
+                "baseline": 34.55999866127968
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4102217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 34.304000437259674,
+                "candidate": 30.94400092959404
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4102218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.65599939227104,
+                "baseline": 33.663999289274216
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4102219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 37.76000067591667,
+                "candidate": 33.08799862861633
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4102220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 34.11199897527695,
+                "baseline": 35.32800078392029
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4102221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 32.96000137925148,
+                "candidate": 31.5839983522892
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4102222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 36.031998693943024,
+                "baseline": 35.00799834728241
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4102223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 36.86400130391121,
+                "candidate": 35.90400144457817
+              }
+            }
+          ],
+          "acceptance_eligible": false,
+          "pair_ratios": [
+            1.0662356180848929,
+            0.9666880387095788,
+            1.0511151878586142,
+            1.0341161390824813,
+            0.9646962373101892,
+            1.0964268414846743,
+            0.9905091357513897,
+            1.0670660471994144,
+            1.07866931959004,
+            1.05286911926303,
+            1.0395993567872919,
+            0.9987787032053552
+          ],
+          "median_paired_gross_ratio": 1.0453572723229532,
+          "median_gross_us": {
+            "candidate": 34.303998574614525,
+            "baseline": 34.911999478936195
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score; warm-cache sensitivity only, not scored or acceptance evidence"
+        }
+      }
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "warmup": [
+        {
+          "round": 0,
+          "runner": "candidate",
+          "gross_us": 22.52800017595291,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 0,
+          "runner": "baseline",
+          "gross_us": 22.495999932289124,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "baseline",
+          "gross_us": 22.016000002622604,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "candidate",
+          "gross_us": 21.983999758958817,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "candidate",
+          "gross_us": 23.135999217629433,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "baseline",
+          "gross_us": 22.112000733613968,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "baseline",
+          "gross_us": 21.983999758958817,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "candidate",
+          "gross_us": 22.08000048995018,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "candidate",
+          "gross_us": 21.888000890612602,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "baseline",
+          "gross_us": 22.304000332951546,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "baseline",
+          "gross_us": 22.048000246286392,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "candidate",
+          "gross_us": 23.104000836610794,
+          "excluded_by_predeclared_protocol": true
+        }
+      ],
+      "conditions": {
+        "cold": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4103200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 21.856000646948814,
+                "baseline": 21.95199951529503
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4103201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.336000576615334,
+                "candidate": 22.08000048995018
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4103202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 21.727999672293663,
+                "baseline": 23.423999547958374
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4103203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.36800082027912,
+                "candidate": 21.824000403285027
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4103204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.048000246286392,
+                "baseline": 21.856000646948814
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4103205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.52800017595291,
+                "candidate": 21.79200015962124
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4103206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "baseline": 21.983999758958817
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4103207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.112000733613968,
+                "candidate": 21.888000890612602
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4103208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.016000002622604,
+                "baseline": 23.135999217629433
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4103209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 21.95199951529503,
+                "candidate": 21.536000072956085
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4103210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.143999114632607,
+                "baseline": 22.016000002622604
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4103211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.23999984562397,
+                "candidate": 22.016000002622604
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4103212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 21.983999758958817,
+                "baseline": 21.856000646948814
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4103213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 23.360000923275948,
+                "candidate": 21.727999672293663
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4103214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.455999791622162,
+                "baseline": 21.983999758958817
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4103215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 21.91999927163124,
+                "candidate": 21.503999829292297
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4103216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.143999114632607,
+                "baseline": 23.744000121951103
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4103217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.36800082027912,
+                "candidate": 22.143999114632607
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4103218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 21.79200015962124,
+                "baseline": 21.983999758958817
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4103219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 21.888000890612602,
+                "candidate": 21.663999184966087
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4103220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 21.888000890612602,
+                "baseline": 22.112000733613968
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4103221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 21.91999927163124,
+                "candidate": 21.503999829292297
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4103222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.296000435948372,
+                "baseline": 23.296000435948372
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4103223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.6879995316267,
+                "candidate": 21.727999672293663
+              }
+            }
+          ],
+          "acceptance_eligible": true,
+          "pair_ratios": [
+            1.007986838616225,
+            1.051155717699714,
+            1.0123099804344613,
+            0.981800131284898,
+            1.0349740060265187,
+            1.0021653023826713,
+            1.0338524157865812,
+            0.9774330606235873,
+            1.040721370273285,
+            1.0095748941828238,
+            1.0147793356328956,
+            1.0218525410716488
+          ],
+          "median_paired_gross_ratio": 1.0135446580336784,
+          "median_gross_us": {
+            "candidate": 21.888000890612602,
+            "baseline": 22.112000733613968
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score"
+        },
+        "warm": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4103200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.615999147295952,
+                "baseline": 24.224000051617622
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4103201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.000000208616257,
+                "candidate": 22.36800082027912
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4103202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.607999250292778,
+                "baseline": 24.000000208616257
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4103203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.887999683618546,
+                "candidate": 24.032000452280045
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4103204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.391999304294586,
+                "baseline": 24.320000782608986
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4103205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 23.455999791622162,
+                "candidate": 23.04000034928322
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4103206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.11199952661991,
+                "baseline": 24.12799932062626
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4103207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.12799932062626,
+                "candidate": 23.552000522613525
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4103208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.391999304294586,
+                "baseline": 22.975999861955643
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4103209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 23.296000435948372,
+                "candidate": 23.80800060927868
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4103210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.57600086927414,
+                "baseline": 24.191999807953835
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4103211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.98400041460991,
+                "candidate": 23.48800003528595
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4103212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.25600029528141,
+                "baseline": 23.679999634623528
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4103213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 23.64799939095974,
+                "candidate": 22.752000018954277
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4103214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.768000468611717,
+                "baseline": 23.711999878287315
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4103215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.02400055527687,
+                "candidate": 24.25600029528141
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4103216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.143999114632607,
+                "baseline": 23.552000522613525
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4103217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 23.104000836610794,
+                "candidate": 23.264000192284584
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4103218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.159999564290047,
+                "baseline": 23.77600036561489
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4103219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.960000067949295,
+                "candidate": 23.96799996495247
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4103220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.000000208616257,
+                "baseline": 23.48800003528595
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4103221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.09599907696247,
+                "candidate": 24.159999564290047
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4103222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.151999667286873,
+                "baseline": 24.09599907696247
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4103223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.280000641942024,
+                "candidate": 23.104000836610794
+              }
+            }
+          ],
+          "acceptance_eligible": false,
+          "pair_ratios": [
+            1.0490877234412952,
+            1.0249950212055845,
+            1.0288068684367315,
+            0.9729428844066895,
+            0.9803536253206727,
+            1.0435428003712313,
+            1.0073228002805081,
+            0.9938192263403358,
+            1.0277494969145322,
+            1.0123421783513082,
+            0.9879646478392459,
+            1.0238377870873923
+          ],
+          "median_paired_gross_ratio": 1.0180899827193501,
+          "median_gross_us": {
+            "candidate": 23.888000287115574,
+            "baseline": 24.047999642789364
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score; warm-cache sensitivity only, not scored or acceptance evidence"
+        }
+      }
+    },
+    {
+      "layer": "unpooler",
+      "m": 16,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "warmup": [
+        {
+          "round": 0,
+          "runner": "candidate",
+          "gross_us": 23.584000766277313,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 0,
+          "runner": "baseline",
+          "gross_us": 22.71999977529049,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "baseline",
+          "gross_us": 22.624000906944275,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 1,
+          "runner": "candidate",
+          "gross_us": 22.752000018954277,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "candidate",
+          "gross_us": 22.87999913096428,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 2,
+          "runner": "baseline",
+          "gross_us": 23.104000836610794,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "baseline",
+          "gross_us": 22.5600004196167,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 3,
+          "runner": "candidate",
+          "gross_us": 22.87999913096428,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "candidate",
+          "gross_us": 22.36800082027912,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 4,
+          "runner": "baseline",
+          "gross_us": 22.463999688625336,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "baseline",
+          "gross_us": 22.592000663280487,
+          "excluded_by_predeclared_protocol": true
+        },
+        {
+          "round": 5,
+          "runner": "candidate",
+          "gross_us": 23.04000034928322,
+          "excluded_by_predeclared_protocol": true
+        }
+      ],
+      "conditions": {
+        "cold": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4104200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.00800010561943,
+                "baseline": 22.52800017595291
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4104201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.52800017595291,
+                "candidate": 22.84800074994564
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4104202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.19999970495701,
+                "baseline": 22.943999618291855
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4104203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.784000262618065,
+                "candidate": 22.463999688625336
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4104204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.592000663280487,
+                "baseline": 22.784000262618065
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4104205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.816000506281853,
+                "candidate": 22.816000506281853
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4104206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.5600004196167,
+                "baseline": 22.336000576615334
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4104207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.09599907696247,
+                "candidate": 22.592000663280487
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4104208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.784000262618065,
+                "baseline": 22.6879995316267
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4104209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.5600004196167,
+                "candidate": 23.16799946129322
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4104210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.784000262618065,
+                "baseline": 23.77600036561489
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4104211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.592000663280487,
+                "candidate": 22.84800074994564
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4104212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.71999977529049,
+                "baseline": 22.71999977529049
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4104213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.784000262618065,
+                "candidate": 22.5600004196167
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4104214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.19999970495701,
+                "baseline": 22.463999688625336
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4104215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.191999807953835,
+                "candidate": 22.655999287962914
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4104216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.84800074994564,
+                "baseline": 22.592000663280487
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4104217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.000000208616257,
+                "candidate": 23.32800067961216
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4104218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.09599907696247,
+                "baseline": 23.04000034928322
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4104219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 24.191999807953835,
+                "candidate": 22.36800082027912
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4104220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 22.304000332951546,
+                "baseline": 22.71999977529049
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4104221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.752000018954277,
+                "candidate": 22.943999618291855
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4104222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 23.00800010561943,
+                "baseline": 22.592000663280487
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4104223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 22.752000018954277,
+                "candidate": 22.943999618291855
+              }
+            }
+          ],
+          "acceptance_eligible": true,
+          "pair_ratios": [
+            0.9825600526969375,
+            1.0015255197228852,
+            1.0042402927512875,
+            1.0276098944480145,
+            0.9847101132582742,
+            1.0157987048945853,
+            1.0049522729315776,
+            1.0168194069402365,
+            1.0086026548654605,
+            1.0169300291862262,
+            1.0050507829821194,
+            0.9867636370247731
+          ],
+          "median_paired_gross_ratio": 1.0050015279568485,
+          "median_gross_us": {
+            "candidate": 22.832000628113747,
+            "baseline": 22.752000018954277
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score"
+        },
+        "warm": {
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4104200,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 24.89599958062172,
+                "baseline": 24.927999824285507
+              }
+            },
+            {
+              "round": 1,
+              "seed": 4104201,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.855999439954758,
+                "candidate": 27.775999158620834
+              }
+            },
+            {
+              "round": 2,
+              "seed": 4104202,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.655999943614006,
+                "baseline": 26.27200074493885
+              }
+            },
+            {
+              "round": 3,
+              "seed": 4104203,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.208000257611275,
+                "candidate": 25.407999753952026
+              }
+            },
+            {
+              "round": 4,
+              "seed": 4104204,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.599999353289604,
+                "baseline": 25.696000084280968
+              }
+            },
+            {
+              "round": 5,
+              "seed": 4104205,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 27.23200060427189,
+                "candidate": 24.86399933695793
+              }
+            },
+            {
+              "round": 6,
+              "seed": 4104206,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.784000918269157,
+                "baseline": 25.760000571608543
+              }
+            },
+            {
+              "round": 7,
+              "seed": 4104207,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 27.07199938595295,
+                "candidate": 25.696000084280968
+              }
+            },
+            {
+              "round": 8,
+              "seed": 4104208,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.016000658273697,
+                "baseline": 25.82399919629097
+              }
+            },
+            {
+              "round": 9,
+              "seed": 4104209,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.728000327944756,
+                "candidate": 25.087999179959297
+              }
+            },
+            {
+              "round": 10,
+              "seed": 4104210,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.327999472618103,
+                "baseline": 26.528000831604004
+              }
+            },
+            {
+              "round": 11,
+              "seed": 4104211,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.1439997702837,
+                "candidate": 25.79200081527233
+              }
+            },
+            {
+              "round": 12,
+              "seed": 4104212,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.280000641942024,
+                "baseline": 25.37599951028824
+              }
+            },
+            {
+              "round": 13,
+              "seed": 4104213,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.176000013947487,
+                "candidate": 25.248000398278236
+              }
+            },
+            {
+              "round": 14,
+              "seed": 4104214,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 27.68000029027462,
+                "baseline": 25.66399984061718
+              }
+            },
+            {
+              "round": 15,
+              "seed": 4104215,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.59199945628643,
+                "candidate": 25.95200017094612
+              }
+            },
+            {
+              "round": 16,
+              "seed": 4104216,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.631999596953392,
+                "baseline": 25.472000241279602
+              }
+            },
+            {
+              "round": 17,
+              "seed": 4104217,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.30399912595749,
+                "candidate": 29.40800040960312
+              }
+            },
+            {
+              "round": 18,
+              "seed": 4104218,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.688000187277794,
+                "baseline": 25.696000084280968
+              }
+            },
+            {
+              "round": 19,
+              "seed": 4104219,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 27.488000690937042,
+                "candidate": 26.079999282956123
+              }
+            },
+            {
+              "round": 20,
+              "seed": 4104220,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 25.472000241279602,
+                "baseline": 25.34399926662445
+              }
+            },
+            {
+              "round": 21,
+              "seed": 4104221,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 25.407999753952026,
+                "candidate": 24.86399933695793
+              }
+            },
+            {
+              "round": 22,
+              "seed": 4104222,
+              "order": [
+                "candidate",
+                "baseline"
+              ],
+              "us": {
+                "candidate": 26.655999943614006,
+                "baseline": 26.208000257611275
+              }
+            },
+            {
+              "round": 23,
+              "seed": 4104223,
+              "order": [
+                "baseline",
+                "candidate"
+              ],
+              "us": {
+                "baseline": 26.399999856948853,
+                "candidate": 25.855999439954758
+              }
+            }
+          ],
+          "acceptance_eligible": false,
+          "pair_ratios": [
+            0.9654388076841386,
+            1.0082791541378102,
+            1.0484966967916467,
+            1.0066131783988,
+            1.0089310441763866,
+            0.9919547000374355,
+            1.020143308542921,
+            0.9746960491697146,
+            0.9427975041084741,
+            1.0073781701631999,
+            1.0083372102785018,
+            1.0019377739050392
+          ],
+          "median_paired_gross_ratio": 1.0069956742809998,
+          "median_gross_us": {
+            "candidate": 25.824000127613544,
+            "baseline": 25.99999960511923
+          },
+          "qualification": "Gross whole-call CUDA graph timing; no calibration, confidence interval, or official score; warm-cache sensitivity only, not scored or acceptance evidence"
+        }
+      }
+    }
+  ],
+  "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "representatives": [
+    {
+      "layer": "pooler",
+      "m": 8
+    },
+    {
+      "layer": "pooler",
+      "m": 128
+    },
+    {
+      "layer": "pooler",
+      "m": 256
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128
+    },
+    {
+      "layer": "unpooler",
+      "m": 16
+    }
+  ],
+  "protocol": {
+    "eviction_bytes": 268435456,
+    "warmup_replays": 6,
+    "capture_helper_untimed_warmup_calls": 3,
+    "measured_rounds": 24,
+    "paired_rounds": 12,
+    "raw_samples_preserved": true,
+    "fixed_cost_subtraction": false,
+    "internal_deadline_seconds": 150.0,
+    "external_supervisor_timeout_seconds": 180.0,
+    "supervisor_enforcement": "required externally; not verified/enforced by this worker",
+    "warm_control": "immediate identical-graph replay, then timed replay; never acceptance"
+  },
+  "limitations": [
+    "Five representatives only, not all nine prerequisites and thirty scored shapes",
+    "Sequential same-address replay, not overlapping streams/concurrent calls",
+    "No hardware counters, NCU, binary/PTX capture or measured traffic",
+    "Original official oracle/tolerances; no relaxed precision",
+    "Monotonic deadline cannot interrupt a blocking CUDA call"
+  ],
+  "source_hashes": {
+    "candidates/projection_router_m1_fp32_gemv.py": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/baseline.py": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "projection_p041_plan.py": "005fabed110d0182e73c638ee7e367250f5b3a75842be0215fe4d398e9a554a3",
+    "projection_p041_probe.py": "191a22ed1e8fdf65b5c2b0ce4e6ea9b06c837a59579115e8e54d7a75744f5ba2"
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "implementation": "candidates/projection_router_m1_fp32_gemv.py",
+    "submission_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true,
+    "triton": "3.8.0"
+  },
+  "preparation": {
+    "runners": {
+      "candidate": {
+        "synchronized_wall_seconds": 0.04731580400000013
+      },
+      "baseline": {
+        "synchronized_wall_seconds": 0.0004403310000000715
+      }
+    },
+    "qualification": "Untimed per-runner host elapsed time bracketed by CUDA synchronization; excludes weight generation/cloning and is not kernel latency"
+  },
+  "wall_seconds": 16.862437211
+}

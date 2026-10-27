@@ -1,0 +1,1 @@
+{"stages": [{"mode": "timing", "exit_code": 0, "wall_seconds": 30.914342421999997}, {"mode": "activity", "exit_code": 0, "wall_seconds": 20.533506561000003}], "gate_error": null, "complete": true, "worker_wall_seconds": 51.452367781}

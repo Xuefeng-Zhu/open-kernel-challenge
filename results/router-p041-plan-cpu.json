@@ -1,0 +1,529 @@
+{
+  "kind": "P041 local evidence/diagnostic preparation; no GPU execution",
+  "parent": {
+    "source": "candidates/projection_router_m1_fp32_gemv.py",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "job": "d5636ac8d1404abd"
+  },
+  "evidence_hashes": {
+    "results/remote-P2-04-router-m1-fp32-gemv.csv": "46d1b02db4d528cac4c26ff5933c46b12361440441567b11a62bf1b8d525564a",
+    "results/remote-P2-04-router-m1-fp32-gemv.json": "c948c7b21ccb94e1857a49ce350ea8e49989f12578b80cc56ef3c63a388c65e9",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "TASK.md": "deb9118fa75cbc03c2ebd16b283e72a0314168d40299fa7501373eb1960a2bc4"
+  },
+  "official_passed": true,
+  "prerequisites": {
+    "passed": 9,
+    "total": 9
+  },
+  "shapes": {
+    "passed": 30,
+    "total": 30
+  },
+  "score": 1.173238998969285,
+  "score_ci": [
+    1.1556404139847458,
+    1.1908375839538243
+  ],
+  "six_weighted_loads": {
+    "decode 1": {
+      "candidate_us": 2787.086722542532,
+      "reference_us": 3679.3280402198434
+    },
+    "decode 16": {
+      "candidate_us": 4243.128948543347,
+      "reference_us": 4702.080061659217
+    },
+    "decode 32": {
+      "candidate_us": 4353.084789420958,
+      "reference_us": 4775.4879565909505
+    },
+    "verify 1": {
+      "candidate_us": 3461.0451881618906,
+      "reference_us": 4707.040041685104
+    },
+    "verify 16": {
+      "candidate_us": 4739.67274923702,
+      "reference_us": 5263.552006334066
+    },
+    "verify 32": {
+      "candidate_us": 5904.1541494767935,
+      "reference_us": 6352.76810079813
+    }
+  },
+  "mean_within_load_family_fraction": {
+    "o": 0.10998568303253435,
+    "pooler": 0.3261557156043338,
+    "qkv_gate": 0.22542010157407308,
+    "router": 0.12918000344754066,
+    "unpooler": 0.20925849634151816
+  },
+  "rows": [
+    {
+      "load": "decode 1",
+      "layer": "qkv_gate",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 11.339476213216736,
+      "reference_us": 13.776000589132309
+    },
+    {
+      "load": "decode 1",
+      "layer": "o",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 6.655841634531577,
+      "reference_us": 6.783999502658844
+    },
+    {
+      "load": "decode 1",
+      "layer": "pooler",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 18.178980844719238,
+      "reference_us": 21.52000041678548
+    },
+    {
+      "load": "decode 1",
+      "layer": "unpooler",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 3.5744458640606314,
+      "reference_us": 6.864000111818314
+    },
+    {
+      "load": "decode 1",
+      "layer": "router",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 5.204267097383626,
+      "reference_us": 10.400000028312206
+    },
+    {
+      "load": "decode 16",
+      "layer": "qkv_gate",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 14.079690345549487,
+      "reference_us": 14.19200049713254
+    },
+    {
+      "load": "decode 16",
+      "layer": "o",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 6.641356517232761,
+      "reference_us": 6.8160006776452065
+    },
+    {
+      "load": "decode 16",
+      "layer": "pooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 19.931792705741444,
+      "reference_us": 21.487999707460403
+    },
+    {
+      "load": "decode 16",
+      "layer": "unpooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 18.486902697945172,
+      "reference_us": 18.56000069528818
+    },
+    {
+      "load": "decode 16",
+      "layer": "router",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 9.297821419714154,
+      "reference_us": 14.783999416977167
+    },
+    {
+      "load": "decode 32",
+      "layer": "qkv_gate",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 14.473796766143941,
+      "reference_us": 14.335999265313148
+    },
+    {
+      "load": "decode 32",
+      "layer": "o",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 6.99957824821008,
+      "reference_us": 6.911999545991421
+    },
+    {
+      "load": "decode 32",
+      "layer": "pooler",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 20.237408898405246,
+      "reference_us": 21.695999894291162
+    },
+    {
+      "load": "decode 32",
+      "layer": "unpooler",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 18.856101519611826,
+      "reference_us": 18.880000337958336
+    },
+    {
+      "load": "decode 32",
+      "layer": "router",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 9.644159558289534,
+      "reference_us": 15.200000256299973
+    },
+    {
+      "load": "verify 1",
+      "layer": "qkv_gate",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 14.217154873593344,
+      "reference_us": 14.399999752640724
+    },
+    {
+      "load": "verify 1",
+      "layer": "o",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 6.9588582426999155,
+      "reference_us": 6.8800002336502075
+    },
+    {
+      "load": "verify 1",
+      "layer": "pooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 20.161721609753744,
+      "reference_us": 21.47199958562851
+    },
+    {
+      "load": "verify 1",
+      "layer": "unpooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 6.997472447253179,
+      "reference_us": 6.832000333815813
+    },
+    {
+      "load": "verify 1",
+      "layer": "router",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 7.488102313181932,
+      "reference_us": 26.33600076660514
+    },
+    {
+      "load": "verify 16",
+      "layer": "qkv_gate",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 17.20943456874332,
+      "reference_us": 17.11999997496605
+    },
+    {
+      "load": "verify 16",
+      "layer": "o",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 6.969339647653129,
+      "reference_us": 6.976000033318996
+    },
+    {
+      "load": "verify 16",
+      "layer": "pooler",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 22.550294655758577,
+      "reference_us": 24.687999859452248
+    },
+    {
+      "load": "verify 16",
+      "layer": "unpooler",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 19.565814039985806,
+      "reference_us": 19.872000440955162
+    },
+    {
+      "load": "verify 16",
+      "layer": "router",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 10.1514517529724,
+      "reference_us": 16.239999793469906
+    },
+    {
+      "load": "verify 32",
+      "layer": "qkv_gate",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 19.86388071363994,
+      "reference_us": 19.84000112861395
+    },
+    {
+      "load": "verify 32",
+      "layer": "o",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 9.455298437284576,
+      "reference_us": 9.504000190645456
+    },
+    {
+      "load": "verify 32",
+      "layer": "pooler",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 30.178320285052155,
+      "reference_us": 30.912000220268965
+    },
+    {
+      "load": "verify 32",
+      "layer": "unpooler",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 24.383436959148604,
+      "reference_us": 24.575999937951565
+    },
+    {
+      "load": "verify 32",
+      "layer": "router",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 11.347356338371378,
+      "reference_us": 17.632000148296356
+    }
+  ],
+  "representatives": [
+    {
+      "load": "verify 1",
+      "layer": "pooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 20.161721609753744,
+      "reference_us": 21.47199958562851,
+      "model": {
+        "m": 8,
+        "n": 4096,
+        "k": 8192,
+        "weights_bytes": 67108864,
+        "activations_bytes": 131072,
+        "output_bytes": 65536,
+        "unique_bytes": 67305472,
+        "flops": 536870912,
+        "flops_per_unique_byte": 7.976630963972736,
+        "ideal_weight_value_reuses": 8,
+        "ideal_input_value_reuses": 4096,
+        "official_model_floor_us": 14.021973333333333,
+        "qualification": "Compulsory unique data and dense arithmetic; excludes scratch, rereads and launch cost; not measured traffic/reuse/bottleneck"
+      }
+    },
+    {
+      "load": "verify 16",
+      "layer": "pooler",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 22.550294655758577,
+      "reference_us": 24.687999859452248,
+      "model": {
+        "m": 128,
+        "n": 4096,
+        "k": 8192,
+        "weights_bytes": 67108864,
+        "activations_bytes": 2097152,
+        "output_bytes": 1048576,
+        "unique_bytes": 70254592,
+        "flops": 8589934592,
+        "flops_per_unique_byte": 122.26865671641791,
+        "ideal_weight_value_reuses": 128,
+        "ideal_input_value_reuses": 4096,
+        "official_model_floor_us": 14.636373333333333,
+        "qualification": "Compulsory unique data and dense arithmetic; excludes scratch, rereads and launch cost; not measured traffic/reuse/bottleneck"
+      }
+    },
+    {
+      "load": "verify 32",
+      "layer": "pooler",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 30.178320285052155,
+      "reference_us": 30.912000220268965,
+      "model": {
+        "m": 256,
+        "n": 4096,
+        "k": 8192,
+        "weights_bytes": 67108864,
+        "activations_bytes": 4194304,
+        "output_bytes": 2097152,
+        "unique_bytes": 73400320,
+        "flops": 17179869184,
+        "flops_per_unique_byte": 234.05714285714285,
+        "ideal_weight_value_reuses": 256,
+        "ideal_input_value_reuses": 4096,
+        "official_model_floor_us": 17.37094962992922,
+        "qualification": "Compulsory unique data and dense arithmetic; excludes scratch, rereads and launch cost; not measured traffic/reuse/bottleneck"
+      }
+    },
+    {
+      "load": "verify 16",
+      "layer": "qkv_gate",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 17.20943456874332,
+      "reference_us": 17.11999997496605,
+      "model": {
+        "m": 128,
+        "n": 2304,
+        "k": 8192,
+        "weights_bytes": 37748736,
+        "activations_bytes": 2097152,
+        "output_bytes": 589824,
+        "unique_bytes": 40435712,
+        "flops": 4831838208,
+        "flops_per_unique_byte": 119.49432739059968,
+        "ideal_weight_value_reuses": 128,
+        "ideal_input_value_reuses": 2304,
+        "official_model_floor_us": 8.424106666666667,
+        "qualification": "Compulsory unique data and dense arithmetic; excludes scratch, rereads and launch cost; not measured traffic/reuse/bottleneck"
+      }
+    },
+    {
+      "load": "decode 16",
+      "layer": "unpooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 18.486902697945172,
+      "reference_us": 18.56000069528818,
+      "model": {
+        "m": 16,
+        "n": 8192,
+        "k": 4096,
+        "weights_bytes": 67108864,
+        "activations_bytes": 131072,
+        "output_bytes": 262144,
+        "unique_bytes": 67502080,
+        "flops": 1073741824,
+        "flops_per_unique_byte": 15.906796116504854,
+        "ideal_weight_value_reuses": 16,
+        "ideal_input_value_reuses": 8192,
+        "official_model_floor_us": 14.062933333333334,
+        "qualification": "Compulsory unique data and dense arithmetic; excludes scratch, rereads and launch cost; not measured traffic/reuse/bottleneck"
+      }
+    }
+  ],
+  "conditional_scenarios": [
+    {
+      "layer": "pooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.05,
+      "modeled_score_gain": 0.013125464576596357
+    },
+    {
+      "layer": "pooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.08,
+      "modeled_score_gain": 0.021185282061940924
+    },
+    {
+      "layer": "pooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.1,
+      "modeled_score_gain": 0.026637731807503284
+    },
+    {
+      "layer": "pooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.2,
+      "modeled_score_gain": 0.05489579905415032
+    },
+    {
+      "layer": "qkv_gate",
+      "m_scope": "all m>1",
+      "latency_cut": 0.05,
+      "modeled_score_gain": 0.009262731475787156
+    },
+    {
+      "layer": "qkv_gate",
+      "m_scope": "all m>1",
+      "latency_cut": 0.08,
+      "modeled_score_gain": 0.014911978040061058
+    },
+    {
+      "layer": "qkv_gate",
+      "m_scope": "all m>1",
+      "latency_cut": 0.1,
+      "modeled_score_gain": 0.01871712989452634
+    },
+    {
+      "layer": "qkv_gate",
+      "m_scope": "all m>1",
+      "latency_cut": 0.2,
+      "modeled_score_gain": 0.03822611329014025
+    },
+    {
+      "layer": "unpooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.05,
+      "modeled_score_gain": 0.009910415510504977
+    },
+    {
+      "layer": "unpooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.08,
+      "modeled_score_gain": 0.0159643917656056
+    },
+    {
+      "layer": "unpooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.1,
+      "modeled_score_gain": 0.020046337309777673
+    },
+    {
+      "layer": "unpooler",
+      "m_scope": "all m>1",
+      "latency_cut": 0.2,
+      "modeled_score_gain": 0.04102793341820665
+    }
+  ],
+  "saved_official_profile": {
+    "job_id": "d5636ac8d1404abd",
+    "qualification": "Instrumented activity, not calibrated latency or hardware counters",
+    "representative_activities": [
+      {
+        "layer": "unpooler",
+        "m": 16,
+        "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT                           18.0 \u00b5s 100.0%      1\ntotal                                                             18.0 \u00b5s"
+      },
+      {
+        "layer": "pooler",
+        "m": 8,
+        "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT                     18.1 \u00b5s  91.9%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       1.6 \u00b5s   8.1%      1\ntotal                                                             19.7 \u00b5s"
+      },
+      {
+        "layer": "qkv_gate",
+        "m": 128,
+        "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN                    12.8 \u00b5s  80.7%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       3.1 \u00b5s  19.3%      1\ntotal                                                             15.9 \u00b5s"
+      },
+      {
+        "layer": "pooler",
+        "m": 128,
+        "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT                    21.9 \u00b5s  87.8%      1\nvoid cublasLt::splitKreduce_kernel<32, 16, int, float, __...       3.0 \u00b5s  12.2%      1\ntotal                                                             24.9 \u00b5s"
+      },
+      {
+        "layer": "pooler",
+        "m": 256,
+        "report": "kernel                                                           GPU time  share  calls\nnvjet_sm90_tst_128x64_64x8_1x2_h_bz_NNT                           25.2 \u00b5s 100.0%      1\ntotal                                                             25.2 \u00b5s"
+      }
+    ]
+  },
+  "scenario_qualification": "All untargeted times frozen; modeled values, not predicted or achieved speedups",
+  "gpu_launched": false,
+  "counter_method": "ordinary activity only; coordinator reports both bounded NCU metric attempts timed out with no values; no retry"
+}

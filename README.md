@@ -1,17 +1,35 @@
 # Open Kernel Challenge — dense projections
 
-Live remote iteration: [results/budget](REMOTE_RESULTS.md) and [best completed candidate](BEST.md).
-These current records supersede the historical first-baseline and local-only summaries below.
+[Failed and rejected experiment index](FAILED_EXPERIMENTS.md) — concise lessons
+for Projection and Attention, linked to the original evidence.
 
-The ten-check cycle is complete: **1.120732× SGLang**,95% interval
-**[1.103921,1.137543]**, from [router_pooler_hybrid.py](candidates/router_pooler_hybrid.py),
-job `02e099c3724e4a05`. All ten new H200 checks pass9+30 correctness gates. The
-57-test Mac suite is separate CPU/static evidence. Budget10/10used,$0,zero scored
-entries; no further check is authorized. See BEST.md for overlap/regression limits.
+Current selected candidate: **P046, 1.184139941× SGLang**, official 95% interval
+**[1.166377842,1.201902040]**, off-board job `41ba778763a5433b`.
+[Source](candidates/projection_pooler_column_batch2_hybrid.py),
+[selection and limits](BEST.md), [current state](STATUS.md),
+[official receipt](results/remote-P2-09-pooler-column-batch2-hybrid.json).
+All **9 prerequisites and 30scored shapes passed**. Original `submission.py`
+remains the PyTorch starter; P039 is the preserved fallback.
 
-Correctness-first work on `muse_bf16_proj`, with the official task contract, SGLang
-baseline and reproducible correctness/diagnostic harness. The original starter remains preserved; subsequent verified GPU improvements are listed above. CPU checks and the first off-board H200 check pass correctness. The measured starter
-is slower than SGLang: **0.9076×**, 95% interval **[0.8940, 0.9212]**.
+P046 uses full-K output-column batched matrix multiplication only for pooler
+M8/M16/M32. P045's broader M128 route regressed and was rejected. The narrower
+P046 passed its predeclared official gates. A direct H200 P039/P046 confirmation
+then passed 480 oracle comparisons, reproduced 10.74%/10.87%/9.88% raw target
+latency cuts and found three unchanged controls within 0.7% median movement.
+[Protocol, all samples, long tails and limits](experiments/048-p046-paired-confirmation.md).
+This supports working-version selection; it does not turn Modal diagnostics
+into an official score or prove the 0.929% whole-score point gain statistically.
+
+P043 compression and the broad P045 remain failed performance experiments.
+P044's activity/resource evidence motivated the output-column experiment; no
+measured HBM/occupancy cause is inferred. P047's explicit cuBLASLt binding
+capability is unresolved because the exact judge package/AOT inventory is not
+available; no unsupported import/JIT workaround was attempted.
+
+Historical reports retain their original dated results: the earlier 1.148650×
+composition, rejected QKV m128 full-K (55.104 versus 21.888 µs, 0/15 paired wins),
+layout and TMA failures are not current selections. Dated quota, cost and app
+statements below are historical snapshots; consult STATUS.md before any run.
 
 ## Reproduce locally
 
@@ -27,7 +45,7 @@ uv pip install --python .venv/bin/python -r requirements-macos.lock
 
 The full-size suite covers the nine official prerequisite shapes plus all 30 scored
 shapes using the unmodified official FP64 reference, per-row limits and weight-column
-probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. The latest combined contract/regression suite passes **57/57 tests**. The local
+probe checks. The baseline passes **39/39 CPU cases**; each isolated candidate has its own full-size CPU report. An earlier recorded combined contract/regression suite passed **95/95 tests**. The local
 Apple M2 host has no CUDA; CPU correctness does not establish H200 correctness or speed.
 The nine prerequisite shapes use disclosed local seeds, not hidden judge seeds.
 

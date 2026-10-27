@@ -1,0 +1,1507 @@
+{
+  "kind": "P041 unchanged-source diagnostic; not official score",
+  "mode": "activity",
+  "passed": true,
+  "cases": [
+    {
+      "layer": "pooler",
+      "m": 8,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "activities": [
+        {
+          "runner": "candidate",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+              "duration_us": 17.91899999999987
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 2.2719999999999345
+            }
+          ],
+          "trace": {
+            "file": "activity.case00.pooler.m8.candidate.trace.json",
+            "sha256": "4c95a3a0c2d49ddb3a807470b56b4c3fa9d12698e33ee3c3bf2dcf0bef7fc16b",
+            "bytes": 15363,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+                "duration_us": 17.919,
+                "timestamp_us": 2105352857774.328,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 3,
+                  "registers per thread": 168,
+                  "shared memory": 164292,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 165376
+                  },
+                  "graph id": 2,
+                  "graph node id": 8589934592,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 164292,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+                "duration_us": 2.272,
+                "timestamp_us": 2105352857792.279,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 3,
+                  "registers per thread": 32,
+                  "shared memory": 0,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 15.515151977539062,
+                  "grid": [
+                    128,
+                    1,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ],
+                  "est. achieved occupancy %": 24,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 4,
+                    "limitingFactors": "WARPS|REGS",
+                    "blockLimitRegs": 4,
+                    "blockLimitSharedMem": 228,
+                    "blockLimitWarps": 4,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 16384,
+                    "allocatedSharedMemPerBlock": 1024
+                  },
+                  "graph id": 2,
+                  "graph node id": 8589934593,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 32,
+                  "shared_memory_bytes": 0,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 15.515151977539062,
+                  "grid": [
+                    128,
+                    1,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "83dfebee377c9c22092686cdc48bb11046c49f301190d362fb8ce9f5cd37b7d9"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        },
+        {
+          "runner": "baseline",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT",
+              "duration_us": 18.49700000000007
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 2.0799999999999272
+            }
+          ],
+          "trace": {
+            "file": "activity.case00.pooler.m8.baseline.trace.json",
+            "sha256": "40f5b051d4413ae9c18e216ad420470d025b964b043177b6bab5309e41137cdc",
+            "bytes": 15392,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_128x8_64x12_4x1_v_bz_splitK_TNT",
+                "duration_us": 18.497,
+                "timestamp_us": 2105352866301.465,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 1090,
+                  "registers per thread": 168,
+                  "shared memory": 225636,
+                  "blocks per SM": 0.7272727489471436,
+                  "warps per SM": 8.727272987365723,
+                  "grid": [
+                    4,
+                    24,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 226688
+                  },
+                  "graph id": 5,
+                  "graph node id": 21474836480,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 225636,
+                  "blocks_per_sm": 0.7272727489471436,
+                  "warps_per_sm": 8.727272987365723,
+                  "grid": [
+                    4,
+                    24,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+                "duration_us": 2.08,
+                "timestamp_us": 2105352866320.026,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 1090,
+                  "registers per thread": 32,
+                  "shared memory": 0,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 15.515151977539062,
+                  "grid": [
+                    128,
+                    1,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ],
+                  "est. achieved occupancy %": 24,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 4,
+                    "limitingFactors": "WARPS|REGS",
+                    "blockLimitRegs": 4,
+                    "blockLimitSharedMem": 228,
+                    "blockLimitWarps": 4,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 16384,
+                    "allocatedSharedMemPerBlock": 1024
+                  },
+                  "graph id": 5,
+                  "graph node id": 21474836481,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 32,
+                  "shared_memory_bytes": 0,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 15.515151977539062,
+                  "grid": [
+                    128,
+                    1,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "893ba70a52c61263f8fbb2aa6de039902fd52f95da03d9954942f4efc36fd450"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        }
+      ]
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "activities": [
+        {
+          "runner": "baseline",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT",
+              "duration_us": 23.838999999999942
+            }
+          ],
+          "trace": {
+            "file": "activity.case01.pooler.m128.baseline.trace.json",
+            "sha256": "762989ae9b5f0755842a7583b6c7a7d0fad11b74cad164ecb1d5e8a36565e415",
+            "bytes": 13638,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_64x64_64x13_2x1_v_bz_TNT",
+                "duration_us": 23.839,
+                "timestamp_us": 2105352898313.675,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 8977,
+                  "registers per thread": 168,
+                  "shared memory": 229772,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 230912
+                  },
+                  "graph id": 11,
+                  "graph node id": 47244640256,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 229772,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "e12203210abb047e0d1ac3b6a87e9e157cbbdb21ae728db815e8544e6e3f628f"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        },
+        {
+          "runner": "candidate",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+              "duration_us": 19.106000000000222
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.3599999999996726
+            }
+          ],
+          "trace": {
+            "file": "activity.case01.pooler.m128.candidate.trace.json",
+            "sha256": "b08ab6139ac9031f0acd7e9d3d01ab5a08dc811dfa6ab70ba3426fb4e5bcb688",
+            "bytes": 15402,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+                "duration_us": 19.106,
+                "timestamp_us": 2105352904771.923,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 10078,
+                  "registers per thread": 168,
+                  "shared memory": 213252,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 214400
+                  },
+                  "graph id": 8,
+                  "graph node id": 34359738368,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 213252,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+                "duration_us": 3.36,
+                "timestamp_us": 2105352904791.317,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 10078,
+                  "registers per thread": 32,
+                  "shared memory": 0,
+                  "blocks per SM": 3.8787879943847656,
+                  "warps per SM": 62.06060791015625,
+                  "grid": [
+                    128,
+                    4,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ],
+                  "est. achieved occupancy %": 97,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 4,
+                    "limitingFactors": "WARPS|REGS",
+                    "blockLimitRegs": 4,
+                    "blockLimitSharedMem": 228,
+                    "blockLimitWarps": 4,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 16384,
+                    "allocatedSharedMemPerBlock": 1024
+                  },
+                  "graph id": 8,
+                  "graph node id": 34359738369,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 32,
+                  "shared_memory_bytes": 0,
+                  "blocks_per_sm": 3.8787879943847656,
+                  "warps_per_sm": 62.06060791015625,
+                  "grid": [
+                    128,
+                    4,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "aae5c3a619b247cf2f285bbce71935adbba50d656f9d0a554e7f09a7017d70f5"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        }
+      ]
+    },
+    {
+      "layer": "pooler",
+      "m": 256,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "activities": [
+        {
+          "runner": "candidate",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_NNT",
+              "duration_us": 29.29600000000005
+            }
+          ],
+          "trace": {
+            "file": "activity.case02.pooler.m256.candidate.trace.json",
+            "sha256": "f4754d19cf4f61699bd526ad576d0ea8af7f443753564cc5b562a31240714834",
+            "bytes": 13641,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_NNT",
+                "duration_us": 29.296,
+                "timestamp_us": 2105352946833.431,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 17967,
+                  "registers per thread": 168,
+                  "shared memory": 213268,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 214400
+                  },
+                  "graph id": 14,
+                  "graph node id": 60129542144,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 213268,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "6b3cee4fa6eb853c2a5edb1ed42dd6fbd581703030ba369b0ecf7421edbfebfe"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        },
+        {
+          "runner": "baseline",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT",
+              "duration_us": 28.604999999999905
+            }
+          ],
+          "trace": {
+            "file": "activity.case02.pooler.m256.baseline.trace.json",
+            "sha256": "de5c623d5c2b65bc659937b1720aaff75a5a870262670eaad1d659103683138d",
+            "bytes": 13643,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_TNT",
+                "duration_us": 28.605,
+                "timestamp_us": 2105352953267.498,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 19068,
+                  "registers per thread": 168,
+                  "shared memory": 213268,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 214400
+                  },
+                  "graph id": 17,
+                  "graph node id": 73014444032,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 213268,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "f17c0f0c8aadf5a5f55f44fd9dda50a7bc0dbe3a66e604254406ff28b842da95"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        }
+      ]
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "activities": [
+        {
+          "runner": "baseline",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 13.791999999999916
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.2640000000001237
+            }
+          ],
+          "trace": {
+            "file": "activity.case03.qkv_gate.m128.baseline.trace.json",
+            "sha256": "c7f163b98e8346ed2e10dc5619af2e8a5c6c37d19bfaf87c6a6a7d34ff593e8e",
+            "bytes": 15400,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+                "duration_us": 13.792,
+                "timestamp_us": 2105352990885.122,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 26981,
+                  "registers per thread": 168,
+                  "shared memory": 221492,
+                  "blocks per SM": 0.7272727489471436,
+                  "warps per SM": 8.727272987365723,
+                  "grid": [
+                    8,
+                    12,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 222592
+                  },
+                  "graph id": 23,
+                  "graph node id": 98784247808,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 221492,
+                  "blocks_per_sm": 0.7272727489471436,
+                  "warps_per_sm": 8.727272987365723,
+                  "grid": [
+                    8,
+                    12,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+                "duration_us": 3.264,
+                "timestamp_us": 2105352990899.234,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 26981,
+                  "registers per thread": 32,
+                  "shared memory": 0,
+                  "blocks per SM": 4.363636493682861,
+                  "warps per SM": 69.81818389892578,
+                  "grid": [
+                    72,
+                    8,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ],
+                  "est. achieved occupancy %": 100,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 4,
+                    "limitingFactors": "WARPS|REGS",
+                    "blockLimitRegs": 4,
+                    "blockLimitSharedMem": 228,
+                    "blockLimitWarps": 4,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 16384,
+                    "allocatedSharedMemPerBlock": 1024
+                  },
+                  "graph id": 23,
+                  "graph node id": 98784247809,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 32,
+                  "shared_memory_bytes": 0,
+                  "blocks_per_sm": 4.363636493682861,
+                  "warps_per_sm": 69.81818389892578,
+                  "grid": [
+                    72,
+                    8,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "a9750bb99fa5262b296138564a4403c8d4e8c38ec55b9587bf84eacc9620b516"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        },
+        {
+          "runner": "candidate",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 13.602999999999838
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.296000000000049
+            }
+          ],
+          "trace": {
+            "file": "activity.case03.qkv_gate.m128.candidate.trace.json",
+            "sha256": "780497697aa807cacc2604af700c441135f0734a3ff05bb4e230c5e63ef9838e",
+            "bytes": 15401,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+                "duration_us": 13.603,
+                "timestamp_us": 2105352997137.142,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 28083,
+                  "registers per thread": 168,
+                  "shared memory": 221492,
+                  "blocks per SM": 0.7272727489471436,
+                  "warps per SM": 8.727272987365723,
+                  "grid": [
+                    8,
+                    12,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 222592
+                  },
+                  "graph id": 20,
+                  "graph node id": 85899345920,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 221492,
+                  "blocks_per_sm": 0.7272727489471436,
+                  "warps_per_sm": 8.727272987365723,
+                  "grid": [
+                    8,
+                    12,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              },
+              {
+                "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+                "duration_us": 3.296,
+                "timestamp_us": 2105352997151.097,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 28083,
+                  "registers per thread": 32,
+                  "shared memory": 0,
+                  "blocks per SM": 4.363636493682861,
+                  "warps per SM": 69.81818389892578,
+                  "grid": [
+                    72,
+                    8,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ],
+                  "est. achieved occupancy %": 100,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 4,
+                    "limitingFactors": "WARPS|REGS",
+                    "blockLimitRegs": 4,
+                    "blockLimitSharedMem": 228,
+                    "blockLimitWarps": 4,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 16384,
+                    "allocatedSharedMemPerBlock": 1024
+                  },
+                  "graph id": 20,
+                  "graph node id": 85899345921,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 32,
+                  "shared_memory_bytes": 0,
+                  "blocks_per_sm": 4.363636493682861,
+                  "warps_per_sm": 69.81818389892578,
+                  "grid": [
+                    72,
+                    8,
+                    1
+                  ],
+                  "block": [
+                    32,
+                    16,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "e7c5f922a95f77851479cbdd43b3322e08c3ee1807d85e3fd19cbaee55273dfe"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        }
+      ]
+    },
+    {
+      "layer": "unpooler",
+      "m": 16,
+      "aba": [
+        {
+          "runner": "candidate",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "candidate",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "B",
+          "passed": true,
+          "distribution": "outliers",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        },
+        {
+          "runner": "baseline",
+          "state": "A-return",
+          "passed": true,
+          "distribution": "normal",
+          "same_input_address": true,
+          "immutable_x_weights": true,
+          "oracle": "unmodified official reference with frozen original weights"
+        }
+      ],
+      "passed": true,
+      "activities": [
+        {
+          "runner": "candidate",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+              "duration_us": 18.110000000000014
+            }
+          ],
+          "trace": {
+            "file": "activity.case04.unpooler.m16.candidate.trace.json",
+            "sha256": "94e4420cba079e13d5bf4cb8f6a73fbd1de0874dfd12c60058efb587f451d419",
+            "bytes": 13640,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+                "duration_us": 18.11,
+                "timestamp_us": 2105353026747.761,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 35913,
+                  "registers per thread": 168,
+                  "shared memory": 180692,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 181760
+                  },
+                  "graph id": 26,
+                  "graph node id": 111669149696,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 180692,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "100f0124b1380953bd82ce83535fbca7d9e4a54d1f984d84b80679b8f2d50bda"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        },
+        {
+          "runner": "baseline",
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+              "duration_us": 17.823999999999955
+            }
+          ],
+          "trace": {
+            "file": "activity.case04.unpooler.m16.baseline.trace.json",
+            "sha256": "78b8958fd74240f452ce11386a15b20130d89757ea7825ce9ad1e5e48e31ebcb",
+            "bytes": 13644,
+            "chrome_kernels": [
+              {
+                "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+                "duration_us": 17.824,
+                "timestamp_us": 2105353031691.318,
+                "trace_args": {
+                  "queued": 0,
+                  "device": 0,
+                  "context": 1,
+                  "stream": 7,
+                  "correlation": 37007,
+                  "registers per thread": 168,
+                  "shared memory": 180692,
+                  "blocks per SM": 0.9696969985961914,
+                  "warps per SM": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ],
+                  "est. achieved occupancy %": 0,
+                  "occupancy": {
+                    "activeBlocksPerMultiprocessor": 0,
+                    "limitingFactors": "SMEM",
+                    "blockLimitRegs": 1,
+                    "blockLimitSharedMem": 0,
+                    "blockLimitWarps": 5,
+                    "blockLimitBlocks": 32,
+                    "blockLimitBarriers": 2147483647,
+                    "allocatedRegistersPerBlock": 64512,
+                    "allocatedSharedMemPerBlock": 181760
+                  },
+                  "graph id": 29,
+                  "graph node id": 124554051584,
+                  "channel": 0,
+                  "channel_type": 1
+                },
+                "resources": {
+                  "registers_per_thread": 168,
+                  "shared_memory_bytes": 180692,
+                  "blocks_per_sm": 0.9696969985961914,
+                  "warps_per_sm": 11.636363983154297,
+                  "grid": [
+                    2,
+                    64,
+                    1
+                  ],
+                  "block": [
+                    384,
+                    1,
+                    1
+                  ]
+                }
+              }
+            ],
+            "qualification": "Raw ordinary activity trace; resource fields only when emitted, not PTX/SASS, spills, hardware counters, or acceptance timing",
+            "original_trace_sha256": "f9cc2c5181f4d6455977a251c6b9beb81c19bf17853b767b34b6cbb79df11dd8"
+          },
+          "qualification": "One instrumented activity sample, not acceptance timing or score",
+          "resource_metadata": "See trace.chrome_kernels; missing fields are unavailable, not zero",
+          "instructions_spills": "PTX/SASS and spills are not captured"
+        }
+      ]
+    }
+  ],
+  "source_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "representatives": [
+    {
+      "layer": "pooler",
+      "m": 8
+    },
+    {
+      "layer": "pooler",
+      "m": 128
+    },
+    {
+      "layer": "pooler",
+      "m": 256
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128
+    },
+    {
+      "layer": "unpooler",
+      "m": 16
+    }
+  ],
+  "protocol": {
+    "eviction_bytes": 268435456,
+    "warmup_replays": 6,
+    "capture_helper_untimed_warmup_calls": 3,
+    "measured_rounds": 0,
+    "paired_rounds": 0,
+    "raw_samples_preserved": true,
+    "fixed_cost_subtraction": false,
+    "internal_deadline_seconds": 150.0,
+    "external_supervisor_timeout_seconds": 180.0,
+    "supervisor_enforcement": "required externally; not verified/enforced by this worker",
+    "warm_control": "immediate identical-graph replay, then timed replay; never acceptance"
+  },
+  "limitations": [
+    "Five representatives only, not all nine prerequisites and thirty scored shapes",
+    "Sequential same-address replay, not overlapping streams/concurrent calls",
+    "No hardware counters, NCU, binary/PTX capture or measured traffic",
+    "Original official oracle/tolerances; no relaxed precision",
+    "Monotonic deadline cannot interrupt a blocking CUDA call"
+  ],
+  "source_hashes": {
+    "candidates/projection_router_m1_fp32_gemv.py": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/baseline.py": "39f52ea5b65505958aa9dee9c8129dd394cbba4e670046f862b5a88ce91a0574",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "projection_p041_plan.py": "005fabed110d0182e73c638ee7e367250f5b3a75842be0215fe4d398e9a554a3",
+    "projection_p041_probe.py": "191a22ed1e8fdf65b5c2b0ce4e6ea9b06c837a59579115e8e54d7a75744f5ba2"
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "implementation": "candidates/projection_router_m1_fp32_gemv.py",
+    "submission_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true,
+    "triton": "3.8.0"
+  },
+  "preparation": {
+    "runners": {
+      "candidate": {
+        "synchronized_wall_seconds": 0.03161467500000015
+      },
+      "baseline": {
+        "synchronized_wall_seconds": 0.01886405300000149
+      }
+    },
+    "qualification": "Untimed per-runner host elapsed time bracketed by CUDA synchronization; excludes weight generation/cloning and is not kernel latency"
+  },
+  "wall_seconds": 11.075940147999997
+}

@@ -1,0 +1,58 @@
+{
+  "kind": "Descriptive offline analysis, no official score/CI",
+  "source_commit": "26189baa01e72d6e629f130a85f776347ca15a3f",
+  "source_sha256": "84e86a5e6fff111220cc6ddc77d3b8885a00f7383b068f360699956de2d39132",
+  "app_id": "ap-N9JWk0BvaWxhSdDYLxUJmL",
+  "candidate": {
+    "n": 30,
+    "minimum": 54.30399999022484,
+    "p10": 54.67199943959713,
+    "median": 55.10399863123894,
+    "p90": 56.515198200941086,
+    "maximum": 57.24800005555153,
+    "median_absolute_deviation": 0.4960000514984131
+  },
+  "best": {
+    "n": 30,
+    "minimum": 21.344000473618507,
+    "p10": 21.532800048589706,
+    "median": 21.888000890612602,
+    "p90": 22.499199770390987,
+    "maximum": 23.072000592947006,
+    "median_absolute_deviation": 0.2560000866651535
+  },
+  "target_paired_best_over_candidate": 0.3954007836404262,
+  "target_winning_pairs": 0,
+  "aggregate_gm_of_load_median_ratios": 0.9560322311775801,
+  "descriptive_matched_pair_gm": [
+    0.9470220352273703,
+    0.9549240041586801,
+    0.9690168107292555,
+    0.948214579508704,
+    0.9560976997809502,
+    0.9634794208042723,
+    0.9484893608716175,
+    0.9595150688444728,
+    0.9642610689043866,
+    0.9551636657298214,
+    0.9500675012698835,
+    0.9544128675722356,
+    0.9505041348227825,
+    0.9607289175440468,
+    0.95757198319416
+  ],
+  "descriptive_matched_pair_median": 0.9551636657298214,
+  "descriptive_matched_pair_wins": 0,
+  "qualification": "Matched-pair aggregation is a post-hoc descriptive view, not a confidence interval or new promotion criterion",
+  "meets_predeclared_target_gate": false,
+  "decision": "Reject; no official check",
+  "compiled": {
+    "n_regs": 46,
+    "n_spills_driver_raw": 0,
+    "shared_bytes": 36864,
+    "grid_ctas": 144,
+    "ptx_has_mma_sync": false,
+    "ptx_has_wgmma": true,
+    "ptx_has_tma": false
+  }
+}

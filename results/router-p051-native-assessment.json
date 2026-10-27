@@ -1,0 +1,254 @@
+{
+  "experiment": "P051",
+  "state": "compile-gate-passed-execution-unverified",
+  "source_commit": "144a0b8e99cdb145acfc3638952c4971012999ae",
+  "worker_sha256": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+  "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+  "environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA H200",
+    "multiprocessor_count": 132,
+    "python": "3.12.3",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "case": {
+    "m": 8,
+    "n": 4096,
+    "k": 8192,
+    "splits": 8,
+    "logical_tile": [
+      16,
+      64,
+      64
+    ],
+    "warps": 4,
+    "stages": 2
+  },
+  "evidence": {
+    "control": {
+      "ptx_file": "results/remote-P051-compile/timing.pooler_m8.control.ptx",
+      "sha256": "232c2d78f29def4af5e7a30a94fbad488b0de23764901441344fe68060a2bae7",
+      "resources": {
+        "n_regs_per_thread": 42,
+        "shared_bytes": 10240,
+        "n_spills_driver_raw": 0
+      },
+      "matrix_mnemonics": [
+        "mma.sync.aligned.m16n8k16.row.col.f32.bf16.bf16.f32"
+      ],
+      "async_global_copy_static_count": 10,
+      "scheduling_lines": [
+        {
+          "line": 83,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 115,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 169,
+          "text": "cp.async.wait_group \t0;"
+        },
+        {
+          "line": 170,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 227,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 236,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 267,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 279,
+          "text": "cp.async.wait_group \t0;"
+        },
+        {
+          "line": 280,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 320,
+          "text": "bar.sync \t0;"
+        }
+      ]
+    },
+    "weight_first": {
+      "ptx_file": "results/remote-P051-compile/timing.pooler_m8.weight_first.ptx",
+      "sha256": "4d23fd278388af8bbd7be0d485768d0d102c33ccdb8d52563049dac97be0635b",
+      "resources": {
+        "n_regs_per_thread": 36,
+        "shared_bytes": 20480,
+        "n_spills_driver_raw": 0
+      },
+      "matrix_mnemonics": [
+        "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16"
+      ],
+      "async_global_copy_static_count": 10,
+      "scheduling_lines": [
+        {
+          "line": 83,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 115,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 148,
+          "text": "cp.async.wait_group \t0;"
+        },
+        {
+          "line": 149,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 157,
+          "text": "fence.proxy.async.shared::cta;"
+        },
+        {
+          "line": 162,
+          "text": "wgmma.fence.sync.aligned;"
+        },
+        {
+          "line": 168,
+          "text": "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16 {%r108,%r109,%r110,%r111,%r112,%r113,%r114,%r115}, %rd20, %rd21, %p4, 1, 1, 0, 0;"
+        },
+        {
+          "line": 175,
+          "text": "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16 {%r108,%r109,%r110,%r111,%r112,%r113,%r114,%r115}, %rd22, %rd23, %p4, 1, 1, 0, 0;"
+        },
+        {
+          "line": 182,
+          "text": "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16 {%r108,%r109,%r110,%r111,%r112,%r113,%r114,%r115}, %rd24, %rd25, %p4, 1, 1, 0, 0;"
+        },
+        {
+          "line": 189,
+          "text": "wgmma.mma_async.sync.aligned.m64n16k16.f32.bf16.bf16 {%r108,%r109,%r110,%r111,%r112,%r113,%r114,%r115}, %rd26, %rd27, %p4, 1, 1, 0, 0;"
+        },
+        {
+          "line": 192,
+          "text": "wgmma.commit_group.sync.aligned;"
+        },
+        {
+          "line": 202,
+          "text": "wgmma.wait_group.sync.aligned 1;"
+        },
+        {
+          "line": 216,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 227,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 263,
+          "text": "cp.async.commit_group;"
+        },
+        {
+          "line": 279,
+          "text": "wgmma.wait_group.sync.aligned 0;"
+        },
+        {
+          "line": 282,
+          "text": "cp.async.wait_group \t0;"
+        },
+        {
+          "line": 283,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 333,
+          "text": "bar.sync \t0;"
+        }
+      ]
+    },
+    "reduce": {
+      "ptx_file": "results/remote-P051-compile/timing.pooler_m8.reduce.ptx",
+      "sha256": "bb67852b9532184e1c955300adf1aad8489ec50128c6e9a7a498f77c24f91e59",
+      "resources": {
+        "n_regs_per_thread": 20,
+        "shared_bytes": 2048,
+        "n_spills_driver_raw": 0
+      },
+      "matrix_mnemonics": [],
+      "async_global_copy_static_count": 0,
+      "scheduling_lines": [
+        {
+          "line": 100,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 156,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 166,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 177,
+          "text": "bar.sync \t0;"
+        },
+        {
+          "line": 211,
+          "text": "bar.sync \t0;"
+        }
+      ]
+    }
+  },
+  "decision": "Advance to a minimal original-oracle/replay and paired whole-call screen; no official check or promotion from compilation",
+  "compiled_kernels_executed": false,
+  "gpu_correctness": null,
+  "performance_gain": null,
+  "selected_P046_unchanged": true,
+  "static_scheduling_observation": "Weight-first commits four WGMMA instructions then wait_group1 permits one committed group outstanding while alternate-buffer copies are issued; final wait_group0 drains before epilogue shared reuse. Control uses synchronous MMA and reuses buffers after CTA barrier. This is an opportunity, not measured overlap.",
+  "raw_report_count_caveat": "instruction_counts.async_copy uses the broad cp.async prefix, including commit/wait. Both have 10 actual static cp.async.cg.shared.global lines. Do not call the reported broad16 a count of data-copy instructions.",
+  "qualification": [
+    "PTX static code, not SASS or counters; different MMA instruction granularities cannot be compared as throughput counts",
+    "Lowering and resource changes are observed; HBM traffic, occupancy, achieved overlap and speed are not measured",
+    "Both epilogues convert accumulator layout through shared memory; weight-first uses different store/load vectors; direct external layout does not imply equal physical cost",
+    "reported n_spills is driver LOCAL_SIZE_BYTES/4, not runtime spill traffic"
+  ],
+  "shutdown": {
+    "observed_utc": "2026-10-25T23:17:42.880565+00:00",
+    "app": {
+      "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:17:08-07:00",
+      "stopped_at": "2026-10-25 16:17:25-07:00"
+    },
+    "all_apps_stopped_tasks_zero": true
+  },
+  "cost": {
+    "reserve_usd": "0.2784230000660",
+    "worker_seconds": 6.581100659,
+    "client_seconds": 16.423099749954417,
+    "observed_workspace_gross_delta_usd": "0",
+    "paid_after_zero": true,
+    "qualification": "Billing read may lag; zero observed delta is not zero cost. Full reserve retained until reconciled.",
+    "delayed_billing": {
+      "observed_utc": "2026-10-25T23:20:52.279725+00:00",
+      "billed_cost": "0E-8",
+      "gross_usd": "2.14155627",
+      "workspace_gross_delta_usd": "0.01155627",
+      "qualification": "Delayed workspace snapshot; not a settled per-app invoice; full reserve retained"
+    }
+  }
+}

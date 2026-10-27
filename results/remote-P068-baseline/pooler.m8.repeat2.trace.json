@@ -1,0 +1,30 @@
+{
+  "traceEvents": [
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+      "ts": 2215094468898.699,
+      "dur": 18.33,
+      "args": {
+        "grid": [
+          4,
+          16,
+          1
+        ],
+        "block": [
+          384,
+          1,
+          1
+        ],
+        "stream": 7,
+        "registers per thread": 168,
+        "shared memory": 164308,
+        "cluster": null
+      }
+    }
+  ],
+  "cuda_driver_version": 13030,
+  "cuda_runtime_version": 13000,
+  "cupti_version": 130001
+}

@@ -1,0 +1,164 @@
+{
+  "experiment": "P046 direct P039/P046 paired confirmation",
+  "state": "terminal",
+  "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+  "created_utc": "2026-10-25T22:18:38.282723+00:00",
+  "source_commit": "d72380a95df959714f4576a55aa6ea75fde51477",
+  "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "parent_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "candidates/projection_router_m1_fp32_gemv.py": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "1d9514321e5cd1305a7aab50cd195586d27d64a413d967f7cf9a43351501b563",
+  "cost_reserve_usd": "0.4076345000990",
+  "verified_free_credit_floor_usd": "28.02842097",
+  "resource_rate_usd_per_second": "0.001305166667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "1.97000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-1.97000000",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.97157903"
+    }
+  },
+  "preflight_sha256": "b53f244a2d2110118a92fdd1ae4d8227d9089dc78e3e9fc06d51dc67d8fab3f8",
+  "shared_controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 195,
+    "startup_timeout": 45,
+    "child_internal_timeout": 120,
+    "child_hard_timeout": 180,
+    "app_watchdog": 240,
+    "stop_allowance": 15,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-25T22:18:40.055370+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 2,
+    "packed_bytes": 32428,
+    "encoded_bytes": 302169,
+    "artifact_bytes": 226580,
+    "sha256": "d72bedeb73668cf9879586713d375f6db2915f7895ba80888dbb088554eb762d",
+    "artifact_sha256": {
+      "summary.json": "fdf5fe2400e45c690da6889611e2b1713d03980120d480f6535efb522a8066c3",
+      "timing.json": "cc41c6ccf11f2194a00edda43fb12deef99f32e708f9798e286e22a721fcff91",
+      "timing.log": "da212edad027d68df324230f63d4a5e0dfbbd7e866735ba207531e294ce76ef5"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "timing",
+      "exit_code": 0,
+      "wall_seconds": 12.451822939
+    }
+  ],
+  "worker_wall_seconds": 12.451912681,
+  "explicit_stop": {
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "requested_utc": "2026-10-25T22:18:58.892517+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T22:18:59.840541+00:00",
+  "client_wall_seconds": 21.556258416967466,
+  "shutdown_observation": {
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 15:18:38-07:00",
+    "stopped_at": "2026-10-25 15:19:01-07:00"
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "1.97000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "credits": "-1.97000000",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "1.97157903"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0.02179635",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "initial_shutdown_observation": {
+    "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 15:18:38-07:00",
+    "stopped_at": null
+  },
+  "shutdown_reconciled_utc": "2026-10-25T22:19:17.799339+00:00",
+  "billing_reconciled": {
+    "metered_cost": "1.99000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "credits": "-1.99000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.99337538",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "billing_reconciled_utc": "2026-10-25T22:20:12.333263+00:00",
+  "exposure_model": {
+    "seconds": 30,
+    "usd": "0.0630705000110",
+    "qualification": "30-second conservative app exposure including teardown, rate-based estimate only; original reserve retained"
+  }
+}

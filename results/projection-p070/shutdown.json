@@ -1,0 +1,26 @@
+{
+  "observed_utc": "2026-10-27T16:52:52.855761+00:00",
+  "apps": [
+    {
+      "app_id": "ap-SxWfI1ObeGcdNCek1ctjdH",
+      "state": "stopped",
+      "tasks": "0"
+    },
+    {
+      "app_id": "ap-DRstDkJMGcFGvnYXTfTj6T",
+      "state": "stopped",
+      "tasks": "0"
+    },
+    {
+      "app_id": "ap-dKf5btqAVGK1yldNsnr4Xb",
+      "state": "stopped",
+      "tasks": "0"
+    },
+    {
+      "app_id": "ap-zkHuQwk5YCcBvTnCUyOFHu",
+      "state": "stopped",
+      "tasks": "0"
+    }
+  ],
+  "active_apps": []
+}

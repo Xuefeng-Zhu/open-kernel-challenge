@@ -1,0 +1,70 @@
+{
+  "experiment": "P056",
+  "decision": "native compilation failed; no algorithm/performance conclusion",
+  "source_commit": "113e05e2085f08497c58e1f67af0454b8a4a85eb",
+  "app_id": "ap-EaioKmzLxCQFWKWwyp9cmP",
+  "phase": "native_build",
+  "failure_type": "RuntimeError",
+  "compiler_failure": "NVCC exited134 with internal assertion lexical.c22316 find_allocated_name_reference at __location->~_Tp()",
+  "toolchain": {
+    "torch": "2.14.1+cu130",
+    "torch_cuda": "13.0",
+    "cxx11_abi": true,
+    "headers": [
+      {
+        "name": "cuda.h",
+        "available": true,
+        "size_bytes": 1146681,
+        "sha256": "64025f81a9d6d2b10e9e11654f3523e5b046d01b883f0b9ca474e463274b80d4",
+        "version_defines": {
+          "CUDA_VERSION": "13000"
+        }
+      },
+      {
+        "name": "cuda_runtime_api.h",
+        "available": true,
+        "size_bytes": 607504,
+        "sha256": "3f91d3f84f1aafb17cccc475803f9c489b6474f2a3bf0fbc75a5380821c966e0",
+        "version_defines": {}
+      },
+      {
+        "name": "cublasLt.h",
+        "available": true,
+        "size_bytes": 109928,
+        "sha256": "8be43fbf48625b98b8562d7df394e6af0d7ee1c05beeb5333577d5e33182fa3e",
+        "version_defines": {}
+      },
+      {
+        "name": "cublas_api.h",
+        "available": true,
+        "size_bytes": 331797,
+        "sha256": "f6b443f43358de591584d38810d60fcf7c1080677a6ba1605a99e8b58b349890",
+        "version_defines": {
+          "CUBLAS_VER_MAJOR": "13",
+          "CUBLAS_VER_MINOR": "1",
+          "CUBLAS_VER_PATCH": "1",
+          "CUBLAS_VER_BUILD": "3"
+        }
+      }
+    ],
+    "qualification": "Header hashes and framework ABI metadata; no compiler-version subprocess. Native build success establishes only this image's compile/link compatibility."
+  },
+  "native_execution": false,
+  "oracle_checks": 0,
+  "worker_wall_seconds": 22.283690677000003,
+  "artifact_sha256": {
+    "report.json": "9e2f6cc625b36b05d0444dcbf2bd1e71052faf4022d8261b7cb7d4aef4bf1f50",
+    "summary.json": "92e3fb7a74c96fd8c2455012dee42b84214f9d88f374ea488003681075920e43",
+    "screen.log": "4962a4472ba81d79b6c5c5a1beef6a0989def3a3b09aefd5d2c7a425f3970912"
+  },
+  "artifact_processing": "Byte-for-byte copy of allowlisted safe raw receipts; error paths were already sanitized by worker",
+  "shutdown_verified_utc": "2026-10-26T00:33:36.348385+00:00",
+  "stopped_tasks0": true,
+  "all_apps_stopped_tasks_zero": true,
+  "paid_after_zero": true,
+  "cost_reserve_usd": "0.5583812501375",
+  "observed_workspace_gross_delta_usd": "0",
+  "billing_caveat": "May lag; observed workspace delta is not a per-app invoice; retain reserve",
+  "selected_unchanged": "P046",
+  "next_test": "Investigate supported host-C++ load_inline translation for this host-only cuBLASLt binding; preserve all math/precision and original failed source; no new GPU yet"
+}

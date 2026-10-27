@@ -1,0 +1,30 @@
+{
+  "experiment": "P046",
+  "passed": true,
+  "recorded_utc": "2026-10-25T21:46:30.030170+00:00",
+  "completed_observed_utc": "2026-10-25T21:44:34Z",
+  "environment": {
+    "python": "3.12.13",
+    "pytorch": "2.14.1",
+    "system": "Darwin",
+    "machine": "arm64",
+    "cuda_available": false,
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e"
+  },
+  "tests_passed": 7,
+  "tests_total": 7,
+  "unittest_seconds": 8.192,
+  "command": "python -B -m unittest discover -s tests -p test_projection_pooler_column_batch2_hybrid.py -v",
+  "static_check_passed": true,
+  "official_snapshot_hashes_passed": true,
+  "test_source_sha256": "a726e0cf8868f7951958fd90541efebeac6c893f47603022593c0e5d5f29d43e",
+  "scope": "CPU full-K M8 normal/outlier/sparse/zero/ABA and immutability; M16/M32 reduced-K helper; exact dispatch/AST/fallback checks; no CUDA",
+  "inherited_evidence": "P045 all-BF16-payload bit-preserving packing test passed; P046 preparation/helper AST is unchanged. Not rerun as new GPU evidence.",
+  "independent_review": "No source-level blocker; exactly one dispatch predicate change, three targets/27 controls; old P045 gates and rejection preserved.",
+  "assessment_tool_tests": {
+    "passed": 10,
+    "total": 10,
+    "scope": "Offline synthetic and historical receipt arithmetic, not new P046 GPU evidence",
+    "command": "python3 -B -m unittest discover -s tests -p test_projection_p046_assess.py -v"
+  }
+}

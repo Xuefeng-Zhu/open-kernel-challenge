@@ -1,0 +1,159 @@
+{
+  "selected": "P046",
+  "source": "candidates/projection_pooler_column_batch2_hybrid.py",
+  "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "official_job": "41ba778763a5433b",
+  "official_score": 1.1841399408925375,
+  "csv_sha256": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+  "families": {
+    "pooler": {
+      "per_load_share": {
+        "decode 1": 0.3949406863103678,
+        "decode 16": 0.2673963772491458,
+        "decode 32": 0.2661830265549316,
+        "verify 1": 0.3337819672591576,
+        "verify 16": 0.28996080251866957,
+        "verify 32": 0.3105364997686849
+      },
+      "mean_load_share": 0.31046655994349287,
+      "official_calibrated_us": {
+        "1": 18.310103472242716,
+        "16": 18.042685545384167,
+        "32": 18.309500237135,
+        "8": 17.559286898252424,
+        "128": 23.157940944547853,
+        "256": 28.90973331553156
+      },
+      "conditional_uniform_cuts": [
+        {
+          "latency_cut": 0.1,
+          "score_factor": 1.0320523789714855
+        },
+        {
+          "latency_cut": 0.2,
+          "score_factor": 1.0662525489450614
+        }
+      ]
+    },
+    "qkv_gate": {
+      "per_load_share": {
+        "decode 1": 0.2577722631919689,
+        "decode 16": 0.21988943556186824,
+        "decode 32": 0.2218156346327628,
+        "verify 1": 0.26688550149315954,
+        "verify 16": 0.2277972459885718,
+        "verify 32": 0.21332516350297046
+      },
+      "mean_load_share": 0.23458087406188363,
+      "official_calibrated_us": {
+        "1": 11.950748491914062,
+        "16": 14.83713422526362,
+        "32": 15.257672389830963,
+        "8": 14.04006072641958,
+        "128": 18.19320102617776,
+        "256": 19.85973819810843
+      },
+      "conditional_uniform_cuts": [
+        {
+          "latency_cut": 0.1,
+          "score_factor": 1.0240237893781208
+        },
+        {
+          "latency_cut": 0.2,
+          "score_factor": 1.0492351351029394
+        }
+      ]
+    },
+    "unpooler": {
+      "per_load_share": {
+        "decode 1": 0.08785485384103353,
+        "decode 16": 0.2718869248023326,
+        "decode 32": 0.2707690348201478,
+        "verify 1": 0.1349226452610986,
+        "verify 16": 0.25302466556854414,
+        "verify 32": 0.25930415442671334
+      },
+      "mean_load_share": 0.21296037978664498,
+      "official_calibrated_us": {
+        "1": 4.073096341114692,
+        "16": 18.345687172639767,
+        "32": 18.62495055155297,
+        "8": 7.0978832579391495,
+        "128": 20.20800815783727,
+        "256": 24.140202384163178
+      },
+      "conditional_uniform_cuts": [
+        {
+          "latency_cut": 0.1,
+          "score_factor": 1.0217880357556643
+        },
+        {
+          "latency_cut": 0.2,
+          "score_factor": 1.0446086227136717
+        }
+      ]
+    },
+    "o": {
+      "per_load_share": {
+        "decode 1": 0.14877284739172633,
+        "decode 16": 0.10182801444689744,
+        "decode 32": 0.10096994307976391,
+        "verify 1": 0.12273677670555376,
+        "verify 16": 0.0948513201339146,
+        "verify 32": 0.09703550782816177
+      },
+      "mean_load_share": 0.11103240159766964,
+      "official_calibrated_us": {
+        "1": 6.8973552840336305,
+        "16": 6.87088906468001,
+        "32": 6.9452557538672774,
+        "8": 6.4568205791244235,
+        "128": 7.575373123172978,
+        "256": 9.033626177724505
+      },
+      "conditional_uniform_cuts": [
+        {
+          "latency_cut": 0.1,
+          "score_factor": 1.0112298091499756
+        },
+        {
+          "latency_cut": 0.2,
+          "score_factor": 1.022718692662446
+        }
+      ]
+    },
+    "router": {
+      "per_load_share": {
+        "decode 1": 0.11065934926490355,
+        "decode 16": 0.13899924793975588,
+        "decode 32": 0.14026236091239386,
+        "verify 1": 0.14167310928103047,
+        "verify 16": 0.13436596579029983,
+        "verify 32": 0.11979867447346966
+      },
+      "mean_load_share": 0.13095978461030888,
+      "official_calibrated_us": {
+        "1": 5.13035046892873,
+        "16": 9.379034029638914,
+        "32": 9.647999587444058,
+        "8": 7.4530053018160185,
+        "128": 10.731240476990173,
+        "256": 11.152787943323874
+      },
+      "conditional_uniform_cuts": [
+        {
+          "latency_cut": 0.1,
+          "score_factor": 1.013270464413432
+        },
+        {
+          "latency_cut": 0.2,
+          "score_factor": 1.026899362487806
+        }
+      ]
+    }
+  },
+  "scoring": "Geometric mean of six load speedups; all five family times within each load have weight62",
+  "qualification": "Shares and hypothetical cuts are arithmetic on one official receipt. They do not identify a hardware bottleneck or predict attainable gains.",
+  "gpu_executed": false,
+  "new_official_check": false
+}

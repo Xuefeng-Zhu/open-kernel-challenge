@@ -1,0 +1,5427 @@
+{
+  "assessment": {
+    "automatic_selection": false,
+    "cases": [
+      {
+        "gates": {
+          "matched_at_least10_of12_pairs_win": false,
+          "matched_raw_latency_cut_at_least10pct": false,
+          "selected_regression_at_most5pct": false
+        },
+        "m": 8,
+        "matched_latency_cut": 0.022448410332357005,
+        "selected_latency_regression": 0.21317685150515553
+      },
+      {
+        "gates": {
+          "matched_at_least10_of12_pairs_win": false,
+          "matched_raw_latency_cut_at_least10pct": false,
+          "selected_regression_at_most5pct": true
+        },
+        "m": 7,
+        "matched_latency_cut": 0.017574473373943467,
+        "selected_latency_regression": 0.048785314681344394
+      }
+    ],
+    "official_score": null,
+    "qualification": "Bounded two-case mechanism screen; twelve order-balanced pairs, no formal confidence interval. Passing does not promote P046 or establish a whole-score gain.",
+    "screen_passed": false
+  },
+  "cases": [
+    {
+      "capture": {
+        "control": {
+          "synchronized_wall_seconds": 0.504226019999999
+        },
+        "p046": {
+          "synchronized_wall_seconds": 0.1329296539999998
+        },
+        "weight_first": {
+          "synchronized_wall_seconds": 0.004439384000001212
+        }
+      },
+      "immutable_original_and_prepared_state": true,
+      "layer": "pooler",
+      "m": 8,
+      "p046_route": "column_batch2",
+      "passed": true,
+      "series": {
+        "matched": {
+          "correctness": [
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            }
+          ],
+          "samples": [
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.843305098,
+                  "elapsed_start_seconds": 2.8431558569999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.990708+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.844146498999999,
+                  "elapsed_start_seconds": 2.8440125729999988,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.991566+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5200200,
+              "us": {
+                "candidate": 25.887999683618546,
+                "parent": 27.03999914228916
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8623138459999993,
+                  "elapsed_start_seconds": 2.8621633969999998,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.009715+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.8632875159999998,
+                  "elapsed_start_seconds": 2.8631316800000004,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.010684+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5200201,
+              "us": {
+                "candidate": 27.615999802947044,
+                "parent": 26.464000344276428
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.869847306999999,
+                  "elapsed_start_seconds": 2.8696891759999996,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.017240+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.8708473619999992,
+                  "elapsed_start_seconds": 2.870702906,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.018256+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5200202,
+              "us": {
+                "candidate": 26.016000658273697,
+                "parent": 26.944000273942947
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8902966130000003,
+                  "elapsed_start_seconds": 2.890147141,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.037699+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.8912974599999988,
+                  "elapsed_start_seconds": 2.891158319999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.038711+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5200203,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 26.559999212622643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.898119736,
+                  "elapsed_start_seconds": 2.897962562,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.045513+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.899240101,
+                  "elapsed_start_seconds": 2.8990989969999994,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.046652+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5200204,
+              "us": {
+                "candidate": 25.82399919629097,
+                "parent": 26.59199945628643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.920705881,
+                  "elapsed_start_seconds": 2.9205376469999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.068088+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.921931892,
+                  "elapsed_start_seconds": 2.921777895,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.069330+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5200205,
+              "us": {
+                "candidate": 26.464000344276428,
+                "parent": 27.103999629616737
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.929335364,
+                  "elapsed_start_seconds": 2.929176342,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.076728+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.9304848359999998,
+                  "elapsed_start_seconds": 2.9303381369999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.077890+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 6,
+              "seed": 5200206,
+              "us": {
+                "candidate": 26.048000901937485,
+                "parent": 27.07199938595295
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.952291485,
+                  "elapsed_start_seconds": 2.952135192,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.099686+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.953555743999999,
+                  "elapsed_start_seconds": 2.9534099499999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.100962+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 7,
+              "seed": 5200207,
+              "us": {
+                "candidate": 25.95200017094612,
+                "parent": 26.559999212622643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9614621529999994,
+                  "elapsed_start_seconds": 2.961302909999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.108854+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.962736398999999,
+                  "elapsed_start_seconds": 2.9625899760000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.110143+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 8,
+              "seed": 5200208,
+              "us": {
+                "candidate": 25.95200017094612,
+                "parent": 28.00000086426735
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9860411449999997,
+                  "elapsed_start_seconds": 2.985882449,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.133433+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.9873890019999987,
+                  "elapsed_start_seconds": 2.987231334999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.134784+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 9,
+              "seed": 5200209,
+              "us": {
+                "candidate": 26.399999856948853,
+                "parent": 28.00000086426735
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9954414160000002,
+                  "elapsed_start_seconds": 2.995280254999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.142820+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.996929204999999,
+                  "elapsed_start_seconds": 2.9967766129999998,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.144329+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 10,
+              "seed": 5200210,
+              "us": {
+                "candidate": 26.528000831604004,
+                "parent": 26.91200003027916
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.021329916999999,
+                  "elapsed_start_seconds": 3.0211714379999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.168723+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0227597490000004,
+                  "elapsed_start_seconds": 3.0226093029999994,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.170161+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 11,
+              "seed": 5200211,
+              "us": {
+                "candidate": 27.488000690937042,
+                "parent": 26.559999212622643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0312107689999994,
+                  "elapsed_start_seconds": 3.0310483460000004,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.178599+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0327330509999992,
+                  "elapsed_start_seconds": 3.032581017,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.180134+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 12,
+              "seed": 5200212,
+              "us": {
+                "candidate": 25.82399919629097,
+                "parent": 26.72000043094158
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0587729780000004,
+                  "elapsed_start_seconds": 3.0586134739999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.206165+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0603058900000004,
+                  "elapsed_start_seconds": 3.060153183999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.207706+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 13,
+              "seed": 5200213,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 28.00000086426735
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0693595229999993,
+                  "elapsed_start_seconds": 3.069197249,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.216748+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.07091516,
+                  "elapsed_start_seconds": 3.07076584,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.218318+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 14,
+              "seed": 5200214,
+              "us": {
+                "candidate": 26.944000273942947,
+                "parent": 26.91200003027916
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.100043724999999,
+                  "elapsed_start_seconds": 3.099889192999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.247441+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.101683394,
+                  "elapsed_start_seconds": 3.10153137,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.249084+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 15,
+              "seed": 5200215,
+              "us": {
+                "candidate": 26.1439997702837,
+                "parent": 26.815999299287796
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.1109265510000004,
+                  "elapsed_start_seconds": 3.1107636549999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.258315+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.1126912649999987,
+                  "elapsed_start_seconds": 3.1125395410000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.260092+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 16,
+              "seed": 5200216,
+              "us": {
+                "candidate": 25.82399919629097,
+                "parent": 27.008000761270523
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.142390486,
+                  "elapsed_start_seconds": 3.1422220000000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.289773+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.144127204,
+                  "elapsed_start_seconds": 3.143976883999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.291529+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 17,
+              "seed": 5200217,
+              "us": {
+                "candidate": 26.1439997702837,
+                "parent": 28.12799997627735
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.1538662100000003,
+                  "elapsed_start_seconds": 3.153700626999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.301252+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.155652007999999,
+                  "elapsed_start_seconds": 3.155499430999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.303052+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 18,
+              "seed": 5200218,
+              "us": {
+                "candidate": 27.424000203609467,
+                "parent": 26.75200067460537
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.186952067,
+                  "elapsed_start_seconds": 3.1867911170000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.334342+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.1889125949999997,
+                  "elapsed_start_seconds": 3.1887559149999998,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.336308+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 19,
+              "seed": 5200219,
+              "us": {
+                "candidate": 26.496000587940216,
+                "parent": 26.59199945628643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.1990361489999994,
+                  "elapsed_start_seconds": 3.198874989,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.346426+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.2009293729999992,
+                  "elapsed_start_seconds": 3.200773302,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.348325+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 20,
+              "seed": 5200220,
+              "us": {
+                "candidate": 26.016000658273697,
+                "parent": 26.464000344276428
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.232415565,
+                  "elapsed_start_seconds": 3.2322461550000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.379798+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.2344410749999994,
+                  "elapsed_start_seconds": 3.234284037,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.381836+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 21,
+              "seed": 5200221,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 26.847999542951584
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.245020132999999,
+                  "elapsed_start_seconds": 3.244844657,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.392395+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.24698959,
+                  "elapsed_start_seconds": 3.246836243999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.394389+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 22,
+              "seed": 5200222,
+              "us": {
+                "candidate": 26.87999978661537,
+                "parent": 26.559999212622643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.280034387999999,
+                  "elapsed_start_seconds": 3.2798756549999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.427427+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.282078222999999,
+                  "elapsed_start_seconds": 3.281921124,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.429473+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 23,
+              "seed": 5200223,
+              "us": {
+                "candidate": 27.424000203609467,
+                "parent": 26.72000043094158
+              }
+            }
+          ],
+          "summary": {
+            "candidate_raw_latency_cut": 0.022448410332357005,
+            "median_paired_raw_ratio": 1.0229639136897002,
+            "pair_distribution": {
+              "count": 12,
+              "maximum": 1.0697213525858478,
+              "median": 1.0229639136897002,
+              "minimum": 0.9811879977400116,
+              "p10": 0.9895200179795822,
+              "p90": 1.0598900279395906
+            },
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "raw_us": {
+              "candidate": {
+                "count": 24,
+                "maximum": 27.615999802947044,
+                "median": 26.176000013947487,
+                "minimum": 25.82399919629097,
+                "p10": 25.843199342489243,
+                "p90": 27.424000203609467
+              },
+              "parent": {
+                "count": 24,
+                "maximum": 28.12799997627735,
+                "median": 26.83199942111969,
+                "minimum": 26.464000344276428,
+                "p10": 26.559999212622643,
+                "p90": 28.00000086426735
+              }
+            },
+            "reverse_order_pair_ratios": [
+              1.0004639650408655,
+              1.0244903132078447,
+              1.0269580213716036,
+              1.0313393252804348,
+              1.0697213525858478,
+              0.9900637928769053,
+              1.0520438983980058,
+              1.012168756586575,
+              1.060761820110878,
+              0.9894595985465463,
+              1.021437514171556,
+              0.9811879977400116
+            ],
+            "round_parent_over_candidate_ratios": [
+              1.0444993615864258,
+              0.9582850714480494,
+              1.035670341028152,
+              1.0134309734261064,
+              1.029739787945229,
+              1.024183769536518,
+              1.0393119797511716,
+              1.0234278297499855,
+              1.078914946047743,
+              1.0606060990904647,
+              1.01447524075081,
+              0.9662397608051441,
+              1.0346964553336613,
+              1.0696821840368265,
+              0.9988123425126768,
+              1.025703776580044,
+              1.045848884829179,
+              1.0758874014468416,
+              0.9754959333425162,
+              1.003623145615037,
+              1.0172201596966157,
+              1.0256723536310373,
+              0.9880952166468367,
+              0.9743290633225992
+            ],
+            "total_pairs": 12,
+            "winning_pairs": 9
+          },
+          "warmup": [
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.7753272659999997,
+                  "elapsed_start_seconds": 2.775069813,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.922609+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.775986035999999,
+                  "elapsed_start_seconds": 2.7758453349999996,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.923396+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5200100,
+              "us": {
+                "candidate": 27.39199995994568,
+                "parent": 35.840000957250595
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.790189303,
+                  "elapsed_start_seconds": 2.790046930999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.937599+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.7908213689999997,
+                  "elapsed_start_seconds": 2.7906846519999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.938238+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5200101,
+              "us": {
+                "candidate": 26.30399912595749,
+                "parent": 26.815999299287796
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.796288959,
+                  "elapsed_start_seconds": 2.796128828999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.943680+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.7970033969999992,
+                  "elapsed_start_seconds": 2.796854374999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.944408+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5200102,
+              "us": {
+                "candidate": 27.2000003606081,
+                "parent": 26.559999212622643
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8123077480000003,
+                  "elapsed_start_seconds": 2.8121609019999987,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.959713+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.813094823,
+                  "elapsed_start_seconds": 2.8129523379999988,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.960505+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5200103,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 26.91200003027916
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8190037409999995,
+                  "elapsed_start_seconds": 2.818850546,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.966402+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.819812828,
+                  "elapsed_start_seconds": 2.8196692169999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.967223+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5200104,
+              "us": {
+                "candidate": 26.464000344276428,
+                "parent": 26.75200067460537
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8361853440000004,
+                  "elapsed_start_seconds": 2.836040017,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.983592+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.837082043999999,
+                  "elapsed_start_seconds": 2.8369404639999996,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.984493+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5200105,
+              "us": {
+                "candidate": 26.43200010061264,
+                "parent": 27.23200060427189
+              }
+            }
+          ]
+        },
+        "selected": {
+          "correctness": [
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            }
+          ],
+          "samples": [
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8487414419999997,
+                  "elapsed_start_seconds": 2.848596704,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.996149+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.849630013999999,
+                  "elapsed_start_seconds": 2.8494889499999996,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.997042+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5200200,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 21.983999758958817
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8564362990000003,
+                  "elapsed_start_seconds": 2.856245530999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.003796+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.857472458,
+                  "elapsed_start_seconds": 2.8573245739999997,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.004877+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5200201,
+              "us": {
+                "candidate": 26.240000501275063,
+                "parent": 21.568000316619873
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.875931565,
+                  "elapsed_start_seconds": 2.8757842809999996,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.023336+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.876938184,
+                  "elapsed_start_seconds": 2.876794479999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.024347+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5200202,
+              "us": {
+                "candidate": 27.51999907195568,
+                "parent": 22.975999861955643
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8838277320000003,
+                  "elapsed_start_seconds": 2.883673411,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.031225+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.8849174039999994,
+                  "elapsed_start_seconds": 2.884772415999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.032324+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5200203,
+              "us": {
+                "candidate": 26.688000187277794,
+                "parent": 22.048000246286392
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9047549949999993,
+                  "elapsed_start_seconds": 2.904607413999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.052159+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.9059549859999994,
+                  "elapsed_start_seconds": 2.9058004519999994,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.053352+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5200204,
+              "us": {
+                "candidate": 26.016000658273697,
+                "parent": 21.856000646948814
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.913195472,
+                  "elapsed_start_seconds": 2.913037254999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.060588+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.914358612999999,
+                  "elapsed_start_seconds": 2.9142148809999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.061767+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5200205,
+              "us": {
+                "candidate": 25.919999927282333,
+                "parent": 21.75999991595745
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9364365550000002,
+                  "elapsed_start_seconds": 2.9362859209999996,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.083837+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.937672227,
+                  "elapsed_start_seconds": 2.9375242869999987,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.085077+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 6,
+              "seed": 5200206,
+              "us": {
+                "candidate": 26.335999369621277,
+                "parent": 21.91999927163124
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9452283769999994,
+                  "elapsed_start_seconds": 2.9450687469999988,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.092620+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.946414601999999,
+                  "elapsed_start_seconds": 2.94626347,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.093816+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 7,
+              "seed": 5200207,
+              "us": {
+                "candidate": 27.68000029027462,
+                "parent": 21.695999428629875
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.9690744870000003,
+                  "elapsed_start_seconds": 2.9689241390000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.116476+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.970339974,
+                  "elapsed_start_seconds": 2.970192205,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.117745+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 8,
+              "seed": 5200208,
+              "us": {
+                "candidate": 25.696000084280968,
+                "parent": 21.376000717282295
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.97820617,
+                  "elapsed_start_seconds": 2.978045496,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.125597+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.9795508749999993,
+                  "elapsed_start_seconds": 2.979406592,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.126959+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 9,
+              "seed": 5200209,
+              "us": {
+                "candidate": 26.399999856948853,
+                "parent": 21.75999991595745
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0036267589999994,
+                  "elapsed_start_seconds": 3.003475775,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.151027+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.005023734,
+                  "elapsed_start_seconds": 3.0048614999999987,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.152414+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 10,
+              "seed": 5200210,
+              "us": {
+                "candidate": 27.264000847935677,
+                "parent": 21.568000316619873
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0132340939999995,
+                  "elapsed_start_seconds": 3.013075939,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.160628+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0145971879999998,
+                  "elapsed_start_seconds": 3.0144550379999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.162007+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 11,
+              "seed": 5200211,
+              "us": {
+                "candidate": 27.68000029027462,
+                "parent": 21.568000316619873
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0399027399999987,
+                  "elapsed_start_seconds": 3.0397501590000005,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.187301+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0414321920000003,
+                  "elapsed_start_seconds": 3.041280474999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.188822+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 12,
+              "seed": 5200212,
+              "us": {
+                "candidate": 26.367999613285065,
+                "parent": 21.663999184966087
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0500492479999988,
+                  "elapsed_start_seconds": 3.049890004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.197441+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.051549957999999,
+                  "elapsed_start_seconds": 3.051403237999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.198955+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 13,
+              "seed": 5200213,
+              "us": {
+                "candidate": 25.728000327944756,
+                "parent": 21.663999184966087
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0787146409999995,
+                  "elapsed_start_seconds": 3.078553829999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.226105+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0807833249999987,
+                  "elapsed_start_seconds": 3.0806061719999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.228156+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 14,
+              "seed": 5200214,
+              "us": {
+                "candidate": 26.27200074493885,
+                "parent": 21.43999934196472
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.0907936009999997,
+                  "elapsed_start_seconds": 3.090635238999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.238186+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.0923981959999995,
+                  "elapsed_start_seconds": 3.0922397630000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.239793+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 15,
+              "seed": 5200215,
+              "us": {
+                "candidate": 26.1439997702837,
+                "parent": 21.568000316619873
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.120715038,
+                  "elapsed_start_seconds": 3.120560211999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.268111+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.1225436650000002,
+                  "elapsed_start_seconds": 3.1223899480000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.269942+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 16,
+              "seed": 5200216,
+              "us": {
+                "candidate": 25.919999927282333,
+                "parent": 21.983999758958817
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.132513696,
+                  "elapsed_start_seconds": 3.1323490819999993,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.279900+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.134326239,
+                  "elapsed_start_seconds": 3.1341728040000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.281724+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 17,
+              "seed": 5200217,
+              "us": {
+                "candidate": 27.648000046610832,
+                "parent": 21.824000403285027
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.163784753,
+                  "elapsed_start_seconds": 3.1636306009999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.311182+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.165621676999999,
+                  "elapsed_start_seconds": 3.1654668699999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.313019+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 18,
+              "seed": 5200218,
+              "us": {
+                "candidate": 25.919999927282333,
+                "parent": 21.856000646948814
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.176025402999999,
+                  "elapsed_start_seconds": 3.1758611539999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.323412+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.177983272999999,
+                  "elapsed_start_seconds": 3.1778306329999992,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.325382+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 19,
+              "seed": 5200219,
+              "us": {
+                "candidate": 25.98400041460991,
+                "parent": 21.95199951529503
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.2094940839999992,
+                  "elapsed_start_seconds": 3.2093408439999997,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.356892+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.2113259959999993,
+                  "elapsed_start_seconds": 3.211173573,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.358726+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 20,
+              "seed": 5200220,
+              "us": {
+                "candidate": 27.23200060427189,
+                "parent": 21.695999428629875
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.221564225,
+                  "elapsed_start_seconds": 3.221401930999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.368953+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.223492155999999,
+                  "elapsed_start_seconds": 3.223342089999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.370894+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 21,
+              "seed": 5200221,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 21.75999991595745
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.256071692999999,
+                  "elapsed_start_seconds": 3.2559178699999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.403469+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.2580384889999987,
+                  "elapsed_start_seconds": 3.2578845629999993,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.405436+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 22,
+              "seed": 5200222,
+              "us": {
+                "candidate": 26.367999613285065,
+                "parent": 21.503999829292297
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.268898675999999,
+                  "elapsed_start_seconds": 3.2687356449999996,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.416287+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.2709396020000003,
+                  "elapsed_start_seconds": 3.270788284,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.418341+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 23,
+              "seed": 5200223,
+              "us": {
+                "candidate": 26.59199945628643,
+                "parent": 21.60000056028366
+              }
+            }
+          ],
+          "summary": {
+            "candidate_raw_latency_cut": -0.21317685150515553,
+            "median_paired_raw_ratio": 0.8242821306385192,
+            "pair_distribution": {
+              "count": 12,
+              "maximum": 0.8440183414208279,
+              "median": 0.8242821306385192,
+              "minimum": 0.7851127726570081,
+              "p10": 0.80826566950013,
+              "p90": 0.8389978193281367
+            },
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "raw_us": {
+              "candidate": {
+                "count": 24,
+                "maximum": 27.68000029027462,
+                "median": 26.304000057280064,
+                "minimum": 25.696000084280968,
+                "p10": 25.919999927282333,
+                "p90": 27.609599754214287
+              },
+              "parent": {
+                "count": 24,
+                "maximum": 22.975999861955643,
+                "median": 21.727999672293663,
+                "minimum": 21.376000717282295,
+                "p10": 21.52319997549057,
+                "p90": 21.983999758958817
+              }
+            },
+            "reverse_order_pair_ratios": [
+              0.8308540387811455,
+              0.8304999087200247,
+              0.8398022360678167,
+              0.8077038469012668,
+              0.8280526427881257,
+              0.7851127726570081,
+              0.8317580686710163,
+              0.8205116184889126,
+              0.8182220463700128,
+              0.8440183414208279,
+              0.8133220728898984,
+              0.8139025642131883
+            ],
+            "round_parent_over_candidate_ratios": [
+              0.8398532910775127,
+              0.8219512158763805,
+              0.8348837440684869,
+              0.8261390921601052,
+              0.8400984045946391,
+              0.8395061719523295,
+              0.8323207699084351,
+              0.7838150000400388,
+              0.83188047350446,
+              0.8242424255252377,
+              0.7910797992163692,
+              0.7791907547124485,
+              0.8216019228872808,
+              0.8420397585830055,
+              0.8160779055281892,
+              0.8249694196040697,
+              0.8481481412281702,
+              0.7893518651075188,
+              0.8432099038682512,
+              0.8448275540725505,
+              0.7967097145711145,
+              0.8302808189128416,
+              0.8155339860691546,
+              0.8122744059088552
+            ],
+            "total_pairs": 12,
+            "winning_pairs": 0
+          },
+          "warmup": [
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.7796739489999993,
+                  "elapsed_start_seconds": 2.7795297409999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.927081+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.780541971,
+                  "elapsed_start_seconds": 2.780402946999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.927956+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5200100,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 22.016000002622604
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.7859340350000004,
+                  "elapsed_start_seconds": 2.785786311999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.933338+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.7865680599999987,
+                  "elapsed_start_seconds": 2.786435296999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.933989+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5200101,
+              "us": {
+                "candidate": 26.399999856948853,
+                "parent": 21.407999098300934
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8010762390000004,
+                  "elapsed_start_seconds": 2.8009325159999996,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.948484+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.8018056809999994,
+                  "elapsed_start_seconds": 2.8016683349999987,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.949222+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5200102,
+              "us": {
+                "candidate": 26.623999699950218,
+                "parent": 21.75999991595745
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8074290909999995,
+                  "elapsed_start_seconds": 2.807279564,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.954816+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.808167332,
+                  "elapsed_start_seconds": 2.8080357730000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.955589+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5200103,
+              "us": {
+                "candidate": 27.264000847935677,
+                "parent": 22.016000002622604
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.8240542939999997,
+                  "elapsed_start_seconds": 2.8239126509999988,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.971465+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.824923009999999,
+                  "elapsed_start_seconds": 2.824781481999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.972335+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5200104,
+              "us": {
+                "candidate": 26.079999282956123,
+                "parent": 22.784000262618065
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 2.830804532,
+                  "elapsed_start_seconds": 2.830655395999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:35.978207+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 2.831645148,
+                  "elapsed_start_seconds": 2.831511388999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:35.979064+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5200105,
+              "us": {
+                "candidate": 26.016000658273697,
+                "parent": 21.695999428629875
+              }
+            }
+          ]
+        }
+      },
+      "shared_input_address": true,
+      "state_check_scope": "After prepare, every capture, every comparison correctness phase and every timing round; input/config after every observed replay"
+    },
+    {
+      "capture": {
+        "control": {
+          "synchronized_wall_seconds": 0.004662079999999236
+        },
+        "p046": {
+          "synchronized_wall_seconds": 0.014328027999999549
+        },
+        "weight_first": {
+          "synchronized_wall_seconds": 0.0026482550000004323
+        }
+      },
+      "immutable_original_and_prepared_state": true,
+      "layer": "pooler",
+      "m": 7,
+      "p046_route": "pretransposed_mm",
+      "passed": true,
+      "series": {
+        "matched": {
+          "correctness": [
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            }
+          ],
+          "samples": [
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.707002705999999,
+                  "elapsed_start_seconds": 3.7068312569999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.854382+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.709735373999999,
+                  "elapsed_start_seconds": 3.709571328999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.857123+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5202200,
+              "us": {
+                "candidate": 25.95200017094612,
+                "parent": 26.75200067460537
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.7511819409999987,
+                  "elapsed_start_seconds": 3.751014006,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.898565+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.7539369859999994,
+                  "elapsed_start_seconds": 3.753773849,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.901325+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5202201,
+              "us": {
+                "candidate": 26.847999542951584,
+                "parent": 27.904000133275986
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.767638711,
+                  "elapsed_start_seconds": 3.767472354999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.915023+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.770465881,
+                  "elapsed_start_seconds": 3.7702996239999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.917851+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5202202,
+              "us": {
+                "candidate": 27.936000376939774,
+                "parent": 26.335999369621277
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.815345043999999,
+                  "elapsed_start_seconds": 3.8151773349999996,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.962728+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.818156115999999,
+                  "elapsed_start_seconds": 3.817992878,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.965544+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5202203,
+              "us": {
+                "candidate": 26.048000901937485,
+                "parent": 26.240000501275063
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.8326049089999987,
+                  "elapsed_start_seconds": 3.8324341309999994,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.979984+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.8357591299999996,
+                  "elapsed_start_seconds": 3.835593822,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.983145+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5202204,
+              "us": {
+                "candidate": 27.55199931561947,
+                "parent": 26.496000587940216
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.881196939999999,
+                  "elapsed_start_seconds": 3.8810283830000003,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.028578+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.884326173,
+                  "elapsed_start_seconds": 3.8841583760000002,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.031709+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5202205,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 27.712000533938408
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.899364919,
+                  "elapsed_start_seconds": 3.8991897800000004,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.046739+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.902546781,
+                  "elapsed_start_seconds": 3.902379675999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.049930+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 6,
+              "seed": 5202206,
+              "us": {
+                "candidate": 27.488000690937042,
+                "parent": 30.047999694943428
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.9484278550000003,
+                  "elapsed_start_seconds": 3.948252558,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.095803+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.9513216040000003,
+                  "elapsed_start_seconds": 3.9511570759999994,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.098709+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 7,
+              "seed": 5202207,
+              "us": {
+                "candidate": 27.07199938595295,
+                "parent": 27.936000376939774
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.965780840999999,
+                  "elapsed_start_seconds": 3.9656098120000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.113161+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.9688521439999995,
+                  "elapsed_start_seconds": 3.9686892470000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.116240+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 8,
+              "seed": 5202208,
+              "us": {
+                "candidate": 27.648000046610832,
+                "parent": 27.008000761270523
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.015705449999999,
+                  "elapsed_start_seconds": 4.0155388169999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.163089+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.018917633999999,
+                  "elapsed_start_seconds": 4.018752468999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.166303+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 9,
+              "seed": 5202209,
+              "us": {
+                "candidate": 26.399999856948853,
+                "parent": 27.648000046610832
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.033805429999999,
+                  "elapsed_start_seconds": 4.033634523,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.181185+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.036953308999999,
+                  "elapsed_start_seconds": 4.036790226999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.184342+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 10,
+              "seed": 5202210,
+              "us": {
+                "candidate": 27.07199938595295,
+                "parent": 26.75200067460537
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.086413112999999,
+                  "elapsed_start_seconds": 4.086223430999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.233774+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.08992198,
+                  "elapsed_start_seconds": 4.08975321,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.237304+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 11,
+              "seed": 5202211,
+              "us": {
+                "candidate": 26.847999542951584,
+                "parent": 27.488000690937042
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.1065483,
+                  "elapsed_start_seconds": 4.10637732,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.253927+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.109818369999999,
+                  "elapsed_start_seconds": 4.109653827999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.257205+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 12,
+              "seed": 5202212,
+              "us": {
+                "candidate": 26.11199952661991,
+                "parent": 28.031999245285988
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.160844916,
+                  "elapsed_start_seconds": 4.160674386,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.308225+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.164218073999999,
+                  "elapsed_start_seconds": 4.164053891,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.311605+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 13,
+              "seed": 5202213,
+              "us": {
+                "candidate": 26.27200074493885,
+                "parent": 26.528000831604004
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.180060556999999,
+                  "elapsed_start_seconds": 4.179891181,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.327442+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.183423182,
+                  "elapsed_start_seconds": 4.183245152,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.330796+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 14,
+              "seed": 5202214,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 28.351999819278717
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.234292992,
+                  "elapsed_start_seconds": 4.234115837999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.381667+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.237684694,
+                  "elapsed_start_seconds": 4.237516561,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.385068+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 15,
+              "seed": 5202215,
+              "us": {
+                "candidate": 25.98400041460991,
+                "parent": 26.11199952661991
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.253882344999999,
+                  "elapsed_start_seconds": 4.253714303999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.401266+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.257188939999999,
+                  "elapsed_start_seconds": 4.257024595999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.404576+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 16,
+              "seed": 5202216,
+              "us": {
+                "candidate": 25.696000084280968,
+                "parent": 26.784000918269157
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.311415689999999,
+                  "elapsed_start_seconds": 4.311241065999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.458791+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.314745695999999,
+                  "elapsed_start_seconds": 4.314582483999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.462134+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 17,
+              "seed": 5202217,
+              "us": {
+                "candidate": 26.496000587940216,
+                "parent": 26.72000043094158
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.330721433999999,
+                  "elapsed_start_seconds": 4.330549975,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.478101+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.334283021999999,
+                  "elapsed_start_seconds": 4.334104259,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.481655+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 18,
+              "seed": 5202218,
+              "us": {
+                "candidate": 25.95200017094612,
+                "parent": 26.87999978661537
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.388338361999999,
+                  "elapsed_start_seconds": 4.388166467,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.535717+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.391890496,
+                  "elapsed_start_seconds": 4.3917271929999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.539278+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 19,
+              "seed": 5202219,
+              "us": {
+                "candidate": 29.311999678611755,
+                "parent": 26.335999369621277
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.408362186,
+                  "elapsed_start_seconds": 4.408189820999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.555740+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.411985805999999,
+                  "elapsed_start_seconds": 4.411824485,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.559376+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 20,
+              "seed": 5202220,
+              "us": {
+                "candidate": 26.240000501275063,
+                "parent": 26.847999542951584
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.472498329999999,
+                  "elapsed_start_seconds": 4.472328345999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.619879+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.476411976,
+                  "elapsed_start_seconds": 4.476231944,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.623783+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 21,
+              "seed": 5202221,
+              "us": {
+                "candidate": 27.39199995994568,
+                "parent": 26.240000501275063
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.495004462999999,
+                  "elapsed_start_seconds": 4.494832162,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.642383+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.499010974999999,
+                  "elapsed_start_seconds": 4.49884638,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.646398+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 22,
+              "seed": 5202222,
+              "us": {
+                "candidate": 26.208000257611275,
+                "parent": 26.688000187277794
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.55689684,
+                  "elapsed_start_seconds": 4.556729767,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.704281+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.560659906,
+                  "elapsed_start_seconds": 4.560496332,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.708048+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 23,
+              "seed": 5202223,
+              "us": {
+                "candidate": 26.335999369621277,
+                "parent": 27.135999873280525
+              }
+            }
+          ],
+          "summary": {
+            "candidate_raw_latency_cut": 0.017574473373943467,
+            "median_paired_raw_ratio": 1.0178888606796481,
+            "pair_distribution": {
+              "count": 12,
+              "maximum": 1.062082259707791,
+              "median": 1.0178888606796481,
+              "minimum": 0.9646758151965482,
+              "p10": 0.9760634683812963,
+              "p90": 1.0430806459266413
+            },
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "raw_us": {
+              "candidate": {
+                "count": 24,
+                "maximum": 29.311999678611755,
+                "median": 26.367999613285065,
+                "minimum": 25.696000084280968,
+                "p10": 25.961600244045258,
+                "p90": 27.619199827313423
+              },
+              "parent": {
+                "count": 24,
+                "maximum": 30.047999694943428,
+                "median": 26.81600023061037,
+                "minimum": 26.11199952661991,
+                "p10": 26.268800161778927,
+                "p90": 28.003199584782124
+              }
+            },
+            "reverse_order_pair_ratios": [
+              1.035070622222008,
+              0.9745127105890937,
+              1.008394805982417,
+              1.062082259707791,
+              1.0114496217853384,
+              1.005850829157275,
+              1.0411484554087127,
+              1.0432953337619666,
+              1.0252576798539923,
+              0.9646758151965482,
+              0.9900202885111196,
+              1.0243280995739579
+            ],
+            "round_parent_over_candidate_ratios": [
+              1.0308261597714872,
+              1.0393325613938202,
+              0.9427261961007402,
+              1.0073709917340834,
+              0.9616725190944456,
+              1.0573870673665895,
+              1.093131509737281,
+              1.0319149309465165,
+              0.9768518777393896,
+              1.0472727347130455,
+              0.9881797163635568,
+              1.023837945429103,
+              1.0735294023235842,
+              1.0097442173951852,
+              1.0831295768708658,
+              1.0049260741212902,
+              1.0423412527404898,
+              1.0084541001672276,
+              1.0357583080131205,
+              0.8984716040658941,
+              1.0231706947432024,
+              0.9579439449344647,
+              1.0183150154513265,
+              1.03037669056835
+            ],
+            "total_pairs": 12,
+            "winning_pairs": 9
+          },
+          "warmup": [
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.5320926539999995,
+                  "elapsed_start_seconds": 3.5319196159999997,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.679467+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.5346879169999994,
+                  "elapsed_start_seconds": 3.534523429,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.682074+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5202100,
+              "us": {
+                "candidate": 26.335999369621277,
+                "parent": 28.48000079393387
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.5729416129999994,
+                  "elapsed_start_seconds": 3.5727770870000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.720328+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.575410883,
+                  "elapsed_start_seconds": 3.575241083,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.722793+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5202101,
+              "us": {
+                "candidate": 26.75200067460537,
+                "parent": 26.464000344276428
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.588135522,
+                  "elapsed_start_seconds": 3.5879665949999993,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.735517+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.59078551,
+                  "elapsed_start_seconds": 3.590621618,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.738173+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5202102,
+              "us": {
+                "candidate": 27.39199995994568,
+                "parent": 26.43200010061264
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.631816359,
+                  "elapsed_start_seconds": 3.631643727,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.779193+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.6346189189999993,
+                  "elapsed_start_seconds": 3.6344531910000004,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.782004+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5202103,
+              "us": {
+                "candidate": 26.11199952661991,
+                "parent": 26.335999369621277
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.647423411,
+                  "elapsed_start_seconds": 3.6472409289999987,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.794791+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.6500799930000003,
+                  "elapsed_start_seconds": 3.6499170230000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.797468+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5202104,
+              "us": {
+                "candidate": 27.2000003606081,
+                "parent": 26.91200003027916
+              }
+            },
+            {
+              "comparison": "matched",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.6911259760000004,
+                  "elapsed_start_seconds": 3.6909571010000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.838507+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.693939414999999,
+                  "elapsed_start_seconds": 3.6937767800000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.841328+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5202105,
+              "us": {
+                "candidate": 26.976000517606735,
+                "parent": 27.712000533938408
+              }
+            }
+          ]
+        },
+        "selected": {
+          "correctness": [
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "before",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "outliers",
+              "label": "B",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "normal",
+              "label": "A-return",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "sparse",
+              "label": "sparse",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "parent",
+              "same_input_address": true
+            },
+            {
+              "config_unchanged": true,
+              "distribution": "zero",
+              "label": "zero",
+              "passed": true,
+              "phase": "after",
+              "runner": "candidate",
+              "same_input_address": true
+            }
+          ],
+          "samples": [
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.721044267,
+                  "elapsed_start_seconds": 3.7208701580000003,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.868421+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.7237193469999994,
+                  "elapsed_start_seconds": 3.723556519999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.871108+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5202200,
+              "us": {
+                "candidate": 25.98400041460991,
+                "parent": 25.05600079894066
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.7368946459999997,
+                  "elapsed_start_seconds": 3.7367221859999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.884273+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.739555825,
+                  "elapsed_start_seconds": 3.7393965519999988,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.886948+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5202201,
+              "us": {
+                "candidate": 26.30399912595749,
+                "parent": 24.768000468611717
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.7827033209999996,
+                  "elapsed_start_seconds": 3.782535525,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.930085+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.785723549,
+                  "elapsed_start_seconds": 3.785557172999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.933108+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5202202,
+              "us": {
+                "candidate": 26.1439997702837,
+                "parent": 24.480000138282776
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.8000628360000004,
+                  "elapsed_start_seconds": 3.799892023,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.947443+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.802932448,
+                  "elapsed_start_seconds": 3.802766731,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.950318+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5202203,
+              "us": {
+                "candidate": 25.98400041460991,
+                "parent": 25.087999179959297
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.848346909,
+                  "elapsed_start_seconds": 3.848181792,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.995732+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.8512249909999987,
+                  "elapsed_start_seconds": 3.8510608800000004,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.998612+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5202204,
+              "us": {
+                "candidate": 26.30399912595749,
+                "parent": 24.800000712275505
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.8653926809999994,
+                  "elapsed_start_seconds": 3.865208920999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.012758+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.868300732,
+                  "elapsed_start_seconds": 3.868136676999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.015688+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5202205,
+              "us": {
+                "candidate": 28.00000086426735,
+                "parent": 26.367999613285065
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.9152863559999993,
+                  "elapsed_start_seconds": 3.915106181999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.062657+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.91829613,
+                  "elapsed_start_seconds": 3.9181310089999997,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.065682+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 6,
+              "seed": 5202206,
+              "us": {
+                "candidate": 26.847999542951584,
+                "parent": 26.079999282956123
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.9328369509999987,
+                  "elapsed_start_seconds": 3.932667492,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.080218+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.935894509999999,
+                  "elapsed_start_seconds": 3.935733834999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.083285+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 7,
+              "seed": 5202207,
+              "us": {
+                "candidate": 26.048000901937485,
+                "parent": 26.079999282956123
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.9820494770000003,
+                  "elapsed_start_seconds": 3.981885408,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.129436+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.9849993809999997,
+                  "elapsed_start_seconds": 3.984822374,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.132374+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 8,
+              "seed": 5202208,
+              "us": {
+                "candidate": 26.75200067460537,
+                "parent": 24.960000067949295
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.999848193,
+                  "elapsed_start_seconds": 3.9996767569999996,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.147227+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.002898618,
+                  "elapsed_start_seconds": 4.002735821,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.150287+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 9,
+              "seed": 5202209,
+              "us": {
+                "candidate": 26.335999369621277,
+                "parent": 25.82399919629097
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.050395111,
+                  "elapsed_start_seconds": 4.050215818,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.197766+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.053561112999999,
+                  "elapsed_start_seconds": 4.053397577,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.200949+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 10,
+              "seed": 5202210,
+              "us": {
+                "candidate": 26.91200003027916,
+                "parent": 25.248000398278236
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.068999676999999,
+                  "elapsed_start_seconds": 4.068817814999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.216368+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.072320227999999,
+                  "elapsed_start_seconds": 4.072146944,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.219698+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 11,
+              "seed": 5202211,
+              "us": {
+                "candidate": 27.327999472618103,
+                "parent": 24.607999250292778
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.123334974999999,
+                  "elapsed_start_seconds": 4.123167453999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.270718+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.1267251819999995,
+                  "elapsed_start_seconds": 4.126559223999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.274110+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 12,
+              "seed": 5202212,
+              "us": {
+                "candidate": 26.016000658273697,
+                "parent": 24.607999250292778
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.142989455999999,
+                  "elapsed_start_seconds": 4.142817978,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.290368+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.146612027,
+                  "elapsed_start_seconds": 4.1464449089999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.293995+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 13,
+              "seed": 5202213,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 26.048000901937485
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.197577712999999,
+                  "elapsed_start_seconds": 4.197410659999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.344962+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.200950556999999,
+                  "elapsed_start_seconds": 4.200784909999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.348337+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 14,
+              "seed": 5202214,
+              "us": {
+                "candidate": 25.98400041460991,
+                "parent": 25.919999927282333
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.216936119,
+                  "elapsed_start_seconds": 4.216768515,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.364319+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.220196473,
+                  "elapsed_start_seconds": 4.220032659999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.367584+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 15,
+              "seed": 5202215,
+              "us": {
+                "candidate": 26.688000187277794,
+                "parent": 25.18399991095066
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.271811434,
+                  "elapsed_start_seconds": 4.271644178999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.419195+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.275296181,
+                  "elapsed_start_seconds": 4.275130192999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.422681+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 16,
+              "seed": 5202216,
+              "us": {
+                "candidate": 27.488000690937042,
+                "parent": 24.57600086927414
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.291900006999999,
+                  "elapsed_start_seconds": 4.291724928999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.439275+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.295842059,
+                  "elapsed_start_seconds": 4.2956772999999995,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.443228+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 17,
+              "seed": 5202217,
+              "us": {
+                "candidate": 26.11199952661991,
+                "parent": 24.768000468611717
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.349112393999999,
+                  "elapsed_start_seconds": 4.348947549,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.496499+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.35254677,
+                  "elapsed_start_seconds": 4.352382425,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.499934+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 18,
+              "seed": 5202218,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 26.176000013947487
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.369609840999999,
+                  "elapsed_start_seconds": 4.369436352999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.516987+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.373206639999999,
+                  "elapsed_start_seconds": 4.373042399999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.520594+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 19,
+              "seed": 5202219,
+              "us": {
+                "candidate": 26.75200067460537,
+                "parent": 24.351999163627625
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.4289692469999995,
+                  "elapsed_start_seconds": 4.428744926,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.576291+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.432769774999999,
+                  "elapsed_start_seconds": 4.432599176,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.580150+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 20,
+              "seed": 5202220,
+              "us": {
+                "candidate": 26.30399912595749,
+                "parent": 51.67999863624573
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.451596390999999,
+                  "elapsed_start_seconds": 4.451421278,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.598972+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.455833840999999,
+                  "elapsed_start_seconds": 4.455666287,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.603217+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 21,
+              "seed": 5202221,
+              "us": {
+                "candidate": 26.59199945628643,
+                "parent": 24.960000067949295
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.515250351999999,
+                  "elapsed_start_seconds": 4.515085384999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.662636+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.519040408,
+                  "elapsed_start_seconds": 4.518875717,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.666427+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 22,
+              "seed": 5202222,
+              "us": {
+                "candidate": 26.079999282956123,
+                "parent": 25.919999927282333
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 4.536394747999999,
+                  "elapsed_start_seconds": 4.5362142379999995,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:37.683765+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 4.540233441,
+                  "elapsed_start_seconds": 4.540070477,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:37.687622+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 23,
+              "seed": 5202223,
+              "us": {
+                "candidate": 27.615999802947044,
+                "parent": 25.087999179959297
+              }
+            }
+          ],
+          "summary": {
+            "candidate_raw_latency_cut": -0.048785314681344394,
+            "median_paired_raw_ratio": 0.9534839838063837,
+            "pair_distribution": {
+              "count": 12,
+              "maximum": 1.3579918093595063,
+              "median": 0.9534839838063837,
+              "minimum": 0.9191253386991223,
+              "p10": 0.9230310286009774,
+              "p90": 0.9846004868077258
+            },
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+            "raw_us": {
+              "candidate": {
+                "count": 24,
+                "maximum": 28.00000086426735,
+                "median": 26.30399912595749,
+                "minimum": 25.98400041460991,
+                "p10": 25.993600487709045,
+                "p90": 27.44000032544136
+              },
+              "parent": {
+                "count": 24,
+                "maximum": 51.67999863624573,
+                "median": 25.087999179959297,
+                "minimum": 24.351999163627625,
+                "p10": 24.58560038357973,
+                "p90": 26.147199794650078
+              }
+            },
+            "reverse_order_pair_ratios": [
+              0.9528783349675535,
+              0.9508230438394807,
+              0.9422681799164163,
+              0.98619866459032,
+              0.9564912598845181,
+              0.9191253386991223,
+              0.9701825142546966,
+              0.9702168867643781,
+              0.9208935673437064,
+              0.9540896326452138,
+              1.3579918093595063,
+              0.9502028711707867
+            ],
+            "round_parent_over_candidate_ratios": [
+              0.964285729646638,
+              0.9416058885194378,
+              0.9363525226965351,
+              0.9655171944137277,
+              0.9428224428354015,
+              0.9417142428354355,
+              0.9713945071115332,
+              1.0012284390321968,
+              0.9330143330791274,
+              0.9805589236943519,
+              0.9381688603549075,
+              0.9004683740187169,
+              0.9458794060441745,
+              0.9951100583763065,
+              0.9975369270971998,
+              0.9436450739743291,
+              0.8940628729457575,
+              0.9485294469066586,
+              1.0,
+              0.9102870271210791,
+              1.9647202080860215,
+              0.9386281805916883,
+              0.9938650552119319,
+              0.9084588412142887
+            ],
+            "total_pairs": 12,
+            "winning_pairs": 1
+          },
+          "warmup": [
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.545630751999999,
+                  "elapsed_start_seconds": 3.545468844,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.693020+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.548052213,
+                  "elapsed_start_seconds": 3.547889908,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.695442+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 0,
+              "seed": 5202100,
+              "us": {
+                "candidate": 26.30399912595749,
+                "parent": 24.54400062561035
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.560219066,
+                  "elapsed_start_seconds": 3.560052538999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.707604+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.562698468999999,
+                  "elapsed_start_seconds": 3.5625390780000004,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.710091+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 1,
+              "seed": 5202101,
+              "us": {
+                "candidate": 26.688000187277794,
+                "parent": 24.671999737620354
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.60194381,
+                  "elapsed_start_seconds": 3.601779667999999,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.749331+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.604475943999999,
+                  "elapsed_start_seconds": 3.6043143299999993,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.751866+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 2,
+              "seed": 5202102,
+              "us": {
+                "candidate": 26.72000043094158,
+                "parent": 24.54400062561035
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.617052203,
+                  "elapsed_start_seconds": 3.616884014,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.764424+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.6196217099999988,
+                  "elapsed_start_seconds": 3.61945991,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.767011+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 3,
+              "seed": 5202103,
+              "us": {
+                "candidate": 26.623999699950218,
+                "parent": 25.760000571608543
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 1,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.66117631,
+                  "elapsed_start_seconds": 3.661013339,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.808564+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.6637900279999993,
+                  "elapsed_start_seconds": 3.6636262619999993,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.811178+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "round": 4,
+              "seed": 5202104,
+              "us": {
+                "candidate": 27.775999158620834,
+                "parent": 24.831999093294144
+              }
+            },
+            {
+              "comparison": "selected",
+              "comparison_sequence_index": 0,
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true,
+              "observations": [
+                {
+                  "elapsed_end_seconds": 3.676481249,
+                  "elapsed_start_seconds": 3.676313264999999,
+                  "role": "candidate",
+                  "started_utc": "2026-10-25T23:32:36.823864+00:00",
+                  "status": "measured"
+                },
+                {
+                  "elapsed_end_seconds": 3.6791565439999996,
+                  "elapsed_start_seconds": 3.6789926179999988,
+                  "role": "parent",
+                  "started_utc": "2026-10-25T23:32:36.826544+00:00",
+                  "status": "measured"
+                }
+              ],
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "round": 5,
+              "seed": 5202105,
+              "us": {
+                "candidate": 26.176000013947487,
+                "parent": 24.70399998128414
+              }
+            }
+          ]
+        }
+      },
+      "shared_input_address": true,
+      "state_check_scope": "After prepare, every capture, every comparison correctness phase and every timing round; input/config after every observed replay"
+    }
+  ],
+  "complete": true,
+  "correctness_receipt": {
+    "cases": 5,
+    "environment": {
+      "bf16_reduced_precision_reduction": true,
+      "capability": [
+        9,
+        0
+      ],
+      "cuda_runtime": "13.0",
+      "gpu": "NVIDIA H200",
+      "multiprocessor_count": 132,
+      "python": "3.12.3",
+      "tf32_allowed": false,
+      "torch": "2.14.1+cu130",
+      "triton": "3.8.0"
+    },
+    "filename": "correctness.json",
+    "original_oracle_checks": 70,
+    "qualification": "Receipt is a separate executed correctness stage, not performance evidence",
+    "sequential_graph_ABA_cases": 5,
+    "sha256": "057400331f717576d5260c7c88bab5430dad679fa5e2f6cab3c3857b3434313e",
+    "source_sha256": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db"
+  },
+  "environment": {
+    "bf16_reduced_precision_reduction": true,
+    "capability": [
+      9,
+      0
+    ],
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "cuda_available": true,
+    "cuda_runtime": "13.0",
+    "device": "cuda",
+    "gpu": "NVIDIA H200",
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "tf32_allowed": false,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0"
+  },
+  "environment_match": "Same named hardware/software; same physical container/device is enforced by launcher, not established by a UUID in this report",
+  "event_initialization": "Event pair created, recorded, synchronized and elapsed-time queried before any timing; reused only after each end completes",
+  "kind": "P052 matched orientation raw execution screen",
+  "limitations": [
+    "Two pooler shapes only; no official score or promotion",
+    "Every observed replay checked, but CUDA capture's untimed setup calls are not individually checked",
+    "Sequential independent graphs; concurrent execution not tested",
+    "No profiler, clock telemetry, hardware counters or achieved overlap claim",
+    "External supervisor required for blocking CUDA/compiler calls"
+  ],
+  "oracle_checks": 320,
+  "preparation": {
+    "actual_p046_prepare_calls": 1,
+    "p046_synchronized_wall_seconds": 0.026021602000000144,
+    "weight_generation": "Unmodified full official generate_weights; original and all prepared tensors frozen. Router is required by unchanged P046.prepare.",
+    "weight_keys": [
+      "qkv_gate",
+      "o",
+      "pooler",
+      "unpooler",
+      "router"
+    ]
+  },
+  "protocol": {
+    "calibration": "unmeasured; no subtraction",
+    "capture_calls": 6,
+    "cases": [
+      8,
+      7
+    ],
+    "comparison_order": "matched/selected on even rounds; reversed on odd rounds",
+    "comparisons": {
+      "matched": "control",
+      "selected": "p046"
+    },
+    "eviction_bytes": 268435456,
+    "expected_checked_screen_replays": 320,
+    "expected_prior_P051_checks": 70,
+    "internal_deadline_seconds": 65.0,
+    "measured_rounds_per_comparison": 24,
+    "required_external_timeout_seconds": 80.0,
+    "reversed_pairs_per_comparison": 12,
+    "runner_order": "opponent/candidate on even rounds; reversed on odd rounds",
+    "runners": [
+      "control",
+      "weight_first",
+      "p046"
+    ],
+    "untimed_capture_warmups": 18,
+    "warmup_rounds_per_comparison": 6
+  },
+  "sources_sha256": {
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+    "projection_p052_orientation_screen.py": "042c395d20ffa6b191629aa79d9b68b9766cb92ea94df56d7763e741d46cdd59"
+  },
+  "wall_seconds": 4.751301306
+}

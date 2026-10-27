@@ -1,0 +1,53 @@
+{
+  "traceEvents": [
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+      "ts": 2215094388639.126,
+      "dur": 14.058,
+      "args": {
+        "grid": [
+          8,
+          12,
+          1
+        ],
+        "block": [
+          384,
+          1,
+          1
+        ],
+        "stream": 7,
+        "registers per thread": 168,
+        "shared memory": 221492,
+        "cluster": null
+      }
+    },
+    {
+      "ph": "X",
+      "cat": "kernel",
+      "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+      "ts": 2215094388653.184,
+      "dur": 3.58,
+      "args": {
+        "grid": [
+          72,
+          8,
+          1
+        ],
+        "block": [
+          32,
+          16,
+          1
+        ],
+        "stream": 7,
+        "registers per thread": 32,
+        "shared memory": 0,
+        "cluster": null
+      }
+    }
+  ],
+  "cuda_driver_version": 13030,
+  "cuda_runtime_version": 13000,
+  "cupti_version": 130001
+}

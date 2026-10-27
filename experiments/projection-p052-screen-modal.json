@@ -1,0 +1,177 @@
+{
+  "experiment": "P052 correctness/paired split-K orientation diagnostic",
+  "state": "terminal",
+  "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+  "created_utc": "2026-10-25T23:32:17.742020+00:00",
+  "source_commit": "39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0",
+  "worker_sha256": "042c395d20ffa6b191629aa79d9b68b9766cb92ea94df56d7763e741d46cdd59",
+  "correctness_worker_sha256": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+  "parent_source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "provenance_source_sha256": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "projection_p052_orientation_screen.py": "042c395d20ffa6b191629aa79d9b68b9766cb92ea94df56d7763e741d46cdd59",
+    "projection_p051_orientation.py": "445ab7d44e36cdceafdf1ecdbe19d7fafa247d8033ab580ab38f74b98f3533db",
+    "candidates/pooler_triton_split8.py": "76f202f5fe9efb23ce0e10c6739871fab74512464a0e9f1229cda53c0c625406",
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5"
+  },
+  "controller_sha256": "40b8c8aca0e6e1e673da44bf278fff8326791c6009839918c10e0c3f4a5e0d70",
+  "cost_reserve_usd": "0.3860992500935",
+  "verified_free_credit_floor_usd": "27.85837334",
+  "resource_rate_usd_per_second": "0.001305166667",
+  "paid_limit_usd": "0",
+  "billing_before": {
+    "metered_cost": "2.14000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-2.14000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.14162666",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "authentication_expiry_utc": "2026-10-26T03:39:46+00:00",
+  "preflight_sha256": "f22eb3920493723d04acb5e59b3ca1b337c0df3a929cb1c97383994d76cc51b9",
+  "shared_controller_sha256": "1e4809263a3c4902f72d762b9d74cacbf7313ba98135024211fc5d16345c151d",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "min_containers": 0,
+    "buffer_containers": 0,
+    "scaledown_window": 2,
+    "function_timeout": 180,
+    "startup_timeout": 45,
+    "child_internal_timeout": 65,
+    "child_hard_timeout": 80,
+    "stages": 2,
+    "app_watchdog": 225,
+    "stop_allowance": 15,
+    "retry_policy": null,
+    "explicit_invocations": 1
+  },
+  "compile_only_requested": false,
+  "performance_measurement_requested": true,
+  "correctness_oracle_count_required": 70,
+  "no_hardware_counters": true,
+  "not_official_score": true,
+  "accepted_utc": "2026-10-25T23:32:19.456510+00:00",
+  "transport_manifest": {
+    "kind": "manifest",
+    "chunks": 6,
+    "packed_bytes": 96480,
+    "encoded_bytes": 729473,
+    "artifact_bytes": 546528,
+    "sha256": "f2bd9504fa011d7c298ffcc38b5bde845f36cf602e6cb2bd3c8fea342c993563",
+    "artifact_sha256": {
+      "correctness.json": "057400331f717576d5260c7c88bab5430dad679fa5e2f6cab3c3857b3434313e",
+      "correctness.log": "f5b9c2f28705430960f00b38cda36f6923ad98e29492eaa1b955438e4fef9e1e",
+      "correctness.masked_edges.control.ptx": "50a3aeff55aea48d12175a4f321a0249d51d104e6a52ef7b7112ea86ad47afe5",
+      "correctness.masked_edges.reduce.ptx": "06103b533edee8a48dee2b62b22a5d7320e002e6de72ea4642004018ac10a652",
+      "correctness.masked_edges.weight_first.ptx": "8331e3f15773fea40804eaa3142528a211bdaf11b48166ec7c8ab86da14f4ebe",
+      "correctness.pooler_m7.control.ptx": "efe59da6ccaffcd00dccf8ace6a62c585cd456ab90d0afebf14f6b4e1363aeae",
+      "correctness.pooler_m7.reduce.ptx": "9c002cd8e5d82b06c30952dc925408a2901c1d21323466a566b5feae8a68f88f",
+      "correctness.pooler_m7.weight_first.ptx": "64f0fc4f979a0a17ead154783675dc807e49b3bf0388a775a92bf367c40ef345",
+      "correctness.pooler_m8.control.ptx": "52585b4ff075faa979b41e2dafec473d8050680b794bc4ecfa1c065b5837c8ab",
+      "correctness.pooler_m8.reduce.ptx": "fb38b5cfd5d564b43b88b763f66aba505079f17bc0d8d031b3f780a4abdc91a3",
+      "correctness.pooler_m8.weight_first.ptx": "33f026ba67533f15e5d1d48e89da883758cf504e09dabfd2ba660f8e9a6581ee",
+      "correctness.short_k.control.ptx": "f4bf7d09ac54d583f3b243650a964e43373718205e0c8574bcefb0ae4d88aa3a",
+      "correctness.short_k.reduce.ptx": "2ab36a00b97b95e5adcfaffcaef0c5c047e50887716fcc980832c76ade633ebe",
+      "correctness.short_k.weight_first.ptx": "1918b3291be1eaf76d80843385ba5576d98289b0d10286ed6a9df7ed12b638e1",
+      "correctness.split_tail.control.ptx": "2876eb8385e95c4342ad28699a70b02461261c5254646cda12b08f47f54a325e",
+      "correctness.split_tail.reduce.ptx": "979d13ef1c5c1b1919136ffb5620a01b3b1bede4ae887b10161059130d613133",
+      "correctness.split_tail.weight_first.ptx": "23f025eefc3e7971b9af1bd467e4e2cb62eb58e677a992961c76bbfa44a92634",
+      "summary.json": "49ab6effffd39e8eadac0df0fcafcb65b0b5db1a7a256dd33d1177b93a209050",
+      "timing.json": "2ae054ec40d6f39a119dfe0c97fd330dfde09e315ba51d45b0cffb6cc71cd30f",
+      "timing.log": "4469a15c98ff6a43b7c94ff96e9a84a95aeeeec7ca5f0166b0a496cc2632b96b"
+    }
+  },
+  "artifact_retrieval_complete": true,
+  "diagnostic_complete": true,
+  "stages": [
+    {
+      "mode": "correctness",
+      "exit_code": 0,
+      "wall_seconds": 7.522602412
+    },
+    {
+      "mode": "timing",
+      "exit_code": 0,
+      "wall_seconds": 5.285087732000001
+    }
+  ],
+  "worker_wall_seconds": 12.808808087000001,
+  "explicit_stop": {
+    "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+    "requested_utc": "2026-10-25T23:32:38.880560+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T23:32:42.160206+00:00",
+  "client_wall_seconds": 24.416938500013202,
+  "shutdown_observation": {
+    "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+    "state": "stopped",
+    "tasks": "1",
+    "created_at": "2026-10-25 16:32:18-07:00",
+    "stopped_at": "2026-10-25 16:32:42-07:00"
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_tasks_zero": true,
+  "billing_after": {
+    "metered_cost": "2.14000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-2.14000000",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.14162666"
+    }
+  },
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0",
+  "billing_qualification": "Workspace snapshot may lag; not a settled per-app invoice; reserve retained",
+  "independent_shutdown_reconciliation": {
+    "observed_utc": "2026-10-25T23:33:07.281260+00:00",
+    "exact_app": {
+      "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:32:18-07:00",
+      "stopped_at": "2026-10-25 16:32:42-07:00"
+    },
+    "all_apps_stopped_tasks_zero": true,
+    "gross_usage": "2.14162666",
+    "paid_zero": true
+  }
+}

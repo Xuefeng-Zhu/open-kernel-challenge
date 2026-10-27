@@ -1,40 +1,102 @@
-# Best completed, correctness-passing observed candidate
+# Selected Projection candidate: P046
 
-Candidate: `candidates/router_pooler_hybrid.py`; source commit `5f491a34d52449f5d0c5c7985b4a0d4ecd17217d`.
-SHA256: `891b2063edde9ef9c508c2983e6cf10804bf5066fc036d63912c47ddeb8fc9ee`. Job `02e099c3724e4a05`, mode check.
+`candidates/projection_pooler_column_batch2_hybrid.py`
 
-Official speedup **1.120732× SGLang**, 95% interval
-**[1.103921, 1.137543]**.
-The interval is above 1; this off-board trial measured an improvement over SGLang.
-9/9 prerequisites and 30/30 scored-shape correctness checks pass. This is the highest
-observed passing score so far, not a claim that every difference between candidates
-is statistically resolved or that it is a final leaderboard placement.
+Latest ranked verification: **1.1897129769×**, job `497a0b5130e548c1`, all 9+30 cases pass.
+Board snapshot: rank **678/1,114** on 2026-10-27. Source unchanged.
+See [ranked result](experiments/069-p046-ranked-submission.md); the earlier off-board score below is preserved.
 
-Reference-normalized ratio over our original starter: **1.234822×**;
-that is a cross-run comparison. Exact timings/environment/risks are in
-`results/remote-R10-final-composition.json` and its CSV/experiment record.
+- Source commit `fa56f2b3958b0c8d358c906a0b6cbb8e741a150e`.
+- SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
+- Official off-board job `41ba778763a5433b`:9 prerequisites and 30scored shapes pass.
+- Official score **1.1841399408925375×**, CI[1.1663778417791495,1.2019020400059255].
+- Authoritative selection: `experiments/projection-cycle2-budget.json:selection`.
+- Full receipt: `results/remote-P2-09-pooler-column-batch2-hybrid.json`.
 
-The original `submission.py` remains unchanged and separately preserved. Job states
-and the authorized remaining budget are in `REMOTE_RESULTS.md`; no scored entry or
-paid resource is authorized.
+Only pooler M8/M16/M32 uses full-K output-column BMM. Other paths retain P039.
+P045's broader M128 route regressed and remains rejected; P046 restores P039 M128.
+Direct P048 H200 comparison passed 480 oracle checks and reproduced all three
+target gains (10.74%/10.87%/9.88% raw latency cuts), with three controls within 0.7%.
+Long tails are preserved. The official whole-score point is0.929% above P039,
+but a statistically resolved whole-score difference is not established.
 
-## What this source changes
+The original starter and P039 fallback are preserved. Same-address sequential
+ABA/fresh inputs are tested in six cases; dedicated simultaneous graph/call
+coverage and all 30-shape native paired diagnostics are not claimed.
+See [P048 evidence](experiments/048-p046-paired-confirmation.md).
 
-Router m<=8 uses the measured split32 native path; larger-M router uses the
-contiguous wide hi+lo GEMM; pooler m==1 uses the measured SIMT GEMV. Other BF16
-paths remain the original starter. All component sources and failed experiments
-are preserved. No persistent input-derived state or reduced BF16 weight precision.
+## Previous selection (historical, preserved)
 
-## Confidence and regression limits
+# Selected Projection candidate: P039
 
-The interval overlaps R07's [1.0827090, 1.1156850]; this highest point score is not
-a statistically resolved optimum. R10 m8 router 7.4584µs is slower than isolated
-R08's 6.8717µs, including the within-run SGLang-normalized comparison, despite
-identical native kernel bodies. Decode32's paired load ratio is 1.0705 versus
-R07's 1.0833. Preserve full shape/load evidence instead of attributing every change
-to the targeted code. Controls remain available for future repeated validation.
+`candidates/projection_router_m1_fp32_gemv.py`
 
-No held-out/nearby-shape GPU rerun or final leaderboard placement is claimed. The
-Mac's 57-test suite and 39-case CPU models do not establish those properties. All
-ten new off-board checks are terminal; user budget is exhausted, zero uncertain,
-$0 and zero scored entries. No further check is authorized by leftover service quota.
+- Source commit: `cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da`.
+- SHA256: `0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc`.
+- Official off-board job: `d5636ac8d1404abd`, done/pass, 9/9 prerequisites and
+  30/30 scored cases. Score **1.173238998969285×**, interval
+  **[1.1556404139847458, 1.1908375839538243]**.
+- Authoritative selection: `experiments/projection-cycle2-budget.json:selection`.
+  Receipt: `results/remote-P2-04-router-m1-fp32-gemv.json` and its CSV.
+
+P039 retains the preceding composition and changes only router m1 to FP32 GEMV
+on original FP32 weights. The target reference-normalized latency cut is
+30.1058%. Preserve the original tolerance, all weights and all other dispatch.
+The +2.1407% aggregate point movement versus the earlier composition cannot be
+attributed entirely to the router change: unchanged controls moved too. Marginal
+CI overlap alone is not a difference test; independent paired comparison is absent.
+
+P040 passed but is not promoted. Its score 1.1758713266400707× is the highest
+observed point, not the selected best; O-m1 improvement 6.5077% missed its 15%
+predeclared target. Do not change the selection based on that small point gap.
+
+Native canonical m1 correctness/fresh graphs are verified by the official job.
+Dedicated native tail/stride/outlier/concurrency stress was not separately run.
+No saved P039 library PTX/SASS/register/spill/shared-memory/counter evidence
+exists. Older M34/M36 artifacts belong to different sources.
+
+## Historical selection record (superseded, preserved)
+
+Latest follow-up: QKV m128 single-pass035/M36 passed CUDA correctness but
+regressed strongly; rejected/no officialcheck. [Exact results](QKV_M128_SINGLEPASS_RESULTS.md).
+112localtests pass,all11apps stopped,conservativeModalguard$1.146412/$2,netpaid$0.
+This officialbest source/result is unchanged.
+
+Latest follow-on resource/timeline diagnosis: [HOPPER_DIAGNOSTICS.md](HOPPER_DIAGNOSTICS.md).
+M34completed/all10apps stopped,108localtests pass; best and officialbudget unchanged.
+M33CLI failure preserved/resolved. Conservative stageguard$1.034495/$2,netpaid$0.
+Two future hypotheses assessed; no new algorithm benchmark or officialcheck.
+
+# Best completed official point score
+
+**candidates/projection_full_composition.py**, source commit
+b9b0fd9fb0cf326b5836167ffc29d1a0d3386fa7; SHA256
+c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7.
+
+Off-board official job **48b1357016134e52**, done/pass, 9/9 prerequisites plus
+30/30 scored-shape checks, no flags. **1.1486499523x SGLang**, 95% interval
+**[1.1314202031, 1.1658797016]**. Original starter remains unchanged.
+
+Compared with prior P2-01 point1.1290207051x, reference-normalized ratio1.0173861;
+with R10 point1.1207320490x, ratio1.0249104; with original starter0.9076063758x,
+ratio1.2655816. These are independent-run comparisons. Intervals overlap P2-01/R10;
+no statistically resolved inter-candidate difference or ranking claimed. The
+within-run improvement over SGLang has its interval above1.
+
+Composition: R10 split32/wide hi+lo FP32-router paths, BF16 SIMT m1 pooler/QKV/
+unpooler, and existing BF16 GEMM with pretransposed pooler weights above m1.
+No precision reduction, input cache, activation precomputation or harness import.
+Original source and every independent control remain in their own commits/files.
+
+Actual Modal stability and isolated pooler decisions: MODAL_COMPOSITION_RESULTS.md.
+Official full records/CI/profile/limits: OFFICIAL_COMPOSITION_RESULT.md and
+results/remote-P2-02-full-composition.json/.csv, results/remote-P2-02-profile.json.
+Current source is verified by both environments; Modal gross values are distinct.
+
+Latest follow-up screens M26QKVlayout/M28unpoolerlayout/M30poolergrouped/
+M32poolernarrow all passed actual CUDA correctness but none provides a meaningful
+whole-workload gain. All rejected; no new official request.104local CPUtests pass.
+Allapps stopped, exact costs/budgets/nextresearch in MODAL_FOLLOWUP_RESULTS.md and
+STATUS.md. This source remains best official. No new work pushed.
+
+P043 (`128378586ebe4730`) passed9+30 correctness but scored0.898428982; all three compressed pooler targets regressed substantially. It is rejected. Selected P039 source/hash/job above remain unchanged. See experiments/043-pooler-lossless-codec.md.

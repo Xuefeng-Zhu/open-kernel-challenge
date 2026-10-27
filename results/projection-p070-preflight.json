@@ -1,0 +1,133 @@
+{
+  "kind": "P070 offline preflight; not a scoring candidate",
+  "source_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "quack_commit": "77a750c0d9548d4a6e23c0f64062d61b3ea420ff",
+  "dependencies": {
+    "platform": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13",
+    "versions": {
+      "torch": "2.14.1"
+    },
+    "missing": [
+      "triton",
+      "nvidia-cutlass-dsl",
+      "apache-tvm-ffi",
+      "einops"
+    ],
+    "quack": "Requires a clean checkout at 77a750c0d9548d4a6e23c0f64062d61b3ea420ff; package version is insufficient"
+  },
+  "arms": [
+    "p046",
+    "separate",
+    "serial"
+  ],
+  "case": {
+    "layer": "qkv_gate",
+    "m": 128,
+    "n": 2304,
+    "k": 8192
+  },
+  "geometry": {
+    "tile_M": 128,
+    "tile_N": 128,
+    "tile_K": 64,
+    "cluster_M": 1,
+    "cluster_N": 1,
+    "cluster_K": 1,
+    "split_k": 2,
+    "persistent": true,
+    "pingpong": false,
+    "is_dynamic_persistent": false,
+    "max_swizzle_size": 8,
+    "b_kn": false
+  },
+  "protocol": {
+    "cohorts": [
+      7001000,
+      7002000
+    ],
+    "excluded_warmup_per_cohort": 6,
+    "measured_rounds_per_cohort": 24,
+    "orders": [
+      [
+        "p046",
+        "separate",
+        "serial"
+      ],
+      [
+        "serial",
+        "separate",
+        "p046"
+      ],
+      [
+        "separate",
+        "serial",
+        "p046"
+      ],
+      [
+        "p046",
+        "serial",
+        "separate"
+      ],
+      [
+        "serial",
+        "p046",
+        "separate"
+      ],
+      [
+        "separate",
+        "p046",
+        "serial"
+      ]
+    ],
+    "same_address_replays": "normal A, outlier B, exact A-return, sparse, zero; before and after",
+    "scratch": "High-level gemm inside each capture; SERIAL zeroing included",
+    "timing": "Whole-call cold-L2 CUDA graph, gross events, no subtraction",
+    "correctness": "Original FP64/probe oracle for every measured/warmup output",
+    "expected_oracle_checks": 240,
+    "additional_capture_calls": 24,
+    "capture_call_checks": "Three library warmups plus one capture per arm/cohort; these 24 outputs are not individually oracle-checked",
+    "between_arm_work": "Input immutability check after each timed arm; cold-L2 eviction before each arm; FP64 oracles after all three"
+  },
+  "gate": {
+    "local_native_compile": "blocked",
+    "generated_pipeline_layout_resources": "unverified",
+    "gpu_correctness": "not executed",
+    "performance": "not measured",
+    "selection": "Retain P046; require correctness and >=5% whole-call cut against P046 in both fresh cohorts, plus >2% SERIAL-vs-SEPARATE cut; <=2% is inconclusive"
+  },
+  "limitations": [
+    "No native compilation or GPU pass follows from CPU/mock tests.",
+    "SEPARATE compiles FP32 partial output; SERIAL compiles BF16 final output. Automatic AB/epilogue stages, shared layouts and resources may differ.",
+    "P046 vendor geometry and algorithm differ from both Quack arms; it is the real performance control, not a causal finalization-only control.",
+    "SM90 Quack defaults PDL on; the high-level call has no use_pdl override.",
+    "Private scratch supports sequential replay structurally; overlapping replay of one graph, independent concurrent kernels and persistent-grid liveness are unverified.",
+    "One canonical shape only; no nearby/tail shapes, official score or calibrated timing.",
+    "Upstream CuTe FFI converter patch needs contest eligibility review before any submission."
+  ],
+  "local_verification": {
+    "observed_utc": "2026-10-27T15:18:47.338105+00:00",
+    "command": "python -B -m unittest discover -s tests -p test_projection_p070_quack_preflight.py -v",
+    "exit_code": 0,
+    "tests_passed": 15,
+    "native_execution": false,
+    "compile_gate_command": "python -B projection_p070_quack_preflight.py compile --quack-root local-notes/p070-upstream --output local-notes/p070-unavailable-compile",
+    "compile_gate_exit_code": 1,
+    "compile_gate_result": "Missing dependencies; no installation is performed",
+    "compiler_imported": false,
+    "files": {
+      "projection_p070_quack_preflight.py": "d587dce4173f715c7c2fbe216f9f9f9ee08142c6625c63a023cedeeae1069349",
+      "tests/test_projection_p070_quack_preflight.py": "503cc1dcc8e46aff399b248fe076fa7188fd56ab4569b888ba7e2dcd7e26c0b1"
+    },
+    "command_executable": "Existing project venv, Python 3.12.13; machine-specific prefix omitted"
+  }
+}

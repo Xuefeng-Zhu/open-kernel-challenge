@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-26T23:00:43.014473+00:00",
+  "source_commit": "7579660",
+  "exit_code": 0,
+  "container": "okc-p064-offline",
+  "local_cpu_only": true,
+  "gpu_execution": false,
+  "official_check": false,
+  "network_during_execution": false,
+  "container_removed": true,
+  "paid_cost": 0,
+  "scope": "Offline raw/encoded explicit SM90 compilation and disassembly; no kernel loaded or executed.",
+  "engine_restored_stopped": true,
+  "cleanup_utc": "2026-10-26T23:02:11.196186+00:00"
+}

@@ -1,3 +1,22 @@
+Latest source projection_qkv_m128_singlepass.py (035/M36) passed fullCUDA and
+nearby/layout correctness but target~2.5xslower; rejected/noofficialcheck. Best
+projection_full_composition.py unchanged.112localCPUtests pass,all11apps stopped.
+See ../QKV_M128_SINGLEPASS_RESULTS.md and STATUS.md for currentevidence/budgets.
+
+# Current cycle-two candidates
+
+Best official source projection_full_composition.py (c34c497b), job48b1357016134e52,
+1.1486499523x [1.1314202031,1.1658797016],9+30gatespass. Baseline preserved.
+Follow-up: projection_qkv_layout.py rejected after CUDA pass/m256regression;
+projection_unpooler_layout.py rejected after CUDA+nearby pass/no aggregate gain;
+projection_pooler_grouped.py and projection_pooler_narrow.py both CUDA-pass but
+severely slower; rejected. Allapps stopped.
+104localCPUtests pass; CPU branch models do not execute Triton. No push/new scored
+entry. See ../STATUS.md and experiment025–030 records for current scope/budgets.
+
+The following first-cycle catalog is historical; its57test/budget/R10-best statements
+refer to that completed stage, superseded above and by current explicit ledgers.
+
 # Isolated candidates and actual validation
 
 The original `../submission.py` remains unchanged: baseline H200 check passed at

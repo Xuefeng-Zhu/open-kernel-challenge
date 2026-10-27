@@ -1,0 +1,65 @@
+{
+  "authorization": "One initial ephemeral H200 projection smoke, free credits only, additional paid USD0; no new official check or persistent deployment",
+  "workspace": "xuefeng-zhu",
+  "maximum_initial_smokes": 1,
+  "maximum_active_containers": 1,
+  "attempts": [
+    {
+      "created_utc": "2026-10-24T18:31:06.789428+00:00",
+      "state": "terminal",
+      "app_id": "ap-ukvOyTeF1ztdOLggl5xJee",
+      "source_commit": "8f0148036e19cd49ec07a529c6be373bcaea22cc",
+      "candidate": "candidates/projection_qkv_m1_simt.py",
+      "submission_sha256": "9cea9ceed1dab548368746e83540f25edff94f472e8701c05526ea9995759d55",
+      "bundle_sha256": "de30820708f61730270f5064764818fe83ee01a24b6bb9acd066d76cb00beed6",
+      "resource_plan": {
+        "gpu": "H200",
+        "cpu": 2,
+        "memory_mib": 8192,
+        "max_containers": 1,
+        "min_containers": 0,
+        "buffer_containers": 0,
+        "scaledown_window": 2,
+        "timeout": 600,
+        "startup_timeout": 120,
+        "retries": 0
+      },
+      "max_additional_paid_usd": 0,
+      "credits_before_usd": 30,
+      "spend_cap_verified_usd": 0,
+      "note": "Stripe portal pause wording unresolved; no service resume. Credit-covered Function smoke only",
+      "accepted_utc": "2026-10-24T18:39:13.652202+00:00",
+      "app_setup_seconds": 486.8494751669932,
+      "exit_code": 0,
+      "worker_wall_seconds": 48.874792172,
+      "client_finished_utc": "2026-10-24T18:40:08.923002+00:00",
+      "client_wall_seconds": 542.1202712089289,
+      "result": "passed diagnostic",
+      "termination_verified_utc": "2026-10-24T18:41:45.505351+00:00",
+      "platform_state": "stopped",
+      "tasks": 0,
+      "correctness_cases_per_runner": 39,
+      "graph_shapes": 30,
+      "replays_per_shape_per_runner": 6,
+      "billing_snapshot": {
+        "metered_cost": "0.12000000",
+        "billed_cost": "0E-8",
+        "adjustments": {
+          "network_egress_allowance": "0E-8",
+          "credits": "-0.12000000",
+          "free_storage": "-0E-8",
+          "plan_cost": "0E-8",
+          "reservation_adjustment": "-0E-8"
+        },
+        "metered_cost_breakdown": {
+          "network_egress": "0E-8",
+          "llm_tokens": "0E-8",
+          "volumes": "0E-8",
+          "ephemeral_apps": "0.12054281"
+        }
+      },
+      "billing_observed_utc": "2026-10-24T18:42:21.552969+00:00"
+    }
+  ],
+  "remaining_initial_smokes": 0
+}

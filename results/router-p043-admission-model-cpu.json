@@ -1,0 +1,103 @@
+{
+  "kind": "Conditional storage/arithmetic/score model, not measured performance",
+  "parent_score": 1.173238998969285,
+  "parent_job": "d5636ac8d1404abd",
+  "targets": [
+    {
+      "load": "decode 16",
+      "layer": "pooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 19.931792705741444,
+      "reference_us": 21.487999707460403
+    },
+    {
+      "load": "decode 32",
+      "layer": "pooler",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 20.237408898405246,
+      "reference_us": 21.695999894291162
+    },
+    {
+      "load": "verify 1",
+      "layer": "pooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 20.161721609753744,
+      "reference_us": 21.47199958562851
+    }
+  ],
+  "fractions": {
+    "16": 0.2912405356382595,
+    "32": 0.2882368279961821,
+    "8": 0.3611703031443524
+  },
+  "source_hashes": {
+    "candidates/projection_pooler_lossless_codec.py": "9598c7d1ebe6373b56f9ced2c0405b855f3a6895628f771c2eb8af314003b837",
+    "candidates/projection_pooler_lossless_raw_control.py": "8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de"
+  },
+  "all_stream_byte_reduction_lower_of_three_seeds": 0.23274564743041992,
+  "scenarios": [
+    {
+      "uniform_target_latency_cut": 0.05,
+      "whole_score_factor": 1.0079328588018184,
+      "score": 1.182546138288895
+    },
+    {
+      "uniform_target_latency_cut": 0.08,
+      "whole_score_factor": 1.0127849015370292,
+      "score": 1.18823874405051
+    },
+    {
+      "uniform_target_latency_cut": 0.1,
+      "whole_score_factor": 1.016059119207989,
+      "score": 1.1920801839131947
+    },
+    {
+      "uniform_target_latency_cut": 0.2,
+      "whole_score_factor": 1.032924560717262,
+      "score": 1.2118673776267088
+    },
+    {
+      "uniform_target_latency_cut": 0.23274564743041992,
+      "whole_score_factor": 1.038634149657214,
+      "score": 1.2185660900391444
+    }
+  ],
+  "historical_R06_m8_normalized_penalty": 1.1489074138681612,
+  "historical_R06_m8_own_latency_cut_to_break_even": 0.12960784487134358,
+  "optimistic_m8_cut_if_all_raw_time_scales_with_weight_bytes_and_zero_decode_cost": 0.1184957860101934,
+  "geometry": {
+    "splits": 8,
+    "BM": 16,
+    "BN": 64,
+    "BK": 64,
+    "warps": 4,
+    "stages": 2
+  },
+  "source_cost_model": {
+    "normal_weight_element": "one sign/mantissa uint8 load plus shared packed-delta byte load, exponent add, variable shift, masks/OR, exact uint16-to-BF16 bitcast",
+    "escape_weight_element": "one sign/mantissa uint8 load and one full exponent uint8 load; delta read masked off",
+    "block_metadata": "uint8 base plus int32 escape index per N row per BK64 iteration; K256 metadata can be reread four times; L2 reuse not assumed",
+    "partial_scratch_bytes": {
+      "8": 1048576,
+      "16": 2097152,
+      "32": 4194304
+    },
+    "note": "Scratch is written then read; M32 has two M tiles and rereads weights. Logical loads are not physical DRAM transactions or stall evidence."
+  },
+  "gates": {
+    "encoding": "all BF16 patterns bit exact; actual full-weight reduction>=22% or P039 fallback",
+    "correctness": "all9 prerequisites and30 scored shapes pass official oracle; preserve precision and original weights",
+    "candidate": "each target normalized latency reduction>=10%, no target regression>5%, target-only frozen-parent modeled score gain>=1.5%",
+    "controls": "report every unchanged path shift>5%; large drift/overlapping aggregate intervals forbid causal overall-gain claims",
+    "retain": "never select on aggregate point alone; failure or gate miss preserves P039; no rescue sweep"
+  },
+  "limitations": [
+    "Current raw matched control is only locally tested; official single candidate check cannot isolate compression causality",
+    "No native compiler resources/PTX/DRAM counters for this candidate; decode issue/register costs unknown",
+    "Ideal uniform storage-proportional scenario is optimistic conditional value, not a physical upper bound on all possible schedules",
+    "CPU same-address A-B-A is not captured CUDA graph or overlapping-stream evidence"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "parent_job": "41ba778763a5433b",
+  "parent_score": 1.1841399408925375,
+  "receipt": "results/remote-P2-09-pooler-column-batch2-hybrid.csv",
+  "receipt_sha256": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+  "target_count": 10,
+  "scoring": "Six equally weighted load ratios; five shape weights each62 inside each load",
+  "scenarios": [
+    {
+      "uniform_target_latency_cut": 0.05,
+      "modeled_relative_score_gain": 0.01992570350375389,
+      "modeled_score": 1.207734762261715
+    },
+    {
+      "uniform_target_latency_cut": 0.1,
+      "modeled_relative_score_gain": 0.04074907620536661,
+      "modeled_score": 1.2323925495817858
+    },
+    {
+      "uniform_target_latency_cut": 0.2,
+      "modeled_relative_score_gain": 0.08535230371262181,
+      "modeled_score": 1.2852090127658433
+    }
+  ],
+  "model_floor_relative_score_gain": 0.18676355156579816,
+  "target_cases": [
+    {
+      "layer": "qkv_gate",
+      "m": 16,
+      "parent_us": 14.83713422526362,
+      "hypothetical_10pct_cut_us": 1.4837134225263622
+    },
+    {
+      "layer": "unpooler",
+      "m": 16,
+      "parent_us": 18.345687172639767,
+      "hypothetical_10pct_cut_us": 1.8345687172639769
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 32,
+      "parent_us": 15.257672389830963,
+      "hypothetical_10pct_cut_us": 1.5257672389830965
+    },
+    {
+      "layer": "unpooler",
+      "m": 32,
+      "parent_us": 18.62495055155297,
+      "hypothetical_10pct_cut_us": 1.8624950551552972
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 8,
+      "parent_us": 14.04006072641958,
+      "hypothetical_10pct_cut_us": 1.404006072641958
+    },
+    {
+      "layer": "unpooler",
+      "m": 8,
+      "parent_us": 7.0978832579391495,
+      "hypothetical_10pct_cut_us": 0.709788325793915
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "parent_us": 18.19320102617776,
+      "hypothetical_10pct_cut_us": 1.819320102617776
+    },
+    {
+      "layer": "unpooler",
+      "m": 128,
+      "parent_us": 20.20800815783727,
+      "hypothetical_10pct_cut_us": 2.020800815783727
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 256,
+      "parent_us": 19.85973819810843,
+      "hypothetical_10pct_cut_us": 1.9859738198108432
+    },
+    {
+      "layer": "unpooler",
+      "m": 256,
+      "parent_us": 24.140202384163178,
+      "hypothetical_10pct_cut_us": 2.414020238416318
+    }
+  ],
+  "interpretation": "Sensitivity only, holding all other values fixed. No benefit is predicted; source dispatch is not hardware proof. Floors omit launch/workspace costs and are not achievable forecasts.",
+  "gpu_executed": false
+}

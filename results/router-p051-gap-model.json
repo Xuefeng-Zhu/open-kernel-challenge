@@ -1,0 +1,514 @@
+{
+  "kind": "Conditional score sensitivity; no new measurement",
+  "parent_job": "41ba778763a5433b",
+  "current_score": 1.1841399408925375,
+  "public_leader": {
+    "rank": 1,
+    "team": "colinlikescode",
+    "speedup": 1.6099,
+    "first": true,
+    "ahead": 0
+  },
+  "observed_utc": "2026-10-25T22:54:34.948144+00:00",
+  "leader_over_current": 1.3595521478538668,
+  "uniform_all_path_cut_to_match": 0.26446366799643617,
+  "scoring": "Six equally weighted load ratios; each of five shape timings weighted 62",
+  "six_load_totals": {
+    "decode 1": {
+      "candidate_us": 2874.422551610497,
+      "reference_us": 3666.4321441203356
+    },
+    "decode 16": {
+      "candidate_us": 4183.476662331602,
+      "reference_us": 4705.05593996495
+    },
+    "decode 32": {
+      "candidate_us": 4264.693468229477,
+      "reference_us": 4797.311891801655
+    },
+    "verify 1": {
+      "candidate_us": 3261.637519340199,
+      "reference_us": 4693.151878193021
+    },
+    "verify 16": {
+      "candidate_us": 4951.677351181014,
+      "reference_us": 5454.015897586942
+    },
+    "verify 32": {
+      "candidate_us": 5771.957457168795,
+      "reference_us": 6221.823854371905
+    }
+  },
+  "fractions": {
+    "decode 1": {
+      "pooler": 0.3949406863103678,
+      "qkv_gate": 0.2577722631919689,
+      "unpooler": 0.08785485384103353,
+      "o": 0.14877284739172633,
+      "router": 0.11065934926490355,
+      "three_main_families": 0.7405678033433702
+    },
+    "decode 16": {
+      "pooler": 0.2673963772491458,
+      "qkv_gate": 0.21988943556186824,
+      "unpooler": 0.2718869248023326,
+      "o": 0.10182801444689744,
+      "router": 0.13899924793975588,
+      "three_main_families": 0.7591727376133466
+    },
+    "decode 32": {
+      "pooler": 0.2661830265549316,
+      "qkv_gate": 0.2218156346327628,
+      "unpooler": 0.2707690348201478,
+      "o": 0.10096994307976391,
+      "router": 0.14026236091239386,
+      "three_main_families": 0.7587676960078422
+    },
+    "verify 1": {
+      "pooler": 0.3337819672591576,
+      "qkv_gate": 0.26688550149315954,
+      "unpooler": 0.1349226452610986,
+      "o": 0.12273677670555376,
+      "router": 0.14167310928103047,
+      "three_main_families": 0.7355901140134158
+    },
+    "verify 16": {
+      "pooler": 0.28996080251866957,
+      "qkv_gate": 0.2277972459885718,
+      "unpooler": 0.25302466556854414,
+      "o": 0.0948513201339146,
+      "router": 0.13436596579029983,
+      "three_main_families": 0.7707827140757855
+    },
+    "verify 32": {
+      "pooler": 0.3105364997686849,
+      "qkv_gate": 0.21332516350297046,
+      "unpooler": 0.25930415442671334,
+      "o": 0.09703550782816177,
+      "router": 0.11979867447346966,
+      "three_main_families": 0.7831658176983687
+    }
+  },
+  "equal_load_mean_fractions": {
+    "pooler": 0.31046655994349287,
+    "qkv_gate": 0.23458087406188363,
+    "unpooler": 0.21296037978664498,
+    "o": 0.11103240159766964,
+    "router": 0.13095978461030888,
+    "three_main_families": 0.7580078137920214
+  },
+  "conditional_scenarios": [
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.1,
+      "modeled_score": 1.2812624931163246,
+      "relative_gain": 0.08201948846568041
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.2,
+      "modeled_score": 1.395746020410701,
+      "relative_gain": 0.17870022977070343
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.3,
+      "modeled_score": 1.532704396609481,
+      "relative_gain": 0.29436086367816916
+    },
+    {
+      "families": [
+        "pooler",
+        "qkv_gate",
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.4,
+      "modeled_score": 1.6994797076193875,
+      "relative_gain": 0.4352017434176032
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "uniform_latency_cut": 0.1,
+      "modeled_score": 1.2220944430332976,
+      "relative_gain": 0.032052378971485496
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "uniform_latency_cut": 0.2,
+      "modeled_score": 1.2625922302843224,
+      "relative_gain": 0.06625254894506138
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "uniform_latency_cut": 0.3,
+      "modeled_score": 1.3059013201247338,
+      "relative_gain": 0.10282684928304975
+    },
+    {
+      "families": [
+        "pooler"
+      ],
+      "uniform_latency_cut": 0.4,
+      "modeled_score": 1.3523293437530512,
+      "relative_gain": 0.14203507292705808
+    },
+    {
+      "families": [
+        "qkv_gate"
+      ],
+      "uniform_latency_cut": 0.1,
+      "modeled_score": 1.2125874694267602,
+      "relative_gain": 0.024023789378120775
+    },
+    {
+      "families": [
+        "qkv_gate"
+      ],
+      "uniform_latency_cut": 0.2,
+      "modeled_score": 1.2424412308631683,
+      "relative_gain": 0.04923513510293942
+    },
+    {
+      "families": [
+        "qkv_gate"
+      ],
+      "uniform_latency_cut": 0.3,
+      "modeled_score": 1.2738086121555554,
+      "relative_gain": 0.07572472489647697
+    },
+    {
+      "families": [
+        "qkv_gate"
+      ],
+      "uniform_latency_cut": 0.4,
+      "modeled_score": 1.306808273504032,
+      "relative_gain": 0.10359276667843331
+    },
+    {
+      "families": [
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.1,
+      "modeled_score": 1.2099400242644145,
+      "relative_gain": 0.021788035755664348
+    },
+    {
+      "families": [
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.2,
+      "modeled_score": 1.2369627927560023,
+      "relative_gain": 0.04460862271367172
+    },
+    {
+      "families": [
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.3,
+      "modeled_score": 1.265301234200809,
+      "relative_gain": 0.06854028861411154
+    },
+    {
+      "families": [
+        "unpooler"
+      ],
+      "uniform_latency_cut": 0.4,
+      "modeled_score": 1.2950583097350592,
+      "relative_gain": 0.09366998359916634
+    }
+  ],
+  "required_uniform_cuts": {
+    "three_main_families_all_m": 0.34886386250851087,
+    "three_main_families_m_gt_1": 0.4048075456021335,
+    "qkv_only": null,
+    "unpooler_only": null
+  },
+  "required_complement_cuts": [
+    {
+      "three_family_cut": 0.2,
+      "required_o_router_cut": 0.4663341118595382
+    },
+    {
+      "three_family_cut": 0.3,
+      "required_o_router_cut": 0.1531347038713236
+    }
+  ],
+  "rounded_task_floor_model": {
+    "score": 1.6081900231842958,
+    "leader_relative_gap": 0.0010632927645692902,
+    "qualification": "Replace only three families with rounded TASK floors; not a strict bound, attainable forecast, or evidence other families must change. Difference from leader is below reported uncertainty."
+  },
+  "rows": [
+    {
+      "load": "decode 1",
+      "layer": "qkv_gate",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 11.950748491914062,
+      "reference_us": 14.048000331968069
+    },
+    {
+      "load": "decode 1",
+      "layer": "o",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 6.8973552840336305,
+      "reference_us": 6.6559999249875546
+    },
+    {
+      "load": "decode 1",
+      "layer": "pooler",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 18.310103472242716,
+      "reference_us": 21.248001139611006
+    },
+    {
+      "load": "decode 1",
+      "layer": "unpooler",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 4.073096341114692,
+      "reference_us": 7.07200076431036
+    },
+    {
+      "load": "decode 1",
+      "layer": "router",
+      "m": 1,
+      "weight": 62,
+      "candidate_us": 5.13035046892873,
+      "reference_us": 10.112000163644552
+    },
+    {
+      "load": "decode 16",
+      "layer": "qkv_gate",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 14.83713422526362,
+      "reference_us": 14.560000505298376
+    },
+    {
+      "load": "decode 16",
+      "layer": "o",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 6.87088906468001,
+      "reference_us": 6.784000433981419
+    },
+    {
+      "load": "decode 16",
+      "layer": "pooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 18.042685545384167,
+      "reference_us": 21.215999498963356
+    },
+    {
+      "load": "decode 16",
+      "layer": "unpooler",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 18.345687172639767,
+      "reference_us": 18.28799955546856
+    },
+    {
+      "load": "decode 16",
+      "layer": "router",
+      "m": 16,
+      "weight": 62,
+      "candidate_us": 9.379034029638914,
+      "reference_us": 15.039999037981033
+    },
+    {
+      "load": "decode 32",
+      "layer": "qkv_gate",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 15.257672389830963,
+      "reference_us": 15.072000212967396
+    },
+    {
+      "load": "decode 32",
+      "layer": "o",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 6.9452557538672774,
+      "reference_us": 6.7519997246563435
+    },
+    {
+      "load": "decode 32",
+      "layer": "pooler",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 18.309500237135,
+      "reference_us": 21.50399936363101
+    },
+    {
+      "load": "decode 32",
+      "layer": "unpooler",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 18.62495055155297,
+      "reference_us": 18.6399994418025
+    },
+    {
+      "load": "decode 32",
+      "layer": "router",
+      "m": 32,
+      "weight": 62,
+      "candidate_us": 9.647999587444058,
+      "reference_us": 15.407999511808157
+    },
+    {
+      "load": "verify 1",
+      "layer": "qkv_gate",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 14.04006072641958,
+      "reference_us": 14.01599869132042
+    },
+    {
+      "load": "verify 1",
+      "layer": "o",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 6.4568205791244235,
+      "reference_us": 6.560000125318766
+    },
+    {
+      "load": "verify 1",
+      "layer": "pooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 17.559286898252424,
+      "reference_us": 21.13599982112646
+    },
+    {
+      "load": "verify 1",
+      "layer": "unpooler",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 7.0978832579391495,
+      "reference_us": 7.23200011998415
+    },
+    {
+      "load": "verify 1",
+      "layer": "router",
+      "m": 8,
+      "weight": 62,
+      "candidate_us": 7.4530053018160185,
+      "reference_us": 26.751999277621508
+    },
+    {
+      "load": "verify 16",
+      "layer": "qkv_gate",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 18.19320102617776,
+      "reference_us": 18.064000643789768
+    },
+    {
+      "load": "verify 16",
+      "layer": "o",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 7.575373123172978,
+      "reference_us": 7.551999296993017
+    },
+    {
+      "load": "verify 16",
+      "layer": "pooler",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 23.157940944547853,
+      "reference_us": 25.647999253124
+    },
+    {
+      "load": "verify 16",
+      "layer": "unpooler",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 20.20800815783727,
+      "reference_us": 20.15999983996153
+    },
+    {
+      "load": "verify 16",
+      "layer": "router",
+      "m": 128,
+      "weight": 62,
+      "candidate_us": 10.731240476990173,
+      "reference_us": 16.543999314308167
+    },
+    {
+      "load": "verify 32",
+      "layer": "qkv_gate",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 19.85973819810843,
+      "reference_us": 20.04799898713827
+    },
+    {
+      "load": "verify 32",
+      "layer": "o",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 9.033626177724505,
+      "reference_us": 8.89600021764636
+    },
+    {
+      "load": "verify 32",
+      "layer": "pooler",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 28.90973331553156,
+      "reference_us": 29.935999307781458
+    },
+    {
+      "load": "verify 32",
+      "layer": "unpooler",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 24.140202384163178,
+      "reference_us": 24.208000395447016
+    },
+    {
+      "load": "verify 32",
+      "layer": "router",
+      "m": 256,
+      "weight": 62,
+      "candidate_us": 11.152787943323874,
+      "reference_us": 17.263998743146658
+    }
+  ],
+  "evidence_hashes": {
+    "results/remote-P2-09-pooler-column-batch2-hybrid.csv": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+    "results/remote-P2-09-pooler-column-batch2-hybrid.json": "984c9e0dcaea6bc41fff9b12103eb9a13e137f3c42b3021035f2245255288850",
+    "results/public-leader-gap-20261025.json": "4e9f37a962af980007eed0416790532795f49abefe591fa40f0769b8900e8989",
+    "TASK.md": "deb9118fa75cbc03c2ebd16b283e72a0314168d40299fa7501373eb1960a2bc4"
+  },
+  "qualifications": [
+    "Leader CLI score rounded to four decimals; provisional and cross-run, not a paired comparison",
+    "All untargeted timings held fixed; modeled changes are not achieved or predicted speedups",
+    "TASK floors use ideal bandwidth/compute and omit launch, scratch, rereads, scheduling and reduction costs",
+    "Scoring arithmetic does not identify measured HBM, occupancy, stalls, or competitor architecture"
+  ],
+  "gpu_executed": false
+}

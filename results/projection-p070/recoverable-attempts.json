@@ -1,0 +1,30 @@
+[
+  {
+    "stage": "compile",
+    "app_id": "ap-zkHuQwk5YCcBvTnCUyOFHu",
+    "source_commit": "bc835fd5ecde634c2d8ef54a47228c69f36f5ea2",
+    "source_sha256": "d587dce4173f715c7c2fbe216f9f9f9ee08142c6625c63a023cedeeae1069349",
+    "success": false,
+    "error": "ImageBuildError: Image build for im-RDQGoKxKLKrJboRLkq5wHR terminated due to external shut-down. Please try again.",
+    "shutdown": {
+      "app_id": "ap-zkHuQwk5YCcBvTnCUyOFHu",
+      "state": "stopped",
+      "tasks": "0"
+    },
+    "outcome": "Stopped during redundant apt-get update; compiler not invoked; no GPU."
+  },
+  {
+    "stage": "compile",
+    "app_id": "ap-dKf5btqAVGK1yldNsnr4Xb",
+    "source_commit": "e302f6d29be5dbbf7aa1261db8bd5db412402448",
+    "source_sha256": "d587dce4173f715c7c2fbe216f9f9f9ee08142c6625c63a023cedeeae1069349",
+    "success": true,
+    "error": null,
+    "shutdown": {
+      "app_id": "ap-dKf5btqAVGK1yldNsnr4Xb",
+      "state": "stopping...",
+      "tasks": "0"
+    },
+    "outcome": "Compiled host wrappers successfully; cuobjdump found no device code. Device-code gate not passed until documented CuTe attributes were exported."
+  }
+]

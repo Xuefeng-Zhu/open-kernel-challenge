@@ -1,0 +1,479 @@
+{
+  "kind": "local correctness only",
+  "environment": {
+    "python": "3.12.13 (main, Mar 25 2026, 03:16:06) [Clang 22.1.1 ]",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "torch": "2.14.1",
+    "device": "cpu",
+    "cuda_runtime": null,
+    "cuda_available": false,
+    "implementation": "candidates/projection_pooler_lossless_raw_control.py",
+    "submission_sha256": "8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "weight_seed": 6262,
+  "seed_offset": 62000,
+  "cases": [
+    {
+      "case": {
+        "m": 1,
+        "layer": "qkv_gate",
+        "dist": "normal",
+        "seed": 10001
+      },
+      "actual_seed": 72001,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 7,
+        "layer": "pooler",
+        "dist": "normal",
+        "seed": 10002
+      },
+      "actual_seed": 72002,
+      "passed": true,
+      "message": "relative L2 error 7.011e-06 (worst row 1.564e-05); 2 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 33,
+        "layer": "o",
+        "dist": "normal",
+        "seed": 10003
+      },
+      "actual_seed": 72003,
+      "passed": true,
+      "message": "relative L2 error 9.928e-06 (worst row 8.518e-05); 6 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 130,
+        "layer": "unpooler",
+        "dist": "normal",
+        "seed": 10004
+      },
+      "actual_seed": 72004,
+      "passed": true,
+      "message": "relative L2 error 1.871e-05 (worst row 8.784e-05); 14 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 5,
+        "layer": "unpooler",
+        "dist": "normal",
+        "seed": 10005
+      },
+      "actual_seed": 72005,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 2 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "router",
+        "dist": "normal",
+        "seed": 10006
+      },
+      "actual_seed": 72006,
+      "passed": true,
+      "message": "relative L2 error 2.419e-06 (worst row 2.701e-06); 3 probe rows exact to 2.7e-06"
+    },
+    {
+      "case": {
+        "m": 9,
+        "layer": "router",
+        "dist": "outliers",
+        "seed": 10007
+      },
+      "actual_seed": 72007,
+      "passed": true,
+      "message": "relative L2 error 2.738e-06 (worst row 3.063e-06); 1 probe rows exact to 2.2e-06"
+    },
+    {
+      "case": {
+        "m": 512,
+        "layer": "qkv_gate",
+        "dist": "outliers",
+        "seed": 10008
+      },
+      "actual_seed": 72008,
+      "passed": true,
+      "message": "relative L2 error 3.027e-05 (worst row 2.300e-04); 75 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 1000,
+        "layer": "unpooler",
+        "dist": "outliers",
+        "seed": 10009
+      },
+      "actual_seed": 72009,
+      "passed": true,
+      "message": "relative L2 error 2.157e-05 (worst row 2.161e-04); 127 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 1,
+        "layer": "qkv_gate",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 201
+      },
+      "actual_seed": 62201,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00)"
+    },
+    {
+      "case": {
+        "m": 1,
+        "layer": "o",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 202
+      },
+      "actual_seed": 62202,
+      "passed": true,
+      "message": "relative L2 error 6.412e-10 (worst row 6.412e-10)"
+    },
+    {
+      "case": {
+        "m": 1,
+        "layer": "pooler",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 203
+      },
+      "actual_seed": 62203,
+      "passed": true,
+      "message": "relative L2 error 1.555e-05 (worst row 1.555e-05)"
+    },
+    {
+      "case": {
+        "m": 1,
+        "layer": "unpooler",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 204
+      },
+      "actual_seed": 62204,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00)"
+    },
+    {
+      "case": {
+        "m": 1,
+        "layer": "router",
+        "load": "decode 1",
+        "weight": 62,
+        "seed": 205
+      },
+      "actual_seed": 62205,
+      "passed": true,
+      "message": "relative L2 error 0.000e+00 (worst row 0.000e+00); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 16,
+        "layer": "qkv_gate",
+        "load": "decode 16",
+        "weight": 62,
+        "seed": 206
+      },
+      "actual_seed": 62206,
+      "passed": true,
+      "message": "relative L2 error 6.528e-06 (worst row 2.034e-05); 7 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 16,
+        "layer": "o",
+        "load": "decode 16",
+        "weight": 62,
+        "seed": 207
+      },
+      "actual_seed": 62207,
+      "passed": true,
+      "message": "relative L2 error 1.353e-05 (worst row 4.313e-05); 3 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 16,
+        "layer": "pooler",
+        "load": "decode 16",
+        "weight": 62,
+        "seed": 208
+      },
+      "actual_seed": 62208,
+      "passed": true,
+      "message": "relative L2 error 2.973e-05 (worst row 1.207e-04); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 16,
+        "layer": "unpooler",
+        "load": "decode 16",
+        "weight": 62,
+        "seed": 209
+      },
+      "actual_seed": 62209,
+      "passed": true,
+      "message": "relative L2 error 2.511e-05 (worst row 8.612e-05); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 16,
+        "layer": "router",
+        "load": "decode 16",
+        "weight": 62,
+        "seed": 210
+      },
+      "actual_seed": 62210,
+      "passed": true,
+      "message": "relative L2 error 2.651e-06 (worst row 2.901e-06); 1 probe rows exact to 2.7e-06"
+    },
+    {
+      "case": {
+        "m": 32,
+        "layer": "qkv_gate",
+        "load": "decode 32",
+        "weight": 62,
+        "seed": 211
+      },
+      "actual_seed": 62211,
+      "passed": true,
+      "message": "relative L2 error 3.324e-05 (worst row 1.659e-04); 5 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 32,
+        "layer": "o",
+        "load": "decode 32",
+        "weight": 62,
+        "seed": 212
+      },
+      "actual_seed": 62212,
+      "passed": true,
+      "message": "relative L2 error 1.014e-05 (worst row 8.672e-05); 10 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 32,
+        "layer": "pooler",
+        "load": "decode 32",
+        "weight": 62,
+        "seed": 213
+      },
+      "actual_seed": 62213,
+      "passed": true,
+      "message": "relative L2 error 6.181e-05 (worst row 2.466e-04); 4 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 32,
+        "layer": "unpooler",
+        "load": "decode 32",
+        "weight": 62,
+        "seed": 214
+      },
+      "actual_seed": 62214,
+      "passed": true,
+      "message": "relative L2 error 1.882e-05 (worst row 8.410e-05); 6 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 32,
+        "layer": "router",
+        "load": "decode 32",
+        "weight": 62,
+        "seed": 215
+      },
+      "actual_seed": 62215,
+      "passed": true,
+      "message": "relative L2 error 2.700e-06 (worst row 2.912e-06); 3 probe rows exact to 2.8e-06"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "qkv_gate",
+        "load": "verify 1",
+        "weight": 62,
+        "seed": 216
+      },
+      "actual_seed": 62216,
+      "passed": true,
+      "message": "relative L2 error 5.987e-05 (worst row 1.645e-04); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "o",
+        "load": "verify 1",
+        "weight": 62,
+        "seed": 217
+      },
+      "actual_seed": 62217,
+      "passed": true,
+      "message": "relative L2 error 2.064e-06 (worst row 5.474e-06); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "pooler",
+        "load": "verify 1",
+        "weight": 62,
+        "seed": 218
+      },
+      "actual_seed": 62218,
+      "passed": true,
+      "message": "relative L2 error 3.253e-05 (worst row 6.197e-05); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "unpooler",
+        "load": "verify 1",
+        "weight": 62,
+        "seed": 219
+      },
+      "actual_seed": 62219,
+      "passed": true,
+      "message": "relative L2 error 5.625e-09 (worst row 1.532e-08); 1 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 8,
+        "layer": "router",
+        "load": "verify 1",
+        "weight": 62,
+        "seed": 220
+      },
+      "actual_seed": 62220,
+      "passed": true,
+      "message": "relative L2 error 2.428e-06 (worst row 2.657e-06); 2 probe rows exact to 2.6e-06"
+    },
+    {
+      "case": {
+        "m": 128,
+        "layer": "qkv_gate",
+        "load": "verify 16",
+        "weight": 62,
+        "seed": 221
+      },
+      "actual_seed": 62221,
+      "passed": true,
+      "message": "relative L2 error 1.245e-05 (worst row 8.359e-05); 18 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 128,
+        "layer": "o",
+        "load": "verify 16",
+        "weight": 62,
+        "seed": 222
+      },
+      "actual_seed": 62222,
+      "passed": true,
+      "message": "relative L2 error 1.487e-05 (worst row 1.726e-04); 20 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 128,
+        "layer": "pooler",
+        "load": "verify 16",
+        "weight": 62,
+        "seed": 223
+      },
+      "actual_seed": 62223,
+      "passed": true,
+      "message": "relative L2 error 4.098e-05 (worst row 2.454e-04); 22 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 128,
+        "layer": "unpooler",
+        "load": "verify 16",
+        "weight": 62,
+        "seed": 224
+      },
+      "actual_seed": 62224,
+      "passed": true,
+      "message": "relative L2 error 1.448e-05 (worst row 8.814e-05); 15 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 128,
+        "layer": "router",
+        "load": "verify 16",
+        "weight": 62,
+        "seed": 225
+      },
+      "actual_seed": 62225,
+      "passed": true,
+      "message": "relative L2 error 2.610e-06 (worst row 3.090e-06); 16 probe rows exact to 2.7e-06"
+    },
+    {
+      "case": {
+        "m": 256,
+        "layer": "qkv_gate",
+        "load": "verify 32",
+        "weight": 62,
+        "seed": 226
+      },
+      "actual_seed": 62226,
+      "passed": true,
+      "message": "relative L2 error 1.148e-05 (worst row 8.139e-05); 33 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 256,
+        "layer": "o",
+        "load": "verify 32",
+        "weight": 62,
+        "seed": 227
+      },
+      "actual_seed": 62227,
+      "passed": true,
+      "message": "relative L2 error 1.046e-05 (worst row 8.574e-05); 37 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 256,
+        "layer": "pooler",
+        "load": "verify 32",
+        "weight": 62,
+        "seed": 228
+      },
+      "actual_seed": 62228,
+      "passed": true,
+      "message": "relative L2 error 3.658e-05 (worst row 2.521e-04); 23 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 256,
+        "layer": "unpooler",
+        "load": "verify 32",
+        "weight": 62,
+        "seed": 229
+      },
+      "actual_seed": 62229,
+      "passed": true,
+      "message": "relative L2 error 2.139e-05 (worst row 1.773e-04); 33 probe rows exact to 0.0e+00"
+    },
+    {
+      "case": {
+        "m": 256,
+        "layer": "router",
+        "load": "verify 32",
+        "weight": 62,
+        "seed": 230
+      },
+      "actual_seed": 62230,
+      "passed": true,
+      "message": "relative L2 error 2.592e-06 (worst row 3.022e-06); 50 probe rows exact to 2.9e-06"
+    }
+  ],
+  "weights_unchanged": true,
+  "passed": true
+}

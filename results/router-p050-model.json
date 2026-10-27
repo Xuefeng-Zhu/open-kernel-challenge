@@ -1,0 +1,76 @@
+{
+  "parent_job": "41ba778763a5433b",
+  "parent_score": 1.1841399408925375,
+  "receipt": "results/remote-P2-09-pooler-column-batch2-hybrid.csv",
+  "receipt_sha256": "4538b39e8710fa88864127fea35e37598b361838ffcce9ca88d856894e292a35",
+  "target_count": 5,
+  "scoring": "Six equally weighted load ratios; five shape weights each62 inside each load",
+  "scenarios": [
+    {
+      "uniform_target_latency_cut": 0.05,
+      "modeled_relative_score_gain": 0.00968341455663202,
+      "modeled_score": 1.1956064588332656
+    },
+    {
+      "uniform_target_latency_cut": 0.1,
+      "modeled_relative_score_gain": 0.019576363698200927,
+      "modeled_score": 1.207321095045016
+    },
+    {
+      "uniform_target_latency_cut": 0.2,
+      "modeled_relative_score_gain": 0.040019683298080144,
+      "modeled_score": 1.2315288463076641
+    },
+    {
+      "label": "P049 raw M128 cut hypothetically applied to M128 only",
+      "target_latency_cut": 0.03780396199333225,
+      "modeled_relative_score_gain": 0.001442528253190023,
+      "qualification": "Cross-environment raw-to-official-weight sensitivity, not an achieved score"
+    }
+  ],
+  "required_uniform_cuts": [
+    {
+      "target_whole_score_gain": 0.01,
+      "required_uniform_target_cut": 0.05161681396275414
+    },
+    {
+      "target_whole_score_gain": 0.015,
+      "required_uniform_target_cut": 0.07700436104178504
+    }
+  ],
+  "model_floor_relative_score_gain": 0.10308252177000266,
+  "target_cases": [
+    {
+      "layer": "qkv_gate",
+      "m": 16,
+      "parent_us": 14.83713422526362,
+      "hypothetical_10pct_cut_us": 1.4837134225263622
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 32,
+      "parent_us": 15.257672389830963,
+      "hypothetical_10pct_cut_us": 1.5257672389830965
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 8,
+      "parent_us": 14.04006072641958,
+      "hypothetical_10pct_cut_us": 1.404006072641958
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "parent_us": 18.19320102617776,
+      "hypothetical_10pct_cut_us": 1.819320102617776
+    },
+    {
+      "layer": "qkv_gate",
+      "m": 256,
+      "parent_us": 19.85973819810843,
+      "hypothetical_10pct_cut_us": 1.9859738198108432
+    }
+  ],
+  "interpretation": "Sensitivity only, holding all other values fixed. No benefit is predicted; source dispatch is not hardware proof. Floors omit launch/workspace costs and are not achievable forecasts.",
+  "gpu_executed": false
+}

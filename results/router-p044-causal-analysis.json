@@ -1,0 +1,29 @@
+{
+  "source_receipt_hashes": {
+    "results/remote-P2-04-router-m1-fp32-gemv.csv": "46d1b02db4d528cac4c26ff5933c46b12361440441567b11a62bf1b8d525564a",
+    "results/remote-P2-07-pooler-lossless-codec.csv": "6704b591132fe58398303c9db3397f1282815bf2761209f7b5c950b0f42cdc00",
+    "results/remote-R06-pooler-triton8.csv": "da9b64ea6c0edde1769e0ce2112b6b4d09668f86a9fd1894e8477140f1db4c22"
+  },
+  "selected_score": 1.173238998969285,
+  "cross_run_pooler_m8_normalized_latency_ratios": {
+    "P043_over_R06": 2.2489876252388714,
+    "R06_over_P039": 1.1489074138857063,
+    "P043_over_P039": 2.583878556374148
+  },
+  "attribution_limit": "R06 is historical, not the matched P043 raw-control execution; decode causality remains unmeasured",
+  "router_activity_add_hypotheticals": [
+    {
+      "activity_add_eliminated_fraction": 0.5,
+      "hypothetical_score": 1.1812275315800034,
+      "hypothetical_relative_gain": 0.006808955905605263
+    },
+    {
+      "activity_add_eliminated_fraction": 1.0,
+      "hypothetical_score": 1.189354303918953,
+      "hypothetical_relative_gain": 0.013735739234568056
+    }
+  ],
+  "scenario_limit": "Subtracts separate instrumented activity durations from official adjusted latency only as a sensitivity model; not measured savings or a rigorous achievable bound",
+  "pooler_all_m_gt1_10pct_cut_modeled_relative_gain": 0.026637731807503284,
+  "no_gpu_executed": true
+}

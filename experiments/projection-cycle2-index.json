@@ -1,0 +1,182 @@
+{
+  "updated_utc": "2026-10-25T22:50:36.750306+00:00",
+  "best_official": "P2-09-pooler-column-batch2-hybrid",
+  "followup_screens": [
+    {
+      "id": "M26-qkv-layout",
+      "candidate": "candidates/projection_qkv_layout.py",
+      "source_sha256": "50a76d4eb203732b7d0dede9dc4797e9f4f3ffa49aae947348a32e956c993e00",
+      "source_commit": "54a0877928f7a0bd111ad7a329ca12e054abeb94",
+      "app_id": "ap-KFijr1ps085dubW3fuiteg",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9984096562009763,
+      "results": "results/remote-modal-M26-qkv-layout.json",
+      "timings": "results/remote-modal-M26-qkv-layout.csv"
+    },
+    {
+      "id": "M28-unpooler-layout",
+      "candidate": "candidates/projection_unpooler_layout.py",
+      "source_sha256": "9122d171a15f622dec494cb864cbaebae501791706edecf2a8b4236e131d9a68",
+      "source_commit": "ed31d28d9835dbe4a485b122d5deb1ae8689dbba",
+      "app_id": "ap-w7VrX6FmljUODnxXeM8wUK",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9998407149374197,
+      "results": "results/remote-modal-M28-unpooler-layout.json",
+      "timings": "results/remote-modal-M28-unpooler-layout.csv"
+    },
+    {
+      "id": "M30-pooler-grouped",
+      "candidate": "candidates/projection_pooler_grouped.py",
+      "source_sha256": "573f2f9e0e196c0c098ca9f9ca5a48e610df5482bc981933b1119d29fda75f3c",
+      "source_commit": "8dc042307fd37157ff20c53e3a7053f788b8ac06",
+      "app_id": "ap-cjt62CgauSmkFmLcwhlgPT",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9003442551692761,
+      "results": "results/remote-modal-M30-pooler-grouped.json",
+      "timings": "results/remote-modal-M30-pooler-grouped.csv"
+    },
+    {
+      "id": "M32-pooler-narrow",
+      "candidate": "candidates/projection_pooler_narrow.py",
+      "source_sha256": "8269021351b0fc4ae659c11480a622c6a5fd93655978865bd33bd3e336788310",
+      "source_commit": "f41043adcb6b7ee654fb3f9178f5f16bf56b9e1b",
+      "app_id": "ap-L3DFQUMb8HkSfOzpd5K953",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.8630602405509111,
+      "results": "results/remote-modal-M32-pooler-narrow.json",
+      "timings": "results/remote-modal-M32-pooler-narrow.csv"
+    },
+    {
+      "id": "M36-qkv-m128-singlepass",
+      "candidate": "candidates/projection_qkv_m128_singlepass.py",
+      "source_sha256": "84e86a5e6fff111220cc6ddc77d3b8885a00f7383b068f360699956de2d39132",
+      "source_commit": "26189baa01e72d6e629f130a85f776347ca15a3f",
+      "frozen_bundle_commit": "40772dc015eccdeae0f9c46ac1c5d61acf18598e",
+      "app_id": "ap-N9JWk0BvaWxhSdDYLxUJmL",
+      "cuda_passed": true,
+      "status": "terminal-rejected-performance",
+      "gross_aggregate_best_over_candidate": 0.9560322311775801,
+      "target_paired_best_over_candidate": 0.3954007836404262,
+      "results": "results/remote-modal-M36-qkv-m128-singlepass.json",
+      "timings": "results/remote-modal-M36-qkv-m128-singlepass.csv",
+      "report": "QKV_M128_SINGLEPASS_RESULTS.md"
+    }
+  ],
+  "official_budget": "projection-cycle2-budget.json",
+  "modal_budget": "modal-diagnostics-budget.json",
+  "local_verification": {
+    "command": ".venv/bin/python -m unittest discover -s tests -v",
+    "passed": 112,
+    "total": 112,
+    "log": "results/m36-preflight-tests.local.txt",
+    "environment": "MacM2/macOS26.6.2/Python3.12.13/Torch2.14.1/noCUDA",
+    "scope": "CPU models/static only; actual GPU evidence separate",
+    "verified_utc": "2026-10-24T20:22:53.966811+00:00"
+  },
+  "resource_diagnostic": {
+    "failed_experiment": "M33-resource-probe",
+    "successful_experiment": "M34-resource-probe-fixed",
+    "app_id": "ap-GwiDybwrxgrysaFh3d8DRM",
+    "results": "results/remote-modal-M34-resource-probe-fixed.json",
+    "report": "HOPPER_DIAGNOSTICS.md"
+  },
+  "historical_index_snapshot": {
+    "updated_utc": "2026-10-24T20:29:48.540681+00:00",
+    "best_official": "P2-02-full-composition"
+  },
+  "latest_official": {
+    "experiment": "P2-09-pooler-column-batch2-hybrid",
+    "job_id": "41ba778763a5433b",
+    "status": "terminal-selected-after-paired-confirmation",
+    "passed": true,
+    "speedup": 1.1841399408925375,
+    "assessment": "results/router-p046-official-assessment.json",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e"
+  },
+  "prepared_local_candidate": {
+    "id": "P050",
+    "path": "candidates/projection_qkv_zero_bias.py",
+    "sha256": "b08b6e371fef83851268a8dbfa1159d1b6d5a8e141a410a596dfc3f159e0da8b",
+    "parent": "P046",
+    "design_predecessor": "P049 rejected",
+    "scope": "QKV M>1 only; restore every other P046 path",
+    "local_tests": 40,
+    "gpu_status": "parked after strategy review; not run; do not launch for quota consumption",
+    "report": "experiments/050-qkv-only-expansion.md",
+    "worker_sha256": "ab822cb0707f1b9b062b061bbc5f39ba5b97bf7d5fd8b75ccecc0560af838dfd",
+    "status": "parked-low-whole-score-ceiling",
+    "source_commit": "aecd1f625e1e802feaa2abd0a86c221fce649b38"
+  },
+  "current_selection": {
+    "candidate": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "source_commit": "fa56f2b3958b0c8d358c906a0b6cbb8e741a150e",
+    "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "job_id": "41ba778763a5433b",
+    "speedup": 1.1841399408925375,
+    "ci": [
+      1.1663778417791495,
+      1.2019020400059255
+    ],
+    "reason": "Official9+30 correctness and predeclared target gates passed; direct same-device confirmation reproduces all three gains with unchanged controls below2% movement. P039 preserved. Aggregate official point is not a statistically resolved pairwise score improvement.",
+    "paired_confirmation": "results/router-p048-confirmation-assessment.json",
+    "previous_best_job": "d5636ac8d1404abd",
+    "previous_best_preserved": true,
+    "selected_utc": "2026-10-25T22:21:25.586822+00:00"
+  },
+  "current_diagnostic": {
+    "id": "P051",
+    "status": "terminal-compile-gate-pass-execution-unverified",
+    "report": "experiments/051-gap-closing-orientation.md",
+    "assessment": "results/router-p051-native-assessment.json",
+    "app_id": "ap-Iu9K2yefCGuDlalnHrLuhd",
+    "source_commit": "144a0b8e99cdb145acfc3638952c4971012999ae",
+    "stopped_tasks0": true,
+    "gpu_kernel_executed": false,
+    "official_check": false,
+    "performance_measured": false
+  },
+  "last_rejected_candidate": {
+    "id": "P049",
+    "status": "terminal-rejected-performance",
+    "candidate": "candidates/projection_qkv_unpooler_zero_bias.py",
+    "source_sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+    "parent": "P046",
+    "target_families": [
+      "qkv_gate",
+      "unpooler"
+    ],
+    "target_m": "M>1 canonical BF16 contiguous",
+    "target_scored_count": 10,
+    "cpu_report": "results/router-p049-cpu.json",
+    "report": "experiments/049-zero-bias-lt-route.md",
+    "gpu_executed": true,
+    "official_job": null,
+    "updated_utc": "2026-10-25T22:29:04.062114+00:00",
+    "native_status": "completed;326oraclepass;performancegatefailed",
+    "result": "results/router-p049-assessment.json",
+    "app_id": "ap-qGKwQTPaVfoieaRJxN3Etw",
+    "decision": "reject; no official check"
+  },
+  "strategy_review": {
+    "report": "experiments/051-gap-closing-orientation.md",
+    "model": "results/router-p051-gap-model.json",
+    "public_snapshot": "results/public-leader-gap-20261025.json",
+    "next": "Five-case correctness plus minimal M8/M7 paired whole-call screen against matched control and P046; not launched",
+    "selected_unchanged": true
+  },
+  "preserved_diagnostics": [
+    {
+      "id": "P048",
+      "status": "terminal-pass",
+      "report": "experiments/048-p046-paired-confirmation.md",
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "oracle_checks": 480,
+      "stopped_tasks0": true,
+      "not_official_score": true
+    }
+  ]
+}

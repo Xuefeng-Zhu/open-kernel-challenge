@@ -1,0 +1,1786 @@
+{
+  "experiment": "P053",
+  "source_commit": "e6804b0d7909a6401396d2ef8a854967477fcdf8",
+  "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+  "decision": "Reject reducer-only rescue of the fixed P051/P052 route; preserve P046",
+  "original_oracle_checks": 598,
+  "timing_oracle_checks": 580,
+  "activity_oracle_checks": 18,
+  "timing_receipt_sha256": "f6f52fd366d74e2e912a6ea761055b2a1d2f3073b90d3d4cb27230a140a1da95",
+  "activity_receipt_sha256": "e5adaabc3ba123dc250aa5dd3c3696a808959e2c44e2931be4a6c27380f5aa2b",
+  "timing": [
+    {
+      "m": 8,
+      "comparison": "partial",
+      "round_parent_over_candidate_ratios": [
+        1.0247074497254967,
+        1.0301047128396654,
+        1.0192061429129975,
+        1.0117035248335158,
+        1.072351369109586,
+        1.0232257573173225,
+        1.015424207414399,
+        0.9466666835998044,
+        1.0830091081023479,
+        1.0782268444314926,
+        0.9800994960041962,
+        1.0232859255910318,
+        1.0234070496670318,
+        1.0128866215237236,
+        1.0115384747413827,
+        1.0256739124619538,
+        0.9964286135004355,
+        1.0038759232287593,
+        1.0090439211386983,
+        0.519710942734674,
+        0.9459458937643007,
+        0.9609755972904477,
+        1.01668803936422,
+        1.011658044468391
+      ],
+      "reverse_order_pair_ratios": [
+        1.0274025371022542,
+        1.0154479047775182,
+        1.0475006165952476,
+        0.9804428932273155,
+        1.080615330781384,
+        1.0014599442513703,
+        1.0181332471640445,
+        1.018581673207304,
+        1.0001453365932884,
+        0.7241623902935618,
+        0.9534311303206935,
+        1.0141699235027675
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.7241623902935618,
+        "p10": 0.9561323066113557,
+        "median": 1.0148089141401428,
+        "p90": 1.0454908086459482,
+        "maximum": 1.080615330781384
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 24.639999493956566,
+          "p10": 24.92479979991913,
+          "median": 25.232000276446342,
+          "p90": 26.53119955211878,
+          "maximum": 26.784000918269157
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 24.447999894618988,
+          "p10": 24.607999250292778,
+          "median": 24.815999902784824,
+          "p90": 26.352000050246716,
+          "maximum": 48.70399832725525
+        }
+      },
+      "median_paired_raw_ratio": 1.0148089141401428,
+      "candidate_raw_latency_cut": 0.014592810462933925,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 9,
+      "total_pairs": 12
+    },
+    {
+      "m": 8,
+      "comparison": "selected_partial",
+      "round_parent_over_candidate_ratios": [
+        0.8591370182475845,
+        0.878080391348756,
+        0.8779221285801209,
+        0.849753699878151,
+        0.8481012182568397,
+        0.8698454151489043,
+        0.8854569091746214,
+        0.8809831808475863,
+        0.8925295081567014,
+        0.8474999990905053,
+        0.8764629784505241,
+        0.8221680857117354,
+        0.891198069498097,
+        0.88030893960322,
+        0.8857509886709509,
+        0.9856957507422234,
+        0.8178527875640916,
+        0.9267015455505424,
+        0.8886010173221325,
+        0.9253200676169336,
+        0.8904639795829121,
+        2.0116428874945322,
+        0.8759590307397479,
+        0.8733850288545296
+      ],
+      "reverse_order_pair_ratios": [
+        0.8685570615711108,
+        0.863723090443841,
+        0.858904509408882,
+        0.8832172124387807,
+        0.8697233797886852,
+        0.848881551919862,
+        0.8857367710196447,
+        0.9343880274001158,
+        0.8705776486152531,
+        0.9067746982757027,
+        1.3383928911564202,
+        0.8746710829437662
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.848881551919862,
+        "p10": 0.8593863675123778,
+        "median": 0.8726243657795096,
+        "p90": 0.9316266944876745,
+        "maximum": 1.3383928911564202
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.43999934196472,
+          "p10": 21.60000056028366,
+          "median": 21.84000052511692,
+          "p90": 23.977600410580635,
+          "maximum": 49.75999891757965
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 24.4159996509552,
+          "p10": 24.607999250292778,
+          "median": 24.847999215126038,
+          "p90": 26.24320052564144,
+          "maximum": 44.99199986457825
+        }
+      },
+      "median_paired_raw_ratio": 0.8726243657795096,
+      "candidate_raw_latency_cut": -0.1459684593000179,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 1,
+      "total_pairs": 12
+    },
+    {
+      "m": 8,
+      "comparison": "selected_whole",
+      "round_parent_over_candidate_ratios": [
+        0.7782909895013143,
+        1.8466899411683462,
+        0.8052568539866092,
+        0.7706214947148758,
+        0.8040865136556083,
+        0.8084606167043398,
+        0.880579018055749,
+        0.4093107410658632,
+        0.8315411934628557,
+        0.8764987687404763,
+        0.7588105918199901,
+        0.80424530163615,
+        0.7794285617732275,
+        0.8069963218938315,
+        0.8766310400804274,
+        1.2328766977650185,
+        1.0011961813268855,
+        0.8137697777938955,
+        0.8466111859758988,
+        0.8240190001986397,
+        0.8202765319981873,
+        0.8321168498296115,
+        0.7617977115102834,
+        0.7896592006508314
+      ],
+      "reverse_order_pair_ratios": [
+        1.1988586829205667,
+        0.7877488435082335,
+        0.8062705989391252,
+        0.6003586015436514,
+        0.8537240960797459,
+        0.7811977043636095,
+        0.7930926695727263,
+        1.0396047238506907,
+        0.9026312613722596,
+        0.8352387102049598,
+        0.8261754800255755,
+        0.775603359926221
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.6003586015436514,
+        "p10": 0.7761627943699598,
+        "median": 0.8162230394823504,
+        "p90": 1.0259073776028476,
+        "maximum": 1.1988586829205667
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.407999098300934,
+          "p10": 21.52319997549057,
+          "median": 22.0320001244545,
+          "p90": 25.84320046007633,
+          "maximum": 50.87999999523163
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 26.30399912595749,
+          "p10": 26.556800492107868,
+          "median": 27.184000238776207,
+          "p90": 28.441600501537323,
+          "maximum": 52.928000688552856
+        }
+      },
+      "median_paired_raw_ratio": 0.8162230394823504,
+      "candidate_raw_latency_cut": -0.22515532106788005,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 2,
+      "total_pairs": 12
+    },
+    {
+      "m": 8,
+      "comparison": "whole",
+      "round_parent_over_candidate_ratios": [
+        1.024067432350754,
+        1.0744297797940594,
+        1.0261904679410911,
+        1.010752630593264,
+        1.017964068934321,
+        1.0079545398171816,
+        1.0227272363316613,
+        1.01196167401608,
+        1.0155131755613949,
+        1.0630952339705455,
+        0.9123931196059192,
+        1.0672269136572152,
+        0.9567198192778074,
+        1.0070754569661768,
+        1.0717703226020272,
+        0.880670568301923,
+        1.020238110911927,
+        0.9671574304355806,
+        0.9827188960179118,
+        0.710900474369456,
+        0.38695059696742046,
+        0.9988080957908021,
+        1.0180288437152971,
+        1.028742524236868
+      ],
+      "reverse_order_pair_ratios": [
+        1.0489463979798435,
+        1.018442298297351,
+        1.0129469406899452,
+        1.0173302148958454,
+        1.0390318652349468,
+        0.9867778336987022,
+        0.9815747802321513,
+        0.9715331075650807,
+        0.9933432789232683,
+        0.8358321179225896,
+        0.6216827075945923,
+        1.0233716638785808
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.6216827075945923,
+        "p10": 0.8494022168868387,
+        "median": 1.0031451098066069,
+        "p90": 1.0374658450993102,
+        "maximum": 1.0489463979798435
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 26.815999299287796,
+          "p10": 27.07199938595295,
+          "median": 27.327999472618103,
+          "p90": 28.620800003409386,
+          "maximum": 28.79999950528145
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 26.59199945628643,
+          "p10": 26.655999943614006,
+          "median": 26.863999664783478,
+          "p90": 31.699201092123985,
+          "maximum": 70.62400132417679
+        }
+      },
+      "median_paired_raw_ratio": 1.0031451098066069,
+      "candidate_raw_latency_cut": 0.0031352491039040586,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 6,
+      "total_pairs": 12
+    },
+    {
+      "m": 7,
+      "comparison": "partial",
+      "round_parent_over_candidate_ratios": [
+        1.0445609784379901,
+        0.47943525774989115,
+        0.6429738503035929,
+        0.510191481993663,
+        1.2471190934689813,
+        0.9938347967547829,
+        0.8326359663769181,
+        0.6284403710551625,
+        1.0429128991586685,
+        0.7285318802235733,
+        1.0142857477632194,
+        1.130829031659011,
+        1.0792207793189537,
+        1.0284974001457754,
+        1.0377833701444255,
+        0.9744836138711618,
+        1.0130547775114782,
+        1.040207527300035,
+        1.0288335428707438,
+        2.3529411764705883,
+        1.292732824092753,
+        0.7367424060775853,
+        0.8549905283753563,
+        0.810176157344309
+      ],
+      "reverse_order_pair_ratios": [
+        0.7076717896969585,
+        0.5727475722947778,
+        1.1132970631357806,
+        0.7233685476047352,
+        0.8716623746230433,
+        1.0709732816315343,
+        1.0535538741387844,
+        1.0056355646822228,
+        1.026541380137548,
+        1.5558871446074396,
+        0.9759155143953633,
+        0.8322817676994532
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.5727475722947778,
+        "p10": 0.7092414654877363,
+        "median": 0.990775539538793,
+        "p90": 1.109064684985356,
+        "maximum": 1.5558871446074396
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 24.831999093294144,
+          "p10": 25.030400045216084,
+          "median": 26.04799997061491,
+          "p90": 43.327999860048294,
+          "maximum": 58.88000130653381
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 24.4159996509552,
+          "p10": 24.540800042450428,
+          "median": 25.679999962449074,
+          "p90": 52.031998708844185,
+          "maximum": 67.58400052785873
+        }
+      },
+      "median_paired_raw_ratio": 0.990775539538793,
+      "candidate_raw_latency_cut": -0.009310343355368733,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 6,
+      "total_pairs": 12
+    },
+    {
+      "m": 7,
+      "comparison": "selected_partial",
+      "round_parent_over_candidate_ratios": [
+        0.9607842997386433,
+        0.8713826559138671,
+        1.006535921354983,
+        0.9645119922165514,
+        0.9935149417406235,
+        0.8008385808191112,
+        1.0,
+        1.003901200175395,
+        0.5078637177836232,
+        1.8892989120107817,
+        0.951970436816947,
+        0.9910256473400816,
+        1.1403061559726295,
+        1.0399484592146555,
+        1.2567394235035512,
+        0.9393204198976393,
+        1.006502000292325,
+        1.0247074497254967,
+        0.9974227357031553,
+        0.9668790245315265,
+        1.478654543107893,
+        0.9267192456182165,
+        1.8089304212336712,
+        1.0327225338312984
+      ],
+      "reverse_order_pair_ratios": [
+        0.9149922266700433,
+        0.985299937452356,
+        0.8919894035055254,
+        1.0019487013691843,
+        0.9795439599417424,
+        0.9713017648471226,
+        1.0889718223795888,
+        1.08649942613297,
+        1.0155639309581448,
+        0.9820321388540364,
+        1.1705971222922493,
+        1.366793037786246
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.8919894035055254,
+        "p10": 0.9206231804877513,
+        "median": 0.9936243194107701,
+        "p90": 1.1624345923009833,
+        "maximum": 1.366793037786246
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 24.288000538945198,
+          "p10": 24.46720004081726,
+          "median": 24.78400059044361,
+          "p90": 35.00159941613674,
+          "maximum": 55.743999779224396
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 24.447999894618988,
+          "p10": 24.607999250292778,
+          "median": 25.023999623954296,
+          "p90": 30.326399765908718,
+          "maximum": 48.8319993019104
+        }
+      },
+      "median_paired_raw_ratio": 0.9936243194107701,
+      "candidate_raw_latency_cut": -0.006416590722146065,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 6,
+      "total_pairs": 12
+    },
+    {
+      "m": 7,
+      "comparison": "selected_whole",
+      "round_parent_over_candidate_ratios": [
+        0.9243697308702759,
+        0.8918297340814101,
+        0.9181708841071439,
+        1.2058823979935476,
+        0.8969072329918617,
+        0.8804100391642096,
+        1.806751145880489,
+        0.6243137088760607,
+        0.9523809942314923,
+        0.913095268617963,
+        1.131455371156151,
+        0.9204819510310857,
+        0.9667063253939745,
+        0.9236277265740206,
+        1.1615120549864362,
+        0.9154929317660716,
+        0.7973112395438398,
+        1.4302191206185562,
+        0.9033019050859562,
+        0.7885010350385607,
+        0.9187574076548009,
+        1.0180723393247193,
+        0.8893956856640236,
+        0.9370460190047307
+      ],
+      "reverse_order_pair_ratios": [
+        0.9079539697996495,
+        1.0522386171847993,
+        0.8886203532021015,
+        1.0620637970012539,
+        0.9325312754832661,
+        1.020531355493997,
+        0.9449215658393886,
+        1.0311915808913332,
+        1.0678622476142143,
+        0.8439517089932221,
+        0.967140891123438,
+        0.9129100101168002
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.8439517089932221,
+        "p10": 0.8905537148618563,
+        "median": 0.9560312284814133,
+        "p90": 1.0610812790196085,
+        "maximum": 1.0678622476142143
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 24.4159996509552,
+          "p10": 24.5216004550457,
+          "median": 24.8800003901124,
+          "p90": 42.18880124390125,
+          "maximum": 68.51200014352798
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 26.43200010061264,
+          "p10": 26.611199602484703,
+          "median": 27.648000046610832,
+          "p90": 39.9360004812479,
+          "maximum": 42.49599948525429
+        }
+      },
+      "median_paired_raw_ratio": 0.9560312284814133,
+      "candidate_raw_latency_cut": -0.04599093649736519,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 5,
+      "total_pairs": 12
+    },
+    {
+      "m": 7,
+      "comparison": "whole",
+      "round_parent_over_candidate_ratios": [
+        1.0339806298464589,
+        1.016969685167813,
+        0.988505726362705,
+        0.9419642993451054,
+        0.833480143136481,
+        0.9700805918238932,
+        1.019002381536696,
+        0.5062686698906183,
+        1.0497573079578069,
+        1.0931076218109663,
+        1.0327273104419887,
+        1.0130796974309035,
+        0.9780600139792484,
+        0.7255574256998697,
+        1.024154561863635,
+        0.9880952166468367,
+        0.7539964781779162,
+        0.9841269296548556,
+        1.0226730653419214,
+        0.8120805058251189,
+        1.420062592392113,
+        1.019002381536696,
+        1.0709134426186844,
+        2.011454707439499
+      ],
+      "reverse_order_pair_ratios": [
+        1.0254398839544765,
+        0.964954456921087,
+        0.8991901414758174,
+        0.7182541195955338,
+        1.0712131974450465,
+        1.0228563296921034,
+        0.842400561444947,
+        1.005963331182849,
+        0.8614106100111647,
+        0.9113138099450663,
+        1.2029327344364429,
+        1.4676831692894732
+      ],
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.7182541195955338,
+        "p10": 0.8443015663015688,
+        "median": 0.985458894051968,
+        "p90": 1.1897607807373034,
+        "maximum": 1.4676831692894732
+      },
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 26.559999212622643,
+          "p10": 26.98560059070587,
+          "median": 27.264000847935677,
+          "p90": 47.52000048756598,
+          "maximum": 57.98399820923805
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 26.367999613285065,
+          "p10": 26.399999856948853,
+          "median": 27.759999968111515,
+          "p90": 39.77600149810314,
+          "maximum": 53.888000547885895
+        }
+      },
+      "median_paired_raw_ratio": 0.985458894051968,
+      "candidate_raw_latency_cut": -0.014755669704539898,
+      "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+      "winning_pairs": 6,
+      "total_pairs": 12
+    }
+  ],
+  "assessment": {
+    "cases": [
+      {
+        "m": 8,
+        "raw_latency_cuts": {
+          "partial": 0.014592810462933925,
+          "whole": 0.0031352491039040586,
+          "selected_partial": -0.1459684593000179,
+          "selected_whole": -0.22515532106788005
+        },
+        "partial_winning_pairs": 9,
+        "dilution_followup_warranted": false,
+        "selected_partial_winning_pairs": 1,
+        "selected_partial_total_pairs": 12,
+        "reducer_only_case_gates": {
+          "partial_at_least5pct_faster_than_p046_whole": false,
+          "at_least10_of12_pairs_win": false
+        },
+        "no_reducer_only_rescue_lead": true
+      },
+      {
+        "m": 7,
+        "raw_latency_cuts": {
+          "partial": -0.009310343355368733,
+          "whole": -0.014755669704539898,
+          "selected_partial": -0.006416590722146065,
+          "selected_whole": -0.04599093649736519
+        },
+        "partial_winning_pairs": 6,
+        "dilution_followup_warranted": false,
+        "selected_partial_winning_pairs": 6,
+        "selected_partial_total_pairs": 12,
+        "reducer_only_case_gates": {
+          "partial_at_least5pct_faster_than_p046_whole": false,
+          "at_least10_of12_pairs_win": false
+        },
+        "no_reducer_only_rescue_lead": true
+      }
+    ],
+    "reducer_only_followup_warranted": false,
+    "automatic_selection": false,
+    "official_score": null,
+    "qualification": "Research decisions only. Partial-only excludes the required reducer and is not a complete implementation; it still includes layout conversion and FP32 scratch stores. No reducer latency is inferred by subtracting event medians; no achieved overlap or bottleneck claim."
+  },
+  "separate_activity": [
+    {
+      "m": 8,
+      "runner": "control",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 23.001,
+            "end_us": 2115526819235.363,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115526819212.362
+          },
+          {
+            "duration_us": 1.791,
+            "end_us": 2115526819237.762,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115526819235.971
+          }
+        ],
+        [
+          {
+            "duration_us": 21.789,
+            "end_us": 2115528036671.4822,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115528036649.693
+          },
+          {
+            "duration_us": 1.814,
+            "end_us": 2115528036673.9429,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528036672.129
+          }
+        ],
+        [
+          {
+            "duration_us": 21.153,
+            "end_us": 2115528066586.0562,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115528066564.903
+          },
+          {
+            "duration_us": 1.824,
+            "end_us": 2115528066588.52,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528066586.696
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        21.789,
+        1.814
+      ],
+      "gaps_us": [
+        [
+          0.60791015625
+        ],
+        [
+          0.646728515625
+        ],
+        [
+          0.639892578125
+        ]
+      ]
+    },
+    {
+      "m": 8,
+      "runner": "weight_first",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 20.064,
+            "end_us": 2115528079088.887,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115528079068.823
+          },
+          {
+            "duration_us": 1.728,
+            "end_us": 2115528079091.191,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528079089.463
+          }
+        ],
+        [
+          {
+            "duration_us": 19.777,
+            "end_us": 2115528086650.5042,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115528086630.727
+          },
+          {
+            "duration_us": 1.76,
+            "end_us": 2115528086652.84,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528086651.08
+          }
+        ],
+        [
+          {
+            "duration_us": 19.957,
+            "end_us": 2115528095514.126,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115528095494.169
+          },
+          {
+            "duration_us": 1.759,
+            "end_us": 2115528095516.685,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528095514.926
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 36,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 36,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 36,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              256,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        19.957,
+        1.759
+      ],
+      "gaps_us": [
+        [
+          0.575927734375
+        ],
+        [
+          0.575927734375
+        ],
+        [
+          0.800048828125
+        ]
+      ]
+    },
+    {
+      "m": 8,
+      "runner": "p046",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 17.551,
+            "end_us": 2115528114388.872,
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "role": "library_or_other",
+            "start_us": 2115528114371.321
+          }
+        ],
+        [
+          {
+            "duration_us": 17.152,
+            "end_us": 2115528137744.4102,
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "role": "library_or_other",
+            "start_us": 2115528137727.258
+          }
+        ],
+        [
+          {
+            "duration_us": 17.394,
+            "end_us": 2115528158392.543,
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "role": "library_or_other",
+            "start_us": 2115528158375.149
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "registers per thread": 168,
+            "shared memory": 164308,
+            "grid": [
+              4,
+              16,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "registers per thread": 168,
+            "shared memory": 164308,
+            "grid": [
+              4,
+              16,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+            "registers per thread": 168,
+            "shared memory": 164308,
+            "grid": [
+              4,
+              16,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        17.394
+      ],
+      "gaps_us": [
+        [],
+        [],
+        []
+      ]
+    },
+    {
+      "m": 7,
+      "runner": "control",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 21.311,
+            "end_us": 2115528543842.102,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115528543820.791
+          },
+          {
+            "duration_us": 1.728,
+            "end_us": 2115528543844.407,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528543842.679
+          }
+        ],
+        [
+          {
+            "duration_us": 21.376,
+            "end_us": 2115528705612.68,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115528705591.304
+          },
+          {
+            "duration_us": 1.728,
+            "end_us": 2115528705614.9841,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115528705613.256
+          }
+        ],
+        [
+          {
+            "duration_us": 21.6,
+            "end_us": 2115529082488.987,
+            "name": "_partial",
+            "role": "partial",
+            "start_us": 2115529082467.387
+          },
+          {
+            "duration_us": 1.824,
+            "end_us": 2115529082491.387,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115529082489.563
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial",
+            "registers per thread": 42,
+            "shared memory": 10240,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        21.376,
+        1.728
+      ],
+      "gaps_us": [
+        [
+          0.576904296875
+        ],
+        [
+          0.576171875
+        ],
+        [
+          0.575927734375
+        ]
+      ]
+    },
+    {
+      "m": 7,
+      "runner": "weight_first",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 20.992,
+            "end_us": 2115529098205.557,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115529098184.565
+          },
+          {
+            "duration_us": 1.792,
+            "end_us": 2115529098207.989,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115529098206.197
+          }
+        ],
+        [
+          {
+            "duration_us": 19.776,
+            "end_us": 2115529110087.9338,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115529110068.158
+          },
+          {
+            "duration_us": 1.76,
+            "end_us": 2115529110090.494,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115529110088.734
+          }
+        ],
+        [
+          {
+            "duration_us": 19.872,
+            "end_us": 2115529319813.894,
+            "name": "_partial_weight_first",
+            "role": "partial",
+            "start_us": 2115529319794.022
+          },
+          {
+            "duration_us": 1.825,
+            "end_us": 2115529319816.327,
+            "name": "_reduce",
+            "role": "reducer",
+            "start_us": 2115529319814.502
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 34,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 34,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "_partial_weight_first",
+            "registers per thread": 34,
+            "shared memory": 20480,
+            "grid": [
+              64,
+              8,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "_reduce",
+            "registers per thread": 20,
+            "shared memory": 2048,
+            "grid": [
+              224,
+              1,
+              1
+            ],
+            "block": [
+              128,
+              1,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        19.872,
+        1.792
+      ],
+      "gaps_us": [
+        [
+          0.64013671875
+        ],
+        [
+          0.800048828125
+        ],
+        [
+          0.60791015625
+        ]
+      ]
+    },
+    {
+      "m": 7,
+      "runner": "p046",
+      "raw_intervals": [
+        [
+          {
+            "duration_us": 18.278,
+            "end_us": 2115529387124.5461,
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "role": "library_or_other",
+            "start_us": 2115529387106.268
+          },
+          {
+            "duration_us": 2.261,
+            "end_us": 2115529387127.126,
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "role": "library_or_other",
+            "start_us": 2115529387124.865
+          }
+        ],
+        [
+          {
+            "duration_us": 17.557,
+            "end_us": 2115529411542.8809,
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "role": "library_or_other",
+            "start_us": 2115529411525.324
+          },
+          {
+            "duration_us": 2.194,
+            "end_us": 2115529411545.393,
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "role": "library_or_other",
+            "start_us": 2115529411543.199
+          }
+        ],
+        [
+          {
+            "duration_us": 17.892,
+            "end_us": 2115529432333.103,
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "role": "library_or_other",
+            "start_us": 2115529432315.211
+          },
+          {
+            "duration_us": 2.208,
+            "end_us": 2115529432335.631,
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "role": "library_or_other",
+            "start_us": 2115529432333.423
+          }
+        ]
+      ],
+      "resource_metadata": [
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "registers per thread": 168,
+            "shared memory": 164292,
+            "grid": [
+              2,
+              64,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "registers per thread": 32,
+            "shared memory": 0,
+            "grid": [
+              128,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "registers per thread": 168,
+            "shared memory": 164292,
+            "grid": [
+              2,
+              64,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "registers per thread": 32,
+            "shared memory": 0,
+            "grid": [
+              128,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ]
+          }
+        ],
+        [
+          {
+            "name": "nvjet_sm90_tst_64x8_64x16_2x1_v_bz_splitK_NNT",
+            "registers per thread": 168,
+            "shared memory": 164292,
+            "grid": [
+              2,
+              64,
+              1
+            ],
+            "block": [
+              384,
+              1,
+              1
+            ]
+          },
+          {
+            "name": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+            "registers per thread": 32,
+            "shared memory": 0,
+            "grid": [
+              128,
+              1,
+              1
+            ],
+            "block": [
+              32,
+              16,
+              1
+            ]
+          }
+        ]
+      ],
+      "median_duration_us_by_sequence_position": [
+        17.892,
+        2.208
+      ],
+      "gaps_us": [
+        [
+          0.31884765625
+        ],
+        [
+          0.318115234375
+        ],
+        [
+          0.320068359375
+        ]
+      ]
+    }
+  ],
+  "artifact_manifest": {
+    "activity.json": {
+      "raw_sha256": "e5adaabc3ba123dc250aa5dd3c3696a808959e2c44e2931be4a6c27380f5aa2b",
+      "published_sha256": "e5adaabc3ba123dc250aa5dd3c3696a808959e2c44e2931be4a6c27380f5aa2b",
+      "removed_top_level_fields": []
+    },
+    "activity.log": {
+      "raw_sha256": "0eac1db40173cfc6c956d87e5f827be85ef7c017ba2dcd7fa3e296de6372d1c3",
+      "published_sha256": "0eac1db40173cfc6c956d87e5f827be85ef7c017ba2dcd7fa3e296de6372d1c3",
+      "removed_top_level_fields": []
+    },
+    "activity.pooler_m7.control.repeat0.trace.json": {
+      "raw_sha256": "adbbb11dee531bbad5d25014ab2713afb53d1e36a828be17947b363124b408ec",
+      "published_sha256": "99090048266dfcc8e8b561f4f74914a0ecdc1917cd425b0c545742f22376a338",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.control.repeat1.trace.json": {
+      "raw_sha256": "87cdc5bd0ebd0c0ddf9bca5e278585892629f630d4b977b0c3dc8bded3f2af09",
+      "published_sha256": "829f4e217c6ca761178e0bc0e0fc2b6586997dc9b20bf376ffdf05fccad469cd",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.control.repeat2.trace.json": {
+      "raw_sha256": "babd68f801a767505e4bc24e0167bd1bd504386e7394a0015222188b20b2d596",
+      "published_sha256": "68638de7649b76ae7acb114d649ce8ac58d337f00e9a9e5dee8d73fe4ed3c909",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.p046.repeat0.trace.json": {
+      "raw_sha256": "1b2833fe51fec32a497b8a464dfb299829873d9c49d90bf528aedaad012f61a5",
+      "published_sha256": "136fda27bd60360f8c745e729397aa13ca729553c49712edd7c2b02e025ace5e",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.p046.repeat1.trace.json": {
+      "raw_sha256": "23e72034c0363426dc5e9726d2ec905c267c40d44d2505dfe12792f43939330a",
+      "published_sha256": "f90eac219d2872dc19c69ee9d1b70d78b89e864ce32f87ee8f6c3e1706652592",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.p046.repeat2.trace.json": {
+      "raw_sha256": "16bc49b5f3cd92781a26efc153f2fcce9633521340e6bdce4363de2b4983b4ab",
+      "published_sha256": "08a468466a4565d13cb1c0ba0f687f3bc9d8b0f5589236c4e759bf84ad791f52",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.weight_first.repeat0.trace.json": {
+      "raw_sha256": "999961bee5b00fb3d5ccf7a1ab87d263c1c958d4e3b54095d54db0514a920867",
+      "published_sha256": "c847c27b6f33d6d3e12f61da614fea17c458171aafd0c788c36c498a4d4a1d6b",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.weight_first.repeat1.trace.json": {
+      "raw_sha256": "f822d5a27bd31f6b64b7450e22b7fa146865df4482b9fd39e1f944144cf82db8",
+      "published_sha256": "291bcf5ad5988c1ab35f9f73e2783d83acf9630eee7ee89843e1017d490a5dfb",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m7.weight_first.repeat2.trace.json": {
+      "raw_sha256": "ba4e8ee2021592c8f0eed783f851e373cba04528c45fa252b9ad7a6a270930da",
+      "published_sha256": "ab4c3492bea041e04db2e4466d392f3f112161a7f710421e6280a440f6c7805d",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.control.repeat0.trace.json": {
+      "raw_sha256": "d4c049f3700a817ea1a6b98d195cb262a196172fa893f2eb2184195ac35aa26a",
+      "published_sha256": "68243836da07cb4c496d806d465877e7cca5307fd12469f9eb9cd0e70da4159f",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.control.repeat1.trace.json": {
+      "raw_sha256": "3e262e0a0295630a34ddd0fc49b169dd51448bf79ae5f31657703d47cb01e8dd",
+      "published_sha256": "07f4fa4bce671933a758d368387ff733c7cebf120a89eb086e09ff502fde0d5e",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.control.repeat2.trace.json": {
+      "raw_sha256": "7a694f3557968ecb6a9d2b07f73364cdba657956e00ce3d3ec8551cd436169c3",
+      "published_sha256": "5693a4a65a5a40c4d9d80aa0052fce981fda89f3a6cfe3f7764c1f6186817955",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.p046.repeat0.trace.json": {
+      "raw_sha256": "2dae990ff6d7c20a5b40b17a6669da02b38f80b49be60f9ed321210acbd9d96e",
+      "published_sha256": "64999f7500307486fb279c55a8a694e4ee7605f5f0e9d11d6b3d4f2ae72fe1a5",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.p046.repeat1.trace.json": {
+      "raw_sha256": "e5b6b64d9d70695eb2f6ac464e856c82c238cdba6b2e81e0da309a5fd2e1ea52",
+      "published_sha256": "edef768660d6aa8554900f7ed3c030868a8b8cef64dc0840785125c37aadd03a",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.p046.repeat2.trace.json": {
+      "raw_sha256": "6bb3fb1363d397133aee2813e9f20a7afe2451aef36feded7a0cefc6fed3adbe",
+      "published_sha256": "e63031ad5bddb70d6e93095e3fa0ed894cffd4192b818ab3d796b9ea6dd63414",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.weight_first.repeat0.trace.json": {
+      "raw_sha256": "543a4c61dc83d36ab6ac929e8270acb24bad16ac9fc80ea1f496796cbf6d2483",
+      "published_sha256": "ac4e17cbfac019bd407467fdf41ecfadc474901405bc3fe9c660b7c31e1014e4",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.weight_first.repeat1.trace.json": {
+      "raw_sha256": "9d7226fd3c9e8dcc1b0048bd6c839e1d83f7908e0ffa2ca8d8910882cb91031a",
+      "published_sha256": "ed9e184d413c4e929f1df4b52533dfd43426e3bb15e801ec56e5564c827859f3",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "activity.pooler_m8.weight_first.repeat2.trace.json": {
+      "raw_sha256": "3c5a4123735ae2a1a44aca7f024de2b0328279c8926809a489d4aaad39ff28a1",
+      "published_sha256": "57e3eecee4130d0a57e70514636aec0a4170660ee11b57477ea485b1eed20b20",
+      "removed_top_level_fields": [
+        "host_name",
+        "trace_id"
+      ]
+    },
+    "summary.json": {
+      "raw_sha256": "c8d44352fdefef655f756d69d839e67433cd4dd28c75afde393af5ca1ea36ec0",
+      "published_sha256": "c8d44352fdefef655f756d69d839e67433cd4dd28c75afde393af5ca1ea36ec0",
+      "removed_top_level_fields": []
+    },
+    "timing.json": {
+      "raw_sha256": "f6f52fd366d74e2e912a6ea761055b2a1d2f3073b90d3d4cb27230a140a1da95",
+      "published_sha256": "f6f52fd366d74e2e912a6ea761055b2a1d2f3073b90d3d4cb27230a140a1da95",
+      "removed_top_level_fields": []
+    },
+    "timing.log": {
+      "raw_sha256": "2486ce642a8e30694f49ab9c9772d26992d87d6fb15d87848199ffe38adc7661",
+      "published_sha256": "2486ce642a8e30694f49ab9c9772d26992d87d6fb15d87848199ffe38adc7661",
+      "removed_top_level_fields": []
+    }
+  },
+  "worker_wall_seconds": 51.452367781,
+  "client_wall_seconds": 69.28232158301398,
+  "shutdown": {
+    "observed_utc": "2026-10-25T23:56:28.401787+00:00",
+    "app": {
+      "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 16:54:48-07:00",
+      "stopped_at": "2026-10-25 16:55:58-07:00"
+    },
+    "all_apps_stopped_tasks_zero": true
+  },
+  "cost_reserve_usd": "0.4578834167785",
+  "paid_after_zero": true,
+  "observed_workspace_gross_delta_usd": "0",
+  "limitations": [
+    "Raw CUDA graph event times; no calibration, official score or formal interval",
+    "Partial-only includes layout conversion and FP32 scratch stores; incomplete output until untimed reducer",
+    "Three separately instrumented traces per whole path; no median subtraction or measured overlap claim",
+    "No hardware counter measurements; profiler occupancy estimates deliberately not interpreted",
+    "Raw trace host_name and trace_id removed only from published copies; all events and resource data preserved",
+    "Current M8/M7 only; earlier 390-check P052 evidence inherited, not rerun; no concurrent calls",
+    "Delayed billing is not a settled per-app invoice; reserve retained"
+  ],
+  "delayed_workspace_gross_delta_usd": "0.07830934",
+  "delayed_billing_observed_utc": "2026-10-25T23:59:15.435367+00:00"
+}

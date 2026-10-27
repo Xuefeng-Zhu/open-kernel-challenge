@@ -1,0 +1,124 @@
+{
+  "kind": "Public leader gap snapshot; no private competitor jobs queried",
+  "generated_utc": "2026-10-25T22:55:29.668920+00:00",
+  "tracks": [
+    {
+      "problem": "muse_bf16_proj",
+      "observed_utc": "2026-10-25T22:54:34.948144+00:00",
+      "command": [
+        "okc",
+        "leaderboard",
+        "muse_bf16_proj",
+        "--json"
+      ],
+      "raw_snapshot_sha256": "8c230f2bc385c063904beb78419b16c1b17be3896059600ec48906507264000f",
+      "leader": {
+        "rank": 1,
+        "team": "colinlikescode",
+        "speedup": 1.6099,
+        "first": true,
+        "ahead": 0
+      },
+      "ranked_teams": 1008,
+      "our_ranked_entry": null,
+      "top5": [
+        {
+          "rank": 1,
+          "team": "colinlikescode",
+          "speedup": 1.6099
+        },
+        {
+          "rank": 2,
+          "team": "spinualexandru",
+          "speedup": 1.5698
+        },
+        {
+          "rank": 3,
+          "team": "devstar222696",
+          "speedup": 1.5629
+        },
+        {
+          "rank": 4,
+          "team": "accountforgoofystuff",
+          "speedup": 1.5608
+        },
+        {
+          "rank": 5,
+          "team": "graadient",
+          "speedup": 1.5529
+        }
+      ],
+      "selected": {
+        "score": 1.1841399408925375,
+        "job": "41ba778763a5433b",
+        "selection": "P046"
+      },
+      "leader_over_selected_score": 1.3595521478538668,
+      "effective_latency_cut_to_match": 0.26446366799643617,
+      "qualifications": [
+        "CLI speedups rounded to4decimals; no exact leader per-shape or source retrieved",
+        "Cross-run normalization and provisional leaderboards; not a measured head-to-head result",
+        "No scored submissions by us; off-board check receipts are used for our selected sources"
+      ]
+    },
+    {
+      "problem": "muse_attention_decode",
+      "observed_utc": "2026-10-25T22:54:34.935036+00:00",
+      "command": [
+        "okc",
+        "leaderboard",
+        "muse_attention_decode",
+        "--json"
+      ],
+      "raw_snapshot_sha256": "72f6a3f6a77eb38637021e009058e2eca2fe87c9b57bf01270edd6136b4881a5",
+      "leader": {
+        "rank": 1,
+        "team": "pjmullin3",
+        "speedup": 2.9097,
+        "first": true,
+        "ahead": 0
+      },
+      "ranked_teams": 746,
+      "our_ranked_entry": null,
+      "top5": [
+        {
+          "rank": 1,
+          "team": "pjmullin3",
+          "speedup": 2.9097
+        },
+        {
+          "rank": 2,
+          "team": "colinlikescode",
+          "speedup": 2.844
+        },
+        {
+          "rank": 3,
+          "team": "abhishekgahlot2",
+          "speedup": 2.71
+        },
+        {
+          "rank": 4,
+          "team": "accountforgoofystuff",
+          "speedup": 2.6237
+        },
+        {
+          "rank": 5,
+          "team": "schrepa",
+          "speedup": 2.6082
+        }
+      ],
+      "selected": {
+        "score": 1.2336330588627955,
+        "job": "5090b83f1d63407b",
+        "selection": "preparation fusion plus A2-15 lookahead"
+      },
+      "leader_over_selected_score": 2.358643017140169,
+      "effective_latency_cut_to_match": 0.576027405277934,
+      "qualifications": [
+        "CLI speedups rounded to4decimals; no exact leader per-shape or source retrieved",
+        "Cross-run normalization and provisional leaderboards; not a measured head-to-head result",
+        "No scored submissions by us; off-board check receipts are used for our selected sources"
+      ]
+    }
+  ]
+}

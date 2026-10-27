@@ -1,0 +1,111 @@
+{
+  "observed_utc": "2026-10-26T00:06:43.166237+00:00",
+  "command": "okc leaderboard muse_bf16_proj --json",
+  "public_url": "https://openkernelchallenge.dev/leaderboard?problem=muse_bf16_proj",
+  "board": "muse_bf16_proj",
+  "measure": "speedup over SGLang; higher ranks higher",
+  "ranked": 1010,
+  "leader": {
+    "rank": 1,
+    "team": "colinlikescode",
+    "speedup": 1.6238,
+    "first": true,
+    "ahead": 0
+  },
+  "you": null,
+  "top10": [
+    {
+      "attempts": 15,
+      "job": "ca853eb70784491a",
+      "rank": 1,
+      "speedup": 1.6238,
+      "submitted_at": 1792969694.275875,
+      "team": "colinlikescode",
+      "value": 2975.08735739863
+    },
+    {
+      "attempts": 13,
+      "job": "0a8f6ba411664e6c",
+      "rank": 2,
+      "speedup": 1.5698,
+      "submitted_at": 1792966478.3772418,
+      "team": "spinualexandru",
+      "value": 3077.420330983563
+    },
+    {
+      "attempts": 17,
+      "job": "d8b5ccc13a624a5e",
+      "rank": 3,
+      "speedup": 1.5629,
+      "submitted_at": 1792892933.7380316,
+      "team": "devstar222696",
+      "value": 3090.981314133507
+    },
+    {
+      "attempts": 15,
+      "job": "5987bf672867464e",
+      "rank": 4,
+      "speedup": 1.5608,
+      "submitted_at": 1792843264.7139904,
+      "team": "accountforgoofystuff",
+      "value": 3095.088247790042
+    },
+    {
+      "attempts": 15,
+      "job": "f3cb491d04c3445e",
+      "rank": 5,
+      "speedup": 1.5529,
+      "submitted_at": 1792953977.8044178,
+      "team": "graadient",
+      "value": 3110.732057122199
+    },
+    {
+      "attempts": 15,
+      "job": "e3a4b0aa68474554",
+      "rank": 6,
+      "speedup": 1.5494,
+      "submitted_at": 1792889840.4688842,
+      "team": "0daycloud",
+      "value": 3117.931827287195
+    },
+    {
+      "attempts": 29,
+      "job": "09e8455f8f2f48f6",
+      "rank": 7,
+      "speedup": 1.5493,
+      "submitted_at": 1792922787.874573,
+      "team": "saifalharthi",
+      "value": 3118.046972411033
+    },
+    {
+      "attempts": 11,
+      "job": "bc86b706f0d94576",
+      "rank": 8,
+      "speedup": 1.5474,
+      "submitted_at": 1792960476.7924895,
+      "team": "Aspect5",
+      "value": 3121.9421254842896
+    },
+    {
+      "attempts": 3,
+      "job": "d546f26fcfc945e3",
+      "rank": 9,
+      "speedup": 1.541,
+      "submitted_at": 1792889445.4931772,
+      "team": "betitanx",
+      "value": 3134.9400358962034
+    },
+    {
+      "attempts": 3,
+      "job": "137b9d659e3742f8",
+      "rank": 10,
+      "speedup": 1.5406,
+      "submitted_at": 1792915134.5021482,
+      "team": "MohamadEidAlAktaa",
+      "value": 3135.7515138535314
+    }
+  ],
+  "selected_ours": 1.1841399408925375,
+  "leader_over_selected_ratio": 1.3712906253090928,
+  "uniform_effective_latency_cut_to_match": 0.2707599822068373
+}

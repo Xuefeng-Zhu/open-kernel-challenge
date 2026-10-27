@@ -1,0 +1,519 @@
+{
+  "experiment": "P068",
+  "source_commit": "1ffbcddf6bcad200531854b31d804eeae189e74c",
+  "selected_source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+  "decision": "Baseline acquisition completed; preserve P046, no optimization or official score",
+  "oracle_checks": 258,
+  "timing_oracle_checks": 240,
+  "activity_oracle_checks": 18,
+  "timing": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.15200087428093,
+          "p10": 21.385600231587887,
+          "median": 21.63200080394745,
+          "p90": 22.575999796390533,
+          "maximum": 23.19999970495701
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 21.12000063061714,
+          "p10": 21.193599328398705,
+          "median": 21.536000072956085,
+          "p90": 22.678399831056595,
+          "maximum": 23.072000592947006
+        }
+      },
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.9726533040376059,
+        "p10": 0.9827607426532164,
+        "median": 1.0012120773088884,
+        "p90": 1.032332621144024,
+        "maximum": 1.0379142334050118
+      },
+      "paired_b_over_a_latency_change": -0.0012106099560307282,
+      "graph_b_faster_pairs": 7,
+      "pairs": 12,
+      "absolute_median_drift_over_2pct": false,
+      "qualification": "A and B are identical P046, not competing candidates; all samples retained"
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 27.07199938595295,
+          "p10": 27.71840002387762,
+          "median": 28.28799933195114,
+          "p90": 29.28320001810789,
+          "maximum": 30.01599945127964
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 27.2000003606081,
+          "p10": 27.327999472618103,
+          "median": 27.984000742435455,
+          "p90": 28.300799429416656,
+          "maximum": 28.44800055027008
+        }
+      },
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.9908931543157654,
+        "p10": 1.0039251050029052,
+        "median": 1.0201929313842162,
+        "p90": 1.0260273193473108,
+        "maximum": 1.0486822584620055
+      },
+      "paired_b_over_a_latency_change": -0.01979324769170676,
+      "graph_b_faster_pairs": 11,
+      "pairs": 12,
+      "absolute_median_drift_over_2pct": false,
+      "qualification": "A and B are identical P046, not competing candidates; all samples retained"
+    },
+    {
+      "layer": "pooler",
+      "m": 8,
+      "raw_us": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.824000403285027,
+          "p10": 21.91999927163124,
+          "median": 22.096000611782074,
+          "p90": 23.455999791622162,
+          "maximum": 23.711999878287315
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 22.016000002622604,
+          "p10": 22.067200392484665,
+          "median": 22.32000045478344,
+          "p90": 23.312000557780266,
+          "maximum": 23.77600036561489
+        }
+      },
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.9468896324344779,
+        "p10": 0.9567118432313249,
+        "median": 0.9967655843771441,
+        "p90": 1.0220437921881205,
+        "maximum": 1.0299296902141761
+      },
+      "paired_b_over_a_latency_change": 0.0032449110137333648,
+      "graph_b_faster_pairs": 5,
+      "pairs": 12,
+      "absolute_median_drift_over_2pct": false,
+      "qualification": "A and B are identical P046, not competing candidates; all samples retained"
+    }
+  ],
+  "activity": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "dispatch": [
+        {
+          "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+          "grid": [
+            8,
+            12,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "stream": 7,
+          "registers per thread": 168,
+          "shared memory": 221492,
+          "cluster": null
+        },
+        {
+          "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "grid": [
+            72,
+            8,
+            1
+          ],
+          "block": [
+            32,
+            16,
+            1
+          ],
+          "stream": 7,
+          "registers per thread": 32,
+          "shared memory": 0,
+          "cluster": null
+        }
+      ],
+      "instrumented_us": [
+        [
+          14.72,
+          3.424
+        ],
+        [
+          14.058,
+          3.58
+        ],
+        [
+          13.826,
+          3.456
+        ]
+      ],
+      "instrumented_medians_us": [
+        14.058,
+        3.456
+      ],
+      "gaps_us": [
+        [
+          0.0002148437499993605
+        ],
+        [
+          0.00010546875000017053
+        ],
+        [
+          0.03191015624999949
+        ]
+      ],
+      "reducer_fraction_of_median_phase_sum": 0.19732785200411102,
+      "qualification": "Instrumented phase durations; not whole-call acceptance timing or removable cost"
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "dispatch": [
+        {
+          "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+          "grid": [
+            2,
+            64,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "stream": 7,
+          "registers per thread": 168,
+          "shared memory": 213252,
+          "cluster": null
+        },
+        {
+          "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+          "grid": [
+            128,
+            4,
+            1
+          ],
+          "block": [
+            32,
+            16,
+            1
+          ],
+          "stream": 7,
+          "registers per thread": 32,
+          "shared memory": 0,
+          "cluster": null
+        }
+      ],
+      "instrumented_us": [
+        [
+          19.521,
+          3.392
+        ],
+        [
+          19.522,
+          3.424
+        ],
+        [
+          20.605,
+          3.488
+        ]
+      ],
+      "instrumented_medians_us": [
+        19.522,
+        3.424
+      ],
+      "gaps_us": [
+        [
+          -3.906250000795808e-06
+        ],
+        [
+          -2.7343749998465228e-05
+        ],
+        [
+          -0.032246093750000426
+        ]
+      ],
+      "reducer_fraction_of_median_phase_sum": 0.14921990760916937,
+      "qualification": "Instrumented phase durations; not whole-call acceptance timing or removable cost"
+    },
+    {
+      "layer": "pooler",
+      "m": 8,
+      "dispatch": [
+        {
+          "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+          "grid": [
+            4,
+            16,
+            1
+          ],
+          "block": [
+            384,
+            1,
+            1
+          ],
+          "stream": 7,
+          "registers per thread": 168,
+          "shared memory": 164308,
+          "cluster": null
+        }
+      ],
+      "instrumented_us": [
+        [
+          17.15
+        ],
+        [
+          17.215
+        ],
+        [
+          18.33
+        ]
+      ],
+      "instrumented_medians_us": [
+        17.215
+      ],
+      "gaps_us": [
+        [],
+        [],
+        []
+      ],
+      "reducer_fraction_of_median_phase_sum": null,
+      "qualification": "Instrumented phase durations; not whole-call acceptance timing or removable cost"
+    }
+  ],
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux",
+    "packages": {
+      "torch": "2.14.1",
+      "triton": "3.8.0",
+      "nvidia-cutlass-dsl": "4.8.0",
+      "apache-tvm-ffi": "0.1.11",
+      "quack-kernels": "0.6.5",
+      "einops": "0.8.2"
+    },
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "sms": 132,
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true,
+    "image_digest": null,
+    "image_digest_provenance": "unavailable",
+    "driver_version": null,
+    "driver_version_reason": "May be reported by activity trace; no assumed version",
+    "python_executable_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"
+  },
+  "library_identity": {
+    "status": "available",
+    "libraries": [
+      {
+        "basename": "libcublas.so.13",
+        "sha256": "25cde432108543626df85d887c730bf2cab96803ca16f9654e4abc8d2b45833e",
+        "bytes": 54177976
+      },
+      {
+        "basename": "libcublasLt.so.13",
+        "sha256": "1489aeb75d55ee55782798343ac66f57771d561cc1fe1e0491568deefa0e6515",
+        "bytes": 541607888
+      },
+      {
+        "basename": "libcudart.so.13",
+        "sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+        "bytes": 704288
+      },
+      {
+        "basename": "libcupti.so.13",
+        "sha256": "e2f9ed861fe27c492b8bb52b5e3220ef5120f3edcda36312e96b7fd8a186be3e",
+        "bytes": 4152208
+      },
+      {
+        "basename": "libnvJitLink.so.13",
+        "sha256": "3afdb9677477dd584d3712a9bf2978d085729f0ed6e6432027e925d1e312e3c9",
+        "bytes": 103602848
+      },
+      {
+        "basename": "libtorch_cuda.so",
+        "sha256": "20748ec5b2061ebb02b44c32d809ce5cb84094791ace0d240c199823d9002ab1",
+        "bytes": 502842281
+      },
+      {
+        "basename": "libcuda.so.610.57.04",
+        "sha256": "9c7e7e514b6d4bbacba137b883cfd96cf39ceb6861a1d037619c6dded998139b",
+        "bytes": 112637032
+      }
+    ],
+    "scope": "Loaded process DSOs, not a vendor kernel/cubin or tactic binding"
+  },
+  "runtime_metadata": {
+    "executables_present": {
+      "ncu": true,
+      "nsys": true,
+      "nvcc": true
+    },
+    "profiler_executed": false,
+    "counter_query_executed": false,
+    "profiling_admin_restriction": 0,
+    "restriction_scope": "Driver parameter metadata; not a proof counters are accessible"
+  },
+  "profiler_metadata_interpretation": "profiler_executed=false refers to standalone commands; Torch/CUPTI activity did execute",
+  "artifact_manifest": {
+    "timing.json": {
+      "published_file": "timing.json",
+      "raw_sha256": "2d06240b5659408068351316178e76a74c8cbc3b5596b4a89d197f5272927b7e",
+      "published_sha256": "2d06240b5659408068351316178e76a74c8cbc3b5596b4a89d197f5272927b7e",
+      "scope": "unchanged structured receipt"
+    },
+    "activity.json": {
+      "published_file": "activity.json",
+      "raw_sha256": "47cdd654792219cbbdb6c5d13d0114149312748084fd6b62e70829d4b6cbf4bc",
+      "published_sha256": "47cdd654792219cbbdb6c5d13d0114149312748084fd6b62e70829d4b6cbf4bc",
+      "scope": "unchanged structured receipt"
+    },
+    "controller.json": {
+      "published_file": "controller.json",
+      "raw_sha256": "5570cecdf7d61fe33f57909baa58e6221004a00bd0184e5b94ddc9133fc93463",
+      "published_sha256": "5570cecdf7d61fe33f57909baa58e6221004a00bd0184e5b94ddc9133fc93463",
+      "scope": "unchanged structured receipt"
+    },
+    "runtime-metadata.json": {
+      "published_file": "runtime-metadata.json",
+      "raw_sha256": "ca0a87f0f8ac5048ad170a13a8f0bbe7a4acc11deb0c9907cf58ad4976f6f770",
+      "published_sha256": "ca0a87f0f8ac5048ad170a13a8f0bbe7a4acc11deb0c9907cf58ad4976f6f770",
+      "scope": "unchanged structured receipt"
+    },
+    "remote.json": {
+      "published_file": "remote.json",
+      "raw_sha256": "70bf1b9dccdace47c9d744c44828ff266a778c42837a693303ce75359f0e3a13",
+      "published_sha256": "70bf1b9dccdace47c9d744c44828ff266a778c42837a693303ce75359f0e3a13",
+      "scope": "unchanged structured receipt"
+    },
+    "pooler.m128.repeat0.trace.local.json": {
+      "published_file": "pooler.m128.repeat0.trace.json",
+      "raw_sha256": "50f6d6c72ae9421f120f2dff3f90e414b4abda5dcb4e30d78a75a6b8a0ccd199",
+      "published_sha256": "d7b5be73a3b436794c2921060ff9a627513d4a7314c1eb1b38c18583897883db",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "pooler.m128.repeat1.trace.local.json": {
+      "published_file": "pooler.m128.repeat1.trace.json",
+      "raw_sha256": "6a09d6babb968f4919fcee2a40cdf95b8a8072973a9b5609da85f5bc0c20d0e9",
+      "published_sha256": "eb9f9bcfd8f1c4e26579edfec44b3177591501a48c00c6a166120638b62cbee9",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "pooler.m128.repeat2.trace.local.json": {
+      "published_file": "pooler.m128.repeat2.trace.json",
+      "raw_sha256": "14d440510bcfe5b85e2abbe9158a36972928bbbfbccc66750d0f8a760d2000f4",
+      "published_sha256": "5f20f9dcc037e72f2fbe56d3f4716844e8f6ce9b47541ba8fcd9ab93566c9206",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "pooler.m8.repeat0.trace.local.json": {
+      "published_file": "pooler.m8.repeat0.trace.json",
+      "raw_sha256": "68afcf9a74cda4a374c438edf1ad0d13095c1f558ee0a42a70e30275bea787c3",
+      "published_sha256": "081097b59dd8893cdc8b1299216b9e46424ed100377514d477cdcfa528134137",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "pooler.m8.repeat1.trace.local.json": {
+      "published_file": "pooler.m8.repeat1.trace.json",
+      "raw_sha256": "37253d0e0c437036c4a7e190bd8f01fd24e9065d0eb8b9ad454d5c4707fb95f4",
+      "published_sha256": "b4352e82e5150f095e040d174c503a9b7f303c3b597962663945176012573fa8",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "pooler.m8.repeat2.trace.local.json": {
+      "published_file": "pooler.m8.repeat2.trace.json",
+      "raw_sha256": "ec90fda64b54e27585d22d74152cbc74487c216f2d5066e214860dd30784ff30",
+      "published_sha256": "e1177f2515d34108111d4478a9844ab07d7aad3d860784a4cfd4b3485ccad59d",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "qkv_gate.m128.repeat0.trace.local.json": {
+      "published_file": "qkv_gate.m128.repeat0.trace.json",
+      "raw_sha256": "25ee84e0d4d3bf575a010cd19d0f26e4e4de898044573ce1f00adabf93b8eadd",
+      "published_sha256": "48cb56f41820177a89d07bec43e78434483f8fb274dd04180d1a4132e539ffb9",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "qkv_gate.m128.repeat1.trace.local.json": {
+      "published_file": "qkv_gate.m128.repeat1.trace.json",
+      "raw_sha256": "6bc0ccb4d633595b34c8fe38a60eb6498b349de3254e7e56eb67255fe389ac79",
+      "published_sha256": "7c30473b15aec96cb96dc7030a161bea002f1d910910d9530d4f4660803df149",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    },
+    "qkv_gate.m128.repeat2.trace.local.json": {
+      "published_file": "qkv_gate.m128.repeat2.trace.json",
+      "raw_sha256": "5edec2e7eaa0a30ef3bf11222fd30dc4c3d0f930a47d5052c046d541eba9c9b4",
+      "published_sha256": "56a9d4c60b143fa3e941dc5a7b64b0b25a5cdb0826e7822eecafda7c10cc1f28",
+      "scope": "kernel/copy/memset intervals and selected launch fields only"
+    }
+  },
+  "raw_artifacts_retained_privately": true,
+  "worker_wall_seconds": 12.876292067000001,
+  "client_wall_seconds": 22.983946500113234,
+  "shutdown": {
+    "observed_utc": "2026-10-27T03:35:45.692416+00:00",
+    "app": {
+      "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-26 20:35:00-07:00",
+      "stopped_at": "2026-10-26 20:35:25-07:00"
+    },
+    "all_stopped_tasks_zero": true,
+    "billing": {
+      "metered_cost": "2.47000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "network_egress_allowance": "0E-8",
+        "credits": "-2.47000000",
+        "plan_cost": "0E-8",
+        "free_storage": "-0E-8",
+        "reservation_adjustment": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "volumes": "0E-8",
+        "llm_tokens": "0E-8",
+        "network_egress": "0E-8",
+        "ephemeral_apps": "2.46568866"
+      }
+    }
+  },
+  "cost_reserve_usd": "0.5799165001430",
+  "observed_workspace_gross_delta_usd": "0",
+  "delayed_workspace_gross_delta_usd": "0.02000000",
+  "delayed_billing_observed_utc": "2026-10-27T03:40:29.818051+00:00",
+  "cost_qualification": "Billing snapshot can lag; retain reserve, zero observed delta is not a free-run claim",
+  "limitations": [
+    "Not exposed by this collector; DSO identity is not a kernel/cubin binding",
+    "Not exposed by Torch/CUPTI activity",
+    "Not collected; previous NCU timeouts require a materially changed capability before retry",
+    "Not measured; trace estimates are excluded",
+    "Sequential replay only; independent hidden vendor workspace is not established",
+    "Diagnostic only; no calibration or official score",
+    "Three shapes and one weight seed only; not all scored/prerequisite cases or concurrency",
+    "Identical graph median drift up to 1.98%; small candidate gains need independent confirmation",
+    "Tiny negative trace gaps are retained as timestamp uncertainty, not an overlap claim",
+    "Driver profiling restriction value 0 and installed tools do not prove counters work",
+    "Test image ID and loaded DSO hashes do not establish official judge image or vendor cubin/tactic identity"
+  ]
+}

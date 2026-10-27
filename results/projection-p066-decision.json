@@ -1,0 +1,167 @@
+{
+  "kind": "selected-receipt recalculation and conditional models, not new timing",
+  "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "receipt_sha256": "984c9e0dcaea6bc41fff9b12103eb9a13e137f3c42b3021035f2245255288850",
+  "job_id": "41ba778763a5433b",
+  "score": 1.1841399408925375,
+  "measured_loads": [
+    {
+      "load": "decode 1",
+      "total_one_of_each_us": 46.36165405823383,
+      "weighted_load_us": 2874.4225516104975,
+      "calibrated_us": {
+        "qkv_gate": 11.950748491914062,
+        "o": 6.8973552840336305,
+        "pooler": 18.310103472242716,
+        "unpooler": 4.073096341114692,
+        "router": 5.13035046892873
+      }
+    },
+    {
+      "load": "decode 16",
+      "total_one_of_each_us": 67.47543003760647,
+      "weighted_load_us": 4183.476662331601,
+      "calibrated_us": {
+        "qkv_gate": 14.83713422526362,
+        "o": 6.87088906468001,
+        "pooler": 18.042685545384167,
+        "unpooler": 18.345687172639767,
+        "router": 9.379034029638914
+      }
+    },
+    {
+      "load": "decode 32",
+      "total_one_of_each_us": 68.78537851983027,
+      "weighted_load_us": 4264.693468229477,
+      "calibrated_us": {
+        "qkv_gate": 15.257672389830963,
+        "o": 6.9452557538672774,
+        "pooler": 18.309500237135,
+        "unpooler": 18.62495055155297,
+        "router": 9.647999587444058
+      }
+    },
+    {
+      "load": "verify 1",
+      "total_one_of_each_us": 52.6070567635516,
+      "weighted_load_us": 3261.637519340199,
+      "calibrated_us": {
+        "qkv_gate": 14.04006072641958,
+        "o": 6.4568205791244235,
+        "pooler": 17.559286898252424,
+        "unpooler": 7.0978832579391495,
+        "router": 7.4530053018160185
+      }
+    },
+    {
+      "load": "verify 16",
+      "total_one_of_each_us": 79.86576372872604,
+      "weighted_load_us": 4951.677351181014,
+      "calibrated_us": {
+        "qkv_gate": 18.19320102617776,
+        "o": 7.575373123172978,
+        "pooler": 23.157940944547853,
+        "unpooler": 20.20800815783727,
+        "router": 10.731240476990173
+      }
+    },
+    {
+      "load": "verify 32",
+      "total_one_of_each_us": 93.09608801885155,
+      "weighted_load_us": 5771.957457168796,
+      "calibrated_us": {
+        "qkv_gate": 19.85973819810843,
+        "o": 9.033626177724505,
+        "pooler": 28.90973331553156,
+        "unpooler": 24.140202384163178,
+        "router": 11.152787943323874
+      }
+    }
+  ],
+  "mean_within_load_family_share": {
+    "pooler": 0.31046655994349287,
+    "qkv_gate": 0.23458087406188363,
+    "unpooler": 0.21296037978664498,
+    "o": 0.11103240159766962,
+    "router": 0.13095978461030888
+  },
+  "models": {
+    "three_families_all": {
+      "case_count": 18,
+      "load_fractions": {
+        "decode 1": 0.7405678033433701,
+        "decode 16": 0.7591727376133467,
+        "decode 32": 0.7587676960078423,
+        "verify 1": 0.7355901140134159,
+        "verify 16": 0.7707827140757856,
+        "verify 32": 0.7831658176983686
+      },
+      "mean_share": 0.7580078137920215,
+      "conditional_score_gain": {
+        "0.1": 0.08201948846568063,
+        "0.2": 0.17870022977070343,
+        "0.3": 0.29436086367816916,
+        "0.5": 0.6104557900663314
+      },
+      "uniform_cut_for_5pct_score": 0.0628205838853817
+    },
+    "three_families_m_gt1": {
+      "case_count": 15,
+      "load_fractions": {
+        "decode 1": 0.0,
+        "decode 16": 0.7591727376133467,
+        "decode 32": 0.7587676960078423,
+        "verify 1": 0.7355901140134159,
+        "verify 16": 0.7707827140757856,
+        "verify 32": 0.7831658176983686
+      },
+      "mean_share": 0.6345798465681265,
+      "conditional_score_gain": {
+        "0.1": 0.0682325544403668,
+        "0.2": 0.1476258419783163,
+        "0.3": 0.24127913790102484,
+        "0.5": 0.49098385173102277
+      },
+      "uniform_cut_for_5pct_score": 0.07467734268180645
+    },
+    "observed_vendor_split_paths": {
+      "case_count": 6,
+      "load_fractions": {
+        "decode 1": 0.0,
+        "decode 16": 0.21988943556186827,
+        "decode 32": 0.22181563463276283,
+        "verify 1": 0.4018081467542582,
+        "verify 16": 0.5177580485072414,
+        "verify 32": 0.0
+      },
+      "mean_share": 0.22687854424268847,
+      "conditional_score_gain": {
+        "0.1": 0.023409849625902535,
+        "0.2": 0.04837373369910969,
+        "0.3": 0.07507842852782742,
+        "0.5": 0.13463985411536994
+      },
+      "uniform_cut_for_5pct_score": 0.20628987046551286
+    },
+    "qkv128_only": {
+      "case_count": 1,
+      "load_fractions": {
+        "decode 1": 0.0,
+        "decode 16": 0.0,
+        "decode 32": 0.0,
+        "verify 1": 0.0,
+        "verify 16": 0.22779724598857184,
+        "verify 32": 0.0
+      },
+      "mean_share": 0.037966207664761976,
+      "conditional_score_gain": {
+        "0.1": 0.00384791618405278,
+        "0.2": 0.0078019311562045335,
+        "0.3": 0.011867609665648482,
+        "0.5": 0.020358448493049464
+      },
+      "uniform_cut_for_5pct_score": null
+    }
+  },
+  "no_gpu_or_official_check": true
+}

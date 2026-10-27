@@ -1,0 +1,8 @@
+{
+  "source_directory": "local ignored artifacts",
+  "files": {
+    "timing.json": "cc41c6ccf11f2194a00edda43fb12deef99f32e708f9798e286e22a721fcff91",
+    "summary.json": "fdf5fe2400e45c690da6889611e2b1713d03980120d480f6535efb522a8066c3"
+  },
+  "sanitization": "Numerical timing/summary artifacts contain no credentials, private hostnames or personal paths; copied unchanged. Local process log remains untracked."
+}

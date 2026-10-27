@@ -1,0 +1,421 @@
+{
+  "kind": "P053 offline discriminating-test rationale",
+  "source_receipt_sha256": "2ae054ec40d6f39a119dfe0c97fd330dfde09e315ba51d45b0cffb6cc71cd30f",
+  "gpu_runs_added": 0,
+  "official_checks_added": 0,
+  "cases": [
+    {
+      "work": {
+        "m": 8,
+        "n": 4096,
+        "k": 8192,
+        "partial_ctas": 512,
+        "reducer_ctas": 256,
+        "iterations_per_partial_cta": 16,
+        "useful_flops": 536870912,
+        "padded_tensor_flops": 1073741824,
+        "padded_over_useful_flops": 2.0,
+        "logical_weight_read_bytes": 67108864,
+        "logical_activation_read_bytes": 8388608,
+        "unique_activation_bytes": 131072,
+        "partial_write_bytes": 1048576,
+        "reducer_read_bytes": 1048576,
+        "output_write_bytes": 65536,
+        "partial_epilogue_shared_read_plus_write_bytes": 4194304,
+        "qualification": "Source-address valid byte counts and padded tensor arithmetic; not HBM transactions, cache misses, achieved FLOPS or measured shared traffic"
+      },
+      "timing": {
+        "matched": {
+          "candidate_raw_latency_cut": 0.022448410332357005,
+          "median_paired_raw_ratio": 1.0229639136897002,
+          "pair_distribution": {
+            "count": 12,
+            "maximum": 1.0697213525858478,
+            "median": 1.0229639136897002,
+            "minimum": 0.9811879977400116,
+            "p10": 0.9895200179795822,
+            "p90": 1.0598900279395906
+          },
+          "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+          "raw_us": {
+            "candidate": {
+              "count": 24,
+              "maximum": 27.615999802947044,
+              "median": 26.176000013947487,
+              "minimum": 25.82399919629097,
+              "p10": 25.843199342489243,
+              "p90": 27.424000203609467
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 28.12799997627735,
+              "median": 26.83199942111969,
+              "minimum": 26.464000344276428,
+              "p10": 26.559999212622643,
+              "p90": 28.00000086426735
+            }
+          },
+          "reverse_order_pair_ratios": [
+            1.0004639650408655,
+            1.0244903132078447,
+            1.0269580213716036,
+            1.0313393252804348,
+            1.0697213525858478,
+            0.9900637928769053,
+            1.0520438983980058,
+            1.012168756586575,
+            1.060761820110878,
+            0.9894595985465463,
+            1.021437514171556,
+            0.9811879977400116
+          ],
+          "round_parent_over_candidate_ratios": [
+            1.0444993615864258,
+            0.9582850714480494,
+            1.035670341028152,
+            1.0134309734261064,
+            1.029739787945229,
+            1.024183769536518,
+            1.0393119797511716,
+            1.0234278297499855,
+            1.078914946047743,
+            1.0606060990904647,
+            1.01447524075081,
+            0.9662397608051441,
+            1.0346964553336613,
+            1.0696821840368265,
+            0.9988123425126768,
+            1.025703776580044,
+            1.045848884829179,
+            1.0758874014468416,
+            0.9754959333425162,
+            1.003623145615037,
+            1.0172201596966157,
+            1.0256723536310373,
+            0.9880952166468367,
+            0.9743290633225992
+          ],
+          "total_pairs": 12,
+          "winning_pairs": 9
+        },
+        "selected": {
+          "candidate_raw_latency_cut": -0.21317685150515553,
+          "median_paired_raw_ratio": 0.8242821306385192,
+          "pair_distribution": {
+            "count": 12,
+            "maximum": 0.8440183414208279,
+            "median": 0.8242821306385192,
+            "minimum": 0.7851127726570081,
+            "p10": 0.80826566950013,
+            "p90": 0.8389978193281367
+          },
+          "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+          "raw_us": {
+            "candidate": {
+              "count": 24,
+              "maximum": 27.68000029027462,
+              "median": 26.304000057280064,
+              "minimum": 25.696000084280968,
+              "p10": 25.919999927282333,
+              "p90": 27.609599754214287
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 22.975999861955643,
+              "median": 21.727999672293663,
+              "minimum": 21.376000717282295,
+              "p10": 21.52319997549057,
+              "p90": 21.983999758958817
+            }
+          },
+          "reverse_order_pair_ratios": [
+            0.8308540387811455,
+            0.8304999087200247,
+            0.8398022360678167,
+            0.8077038469012668,
+            0.8280526427881257,
+            0.7851127726570081,
+            0.8317580686710163,
+            0.8205116184889126,
+            0.8182220463700128,
+            0.8440183414208279,
+            0.8133220728898984,
+            0.8139025642131883
+          ],
+          "round_parent_over_candidate_ratios": [
+            0.8398532910775127,
+            0.8219512158763805,
+            0.8348837440684869,
+            0.8261390921601052,
+            0.8400984045946391,
+            0.8395061719523295,
+            0.8323207699084351,
+            0.7838150000400388,
+            0.83188047350446,
+            0.8242424255252377,
+            0.7910797992163692,
+            0.7791907547124485,
+            0.8216019228872808,
+            0.8420397585830055,
+            0.8160779055281892,
+            0.8249694196040697,
+            0.8481481412281702,
+            0.7893518651075188,
+            0.8432099038682512,
+            0.8448275540725505,
+            0.7967097145711145,
+            0.8302808189128416,
+            0.8155339860691546,
+            0.8122744059088552
+          ],
+          "total_pairs": 12,
+          "winning_pairs": 0
+        }
+      },
+      "ptx": {
+        "control": {
+          "static_instruction_lines": 191,
+          "async_data_copy_sites": 10,
+          "async_commit_sites": 4,
+          "async_wait_sites": 2,
+          "mma_sync_sites": 8,
+          "wgmma_sites": 0,
+          "shared_vector2_stores": 0,
+          "shared_vector4_stores": 2,
+          "shared_vector2_loads": 0,
+          "shared_vector4_loads": 2,
+          "global_vector4_stores": 2,
+          "qualification": "Static PTX sites, not dynamic counts, transaction efficiency or per-instruction latency",
+          "sha256": "52585b4ff075faa979b41e2dafec473d8050680b794bc4ecfa1c065b5837c8ab",
+          "same_executable_text_as_p051": true
+        },
+        "weight_first": {
+          "static_instruction_lines": 213,
+          "async_data_copy_sites": 10,
+          "async_commit_sites": 4,
+          "async_wait_sites": 2,
+          "mma_sync_sites": 0,
+          "wgmma_sites": 4,
+          "shared_vector2_stores": 4,
+          "shared_vector4_stores": 0,
+          "shared_vector2_loads": 4,
+          "shared_vector4_loads": 0,
+          "global_vector4_stores": 2,
+          "qualification": "Static PTX sites, not dynamic counts, transaction efficiency or per-instruction latency",
+          "sha256": "33f026ba67533f15e5d1d48e89da883758cf504e09dabfd2ba660f8e9a6581ee",
+          "same_executable_text_as_p051": true
+        }
+      },
+      "candidate_cut_to_match_p046_under_same_paired_statistic": 0.17571786936148082
+    },
+    {
+      "work": {
+        "m": 7,
+        "n": 4096,
+        "k": 8192,
+        "partial_ctas": 512,
+        "reducer_ctas": 224,
+        "iterations_per_partial_cta": 16,
+        "useful_flops": 469762048,
+        "padded_tensor_flops": 1073741824,
+        "padded_over_useful_flops": 2.2857142857142856,
+        "logical_weight_read_bytes": 67108864,
+        "logical_activation_read_bytes": 7340032,
+        "unique_activation_bytes": 114688,
+        "partial_write_bytes": 917504,
+        "reducer_read_bytes": 917504,
+        "output_write_bytes": 57344,
+        "partial_epilogue_shared_read_plus_write_bytes": 4194304,
+        "qualification": "Source-address valid byte counts and padded tensor arithmetic; not HBM transactions, cache misses, achieved FLOPS or measured shared traffic"
+      },
+      "timing": {
+        "matched": {
+          "candidate_raw_latency_cut": 0.017574473373943467,
+          "median_paired_raw_ratio": 1.0178888606796481,
+          "pair_distribution": {
+            "count": 12,
+            "maximum": 1.062082259707791,
+            "median": 1.0178888606796481,
+            "minimum": 0.9646758151965482,
+            "p10": 0.9760634683812963,
+            "p90": 1.0430806459266413
+          },
+          "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+          "raw_us": {
+            "candidate": {
+              "count": 24,
+              "maximum": 29.311999678611755,
+              "median": 26.367999613285065,
+              "minimum": 25.696000084280968,
+              "p10": 25.961600244045258,
+              "p90": 27.619199827313423
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 30.047999694943428,
+              "median": 26.81600023061037,
+              "minimum": 26.11199952661991,
+              "p10": 26.268800161778927,
+              "p90": 28.003199584782124
+            }
+          },
+          "reverse_order_pair_ratios": [
+            1.035070622222008,
+            0.9745127105890937,
+            1.008394805982417,
+            1.062082259707791,
+            1.0114496217853384,
+            1.005850829157275,
+            1.0411484554087127,
+            1.0432953337619666,
+            1.0252576798539923,
+            0.9646758151965482,
+            0.9900202885111196,
+            1.0243280995739579
+          ],
+          "round_parent_over_candidate_ratios": [
+            1.0308261597714872,
+            1.0393325613938202,
+            0.9427261961007402,
+            1.0073709917340834,
+            0.9616725190944456,
+            1.0573870673665895,
+            1.093131509737281,
+            1.0319149309465165,
+            0.9768518777393896,
+            1.0472727347130455,
+            0.9881797163635568,
+            1.023837945429103,
+            1.0735294023235842,
+            1.0097442173951852,
+            1.0831295768708658,
+            1.0049260741212902,
+            1.0423412527404898,
+            1.0084541001672276,
+            1.0357583080131205,
+            0.8984716040658941,
+            1.0231706947432024,
+            0.9579439449344647,
+            1.0183150154513265,
+            1.03037669056835
+          ],
+          "total_pairs": 12,
+          "winning_pairs": 9
+        },
+        "selected": {
+          "candidate_raw_latency_cut": -0.048785314681344394,
+          "median_paired_raw_ratio": 0.9534839838063837,
+          "pair_distribution": {
+            "count": 12,
+            "maximum": 1.3579918093595063,
+            "median": 0.9534839838063837,
+            "minimum": 0.9191253386991223,
+            "p10": 0.9230310286009774,
+            "p90": 0.9846004868077258
+          },
+          "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score",
+          "raw_us": {
+            "candidate": {
+              "count": 24,
+              "maximum": 28.00000086426735,
+              "median": 26.30399912595749,
+              "minimum": 25.98400041460991,
+              "p10": 25.993600487709045,
+              "p90": 27.44000032544136
+            },
+            "parent": {
+              "count": 24,
+              "maximum": 51.67999863624573,
+              "median": 25.087999179959297,
+              "minimum": 24.351999163627625,
+              "p10": 24.58560038357973,
+              "p90": 26.147199794650078
+            }
+          },
+          "reverse_order_pair_ratios": [
+            0.9528783349675535,
+            0.9508230438394807,
+            0.9422681799164163,
+            0.98619866459032,
+            0.9564912598845181,
+            0.9191253386991223,
+            0.9701825142546966,
+            0.9702168867643781,
+            0.9208935673437064,
+            0.9540896326452138,
+            1.3579918093595063,
+            0.9502028711707867
+          ],
+          "round_parent_over_candidate_ratios": [
+            0.964285729646638,
+            0.9416058885194378,
+            0.9363525226965351,
+            0.9655171944137277,
+            0.9428224428354015,
+            0.9417142428354355,
+            0.9713945071115332,
+            1.0012284390321968,
+            0.9330143330791274,
+            0.9805589236943519,
+            0.9381688603549075,
+            0.9004683740187169,
+            0.9458794060441745,
+            0.9951100583763065,
+            0.9975369270971998,
+            0.9436450739743291,
+            0.8940628729457575,
+            0.9485294469066586,
+            1.0,
+            0.9102870271210791,
+            1.9647202080860215,
+            0.9386281805916883,
+            0.9938650552119319,
+            0.9084588412142887
+          ],
+          "total_pairs": 12,
+          "winning_pairs": 1
+        }
+      },
+      "ptx": {
+        "control": {
+          "static_instruction_lines": 191,
+          "async_data_copy_sites": 10,
+          "async_commit_sites": 4,
+          "async_wait_sites": 2,
+          "mma_sync_sites": 8,
+          "wgmma_sites": 0,
+          "shared_vector2_stores": 0,
+          "shared_vector4_stores": 2,
+          "shared_vector2_loads": 0,
+          "shared_vector4_loads": 2,
+          "global_vector4_stores": 2,
+          "qualification": "Static PTX sites, not dynamic counts, transaction efficiency or per-instruction latency",
+          "sha256": "efe59da6ccaffcd00dccf8ace6a62c585cd456ab90d0afebf14f6b4e1363aeae"
+        },
+        "weight_first": {
+          "static_instruction_lines": 214,
+          "async_data_copy_sites": 10,
+          "async_commit_sites": 4,
+          "async_wait_sites": 2,
+          "mma_sync_sites": 0,
+          "wgmma_sites": 4,
+          "shared_vector2_stores": 4,
+          "shared_vector4_stores": 0,
+          "shared_vector2_loads": 4,
+          "shared_vector4_loads": 0,
+          "global_vector4_stores": 2,
+          "qualification": "Static PTX sites, not dynamic counts, transaction efficiency or per-instruction latency",
+          "sha256": "64f0fc4f979a0a17ead154783675dc807e49b3bf0388a775a92bf367c40ef345"
+        }
+      },
+      "candidate_cut_to_match_p046_under_same_paired_statistic": 0.04651601619361634
+    }
+  ],
+  "missing": [
+    "P052 partial and reducer activity durations",
+    "Measured layout-conversion cost",
+    "Measured HBM/cache transactions",
+    "Measured matrix/copy overlap or stalls"
+  ],
+  "decision": "Prepare same-body whole/partial comparisons and separate activity; no new candidate or promotion"
+}

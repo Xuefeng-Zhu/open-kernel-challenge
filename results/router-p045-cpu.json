@@ -1,0 +1,57 @@
+{
+  "experiment": "P045",
+  "passed": true,
+  "scope": "CPU/static only; no native CUDA or graph execution",
+  "recorded_utc": "2026-10-25T21:28:36.995293+00:00",
+  "environment": {
+    "python": "3.12.13",
+    "pytorch": "2.14.1",
+    "system": "Darwin",
+    "machine": "arm64",
+    "cuda_available": false,
+    "submission_sha256": "c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58"
+  },
+  "command": "python -B -m unittest discover -s tests -p test_projection_pooler_column_batch2.py -v",
+  "tests_passed": 13,
+  "tests_total": 13,
+  "unittest_seconds": 5.674,
+  "static_check_passed": true,
+  "official_snapshot_hashes_passed": true,
+  "coverage": {
+    "full_k_candidate_m": [
+      2,
+      7
+    ],
+    "full_k_sparse_zero_aba_m": [
+      2
+    ],
+    "reduced_k_helper": {
+      "k": 131,
+      "n": 4096,
+      "m": [
+        8,
+        16,
+        32,
+        127,
+        128
+      ],
+      "weight_seeds": 2
+    },
+    "bf16_packing_payloads": 65536,
+    "unchanged_paths_ast": true,
+    "nearby_other_family_comparisons": 100
+  },
+  "limitations": [
+    "Larger-M full-K candidate is not validated by the final CPU suite.",
+    "No CUDA compile, graph replay, performance, resource or tactic evidence for P045.",
+    "Two earlier CPU suites were interrupted, each after five completed tests; they were not suite passes."
+  ],
+  "review": "Independent source/address/test review found no definite contract/bounds defect or sensitive data.",
+  "test_source_sha256": "aba51473df9202d9e87535b9e9d2e7d472836a2420c73ae1a69dbe6357d06d7f",
+  "assessment_tool_tests": {
+    "passed": 12,
+    "total": 12,
+    "command": "python3 -B -m unittest discover -s tests -p test_projection_p045_assess.py -v",
+    "scope": "Synthetic/offline receipt arithmetic and negative tests; no P045 GPU timing"
+  }
+}

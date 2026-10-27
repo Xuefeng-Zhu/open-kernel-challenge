@@ -1,0 +1,262 @@
+{
+  "source_commit": "6856cc2cb72d398c88c78b63a375bb3d2e8628e0",
+  "app_id": "ap-vbrU0sPpoRjkmN7e7OgK4R",
+  "raw_report_sha256": "dcd514c6c4ae2a905b87fe904e582e26ecf55c5778c1057db91eb2c1aa217227",
+  "status": "correctness-pass-performance-gate-rejected",
+  "oracle_checks": 298,
+  "assessment": {
+    "screen_passed": false,
+    "target_latency_cut": -0.003236964506503348,
+    "winning_pairs": 6,
+    "minimum_latency_cut": 0.1,
+    "minimum_winning_pairs": 10,
+    "automatic_selection": false,
+    "official_score": false,
+    "qualification": "Only justifies broader correctness/shape coverage; never promotes this one-case diagnostic. Same-interface contrast is descriptive, not a claim of isolated algorithm identity."
+  },
+  "comparisons": {
+    "anchor_row41": {
+      "runners": {
+        "parent": "p046",
+        "candidate": "row41"
+      },
+      "parent_median_us": 21.824000403285027,
+      "candidate_median_us": 197.2000002861023,
+      "paired_parent_over_candidate": 0.11123559070530076,
+      "paired_candidate_latency_cut": -7.989928436208201,
+      "winning_pairs": 0,
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.10944379873905458,
+        "p10": 0.10972239783697962,
+        "median": 0.11123559070530076,
+        "p90": 0.11363139913063144,
+        "maximum": 0.11400924608074127
+      },
+      "raw_us_distribution": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.31200022995472,
+          "p10": 21.52319997549057,
+          "median": 21.824000403285027,
+          "p90": 22.924799472093582,
+          "maximum": 23.135999217629433
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 195.10400295257568,
+          "p10": 195.59360146522522,
+          "median": 197.2000002861023,
+          "p90": 198.50239902734756,
+          "maximum": 198.68800044059753
+        }
+      }
+    },
+    "anchor_row66": {
+      "runners": {
+        "parent": "p046",
+        "candidate": "row66"
+      },
+      "parent_median_us": 21.727999672293663,
+      "candidate_median_us": 45.35999894142151,
+      "paired_parent_over_candidate": 0.4760468882145583,
+      "paired_candidate_latency_cut": -1.1006334139701206,
+      "winning_pairs": 0,
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.47179895046276593,
+        "p10": 0.4726302646521606,
+        "median": 0.4760468882145583,
+        "p90": 0.4858058362742801,
+        "maximum": 0.4864298770242253
+      },
+      "raw_us_distribution": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.43999934196472,
+          "p10": 21.609600633382797,
+          "median": 21.727999672293663,
+          "p90": 22.035200707614422,
+          "maximum": 22.431999444961548
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 44.95999962091446,
+          "p10": 45.06560042500496,
+          "median": 45.35999894142151,
+          "p90": 46.220799162983894,
+          "maximum": 46.36799916625023
+        }
+      }
+    },
+    "anchor_split": {
+      "runners": {
+        "parent": "p046",
+        "candidate": "split"
+      },
+      "parent_median_us": 21.84000052511692,
+      "candidate_median_us": 21.856000646948814,
+      "paired_parent_over_candidate": 0.9967734796254286,
+      "paired_candidate_latency_cut": -0.003236964506503348,
+      "winning_pairs": 6,
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 0.672070913943174,
+        "p10": 0.9474841733080426,
+        "median": 0.9967734796254286,
+        "p90": 1.0186008858516165,
+        "maximum": 1.0283177609805616
+      },
+      "raw_us_distribution": {
+        "parent": {
+          "count": 24,
+          "minimum": 21.47199958562851,
+          "p10": 21.596799977123737,
+          "median": 21.84000052511692,
+          "p90": 22.735999710857868,
+          "maximum": 23.360000923275948
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 21.536000072956085,
+          "p10": 21.568000316619873,
+          "median": 21.856000646948814,
+          "p90": 22.988799959421158,
+          "maximum": 51.61599814891815
+        }
+      }
+    },
+    "row66_vs_split": {
+      "runners": {
+        "parent": "row66",
+        "candidate": "split"
+      },
+      "parent_median_us": 45.32799869775772,
+      "candidate_median_us": 21.808000281453133,
+      "paired_parent_over_candidate": 2.0748439034886825,
+      "paired_candidate_latency_cut": 0.5180360323402735,
+      "winning_pairs": 12,
+      "pair_distribution": {
+        "count": 12,
+        "minimum": 1.9902953167009196,
+        "p10": 2.030076621916399,
+        "median": 2.0748439034886825,
+        "p90": 2.1175195164988545,
+        "maximum": 2.119386488272901
+      },
+      "raw_us_distribution": {
+        "parent": {
+          "count": 24,
+          "minimum": 44.73600164055824,
+          "p10": 44.969599694013596,
+          "median": 45.32799869775772,
+          "p90": 46.42559960484505,
+          "maximum": 46.751998364925385
+        },
+        "candidate": {
+          "count": 24,
+          "minimum": 21.43999934196472,
+          "p10": 21.536000072956085,
+          "median": 21.808000281453133,
+          "p90": 22.77440018951893,
+          "maximum": 24.032000452280045
+        }
+      }
+    }
+  },
+  "selected_plans": [
+    {
+      "m": 128,
+      "n": 2304,
+      "k": 8192,
+      "device": 0,
+      "workspace_limit_bytes": 67108864,
+      "workspace_required_bytes": 0,
+      "heuristic_position": 0,
+      "algorithm_id": 41,
+      "tile_id": 21,
+      "stages_id": 35,
+      "split_k": 1,
+      "reduction_scheme": 0,
+      "cta_swizzle": 0,
+      "custom_option": 0,
+      "waves_count_estimate": 0.13636364042758942,
+      "cublaslt_version": 130101,
+      "compute": "CUBLAS_COMPUTE_32F",
+      "scale": "CUDA_R_32F",
+      "input_output": "CUDA_R_16BF",
+      "measured": false
+    },
+    {
+      "m": 128,
+      "n": 2304,
+      "k": 8192,
+      "device": 0,
+      "workspace_limit_bytes": 67108864,
+      "workspace_required_bytes": 0,
+      "heuristic_position": 6,
+      "algorithm_id": 66,
+      "tile_id": 20,
+      "stages_id": 35,
+      "split_k": 1,
+      "reduction_scheme": 0,
+      "cta_swizzle": 0,
+      "custom_option": 0,
+      "waves_count_estimate": 0.13636364042758942,
+      "cublaslt_version": 130101,
+      "compute": "CUBLAS_COMPUTE_32F",
+      "scale": "CUDA_R_32F",
+      "input_output": "CUDA_R_16BF",
+      "measured": false
+    },
+    {
+      "m": 128,
+      "n": 2304,
+      "k": 8192,
+      "device": 0,
+      "workspace_limit_bytes": 67108864,
+      "workspace_required_bytes": 2359312,
+      "heuristic_position": 0,
+      "algorithm_id": 66,
+      "tile_id": 27,
+      "stages_id": 35,
+      "split_k": 2,
+      "reduction_scheme": 2,
+      "reduction_scheme_name": "CUBLASLT_REDUCTION_SCHEME_COMPUTE_TYPE",
+      "cta_swizzle": 0,
+      "custom_option": 2,
+      "waves_count_estimate": 0.3636363744735718,
+      "cublaslt_version": 130101,
+      "compute": "CUBLAS_COMPUTE_32F",
+      "scale": "CUDA_R_32F",
+      "input_output": "CUDA_R_16BF",
+      "measured": false
+    }
+  ],
+  "p046_split_activity_symbols_equal": true,
+  "activity_symbols": {
+    "p046": [
+      "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)"
+    ],
+    "row41": [
+      "sm90_xmma_gemm_bf16bf16_bf16f32_f32_tn_n_tilesize64x256x64_cgasize1x1x1_warpgroupsize1x1x1_aligna4_alignc4_execute_segment_k_off_kernel__5x_cublas"
+    ],
+    "row66": [
+      "nvjet_sm90_tst_128x128_64x6_2x1_v_bz_TNN"
+    ],
+    "split": [
+      "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+      "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)"
+    ]
+  },
+  "decision": "Preserve P046; no official check or promotion from this diagnostic",
+  "qualifications": [
+    "Raw graph times retain overhead; not official calibrated times or score",
+    "Mask change admits a different tile/custom configuration as well as split count",
+    "Equal activity symbols do not establish exact tactic identity or launch geometry",
+    "Single QKV M128 case; nearby and complete official shapes untested",
+    "Separate-stream graph checks do not establish actual hardware overlap",
+    "No native assembly, occupancy, HBM or stall counters collected"
+  ]
+}

@@ -1,0 +1,5277 @@
+{
+  "kind": "P049 zero-bias public Torch route screen; not official score",
+  "passed": true,
+  "sources": {
+    "parent": {
+      "path": "candidates/projection_pooler_column_batch2_hybrid.py",
+      "sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e"
+    },
+    "candidate": {
+      "path": "candidates/projection_qkv_unpooler_zero_bias.py",
+      "sha256": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7"
+    }
+  },
+  "cases": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "passed": true,
+      "series": {
+        "main": {
+          "passed": true,
+          "runner_mapping": {
+            "parent": "parent",
+            "candidate": "candidate"
+          },
+          "correctness": [
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            }
+          ],
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 4900100,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.52800017595291,
+                "candidate": 20.8320003002882
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.226232+00:00",
+                  "elapsed_start_seconds": 3.2258348629999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.226462093
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.227247+00:00",
+                  "elapsed_start_seconds": 3.2268425830000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.227430145
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 4900101,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.08000048995018,
+                "parent": 21.663999184966087
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.231567+00:00",
+                  "elapsed_start_seconds": 3.2311620189999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2317980910000004
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.232563+00:00",
+                  "elapsed_start_seconds": 3.232156049,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.232751664
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 4900102,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.568000316619873,
+                "candidate": 22.71999977529049
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.236672+00:00",
+                  "elapsed_start_seconds": 3.236265558,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.236883451
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.237837+00:00",
+                  "elapsed_start_seconds": 3.237429834,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2379968170000004
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 4900103,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.800000056624413,
+                "parent": 21.503999829292297
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.242155+00:00",
+                  "elapsed_start_seconds": 3.24174942,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2423546049999996
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.243145+00:00",
+                  "elapsed_start_seconds": 3.242737995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2433182319999996
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 4900104,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.31200022995472,
+                "candidate": 21.183999255299568
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.247202+00:00",
+                  "elapsed_start_seconds": 3.246795405,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2474036639999997
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.248218+00:00",
+                  "elapsed_start_seconds": 3.2478108870000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2483967239999996
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 4900105,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.8320003002882,
+                "parent": 21.663999184966087
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.252960+00:00",
+                  "elapsed_start_seconds": 3.252555232,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.253258384
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.254329+00:00",
+                  "elapsed_start_seconds": 3.2539230270000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2544013499999997
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4900200,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.304000332951546,
+                "candidate": 21.247999742627144
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.259084+00:00",
+                  "elapsed_start_seconds": 3.2586830279999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.259357107
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.260551+00:00",
+                  "elapsed_start_seconds": 3.260145966,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2609869760000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 4900201,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.767999812960625,
+                "parent": 21.824000403285027
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.265514+00:00",
+                  "elapsed_start_seconds": 3.2651086240000002,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2659184199999998
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.266874+00:00",
+                  "elapsed_start_seconds": 3.2664677579999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.266952252
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 4900202,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.60000056028366,
+                "candidate": 21.215999498963356
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.271990+00:00",
+                  "elapsed_start_seconds": 3.271584415,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2723282260000004
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.273288+00:00",
+                  "elapsed_start_seconds": 3.2728817840000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.27368298
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 4900203,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.864000543951988,
+                "parent": 21.43999934196472
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.278502+00:00",
+                  "elapsed_start_seconds": 3.2780967879999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.278721198
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.279859+00:00",
+                  "elapsed_start_seconds": 3.2794529249999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2801916749999998
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 4900204,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.60000056028366,
+                "candidate": 21.088000386953354
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.284725+00:00",
+                  "elapsed_start_seconds": 3.284319298,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.285113897
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.286236+00:00",
+                  "elapsed_start_seconds": 3.2858298410000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2865599160000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 4900205,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.864000543951988,
+                "parent": 21.75999991595745
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.291766+00:00",
+                  "elapsed_start_seconds": 3.2913604590000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.2922187910000003
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.293425+00:00",
+                  "elapsed_start_seconds": 3.293019102,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.29361347
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 4900206,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.856000646948814,
+                "candidate": 20.735999569296837
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.298743+00:00",
+                  "elapsed_start_seconds": 3.2983539700000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.298948755
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.300179+00:00",
+                  "elapsed_start_seconds": 3.2997719269999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.300539673
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 4900207,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.927999168634415,
+                "parent": 21.79200015962124
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.305848+00:00",
+                  "elapsed_start_seconds": 3.305441872,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.30646367
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.307759+00:00",
+                  "elapsed_start_seconds": 3.3073537280000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3082323820000004
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 4900208,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.856000646948814,
+                "candidate": 21.12000063061714
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.313843+00:00",
+                  "elapsed_start_seconds": 3.313437311,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.314188071
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.315553+00:00",
+                  "elapsed_start_seconds": 3.315147781,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3161582170000004
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 4900209,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.088000386953354,
+                "parent": 23.16799946129322
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.321863+00:00",
+                  "elapsed_start_seconds": 3.3214578820000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3222060370000004
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.323311+00:00",
+                  "elapsed_start_seconds": 3.3229053570000002,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.323832353
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 4900210,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.231999948620796,
+                "candidate": 21.888000890612602
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.329530+00:00",
+                  "elapsed_start_seconds": 3.3291253050000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.330136449
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.331288+00:00",
+                  "elapsed_start_seconds": 3.3308819179999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3318454159999997
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 4900211,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.247999742627144,
+                "parent": 21.695999428629875
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.338046+00:00",
+                  "elapsed_start_seconds": 3.337642966,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.340616493
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.341861+00:00",
+                  "elapsed_start_seconds": 3.3414562130000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3425374910000003
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 4900212,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.43999934196472,
+                "candidate": 22.336000576615334
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.349194+00:00",
+                  "elapsed_start_seconds": 3.348788135,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.349730166
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.351047+00:00",
+                  "elapsed_start_seconds": 3.350640302,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3515704210000004
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 4900213,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.023999899625778,
+                "parent": 21.888000890612602
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.358034+00:00",
+                  "elapsed_start_seconds": 3.3576298779999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3586405950000002
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.360007+00:00",
+                  "elapsed_start_seconds": 3.3596014330000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3606190999999996
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 4900214,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.27999998629093,
+                "candidate": 22.36800082027912
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.366908+00:00",
+                  "elapsed_start_seconds": 3.3665033670000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.367278256
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.368742+00:00",
+                  "elapsed_start_seconds": 3.3683502420000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.3693959349999996
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 4900215,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.056000143289566,
+                "parent": 21.407999098300934
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.426004+00:00",
+                  "elapsed_start_seconds": 3.4256026289999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.426918436
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.428234+00:00",
+                  "elapsed_start_seconds": 3.427828262,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.428991673
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 4900216,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.231999948620796,
+                "candidate": 21.023999899625778
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.435931+00:00",
+                  "elapsed_start_seconds": 3.4355268669999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.43679885
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.438139+00:00",
+                  "elapsed_start_seconds": 3.437733673,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.439007324
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 4900217,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.8320003002882,
+                "parent": 21.695999428629875
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.445108+00:00",
+                  "elapsed_start_seconds": 3.444702539,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4461917750000004
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.447815+00:00",
+                  "elapsed_start_seconds": 3.447412062,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4483630589999996
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 4900218,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.344000473618507,
+                "candidate": 20.800000056624413
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.455389+00:00",
+                  "elapsed_start_seconds": 3.4549858080000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4561905779999997
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.457847+00:00",
+                  "elapsed_start_seconds": 3.457443839,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.458645983
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 4900219,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.15200087428093,
+                "parent": 23.455999791622162
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.464377+00:00",
+                  "elapsed_start_seconds": 3.463971717,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.465310945
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.466924+00:00",
+                  "elapsed_start_seconds": 3.4665192350000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.467643708
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 4900220,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.695999428629875,
+                "candidate": 20.800000056624413
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.474488+00:00",
+                  "elapsed_start_seconds": 3.4740843920000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4755670860000003
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.477269+00:00",
+                  "elapsed_start_seconds": 3.4768629169999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4781416449999996
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 4900221,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 20.99199965596199,
+                "parent": 21.663999184966087
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.484975+00:00",
+                  "elapsed_start_seconds": 3.4845699700000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4858018669999997
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.487400+00:00",
+                  "elapsed_start_seconds": 3.4869942320000002,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.487994857
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 4900222,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.663999184966087,
+                "candidate": 20.959999412298203
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.494799+00:00",
+                  "elapsed_start_seconds": 3.4943942920000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.495715031
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.497405+00:00",
+                  "elapsed_start_seconds": 3.4970002790000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.4982686199999997
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 4900223,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.344000473618507,
+                "parent": 22.08000048995018
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.505575+00:00",
+                  "elapsed_start_seconds": 3.5051701540000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.506613246
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.508435+00:00",
+                  "elapsed_start_seconds": 3.508029664,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.509360501
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "acceptance_eligible": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              1.0496988235653018,
+              1.050847486509769,
+              1.018099597963276,
+              1.0276073036328455,
+              1.0242792186995155,
+              1.0429447540570158,
+              1.054012398770992,
+              1.0412844526619505,
+              1.034848484581232,
+              1.098634248680435,
+              1.061403463236545,
+              1.021084322827055,
+              0.9598853325788019,
+              1.041095937743141,
+              0.9513590489051755,
+              1.0167172754851803,
+              1.1050228338820682,
+              1.0414746119377563,
+              1.0261538661304397,
+              1.108925814207142,
+              1.0430768927676086,
+              1.0320121732096752,
+              1.0335877763553187,
+              1.0344827586206897
+            ],
+            "reverse_order_pair_ratios": [
+              1.050272998003785,
+              1.0228424036442398,
+              1.0335698514528557,
+              1.0476290964617019,
+              1.0662645015923529,
+              1.0410487195636804,
+              0.9996663045471796,
+              0.9834953890136153,
+              1.0727782749010566,
+              1.0667373207591944,
+              1.0375297831531851,
+              1.034035170659429
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.9834953890136153,
+              "p10": 1.0019839144568856,
+              "median": 1.0392892513584329,
+              "p90": 1.0666900388425102,
+              "maximum": 1.0727782749010566
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.27999998629093,
+                "p10": 21.41759917140007,
+                "median": 21.727999672293663,
+                "p90": 23.212799802422523,
+                "maximum": 23.455999791622162
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 20.735999569296837,
+                "p10": 20.800000056624413,
+                "median": 21.040000021457672,
+                "p90": 21.724800765514374,
+                "maximum": 22.36800082027912
+              }
+            },
+            "median_paired_raw_ratio": 1.0392892513584329,
+            "candidate_raw_latency_cut": 0.03780396199333225,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+          }
+        },
+        "negative_control": {
+          "passed": true,
+          "runner_mapping": {
+            "parent": "parent",
+            "candidate": "beta0_control"
+          },
+          "correctness": [
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            }
+          ],
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 4900100,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.247999742627144,
+                "candidate": 21.60000056028366
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.594115+00:00",
+                  "elapsed_start_seconds": 3.593714257,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.595009668
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.596682+00:00",
+                  "elapsed_start_seconds": 3.596276571,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.5990602160000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 4900101,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.47199958562851,
+                "parent": 21.536000072956085
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.608057+00:00",
+                  "elapsed_start_seconds": 3.6076529780000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6092867739999996
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.610992+00:00",
+                  "elapsed_start_seconds": 3.6105866699999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6118259189999997
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 4900102,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.695999428629875,
+                "candidate": 21.344000473618507
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.619401+00:00",
+                  "elapsed_start_seconds": 3.6189958580000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6202421699999996
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.622636+00:00",
+                  "elapsed_start_seconds": 3.622230981,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6236867279999996
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 4900103,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.376000717282295,
+                "parent": 21.536000072956085
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.631273+00:00",
+                  "elapsed_start_seconds": 3.630867698,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6321074870000003
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.634088+00:00",
+                  "elapsed_start_seconds": 3.6336821799999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6352749230000003
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 4900104,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.47199958562851,
+                "candidate": 21.47199958562851
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.642759+00:00",
+                  "elapsed_start_seconds": 3.6423545899999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6436078010000004
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.645254+00:00",
+                  "elapsed_start_seconds": 3.644848418,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6467869509999997
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 4900105,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.888000890612602,
+                "parent": 21.503999829292297
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.654807+00:00",
+                  "elapsed_start_seconds": 3.6544018819999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6560416520000003
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.658033+00:00",
+                  "elapsed_start_seconds": 3.657628019,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.658984623
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4900200,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.536000072956085,
+                "candidate": 21.75999991595745
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.666867+00:00",
+                  "elapsed_start_seconds": 3.6664616879999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.668086696
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.669853+00:00",
+                  "elapsed_start_seconds": 3.669447393,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.671149415
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 4900201,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.47199958562851,
+                "parent": 21.63200080394745
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.679033+00:00",
+                  "elapsed_start_seconds": 3.6786282179999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6804233319999997
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.682381+00:00",
+                  "elapsed_start_seconds": 3.681976665,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6837227259999996
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 4900202,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.43999934196472,
+                "candidate": 21.43999934196472
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.692464+00:00",
+                  "elapsed_start_seconds": 3.6920598769999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.693844225
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.696038+00:00",
+                  "elapsed_start_seconds": 3.6956350749999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.6971034919999997
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 4900203,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.503999829292297,
+                "parent": 21.47199958562851
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.706426+00:00",
+                  "elapsed_start_seconds": 3.706021386,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7073676059999996
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.709457+00:00",
+                  "elapsed_start_seconds": 3.70905262,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7108384190000003
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 4900204,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.36800082027912,
+                "candidate": 21.503999829292297
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.719733+00:00",
+                  "elapsed_start_seconds": 3.7193273899999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.721121521
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.723129+00:00",
+                  "elapsed_start_seconds": 3.722724205,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7245973930000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 4900205,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.727999672293663,
+                "parent": 23.840000852942467
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.732839+00:00",
+                  "elapsed_start_seconds": 3.732434419,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7339181709999996
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.736388+00:00",
+                  "elapsed_start_seconds": 3.735985068,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.737612774
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 4900206,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.888000890612602,
+                "candidate": 21.727999672293663
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.746560+00:00",
+                  "elapsed_start_seconds": 3.7461556000000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7475966040000004
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.749851+00:00",
+                  "elapsed_start_seconds": 3.749445782,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7512026639999996
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 4900207,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.47199958562851,
+                "parent": 21.91999927163124
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.759663+00:00",
+                  "elapsed_start_seconds": 3.7592577219999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.76104103
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.762958+00:00",
+                  "elapsed_start_seconds": 3.762552001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.764030307
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 4900208,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.503999829292297,
+                "candidate": 21.215999498963356
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.772992+00:00",
+                  "elapsed_start_seconds": 3.772586256,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7743613049999998
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.776207+00:00",
+                  "elapsed_start_seconds": 3.7758015830000002,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7776074310000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 4900209,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.856000646948814,
+                "parent": 22.84800074994564
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.786586+00:00",
+                  "elapsed_start_seconds": 3.786180394,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.789479509
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.791647+00:00",
+                  "elapsed_start_seconds": 3.7912409129999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.7927198890000002
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 4900210,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.784000262618065,
+                "candidate": 21.63200080394745
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.801535+00:00",
+                  "elapsed_start_seconds": 3.801129763,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.802939969
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.805179+00:00",
+                  "elapsed_start_seconds": 3.8047731070000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.806588302
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 4900211,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.568000316619873,
+                "parent": 21.91999927163124
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.816199+00:00",
+                  "elapsed_start_seconds": 3.815795043,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.817895371
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.819962+00:00",
+                  "elapsed_start_seconds": 3.8195568649999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.821506667
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 4900212,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.91999927163124,
+                "candidate": 21.568000316619873
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.831297+00:00",
+                  "elapsed_start_seconds": 3.8308916969999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.8329449839999996
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.835089+00:00",
+                  "elapsed_start_seconds": 3.834684424,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.8363479039999997
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 4900213,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.135999217629433,
+                "parent": 23.135999217629433
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.845709+00:00",
+                  "elapsed_start_seconds": 3.845303557,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.8475031009999996
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.849862+00:00",
+                  "elapsed_start_seconds": 3.849456231,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.851307412
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 4900214,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.75999991595745,
+                "candidate": 21.568000316619873
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.859795+00:00",
+                  "elapsed_start_seconds": 3.859389038,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.860885373
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.863150+00:00",
+                  "elapsed_start_seconds": 3.862743552,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.8648040590000003
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 4900215,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.344000473618507,
+                "parent": 21.856000646948814
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.874106+00:00",
+                  "elapsed_start_seconds": 3.873700238,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.875468813
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.877601+00:00",
+                  "elapsed_start_seconds": 3.8771942449999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.878940251
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 4900216,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.824000403285027,
+                "candidate": 21.727999672293663
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.887870+00:00",
+                  "elapsed_start_seconds": 3.887463884,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.889317446
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.891305+00:00",
+                  "elapsed_start_seconds": 3.8908995569999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.892811498
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 4900217,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.727999672293663,
+                "parent": 21.727999672293663
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.902173+00:00",
+                  "elapsed_start_seconds": 3.9017671110000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.903674439
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.905687+00:00",
+                  "elapsed_start_seconds": 3.9052805210000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.9072315019999997
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 4900218,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.975999861955643,
+                "candidate": 21.15200087428093
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.916786+00:00",
+                  "elapsed_start_seconds": 3.916380122,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.9183114299999997
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.920458+00:00",
+                  "elapsed_start_seconds": 3.9200525010000002,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.922100721
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 4900219,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.79200015962124,
+                "parent": 21.75999991595745
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.931355+00:00",
+                  "elapsed_start_seconds": 3.9309499469999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.9325892120000003
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.935023+00:00",
+                  "elapsed_start_seconds": 3.9346176830000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.936723129
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 4900220,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.79200015962124,
+                "candidate": 22.943999618291855
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.946101+00:00",
+                  "elapsed_start_seconds": 3.9456951989999998,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.94757395
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.949580+00:00",
+                  "elapsed_start_seconds": 3.9491737209999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.9511578020000004
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 4900221,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 21.63200080394745,
+                "parent": 22.143999114632607
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.960424+00:00",
+                  "elapsed_start_seconds": 3.960018082,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.962145934
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.964239+00:00",
+                  "elapsed_start_seconds": 3.9638330940000004,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.965483446
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 4900222,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 21.503999829292297,
+                "candidate": 22.304000332951546
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.974329+00:00",
+                  "elapsed_start_seconds": 3.9739235269999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.9762179009999996
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.978371+00:00",
+                  "elapsed_start_seconds": 3.9779655010000003,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.980003821
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 4900223,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.048000246286392,
+                "parent": 21.60000056028366
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:11.989065+00:00",
+                  "elapsed_start_seconds": 3.9886598999999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.991081472
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:11.993538+00:00",
+                  "elapsed_start_seconds": 3.9931321069999997,
+                  "status": "measured",
+                  "elapsed_end_seconds": 3.995208986
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "acceptance_eligible": false,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              0.9897058895281935,
+              1.0074516217123082,
+              1.0,
+              0.9985118934190003,
+              1.0401786178313628,
+              1.0972018231085445,
+              1.0073638264328106,
+              1.0208643672991957,
+              1.0135746765238665,
+              1.045387997512496,
+              1.0532544108661643,
+              1.0163204260869805,
+              1.0163204260869805,
+              1.0,
+              1.0089020584439452,
+              1.0239880135855106,
+              1.0044182958596863,
+              1.0,
+              1.0862329289089876,
+              0.9985315600482106,
+              0.949790817737279,
+              1.0236685600802922,
+              0.9641319722149868,
+              0.9796807111303353
+            ],
+            "reverse_order_pair_ratios": [
+              0.9985393349404925,
+              0.9992556696956992,
+              1.068309822028749,
+              1.0140916306288243,
+              1.0293584416619221,
+              1.0346226228096367,
+              1.0081271874555215,
+              1.0164170476376064,
+              1.0022067131384056,
+              1.0414594860479347,
+              0.9860380310974844,
+              0.9718752472221273
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.9718752472221273,
+              "p10": 0.9872881614817852,
+              "median": 1.0111094090421728,
+              "p90": 1.040775799724105,
+              "maximum": 1.068309822028749
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.43999934196472,
+                "p10": 21.503999829292297,
+                "median": 21.84000052511692,
+                "p90": 22.937600128352642,
+                "maximum": 23.840000852942467
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 21.15200087428093,
+                "p10": 21.37280013412237,
+                "median": 21.63200080394745,
+                "p90": 22.227200306952,
+                "maximum": 23.135999217629433
+              }
+            },
+            "median_paired_raw_ratio": 1.0111094090421728,
+            "candidate_raw_latency_cut": 0.010987346119839647,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+          }
+        }
+      },
+      "activities": {
+        "parent": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 14.527000000000044,
+              "kind": "kernel_or_other"
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.326999999999998,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        },
+        "candidate": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_48x64_64x15_4x2_h_bz_bias_TNN",
+              "duration_us": 16.830999999999904,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        },
+        "beta0_control": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "duration_us": 13.535000000000082,
+              "kind": "kernel_or_other"
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "duration_us": 3.423999999999978,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        }
+      },
+      "shared_input_address": true,
+      "capture": {
+        "parent": {
+          "synchronized_wall_seconds": 0.11391934399999926,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        },
+        "candidate": {
+          "synchronized_wall_seconds": 0.004607135999999734,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        },
+        "beta0_control": {
+          "synchronized_wall_seconds": 0.0011426039999999915,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        }
+      },
+      "timing_complete": true,
+      "immutable_original_and_prepared_tensors": true
+    },
+    {
+      "layer": "unpooler",
+      "m": 16,
+      "passed": true,
+      "series": {
+        "main": {
+          "passed": true,
+          "runner_mapping": {
+            "parent": "parent",
+            "candidate": "candidate"
+          },
+          "correctness": [
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            }
+          ],
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 4902100,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.231999948620796,
+                "candidate": 22.943999618291855
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.134676+00:00",
+                  "elapsed_start_seconds": 4.1342746340000005,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.136496545
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.138858+00:00",
+                  "elapsed_start_seconds": 4.138453780000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.141078983
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 4902101,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.911999374628067,
+                "parent": 22.655999287962914
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.151729+00:00",
+                  "elapsed_start_seconds": 4.151323689,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.153132652
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.155370+00:00",
+                  "elapsed_start_seconds": 4.154963659,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.157132038
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 4902102,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.52800017595291,
+                "candidate": 22.975999861955643
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.167506+00:00",
+                  "elapsed_start_seconds": 4.167100787000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.169466401999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.172220+00:00",
+                  "elapsed_start_seconds": 4.171814932,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.1741110159999995
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 4902103,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "parent": 23.77600036561489
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.184288+00:00",
+                  "elapsed_start_seconds": 4.183882404,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.186172754999999
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.188847+00:00",
+                  "elapsed_start_seconds": 4.188441750000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.190706163
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 4902104,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 24.032000452280045,
+                "candidate": 24.288000538945198
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.200542+00:00",
+                  "elapsed_start_seconds": 4.200136075,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.202028544999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.204840+00:00",
+                  "elapsed_start_seconds": 4.204434224,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.206630066000001
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 4902105,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.135999217629433,
+                "parent": 22.87999913096428
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.217301+00:00",
+                  "elapsed_start_seconds": 4.216895528,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.219038459
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.222054+00:00",
+                  "elapsed_start_seconds": 4.221648853,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.224111554
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4902200,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.624000906944275,
+                "candidate": 23.04000034928322
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.234945+00:00",
+                  "elapsed_start_seconds": 4.234539535,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.237343229
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.239955+00:00",
+                  "elapsed_start_seconds": 4.239549402,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.241764776
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 4902201,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.264000192284584,
+                "parent": 22.52800017595291
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.253759+00:00",
+                  "elapsed_start_seconds": 4.253354541,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.255484061000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.257819+00:00",
+                  "elapsed_start_seconds": 4.257413307,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.259774702
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 4902202,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.495999932289124,
+                "candidate": 23.840000852942467
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.272382+00:00",
+                  "elapsed_start_seconds": 4.271977060999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.2742688609999995
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.276969+00:00",
+                  "elapsed_start_seconds": 4.2765636229999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.279231412
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 4902203,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.71999977529049,
+                "parent": 21.695999428629875
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.291206+00:00",
+                  "elapsed_start_seconds": 4.290800673,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.293036601000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.296149+00:00",
+                  "elapsed_start_seconds": 4.2957447779999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.298483265
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 4902204,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.655999287962914,
+                "candidate": 24.351999163627625
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.310238+00:00",
+                  "elapsed_start_seconds": 4.309832544000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.312415422000001
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.315193+00:00",
+                  "elapsed_start_seconds": 4.314788202000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.317396448
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 4902205,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.87999913096428,
+                "parent": 22.52800017595291
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.329502+00:00",
+                  "elapsed_start_seconds": 4.329096628,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.331749841000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.334511+00:00",
+                  "elapsed_start_seconds": 4.334105211000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.3368385709999995
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 4902206,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.431999444961548,
+                "candidate": 24.224000051617622
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.349903+00:00",
+                  "elapsed_start_seconds": 4.349497960000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.3522190599999995
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.355013+00:00",
+                  "elapsed_start_seconds": 4.354607906,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.357361092
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 4902207,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "parent": 22.52800017595291
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.369423+00:00",
+                  "elapsed_start_seconds": 4.369017432,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.371803241
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.374967+00:00",
+                  "elapsed_start_seconds": 4.374561841,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.377103946
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 4902208,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.36800082027912,
+                "candidate": 22.84800074994564
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.389349+00:00",
+                  "elapsed_start_seconds": 4.388944677,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.391619102
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.394595+00:00",
+                  "elapsed_start_seconds": 4.394188639999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.396850103
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 4902209,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.840000852942467,
+                "parent": 22.752000018954277
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.409055+00:00",
+                  "elapsed_start_seconds": 4.408650174,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.411242493
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.413910+00:00",
+                  "elapsed_start_seconds": 4.41350396,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.416152972000001
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 4902210,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.655999287962914,
+                "candidate": 23.360000923275948
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.428757+00:00",
+                  "elapsed_start_seconds": 4.428351357,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.431175775
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.434382+00:00",
+                  "elapsed_start_seconds": 4.433978424999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.436901826
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 4902211,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 24.607999250292778,
+                "parent": 22.592000663280487
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.450702+00:00",
+                  "elapsed_start_seconds": 4.450297162,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.453190506
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.455989+00:00",
+                  "elapsed_start_seconds": 4.45558301,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.4583168539999996
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 4902212,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.52800017595291,
+                "candidate": 22.84800074994564
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.470518+00:00",
+                  "elapsed_start_seconds": 4.4701130120000006,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.472838489999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.475599+00:00",
+                  "elapsed_start_seconds": 4.475193331,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.4779457009999994
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 4902213,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.911999374628067,
+                "parent": 23.520000278949738
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.489192+00:00",
+                  "elapsed_start_seconds": 4.488785862,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.491766018
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.494927+00:00",
+                  "elapsed_start_seconds": 4.494522143999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.4969676750000005
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 4902214,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 24.12799932062626,
+                "candidate": 22.816000506281853
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.508202+00:00",
+                  "elapsed_start_seconds": 4.507795957000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.510172969999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.512914+00:00",
+                  "elapsed_start_seconds": 4.512507769000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.515703191
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 4902215,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.00800010561943,
+                "parent": 22.272000089287758
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.529248+00:00",
+                  "elapsed_start_seconds": 4.528844574000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.531740468000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.534563+00:00",
+                  "elapsed_start_seconds": 4.5341575689999996,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.537185034
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 4902216,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.431999444961548,
+                "candidate": 22.752000018954277
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.551122+00:00",
+                  "elapsed_start_seconds": 4.550716782,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.5535990349999995
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.556547+00:00",
+                  "elapsed_start_seconds": 4.556141504999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.558989295
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 4902217,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 24.57600086927414,
+                "parent": 22.112000733613968
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.571814+00:00",
+                  "elapsed_start_seconds": 4.571409941000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.574372199000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.577263+00:00",
+                  "elapsed_start_seconds": 4.576857196000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.579947203
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 4902218,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.431999444961548,
+                "candidate": 22.911999374628067
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.593876+00:00",
+                  "elapsed_start_seconds": 4.593470069,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.595844237
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.598586+00:00",
+                  "elapsed_start_seconds": 4.5981800029999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.6009483289999995
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 4902219,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 24.09599907696247,
+                "parent": 22.87999913096428
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.613258+00:00",
+                  "elapsed_start_seconds": 4.612852832,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.615940373000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.618894+00:00",
+                  "elapsed_start_seconds": 4.618489149,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.620934526999999
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 4902220,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.655999287962914,
+                "candidate": 22.87999913096428
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.635195+00:00",
+                  "elapsed_start_seconds": 4.634790341,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.637535976000001
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.640585+00:00",
+                  "elapsed_start_seconds": 4.640179777,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.643316778999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 4902221,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.135999217629433,
+                "parent": 22.52800017595291
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.657217+00:00",
+                  "elapsed_start_seconds": 4.656811986999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.660138383
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.663273+00:00",
+                  "elapsed_start_seconds": 4.662868485000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.666050915
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 4902222,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.624000906944275,
+                "candidate": 22.84800074994564
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.679839+00:00",
+                  "elapsed_start_seconds": 4.679433925,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.682088557
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.685153+00:00",
+                  "elapsed_start_seconds": 4.6847475329999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.688166041000001
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 4902223,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "parent": 22.431999444961548
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.702373+00:00",
+                  "elapsed_start_seconds": 4.7019692410000005,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.704881669000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.707705+00:00",
+                  "elapsed_start_seconds": 4.707299020000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.710122165
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "acceptance_eligible": true,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              0.9819444689222027,
+              0.9683631357355402,
+              0.9436241244728203,
+              0.9549295617610752,
+              0.9303547990344107,
+              0.9846154297036228,
+              0.92602375318537,
+              0.9777777705916469,
+              0.9789916004065405,
+              0.9543623827574694,
+              0.9698629448849223,
+              0.9180754775507275,
+              0.9859943730965831,
+              1.0265363530428055,
+              1.057503453069401,
+              0.9680111260016939,
+              0.9859352771744839,
+              0.8997395813596036,
+              0.979050281827519,
+              0.9495351928710531,
+              0.9902097966997639,
+              0.9737206491080259,
+              0.9901960856246077,
+              0.9736110722610911
+            ],
+            "reverse_order_pair_ratios": [
+              0.9751301580013172,
+              0.9492600126677667,
+              0.9571006688055828,
+              0.9515489692624866,
+              0.9665985497938295,
+              0.9436140028019826,
+              1.006061165078592,
+              1.0117683076457724,
+              0.9418518957525301,
+              0.9641798059415848,
+              0.9819306115992211,
+              0.9818685618114623
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.9418518957525301,
+              "p10": 0.944178603788561,
+              "median": 0.9653891778677072,
+              "p90": 1.0036481097306549,
+              "maximum": 1.0117683076457724
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.695999428629875,
+                "p10": 22.300800308585167,
+                "median": 22.52800017595291,
+                "p90": 22.84159939736128,
+                "maximum": 24.12799932062626
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 22.71999977529049,
+                "p10": 22.82560057938099,
+                "median": 23.04000034928322,
+                "p90": 24.313599430024624,
+                "maximum": 24.607999250292778
+              }
+            },
+            "median_paired_raw_ratio": 0.9653891778677072,
+            "candidate_raw_latency_cut": -0.03585167818924506,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+          }
+        },
+        "negative_control": {
+          "passed": true,
+          "runner_mapping": {
+            "parent": "parent",
+            "candidate": "beta0_control"
+          },
+          "correctness": [
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "before",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "candidate",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "B",
+              "runner": "parent",
+              "distribution": "outliers",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "parent",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "A-return",
+              "runner": "candidate",
+              "distribution": "normal",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "candidate",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "sparse",
+              "runner": "parent",
+              "distribution": "sparse",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "parent",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            },
+            {
+              "phase": "after",
+              "label": "zero",
+              "runner": "candidate",
+              "distribution": "zero",
+              "passed": true,
+              "same_input_address": true,
+              "config_unchanged": true
+            }
+          ],
+          "warmup": [
+            {
+              "round": 0,
+              "seed": 4902100,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.207999601960182,
+                "candidate": 23.871999233961105
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.871780+00:00",
+                  "elapsed_start_seconds": 4.8713775859999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.874406035
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.877839+00:00",
+                  "elapsed_start_seconds": 4.877434423,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.880134065
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 1,
+              "seed": 4902101,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "parent": 22.08000048995018
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.894865+00:00",
+                  "elapsed_start_seconds": 4.894459949,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.897506163999999
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.900487+00:00",
+                  "elapsed_start_seconds": 4.900081385,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.903245972000001
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 2,
+              "seed": 4902102,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.272000089287758,
+                "candidate": 22.39999920129776
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.917758+00:00",
+                  "elapsed_start_seconds": 4.917353090000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.920520918999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.923721+00:00",
+                  "elapsed_start_seconds": 4.9233158370000005,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.926182978
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 3,
+              "seed": 4902103,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.911999374628067,
+                "parent": 21.824000403285027
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.941411+00:00",
+                  "elapsed_start_seconds": 4.941004967,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.944268062000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.947592+00:00",
+                  "elapsed_start_seconds": 4.9471865489999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.9504071199999995
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 4,
+              "seed": 4902104,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.903999477624893,
+                "candidate": 23.80800060927868
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.965393+00:00",
+                  "elapsed_start_seconds": 4.964988032000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.967862696999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.971042+00:00",
+                  "elapsed_start_seconds": 4.970635993,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.97336391
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": true
+            },
+            {
+              "round": 5,
+              "seed": 4902105,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.592000663280487,
+                "parent": 22.84800074994564
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:12.988363+00:00",
+                  "elapsed_start_seconds": 4.98795827,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.9910055589999995
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:12.994248+00:00",
+                  "elapsed_start_seconds": 4.993842424,
+                  "status": "measured",
+                  "elapsed_end_seconds": 4.997108666999999
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": true
+            }
+          ],
+          "samples": [
+            {
+              "round": 0,
+              "seed": 4902200,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.23999984562397,
+                "candidate": 22.624000906944275
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.011869+00:00",
+                  "elapsed_start_seconds": 5.011465104999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.014706594
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.017993+00:00",
+                  "elapsed_start_seconds": 5.017590277,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.021167778000001
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 1,
+              "seed": 4902201,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.624000906944275,
+                "parent": 29.7279991209507
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.037124+00:00",
+                  "elapsed_start_seconds": 5.036718664,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.040282287
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.044168+00:00",
+                  "elapsed_start_seconds": 5.0437632400000005,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.047437355
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 2,
+              "seed": 4902202,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.336000576615334,
+                "candidate": 23.679999634623528
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.061478+00:00",
+                  "elapsed_start_seconds": 5.061074733,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.063926947000001
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.068133+00:00",
+                  "elapsed_start_seconds": 5.067728990999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.071010662000001
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 3,
+              "seed": 4902203,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.6879995316267,
+                "parent": 22.304000332951546
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.086262+00:00",
+                  "elapsed_start_seconds": 5.085857382,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.089253071
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.092579+00:00",
+                  "elapsed_start_seconds": 5.092174676000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.095465889
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 4,
+              "seed": 4902204,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.016000002622604,
+                "candidate": 22.592000663280487
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.110056+00:00",
+                  "elapsed_start_seconds": 5.109651315000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.1131855559999995
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.116618+00:00",
+                  "elapsed_start_seconds": 5.116213019,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.119607177000001
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 5,
+              "seed": 4902205,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.431999444961548,
+                "parent": 22.112000733613968
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.135544+00:00",
+                  "elapsed_start_seconds": 5.135138980000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.138220145
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.141549+00:00",
+                  "elapsed_start_seconds": 5.141142782999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.144544444999999
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 6,
+              "seed": 4902206,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.431999444961548,
+                "candidate": 23.903999477624893
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.159280+00:00",
+                  "elapsed_start_seconds": 5.158874374,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.161817523
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.165155+00:00",
+                  "elapsed_start_seconds": 5.164749780999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.168456840999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 7,
+              "seed": 4902207,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.752000018954277,
+                "parent": 23.520000278949738
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.183010+00:00",
+                  "elapsed_start_seconds": 5.182604198,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.185951069
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.189217+00:00",
+                  "elapsed_start_seconds": 5.18881096,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.192085887999999
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 8,
+              "seed": 4902208,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.752000018954277,
+                "candidate": 22.463999688625336
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.207354+00:00",
+                  "elapsed_start_seconds": 5.206948679,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.210254408999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.213504+00:00",
+                  "elapsed_start_seconds": 5.213098573,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.216004422999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 9,
+              "seed": 4902209,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.463999688625336,
+                "parent": 22.08000048995018
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.230975+00:00",
+                  "elapsed_start_seconds": 5.230571573000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.233898039
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.237974+00:00",
+                  "elapsed_start_seconds": 5.237569647999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.241033777
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 10,
+              "seed": 4902210,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.272000089287758,
+                "candidate": 23.93599972128868
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.256643+00:00",
+                  "elapsed_start_seconds": 5.256238134,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.260062807000001
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.264056+00:00",
+                  "elapsed_start_seconds": 5.2636514949999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.267295604999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 11,
+              "seed": 4902211,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.624000906944275,
+                "parent": 23.80800060927868
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.283172+00:00",
+                  "elapsed_start_seconds": 5.2827670829999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.2861086660000005
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.289738+00:00",
+                  "elapsed_start_seconds": 5.289342567,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.292639111
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 12,
+              "seed": 4902212,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.711999878287315,
+                "candidate": 22.112000733613968
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.308541+00:00",
+                  "elapsed_start_seconds": 5.308135655999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.311765264
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.315795+00:00",
+                  "elapsed_start_seconds": 5.315390098,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.319025907
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 13,
+              "seed": 4902213,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.840000852942467,
+                "parent": 22.112000733613968
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.336119+00:00",
+                  "elapsed_start_seconds": 5.335714931,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.339414818
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.343143+00:00",
+                  "elapsed_start_seconds": 5.342738036,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.345826975
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 14,
+              "seed": 4902214,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.77600036561489,
+                "candidate": 22.431999444961548
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.364163+00:00",
+                  "elapsed_start_seconds": 5.363758275,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.367154107999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.370898+00:00",
+                  "elapsed_start_seconds": 5.370493229999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.373968809999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 15,
+              "seed": 4902215,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.6879995316267,
+                "parent": 22.272000089287758
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.390973+00:00",
+                  "elapsed_start_seconds": 5.3905681869999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.393939297999999
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.397739+00:00",
+                  "elapsed_start_seconds": 5.3973443109999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.401455460999999
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 16,
+              "seed": 4902216,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.495999932289124,
+                "candidate": 22.36800082027912
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.417327+00:00",
+                  "elapsed_start_seconds": 5.416921749,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.419954811
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.423393+00:00",
+                  "elapsed_start_seconds": 5.422987911,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.425994328
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 17,
+              "seed": 4902217,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.36800082027912,
+                "parent": 23.679999634623528
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.441240+00:00",
+                  "elapsed_start_seconds": 5.440834864999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.445034421000001
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.449162+00:00",
+                  "elapsed_start_seconds": 5.448756692,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.452168871
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 18,
+              "seed": 4902218,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 23.840000852942467,
+                "candidate": 22.304000332951546
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.467171+00:00",
+                  "elapsed_start_seconds": 5.466765968000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.469796878
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.473224+00:00",
+                  "elapsed_start_seconds": 5.472818782999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.4767727950000005
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 19,
+              "seed": 4902219,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.52800017595291,
+                "parent": 21.91999927163124
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.493199+00:00",
+                  "elapsed_start_seconds": 5.49279475,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.496398569
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.500034+00:00",
+                  "elapsed_start_seconds": 5.499628672,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.503396729
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 20,
+              "seed": 4902220,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.304000332951546,
+                "candidate": 22.23999984562397
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.519575+00:00",
+                  "elapsed_start_seconds": 5.5191702849999995,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.523618752999999
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.527313+00:00",
+                  "elapsed_start_seconds": 5.526908281000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.530670361
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 21,
+              "seed": 4902221,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 23.04000034928322,
+                "parent": 21.91999927163124
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.547695+00:00",
+                  "elapsed_start_seconds": 5.547291454,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.550954073
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.554961+00:00",
+                  "elapsed_start_seconds": 5.554556336999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.558859878
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 22,
+              "seed": 4902222,
+              "order": [
+                "parent",
+                "candidate"
+              ],
+              "us": {
+                "parent": 22.431999444961548,
+                "candidate": 22.975999861955643
+              },
+              "observations": [
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.576906+00:00",
+                  "elapsed_start_seconds": 5.576501456000001,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.580789204
+                },
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.584785+00:00",
+                  "elapsed_start_seconds": 5.584381122,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.588458387999999
+                }
+              ],
+              "correctness": {
+                "parent": true,
+                "candidate": true
+              },
+              "excluded_warmup": false
+            },
+            {
+              "round": 23,
+              "seed": 4902223,
+              "order": [
+                "candidate",
+                "parent"
+              ],
+              "us": {
+                "candidate": 22.784000262618065,
+                "parent": 31.328000128269196
+              },
+              "observations": [
+                {
+                  "runner": "candidate",
+                  "started_utc": "2026-10-25T22:37:13.606415+00:00",
+                  "elapsed_start_seconds": 5.606011927999999,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.609789998
+                },
+                {
+                  "runner": "parent",
+                  "started_utc": "2026-10-25T22:37:13.613715+00:00",
+                  "elapsed_start_seconds": 5.613309542,
+                  "status": "measured",
+                  "elapsed_end_seconds": 5.617414122
+                }
+              ],
+              "correctness": {
+                "candidate": true,
+                "parent": true
+              },
+              "excluded_warmup": false
+            }
+          ],
+          "acceptance_eligible": false,
+          "summary": {
+            "round_parent_over_candidate_ratios": [
+              0.9830268278851404,
+              1.3140027373242327,
+              0.9432432821475607,
+              0.983074788143403,
+              0.9745042207973164,
+              0.9857347218587127,
+              0.938420345346761,
+              1.0337552856608498,
+              1.0128205277030329,
+              0.9829060183405542,
+              0.9304812979872755,
+              1.0523337895540388,
+              1.0723588590624944,
+              0.9275167761113893,
+              1.0599144505130245,
+              0.9816643401389775,
+              1.0057224207491067,
+              1.0586551665875714,
+              1.0688665933044155,
+              0.9730113237050366,
+              1.0028777197739132,
+              0.9513888428527381,
+              0.976323101485787,
+              1.3749999897809586
+            ],
+            "reverse_order_pair_ratios": [
+              1.1365297808259278,
+              0.9629531088089914,
+              0.9801033858924191,
+              0.9849350192646692,
+              0.9977511674651988,
+              0.9895336833176072,
+              0.9973118026936874,
+              1.0200393226080233,
+              1.0318494254875568,
+              1.019813364697297,
+              0.9767940792912782,
+              1.158638966445489
+            ],
+            "pair_distribution": {
+              "count": 12,
+              "minimum": 0.9629531088089914,
+              "p10": 0.9771250099513923,
+              "median": 0.997531485079443,
+              "p90": 1.1260617452920907,
+              "maximum": 1.158638966445489
+            },
+            "raw_us": {
+              "parent": {
+                "count": 24,
+                "minimum": 21.91999927163124,
+                "p10": 22.035200148820877,
+                "median": 22.38400001078844,
+                "p90": 23.83040077984333,
+                "maximum": 31.328000128269196
+              },
+              "candidate": {
+                "count": 24,
+                "minimum": 22.112000733613968,
+                "p10": 22.32320047914982,
+                "median": 22.624000906944275,
+                "p90": 23.792000487446785,
+                "maximum": 23.93599972128868
+              }
+            },
+            "median_paired_raw_ratio": 0.997531485079443,
+            "candidate_raw_latency_cut": -0.002474623565751788,
+            "qualification": "Direct gross whole-call graph timing; no overhead subtraction, formal confidence interval or official score"
+          }
+        }
+      },
+      "activities": {
+        "parent": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+              "duration_us": 17.951999999999998,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        },
+        "candidate": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_bias_TNT",
+              "duration_us": 19.35800000000006,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        },
+        "beta0_control": {
+          "available": true,
+          "cuda_events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x16_64x16_2x1_v_bz_TNT",
+              "duration_us": 18.557999999999993,
+              "kind": "kernel_or_other"
+            }
+          ],
+          "copy_events": [],
+          "qualification": "One instrumented graph replay; names/durations only, not timing acceptance data, API/tactic identity, instructions or counters. No visible copy does not prove no hidden copy.",
+          "correctness_passed": true
+        }
+      },
+      "shared_input_address": true,
+      "capture": {
+        "parent": {
+          "synchronized_wall_seconds": 0.004061667999999408,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        },
+        "candidate": {
+          "synchronized_wall_seconds": 0.0071055189999995605,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        },
+        "beta0_control": {
+          "synchronized_wall_seconds": 0.0009726549999999889,
+          "explicit_unfused_fallback_warning": false,
+          "warning_scope": "Only recognized gemm_and_bias fallback is reported; absence is not proof of Lt selection"
+        }
+      },
+      "timing_complete": true,
+      "immutable_original_and_prepared_tensors": true
+    }
+  ],
+  "protocol": {
+    "cases": [
+      {
+        "layer": "qkv_gate",
+        "m": 128
+      },
+      {
+        "layer": "unpooler",
+        "m": 16
+      }
+    ],
+    "series": {
+      "main": "candidate",
+      "negative_control": "beta0_control"
+    },
+    "warmup_rounds": 6,
+    "measured_rounds": 24,
+    "negative_control": "beta=0 addmm uses fresh 2-D output as ignored self, matching mm's native call; candidate uses 1-D zero bias. This tests route equivalence, not beta as the sole changed argument.",
+    "reverse_order_pairs": 12,
+    "eviction_bytes": 268435456,
+    "events": "One pair created/initialized before capture; sequentially reused",
+    "calibration": "unmeasured; no subtraction",
+    "capture_untimed_calls_per_runner": 3,
+    "same_input_address_across_runners": true,
+    "immutable_state_scope": "after prepare/capture and before/after correctness/timing phases; input/config after every observed replay",
+    "oracle_order": "Both separate outputs checked after both timed replays; input/config immediately after each replay",
+    "activity": "After all timing; one replay per case/runner; allowlisted names/durations only",
+    "internal_deadline_seconds": 120.0,
+    "external_supervisor_timeout_seconds": 180.0,
+    "supervisor": "must enforce hard timeout externally",
+    "raw_samples_retained": true
+  },
+  "limitations": [
+    "Two shapes, not full official correctness or score",
+    "Sequential replay, not concurrency",
+    "No hardware counters, PTX/SASS, clock traces, tactic identity or formal confidence interval",
+    "Empty activity means unavailable; names cannot prove hidden library behavior",
+    "Internal checks cannot interrupt a blocking CUDA/profiler call"
+  ],
+  "source_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "candidates/projection_qkv_unpooler_zero_bias.py": "4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "projection_p049_screen.py": "1e6a04fa2a0b0e2105810e1ecd9179f20a18b7bdfb79cb1e868abbd0e8b4d415"
+  },
+  "environment": {
+    "python": "3.12.3 (main, Aug 31 2026, 10:18:26) [GCC 13.3.0]",
+    "platform": "Linux-4.19.0-gvisor-x86_64-with-glibc2.39",
+    "torch": "2.14.1+cu130",
+    "device": "cuda",
+    "cuda_runtime": "13.0",
+    "cuda_available": true,
+    "implementation": "candidates/projection_pooler_column_batch2_hybrid.py",
+    "submission_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "contract_sha256": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true,
+    "triton": "3.8.0"
+  },
+  "preparation": {
+    "parent": {
+      "synchronized_wall_seconds": 0.043927185999999896
+    },
+    "candidate": {
+      "synchronized_wall_seconds": 0.011632316000000031
+    }
+  },
+  "assessment": {
+    "target_geomean_raw_latency_cut": 0.0016551794513833817,
+    "gates": {
+      "target_geomean_raw_cut_at_least5pct": false,
+      "neither_case_regresses_more_than2pct": false,
+      "no_observed_candidate_fallback_or_copy": true,
+      "no_identical_kernel_without_benefit": true,
+      "activity_available": true
+    },
+    "observed_candidate_fallback_or_copy": [],
+    "identical_kernel_without_benefit": [],
+    "screen_passed": false,
+    "automatic_selection": false,
+    "negative_control_used_for_selection": false,
+    "negative_control_activity_available": true,
+    "qualification": "Two-case screen only; no full-shape/official score or confidence interval. Negative control tests route equivalence; it cannot promote the candidate. Identical names do not establish identical machine code."
+  },
+  "wall_seconds": 7.081454544
+}

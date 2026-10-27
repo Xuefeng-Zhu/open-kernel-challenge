@@ -1,0 +1,71 @@
+{
+  "kind": "P040 LOCAL source/static/CPU numerical model only",
+  "base_commit": "fdeb02d173ebe3944dbdfd3c251f210f4e83c11c",
+  "parent": "candidates/projection_router_m1_fp32_gemv.py",
+  "parent_source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+  "parent_sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+  "source": "candidates/projection_o_m1_group8.py",
+  "source_sha256": "8ca6417ad5a01c96ae1a137e43e547fc804c43b2e657edfd00515bcb131d2604",
+  "test": "tests/test_o_m1_group8.py",
+  "test_sha256": "bff5ea850b61ca9c3ed9d6989b025b375d3d71062551cad2a143d2842a3affe1",
+  "cpu_oracle_cases": 39,
+  "cpu_oracle_passed": true,
+  "weights_unchanged": true,
+  "target_cpu": {
+    "case": {
+      "m": 1,
+      "layer": "o",
+      "load": "decode 1",
+      "weight": 62,
+      "seed": 202
+    },
+    "actual_seed": 202,
+    "passed": true,
+    "message": "relative L2 error 0.000e+00 (worst row 0.000e+00)"
+  },
+  "focused_test_methods": 6,
+  "full_regression_tests_passed": 131,
+  "static_syntax_and_diff_check_passed": true,
+  "parent_helpers_ast_unchanged": true,
+  "parent_other_dispatch_ast_unchanged": true,
+  "logical_request_model": {
+    "shape": {
+      "m": 1,
+      "n": 8192,
+      "k": 1024
+    },
+    "grouped8": {
+      "ctas": 1024,
+      "max_tile_elements": 8192,
+      "weight_bytes_per_cta": 16384,
+      "total_weight_bytes": 16777216,
+      "logical_x_bytes": 2097152
+    },
+    "unmeasured_one_row_counterfactual": {
+      "ctas": 8192,
+      "weight_bytes_per_cta": 2048,
+      "total_weight_bytes": 16777216,
+      "logical_x_bytes": 16777216
+    },
+    "qualification": "Logical source requests, NOT measured HBM/cache traffic, executed instruction counts, occupancy or resources; one-row O counterfactual is NOT actual library baseline"
+  },
+  "score_scenarios": {
+    "qualification": "All other latest P039 measured timings frozen; scenarios only, not predicted performance",
+    "target_us_5_5_gain_percent": 0.4350863458,
+    "target_us_5_gain_percent": 0.6274684438,
+    "target_us_4_gain_percent": 1.0201278114,
+    "floor_us_3_5_gain_percent": 1.2205406111,
+    "target_us_for_1_5_percent_aggregate": 2.8142558189
+  },
+  "native_compilation_verified": false,
+  "native_correctness_verified": false,
+  "cuda_graph_capture_verified": false,
+  "performance_measured": false,
+  "gpu_okc_modal_activity": false,
+  "ledger_edits": false,
+  "committed": false,
+  "local_logs": [
+    "results/p040-cpu-oracle.local.txt",
+    "results/p040-preflight-tests.local.txt"
+  ]
+}
