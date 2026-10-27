@@ -1,5 +1,8 @@
 # Open Kernel Challenge — dense projections
 
+[Failed and rejected experiment index](FAILED_EXPERIMENTS.md) — concise lessons
+for Projection and Attention, linked to the original evidence.
+
 Current selected candidate: **P046, 1.184139941× SGLang**, official 95% interval
 **[1.166377842,1.201902040]**, off-board job `41ba778763a5433b`.
 [Source](candidates/projection_pooler_column_batch2_hybrid.py),
