@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-27T02:18:18.908467+00:00",
+  "problem": "muse_attention_decode",
+  "limits": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 0,
+      "left": 20
+    }
+  }
+}

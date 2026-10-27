@@ -1,0 +1,31 @@
+{
+  "stage": "One accepted free off-board check, follow to terminal; this is an admission snapshot, not a numerical/performance result",
+  "job_id": "3e0a7ef51d4849c6",
+  "mode": "check",
+  "candidate_sha256": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+  "source_commit": "04447c1cc8f64fdb489b74e1e942a64e0fae3cbb",
+  "POST_attempts": 1,
+  "checks_remaining_after_admission": 19,
+  "ranked_submissions_today": 0,
+  "expected_monetary_cost_usd": 0,
+  "six_secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files_sha256": {
+    "RUNNER_DECISION.md": "82bd4bd664133c3c6d4527028ba7d872e0ef16d7137bacd36e868dba1fb516d6",
+    "RUNNER_ADMISSION_REVIEW.md": "c10f778328278368f678a92813a3506f7bac157d33b220e4bebfba7aef730f5e",
+    "SOURCE_RUNNER_RECHECK.md": "d94f5e68a001115052cf8085e7099762d49a87969af8dcf2bb974b7fbe0ea9ce",
+    "official-check/submit_once.py": "d42e557514f51ec64c2c9ef30db631a7d102a16046e81ae234c2a0c1c7750a90",
+    "official-check/request-receipt.json": "df9206618a8bfdad2d17b80dfdc0e2f2132b969a8d14104ca2efc4b971737e3d",
+    "official-check/accept.json": "3e326db89278ba7f1c27d91e55f59015d141ad40fae92fbd32557a025c84cfd4",
+    "official-check/active-jobs-admission.json": "a5a26ee916dfdad2ab48c78760e77875d9d13c8e089f18af7c7a44ae62a2d760",
+    "official-check/quota-admission.json": "f4e45e633d1cd0a705048a0d58e34904111ab67f745fd12cb96a50f259611c32",
+    "official-check/quota-after-admission.json": "e1b57a33842881d138e75a230ec189c585ad533bac5170acce76ea7b4a04568d",
+    "official-check/LIVE_STATUS.json": "763dd6f90183e3c0a2e9322634679160bbfad9c81c9bb6e231c267178b899cef"
+  }
+}

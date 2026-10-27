@@ -1,0 +1,10 @@
+{
+  "observed_utc": "2026-10-27T02:24:05.470837+00:00",
+  "job_id": "3e0a7ef51d4849c6",
+  "mode": "check",
+  "status": "queued",
+  "content_hash_service_identifier": "1f75f98c7d3ef6188613f72da7d6e0a8aa36ad3d68c63e7762d054b8c1819890",
+  "result_present": false,
+  "POST_attempts": 1,
+  "paid_spending_usd": 0
+}
