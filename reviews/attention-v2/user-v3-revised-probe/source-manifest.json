@@ -1,0 +1,14 @@
+{
+  "archive_sha256": "fa516f52a835b2bce45ae6b75740a54d3c2a9950cf00d858bcaf38eccaa1f2c1",
+  "sources": {
+    "submission.py": "a1c48d83f317393fd4eeb0823794f96c7f47c4ea941c0349222aff480a413432",
+    "submission_v3b.py": "f0de6182d56d6fc1cef11410497f37d5c21476c577842d1817e501cc0e524c6d"
+  },
+  "modified": false,
+  "difference_from_previous_archive": "Only LOG2E=tl.constexpr(...) in both submitted sources",
+  "difference_between_variants": "Only PREFETCH1/0",
+  "local_test_run": false,
+  "requests": "Exactly two free non-ranked official checks",
+  "static_globals_scan": "Both exact entrypoints OK; source-only AST scan",
+  "static_globals_helper_sha256": "2452c7fba1ed40705ca27c913de4d3bc37a05e529f591bc197bc50b44cde70c2"
+}

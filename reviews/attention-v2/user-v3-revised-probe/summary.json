@@ -1,0 +1,306 @@
+{
+  "archive_sha256": "fa516f52a835b2bce45ae6b75740a54d3c2a9950cf00d858bcaf38eccaa1f2c1",
+  "source_modified": false,
+  "requested_checks": 2,
+  "actual_distinct_checks": 2,
+  "results": [
+    {
+      "variant": "v3",
+      "source": "submission.py",
+      "source_sha256": "a1c48d83f317393fd4eeb0823794f96c7f47c4ea941c0349222aff480a413432",
+      "job_id": "2079ea1e49854f4c",
+      "mode": "check",
+      "status": "done",
+      "passed": true,
+      "test_passes": 16,
+      "benchmark_passes": 12,
+      "profiles": 12,
+      "speedup": 0.5159228452491988,
+      "speedup_ci": [
+        0.5081840025704608,
+        0.5236616879279368
+      ],
+      "reconstructed_score": 0.5159228452491988,
+      "checks": {
+        "flagged": [],
+        "ok": true,
+        "rejected": []
+      },
+      "flags": [],
+      "same_evaluator_as_champion": true,
+      "created_at": 1793144367.8347468,
+      "started_at": 1793144655.869636,
+      "finished_at": 1793144984.1909945,
+      "queue_seconds": 288.0348892211914,
+      "execution_seconds": 328.3213584423065,
+      "raw_result_sha256": "6ac0e28093317e78390642cdc1f31acdda6f833ed67d4552c320c74a87321c3d",
+      "published_result_sha256": "b59227804767db38ecdeec6230f4f61a6bb0c05e931acdb15a69be5be2cd99df",
+      "shapes": [
+        {
+          "load": "decode 1",
+          "layer": "sliding",
+          "candidate_us": 26.188660678207913,
+          "reference_us": 21.07200026512146,
+          "paired_speedup": 0.8046230589659698,
+          "champion_saved_us": 11.47711384229471,
+          "reference_normalized_latency_change_percent": 122.81057615358134
+        },
+        {
+          "load": "decode 1",
+          "layer": "full",
+          "candidate_us": 46.25075412561383,
+          "reference_us": 32.09600085392594,
+          "paired_speedup": 0.6939562707832923,
+          "champion_saved_us": 27.031302842677167,
+          "reference_normalized_latency_change_percent": 66.23893390752322
+        },
+        {
+          "load": "decode 16",
+          "layer": "sliding",
+          "candidate_us": 28.44703060339805,
+          "reference_us": 27.136000338941813,
+          "paired_speedup": 0.9539132824534722,
+          "champion_saved_us": 13.92113651627598,
+          "reference_normalized_latency_change_percent": 98.80181793097573
+        },
+        {
+          "load": "decode 16",
+          "layer": "full",
+          "candidate_us": 323.24343673275393,
+          "reference_us": 201.599994674325,
+          "paired_speedup": 0.6236785399636764,
+          "champion_saved_us": 194.27190912323948,
+          "reference_normalized_latency_change_percent": 65.67403262016352
+        },
+        {
+          "load": "decode 32",
+          "layer": "sliding",
+          "candidate_us": 33.69318524932433,
+          "reference_us": 31.407999340444803,
+          "paired_speedup": 0.9321766139956937,
+          "champion_saved_us": 20.10360388661608,
+          "reference_normalized_latency_change_percent": 65.29252123996214
+        },
+        {
+          "load": "decode 32",
+          "layer": "full",
+          "candidate_us": 614.3077611384899,
+          "reference_us": 385.88799722492695,
+          "paired_speedup": 0.6281672178612312,
+          "champion_saved_us": 304.0318931739489,
+          "reference_normalized_latency_change_percent": 100.8473308164024
+        },
+        {
+          "load": "verify 1",
+          "layer": "sliding",
+          "candidate_us": 39.37278139814693,
+          "reference_us": 22.960000205785036,
+          "paired_speedup": 0.5831439738434543,
+          "champion_saved_us": 16.988207220445705,
+          "reference_normalized_latency_change_percent": 132.24989164600504
+        },
+        {
+          "load": "verify 1",
+          "layer": "full",
+          "candidate_us": 95.95883854107262,
+          "reference_us": 36.70399961993098,
+          "paired_speedup": 0.3824973309177853,
+          "champion_saved_us": 29.568835823566065,
+          "reference_normalized_latency_change_percent": 214.34128296797718
+        },
+        {
+          "load": "verify 16",
+          "layer": "sliding",
+          "candidate_us": 59.75726188708707,
+          "reference_us": 29.24800105392933,
+          "paired_speedup": 0.4894468074724408,
+          "champion_saved_us": 21.740249752189822,
+          "reference_normalized_latency_change_percent": 169.60641138528248
+        },
+        {
+          "load": "verify 16",
+          "layer": "full",
+          "candidate_us": 669.4732917943855,
+          "reference_us": 205.40800178423524,
+          "paired_speedup": 0.3068203082959162,
+          "champion_saved_us": 197.60213357126437,
+          "reference_normalized_latency_change_percent": 237.98051194052263
+        },
+        {
+          "load": "verify 32",
+          "layer": "sliding",
+          "candidate_us": 73.97456884007931,
+          "reference_us": 34.48000131174922,
+          "paired_speedup": 0.4661061477261089,
+          "champion_saved_us": 27.46761932746471,
+          "reference_normalized_latency_change_percent": 168.19079623691144
+        },
+        {
+          "load": "verify 32",
+          "layer": "full",
+          "candidate_us": 1335.919643623523,
+          "reference_us": 391.1680020391941,
+          "paired_speedup": 0.2928080322093307,
+          "champion_saved_us": 380.3807463402613,
+          "reference_normalized_latency_change_percent": 248.375916365938
+        }
+      ]
+    },
+    {
+      "variant": "v3b",
+      "source": "submission_v3b.py",
+      "source_sha256": "f0de6182d56d6fc1cef11410497f37d5c21476c577842d1817e501cc0e524c6d",
+      "job_id": "2e1d37a7732449d7",
+      "mode": "check",
+      "status": "done",
+      "passed": true,
+      "test_passes": 16,
+      "benchmark_passes": 12,
+      "profiles": 12,
+      "speedup": 0.5670395077947253,
+      "speedup_ci": [
+        0.5585339151778045,
+        0.5755451004116462
+      ],
+      "reconstructed_score": 0.5670395077947253,
+      "checks": {
+        "flagged": [],
+        "ok": true,
+        "rejected": []
+      },
+      "flags": [],
+      "same_evaluator_as_champion": true,
+      "created_at": 1793145029.3008926,
+      "started_at": 1793145035.5854766,
+      "finished_at": 1793145358.3720112,
+      "queue_seconds": 6.284584045410156,
+      "execution_seconds": 322.7865345478058,
+      "raw_result_sha256": "8f2bd471f5570b9c5317ab1cf4dc2be662af3f6a80a12608510d79458b19bdb3",
+      "published_result_sha256": "8331a43af17656247025bbd10ce67244a7f4ff55076761aea8bd2d4291b4cd51",
+      "shapes": [
+        {
+          "load": "decode 1",
+          "layer": "sliding",
+          "candidate_us": 25.653392349692492,
+          "reference_us": 21.103999577462673,
+          "paired_speedup": 0.8226592136347866,
+          "champion_saved_us": 11.47711384229471,
+          "reference_normalized_latency_change_percent": 117.9256299367895
+        },
+        {
+          "load": "decode 1",
+          "layer": "full",
+          "candidate_us": 40.688356358630166,
+          "reference_us": 31.72800177708268,
+          "paired_speedup": 0.7797808664825322,
+          "champion_saved_us": 27.031302842677167,
+          "reference_normalized_latency_change_percent": 47.94226890156612
+        },
+        {
+          "load": "decode 16",
+          "layer": "sliding",
+          "candidate_us": 26.425583075021937,
+          "reference_us": 26.54400048777461,
+          "paired_speedup": 1.004481165559015,
+          "champion_saved_us": 13.92113651627598,
+          "reference_normalized_latency_change_percent": 88.79367896830213
+        },
+        {
+          "load": "decode 16",
+          "layer": "full",
+          "candidate_us": 237.75156120384327,
+          "reference_us": 201.7439971677959,
+          "paired_speedup": 0.8485496210677866,
+          "champion_saved_us": 194.27190912323948,
+          "reference_normalized_latency_change_percent": 21.769353505118993
+        },
+        {
+          "load": "decode 32",
+          "layer": "sliding",
+          "candidate_us": 24.180351476444585,
+          "reference_us": 30.848002061247826,
+          "paired_speedup": 1.2757466363257195,
+          "champion_saved_us": 20.10360388661608,
+          "reference_normalized_latency_change_percent": 20.777761336726353
+        },
+        {
+          "load": "decode 32",
+          "layer": "full",
+          "candidate_us": 492.65406428650846,
+          "reference_us": 383.39201221242547,
+          "paired_speedup": 0.7782174958156025,
+          "champion_saved_us": 304.0318931739489,
+          "reference_normalized_latency_change_percent": 62.12139882767247
+        },
+        {
+          "load": "verify 1",
+          "layer": "sliding",
+          "candidate_us": 37.99560162986845,
+          "reference_us": 22.991999983787537,
+          "paired_speedup": 0.6051226720335298,
+          "champion_saved_us": 16.988207220445705,
+          "reference_normalized_latency_change_percent": 123.81432889306554
+        },
+        {
+          "load": "verify 1",
+          "layer": "full",
+          "candidate_us": 94.61625848047593,
+          "reference_us": 36.35199926793575,
+          "paired_speedup": 0.38420457384115425,
+          "champion_saved_us": 29.568835823566065,
+          "reference_normalized_latency_change_percent": 212.94448301449282
+        },
+        {
+          "load": "verify 16",
+          "layer": "sliding",
+          "candidate_us": 55.65291413946673,
+          "reference_us": 29.151999857276678,
+          "paired_speedup": 0.5238180301613944,
+          "champion_saved_us": 21.740249752189822,
+          "reference_normalized_latency_change_percent": 151.91572211817572
+        },
+        {
+          "load": "verify 16",
+          "layer": "full",
+          "candidate_us": 664.4067015552396,
+          "reference_us": 203.7920020520687,
+          "paired_speedup": 0.3067277942486635,
+          "champion_saved_us": 197.60213357126437,
+          "reference_normalized_latency_change_percent": 238.08245231123064
+        },
+        {
+          "load": "verify 32",
+          "layer": "sliding",
+          "candidate_us": 73.02575585902532,
+          "reference_us": 34.25599914044142,
+          "paired_speedup": 0.46909475619221114,
+          "champion_saved_us": 27.46761932746471,
+          "reference_normalized_latency_change_percent": 166.48214937274582
+        },
+        {
+          "load": "verify 32",
+          "layer": "full",
+          "candidate_us": 1334.2223825598783,
+          "reference_us": 388.6879929341376,
+          "paired_speedup": 0.2913217451714379,
+          "champion_saved_us": 380.3807463402613,
+          "reference_normalized_latency_change_percent": 250.15328663571998
+        }
+      ]
+    }
+  ],
+  "selected_champion_speedup": 1.2336330588627955,
+  "selected_champion_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "decision": "REJECT both for performance; selected champion unchanged",
+  "cta_tuning_condition_met": false,
+  "additional_checks": 0,
+  "ranked_submissions": 0,
+  "modal_jobs": 0,
+  "paid_spending_usd": 0,
+  "limitations": [
+    "Current candidate/reference timings are official same-run paired fresh-input cold-L2 graph measurements. Champion comparisons use historical reference normalization, not same-session paired candidate/champion.",
+    "All twelve routes changed; sliding routes are not unchanged controls.",
+    "PREFETCH1 usesnum_stages1; PREFETCH0 usesnum_stages3, so this does not isolate prefetch alone.",
+    "No overlapping-graph shared-counter stress or native spill/occupancy measurement was performed."
+  ]
+}
