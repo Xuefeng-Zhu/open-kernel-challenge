@@ -89,3 +89,28 @@ timeout --kill-after=5s 180s python -B projection_p070_quack_preflight.py run \
 The external owner must enforce container lifetime and cleanup. This turn
 launched no GPU/service/check, accessed no credentials or billing, and changed
 no champion, environment, scorer, precision setting or other track file.
+
+## Execution-route check, 2026-10-27 16:05 UTC
+
+The existing Modal profile was tested with a read-only `app list`: the service
+returned **token expired**. This is a current response, not an inference from
+old expiry metadata. No credential was created or renewed, and no app was
+created. Official `okc problems --json` succeeds: Projection has 20/20 off-board
+checks and 9/10 ranked runs left at this observation; ranked runs are not authorized
+for P070. `okc check --help` and `okc api` expose candidate-versus-SGLang checks,
+not custom native sessions. Independent checks cannot supply the predeclared
+same-run three-arm, two-cohort comparison, so no quota was spent on a substitute.
+
+Pinned `quack/cute_dsl_utils.py` lines 31–53 directly replace CuTe's FFI argument
+converter on import. This is compiler compatibility behavior, not timing
+tampering, but the official loaded-module restriction has no verified exception
+for it. Do not infer submission eligibility or modify the judge to resolve it.
+It does not prevent an authorized native diagnostic outside the judge.
+
+The existing local OrbStack engine starts successfully; its only cached image
+is `python:3.12-slim-bookworm`, with no containers running. Local Docker cannot
+provide H200 execution. No packages were installed and no compiler container
+was launched while native measurement access is blocked. **Smallest required
+intervention: fresh authorization to renew the Modal CLI credential.** Then use
+the existing isolated H200 environment to provision the reviewed pin, compile,
+inspect, and measure. Billing was not reopened. P046 is unchanged.
