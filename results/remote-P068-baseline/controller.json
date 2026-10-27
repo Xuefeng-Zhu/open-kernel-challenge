@@ -1,0 +1,25 @@
+{
+  "stages": [
+    {
+      "stage": "timing",
+      "exit_code": 0,
+      "timed_out": false,
+      "worker_reaped": true,
+      "group_termination_sent": false,
+      "wall_seconds": 6.995432315,
+      "cloud_app_stop_verified": false
+    },
+    {
+      "stage": "activity",
+      "exit_code": 0,
+      "timed_out": false,
+      "worker_reaped": true,
+      "group_termination_sent": false,
+      "wall_seconds": 5.8481541880000005,
+      "cloud_app_stop_verified": false
+    }
+  ],
+  "complete": true,
+  "cloud_app_stop_verified": false,
+  "external_cleanup_required": "Stop ephemeral app and verify stopped/tasks0 even after a controller failure"
+}

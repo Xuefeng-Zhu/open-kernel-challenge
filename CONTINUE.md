@@ -1,3 +1,26 @@
+# P068 native baseline diagnostic complete; P046 preserved
+
+App `ap-Hw1HKh6pn7adn4Tc5E0lXE` completed 240 timing + 18 activity oracle
+checks and nine traces. Independent 2026-10-27 03:35:45 UTC observation confirms
+stopped/tasks 0, all apps stopped; the GPU slot is released. No official check.
+P046 remains selected at 1.1841399409×, job `41ba778763a5433b`.
+
+QKV M128 and pooler M128 retain vendor GEMM + reduction; pooler M8 has one
+kernel. Instrumented main/reduction medians: 14.058/3.456 and 19.522/3.424 µs.
+Raw A/A graph median drift reaches 1.979%; this is noise evidence, not a gain.
+All samples, launch metadata and seven DSO hashes are retained. Exact vendor
+cubin/tactic, per-CTA assignment and hardware counters remain unknown; do not
+infer Stream-K/occupancy from symbols or grid. No unchanged NCU retry occurred.
+
+Read `experiments/068-baseline-native-collector.md` and
+`results/projection-p068-assessment.json`. Existing auth worked; no renewal.
+Paid usage stays $0. At 03:40:29 UTC, delayed workspace billing rose by $0.02;
+this is not a settled per-app invoice, so retain the $0.5799165 free-credit reserve. The 12-file source freeze is commit `1ffbcdd`; all 51 CPU
+preflight tests pass. Raw traces/logs stay ignored locally; sanitized copies are
+source/hash bound. No new candidate or concurrent-call validation was performed.
+
+## Previous checkpoint (historical)
+
 # P068 collector CPU-tested; Projection paused pending runtime access
 
 P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.

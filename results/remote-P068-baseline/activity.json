@@ -1,0 +1,751 @@
+{
+  "stage": "activity",
+  "complete": true,
+  "source_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "projection_p068_collector.py": "e9d44e7dfc62cd3c8a9028e309164a6ef2d0bb10ba56c4a8461bf87e025f00a2"
+  },
+  "cases": [
+    {
+      "layer": "qkv_gate",
+      "m": 128,
+      "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "config": {
+        "m": 128,
+        "n": 2304,
+        "k": 8192,
+        "layer": "qkv_gate"
+      },
+      "x_shape": [
+        128,
+        8192
+      ],
+      "x_stride": [
+        8192,
+        1
+      ],
+      "capture_warmups_per_graph": 3,
+      "capture_executions_per_graph": 1,
+      "capture_calls_checked_individually": false,
+      "correctness": [],
+      "warmup": [],
+      "samples": [],
+      "activity": [
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "kind": "kernel",
+              "start_us": 2215094247836.322,
+              "duration_us": 14.72,
+              "metadata": {
+                "grid": [
+                  8,
+                  12,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 221492,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094247851.042,
+              "duration_us": 3.424,
+              "metadata": {
+                "grid": [
+                  72,
+                  8,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            0.0002148437499993605
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "qkv_gate.m128.repeat0.trace.local.json",
+          "sha256": "25ee84e0d4d3bf575a010cd19d0f26e4e4de898044573ce1f00adabf93b8eadd",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 0
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "kind": "kernel",
+              "start_us": 2215094388639.126,
+              "duration_us": 14.058,
+              "metadata": {
+                "grid": [
+                  8,
+                  12,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 221492,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094388653.184,
+              "duration_us": 3.58,
+              "metadata": {
+                "grid": [
+                  72,
+                  8,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            0.00010546875000017053
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "qkv_gate.m128.repeat1.trace.local.json",
+          "sha256": "6bc0ccb4d633595b34c8fe38a60eb6498b349de3254e7e56eb67255fe389ac79",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 1
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_96x64_64x10_4x2_h_bz_splitK_TNN",
+              "kind": "kernel",
+              "start_us": 2215094397728.846,
+              "duration_us": 13.826,
+              "metadata": {
+                "grid": [
+                  8,
+                  12,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 221492,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094397742.704,
+              "duration_us": 3.456,
+              "metadata": {
+                "grid": [
+                  72,
+                  8,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            0.03191015624999949
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "qkv_gate.m128.repeat2.trace.local.json",
+          "sha256": "5edec2e7eaa0a30ef3bf11222fd30dc4c3d0f930a47d5052c046d541eba9c9b4",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 2
+        }
+      ],
+      "eager_full_call": [
+        {
+          "repeat": 0,
+          "cuda_event_us": 150.30400454998016,
+          "synchronized_host_wall_us": 210.66200000063873,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 1,
+          "cuda_event_us": 93.82399916648865,
+          "synchronized_host_wall_us": 140.11700000082783,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 2,
+          "cuda_event_us": 69.85600292682648,
+          "synchronized_host_wall_us": 106.39699999970276,
+          "acceptance_eligible": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "layer": "pooler",
+      "m": 128,
+      "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "config": {
+        "m": 128,
+        "n": 4096,
+        "k": 8192,
+        "layer": "pooler"
+      },
+      "x_shape": [
+        128,
+        8192
+      ],
+      "x_stride": [
+        8192,
+        1
+      ],
+      "capture_warmups_per_graph": 3,
+      "capture_executions_per_graph": 1,
+      "capture_calls_checked_individually": false,
+      "correctness": [],
+      "warmup": [],
+      "samples": [],
+      "activity": [
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+              "kind": "kernel",
+              "start_us": 2215094414845.942,
+              "duration_us": 19.521,
+              "metadata": {
+                "grid": [
+                  2,
+                  64,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 213252,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094414865.463,
+              "duration_us": 3.392,
+              "metadata": {
+                "grid": [
+                  128,
+                  4,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            -3.906250000795808e-06
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m128.repeat0.trace.local.json",
+          "sha256": "50f6d6c72ae9421f120f2dff3f90e414b4abda5dcb4e30d78a75a6b8a0ccd199",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 0
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+              "kind": "kernel",
+              "start_us": 2215094425204.188,
+              "duration_us": 19.522,
+              "metadata": {
+                "grid": [
+                  2,
+                  64,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 213252,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094425223.71,
+              "duration_us": 3.424,
+              "metadata": {
+                "grid": [
+                  128,
+                  4,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            -2.7343749998465228e-05
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m128.repeat1.trace.local.json",
+          "sha256": "6a09d6babb968f4919fcee2a40cdf95b8a8072973a9b5609da85f5bc0c20d0e9",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 1
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_128x64_64x8_1x2_h_bz_splitK_NNT",
+              "kind": "kernel",
+              "start_us": 2215094432842.449,
+              "duration_us": 20.605,
+              "metadata": {
+                "grid": [
+                  2,
+                  64,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 213252,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            },
+            {
+              "symbol": "void cublasLt::splitKreduce_kernel<32, 16, int, float, __nv_bfloat16, float, __nv_bfloat16, false, float, __nv_bfloat16, __nv_bfloat16, true, false, false, false>(cublasLt::cublasSplitKParams<float>, float const*, __nv_bfloat16 const*, float*, __nv_bfloat16*, float const*, float const*, __nv_bfloat16 const*, float const*, __nv_bfloat16*, void*, long, float*, int*, float*, float*, float const*, float const*, float const*, float const*, float const*)",
+              "kind": "kernel",
+              "start_us": 2215094432863.022,
+              "duration_us": 3.488,
+              "metadata": {
+                "grid": [
+                  128,
+                  4,
+                  1
+                ],
+                "block": [
+                  32,
+                  16,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 32,
+                "shared memory": 0,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [
+            -0.032246093750000426
+          ],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m128.repeat2.trace.local.json",
+          "sha256": "14d440510bcfe5b85e2abbe9158a36972928bbbfbccc66750d0f8a760d2000f4",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 2
+        }
+      ],
+      "eager_full_call": [
+        {
+          "repeat": 0,
+          "cuda_event_us": 74.62400197982788,
+          "synchronized_host_wall_us": 110.61699999892483,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 1,
+          "cuda_event_us": 72.95999675989151,
+          "synchronized_host_wall_us": 107.44599999945592,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 2,
+          "cuda_event_us": 71.77600264549255,
+          "synchronized_host_wall_us": 107.20099999872446,
+          "acceptance_eligible": false
+        }
+      ],
+      "passed": true
+    },
+    {
+      "layer": "pooler",
+      "m": 8,
+      "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+      "config": {
+        "m": 8,
+        "n": 4096,
+        "k": 8192,
+        "layer": "pooler"
+      },
+      "x_shape": [
+        8,
+        8192
+      ],
+      "x_stride": [
+        8192,
+        1
+      ],
+      "capture_warmups_per_graph": 3,
+      "capture_executions_per_graph": 1,
+      "capture_calls_checked_individually": false,
+      "correctness": [],
+      "warmup": [],
+      "samples": [],
+      "activity": [
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+              "kind": "kernel",
+              "start_us": 2215094451317.633,
+              "duration_us": 17.15,
+              "metadata": {
+                "grid": [
+                  4,
+                  16,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 164308,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m8.repeat0.trace.local.json",
+          "sha256": "68afcf9a74cda4a374c438edf1ad0d13095c1f558ee0a42a70e30275bea787c3",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 0
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+              "kind": "kernel",
+              "start_us": 2215094461263.365,
+              "duration_us": 17.215,
+              "metadata": {
+                "grid": [
+                  4,
+                  16,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 164308,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m8.repeat1.trace.local.json",
+          "sha256": "37253d0e0c437036c4a7e190bd8f01fd24e9065d0eb8b9ad454d5c4707fb95f4",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 1
+        },
+        {
+          "events": [
+            {
+              "symbol": "nvjet_sm90_tst_64x8_64x16_4x1_v_bz_NNT",
+              "kind": "kernel",
+              "start_us": 2215094468898.699,
+              "duration_us": 18.33,
+              "metadata": {
+                "grid": [
+                  4,
+                  16,
+                  1
+                ],
+                "block": [
+                  384,
+                  1,
+                  1
+                ],
+                "stream": 7,
+                "registers per thread": 168,
+                "shared memory": 164308,
+                "cluster": null
+              },
+              "exact_kernel_binary_sha256": null,
+              "tactic_id": null
+            }
+          ],
+          "gaps_us": [],
+          "trace_versions": {
+            "cuda_driver_version": 13030,
+            "cuda_runtime_version": 13000,
+            "cupti_version": 130001
+          },
+          "qualification": "Instrumented intervals/static launch fields only; no counter/occupancy or exact executable binding",
+          "trace_file": "pooler.m8.repeat2.trace.local.json",
+          "sha256": "ec90fda64b54e27585d22d74152cbc74487c216f2d5066e214860dd30784ff30",
+          "source_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+          "repeat": 2
+        }
+      ],
+      "eager_full_call": [
+        {
+          "repeat": 0,
+          "cuda_event_us": 83.71199667453766,
+          "synchronized_host_wall_us": 118.16799999841976,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 1,
+          "cuda_event_us": 79.19999957084656,
+          "synchronized_host_wall_us": 113.4949999990198,
+          "acceptance_eligible": false
+        },
+        {
+          "repeat": 2,
+          "cuda_event_us": 81.34400099515915,
+          "synchronized_host_wall_us": 115.40300000056902,
+          "acceptance_eligible": false
+        }
+      ],
+      "passed": true
+    }
+  ],
+  "oracle_checks": 18,
+  "absence": {
+    "exact_vendor_kernel_binary": "Not exposed by this collector; DSO identity is not a kernel/cubin binding",
+    "vendor_tactic_and_tile_assignment": "Not exposed by Torch/CUPTI activity",
+    "hardware_counters": "Not collected; previous NCU timeouts require a materially changed capability before retry",
+    "achieved_occupancy_or_stalls": "Not measured; trace estimates are excluded",
+    "concurrency": "Sequential replay only; independent hidden vendor workspace is not established",
+    "official_score": "Diagnostic only; no calibration or official score"
+  },
+  "diagnostic_only": true,
+  "timing_receipt_sha256": "2d06240b5659408068351316178e76a74c8cbc3b5596b4a89d197f5272927b7e",
+  "environment": {
+    "python": "3.12.3",
+    "platform": "Linux",
+    "packages": {
+      "torch": "2.14.1",
+      "triton": "3.8.0",
+      "nvidia-cutlass-dsl": "4.8.0",
+      "apache-tvm-ffi": "0.1.11",
+      "quack-kernels": "0.6.5",
+      "einops": "0.8.2"
+    },
+    "cuda_runtime": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "sms": 132,
+    "tf32_allowed": false,
+    "bf16_reduced_precision_reduction": true,
+    "image_digest": null,
+    "image_digest_provenance": "unavailable",
+    "driver_version": null,
+    "driver_version_reason": "May be reported by activity trace; no assumed version",
+    "python_executable_sha256": "e50d468e8b0adfb05733f5b87b3cff34829c4a8c1aea50c865aa8bdfe4bb150f"
+  },
+  "library_identity": {
+    "status": "available",
+    "libraries": [
+      {
+        "basename": "libcublas.so.13",
+        "sha256": "25cde432108543626df85d887c730bf2cab96803ca16f9654e4abc8d2b45833e",
+        "bytes": 54177976
+      },
+      {
+        "basename": "libcublasLt.so.13",
+        "sha256": "1489aeb75d55ee55782798343ac66f57771d561cc1fe1e0491568deefa0e6515",
+        "bytes": 541607888
+      },
+      {
+        "basename": "libcudart.so.13",
+        "sha256": "96c42e418cec19054186b9429c321603cc190bf26a18104e19408117a2a817b0",
+        "bytes": 704288
+      },
+      {
+        "basename": "libcupti.so.13",
+        "sha256": "e2f9ed861fe27c492b8bb52b5e3220ef5120f3edcda36312e96b7fd8a186be3e",
+        "bytes": 4152208
+      },
+      {
+        "basename": "libnvJitLink.so.13",
+        "sha256": "3afdb9677477dd584d3712a9bf2978d085729f0ed6e6432027e925d1e312e3c9",
+        "bytes": 103602848
+      },
+      {
+        "basename": "libtorch_cuda.so",
+        "sha256": "20748ec5b2061ebb02b44c32d809ce5cb84094791ace0d240c199823d9002ab1",
+        "bytes": 502842281
+      },
+      {
+        "basename": "libcuda.so.610.57.04",
+        "sha256": "9c7e7e514b6d4bbacba137b883cfd96cf39ceb6861a1d037619c6dded998139b",
+        "bytes": 112637032
+      }
+    ],
+    "scope": "Loaded process DSOs, not a vendor kernel/cubin or tactic binding"
+  },
+  "library_identity_comparison": "matched timing DSOs",
+  "wall_seconds": 5.0172443
+}

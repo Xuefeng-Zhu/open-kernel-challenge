@@ -1,12 +1,11 @@
 # P067 — minimal baseline profiling procedure
 
-Status: **preregistered procedure, not a completed native run**. P068 has now
-assembled and CPU-tested the baseline-only collector from the helpers below;
-see [its commands, coverage and limits](../experiments/068-baseline-native-collector.md).
-No native execution occurred. Expired Modal access must be resolved before
-live capture, without automatic credential renewal. Counter-dependent conclusions
-require functioning counters; activity/code-only capture can still be useful if
-counters remain unavailable. This is not an instruction to rerun the failed NCU recipe.
+Status: **P068 completed the timing/activity subset on 2026-10-27**; see
+[its native results, coverage and limits](../experiments/068-baseline-native-collector.md).
+All 258 oracle checks and nine traces passed; app shutdown was independently
+verified. This procedure remains broader than the executed subset: exact vendor
+code/work assignment and working counters are still unavailable. Renewed ordinary
+access does not establish counter capability. Do not rerun the failed NCU recipe.
 
 ## Question and fixed scope
 
@@ -151,7 +150,8 @@ outcomes must be reconciled before another launch. These bounds are not a cost
 quote or evidence of native execution. P068 implements and CPU-tests process
 supervision; cloud provisioning/shutdown still needs an external app watchdog.
 
-Current exact blockers: expired Modal credential, no documented official-runner
-native-artifact export, and no working counter capture established. The completed
-saved-evidence audit supplies the baseline facts while those prerequisites remain
-unresolved. No candidate or score changed.
+Remaining evidence gaps after P068: no documented exact vendor-kernel binary
+binding or work-assignment export, and no working counter capture established.
+Existing runtime authentication worked for P068; it is no longer the current
+blocker. The timing/activity evidence is now saved, without changing a candidate
+or official score. Counter-dependent decisions remain unresolved.

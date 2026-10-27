@@ -1,5 +1,104 @@
 # P068 — baseline collector and bounded native diagnostic
 
+## Native result: completed, 2026-10-27 03:35 UTC
+
+**258 original-oracle comparisons passed**: 240 in the uninstrumented timing
+stage and 18 in separate activity/eager checks. All nine traces were retrieved.
+P046 remains selected at official **1.1841399409×**; no candidate changed and
+no official check or new performance score was produced.
+
+- Frozen launcher commit: `1ffbcddf6bcad200531854b31d804eeae189e74c`.
+- App: `ap-Hw1HKh6pn7adn4Tc5E0lXE`; native collector wall time 12.876 s
+  (timing process 6.995 s, activity process 5.848 s). These include setup and
+  checking, not GPU-only active time. Local client lifecycle was 22.984 s.
+- Independent observation at **03:35:45 UTC**: app stopped, tasks 0, all apps
+  stopped. The measurement slot was released. No uncertain invocation remains.
+- H200, SM90, 132 SMs; Python 3.12.3, Torch 2.14.1, Triton 3.8.0, CUDA 13.0.
+  Trace driver/runtime/CUPTI versions: 13030 / 13000 / 130001. Package metadata
+  also reports CuTe DSL 4.8.0, TVM FFI 0.1.11, Quack 0.6.5 and einops 0.8.2;
+  none of those optional libraries was imported or benchmarked here.
+- Base image ID `im-cPTbGpNiX3RarKResPgX7h`; immutable image digest unavailable.
+  Seven loaded-library hashes are saved. They do not identify the exact vendor
+  kernel binary or prove that this test image equals the official judge image.
+
+| Case | Raw graph medians A / B (µs) | Paired B/A latency movement | Separately instrumented phase medians (µs) |
+|---|---:|---:|---:|
+| QKV M128 | 21.632 / 21.536 | −0.121% | GEMM 14.058; reduction 3.456 |
+| Pooler M128 | 28.288 / 27.984 | −1.979% | GEMM 19.522; reduction 3.424 |
+| Pooler M8 | 22.096 / 22.320 | +0.324% | Single kernel 17.215 |
+
+A and B are **identical P046 graphs**, so these movements are repeatability
+evidence, not improvements. Each case retained all 24 measured alternating-order
+rounds (12 reversed-order pairs), after six predefined warmup rounds. Pooler M128
+is just below the 2% median-drift flag and 11/12 pairs favor B. Pooler M8's pairwise
+latency movement ranges from −2.91% to +5.61%. A single session cannot reliably
+establish a small 1–2% candidate benefit. No replay-cost calibration was applied.
+Eager CUDA-event and synchronized host times are separately retained and are not
+judge-equivalent performance measurements.
+
+The visible QKV M128 and pooler M128 paths contain a vendor GEMM followed by a
+separate FP32 split-K reduction. The main kernels report 168 registers/thread,
+384 threads/block and shared memory of 221,492 and 213,252 bytes respectively;
+their grids are `[8,12,1]` and `[2,64,1]`. Pooler M8 has one vendor kernel with
+grid `[4,16,1]`, 384 threads/block, 168 registers/thread and 164,308 shared bytes.
+The symbols match prior saved evidence; M8 also reproduces P053's launch fields.
+This confirms dispatch sequences and static resource metadata, not achieved
+occupancy, a tile-to-CTA map, internal persistence or actual overlap.
+
+No material positive gap appears between main and reduction in these traces.
+Tiny negative gaps down to −0.032 µs are retained as timestamp uncertainty, not
+interpreted as overlap. Reduction represents about 19.73% and 14.92% of the sums
+of instrumented phase medians, but those percentages are **not removable latency
+or whole-score forecasts**: changing finalization can change the mainloop.
+
+`ncu`, `nsys` and `nvcc` are present, and the read-only driver parameter reports
+`RmProfilingAdminOnly=0`. This does not establish working counter collection.
+No standalone profiler/counter invocation or permission change was attempted;
+the two earlier NCU timeout recipes were not repeated. Torch/CUPTI activity
+collection succeeded. Exact vendor cubin/tactic, per-CTA tile/K assignment,
+buffer/barrier ownership and hardware traffic/stall counters remain unavailable.
+P067's Stream-K decision therefore remains unresolved; launch-grid arithmetic
+alone is insufficient justification for an implementation.
+
+Coverage includes same-address A → B(outliers) → A, sparse power-of-two and zero
+inputs before and after timing; original weights, prepared state and inputs
+were checked for mutation. It covers three shapes and one weight seed, sequential
+graph replay only. Capture warmups/executions were not individually oracle-checked;
+capture input/state integrity was checked. Concurrent calls, all official shapes
+and a new optimization were not tested.
+
+Before launch, the browser and CLI confirmed $27.53 free credits, $0 spend cap,
+$0 paid usage and no active apps. Post-run billing still showed $2.47 cumulative
+usage and $0 paid, with no newly reported delta. This is delayed billing, **not a
+claim of zero run cost**. Retain the $0.579916500143 free-credit reserve until
+accounting catches up. At 03:40:29 UTC, a further read reported a $0.02
+workspace usage increase and still $0 paid. That rounded, delayed workspace
+delta is not a settled per-app invoice. No credential contents were read,
+renewed or published.
+
+Evidence: [assessment](../results/projection-p068-assessment.json),
+[timing](../results/remote-P068-baseline/timing.json),
+[activity](../results/remote-P068-baseline/activity.json),
+[lifecycle](projection-p068-modal.json). All raw samples remain in the structured
+receipts. Original full traces/logs remain ignored and owner-only locally;
+published traces retain only kernel/copy/memset intervals and selected launch
+fields. Raw and published hashes are paired in the assessment. No vendor binary
+is redistributed.
+
+Exact launch (already completed; **do not rerun this ledger**):
+
+```bash
+python -B projection_p068_modal.py launch \
+  --frozen-head 1ffbcddf6bcad200531854b31d804eeae189e74c \
+  --control-root "$CONTROL_ROOT"
+```
+
+The first local invocation used an abbreviated commit and was rejected by the
+40-character freeze gate before any service call/reservation. The full hash
+invocation above created the single app. All 51 CPU launcher/collector/helper
+tests passed. Offline result validation and publication used
+`projection_p068_result.py`; no second native call was needed.
+
 ## Resumed acquisition, 2026-10-27
 
 Existing runtime access was restored separately. The unchanged collector's 12
@@ -20,7 +119,7 @@ transport step fails. No counter query, permission change, credential creation,
 package installation or candidate edit is part of this batch.
 
 The existing 38 collector/helper/model CPU tests passed again before launch.
-Native results and actual cleanup will be appended only after execution.
+The native result and verified cleanup are recorded above.
 
 ## Original preparation checkpoint (historical)
 

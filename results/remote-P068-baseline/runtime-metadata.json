@@ -1,0 +1,11 @@
+{
+  "executables_present": {
+    "ncu": true,
+    "nsys": true,
+    "nvcc": true
+  },
+  "profiler_executed": false,
+  "counter_query_executed": false,
+  "profiling_admin_restriction": 0,
+  "restriction_scope": "Driver parameter metadata; not a proof counters are accessible"
+}
