@@ -42,3 +42,11 @@ licensed; its notice is preserved in `licenses/Triton-MIT.txt`. The prototype
 uses BF16 output rather than the tutorial's FP16/FP8 selection, a fixed tile,
 ordinary masked stores and conservative fallbacks, without its autotuning,
 benchmark/profiler code, persistent scheduler or global allocator changes.
+
+P070 native diagnostic compiles Dao-AILab/Quack at commit
+`77a750c0d9548d4a6e23c0f64062d61b3ea420ff`, licensed Apache-2.0.
+The pinned source is retrieved separately into the isolated execution image;
+its license is preserved as `licenses/Quack-Apache-2.0.txt`. Generated
+PTX, MLIR, cubins and host wrappers in `results/projection-p070/compile/`
+are diagnostic artifacts of that implementation, not a competition submission.
+Source: https://github.com/Dao-AILab/quack/tree/77a750c0d9548d4a6e23c0f64062d61b3ea420ff .

@@ -1,0 +1,6 @@
+
+Resource usage:
+ Common:
+  GLOBAL:0
+ Function kernel_cutlass_kernel_quacksplit_k_reduceSplitKReduce_object_at__tensorptrf32gmemalign16oi64div41i64div4_tensorptrbf16gmemalign16oi64div81i64div8_None_None_None_None__TiledCopy_TilerMN816_0:
+  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:612 TEXTURE:0 SURFACE:0 SAMPLER:0

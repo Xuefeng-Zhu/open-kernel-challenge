@@ -1,0 +1,54 @@
+{
+  "serial": {
+    "ptx_sha256": "c09684463c87eaef99e86f99ef9bb74521fe98f565d4fede188f606a4c6362b1",
+    "cubin_sha256": "6477f9814ccd07a8cee93a29ae12991178d812492702c9c5a86fe5e4a5950417",
+    "resources": "Resource usage:\n Common:\n  GLOBAL:0\n Function kernel_cutlass_kernel_quackgemm_default_epiGemmDefaultSm90_object_at__TiledMMA_ThrLayoutVMNK128211112800_PermutationMNK____MMAAtom_ThrID1281_ShapeMNK6412816_TVLayoutA12864160164_TVLayoutB_0:\n  REG:168 STACK:0 SHARED:1024 LOCAL:0 CONSTANT[0]:1260 TEXTURE:0 SURFACE:0 SAMPLER:0",
+    "static_counts": {
+      "wgmma.mma_async": 8,
+      "wgmma.wait_group": 2,
+      "cp.async.bulk.tensor": 6,
+      "ld.acquire.gpu.global": 4,
+      "st.release.gpu.global": 2,
+      "ld.local": 0,
+      "st.local": 0
+    },
+    "shared_struct_fields": [
+      "[\"sD:32768:0\", \"sC:0:32768\", \"epi:0:32768\", \"sA:98304:32768\", \"sB:98304:131072\", \"sAuxA:0:229376\", \"sSFA:0:229376\", \"sSFB:0:229376\"]"
+    ],
+    "sass_hgmma_static_count": 8
+  },
+  "separate": {
+    "ptx_sha256": "56f59eaaa3d06598aee4be76423f48c4b45a984862dbf8260c4af5d58d284a33",
+    "cubin_sha256": "b67aaee0dbe71c3b0ffc4109765edcb684dd773b823dff0feeaa3664ecbd9492",
+    "resources": "Resource usage:\n Common:\n  GLOBAL:0\n Function kernel_cutlass_kernel_quackgemm_default_epiGemmDefaultSm90_object_at__TiledMMA_ThrLayoutVMNK128211112800_PermutationMNK____MMAAtom_ThrID1281_ShapeMNK6412816_TVLayoutA12864160164_TVLayoutB_0:\n  REG:168 STACK:0 SHARED:1024 LOCAL:0 CONSTANT[0]:1168 TEXTURE:0 SURFACE:0 SAMPLER:0",
+    "static_counts": {
+      "wgmma.mma_async": 8,
+      "wgmma.wait_group": 2,
+      "cp.async.bulk.tensor": 6,
+      "ld.acquire.gpu.global": 0,
+      "st.release.gpu.global": 0,
+      "ld.local": 0,
+      "st.local": 0
+    },
+    "shared_struct_fields": [
+      "[\"sD:32768:0\", \"sC:0:32768\", \"epi:0:32768\", \"sA:98304:32768\", \"sB:98304:131072\", \"sAuxA:0:229376\", \"sSFA:0:229376\", \"sSFB:0:229376\"]"
+    ],
+    "sass_hgmma_static_count": 8
+  },
+  "separate_reduce": {
+    "ptx_sha256": "64a8c518cc9c3e60a5276488798bc7c5d1f1c4b58d42caf085eb6df08b28c223",
+    "cubin_sha256": "3ad4baa151fd5dce597c35d79aaca8623b0ec4eebfcdcfd4500fb8d9416a4df4",
+    "resources": "Resource usage:\n Common:\n  GLOBAL:0\n Function kernel_cutlass_kernel_quacksplit_k_reduceSplitKReduce_object_at__tensorptrf32gmemalign16oi64div41i64div4_tensorptrbf16gmemalign16oi64div81i64div8_None_None_None_None__TiledCopy_TilerMN816_0:\n  REG:20 STACK:0 SHARED:0 LOCAL:0 CONSTANT[0]:612 TEXTURE:0 SURFACE:0 SAMPLER:0",
+    "static_counts": {
+      "wgmma.mma_async": 0,
+      "wgmma.wait_group": 0,
+      "cp.async.bulk.tensor": 0,
+      "ld.acquire.gpu.global": 0,
+      "st.release.gpu.global": 0,
+      "ld.local": 0,
+      "st.local": 0
+    },
+    "shared_struct_fields": [],
+    "sass_hgmma_static_count": 0
+  }
+}

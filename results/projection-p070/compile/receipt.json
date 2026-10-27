@@ -1,0 +1,74 @@
+{
+  "quack_commit": "77a750c0d9548d4a6e23c0f64062d61b3ea420ff",
+  "dependencies": {
+    "platform": "Linux",
+    "machine": "x86_64",
+    "python": "3.12.3",
+    "versions": {
+      "torch": "2.14.1",
+      "triton": "3.8.0",
+      "nvidia-cutlass-dsl": "4.8.0",
+      "apache-tvm-ffi": "0.1.11",
+      "einops": "0.8.2"
+    },
+    "missing": [],
+    "quack": "Requires a clean checkout at 77a750c0d9548d4a6e23c0f64062d61b3ea420ff; package version is insufficient"
+  },
+  "objects": {
+    "serial.o": "f378439837f1fc31814798ade08351f1910978851cb49c7cc4504de4102d2dae",
+    "separate.o": "d15adc9520d621de63156c4142d113ba13e74bab1480dc2a29a0d62f3769f802",
+    "separate_reduce.o": "ee6c4768cb161f3ed292f0381901a76ad906f393828722fd528bd21373eb49fd"
+  },
+  "device_artifacts": {
+    "serial.cubin": "6477f9814ccd07a8cee93a29ae12991178d812492702c9c5a86fe5e4a5950417",
+    "serial.ptx": "c09684463c87eaef99e86f99ef9bb74521fe98f565d4fede188f606a4c6362b1",
+    "serial.mlir": "7fd32fc76db7ed96589aba3e0c2a1c0210b49ce4ec165cf72b84efca937c0cf3",
+    "separate.cubin": "b67aaee0dbe71c3b0ffc4109765edcb684dd773b823dff0feeaa3664ecbd9492",
+    "separate.ptx": "56f59eaaa3d06598aee4be76423f48c4b45a984862dbf8260c4af5d58d284a33",
+    "separate.mlir": "8b0ae66cd623c188817ce8d67dcaccc9bcf5f1793886cc97ef3a842dc69c8b66",
+    "separate_reduce.cubin": "3ad4baa151fd5dce597c35d79aaca8623b0ec4eebfcdcfd4500fb8d9416a4df4",
+    "separate_reduce.ptx": "64a8c518cc9c3e60a5276488798bc7c5d1f1c4b58d42caf085eb6df08b28c223",
+    "separate_reduce.mlir": "73cd2db26e923b80d9713bd3ad0c986f247b5859fb04a8bd39b902822892d277"
+  },
+  "geometry": {
+    "tile_M": 128,
+    "tile_N": 128,
+    "tile_K": 64,
+    "cluster_M": 1,
+    "cluster_N": 1,
+    "cluster_K": 1,
+    "split_k": 2,
+    "persistent": true,
+    "pingpong": false,
+    "is_dynamic_persistent": false,
+    "max_swizzle_size": 8,
+    "b_kn": false
+  },
+  "implementation_sha256": "7f9a85585f51772afe2ab3c13a65600afe5cda6b8e0e636a014619ce540ee169",
+  "compile_arguments": "Symbolic M/N/K/L; fixed BF16 types/layout/tile/split/mode, intended canonical QKV128",
+  "cuda_execution": false,
+  "generated_stage_layout_resource_gate": "not yet inspected",
+  "absent": [
+    "PTX/SASS inspection",
+    "register/spill/shared-memory comparison",
+    "native correctness",
+    "performance",
+    "official environment identity"
+  ],
+  "source_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9"
+  },
+  "review": {
+    "ready_for_execution": true,
+    "mainloop_instructions": "Both PTX files contain 8 static m64n128k16.f32.bf16.bf16 WGMMA sites, wait_group 1 and 0, TMA load/store. SASS confirms HGMMA.64x128x16.F32.BF16 and WARPGROUP.DEPBAR. These counts are static, not executed instruction counts.",
+    "stages_and_layout_differences": "IR A/B shared layout has six stages in both modes, S<3,4,3>, K64 tiles. SERIAL has BF16 epilogue S<2,4,3> with four stages; SEPARATE has FP32 epilogue/reducer. Thus finalization is not the only generated-code difference. Both main CTAs are 384 threads. Dynamic shared allocation is present; cuobjdump static SHARED alone is not total launch shared memory.",
+    "register_spill_shared_resources": "cuobjdump each main: REG168 STACK0 LOCAL0 static SHARED1024; reducer REG20 STACK0 LOCAL0 SHARED0. No ld.local/st.local in PTX. Dynamic shared size is not resolved by this resource listing and must not be reported as 1024 total.",
+    "synchronization_and_initialization": "SERIAL PTX has global acquire semaphore loads, bar.sync for the 256 consumer threads, FP32 partial stores/addition, release publication and BF16 conversion. For split2, fixed final split waits for split0; generalized intermediate atomic branch is not a claimed runtime operation. High-level gemm allocates/zeros invocation-local semaphore inside capture. SEPARATE uses disjoint FP32 partials and separate reducer. Sequential replay will be tested; concurrency/liveness beyond canonical resident launch remains unverified."
+  }
+}

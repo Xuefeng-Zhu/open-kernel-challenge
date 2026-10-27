@@ -1,0 +1,208 @@
+{
+  "experiment": "P070",
+  "decision": "reject tested SERIAL and SEPARATE configurations; retain P046",
+  "native_app": "ap-SxWfI1ObeGcdNCek1ctjdH",
+  "source_commit": "6bf3c39f5878f90cb4bd1bb50532d0bffddbd524",
+  "source_sha256": "7f9a85585f51772afe2ab3c13a65600afe5cda6b8e0e636a014619ce540ee169",
+  "champion_sha256": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+  "correctness_oracle_checks": 240,
+  "cohorts": [
+    {
+      "seed": 7001000,
+      "passed": true,
+      "raw_us": {
+        "p046": {
+          "median": 22.14400004595518,
+          "min": 21.79200015962124,
+          "max": 23.584000766277313
+        },
+        "separate": {
+          "median": 30.031999573111534,
+          "min": 29.69600073993206,
+          "max": 43.935999274253845
+        },
+        "serial": {
+          "median": 32.35200047492981,
+          "min": 31.520001590251923,
+          "max": 33.56799855828285
+        }
+      },
+      "comparisons": {
+        "p046_over_separate": {
+          "paired_ratios": [
+            0.7424401503627379,
+            0.7367446414751242,
+            0.7354198677928611,
+            0.7562347192734856,
+            0.7428440645989568,
+            0.7338288020988515,
+            0.7136356579656715,
+            0.6078957524226725,
+            0.7325602495026562,
+            0.7382413229443282,
+            0.7388631511468393,
+            0.7279016176936919
+          ],
+          "median": 0.7360822546339927,
+          "second_latency_reduction": -0.35854382265639173,
+          "minimum": 0.6078957524226725,
+          "maximum": 0.7562347192734856
+        },
+        "p046_over_serial": {
+          "paired_ratios": [
+            0.695445362045282,
+            0.684591864687055,
+            0.6886708376408162,
+            0.6906922086330589,
+            0.6998017483048479,
+            0.6784661713330022,
+            0.6643994204597493,
+            0.6908829583905906,
+            0.6832534480179573,
+            0.6861955747192809,
+            0.6959501333641814,
+            0.6780329936831512
+          ],
+          "median": 0.6874332061800486,
+          "second_latency_reduction": -0.4546867841267559,
+          "minimum": 0.6643994204597493,
+          "maximum": 0.6998017483048479
+        },
+        "separate_over_serial": {
+          "paired_ratios": [
+            0.936702253650351,
+            0.9292118681940491,
+            0.9364321903726261,
+            0.9133304660973602,
+            0.9420574002737083,
+            0.9245564761051835,
+            0.9310064779466349,
+            1.1365155220071625,
+            0.9326924965991891,
+            0.9295003590188189,
+            0.9419202084769692,
+            0.9314898843492804
+          ],
+          "median": 0.9320911904742347,
+          "second_latency_reduction": -0.07285640098284185,
+          "minimum": 0.9133304660973602,
+          "maximum": 1.1365155220071625
+        }
+      }
+    },
+    {
+      "seed": 7002000,
+      "passed": true,
+      "raw_us": {
+        "p046": {
+          "median": 22.143999114632607,
+          "min": 21.824000403285027,
+          "max": 24.000000208616257
+        },
+        "separate": {
+          "median": 30.319999903440475,
+          "min": 29.791999608278275,
+          "max": 64.31999802589417
+        },
+        "serial": {
+          "median": 32.30400010943413,
+          "min": 31.840000301599503,
+          "max": 33.440001308918
+        }
+      },
+      "comparisons": {
+        "p046_over_separate": {
+          "paired_ratios": [
+            0.7408567446749489,
+            0.5143818033687496,
+            0.7310284429334085,
+            0.7335181899413129,
+            0.7574655271915871,
+            0.7325997395685134,
+            0.7266106687162993,
+            0.7243183559465828,
+            0.7328859877887054,
+            0.733079908924799,
+            0.7454639033255996,
+            0.729999903047978
+          ],
+          "median": 0.7327428636786094,
+          "second_latency_reduction": -0.3647352291903221,
+          "minimum": 0.5143818033687496,
+          "maximum": 0.7574655271915871
+        },
+        "p046_over_serial": {
+          "paired_ratios": [
+            0.6856783474236178,
+            0.6935793964426182,
+            0.6798200022653472,
+            0.7082132071155852,
+            0.7068685155123858,
+            0.6900378656954583,
+            0.6843697752638236,
+            0.680527492209818,
+            0.6774134416013785,
+            0.6880998420665053,
+            0.6996815508977021,
+            0.6907573350739447
+          ],
+          "median": 0.6890688538809818,
+          "second_latency_reduction": -0.45123378363103783,
+          "minimum": 0.6774134416013785,
+          "maximum": 0.7082132071155852
+        },
+        "separate_over_serial": {
+          "paired_ratios": [
+            0.9255208275446819,
+            1.3483746740267282,
+            0.9299501392003621,
+            0.9655019014214873,
+            0.9332022252328801,
+            0.941902963413387,
+            0.9418658502123253,
+            0.9395419660743841,
+            0.9243094463373478,
+            0.9386423412909166,
+            0.938585420134151,
+            0.9462430504303039
+          ],
+          "median": 0.9390921536826504,
+          "second_latency_reduction": -0.06485822086629023,
+          "minimum": 0.9243094463373478,
+          "maximum": 1.3483746740267282
+        }
+      }
+    }
+  ],
+  "assessment": {
+    "serial_cut_vs_p046": [
+      -0.4546867841267559,
+      -0.45123378363103783
+    ],
+    "serial_cut_vs_separate": [
+      -0.07285640098284185,
+      -0.06485822086629023
+    ],
+    "performance_screen_passed": false,
+    "criterion": "Both fresh cohorts: >=5% raw whole-call cut versus P046 and >2% versus SEPARATE",
+    "automatic_promotion": false,
+    "selected": "P046",
+    "qualification": "Bounded diagnostic; source/compiled differences and fresh official full-suite verification remain"
+  },
+  "diagnostic_work_wall_seconds": 5.813187121,
+  "billing_inspected": false,
+  "actual_charge": "not queried",
+  "cost_reserves_usd": {
+    "each_cpu_invocation": 0.15,
+    "native_app": 0.7
+  },
+  "paid_scope_usd": 0,
+  "limitations": [
+    "One canonical QKV M128 shape; no whole-score improvement claim.",
+    "No concurrent execution or nearby shape test.",
+    "Global Torch BF16 reduced-precision reduction setting stayed at inherited true; no global precision changes. Quack compiled BF16 operands/FP32 accumulation.",
+    "SEPARATE/SERIAL finalization and epilogue layout/stages differ; this is not pure one-instruction ablation.",
+    "No profiler counters or phase timing; slower result does not establish hardware cause.",
+    "Official Quack FFI patch eligibility remains unresolved; no official check or ranked entry made."
+  ]
+}

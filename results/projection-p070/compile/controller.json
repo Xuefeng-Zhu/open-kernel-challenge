@@ -1,0 +1,30 @@
+{
+  "stage": "compile",
+  "app_id": "ap-DRstDkJMGcFGvnYXTfTj6T",
+  "source_sha256": "7f9a85585f51772afe2ab3c13a65600afe5cda6b8e0e636a014619ce540ee169",
+  "source_commit": "6bf3c39f5878f90cb4bd1bb50532d0bffddbd524",
+  "payload_hashes": {
+    "candidates/projection_pooler_column_batch2_hybrid.py": "001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e",
+    "projection_p046_confirmation.py": "6c57daf6ab5aca4a73aa1a608b6ae978af284a02d41c489b4e7b62b307505029",
+    "benchmark.py": "5d7f2db870a1e82142be4b5f91e319c944673b31bdb66bacf02159d2032dde78",
+    "harness.py": "d46ea816a0091cea8b6e429a6e8facfbe0a82c20488a8c9b89023c1561777fd8",
+    "official/reference.py": "e62491abc9ddcad33f5faba8b0ee74cf6370b7be5dd2dc05031742f3ebf7147d",
+    "official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "official/muse_bf16_proj.json": "ee02afa1e848c15b16d677fc1e405617a51182fbda7ed6b21c9e5f6a7c5ef0e9",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "724db944dc1c63babd9c5263685545d6223ff912efd1507c74c82b37b46115df",
+    "licenses/June-9-Researcher-Reciprocity.txt": "9eb39e0fa3b25c043d6165a8ce5aca29501c057e6aae9e54df63b8e92c0efda5",
+    "licenses/Triton-MIT.txt": "80af2216e0ceefa0c103fecad3a188a0d68c0165000bd21b3cfb17ba7e7ed517",
+    "projection_p070_quack_preflight.py": "7f9a85585f51772afe2ab3c13a65600afe5cda6b8e0e636a014619ce540ee169"
+  },
+  "hard_seconds": 300,
+  "paid_spending_limit_usd": 0,
+  "billing_inspected": false,
+  "conservative_free_credit_reserve_usd": 0.15,
+  "success": true,
+  "shutdown": {
+    "app_id": "ap-DRstDkJMGcFGvnYXTfTj6T",
+    "state": "stopped",
+    "tasks": "0"
+  }
+}
