@@ -1,0 +1,158 @@
+{
+  "experiment": "attention-eager-counter-capability",
+  "state": "function-terminal",
+  "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+  "created_utc": "2026-10-27T04:11:08.987470+00:00",
+  "source_commit": "757e0df3f256fdb4e56a5e18338e2fdbc0f1c207",
+  "payload_sha256": {
+    "worker.py": "1c41881f3aba41325ea8cc2e45813a78567b24ca07f19594bcd827b99aa3f538",
+    "counter_helper.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "controller.py": "0cd1546d4bbf452e8b2fc18cb8186f17a2018fbf4a6fab1dbadf8865fae55ce1"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "verified_auth": {
+    "workspace": "xuefeng-zhu",
+    "expires_at_utc": "2026-10-27T15:21:50+00:00",
+    "status": "verified"
+  },
+  "billing_before": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-2.59000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.58797306",
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+      "description": "okc-attention-baseline-runtime-identity",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:55:33+00:00",
+      "stopped_at": "2026-10-27 03:56:28+00:00"
+    },
+    {
+      "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+      "description": "okc-projection-p068-baseline",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:35:00+00:00",
+      "stopped_at": "2026-10-27 03:35:25+00:00"
+    }
+  ],
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "cost_reserve_usd": "0.32",
+  "conservative_free_credit_floor_usd": "27.41000000",
+  "paid_limit_usd": "0",
+  "slot_receipt_sha256": "470214203c2926290d8022863139e353f7672e6429db097555e32597f94cd781",
+  "billing_guardrail_receipt_sha256": "3be8a0bd47c7b791b3e0c2737605bdd12e4e077a222f623632d3ae4dea5f22f5",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 65,
+    "child_timeout": 75,
+    "function_timeout": 85,
+    "startup_timeout": 20,
+    "watchdog": 110,
+    "retries": 0,
+    "explicit_invocations": 1
+  },
+  "official_check": false,
+  "formal_entry": false,
+  "candidate_change": false,
+  "real_kernel_profiled": false,
+  "security_changes": false,
+  "accepted_utc": "2026-10-27T04:11:11.320779+00:00",
+  "result_retrieved": true,
+  "exit_code": 1,
+  "worker_status": "capability_not_established",
+  "worker_passed": false,
+  "report_sha256": "e9837e8758f3962f2d37e72c0e689eeface7354d2b30a1eb5071e199a3871585",
+  "remote_entry_elapsed_seconds": 1.6856073900000001,
+  "error": null,
+  "worker_log_tail": "",
+  "completion_verified": false,
+  "shutdown_observations": [
+    {
+      "observed_utc": "2026-10-27T04:11:19.959228+00:00",
+      "app": {
+        "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+        "description": "okc-attention-eager-counter-capability",
+        "state": "stopped",
+        "tasks": "1",
+        "created_at": "2026-10-27 04:11:09+00:00",
+        "stopped_at": "2026-10-27 04:11:19+00:00"
+      }
+    },
+    {
+      "observed_utc": "2026-10-27T04:11:22.752552+00:00",
+      "app": {
+        "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+        "description": "okc-attention-eager-counter-capability",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-27 04:11:09+00:00",
+        "stopped_at": "2026-10-27 04:11:19+00:00"
+      }
+    }
+  ],
+  "shutdown_observation": {
+    "observed_utc": "2026-10-27T04:11:22.752644+00:00",
+    "app": {
+      "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+      "description": "okc-attention-eager-counter-capability",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:11:09+00:00",
+      "stopped_at": "2026-10-27 04:11:19+00:00"
+    }
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_zero_tasks": true,
+  "billing_after": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-2.59000000",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.58797306",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+    "requested_utc": "2026-10-27T04:11:17.862593+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-27T04:11:24.762844+00:00",
+  "client_wall_seconds": 15.773921750020236
+}

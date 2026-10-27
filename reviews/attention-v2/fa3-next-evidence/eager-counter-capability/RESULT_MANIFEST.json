@@ -1,0 +1,87 @@
+{
+  "created_utc": "2026-10-27T04:18:01.649445+00:00",
+  "source_commit": "757e0df3f256fdb4e56a5e18338e2fdbc0f1c207",
+  "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+  "outcome": "CLI setup failure before target launch; capability unknown",
+  "ncu_profile_command_attempts": 1,
+  "target_starts": 0,
+  "counter_samples": 0,
+  "permission_denial_observed": false,
+  "independent_cleanup_verified": true,
+  "cpu_tests_passed": 17,
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "raw_stdout_whitespace_preserved": true,
+  "files": {
+    "0-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "0-stdout.txt": {
+      "bytes": 22045,
+      "sha256": "7ce2e9853b86c23f1c2ed9aaa007eee09fb165d3a2780c304c1301efa0a158d1"
+    },
+    "1-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "1-stdout.txt": {
+      "bytes": 73,
+      "sha256": "a0491e24b9d4e2b1fa5b9c1677b75ad3db2b17cf5f089f0d53f0d0d678a04c63"
+    },
+    "CARD.md": {
+      "bytes": 1264,
+      "sha256": "85261a96df1e4e35a61232a7be814c84377bc68372568f8456179bb66238f97f"
+    },
+    "RESULTS.md": {
+      "bytes": 4588,
+      "sha256": "29f33dcc81f3e5f392e6171a5e86efe7e460295b5db12fcf65f79b1491001d9b"
+    },
+    "RESULT_REVIEW.md": {
+      "bytes": 3352,
+      "sha256": "9f47bcc7020767ac1668979e870375adf6cdc93f6a61e14965ad889133bb6020"
+    },
+    "REVIEW.md": {
+      "bytes": 3386,
+      "sha256": "53aa3cb73453b421a9fd00107b5a35993a236ac6bce0e447fd6e5766144bf86c"
+    },
+    "controller.py": {
+      "bytes": 19028,
+      "sha256": "0cd1546d4bbf452e8b2fc18cb8186f17a2018fbf4a6fab1dbadf8865fae55ce1"
+    },
+    "guardrail-receipt.json": {
+      "bytes": 314,
+      "sha256": "3be8a0bd47c7b791b3e0c2737605bdd12e4e077a222f623632d3ae4dea5f22f5"
+    },
+    "independent-cleanup.json": {
+      "bytes": 1704,
+      "sha256": "0c9789b6cf94993796ad861ccd632bc628eeebef38094c0bcb1f41e250f798f6"
+    },
+    "launch-receipt.json": {
+      "bytes": 5065,
+      "sha256": "f729fae7f5554c4d5a69e9a519a712a4fa9a2ca96ee55bcb8560511da491d530"
+    },
+    "result.json": {
+      "bytes": 25832,
+      "sha256": "e9837e8758f3962f2d37e72c0e689eeface7354d2b30a1eb5071e199a3871585"
+    },
+    "test_controller.py": {
+      "bytes": 7455,
+      "sha256": "43b6f5f02fd92cad43a3bd99aec2012ff485fcbdc114e9a5779af17e6a1d50ca"
+    },
+    "test_worker.py": {
+      "bytes": 2169,
+      "sha256": "68879e6eea5abe85c429294e9cb70d9431c8453f1ce2e3de34cc1e4a062ae38d"
+    },
+    "worker.py": {
+      "bytes": 6841,
+      "sha256": "1c41881f3aba41325ea8cc2e45813a78567b24ca07f19594bcd827b99aa3f538"
+    }
+  }
+}
