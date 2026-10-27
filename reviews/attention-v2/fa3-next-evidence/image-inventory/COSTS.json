@@ -1,0 +1,16 @@
+{
+  "app_id": "ap-I3MCH1onTGtkhqXUtej9Ru",
+  "source_commit": "8e43b227981861b2514f4eb9f366ff923e3d4215",
+  "reserve_usd": "0.02",
+  "conservative_resource_bound_usd": "0.007110000000000000000000000000",
+  "worker_wall_seconds": 0.47255019099999984,
+  "client_wall_seconds": 13.614255415974185,
+  "accounting_cutoff_utc": "2026-10-25T23:27:25.788396+00:00",
+  "delayed_workspace_gross_delta_usd": "0",
+  "actual_paid_usd": "0E-8",
+  "exact_app_invoice": false,
+  "shutdown_verified": true,
+  "tasks": 0,
+  "gpu_requested": false,
+  "qualification": "Observed delayed workspace delta was zero at cutoff; metering may lag. The conservative resource bound is a reserve model, not an invoice. No new other app IDs at cutoff."
+}

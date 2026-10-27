@@ -1,0 +1,87 @@
+--- paste.transport.txt
++++ paste.original.txt
+@@ -1,6 +1,6 @@
+ # okc: problem=muse_attention_decode
+ """v2 (Frank Zhu): the whole step in ONE Triton launch (SGLang uses five: QK-norm,
+-store_cache, q-&gt;fp8 cast, FA3 (+its combine), rms_norm_gate).
++store_cache, q->fp8 cast, FA3 (+its combine), rms_norm_gate).
+ 
+ Grid (request b, kv head h, split s). Each CTA:
+   1. RMSNorm(q)*5.473 + interleaved RoPE for the L*G query rows of kv head h, in registers
+@@ -71,7 +71,7 @@
+ 
+ def _tickets(device, n):
+     buf = _TICKETS.get(device)
+-    if buf is None or buf.numel() &lt; n:
++    if buf is None or buf.numel() < n:
+         buf = torch.zeros(max(n, 4096), dtype=torch.int32, device=device)
+         _TICKETS[device] = buf
+     return buf
+@@ -109,7 +109,7 @@
+     seq = tl.load(seq_ptr + b).to(tl.int64)
+     # Query rows r = j * G + g  (block token j, query head kvh*G + g).
+     offs_m = tl.arange(0, BLOCK_M)
+-    row_ok = offs_m &lt; L * G
++    row_ok = offs_m < L * G
+     j = tl.where(row_ok, offs_m // G, 0)
+     g = offs_m % G
+     qpos = seq + j
+@@ -140,7 +140,7 @@
+     offs_n = tl.arange(0, BLOCK_N)
+     for start in range(s_lo, s_hi, BLOCK_N):
+         t = start + offs_n
+-        t_ok = t &lt; s_hi
++        t_ok = t < s_hi
+         pg = tl.load(pt_ptr + b * stride_pt + t // page, mask=t_ok, other=0).to(tl.int64)
+         pg = tl.maximum(pg, 0)
+         row = pg * page + t % page
+@@ -149,7 +149,7 @@
+         s = tl.dot(q, tl.trans(k)) * qk_scale  # log2 domain
+         vis = t_ok[None, :]
+         if WINDOWED:
+-            vis = vis &amp; (t[None, :] &gt; qpos[:, None] - window)
++            vis = vis & (t[None, :] > qpos[:, None] - window)
+         s = tl.where(vis, s, float("-inf"))
+         m_new = tl.maximum(m_i, tl.max(s, 1))
+         m_safe = tl.where(m_new == float("-inf"), 0.0, m_new)
+@@ -163,7 +163,7 @@
+     if split == SPLITS - 1:
+         # The block's own L tokens: compute, quantize, store, attend.
+         offs_l = tl.arange(0, BLOCK_L)
+-        l_ok = offs_l &lt; L
++        l_ok = offs_l < L
+         ntok = (b * L + tl.where(l_ok, offs_l, 0)).to(tl.int64)
+         npos = seq + offs_l
+         k_rows = qkv_ptr + ntok[:, None] * stride_tok + (HQ * D + kvh * D)
+@@ -177,7 +177,7 @@
+         tl.store(kc_ptr + dst, kq, mask=l_ok[:, None])
+         tl.store(vc_ptr + dst, vq, mask=l_ok[:, None])
+         s = tl.dot(q, tl.trans([kq.to](http://kq.to)(tl.float32).to(DOT))) * qk_scale
+-        vis = l_ok[None, :] &amp; (npos[None, :] &lt;= qpos[:, None])
++        vis = l_ok[None, :] & (npos[None, :] <= qpos[:, None])
+         s = tl.where(vis, s, float("-inf"))
+         m_new = tl.maximum(m_i, tl.max(s, 1))
+         m_safe = tl.where(m_new == float("-inf"), 0.0, m_new)
+@@ -230,11 +230,11 @@
+ def _num_splits(batch, hkv, span_max, block_n):
+     ctas = batch * hkv
+     want = max(1, (2 * NUM_SMS + ctas - 1) // ctas)
+-    most = max(1, span_max // (2 * block_n))  # &gt;= 2 tiles per split
++    most = max(1, span_max // (2 * block_n))  # >= 2 tiles per split
+     return min(want, most)
+ 
+ 
+-def kernel_fn(data: Inputs) -&gt; torch.Tensor:
++def kernel_fn(data: Inputs) -> torch.Tensor:
+     cfg = data["config"]
+     batch, length = cfg["batch"], cfg["q_len"]
+     hq, hkv, d, page = cfg["num_q_heads"], cfg["num_kv_heads"], cfg["head_dim"], cfg["page_size"]
+@@ -252,7 +252,7 @@
+     span_max = window if window else page_table.shape[1] * page  # shape-only bound
+     splits = _num_splits(batch, hkv, span_max, block_n)
+     out = torch.empty((tokens, hq * d), dtype=torch.bfloat16, device=dev)
+-    if splits &gt; 1:
++    if splits > 1:
+         n = batch * hkv * splits * block_m
+         part_o = torch.empty((n, d), dtype=torch.float32, device=dev)
+         part_m = torch.empty((n,), dtype=torch.float32, device=dev)

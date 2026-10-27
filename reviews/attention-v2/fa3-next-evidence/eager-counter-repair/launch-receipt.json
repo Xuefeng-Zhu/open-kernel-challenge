@@ -1,0 +1,166 @@
+{
+  "experiment": "attention-eager-counter-repair",
+  "state": "function-terminal",
+  "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+  "created_utc": "2026-10-27T04:37:28.190342+00:00",
+  "source_commit": "0922050cf384be1bc3ec1bd7db3046846e9dcd3e",
+  "payload_sha256": {
+    "worker.py": "7391280b4577a2d1f242bdffdc42777a26a180b1cdcd6e021dc47c2866c1137a",
+    "counter_helper.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "controller.py": "af759a477f7916aa48b0e50fb221aaa41c449b054dcb905d45e22add531f90a5"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "verified_auth": {
+    "workspace": "xuefeng-zhu",
+    "expires_at_utc": "2026-10-27T15:21:50+00:00",
+    "status": "verified"
+  },
+  "billing_before": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-2.59000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.59319380"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+      "description": "okc-attention-eager-counter-capability",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:11:09+00:00",
+      "stopped_at": "2026-10-27 04:11:19+00:00"
+    },
+    {
+      "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+      "description": "okc-attention-baseline-runtime-identity",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:55:33+00:00",
+      "stopped_at": "2026-10-27 03:56:28+00:00"
+    },
+    {
+      "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+      "description": "okc-projection-p068-baseline",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:35:00+00:00",
+      "stopped_at": "2026-10-27 03:35:25+00:00"
+    }
+  ],
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "cost_reserve_usd": "0.32",
+  "conservative_free_credit_floor_usd": "27.40680620",
+  "paid_limit_usd": "0",
+  "slot_receipt_sha256": "a0d5abd6fe6c28594222d95de894ee02dfe2b0aea4f099513b3f410ad590f769",
+  "billing_guardrail_receipt_sha256": "86b71a5875f2788ac99d4e9e3226756016123c81da6ed99ebe671ed533ffd740",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 65,
+    "child_timeout": 75,
+    "function_timeout": 85,
+    "startup_timeout": 20,
+    "watchdog": 110,
+    "retries": 0,
+    "explicit_invocations": 1
+  },
+  "official_check": false,
+  "formal_entry": false,
+  "candidate_change": false,
+  "real_kernel_profiled": false,
+  "security_changes": false,
+  "accepted_utc": "2026-10-27T04:37:30.071193+00:00",
+  "result_retrieved": true,
+  "exit_code": 0,
+  "worker_status": "complete",
+  "worker_passed": true,
+  "report_sha256": "446ca92bf73712ea0514005d03683d910e031d89d7837ddab734523edbba3555",
+  "remote_entry_elapsed_seconds": 7.241549001999999,
+  "error": null,
+  "worker_log_tail": null,
+  "completion_verified": true,
+  "shutdown_observations": [
+    {
+      "observed_utc": "2026-10-27T04:37:43.869271+00:00",
+      "app": {
+        "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+        "description": "okc-attention-eager-counter-repair",
+        "state": "stopping...",
+        "tasks": "1",
+        "created_at": "2026-10-27 04:37:28+00:00",
+        "stopped_at": null
+      }
+    },
+    {
+      "observed_utc": "2026-10-27T04:37:46.805405+00:00",
+      "app": {
+        "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+        "description": "okc-attention-eager-counter-repair",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-27 04:37:28+00:00",
+        "stopped_at": "2026-10-27 04:37:43+00:00"
+      }
+    }
+  ],
+  "shutdown_observation": {
+    "observed_utc": "2026-10-27T04:37:46.805491+00:00",
+    "app": {
+      "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+      "description": "okc-attention-eager-counter-repair",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:37:28+00:00",
+      "stopped_at": "2026-10-27 04:37:43+00:00"
+    }
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_zero_tasks": true,
+  "billing_after": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-2.59000000",
+      "free_storage": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "2.59319380",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+    "requested_utc": "2026-10-27T04:37:41.947879+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-27T04:37:47.862280+00:00",
+  "client_wall_seconds": 19.671311957994476
+}

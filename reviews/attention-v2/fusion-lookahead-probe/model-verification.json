@@ -1,0 +1,32 @@
+{
+  "observed_utc": "2026-10-25T21:07:45.231077+00:00",
+  "kind": "Local composition arithmetic/provenance verification; no compute",
+  "command": "python3 -B reviews/attention-v2/fusion-lookahead-probe/test_model.py",
+  "test_methods_passed": 4,
+  "all_passed": true,
+  "source_sha256": {
+    "PLAN.md": "251829926e4c81b9e03be19e2381167ac16aaf3f6a99b0dc43bcd87e0f2c630a",
+    "model.py": "a175a4e09ed12285967d439ce2606a5736b13dec46cfd99c2fde4979c81bf66d",
+    "model.json": "3c40573dd037f8dc9657ca35732ac191b92a93d7a78e40f0fab20b6055e17e9f",
+    "test_model.py": "cbf03ec03f3969240a1c824d7691ac4a979866fd183706429463a0789e75ab8c"
+  },
+  "proposed_gate": {
+    "target_median_balanced_latency_cut_percent": 4,
+    "favorable_reverse_order_pairs": 6,
+    "unchanged_full_B16_verify_max_regression_percent": 5
+  },
+  "native_cases": 5,
+  "planned_ABA_oracle_calls": 30,
+  "planned_independent_target_boundary_oracle_calls": 2,
+  "planned_checked_warmup_and_timing_replays": 64,
+  "GPU_jobs_started": 0,
+  "Modal_jobs_started": 0,
+  "official_checks_started": 0,
+  "cost_usd": "0",
+  "limitations": "Score transfer is conditional; source ancestry audit and all native correctness/ownership/replay/performance gates remain required before one parent-authorized official check.",
+  "planned_exact_return_A_checks": 10,
+  "declared_seeds": [
+    135711,
+    135712
+  ]
+}

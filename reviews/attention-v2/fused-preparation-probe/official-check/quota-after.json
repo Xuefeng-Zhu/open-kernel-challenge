@@ -1,0 +1,16 @@
+{
+  "observed_utc": "2026-10-25T20:27:27.198619+00:00",
+  "problem": "muse_attention_decode",
+  "checks": {
+    "per_day": 20,
+    "used": 17,
+    "left": 3
+  },
+  "scored": {
+    "per_day": 10,
+    "used": 0,
+    "left": 10
+  },
+  "reset": "00:00 UTC per parent verified okc show",
+  "source": "Supported okc problems --json after terminal job 2f5f1fb54b48486d"
+}

@@ -1,0 +1,89 @@
+{
+  "observed_utc": "2026-10-25T22:28:32.831668+00:00",
+  "app": {
+    "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+    "description": "okc-attention-alpha-one-common-pv-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 15:27:24-07:00",
+    "stopped_at": "2026-10-25 15:28:11-07:00"
+  },
+  "all_apps": [
+    {
+      "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+      "description": "okc-attention-alpha-one-common-pv-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:27:24-07:00",
+      "stopped_at": "2026-10-25 15:28:11-07:00"
+    },
+    {
+      "app_id": "ap-lpXZhacMWtQNlM5oksAWRX",
+      "description": "okc-projection-p046-confirmation-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:18:38-07:00",
+      "stopped_at": "2026-10-25 15:19:01-07:00"
+    },
+    {
+      "app_id": "ap-uY5K1rBNFRR2K8rdo2F8tw",
+      "description": "okc-attention-alpha-one-compile",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 15:05:56-07:00",
+      "stopped_at": "2026-10-25 15:06:25-07:00"
+    },
+    {
+      "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+      "description": "okc-attention-dp-merge-validation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:50:59-07:00",
+      "stopped_at": "2026-10-25 14:51:32-07:00"
+    },
+    {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "description": "okc-attention-fusion-lookahead",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:14:54-07:00",
+      "stopped_at": "2026-10-25 14:15:59-07:00"
+    },
+    {
+      "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+      "description": "okc-projection-p044-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:05:38-07:00",
+      "stopped_at": "2026-10-25 14:06:23-07:00"
+    },
+    {
+      "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+      "description": "okc-attention-sliding-unsplit",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:51:49-07:00",
+      "stopped_at": "2026-10-25 13:52:50-07:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "1.99000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.99000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "ephemeral_apps": "1.99337538",
+      "volumes": "0E-8",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks": true,
+  "paid_limit_usd": "0"
+}

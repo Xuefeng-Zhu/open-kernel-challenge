@@ -1,0 +1,60 @@
+{
+  "observed_utc": "2026-10-25T08:36:21.692615+00:00",
+  "cli_version": "0.7.1",
+  "problems": [
+    {
+      "name": "muse_bf16_proj",
+      "limits": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      }
+    },
+    {
+      "name": "muse_attention_decode",
+      "limits": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 16,
+          "left": 4
+        }
+      }
+    }
+  ],
+  "jobs_returned": 37,
+  "active_returned_jobs": 0,
+  "all_returned_jobs_terminal": true,
+  "new_check_requests": 0,
+  "native_artifact_endpoint_found": false,
+  "capability_scope": [
+    "okc --help",
+    "okc check --help",
+    "okc status --help",
+    "okc api",
+    "saved A2-13/A2-14 receipts and profile JSON",
+    "local check_cycle.py and remote_once.py"
+  ],
+  "public_llms_fetch": {
+    "url": "https://openkernelchallenge.dev/llms.txt",
+    "web_reader": "unavailable",
+    "direct_public_read_http_status": 403,
+    "retry_after_403": false
+  },
+  "decision": "No timing-only check in this bounded native-diagnostic phase; preserve the predeclared generated-schedule evidence gate",
+  "native_scheduling_verified": false,
+  "selected_attention_unchanged": "A2-11",
+  "candidate_parent_unchanged": "A2-13",
+  "source_sha256": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c"
+}

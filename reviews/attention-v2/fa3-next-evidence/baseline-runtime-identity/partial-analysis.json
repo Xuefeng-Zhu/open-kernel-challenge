@@ -1,0 +1,1305 @@
+{
+  "kind": "Offline interpretation of preserved partial baseline diagnostic",
+  "raw_status": "incomplete_or_failed",
+  "raw_passed": false,
+  "raw_error": "Expected one actual FA3 mainloop: full_verify_b32",
+  "raw_worker_sha256": "3246f1905812f591c02299d952587c7648cefad228adcabc4c9130b2e47fce40",
+  "raw_status_changed": false,
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "sm_count": 132,
+    "capability": [
+      9,
+      0
+    ],
+    "supported_activities": [
+      "ProfilerActivity.CPU",
+      "ProfilerActivity.CUDA"
+    ]
+  },
+  "tool_inventory": {
+    "collected_before_cuda_initialization": true,
+    "tools": {
+      "ncu": {
+        "installed_on_path": true,
+        "path": "/usr/local/cuda-13.0/bin/ncu",
+        "bytes": 2699,
+        "version_exit_code": 0,
+        "version_output": "NVIDIA (R) Nsight Compute Command Line Profiler\nCopyright (c) 2018-2025 NVIDIA Corporation\nVersion 2025.3.1.0 (build 36398880) (public-release)\n"
+      },
+      "nsys": {
+        "installed_on_path": true,
+        "path": "/opt/nvidia/nsight-systems-cli/2026.4.1/target-linux-x64/nsys",
+        "bytes": 89141824,
+        "version_exit_code": 0,
+        "version_output": "NVIDIA Nsight Systems version 2026.4.1.191-264138605071v0\n"
+      },
+      "cuobjdump": {
+        "installed_on_path": true,
+        "path": "/usr/local/cuda-13.0/bin/cuobjdump",
+        "bytes": 700576,
+        "version_exit_code": 0,
+        "version_output": "cuobjdump: NVIDIA (R) fat binary listing tool\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Thu_Aug_14_07:26:37_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.85\nBuild cuda_13.0.r13.0/compiler.36400806_0\n"
+      },
+      "nvdisasm": {
+        "installed_on_path": true,
+        "path": "/usr/local/cuda-13.0/bin/nvdisasm",
+        "bytes": 4946216,
+        "version_exit_code": 0,
+        "version_output": "nvdisasm: NVIDIA (R) CUDA disassembler\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Thu_Aug_14_07:20:41_PM_PDT_2025\nCuda compilation tools, release 13.0, V13.0.85\nBuild cuda_13.0.r13.0/compiler.36400806_0\n"
+      }
+    },
+    "packages": {
+      "torch": "2.14.1",
+      "triton": "3.8.0",
+      "sglang": "0.0.0.dev0",
+      "sgl-kernel": null,
+      "nvidia-cuda-cupti-cu12": null,
+      "nvidia-cuda-cupti-cu13": null
+    },
+    "hardware_counter_sessions": 0,
+    "counter_policy": "This inventory runs no NCU session and makes no permission change or installation; two historical timeouts are not a permission-denial finding.",
+    "profiling_admin_only_setting": [
+      "RmProfilingAdminOnly: 0"
+    ],
+    "counter_permission_tested": false
+  },
+  "source_bindings": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "cpu_identity.py": "29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92",
+    "counter_gate.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+  },
+  "cpu_identity_status": "complete",
+  "vendor_binary_files": [
+    {
+      "path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+      "bytes": 1122619328,
+      "sha256": "cdea0997a51412b8db8bf8da49d896a6c9d12a39bb1b548d840bb8dc428f13ef",
+      "elf": {
+        "status": "program_notes_parsed",
+        "elf_class": 64,
+        "endianness": "little",
+        "build_ids": [
+          "e40ad4a2cb6c0e7d20e7d43f5d5c6647715f3f01"
+        ],
+        "qualification": "GNU build identity, not source revision or executed specialization"
+      },
+      "qualification": "File identity only; library not loaded or executed"
+    }
+  ],
+  "mapped_flash_binaries": {
+    "status": "bounded_maps_read",
+    "binaries": [
+      {
+        "path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_ops.abi3.so",
+        "mapped_inode": 2100,
+        "file_inode": 2100,
+        "inode_matches": true,
+        "bytes": 1122619328,
+        "qualification": "Loaded mapping/file identity; not judge identity or source revision"
+      }
+    ]
+  },
+  "loaded_wrapper": {
+    "wrapper_path": "/opt/sglang/lib/python3.12/site-packages/sgl_kernel/flash_attn.py",
+    "wrapper_sha256": "610747f2c68495c5f3ba67f1247f0a1b4e4f7df116e2f89cd8e8983f0271f9ac",
+    "wrapper_ast": {
+      "status": "parsed_not_executed",
+      "defaults": {
+        "num_splits": "0",
+        "pack_gqa": "None",
+        "sm_margin": "0",
+        "ver": "3",
+        "return_softmax_lse": "False"
+      },
+      "native_call_count": 1,
+      "native_positional_count": 37,
+      "native_keywords": [],
+      "native_positions_1based": {
+        "scheduler_metadata": 31,
+        "num_splits": 32,
+        "pack_gqa": 33
+      },
+      "return_flag_in_native_arguments": false,
+      "return_flag_name_lines": [
+        270
+      ]
+    },
+    "native_schema": "sgl_kernel::fwd(Tensor q, Tensor k, Tensor v, Tensor? k_new, Tensor? v_new, Tensor? q_v, Tensor(a!)? out, Tensor? cu_seqlens_q, Tensor? cu_seqlens_k, Tensor? cu_seqlens_k_new, Tensor? seqused_q, Tensor? seqused_k, int? max_seqlen_q, int? max_seqlen_k, Tensor? page_table, Tensor? kv_batch_idx, Tensor? leftpad_k, Tensor? rotary_cos, Tensor? rotary_sin, Tensor? seqlens_rotary, Tensor? q_descale, Tensor? k_descale, Tensor? v_descale, float? softmax_scale, bool is_causal, int window_size_left, int window_size_right, int attention_chunk, float softcap, bool is_rotary_interleaved, Tensor? scheduler_metadata, int num_splits, bool? pack_gqa, int sm_margin, Tensor? sinks, Tensor? sparse_mask_fine, bool only_qv) -> (Tensor(a!), Tensor, Tensor, Tensor)",
+    "binding_function": "sgl_kernel.flash_attn.flash_attn_with_kvcache"
+  },
+  "cases": {
+    "full_verify_b16": {
+      "config": {
+        "batch": 16,
+        "q_len": 8,
+        "num_q_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 64,
+        "page_size": 1,
+        "window": 0,
+        "rope_theta": 0.0,
+        "qk_scale_factor": 5.4730064863875,
+        "sm_scale": 0.125,
+        "kv_scale": 1.0
+      },
+      "case": {
+        "batch": 16,
+        "q_len": 8,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "kv_scale": 1.0,
+        "spread": "agentic",
+        "dist": "coherent",
+        "seed": 135741
+      },
+      "actual_lengths": [
+        76337,
+        82774,
+        79633,
+        78104,
+        77878,
+        75836,
+        79527,
+        74514,
+        80892,
+        77610,
+        74493,
+        75771,
+        78907,
+        78671,
+        84666,
+        79927
+      ],
+      "lengths_sum": 1255540,
+      "logical_query_rows_per_kv_head": 64,
+      "logical_rows_qualification": "Query count times GQA group, not resolved kernel tile or PackGQA flag",
+      "tensor_metadata": {
+        "qkv": {
+          "shape": [
+            16,
+            8,
+            2304
+          ],
+          "dtype": "torch.bfloat16",
+          "stride": [
+            18432,
+            2304,
+            1
+          ]
+        },
+        "positions": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.int64",
+          "stride": [
+            1
+          ]
+        },
+        "cache_loc": {
+          "shape": [
+            128
+          ],
+          "dtype": "torch.int64",
+          "stride": [
+            1
+          ]
+        },
+        "cache_seqlens": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        },
+        "cu_seqlens_q": {
+          "shape": [
+            17
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        },
+        "k_cache": {
+          "shape": [
+            1376128,
+            1,
+            2,
+            64
+          ],
+          "dtype": "torch.float8_e4m3fn",
+          "stride": [
+            128,
+            128,
+            64,
+            1
+          ]
+        },
+        "v_cache": {
+          "shape": [
+            1376128,
+            1,
+            2,
+            64
+          ],
+          "dtype": "torch.float8_e4m3fn",
+          "stride": [
+            128,
+            128,
+            64,
+            1
+          ]
+        },
+        "k_scale": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "stride": []
+        },
+        "v_scale": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "stride": []
+        },
+        "page_table": {
+          "shape": [
+            16,
+            86008
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            86008,
+            1
+          ]
+        },
+        "seq_lens": {
+          "shape": [
+            16
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "page_table_sha256": "92d211c548c691053c227141876cb7a2c0bb1a0992475a612ae4074e1bc74c3f",
+      "scheduler_metadata_input": null,
+      "before_us": [
+        199.42399859428406,
+        199.5519995689392,
+        200.32000541687012
+      ],
+      "before_median_us": 199.5519995689392,
+      "before_range_us": [
+        199.42399859428406,
+        200.32000541687012
+      ],
+      "warmup_us": [
+        237.08799481391907,
+        199.93600249290466
+      ],
+      "recorded_original_oracles": [
+        {
+          "case": "full_verify_b16",
+          "phase": "initial_oracle",
+          "original_oracle_called": true,
+          "original_oracle_passed": true,
+          "message": "relative L2 error 3.299e-02 (worst row 6.778e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+          "stable_addresses": true,
+          "immutable_inputs_and_nonnew_cache_unchanged": true,
+          "immutable_message": "immutable inputs and non-new cache rows unchanged",
+          "exact_output_and_newkv_bytes": true,
+          "passed": true
+        }
+      ],
+      "recorded_invariance_checks": 6,
+      "before_timing_qualification": "Three unprofiled whole selected graph samples after two warmups. Same fixture; no after confirmation, performance variant or official-score claim.",
+      "activity": {
+        "attribution": "Host graph-launch correlation plus matching GPU annotation/external id",
+        "host_annotation": {
+          "ph": "X",
+          "cat": "user_annotation",
+          "name": "PROFILE_SELECTED_FULL_VERIFY_B16",
+          "pid": 4,
+          "tid": 4,
+          "ts": 2216356991130.737,
+          "dur": 289.499,
+          "args": {
+            "External id": 16,
+            "Record function id": 0,
+            "Ev Idx": 15
+          }
+        },
+        "graph_launch": {
+          "ph": "X",
+          "cat": "cuda_runtime",
+          "name": "cudaGraphLaunch",
+          "pid": 4,
+          "tid": 4,
+          "ts": 2216356991162.701,
+          "dur": 42.04,
+          "args": {
+            "cbid": 311,
+            "correlation": 113
+          }
+        },
+        "gpu_annotation": {
+          "ph": "X",
+          "cat": "gpu_user_annotation",
+          "name": "PROFILE_SELECTED_FULL_VERIFY_B16",
+          "pid": 0,
+          "tid": 7,
+          "ts": 2216356991144.795,
+          "dur": 193.882,
+          "args": {
+            "External id": 16
+          }
+        },
+        "graph_ids": [
+          2
+        ],
+        "graph_node_ids": [
+          8589934592,
+          8589934593,
+          8589934594,
+          8589934595,
+          8589934596
+        ],
+        "correlation": 113,
+        "external_id": 16,
+        "kernel_count": 5,
+        "phase_kernel_counts": {
+          "fused_preparation": 1,
+          "scheduler_preparation": 1,
+          "fa3_mainloop": 1,
+          "fa3_combine": 1,
+          "output_norm_gate": 1
+        },
+        "full_mainloop_symbols": [
+          "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)"
+        ],
+        "mainloop_shape_tuple_literal": [
+          64,
+          128,
+          64
+        ],
+        "shape_qualification": "Literal in executed Modal symbol; source typedef/boolean/ISA semantics are not inferred.",
+        "mainloop_resources": [
+          {
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 113,
+            "registers per thread": 255,
+            "shared memory": 56320,
+            "blocks per SM": 1,
+            "warps per SM": 8,
+            "grid": [
+              132,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0,
+            "occupancy": {
+              "activeBlocksPerMultiprocessor": 0,
+              "limitingFactors": "SMEM",
+              "blockLimitRegs": 1,
+              "blockLimitSharedMem": 0,
+              "blockLimitWarps": 8,
+              "blockLimitBlocks": 32,
+              "blockLimitBarriers": 2147483647,
+              "allocatedRegistersPerBlock": 65536,
+              "allocatedSharedMemPerBlock": 57344
+            },
+            "graph id": 2,
+            "graph node id": 8589934594,
+            "channel": 0,
+            "channel_type": 1
+          }
+        ],
+        "gpu_activity_span_us": 193.8798828125,
+        "gpu_activity_union_us": 193.5966796875,
+        "instrumented_phase_union_us": {
+          "fused_preparation": 1.72998046875,
+          "scheduler_preparation": 3.365234375,
+          "fa3_mainloop": 187.62109375,
+          "fa3_combine": 3.27001953125,
+          "output_norm_gate": 1.9189453125
+        },
+        "apparent_same_stream_overlaps": [
+          {
+            "first": "void flash::prepare_varlen_num_blocks_kernel<1, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+            "second": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "apparent_overlap_us": 2.736328125,
+            "stream": 7
+          },
+          {
+            "first": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "second": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "apparent_overlap_us": 1.35205078125,
+            "stream": 7
+          },
+          {
+            "first": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "second": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, true, false, true, true, true, true>(sglang::NormGateParams)",
+            "apparent_overlap_us": 0.22021484375,
+            "stream": 7
+          }
+        ],
+        "original_cpu_containment_mainloop_count": 1,
+        "original_cpu_containment_foreign_correlations": [
+          122,
+          130
+        ],
+        "cpu_gpu_timestamp_containment_valid": true,
+        "events": [
+          {
+            "name": "_fa3_prepare_fused",
+            "category": "kernel",
+            "phase": "fused_preparation",
+            "ts_us": 2216356991144.796,
+            "duration_us": 1.73,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 113,
+              "registers per thread": 20,
+              "shared memory": 0,
+              "blocks per SM": 4.848484992980957,
+              "warps per SM": 19.393939971923828,
+              "grid": [
+                640,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 30,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 16,
+                "limitingFactors": "WARPS",
+                "blockLimitRegs": 21,
+                "blockLimitSharedMem": 228,
+                "blockLimitWarps": 16,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 3072,
+                "allocatedSharedMemPerBlock": 1024
+              },
+              "graph id": 2,
+              "graph node id": 8589934592,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void flash::prepare_varlen_num_blocks_kernel<1, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+            "category": "kernel",
+            "phase": "scheduler_preparation",
+            "ts_us": 2216356991146.809,
+            "duration_us": 3.365,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 113,
+              "registers per thread": 27,
+              "shared memory": 544,
+              "blocks per SM": 0.007575757801532745,
+              "warps per SM": 0.007575757801532745,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                32,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 32,
+                "limitingFactors": "BLOCKS",
+                "blockLimitRegs": 64,
+                "blockLimitSharedMem": 140,
+                "blockLimitWarps": 64,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 1024,
+                "allocatedSharedMemPerBlock": 1664
+              },
+              "graph id": 2,
+              "graph node id": 8589934593,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "category": "kernel",
+            "phase": "fa3_mainloop",
+            "ts_us": 2216356991147.438,
+            "duration_us": 187.621,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 113,
+              "registers per thread": 255,
+              "shared memory": 56320,
+              "blocks per SM": 1,
+              "warps per SM": 8,
+              "grid": [
+                132,
+                1,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 0,
+                "limitingFactors": "SMEM",
+                "blockLimitRegs": 1,
+                "blockLimitSharedMem": 0,
+                "blockLimitWarps": 8,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 65536,
+                "allocatedSharedMemPerBlock": 57344
+              },
+              "graph id": 2,
+              "graph node id": 8589934594,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "category": "kernel",
+            "phase": "fa3_combine",
+            "ts_us": 2216356991333.707,
+            "duration_us": 3.27,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 113,
+              "registers per thread": 48,
+              "shared memory": 17536,
+              "blocks per SM": 0.9696969985961914,
+              "warps per SM": 7.757575988769531,
+              "grid": [
+                8,
+                1,
+                16
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 12,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 5,
+                "limitingFactors": "REGS",
+                "blockLimitRegs": 5,
+                "blockLimitSharedMem": 12,
+                "blockLimitWarps": 8,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 12288,
+                "allocatedSharedMemPerBlock": 18560
+              },
+              "graph id": 2,
+              "graph node id": 8589934595,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, true, false, true, true, true, true>(sglang::NormGateParams)",
+            "category": "kernel",
+            "phase": "output_norm_gate",
+            "ts_us": 2216356991336.757,
+            "duration_us": 1.919,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 113,
+              "registers per thread": 23,
+              "shared memory": 0,
+              "blocks per SM": 0.9696969985961914,
+              "warps per SM": 7.757575988769531,
+              "grid": [
+                1,
+                128,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 12,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 8,
+                "limitingFactors": "WARPS",
+                "blockLimitRegs": 10,
+                "blockLimitSharedMem": 228,
+                "blockLimitWarps": 8,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 6144,
+                "allocatedSharedMemPerBlock": 1024
+              },
+              "graph id": 2,
+              "graph node id": 8589934596,
+              "channel": 0,
+              "channel_type": 1
+            }
+          }
+        ],
+        "timing_qualification": "Instrumented activity durations only. Cross-clock offsets/apparent same-stream overlaps preclude concurrency or critical-path inference."
+      }
+    },
+    "full_verify_b32": {
+      "config": {
+        "batch": 32,
+        "q_len": 8,
+        "num_q_heads": 16,
+        "num_kv_heads": 2,
+        "head_dim": 64,
+        "page_size": 1,
+        "window": 0,
+        "rope_theta": 0.0,
+        "qk_scale_factor": 5.4730064863875,
+        "sm_scale": 0.125,
+        "kv_scale": 1.0
+      },
+      "case": {
+        "batch": 32,
+        "q_len": 8,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "kv_scale": 1.0,
+        "spread": "agentic",
+        "dist": "coherent",
+        "seed": 135741
+      },
+      "actual_lengths": [
+        76337,
+        82774,
+        79633,
+        78104,
+        77878,
+        75836,
+        79527,
+        74514,
+        80892,
+        77610,
+        74493,
+        75771,
+        78907,
+        78671,
+        84666,
+        79927,
+        85005,
+        80996,
+        77745,
+        75378,
+        83488,
+        81687,
+        74158,
+        81185,
+        75698,
+        84424,
+        80557,
+        76368,
+        77421,
+        76606,
+        84687,
+        84830
+      ],
+      "lengths_sum": 2535773,
+      "logical_query_rows_per_kv_head": 64,
+      "logical_rows_qualification": "Query count times GQA group, not resolved kernel tile or PackGQA flag",
+      "tensor_metadata": {
+        "qkv": {
+          "shape": [
+            32,
+            8,
+            2304
+          ],
+          "dtype": "torch.bfloat16",
+          "stride": [
+            18432,
+            2304,
+            1
+          ]
+        },
+        "positions": {
+          "shape": [
+            256
+          ],
+          "dtype": "torch.int64",
+          "stride": [
+            1
+          ]
+        },
+        "cache_loc": {
+          "shape": [
+            256
+          ],
+          "dtype": "torch.int64",
+          "stride": [
+            1
+          ]
+        },
+        "cache_seqlens": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        },
+        "cu_seqlens_q": {
+          "shape": [
+            33
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        },
+        "k_cache": {
+          "shape": [
+            2752256,
+            1,
+            2,
+            64
+          ],
+          "dtype": "torch.float8_e4m3fn",
+          "stride": [
+            128,
+            128,
+            64,
+            1
+          ]
+        },
+        "v_cache": {
+          "shape": [
+            2752256,
+            1,
+            2,
+            64
+          ],
+          "dtype": "torch.float8_e4m3fn",
+          "stride": [
+            128,
+            128,
+            64,
+            1
+          ]
+        },
+        "k_scale": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "stride": []
+        },
+        "v_scale": {
+          "shape": [],
+          "dtype": "torch.float32",
+          "stride": []
+        },
+        "page_table": {
+          "shape": [
+            32,
+            86008
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            86008,
+            1
+          ]
+        },
+        "seq_lens": {
+          "shape": [
+            32
+          ],
+          "dtype": "torch.int32",
+          "stride": [
+            1
+          ]
+        }
+      },
+      "page_table_sha256": "a4150aae12f6bdef65b5441f6e3919a8810e7a0e98138447916de63a232ddf79",
+      "scheduler_metadata_input": null,
+      "before_us": [
+        385.47199964523315,
+        383.55201482772827,
+        383.10399651527405
+      ],
+      "before_median_us": 383.55201482772827,
+      "before_range_us": [
+        383.10399651527405,
+        385.47199964523315
+      ],
+      "warmup_us": [
+        382.59199261665344,
+        384.0959966182709
+      ],
+      "recorded_original_oracles": [
+        {
+          "case": "full_verify_b32",
+          "phase": "initial_oracle",
+          "original_oracle_called": true,
+          "original_oracle_passed": true,
+          "message": "relative L2 error 3.690e-02 (worst row 6.716e-02) [bound 0.090: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "stable_addresses": true,
+          "immutable_inputs_and_nonnew_cache_unchanged": true,
+          "immutable_message": "immutable inputs and non-new cache rows unchanged",
+          "exact_output_and_newkv_bytes": true,
+          "passed": true
+        }
+      ],
+      "recorded_invariance_checks": 6,
+      "before_timing_qualification": "Three unprofiled whole selected graph samples after two warmups. Same fixture; no after confirmation, performance variant or official-score claim.",
+      "activity": {
+        "attribution": "Host graph-launch correlation plus matching GPU annotation/external id",
+        "host_annotation": {
+          "ph": "X",
+          "cat": "user_annotation",
+          "name": "PROFILE_SELECTED_FULL_VERIFY_B32",
+          "pid": 4,
+          "tid": 4,
+          "ts": 2216356991993.452,
+          "dur": 422.343,
+          "args": {
+            "External id": 32,
+            "Record function id": 0,
+            "Ev Idx": 31
+          }
+        },
+        "graph_launch": {
+          "ph": "X",
+          "cat": "cuda_runtime",
+          "name": "cudaGraphLaunch",
+          "pid": 4,
+          "tid": 4,
+          "ts": 2216356992002.447,
+          "dur": 21.363,
+          "args": {
+            "cbid": 311,
+            "correlation": 232
+          }
+        },
+        "gpu_annotation": {
+          "ph": "X",
+          "cat": "gpu_user_annotation",
+          "name": "PROFILE_SELECTED_FULL_VERIFY_B32",
+          "pid": 0,
+          "tid": 7,
+          "ts": 2216356991950.472,
+          "dur": 372.854,
+          "args": {
+            "External id": 32
+          }
+        },
+        "graph_ids": [
+          5
+        ],
+        "graph_node_ids": [
+          21474836480,
+          21474836481,
+          21474836482,
+          21474836483,
+          21474836484
+        ],
+        "correlation": 232,
+        "external_id": 32,
+        "kernel_count": 5,
+        "phase_kernel_counts": {
+          "fused_preparation": 1,
+          "scheduler_preparation": 1,
+          "fa3_mainloop": 1,
+          "fa3_combine": 1,
+          "output_norm_gate": 1
+        },
+        "full_mainloop_symbols": [
+          "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)"
+        ],
+        "mainloop_shape_tuple_literal": [
+          64,
+          128,
+          64
+        ],
+        "shape_qualification": "Literal in executed Modal symbol; source typedef/boolean/ISA semantics are not inferred.",
+        "mainloop_resources": [
+          {
+            "queued": 0,
+            "device": 0,
+            "context": 1,
+            "stream": 7,
+            "correlation": 232,
+            "registers per thread": 255,
+            "shared memory": 56320,
+            "blocks per SM": 1,
+            "warps per SM": 8,
+            "grid": [
+              132,
+              1,
+              1
+            ],
+            "block": [
+              256,
+              1,
+              1
+            ],
+            "est. achieved occupancy %": 0,
+            "occupancy": {
+              "activeBlocksPerMultiprocessor": 0,
+              "limitingFactors": "SMEM",
+              "blockLimitRegs": 1,
+              "blockLimitSharedMem": 0,
+              "blockLimitWarps": 8,
+              "blockLimitBlocks": 32,
+              "blockLimitBarriers": 2147483647,
+              "allocatedRegistersPerBlock": 65536,
+              "allocatedSharedMemPerBlock": 57344
+            },
+            "graph id": 5,
+            "graph node id": 21474836482,
+            "channel": 0,
+            "channel_type": 1
+          }
+        ],
+        "gpu_activity_span_us": 372.8515625,
+        "gpu_activity_union_us": 372.60009765625,
+        "instrumented_phase_union_us": {
+          "fused_preparation": 2.13818359375,
+          "scheduler_preparation": 3.6162109375,
+          "fa3_mainloop": 365.4619140625,
+          "fa3_combine": 3.8681640625,
+          "output_norm_gate": 2.169921875
+        },
+        "apparent_same_stream_overlaps": [
+          {
+            "first": "void flash::prepare_varlen_num_blocks_kernel<2, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+            "second": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "apparent_overlap_us": 2.98681640625,
+            "stream": 7
+          },
+          {
+            "first": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "second": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "apparent_overlap_us": 1.38427734375,
+            "stream": 7
+          },
+          {
+            "first": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "second": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, true, false, true, true, true, true>(sglang::NormGateParams)",
+            "apparent_overlap_us": 0.283203125,
+            "stream": 7
+          }
+        ],
+        "original_cpu_containment_mainloop_count": 0,
+        "original_cpu_containment_foreign_correlations": [],
+        "cpu_gpu_timestamp_containment_valid": false,
+        "events": [
+          {
+            "name": "_fa3_prepare_fused",
+            "category": "kernel",
+            "phase": "fused_preparation",
+            "ts_us": 2216356991950.473,
+            "duration_us": 2.138,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 232,
+              "registers per thread": 20,
+              "shared memory": 0,
+              "blocks per SM": 9.696969985961914,
+              "warps per SM": 38.787879943847656,
+              "grid": [
+                1280,
+                1,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 61,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 16,
+                "limitingFactors": "WARPS",
+                "blockLimitRegs": 21,
+                "blockLimitSharedMem": 228,
+                "blockLimitWarps": 16,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 3072,
+                "allocatedSharedMemPerBlock": 1024
+              },
+              "graph id": 5,
+              "graph node id": 21474836480,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void flash::prepare_varlen_num_blocks_kernel<2, true>(int, int, int, int const*, int const*, int const*, int const*, int const*, int const*, int, int, int, int, int, cutlass::FastDivmod, cutlass::FastDivmod, int*, int*, int*, int*, int*, bool, bool, bool, int)",
+            "category": "kernel",
+            "phase": "scheduler_preparation",
+            "ts_us": 2216356991952.863,
+            "duration_us": 3.616,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 232,
+              "registers per thread": 20,
+              "shared memory": 1056,
+              "blocks per SM": 0.007575757801532745,
+              "warps per SM": 0.01515151560306549,
+              "grid": [
+                1,
+                1,
+                1
+              ],
+              "block": [
+                64,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 32,
+                "limitingFactors": "WARPS|BLOCKS",
+                "blockLimitRegs": 42,
+                "blockLimitSharedMem": 107,
+                "blockLimitWarps": 32,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 1536,
+                "allocatedSharedMemPerBlock": 2176
+              },
+              "graph id": 5,
+              "graph node id": 21474836481,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+            "category": "kernel",
+            "phase": "fa3_mainloop",
+            "ts_us": 2216356991953.492,
+            "duration_us": 365.462,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 232,
+              "registers per thread": 255,
+              "shared memory": 56320,
+              "blocks per SM": 1,
+              "warps per SM": 8,
+              "grid": [
+                132,
+                1,
+                1
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 0,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 0,
+                "limitingFactors": "SMEM",
+                "blockLimitRegs": 1,
+                "blockLimitSharedMem": 0,
+                "blockLimitWarps": 8,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 65536,
+                "allocatedSharedMemPerBlock": 57344
+              },
+              "graph id": 5,
+              "graph node id": 21474836482,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90> >(flash::FlashAttnFwdCombine<cute::tuple<cute::C<16>, cute::C<64> >, 4, 256, 1, false, true, cutlass::bfloat16_t, float, cutlass::arch::Sm90>::Params)",
+            "category": "kernel",
+            "phase": "fa3_combine",
+            "ts_us": 2216356992317.57,
+            "duration_us": 3.868,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 232,
+              "registers per thread": 48,
+              "shared memory": 17536,
+              "blocks per SM": 1.9393939971923828,
+              "warps per SM": 15.515151977539062,
+              "grid": [
+                8,
+                1,
+                32
+              ],
+              "block": [
+                256,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 24,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 5,
+                "limitingFactors": "REGS",
+                "blockLimitRegs": 5,
+                "blockLimitSharedMem": 12,
+                "blockLimitWarps": 8,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 12288,
+                "allocatedSharedMemPerBlock": 18560
+              },
+              "graph id": 5,
+              "graph node id": 21474836483,
+              "channel": 0,
+              "channel_type": 1
+            }
+          },
+          {
+            "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, true, false, true, true, true, true>(sglang::NormGateParams)",
+            "category": "kernel",
+            "phase": "output_norm_gate",
+            "ts_us": 2216356992321.155,
+            "duration_us": 2.17,
+            "args": {
+              "queued": 0,
+              "device": 0,
+              "context": 1,
+              "stream": 7,
+              "correlation": 232,
+              "registers per thread": 30,
+              "shared memory": 0,
+              "blocks per SM": 1.9393939971923828,
+              "warps per SM": 7.757575988769531,
+              "grid": [
+                1,
+                256,
+                1
+              ],
+              "block": [
+                128,
+                1,
+                1
+              ],
+              "est. achieved occupancy %": 12,
+              "occupancy": {
+                "activeBlocksPerMultiprocessor": 16,
+                "limitingFactors": "WARPS|REGS",
+                "blockLimitRegs": 16,
+                "blockLimitSharedMem": 228,
+                "blockLimitWarps": 16,
+                "blockLimitBlocks": 32,
+                "blockLimitBarriers": 2147483647,
+                "allocatedRegistersPerBlock": 4096,
+                "allocatedSharedMemPerBlock": 1024
+              },
+              "graph id": 5,
+              "graph node id": 21474836484,
+              "channel": 0,
+              "channel_type": 1
+            }
+          }
+        ],
+        "timing_qualification": "Instrumented activity durations only. Cross-clock offsets/apparent same-stream overlaps preclude concurrency or critical-path inference."
+      }
+    }
+  },
+  "observations": [
+    "Both Modal full-verify cases have the same complete mainloop symbol list: True",
+    "Each trace contains fused preparation, scheduler preparation, mainloop, combine and norm/gate.",
+    "The original parser used cross-domain CPU/GPU timestamp containment. B32 omitted its mainloop; B16 admitted unrelated restore copies.",
+    "The activity trace was exported before the parser exception. Post-activity correctness was not executed, so salvaged activity is observational identity evidence only.",
+    "Profiler occupancy estimate zero conflicts with a successfully executed kernel; it is not achieved hardware occupancy.",
+    "NCU executable and RmProfilingAdminOnly:0 are observed. No new counter session or permission test was reached."
+  ],
+  "unknowns": [
+    "Official judge binary identity: Modal evidence cannot establish it.",
+    "Resolved PackGQA and split counts: wrapper receives None/0, no auxiliary replay was reached.",
+    "Exact internal QK/PV instruction/dtype/accumulation sequence: no binary disassembly or matched internal source.",
+    "Post-activity correctness and after timings: not reached.",
+    "Auxiliary return replay and NCU query/capability/target sessions: not reached.",
+    "DRAM throughput, tensor utilization, warp stalls and actual CTA residency: not measured."
+  ],
+  "completion": {
+    "initial_oracle_checks": 2,
+    "checked_preprofile_replays": 10,
+    "post_activity_oracle_checks": 0,
+    "after_timing_samples": 0,
+    "auxiliary_replays": 0,
+    "hardware_counter_sessions": 0,
+    "activity_sessions": 1
+  },
+  "evidence": {
+    "result_sha256": "8c23f8cc7bb2c368f5af4e0a6259bac3641a2ce69da0099c321cd2fad3e82fc9",
+    "raw_trace_sha256": "c9ab784e4584f585060bb2c4b5dbf5b70479fb935b5805bf678e2fe1597d275d",
+    "gzip_trace_sha256": "83c54f833471cc826008b97e7275c0f7da8f5ce3f558eafcd7d8c85d47f8216c",
+    "analyzer_sha256": "d89e2f6dac4d8afd9105b713ce255407df8e9253c330a1e727d8193a220c5ec8"
+  }
+}

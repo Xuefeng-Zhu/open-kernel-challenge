@@ -1,0 +1,254 @@
+{
+  "status": "LOCAL_SOURCE_AND_SAVED_RESULTS_ONLY; no GPU/native compile/service launch",
+  "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "official_profile_sha256": "3a9f9f841665ef0c678001aa62396b44557a375ce20d5e830548d257ff6f1300",
+  "official_job_id": "5090b83f1d63407b",
+  "score": 1.2336330588627955,
+  "ci": [
+    1.2151285629798536,
+    1.2521375547457374
+  ],
+  "method": "Dispatch evaluated from isolated selected kernel_fn AST with pure return-name stubs; no candidate imports, Torch, Triton or GPU. Custom grids use scored max page-table shape86001 for agentic decode32, not observed CTA residency. Sensitivity freezes all other times and references. Activities are instrumented reports, not critical-path decomposition.",
+  "rows": [
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "batch": 1,
+      "q_len": 1,
+      "current_route": "_e2_kernel_fn",
+      "whole_call_adjusted_us": 11.47711384229471,
+      "same_run_reference_us": 20.576000679284334,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.5496884699073329,
+      "local_log_score_sensitivity": 0.09161474498455548,
+      "score_factor_if_this_path_10pct_faster": 1.0094674329213,
+      "source_derived_custom_grid": {
+        "producer": [
+          1,
+          2,
+          16
+        ],
+        "producer_CTA": 32,
+        "merge": [
+          1,
+          16
+        ],
+        "merge_CTA": 16,
+        "splits": 16,
+        "query_rows_allocated": 16,
+        "query_rows_valid": 8
+      },
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\n_fused                                                             7.8 \u00b5s  82.2%      1\n_merge                                                             1.7 \u00b5s  17.8%      1\ntotal                                                              9.5 \u00b5s"
+    },
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "batch": 1,
+      "q_len": 1,
+      "current_route": "_fa3_full_verify_fused",
+      "whole_call_adjusted_us": 27.031302842677167,
+      "same_run_reference_us": 31.184000428766012,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.45031153009266717,
+      "local_log_score_sensitivity": 0.0750519216821112,
+      "score_factor_if_this_path_10pct_faster": 1.007708989086911,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      14.7 \u00b5s  61.7%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       6.8 \u00b5s  28.7%      1\n_fa3_prepare_fused                                                 1.2 \u00b5s   5.0%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.1 \u00b5s   4.6%      1\ntotal                                                             23.7 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        22.3 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "batch": 16,
+      "q_len": 1,
+      "current_route": "_e2_kernel_fn",
+      "whole_call_adjusted_us": 13.92113651627598,
+      "same_run_reference_us": 26.400000788271427,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.17082412051246057,
+      "local_log_score_sensitivity": 0.02847068675207676,
+      "score_factor_if_this_path_10pct_faster": 1.0028757937900017,
+      "source_derived_custom_grid": {
+        "producer": [
+          16,
+          2,
+          9
+        ],
+        "producer_CTA": 288,
+        "merge": [
+          16,
+          16
+        ],
+        "merge_CTA": 256,
+        "splits": 9,
+        "query_rows_allocated": 16,
+        "query_rows_valid": 8
+      },
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\n_fused                                                             9.0 \u00b5s  83.6%      1\n_merge                                                             1.8 \u00b5s  16.4%      1\ntotal                                                             10.7 \u00b5s"
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "batch": 16,
+      "q_len": 1,
+      "current_route": "_fa3_full_verify_fused",
+      "whole_call_adjusted_us": 194.27190912323948,
+      "same_run_reference_us": 200.73599368333817,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.8291758794875393,
+      "local_log_score_sensitivity": 0.1381959799145899,
+      "score_factor_if_this_path_10pct_faster": 1.014530884840529,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...     297.3 \u00b5s  97.7%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       3.7 \u00b5s   1.2%      1\n_fa3_prepare_fused                                                 1.6 \u00b5s   0.5%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.6 \u00b5s   0.5%      1\ntotal                                                            304.2 \u00b5s"
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "batch": 32,
+      "q_len": 1,
+      "current_route": "_e2_kernel_fn",
+      "whole_call_adjusted_us": 20.10360388661608,
+      "same_run_reference_us": 30.97599931061268,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.15973772327865904,
+      "local_log_score_sensitivity": 0.026622953879776506,
+      "score_factor_if_this_path_10pct_faster": 1.0026873926074629,
+      "source_derived_custom_grid": {
+        "producer": [
+          32,
+          2,
+          5
+        ],
+        "producer_CTA": 320,
+        "merge": [
+          32,
+          16
+        ],
+        "merge_CTA": 512,
+        "splits": 5,
+        "query_rows_allocated": 16,
+        "query_rows_valid": 8
+      },
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\n_fused                                                            14.8 \u00b5s  87.2%      1\n_merge                                                             2.2 \u00b5s  12.8%      1\ntotal                                                             17.0 \u00b5s"
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "batch": 32,
+      "q_len": 1,
+      "current_route": "_e2_kernel_fn",
+      "whole_call_adjusted_us": 304.0318931739489,
+      "same_run_reference_us": 383.58399365097284,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.8402622767213409,
+      "local_log_score_sensitivity": 0.14004371278689015,
+      "score_factor_if_this_path_10pct_faster": 1.0147354362647891,
+      "source_derived_custom_grid": {
+        "producer": [
+          32,
+          2,
+          11
+        ],
+        "producer_CTA": 704,
+        "merge": [
+          32,
+          16
+        ],
+        "merge_CTA": 512,
+        "splits": 11,
+        "query_rows_allocated": 16,
+        "query_rows_valid": 8
+      },
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\n_fused                                                           297.2 \u00b5s  99.1%      1\n_merge                                                             2.7 \u00b5s   0.9%      1\ntotal                                                            299.9 \u00b5s"
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "batch": 1,
+      "q_len": 8,
+      "current_route": "_fa3_sliding_verify_fused",
+      "whole_call_adjusted_us": 16.988207220445705,
+      "same_run_reference_us": 23.007999639958143,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.6228942529746712,
+      "local_log_score_sensitivity": 0.10381570882911186,
+      "score_factor_if_this_path_10pct_faster": 1.010776643065978,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...       7.8 \u00b5s  48.2%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.0 \u00b5s  24.9%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, false>(in...       1.8 \u00b5s  11.3%      1\n_fa3_prepare_fused                                                 1.3 \u00b5s   8.3%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.2 \u00b5s   7.3%      1\ntotal                                                             16.2 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        14.7 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "batch": 1,
+      "q_len": 8,
+      "current_route": "_fa3_full_verify_fused",
+      "whole_call_adjusted_us": 29.568835823566065,
+      "same_run_reference_us": 35.55200155824423,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.37710574702532884,
+      "local_log_score_sensitivity": 0.0628509578375548,
+      "score_factor_if_this_path_10pct_faster": 1.0064272358812207,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      14.9 \u00b5s  54.5%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       7.4 \u00b5s  26.8%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, true>(int...       2.7 \u00b5s   9.9%      1\n_fa3_prepare_fused                                                 1.2 \u00b5s   4.4%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.2 \u00b5s   4.3%      1\ntotal                                                             27.4 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        25.9 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "batch": 16,
+      "q_len": 8,
+      "current_route": "_fa3_sliding_verify_fused",
+      "whole_call_adjusted_us": 21.740249752189822,
+      "same_run_reference_us": 28.687998186796904,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.24029962340624395,
+      "local_log_score_sensitivity": 0.04004993723437399,
+      "score_factor_if_this_path_10pct_faster": 1.0040621268555567,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      10.7 \u00b5s  53.4%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.2 \u00b5s  21.1%      1\n_fa3_prepare_fused                                                 1.9 \u00b5s   9.4%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, false>(in...       1.8 \u00b5s   9.1%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.4 \u00b5s   6.9%      1\ntotal                                                             20.0 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        18.6 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "batch": 16,
+      "q_len": 8,
+      "current_route": "_fa3_full_verify_fused",
+      "whole_call_adjusted_us": 197.60213357126437,
+      "same_run_reference_us": 204.9119994044304,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.7597003765937561,
+      "local_log_score_sensitivity": 0.12661672943229269,
+      "score_factor_if_this_path_10pct_faster": 1.0132555495741222,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...     193.3 \u00b5s  94.6%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.2 \u00b5s   2.1%      1\nvoid flash::prepare_varlen_num_blocks_kernel<1, true>(int...       3.1 \u00b5s   1.5%      1\n_fa3_prepare_fused                                                 2.0 \u00b5s   1.0%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...       1.7 \u00b5s   0.8%      1\ntotal                                                            204.3 \u00b5s"
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "batch": 32,
+      "q_len": 8,
+      "current_route": "_fa3_sliding_verify_fused",
+      "whole_call_adjusted_us": 27.46761932746471,
+      "same_run_reference_us": 34.33600161224604,
+      "within_load_weight": 46,
+      "fraction_of_own_weighted_load": 0.17191548808390714,
+      "local_log_score_sensitivity": 0.028652581347317855,
+      "score_factor_if_this_path_10pct_faster": 1.0028943537898307,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...      14.5 \u00b5s  60.1%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.1 \u00b5s  17.0%      1\n_fa3_prepare_fused                                                 2.3 \u00b5s   9.7%      1\nvoid flash::prepare_varlen_num_blocks_kernel<2, false>(in...       1.7 \u00b5s   7.2%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...       1.5 \u00b5s   6.1%      1\ntotal                                                             24.1 \u00b5s\nGPU busy (kernels overlap: PDL or streams)                        22.6 \u00b5s\nan overlapping kernel's time includes any wait for the one before it, so the rows add up to more"
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "batch": 32,
+      "q_len": 8,
+      "current_route": "_fa3_full_verify_fused",
+      "whole_call_adjusted_us": 380.3807463402613,
+      "same_run_reference_us": 388.01600178703666,
+      "within_load_weight": 16,
+      "fraction_of_own_weighted_load": 0.8280845119160929,
+      "local_log_score_sensitivity": 0.1380140853193488,
+      "score_factor_if_this_path_10pct_faster": 1.0145107639797557,
+      "source_derived_custom_grid": null,
+      "instrumented_profile_report": "kernel                                                           GPU time  share  calls\nvoid cutlass::device_kernel<flash::enable_sm90_or_later<f...     372.2 \u00b5s  96.9%      1\nvoid cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...       4.4 \u00b5s   1.1%      1\nvoid flash::prepare_varlen_num_blocks_kernel<2, true>(int...       3.4 \u00b5s   0.9%      1\n_fa3_prepare_fused                                                 2.4 \u00b5s   0.6%      1\nvoid sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...       1.8 \u00b5s   0.5%      1\ntotal                                                            384.1 \u00b5s"
+    }
+  ]
+}

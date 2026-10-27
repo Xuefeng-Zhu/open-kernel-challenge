@@ -1,0 +1,13 @@
+{
+  "state": "admitted",
+  "observed_utc": "2026-10-26T22:29:44.891471+00:00",
+  "problem": "muse_attention_decode",
+  "mode": "check",
+  "source_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "source_commit": "d7790c5483edc15d3e5c021692d38af11e5a9345",
+  "formal_entry": false,
+  "paid_cost_usd": 0,
+  "maximum_initial_submissions": 1,
+  "job_id": "92fb22b141fc4d67",
+  "accepted_utc": "2026-10-26T22:29:45.268496+00:00"
+}

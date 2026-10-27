@@ -1,0 +1,30 @@
+{
+  "parent_job": "ba9e02c1d6584cc4",
+  "hypothetical_not_measured": true,
+  "targets": [
+    [
+      "decode 16",
+      "full"
+    ],
+    [
+      "verify 16",
+      "full"
+    ],
+    [
+      "verify 32",
+      "full"
+    ]
+  ],
+  "models": [
+    {
+      "assumed_us_saved_per_target": 5.0,
+      "relative_score_gain": 0.008292640569473875,
+      "modeled_score": 1.1600742006729083
+    },
+    {
+      "assumed_us_saved_per_target": 7.0,
+      "relative_score_gain": 0.011670566173582753,
+      "modeled_score": 1.1639606163695517
+    }
+  ]
+}

@@ -1,0 +1,133 @@
+{
+  "created_utc": "2026-10-27T07:09:38.123242+00:00",
+  "source_commit": "19313efb186ba91a48fe6b9cd6565e81382f27b0",
+  "app_id": "ap-HPcxoqismBdiogLGQ1HejU",
+  "diagnostic_complete": true,
+  "terminal_decision": "DROP",
+  "cpu_tests_passed": 50,
+  "original_oracles_passed": 4,
+  "checked_graph_replays_passed": 70,
+  "measured_graph_replays": 48,
+  "fresh_fixture_seeds": [
+    135831,
+    135832
+  ],
+  "paired_reduction_percent": [
+    4.814778045962931,
+    4.793108453331452
+  ],
+  "favorable_pairs_each": [
+    6,
+    6
+  ],
+  "predeclared_minimum_reduction_percent_each": 15,
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "selected_changed": false,
+  "native_symbols_and_launch_observed_equal": true,
+  "postcall_inverse_fullcache_bytes_exact": true,
+  "new_official_checks": 0,
+  "new_ranked_entries": 0,
+  "new_credentials": 0,
+  "security_changes": false,
+  "actual_score_gain": 0,
+  "optimistic_costfree_recovery_score_gain_percent": [
+    0.6804216913200989,
+    0.6772859372393691
+  ],
+  "absolute_one_path_zero_time_score_factor_ceiling": 1.3410578085089684,
+  "score_ceiling_qualification": "Fixed other paths; zero-cost recovery scenario is not a measured score or universal algorithm bound.",
+  "additional_experiment_or_candidate_planned": false,
+  "independent_stopped_zero_tasks": true,
+  "paid_after_usd": "0E-8",
+  "prior_native_evidence_files_unchanged": 59,
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files": {
+    "COSTS.json": {
+      "bytes": 344,
+      "sha256": "91f83408b326fdd3aefb0a08f2c5aec4affd700c530a1c6a1d440180561037ae"
+    },
+    "EXPERIMENT_CARD.md": {
+      "bytes": 3194,
+      "sha256": "9ee1f953f09c0318d79c4043d76f34cc8ba956ab4788d59e974a3a73a3bbd48e"
+    },
+    "PREPARATION_MANIFEST.json": {
+      "bytes": 5409,
+      "sha256": "6df8d431f3bb1d5793c23ff292c1f9ff7a1b601c3fe0d61161710a9a8fcd1fe3"
+    },
+    "RESULTS.md": {
+      "bytes": 2664,
+      "sha256": "faca5b750354fb16cec5b9dc4fb62c27222fcc994fd8eb53ebb5cadf2f72ca6c"
+    },
+    "RESULT_REVIEW.md": {
+      "bytes": 2282,
+      "sha256": "40e7eb904240b9d9501a65fc59814487355b5767bb022c7aa3be220d40efa1c2"
+    },
+    "REVIEW.md": {
+      "bytes": 3746,
+      "sha256": "ae7e34b4bd226ef5c90c0eee80d7665e22ff77a7a1713cf5c18f8c9c9936cf8c"
+    },
+    "activity-trace.json.gz": {
+      "bytes": 23550,
+      "sha256": "4e33a53592759c5bd71bdf1cc6e7e46d8822398895ac7aaf4dfa7ac79c01e7c8"
+    },
+    "controller.py": {
+      "bytes": 29342,
+      "sha256": "cc11d5c4fe2d7bc1df4525a2fc08fa71ecd74aacf77709aff5724c4252e5f4a6"
+    },
+    "fixture.py": {
+      "bytes": 8302,
+      "sha256": "203240b0f4de073b4c6222c62daeeaff20ce0b3de32b519f8d9f59c5528e0e28"
+    },
+    "guardrail-receipt.json": {
+      "bytes": 483,
+      "sha256": "e9ac3d18b558e178fb6b40f9024ed5b59f5b78af0d1069110b173b62feeb7386"
+    },
+    "independent-cleanup.json": {
+      "bytes": 1470,
+      "sha256": "a56155e8f04df7aae158734ce0dec14521b1b0617cabf616bbb66c020a239072"
+    },
+    "launch-receipt.json": {
+      "bytes": 7961,
+      "sha256": "3bd654b1364051fb6f7250d13355bbdefa36c6036a3402498597349936d67d88"
+    },
+    "result.json": {
+      "bytes": 49335,
+      "sha256": "28dd47c0a0357aa96abc9a5ff1e640e72813c22e351e2528721d1adec55cdc70"
+    },
+    "test_b32_semantics.py": {
+      "bytes": 3370,
+      "sha256": "f1e29ea647eaf31423a7beda9c20dc89c2c7438a46a54acf4118ab7c90614906"
+    },
+    "test_controller.py": {
+      "bytes": 17697,
+      "sha256": "141e41c560616142113d526740a79c3d3d6e55c4ce199c4ecc293d478da1b216"
+    },
+    "test_fixture.py": {
+      "bytes": 10279,
+      "sha256": "24f11ea7c9f412104af10d0f069e24f5426176179e9fa22a51264204b46de821"
+    },
+    "test_worker.py": {
+      "bytes": 13814,
+      "sha256": "12dfffc2e30fcea761d90da73d17847354d8ce31dc90f81ab21ff3e09b9e687c"
+    },
+    "trace-manifest.json": {
+      "bytes": 218,
+      "sha256": "3e039bd17b1d9e011ba3f3d1f0a34f756c5c13d5aea1f5beed259a1d4cd60e42"
+    },
+    "trace_helpers.py": {
+      "bytes": 12713,
+      "sha256": "d89e2f6dac4d8afd9105b713ce255407df8e9253c330a1e727d8193a220c5ec8"
+    },
+    "worker.py": {
+      "bytes": 30856,
+      "sha256": "7bfe1237a81094b217b665dcdd325c9857a1180f66d917b7ecb1e0414f21315d"
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "app_id": "ap-Hy5O3TPhVTVKu0XyfsgJWT",
+  "source_freeze": "c55d14c507b9d5cc2254441531d4f0e1a18714d5",
+  "free_credit_reserve_usd": "0.58",
+  "worker_wall_seconds": 40.088718683,
+  "worker_reported_wall_seconds": 38.56607769,
+  "client_wall_seconds": 49.76392929092981,
+  "accounting_cutoff_utc": "2026-10-26T00:43:26.103049+00:00",
+  "delayed_workspace_delta_usd": "0.05258797",
+  "paid_usd": "0E-8",
+  "exact_app_invoice": false,
+  "new_other_app_ids": [],
+  "app_stopped_zero_tasks": true,
+  "closure_utc": "2026-10-26T00:40:48.399511+00:00",
+  "qualification": "No-new-app delayed workspace credit delta at cutoff; metering may lag and this is not an exact per-app invoice."
+}

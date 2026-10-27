@@ -1,0 +1,59 @@
+{
+  "observed_utc": "2026-10-25T04:29:05.897776+00:00",
+  "candidate": "mixed_fa3_fused_full_verify1.py",
+  "source_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+  "parent": "mixed_fa3_fused_verify.py",
+  "parent_source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
+  "parent_job": "05b52e7834064b14",
+  "native_execution": false,
+  "tests": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_full_fused_verify_dispatch.py",
+      "exit_code": 0,
+      "output": "test_entrypoint_with_complete_full_host_adapter_CPU_oracle (__main__.FullVerifyDispatch.test_entrypoint_with_complete_full_host_adapter_CPU_oracle) ... ok\ntest_exact_assembly_and_all_parent_helpers_unchanged (__main__.FullVerifyDispatch.test_exact_assembly_and_all_parent_helpers_unchanged) ... ok\ntest_only_one_scored_path_changes (__main__.FullVerifyDispatch.test_only_one_scored_path_changes) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.120s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_full_fused_prepare_component.py",
+      "exit_code": 0,
+      "output": "test_CPU_same_address_A_B_A_changed_actual_lengths (__main__.FullFusedPrepareComponent.test_CPU_same_address_A_B_A_changed_actual_lengths) ... ok\ntest_full_attention_call_and_gate_arguments_preserved_by_AST (__main__.FullFusedPrepareComponent.test_full_attention_call_and_gate_arguments_preserved_by_AST) ... ok\ntest_page_scales_live_zero_DP_and_reference_cache_output (__main__.FullFusedPrepareComponent.test_page_scales_live_zero_DP_and_reference_cache_output) ... ok\ntest_scheduler_metadata_forwarding_only_with_synthetic_sentinel (__main__.FullFusedPrepareComponent.test_scheduler_metadata_forwarding_only_with_synthetic_sentinel) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.141s\n\nOK\n"
+    }
+  ],
+  "target_parent": {
+    "load": "verify 1",
+    "layer": "full",
+    "target": false,
+    "weight": 16,
+    "parent_adjusted_candidate_us": 36.02018221578993,
+    "parent_adjusted_sglang_us": 36.44799906760454,
+    "new_adjusted_candidate_us": 35.4007048657469,
+    "new_adjusted_sglang_us": 35.71199905127287,
+    "parent_raw_candidate_us": 40.12800008058548,
+    "parent_raw_sglang_us": 40.511999279260635,
+    "new_raw_candidate_us": 39.68000039458275,
+    "new_raw_sglang_us": 39.96799886226654,
+    "parent_paired_ratio": 1.0118771429098177,
+    "new_paired_ratio": 1.0087934459696921,
+    "relative_speedup": 0.9969524986687041,
+    "normalized_latency_cut": -0.0030568169851277194
+  },
+  "models_not_achieved": [
+    {
+      "assumed_cut": 0.1,
+      "modeled_score": 1.1463311366038442
+    },
+    {
+      "assumed_cut": 0.15,
+      "modeled_score": 1.1506010995724942
+    },
+    {
+      "assumed_cut": 0.2,
+      "modeled_score": 1.1549849479916
+    }
+  ],
+  "limitations": [
+    "CPU launchstub not Triton",
+    "Full1million/page64nativecase pending",
+    "GPU ABA/untouched-row/concurrency stress absent",
+    "Compiler resource metadata unavailable"
+  ]
+}

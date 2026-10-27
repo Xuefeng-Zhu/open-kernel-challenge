@@ -1,0 +1,16 @@
+{
+  "board": "muse_attention_decode",
+  "call_id": "kc-3e0a7ef51d4849c6",
+  "cluster": "sfo3",
+  "content_hash": "1f75f98c7d3ef6188613f72da7d6e0a8aa36ad3d68c63e7762d054b8c1819890",
+  "created_at": 1793067499.4631526,
+  "dedicated": false,
+  "duplicate_of": null,
+  "id": "3e0a7ef51d4849c6",
+  "mode": "check",
+  "payload_ref": "muse_attention_decode/1f75f98c7d3ef6188613f72da7d6e0a8aa36ad3d68c63e7762d054b8c1819890.py",
+  "result": null,
+  "started_at": 1793067945.1748288,
+  "status": "running",
+  "team": "Xuefeng-Zhu"
+}

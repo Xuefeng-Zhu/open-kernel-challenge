@@ -1,0 +1,422 @@
+{
+  "job_id": "92fb22b141fc4d67",
+  "mode": "check",
+  "terminal_status": "done",
+  "selected_job_id": "5090b83f1d63407b",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_source_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "automatic_promotion": false,
+  "source_request_receipt_verified": true,
+  "observed_result_passed": true,
+  "observed_result_error": null,
+  "new_metadata": {
+    "status": "observed_API_metadata",
+    "torch_version": "2.14.1+cu130",
+    "cuda_version": "13.0",
+    "identical_marker_observations": 1,
+    "operator_schema": "sgl_kernel::fwd(Tensor q, Tensor k, Tensor v, Tensor? k_new, Tensor? v_new, Tensor? q_v, Tensor(a!)? out, Tensor? cu_seqlens_q, Tensor? cu_seqlens_k, Tensor? cu_seqlens_k_new, Tensor? seqused_q, Tensor? seqused_k, int? max_seqlen_q, int? max_seqlen_k, Tensor? page_table, Tensor? kv_batch_idx, Tensor? leftpad_k, Tensor? rotary_cos, Tensor? rotary_sin, Tensor? seqlens_rotary, Tensor? q_descale, Tensor? k_descale, Tensor? v_descale, float? softmax_scale, bool is_causal, int window_size_left, int window_size_right, int attention_chunk, float softcap, bool is_rotary_interleaved, Tensor? scheduler_metadata, int num_splits, bool? pack_gqa, int sm_margin, Tensor? sinks, Tensor? sparse_mask_fine, bool only_qv) -> (Tensor(a!), Tensor, Tensor, Tensor)",
+    "operator_schema_status": "observed",
+    "resolved_pack_gqa": "UNKNOWN",
+    "resolved_splits": "UNKNOWN",
+    "executed_tile": "UNKNOWN",
+    "internal_QK_PV_dtype": "UNKNOWN",
+    "binary_identity": "UNKNOWN",
+    "qualification": "Registration schema is not resolved packing/split output, an instruction dtype or binary hash."
+  },
+  "qualification": "Official pairs candidate with its own SGLang reference. Historical normalized selected comparison is descriptive, not a paired candidate-versus-selected experiment.",
+  "correctness": {
+    "prerequisites_recorded": 16,
+    "prerequisites_passed": 16,
+    "first_failed_case": null,
+    "first_failed_message": null,
+    "result_passed": true,
+    "returncode": 0,
+    "checks_ok": true,
+    "error": null
+  },
+  "profile_agreement": {
+    "new": true,
+    "new_reason": "complete profile and raw records agree",
+    "selected": true,
+    "selected_reason": "complete profile and raw records agree"
+  },
+  "official_speedup": 1.207015236205559,
+  "official_speedup_ci": [
+    1.1889100076624757,
+    1.2316803472514632
+  ],
+  "selected_speedup": 1.2336330588627955,
+  "official_point_score_delta_percent": -2.1576774767833817,
+  "loads": [
+    {
+      "load": "decode 1",
+      "reference_weighted_us": 1474.8799595981836,
+      "candidate_weighted_us": 974.4229525773522,
+      "speedup": 1.5135932047753193
+    },
+    {
+      "load": "decode 16",
+      "reference_weighted_us": 4450.591921806335,
+      "candidate_weighted_us": 3770.253785490468,
+      "speedup": 1.1804488968180593
+    },
+    {
+      "load": "decode 32",
+      "reference_weighted_us": 7619.264078326523,
+      "candidate_weighted_us": 5769.794096033492,
+      "speedup": 1.3205434980018558
+    },
+    {
+      "load": "verify 1",
+      "reference_weighted_us": 1645.1200181618333,
+      "candidate_weighted_us": 1360.6806077847066,
+      "speedup": 1.2090420108508904
+    },
+    {
+      "load": "verify 16",
+      "reference_weighted_us": 4652.896001003683,
+      "candidate_weighted_us": 4366.281293170935,
+      "speedup": 1.0656427491927802
+    },
+    {
+      "load": "verify 32",
+      "reference_weighted_us": 7838.400095701218,
+      "candidate_weighted_us": 7705.716218022981,
+      "speedup": 1.017218889707864
+    }
+  ],
+  "shapes": [
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 27.688961923052663,
+      "new_reference_us": 31.551999039947987,
+      "new_candidate_vs_own_reference_paired_ratio": 1.139515418730058,
+      "selected_candidate_us": 27.031302842677167,
+      "selected_reference_us": 31.184000428766012,
+      "historical_reference_normalized_latency_ratio": 1.0123825332878928,
+      "historical_reference_normalized_latency_change_percent": 1.238253328789285
+    },
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 11.552164387141513,
+      "new_reference_us": 21.08799945563078,
+      "new_candidate_vs_own_reference_paired_ratio": 1.8254587407969556,
+      "selected_candidate_us": 11.47711384229471,
+      "selected_reference_us": 20.576000679284334,
+      "historical_reference_normalized_latency_ratio": 0.9821012293950596,
+      "historical_reference_normalized_latency_change_percent": -1.7898770604940384
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 194.54528684143534,
+      "new_reference_us": 200.92799607664347,
+      "new_candidate_vs_own_reference_paired_ratio": 1.0328083467805127,
+      "selected_candidate_us": 194.27190912323948,
+      "selected_reference_us": 200.73599368333817,
+      "historical_reference_normalized_latency_ratio": 1.0004502684019914,
+      "historical_reference_normalized_latency_change_percent": 0.04502684019913605
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 14.294112957119632,
+      "new_reference_us": 26.863999664783478,
+      "new_candidate_vs_own_reference_paired_ratio": 1.8793750787734624,
+      "selected_candidate_us": 13.92113651627598,
+      "selected_reference_us": 26.400000788271427,
+      "historical_reference_normalized_latency_ratio": 1.0090571958845984,
+      "historical_reference_normalized_latency_change_percent": 0.9057195884598412
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 302.25176948734685,
+      "new_reference_us": 385.58400701731443,
+      "new_candidate_vs_own_reference_paired_ratio": 1.275704713561507,
+      "selected_candidate_us": 304.0318931739489,
+      "selected_reference_us": 383.58399365097284,
+      "historical_reference_normalized_latency_ratio": 0.9889883424633976,
+      "historical_reference_normalized_latency_change_percent": -1.1011657536602382
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "target": false,
+      "new_candidate_us": 20.299256179042224,
+      "new_reference_us": 31.519999261945486,
+      "new_candidate_vs_own_reference_paired_ratio": 1.552766218817811,
+      "selected_candidate_us": 20.10360388661608,
+      "selected_reference_us": 30.97599931061268,
+      "historical_reference_normalized_latency_ratio": 0.9923053509342084,
+      "historical_reference_normalized_latency_change_percent": -0.7694649065791648
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 30.242604029195526,
+      "new_reference_us": 36.30399936810136,
+      "new_candidate_vs_own_reference_paired_ratio": 1.2004257084824541,
+      "selected_candidate_us": 29.568835823566065,
+      "selected_reference_us": 35.55200155824423,
+      "historical_reference_normalized_latency_ratio": 1.0016005229055036,
+      "historical_reference_normalized_latency_change_percent": 0.16005229055036096
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 19.060846593860397,
+      "new_reference_us": 23.136000614613295,
+      "new_candidate_vs_own_reference_paired_ratio": 1.213797115499871,
+      "selected_candidate_us": 16.988207220445705,
+      "selected_reference_us": 23.007999639958143,
+      "historical_reference_normalized_latency_ratio": 1.1157970554526122,
+      "historical_reference_normalized_latency_change_percent": 11.57970554526122
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 198.17763731537963,
+      "new_reference_us": 205.56800300255418,
+      "new_candidate_vs_own_reference_paired_ratio": 1.0372916227445659,
+      "selected_candidate_us": 197.60213357126437,
+      "selected_reference_us": 204.9119994044304,
+      "historical_reference_normalized_latency_ratio": 0.9997119671826251,
+      "historical_reference_normalized_latency_change_percent": -0.028803281737488362
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 25.987806437496953,
+      "new_reference_us": 29.647998977452517,
+      "new_candidate_vs_own_reference_paired_ratio": 1.140842689003347,
+      "selected_candidate_us": 21.740249752189822,
+      "selected_reference_us": 28.687998186796904,
+      "historical_reference_normalized_latency_ratio": 1.1566712799107126,
+      "historical_reference_normalized_latency_change_percent": 15.667127991071261
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "target": false,
+      "new_candidate_us": 383.2024516365487,
+      "new_reference_us": 390.0800063274801,
+      "new_candidate_vs_own_reference_paired_ratio": 1.0179475748695221,
+      "selected_candidate_us": 380.3807463402613,
+      "selected_reference_us": 388.01600178703666,
+      "historical_reference_normalized_latency_ratio": 1.0020876227668964,
+      "historical_reference_normalized_latency_change_percent": 0.20876227668964464
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "target": true,
+      "new_candidate_us": 34.22776069213483,
+      "new_reference_us": 34.71999987959862,
+      "new_candidate_vs_own_reference_paired_ratio": 1.0143812851764182,
+      "selected_candidate_us": 27.46761932746471,
+      "selected_reference_us": 34.33600161224604,
+      "historical_reference_normalized_latency_ratio": 1.2323312813075413,
+      "historical_reference_normalized_latency_change_percent": 23.23312813075413
+    }
+  ],
+  "target_only_fixed_reference_modeled_score": 1.20402355591918,
+  "target_only_fixed_reference_modeled_gain_percent": -2.400187213766014,
+  "target_only_modeled_loads": [
+    {
+      "load": "decode 1",
+      "reference_weighted_us": 1445.4400381073356,
+      "candidate_weighted_us": 960.4480822283914,
+      "speedup": 1.5049642607996947
+    },
+    {
+      "load": "decode 16",
+      "reference_weighted_us": 4426.175935193896,
+      "candidate_weighted_us": 3748.7228257205265,
+      "speedup": 1.1807157106482418
+    },
+    {
+      "load": "decode 32",
+      "reference_weighted_us": 7562.239866703749,
+      "candidate_weighted_us": 5789.276069567522,
+      "speedup": 1.3062496546772338
+    },
+    {
+      "load": "verify 1",
+      "reference_weighted_us": 1627.2000083699822,
+      "candidate_weighted_us": 1345.0493865006945,
+      "speedup": 1.2097697115816215
+    },
+    {
+      "load": "verify 16",
+      "reference_weighted_us": 4598.239907063544,
+      "candidate_weighted_us": 4318.364972436651,
+      "speedup": 1.0648103938442637
+    },
+    {
+      "load": "verify 32",
+      "reference_weighted_us": 7787.712102755904,
+      "candidate_weighted_us": 7643.15544137717,
+      "speedup": 1.018913217516964
+    }
+  ],
+  "evaluator": {
+    "identical_code_image_files_dictionary": true,
+    "differences": [],
+    "selected": {
+      "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+      "files": {
+        "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+        "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+        "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+        "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+        "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+        "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+        "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+      },
+      "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+    },
+    "new": {
+      "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+      "files": {
+        "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+        "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+        "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+        "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+        "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+        "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+        "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+      },
+      "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+    }
+  },
+  "gpu_environment": {
+    "stable_fields_known": true,
+    "stable_identity_clock_limit_fields_equal": false,
+    "stable_field_differences": [
+      {
+        "field": "gpu_after.driver_version",
+        "selected": "580.159.03",
+        "new": "580.178.04"
+      },
+      {
+        "field": "gpu_before.driver_version",
+        "selected": "580.159.03",
+        "new": "580.178.04"
+      }
+    ],
+    "all_reported_machine_differences": [
+      {
+        "field": "gpu_after.driver_version",
+        "selected": "580.159.03",
+        "new": "580.178.04"
+      },
+      {
+        "field": "gpu_after.power.draw",
+        "selected": 126.97,
+        "new": 123.94
+      },
+      {
+        "field": "gpu_before.driver_version",
+        "selected": "580.159.03",
+        "new": "580.178.04"
+      },
+      {
+        "field": "gpu_before.power.draw",
+        "selected": 147.53,
+        "new": 132.84
+      },
+      {
+        "field": "node",
+        "selected": "n-i3rdb5ks34a6fp3m52rhc7cstu",
+        "new": "n-mcawtvyff5ndtc5n7rfc5engrq"
+      }
+    ],
+    "selected_machine": {
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 126.97,
+        "power.limit": 700,
+        "temperature.gpu": 37
+      },
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.159.03",
+        "name": "NVIDIA H200",
+        "power.draw": 147.53,
+        "power.limit": 700,
+        "temperature.gpu": 36
+      },
+      "node": "n-i3rdb5ks34a6fp3m52rhc7cstu"
+    },
+    "new_machine": {
+      "gpu_after": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.178.04",
+        "name": "NVIDIA H200",
+        "power.draw": 123.94,
+        "power.limit": 700,
+        "temperature.gpu": 37
+      },
+      "gpu_before": {
+        "clocks.max.sm": 1980,
+        "clocks.mem": 3201,
+        "clocks.sm": 1980,
+        "driver_version": "580.178.04",
+        "name": "NVIDIA H200",
+        "power.draw": 132.84,
+        "power.limit": 700,
+        "temperature.gpu": 36
+      },
+      "node": "n-mcawtvyff5ndtc5n7rfc5engrq"
+    },
+    "qualification": "Node, temperature and instantaneous draw are retained as context; static identity is not measured utilization."
+  },
+  "gates": {
+    "all16_prerequisites_and12_shapes_pass": true,
+    "source_request_receipt_verified": true,
+    "same_evaluator": true,
+    "compatible_reported_GPU": false,
+    "target_only_modeled_gain_at_least3_percent": false,
+    "no_target_normalized_regression_above3_percent": false,
+    "no_unchanged_absolute_normalized_drift_above3_percent": true
+  },
+  "worst_target_normalized_latency_change_percent": 23.23312813075413,
+  "unchanged_control_drift_flags": [],
+  "classification": "inconclusive_comparison",
+  "reason": "Evaluator or reported stable GPU environment differs/is unknown",
+  "artifact_sha256": {
+    "job": "9d6ad7180bc40478df2deed54f58a086d5db30544a614d6409651bfe3f9dcc0c",
+    "profile": "705de818f748610d80e8695792740e7ddb9e0943f67662e9e88a231c267c6584",
+    "request": "c727752b43d84b87b445ef55da5a7e7a5f1a4e6c9a35cb698ddddf67c4d48975",
+    "selected_job": "a66e15b71116d6758cd1aae75138f19c0a7db4cb2e89ba27394d6d09df2d61cb",
+    "selected_profile": "3a9f9f841665ef0c678001aa62396b44557a375ce20d5e830548d257ff6f1300",
+    "candidate_source": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+    "analyzer": "4a2b33cdcd0973b5dc3345984d10f8c4b33c6b296e89537ca7061532abff3683"
+  }
+}

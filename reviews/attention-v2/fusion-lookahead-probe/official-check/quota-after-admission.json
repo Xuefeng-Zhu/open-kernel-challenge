@@ -1,0 +1,18 @@
+{
+  "observed_utc": "2026-10-25T21:27:57.122131+00:00",
+  "problem": "muse_attention_decode",
+  "job_id": "5090b83f1d63407b",
+  "limits": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 18,
+      "left": 2
+    }
+  },
+  "scope": "Actual supportedCLI quota after single accepted composition check; not a new job"
+}

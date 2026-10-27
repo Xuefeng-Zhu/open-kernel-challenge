@@ -1,0 +1,140 @@
+{
+  "source_freeze": "6df535d096aec0e76379b6795bb97b5956d0474b",
+  "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+  "source_sha256": {
+    "baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate.py": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5"
+  },
+  "raw_result_sha256": "de0efb07a8e46e6e261d16db249668619e7d7083c17c599478db5f2aff861e90",
+  "launch_receipt_sha256": "b90f1feb9a31cca3c6e8ee21061f68eb9e23e676f74082e3c4e854eed986557a",
+  "reconciliation_sha256": "41c22824053de0cf808e97d5b0c183e3d3c3c0c9009429bdb354105d07e00772",
+  "compilation_complete": true,
+  "artifact_files_verified": 24,
+  "artifact_file_bytes": 1985082,
+  "raw_bundle_json_bytes": 2647471,
+  "compressed_bundle_bytes": 395655,
+  "resources": {
+    "baseline": {
+      "producer": {
+        "registers": 96,
+        "shared_memory_bytes": 20480,
+        "driver_spills_raw": 0
+      },
+      "merge": {
+        "registers": 27,
+        "shared_memory_bytes": 1024,
+        "driver_spills_raw": 0
+      }
+    },
+    "candidate": {
+      "producer": {
+        "registers": 96,
+        "shared_memory_bytes": 20480,
+        "driver_spills_raw": 0
+      },
+      "merge": {
+        "registers": 27,
+        "shared_memory_bytes": 1024,
+        "driver_spills_raw": 0
+      }
+    }
+  },
+  "same_geometry": true,
+  "merge_sass_byte_identical": true,
+  "merge_sass_sha256": "69985cf3d726014b1e4242c61d8c40738cace85a71b831c6383e53c304f56bb4",
+  "producer_static_inventory": {
+    "baseline": {
+      "two_stage_e4m3_shared_allocations": [
+        "    %k_114 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared1, #smem, mutable> loc(#loc209)",
+        "    %v_115 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared2, #smem, mutable> loc(#loc210)"
+      ],
+      "historical_loop_signature": "    %acc_193:11 = scf.for %acc_203 = %0 to %s_hi_81 step %c64_i64 iter_args(%arg21 = %cst_10, %arg22 = %cst_13, %arg23 = %cst_11, %acc_204 = %c1_i32, %acc_205 = %c-1_i32, %k_206 = %k_142, %k_207 = %k_188, %v_208 = %v_146, %v_209 = %v_192, %t_210 = %t_164, %t_211 = %t_163) -> (tensor<16xf32, #ttg.slice<{dim = 1, parent = #mma}>>, tensor<16xf32, #ttg.slice<{dim = 1, parent = #mma}>>, tensor<16x64xf32, #mma>, i32, i32, !ttg.async.token, !ttg.async.token, !ttg.async.token, !ttg.async.token, tensor<64xi64, #ttg.slice<{dim = 1, parent = #blocked1}>>, tensor<64xi64, #ttg.slice<{dim = 1, parent = #blocked}>>)  : i64 {",
+      "loop_carried_async_tokens": 4,
+      "ttgir_async_copy_operations": 6,
+      "ttgir_async_commit_operations": 6,
+      "ptx_wait_group_parameters": [
+        2,
+        0
+      ],
+      "ptx_bf16_mma_instructions": 10,
+      "ptx_shuffle_instructions": 38,
+      "ptx_barrier_instructions": 18,
+      "sass_predicated_P0_fmul_addresses": [],
+      "ptx_local_accesses": 0,
+      "sass_local_accesses": 0,
+      "highest_named_sass_register": 93,
+      "qualification": "Static generated-code inventory; no dynamic frequency, throughput, achieved occupancy or causal compiler attribution"
+    },
+    "candidate": {
+      "two_stage_e4m3_shared_allocations": [
+        "    %k_115 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared1, #smem, mutable> loc(#loc215)",
+        "    %v_116 = ttg.local_alloc : () -> !ttg.memdesc<2x64x64xf8E4M3FN, #shared2, #smem, mutable> loc(#loc216)"
+      ],
+      "historical_loop_signature": "    %acc_194:11 = scf.for %acc_204 = %0 to %s_hi_82 step %c64_i64 iter_args(%arg21 = %cst_10, %arg22 = %cst_13, %arg23 = %cst_11, %acc_205 = %c1_i32, %acc_206 = %c-1_i32, %k_207 = %k_143, %k_208 = %k_189, %v_209 = %v_147, %v_210 = %v_193, %t_211 = %t_165, %t_212 = %t_164) -> (tensor<16xf32, #ttg.slice<{dim = 1, parent = #mma}>>, tensor<16xf32, #ttg.slice<{dim = 1, parent = #mma}>>, tensor<16x64xf32, #mma>, i32, i32, !ttg.async.token, !ttg.async.token, !ttg.async.token, !ttg.async.token, tensor<64xi64, #ttg.slice<{dim = 1, parent = #blocked1}>>, tensor<64xi64, #ttg.slice<{dim = 1, parent = #blocked}>>)  : i64 {",
+      "loop_carried_async_tokens": 4,
+      "ttgir_async_copy_operations": 6,
+      "ttgir_async_commit_operations": 6,
+      "ptx_wait_group_parameters": [
+        2,
+        0
+      ],
+      "ptx_bf16_mma_instructions": 10,
+      "ptx_shuffle_instructions": 41,
+      "ptx_barrier_instructions": 18,
+      "sass_predicated_P0_fmul_addresses": [
+        "2770",
+        "2790",
+        "27a0",
+        "27b0",
+        "27d0",
+        "27e0",
+        "27f0",
+        "2810"
+      ],
+      "ptx_local_accesses": 0,
+      "sass_local_accesses": 0,
+      "highest_named_sass_register": 93,
+      "qualification": "Static generated-code inventory; no dynamic frequency, throughput, achieved occupancy or causal compiler attribution"
+    }
+  },
+  "resource_gate_passed": true,
+  "compile_mechanism_gate_passed": true,
+  "onward_admission": false,
+  "execution_requires_separate_review": true,
+  "candidate_rejected": false,
+  "rejection_reasons": [],
+  "predication_issue_cycle_savings_established": false,
+  "kernel_launches": 0,
+  "correctness_tested": false,
+  "frequency_tested": false,
+  "performance_tested": false,
+  "official_check": false,
+  "semantic_equivalence_established": false,
+  "selected_working_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "environment": {
+    "python": "3.12.3",
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "driver": "610.57.04"
+  },
+  "worker_wall_seconds": 30.659310397,
+  "stage_closed": true,
+  "app_stopped": true,
+  "app_tasks": 0,
+  "closure_observed_utc": "2026-10-25T22:28:32.831668+00:00",
+  "actual_paid_usd": "0E-8",
+  "qualifications": [
+    "The compile mechanism/resource gates pass, while numerical/frequency/performance stages remain untested and require separate review.",
+    "Registers/shared/spills and generated-code counts are static, not measured latency, achieved occupancy or causal allocator proof.",
+    "Both generated pipelines retain two-stage K/V buffers, four loop-carried async tokens, six copy/commit sites and wait parameters[2,0].",
+    "Unchanged merge SASS is byte-identical; other debug-bearing merge artifact bytes need not match.",
+    "Eight predicated FMULs suppress arithmetic/destination updates on the fast edge; issue/control-cycle savings are unproven and three additional shuffles add static overhead.",
+    "Shutdown/billed0 refer to the retained independent cutoff, not a fresh service query."
+  ]
+}

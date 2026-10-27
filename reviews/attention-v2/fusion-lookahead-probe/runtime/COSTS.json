@@ -1,0 +1,36 @@
+{
+  "accounting_cutoff_utc": "2026-10-25T21:16:21.481125+00:00",
+  "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+  "actual_paid_usd": "0E-8",
+  "reserved_free_credit_usd": "0.58",
+  "initial_metered_usd": "1.83000000",
+  "final_metered_usd": "1.88000000",
+  "rounded_workspace_delta_usd": "0.05000000",
+  "initial_detailed_usd": "1.82986225",
+  "final_detailed_usd": "1.88467891",
+  "detailed_workspace_delta_usd": "0.05481666",
+  "conservative_closed_allowance_usd": "0.2079440000000000000000000000",
+  "closed_allowance_formula": "ceil(client_wall_seconds+5) * live_resource_rate * 2 + 0.02",
+  "client_wall_seconds": 66.63035349990241,
+  "child_wrapper_wall_seconds": 56.005190639999995,
+  "worker_internal_wall_seconds": 54.296740626,
+  "initial_shutdown_observation_preserved": {
+    "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+    "description": "okc-attention-fusion-lookahead",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 14:14:54-07:00",
+    "stopped_at": null
+  },
+  "independent_terminal_observation": {
+    "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+    "description": "okc-attention-fusion-lookahead",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 14:14:54-07:00",
+    "stopped_at": "2026-10-25 14:15:59-07:00"
+  },
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks": true,
+  "qualification": "Delayed rounded workspace usage, not an exact per-app invoice. Immediate controller billing had not advanced. No later jobs attributed after independently closed cutoff; no retries or extra native job."
+}

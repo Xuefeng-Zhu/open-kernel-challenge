@@ -1,0 +1,53 @@
+{
+  "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+  "source_commit": "0922050cf384be1bc3ec1bd7db3046846e9dcd3e",
+  "reserve_usd": "0.32",
+  "configured_rate_usd_per_second": "0.001305166666666666666666666667",
+  "recorded_app_lifetime_seconds": 15,
+  "nominal_lifetime_times_rate_usd": "0.01957750000000000000000000000",
+  "remote_entry_elapsed_seconds": 7.241549001999999,
+  "worker_elapsed_seconds": 7.149575826,
+  "profile_command_seconds": 6.086595722,
+  "billing_before": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "credits": "-2.59000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.59319380"
+    }
+  },
+  "independent_billing_cutoff": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "credits": "-2.59000000",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.59319380"
+    }
+  },
+  "observed_account_ephemeral_delta_at_cutoff_usd": "0E-8",
+  "actual_billed_usd": "0E-8",
+  "qualification": "Snapshot may lag metering; zero observed delta is not a zero-cost claim. Lifetime-times-rate is a model, not a final per-app invoice.",
+  "cleanup_verified": true,
+  "all_apps_stopped_zero_tasks_at_cutoff": true,
+  "candidate_changed": false,
+  "ranked_submissions": 0,
+  "official_checks": 0
+}

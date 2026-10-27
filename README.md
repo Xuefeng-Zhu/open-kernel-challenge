@@ -1,3 +1,50 @@
+# Open Kernel Challenge experiments
+
+Current status lives in [CONTINUE.md](CONTINUE.md) and the two per-problem ledgers.
+The records below the historical heading describe earlier stages and do not set
+current permissions, budgets or selected candidates.
+
+| Track | Selected checked code | Official score | Current experiment |
+|---|---|---:|---|
+| Attention | [A2-11 parallel decode merge](reviews/attention-v2/mixed_fa3_decode_parallel_merge.py) | 1.18767876x | A2-13 FP8 passes1.21099x; provisional, CIoverlap, A2-11retained |
+| Projection | P039, on [projection-pipeline-preflight branch](https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight) | 1.17323900x | Selected P039 preserved; serving interfaces audited |
+
+Attention receipts,12shape rows and six weighted loads are in
+[its experiment README](reviews/attention-v2/README.md). Only official H200 checks
+establish native correctness/performance; CPU models remain explicitly separate.
+The [ownership/merge cycle report](reviews/attention-v2/OWNERSHIP_MERGE_CYCLE.md) records the completed counter repair, merge improvement and rejected query hoist.
+The [fusion series report](reviews/attention-v2/FUSION_SERIES_RESULTS.md) records
+A2-05 through A2-08: all four pass16prerequisites+12timedshapes, with source hashes,
+raw timings and CPU limitations. The historical A2-08 score CI is[1.13843065,1.17310367]. The
+A2-08 0.45% aggregate increment overlaps its parent CI; its12.54%target latency
+cut supports retention. Series point change versus its starting candidate is
++7.307%, not a claim that every small step has a resolved aggregate improvement.
+Projection P040's slightly higher point score was not promoted because it missed
+its predeclared target. A2-09 `3fb683ba982d448c` passed at 1.14665988x with initialization cost.
+A2-10 `08235841c4044048` passed but regressed; A2-11
+`cfa8a8670e394f80` passed all16+12 at1.18767876x and is retained.
+It improves2.761% over A2-08, with slightly overlapping confidence intervals. See the
+[best-version manifest](BEST_VALIDATED_MANIFEST.json) and
+[correctness/serving audit](CORRECTNESS_AND_SERVING_AUDIT.md).
+
+The [A2-13 FP8 result](reviews/attention-v2/A2-13-RESULT.md) records all16+12passes,
+12.67%full-decodeB32 normalized latencycut and a1.21099x pointscore. Its
++1.96%aggregate has overlapping intervals; the four-target10%goal was missed.
+This promising candidate uses more numerical tolerance; A2-11 remains selected.
+
+The [A13 H200 diagnostic](reviews/attention-v2/A13-RESULT.md) passed 42 replay/cache checks on the selected attention source. Actual concurrent-graph overlap was observed for full decode B32 only; broader concurrency remains unverified. The one approved Modal app is stopped.
+
+The current exact FP8 source/tests/results push is approved for this private repository.
+The renewed payload approval does not authorize unrelated future uploads. Original
+attention research history stays local; `attention-fa3-sanitized` preserves source
+bytes and maps source commits via analysis/PUSH_EXPORT_MAP.json. Credentials and
+local-notes are excluded. No formal/ranked entries, paid compute, new credentials
+or Modal launches. User count ceilings for free attention/projection checks have been removed;
+platform daily limits still apply. [Current authorization](CURRENT_AUTHORIZATION.md)
+supersedes historical count statements below.
+
+## Historical projection baseline and first cycle
+
 # Open Kernel Challenge — dense projections
 
 [Failed and rejected experiment index](FAILED_EXPERIMENTS.md) — concise lessons

@@ -1,0 +1,40 @@
+{
+  "state": "passed",
+  "experiment": "attention-gluon-vstage-native",
+  "execution_admitted": true,
+  "kernel_sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+  "config_sha256": "686bee98df915e75ea938ba3c0cb691718527497fa5e5401ead36e9ef8b59fc0",
+  "raw_compile_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+  "gate_verdicts": {
+    "mechanism": "PASS",
+    "resource": "PASS",
+    "lifetime": "PASS",
+    "matched_work": "PASS"
+  },
+  "qualified_claim": "Remaining conversion/shared-publication placement relative to QK drain; BOTH arms prefetch raw K AND V before drain. No V-gather serialization claim.",
+  "reviews": {
+    "source": {
+      "path": "KERNEL_REVIEW.md",
+      "sha256": "0bfd6ed079551ea7a4ff1fb169ef1a1436c3bf9c623591852d7acb47f717d8f6",
+      "verdict": "PASS"
+    },
+    "native": {
+      "path": "native/NATIVE_MECHANISM_REVIEW.md",
+      "sha256": "c7cb1ea44057ba303112c9fbe0698104a7303491be55717fa81fc43e94f65474",
+      "verdict": "PASS"
+    },
+    "independent_artifact": {
+      "path": "native/ARTIFACT_REVIEW.md",
+      "sha256": "830e9e8332636636567df1aa1fac58ca4b2faf488deb75b63ba9147c8d6c86d1",
+      "verdict": "PASS"
+    },
+    "semantic_runtime": {
+      "path": "runtime/REVIEW.md",
+      "sha256": "19a2a272e2b3640fe8d1847f25355612bec7cc0406cd62cee1555ce0a5b2e7be",
+      "verdict": "PASS"
+    }
+  },
+  "scope": "One bounded correctness-first native screen; prospective paired full-call prototype vs actual FA3; no promotion, score or official admission",
+  "compile_app_stopped_zero_tasks": true,
+  "compile_app_closure_utc": "2026-10-26T00:10:53.666428+00:00"
+}

@@ -50,3 +50,52 @@ its license is preserved as `licenses/Quack-Apache-2.0.txt`. Generated
 PTX, MLIR, cubins and host wrappers in `results/projection-p070/compile/`
 are diagnostic artifacts of that implementation, not a competition submission.
 Source: https://github.com/Dao-AILab/quack/tree/77a750c0d9548d4a6e23c0f64062d61b3ea420ff .
+
+
+Attention testing scope: reviews/attention-v2/official contains unmodified public
+muse_attention_decode files verified against the official API on2026-10-24.
+The user's transcribed attention v2 source and its recorded minimal compiler fix
+are preserved separately from the projection project. The Modal harness uses only
+these official files, our local source and the existing authorized SGLang image.
+No third-party competitor repository source is copied or executed in this cycle.
+
+Attention E5 (`reviews/attention-v2/mixed_fa3.py`) adapts only the full-verify path
+from the official attention baseline: SGLang's FusedQKNorm, cache-byte store,
+FA3 and output norm/gate API sequence. The candidate identifies the upstream
+commit and includes the applicable Apache-2.0 text. Its other paths retain our
+preserved E2 source. No competitor source is copied or executed; the high-level
+mixed-dispatch idea is independently implemented with the official contract.
+
+Attention A2-05 (`reviews/attention-v2/fa3_prologue_component.py`, embedded in
+`mixed_fa3_fused_prepare.py`) adapts RMSNorm/interleaved-RoPE equations and head
+indexing from SGLang's `fused_qk_norm.py` at the same pinned commit, Apache-2.0:
+https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/muse_spark_v12/fused_qk_norm.py.
+Local modifications add direct FP8 query output, scaled FP8 K/V stores, the
+direct FP8 conversion, and live cache-row-zero handling. The original
+vendor optional fused KV path reserves zero, which differs from this task.
+Applicable Apache-2.0 text remains in LICENSE and the standalone source. No
+competitor whole source/module is executed or imported.
+
+Attention A2-14 (`reviews/attention-v2/mixed_fa3_deferred_denom.py`) is an original
+narrow denominator-recurrence change to A2-13. Conceptual references were the
+FA3 softmax/pipeline source at commit
+`060c9188beec3a8b62b33a3bfa6d5d2d44975fab` (BSD-3-Clause), and FlashInfer decode
+source at `a88349f9f43df74d31d1d52ad5aa20c28824a790` (Apache-2.0).
+No code from either was copied or executed. The existing SGLang adaptation and
+its notices remain. Exact links and distinctions are in
+`reviews/attention-v2/strategy/STRATEGY_REPORT.md`.
+
+The strategy folder also preserves a small public historical receipt from
+MadanChaollaPark/open-kernel-experiments commit
+`40154c27d4b694c7d641c7959b00d7ff24a7c2e4`, with source/receipt URLs and hashes in
+`public_comparison.json`. It is third-party evidence, not this project's result.
+The public competitor source was inspected but not copied into or executed by
+the candidate. Its original additions are Apache-2.0 under its own notices;
+upstream rights remain separate. No competitor performance claim is adopted as
+our measured result.
+
+Attention A2-15 (`reviews/attention-v2/mixed_fa3_page_lookahead.py`) is an original
+page-address scheduling change to the preserved A2-13 source. It retains the
+existing SGLang notices. Triton's public load/range documentation informs the
+API semantics; no new upstream or competitor code was copied or executed.
+The local diagnosis and tests do not claim native compiler or GPU evidence.

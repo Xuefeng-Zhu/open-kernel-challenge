@@ -1,0 +1,47 @@
+{
+  "working_source": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+  "working_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "coverage": {
+    "observed_utc": "2026-10-25T21:52:08.731188+00:00",
+    "source_commit": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
+    "source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+    "passed": true,
+    "original_oracle_calls": 15,
+    "exact_return_A": 4,
+    "cross_arm_cache_byte_comparisons": 12,
+    "independent_setup_oracle_calls": 1,
+    "concurrent_original_oracle_calls": 2,
+    "post_concurrent_isolation_checks": 4,
+    "extra_candidate_replays": 2,
+    "DP_heads": [
+      128,
+      16
+    ],
+    "batch": 32,
+    "q_len": 1,
+    "split_counts": [
+      2,
+      3
+    ],
+    "merge_padding": [
+      2,
+      4
+    ],
+    "graph_pool_handles_observed": true,
+    "actual_hardware_overlap_measured": false,
+    "direct_scratch_pointers_observed": false,
+    "app_stopped": true,
+    "tasks": 0,
+    "performance_measurement": false,
+    "official_check": false,
+    "report": "reviews/attention-v2/dp-merge-validation/RESULTS.md",
+    "raw_result_sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47"
+  },
+  "restriction": "Best validated working choice, not a ranked entry or proven aggregate statistical superiority. Same-address live metadata ABA and two DP B32 multi-chunk cases (SPLITS2/3, BS2/4) passed. Independent disjoint-cache/output graph submissions and retained-state isolation passed with distinct observed graph pools; actual hardware overlap and internal scratch pointers unmeasured. General serving concurrency/coverage remains unestablished. A2-11 and fusion sources preserved unchanged as rollback/control.",
+  "rollback_source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+  "rollback_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "working_algorithm_changed": false,
+  "projection_record_changed": false,
+  "formal_entry": false
+}

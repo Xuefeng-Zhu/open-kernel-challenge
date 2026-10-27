@@ -1,0 +1,73 @@
+{
+  "observed_utc": "2026-10-25T21:52:08.731188+00:00",
+  "app": {
+    "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+    "description": "okc-attention-dp-merge-validation",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 14:50:59-07:00",
+    "stopped_at": "2026-10-25 14:51:32-07:00"
+  },
+  "all_apps": [
+    {
+      "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+      "description": "okc-attention-dp-merge-validation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:50:59-07:00",
+      "stopped_at": "2026-10-25 14:51:32-07:00"
+    },
+    {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "description": "okc-attention-fusion-lookahead",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:14:54-07:00",
+      "stopped_at": "2026-10-25 14:15:59-07:00"
+    },
+    {
+      "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+      "description": "okc-projection-p044-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:05:38-07:00",
+      "stopped_at": "2026-10-25 14:06:23-07:00"
+    },
+    {
+      "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+      "description": "okc-attention-sliding-unsplit",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:51:49-07:00",
+      "stopped_at": "2026-10-25 13:52:50-07:00"
+    },
+    {
+      "app_id": "ap-I6PNHOGgL6uRL1AjjG2yoV",
+      "description": "okc-attention-fused-preparation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:16:14-07:00",
+      "stopped_at": "2026-10-25 13:17:43-07:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "1.91000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-1.91000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "1.90556129"
+    }
+  },
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks": true,
+  "paid_limit_usd": "0"
+}

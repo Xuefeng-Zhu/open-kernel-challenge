@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-10-25T04:18:37.212801+00:00",
+  "candidate": "mixed_fa3_fused_verify.py",
+  "source_sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+  "parent": "mixed_fa3_fused_prepare.py",
+  "parent_source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+  "parent_source_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+  "parent_job": "50465a4c440f4b75",
+  "native_execution": false,
+  "tests": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_fused_verify_dispatch.py",
+      "exit_code": 0,
+      "output": "test_complete_dispatch_preserves_all_other_paths (__main__.FusedVerifyDispatch.test_complete_dispatch_preserves_all_other_paths) ... ok\ntest_complete_entrypoint_uses_generic_component_CPU_model (__main__.FusedVerifyDispatch.test_complete_entrypoint_uses_generic_component_CPU_model) ... ok\ntest_only_batch_restriction_changes (__main__.FusedVerifyDispatch.test_only_batch_restriction_changes) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.323s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/test_fused_prepare_batch_models.py",
+      "exit_code": 0,
+      "output": "test_batch16_batch32_and_dp_head_layout_small_contexts (__main__.FusedPrepareBatchModels.test_batch16_batch32_and_dp_head_layout_small_contexts) ... ok\ntest_cpu_same_address_batch3_A_B_A_with_changed_actual_lengths (__main__.FusedPrepareBatchModels.test_cpu_same_address_batch3_A_B_A_with_changed_actual_lengths) ... ok\ntest_prerequisite_like_batches_paging_scales_and_live_zero (__main__.FusedPrepareBatchModels.test_prerequisite_like_batches_paging_scales_and_live_zero) ... ok\n\n----------------------------------------------------------------------\nRan 3 tests in 0.345s\n\nOK\n"
+    }
+  ],
+  "change": "Only remove batch==1 from fused sliding L8 dispatch; all functions and remaining dispatch unchanged",
+  "limitations": [
+    "CPU launch stub not Triton/FA3",
+    "Official planned native cases page1 for all sliding L8; GPU page64 remains unavailable",
+    "No concurrency or explicit A-B-A CUDA graph stress"
+  ]
+}

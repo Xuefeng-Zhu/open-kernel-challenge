@@ -1,0 +1,28 @@
+{
+  "status": "PARKED_METHODS_REVIEW; local preparation only; no remote action pending/uncertain",
+  "base_commit": "350ae96bbde5287078f293b313326c31785aa235",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "CPU_tests": {
+    "source_geometry": 21,
+    "compile_harness": 6,
+    "all_passed": true,
+    "default_worker_preflight": "passed; kernel_launches0; native_compilation false"
+  },
+  "GPU_admitted": false,
+  "native_compiled": false,
+  "numerical_or_performance_result": null,
+  "new_GPU_cost_usd": 0,
+  "files": {
+    "EXPERIMENT_CARD.md": "7672a57a349b84f48f5e9c09ed8ecb480daad2514a792d9d0e1b0852c643f501",
+    "SOURCE_REVIEW.md": "ecf1b1090db2d4ffd9b4fb8d8d2fdc4245cffaea94438b3f08bacb9e39e630b9",
+    "STATUS.md": "c40960561c8e85c373e2eaffbf0448e831b3ef7fd088c211cab64f414bfea8ca",
+    "baseline.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "candidate.py": "f5161be2e91b05fceb01e28564f96eecff471244704d036fa4cc7950dbe0ef34",
+    "native/CARD.md": "6f7448fe95227246cf6d5968c3e61bd1396fff86a756402cbdc1246b597a1259",
+    "native/HARNESS_REVIEW.md": "557b5b3e1384a08ec8a684ca9b932e94be8096f03e97b82e590f8a4dcd258786",
+    "native/test_worker.py": "eecddfe583352f70364a247be0d54233b79f6defccd8ad05fa8f9247830c7319",
+    "native/worker.py": "e75d54a10342fe0d982a85d1db68a21422dc63714abf4320bd27ce14956797f8",
+    "test_geometry.py": "67afd5419565856ff29cd9bae3c110694901d07206d8b8ae8866e703e906978f",
+    "test_source.py": "a43d723e2d931aa7ffda37dfa74d23bf5f614371c7058750cdedb8471c9f000f"
+  }
+}

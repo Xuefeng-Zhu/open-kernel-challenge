@@ -1,0 +1,22 @@
+{
+  "checked_utc": "2026-10-24T22:50:56.212556+00:00",
+  "official_job": "7edded086c8a47f2",
+  "method": "Local official source SHA256 compared to immutable evaluator file hashes in actual official E2 receipt; no network or GPU work",
+  "files": {
+    "reference.py": {
+      "local_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "official_E2_receipt_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "matches": true
+    },
+    "checks.py": {
+      "local_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "official_E2_receipt_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "matches": true
+    },
+    "baseline.py": {
+      "local_sha256": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+      "official_E2_receipt_sha256": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+      "matches": true
+    }
+  }
+}

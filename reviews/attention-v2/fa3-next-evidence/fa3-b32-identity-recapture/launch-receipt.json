@@ -1,0 +1,202 @@
+{
+  "experiment": "attention-fa3-b32-identity-recapture",
+  "state": "function-terminal",
+  "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+  "created_utc": "2026-10-27T05:36:48.591732+00:00",
+  "source_commit": "8e6ad398d8f89859e570303e66bbcee4086a9d9c",
+  "payload_sha256": {
+    "worker.py": "a9d05c9a212f5e4c2ab1e2b5fa4189b6632384d34d2af0442ef39fcfb88e3a01",
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "counter_helper.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "cli_contract.py": "7391280b4577a2d1f242bdffdc42777a26a180b1cdcd6e021dc47c2866c1137a",
+    "trace_helpers.py": "d89e2f6dac4d8afd9105b713ce255407df8e9253c330a1e727d8193a220c5ec8",
+    "cpu_identity.py": "29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92",
+    "csv_helpers.py": "a00f901febe900e4ed9f48680b990acf813f0c0d76680b1c798a664f017759df",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "controller.py": "4b528de5ffc90572edf6aff29e89e8c55ffb54c92dfa59dd5ad688ce830dc053"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "verified_auth": {
+    "workspace": "xuefeng-zhu",
+    "expires_at_utc": "2026-10-27T15:21:50+00:00",
+    "status": "verified"
+  },
+  "billing_before": {
+    "metered_cost": "2.66000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.66000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.65961482",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+      "description": "okc-attention-fa3-b32-counter",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:59:11+00:00",
+      "stopped_at": "2026-10-27 05:00:31+00:00"
+    },
+    {
+      "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+      "description": "okc-attention-eager-counter-repair",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:37:28+00:00",
+      "stopped_at": "2026-10-27 04:37:43+00:00"
+    },
+    {
+      "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+      "description": "okc-attention-eager-counter-capability",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:11:09+00:00",
+      "stopped_at": "2026-10-27 04:11:19+00:00"
+    },
+    {
+      "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+      "description": "okc-attention-baseline-runtime-identity",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:55:33+00:00",
+      "stopped_at": "2026-10-27 03:56:28+00:00"
+    }
+  ],
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "cost_reserve_usd": "0.70",
+  "conservative_free_credit_floor_usd": "27.34",
+  "paid_limit_usd": "0",
+  "slot_receipt_sha256": "1da186c6ff8f1b868d9c0e3ecb8a1af2da3f99a55458ea937c74661ee9b8c89f",
+  "billing_guardrail_receipt_sha256": "00ecf149fcf9fbe8369b0588a40b32010ba4cca3d65ff7134076af075adb946c",
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 190,
+    "child_timeout": 205,
+    "function_timeout": 220,
+    "startup_timeout": 20,
+    "watchdog": 250,
+    "retries": 0,
+    "explicit_invocations": 1
+  },
+  "official_check": false,
+  "formal_entry": false,
+  "candidate_change": false,
+  "performance_variant": false,
+  "security_changes": false,
+  "accepted_utc": "2026-10-27T05:36:50.870444+00:00",
+  "result_retrieved": true,
+  "exit_code": 1,
+  "worker_status": "incomplete_or_failed",
+  "worker_passed": false,
+  "report_sha256": "a611d400b95999274c72dcd1b2b5a7b98b4c2eea92a8a629c370ad7663ece85f",
+  "remote_entry_elapsed_seconds": 72.400744838,
+  "trace_retrieved": true,
+  "error": null,
+  "artifact_error": null,
+  "worker_log_tail": "USDT:2026-10-27 05:37:41 4:4 SyncActivityProfilerHandler.cpp:39] profiler_start\nUSDT:2026-10-27 05:37:41 4:4 SyncActivityProfilerHandler.cpp:46] profiler_stop\n",
+  "durable_artifacts_retrieved": [
+    "profile-original.csv"
+  ],
+  "durable_artifact_errors": [
+    "baseline.ncu-rep: absent, empty or exceeds fixed limit",
+    "profile-imported.csv: absent, empty or exceeds fixed limit"
+  ],
+  "completion_verified": false,
+  "shutdown_observations": [
+    {
+      "observed_utc": "2026-10-27T05:38:13.164924+00:00",
+      "app": {
+        "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+        "description": "okc-attention-fa3-b32-identity-recapture",
+        "state": "stopped",
+        "tasks": "1",
+        "created_at": "2026-10-27 05:36:49+00:00",
+        "stopped_at": "2026-10-27 05:38:11+00:00"
+      }
+    },
+    {
+      "observed_utc": "2026-10-27T05:38:16.632236+00:00",
+      "app": {
+        "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+        "description": "okc-attention-fa3-b32-identity-recapture",
+        "state": "stopped",
+        "tasks": "1",
+        "created_at": "2026-10-27 05:36:49+00:00",
+        "stopped_at": "2026-10-27 05:38:11+00:00"
+      }
+    },
+    {
+      "observed_utc": "2026-10-27T05:38:20.374022+00:00",
+      "app": {
+        "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+        "description": "okc-attention-fa3-b32-identity-recapture",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-27 05:36:49+00:00",
+        "stopped_at": "2026-10-27 05:38:11+00:00"
+      }
+    }
+  ],
+  "shutdown_observation": {
+    "observed_utc": "2026-10-27T05:38:20.374242+00:00",
+    "app": {
+      "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+      "description": "okc-attention-fa3-b32-identity-recapture",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 05:36:49+00:00",
+      "stopped_at": "2026-10-27 05:38:11+00:00"
+    }
+  },
+  "shutdown_verified": true,
+  "all_apps_stopped_zero_tasks": true,
+  "billing_after": {
+    "metered_cost": "2.75000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.75000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.74836720",
+      "volumes": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0.09000000",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+    "requested_utc": "2026-10-27T05:38:08.557887+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-27T05:38:21.745183+00:00",
+  "client_wall_seconds": 93.15288966614753
+}

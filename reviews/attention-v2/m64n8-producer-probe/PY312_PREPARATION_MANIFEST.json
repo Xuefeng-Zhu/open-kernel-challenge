@@ -1,0 +1,16 @@
+{
+  "status": "reviewed matching-Python preparation before first actual compiler invocation",
+  "frozen_utc": "2026-10-27T00:01:09.808177+00:00",
+  "preparation_python": "3.12.13",
+  "container_python": "3.12.15",
+  "kernel_sha256": "eae6ca35c88a5a45612f13ee5fa7696e86dc67b0fcf4fdcb14aceed1b9f43480",
+  "candidate_sha256": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+  "helper_sha256": "f8cc6a6b72a0ba9076d2a4ece018a4ecce2140a9161ac8aa35b4eb9e4442f5fd",
+  "manifest_sha256": "f1bef1b5686f1ea5f0a8f5d55e6f6d5c42457bd0b15d7a28dbee10423953c7ce",
+  "protocol_review_sha256": "1449690e38346e097c7592dffc765410808f15b145df0d7a60f3c0a823b1d34b",
+  "CPU_tests_passed_under_3_12": 32,
+  "algorithm_or_options_or_gates_changed": false,
+  "prior_container_runs": 1,
+  "prior_actual_compiler_invocations": 0,
+  "actual_compiler_started_at_freeze": false
+}

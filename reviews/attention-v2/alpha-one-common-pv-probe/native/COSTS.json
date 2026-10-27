@@ -1,0 +1,37 @@
+{
+  "accounting_cutoff_utc": "2026-10-25T22:36:23.368320+00:00",
+  "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+  "actual_paid_usd": "0E-8",
+  "reserved_free_credit_usd": "0.40",
+  "initial_metered_usd": "1.99000000",
+  "final_metered_usd": "2.04000000",
+  "rounded_workspace_delta_usd": "0.05000000",
+  "initial_detailed_usd": "1.99337538",
+  "final_detailed_usd": "2.04358046",
+  "detailed_workspace_delta_usd": "0.05020508",
+  "conservative_closed_allowance_usd": "0.1583476666666666666666666667",
+  "closed_allowance_formula": "ceil(client_wall_seconds+5)*live_resource_rate*2+0.02",
+  "client_wall_seconds": 47.2394720420707,
+  "child_wrapper_wall_seconds": 32.565060435,
+  "worker_internal_wall_seconds": 30.659310397,
+  "stage_closed": true,
+  "all_apps_stopped_zero_tasks_at_resource_closure": true,
+  "later_accounting_has_no_new_apps": true,
+  "initial_shutdown_observation_preserved": {
+    "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+    "description": "okc-attention-alpha-one-common-pv-compile",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 15:27:24-07:00",
+    "stopped_at": null
+  },
+  "independent_terminal_observation": {
+    "app_id": "ap-dUTLyzmcwfCtweeterml8r",
+    "description": "okc-attention-alpha-one-common-pv-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 15:27:24-07:00",
+    "stopped_at": "2026-10-25 15:28:11-07:00"
+  },
+  "qualification": "Delayed workspace usage, not exact per-app invoice. Initial zero delta was not free execution. No later app attributed beyond the closed no-new-app cutoff; if later app observed, prior closure billing remains cutoff."
+}

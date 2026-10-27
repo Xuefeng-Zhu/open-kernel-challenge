@@ -1,0 +1,24 @@
+{
+  "observed_utc": "2026-10-25T16:51:43.458086+00:00",
+  "kind": "local analysis and CPU representation checks only",
+  "python": "3.12.13",
+  "machine": "arm64",
+  "tests": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/next-plan/analyze.py --self-test",
+      "passed": 6
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/next-plan/test_widening.py",
+      "passed": 3
+    }
+  ],
+  "warning": "Torch reports NumPy unavailable; no test depends on NumPy and no dependency was installed",
+  "candidate_modified": false,
+  "gpu_launched": false,
+  "official_check_started": false,
+  "source_sha256": {
+    "test_widening.py": "f0ea289d29b164410157d85adfd534935272ed72aa7ed3e7317314383267c3d5",
+    "analyze.py": "c78595719a209082c324288b0447862ff29f8174a79af27e05d09316ec0e96cf"
+  }
+}

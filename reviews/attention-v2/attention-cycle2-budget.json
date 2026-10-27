@@ -1,0 +1,1217 @@
+{
+  "problem": "muse_attention_decode",
+  "maximum_new_checks": null,
+  "reserved_final_checks": 1,
+  "mode": "check",
+  "max_spend_usd": 0,
+  "max_active_jobs": 1,
+  "rules_version": "2026-10-22.1",
+  "created_utc": "2026-10-25T02:11:08.267920+00:00",
+  "authorization": "Current A2-14 exact-payload exception: completed one free off-board check; reviewed private source/tests/results push authorized. No other new upload, Modal, paid compute, ranked entry or credential action.",
+  "previous_cycle": "attention-cycle-budget.json",
+  "previous_cycle_last_job": "4f626ab7437a42be",
+  "requests": [
+    {
+      "experiment": "A2-01",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "6e761bdd1d9747ad",
+      "candidate": "reviews/attention-v2/mixed_fa3_verify1.py",
+      "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+      "source_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged",
+      "final": false,
+      "created_utc": "2026-10-25T02:22:12.036859+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 2,
+          "left": 18
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_verify1.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:22:12.437286+00:00",
+      "last_checked_utc": "2026-10-25T02:30:57.310297+00:00",
+      "passed": true,
+      "speedup": 1.0002799616416969,
+      "speedup_ci": [
+        0.9852757622170714,
+        1.0152841610663221
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      }
+    },
+    {
+      "experiment": "A2-02",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "3e85261cb8ed4899",
+      "candidate": "reviews/attention-v2/mixed_fa3_all_verify.py",
+      "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
+      "source_sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+      "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive",
+      "final": false,
+      "created_utc": "2026-10-25T02:50:05.125149+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 3,
+          "left": 17
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_all_verify.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T02:50:05.688335+00:00",
+      "last_checked_utc": "2026-10-25T02:59:53.790696+00:00",
+      "passed": true,
+      "speedup": 1.0124269676911493,
+      "speedup_ci": [
+        0.997240563175782,
+        1.0276133722065164
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      }
+    },
+    {
+      "experiment": "A2-03",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "bdd11e743365439a",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode16.py",
+      "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+      "source_sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+      "hypothesis": "Only full decodeB16 L1 routes to unchanged official FA3 fulladapter, forwarding supplied scheduler_metadata; all11controls preserved; >=20%normalizedlatencycut",
+      "final": false,
+      "created_utc": "2026-10-25T03:10:31.557702+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 4,
+          "left": 16
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode16.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T03:10:31.834632+00:00",
+      "last_checked_utc": "2026-10-25T03:19:09.238685+00:00",
+      "passed": true,
+      "speedup": 1.0585245183573702,
+      "speedup_ci": [
+        1.0426466505820096,
+        1.0744023861327305
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      }
+    },
+    {
+      "experiment": "A2-04",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "66b44d7586184708",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_small.py",
+      "source_commit": "28991e79b6062602705bc25463139eec8c154903",
+      "source_sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+      "hypothesis": "Only full decodeB1 L1 joins unchanged official FA3 fulladapter and supplied scheduler_metadata; other11paths unchanged, >=20%normalizedlatencycut; totalmaybeinconclusive",
+      "final": false,
+      "created_utc": "2026-10-25T03:28:43.570817+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 5,
+          "left": 15
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_small.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T03:28:43.890482+00:00",
+      "last_checked_utc": "2026-10-25T03:56:29.661403+00:00",
+      "passed": true,
+      "speedup": 1.0770658900270202,
+      "speedup_ci": [
+        1.060909901676615,
+        1.0932218783774255
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      }
+    },
+    {
+      "experiment": "A2-05",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "50465a4c440f4b75",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_prepare.py",
+      "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+      "source_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+      "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged",
+      "final": false,
+      "created_utc": "2026-10-25T04:09:04+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 6,
+          "left": 14
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_prepare.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:09:04.300166+00:00",
+      "last_checked_utc": "2026-10-25T04:16:51.019776+00:00",
+      "passed": true,
+      "speedup": 1.1157987383237482,
+      "speedup_ci": [
+        1.0990617572488919,
+        1.1386331073714417
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 7,
+          "left": 13
+        }
+      }
+    },
+    {
+      "experiment": "A2-06",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "05b52e7834064b14",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_verify.py",
+      "source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
+      "source_sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+      "hypothesis": "Extend unchanged native-verified fused prologue to all sliding L8 batches; >=10% normalized latency cut in B16 and32, ten timed controls unchanged; gain may be inside aggregate CI",
+      "final": false,
+      "created_utc": "2026-10-25T04:19:21.710770+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 7,
+          "left": 13
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_verify.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:19:21.997795+00:00",
+      "last_checked_utc": "2026-10-25T04:26:43.175081+00:00",
+      "passed": true,
+      "speedup": 1.13811173000153,
+      "speedup_ci": [
+        1.121040054051507,
+        1.1598261225179742
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 8,
+          "left": 12
+        }
+      }
+    },
+    {
+      "experiment": "A2-07",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "ba9e02c1d6584cc4",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_full_verify1.py",
+      "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+      "source_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+      "hypothesis": "Only full B1L8 reuses identical fused preprocessing kernel with ROPE=False; preserve FA3/window/scales/schedule/gate and other11timedpaths; target>=10% normalizedlatencycut, longpage64correctness gate",
+      "final": false,
+      "created_utc": "2026-10-25T04:29:15.550227+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 8,
+          "left": 12
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_full_verify1.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:29:15.969234+00:00",
+      "last_checked_utc": "2026-10-25T04:37:33.235385+00:00",
+      "passed": true,
+      "speedup": 1.150533242033493,
+      "speedup_ci": [
+        1.1332752434029907,
+        1.1738497008309647
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      }
+    },
+    {
+      "experiment": "A2-08",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "cf979895a3f24685",
+      "candidate": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+      "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+      "source_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+      "hypothesis": "Only full B1L1 joins identical checked ROPE=False prologue/FA3 adapter, preserving supplied scheduler; >=10%normalized targetlatencycut; other11timedpathsunchanged",
+      "final": false,
+      "created_utc": "2026-10-25T04:39:30.823748+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 9,
+          "left": 11
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T04:39:31.278443+00:00",
+      "last_checked_utc": "2026-10-25T04:46:05.445466+00:00",
+      "passed": true,
+      "speedup": 1.1557671624359636,
+      "speedup_ci": [
+        1.138430654999424,
+        1.1731036698725028
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      }
+    },
+    {
+      "experiment": "A2-09",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "3fb683ba982d448c",
+      "candidate": "reviews/attention-v2/mixed_fa3_local_tickets.py",
+      "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
+      "source_sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+      "hypothesis": "Remove cross-invocation counter aliasing with per-call zeroed tickets; no math or dispatch changes. Correctness repair, not speed claim. Measure cost on four scored fallback paths; flag >5%normalized path regression. Official check does not prove multistream stress.",
+      "final": false,
+      "created_utc": "2026-10-25T05:12:12.157048+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 10,
+          "left": 10
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_local_tickets.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:12:12.573756+00:00",
+      "last_checked_utc": "2026-10-25T05:18:57.027388+00:00",
+      "passed": true,
+      "speedup": 1.1466598820556553,
+      "speedup_ci": [
+        1.1294599838248205,
+        1.1690678066480464
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 11,
+          "left": 9
+        }
+      }
+    },
+    {
+      "experiment": "A2-10",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "08235841c4044048",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_merge.py",
+      "source_commit": "a0e49b48ed456536a5e72db7d5ee5bb767aa1823",
+      "source_sha256": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+      "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure.",
+      "final": false,
+      "created_utc": "2026-10-25T05:21:31.183833+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 11,
+          "left": 9
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_merge.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:21:31.803363+00:00",
+      "last_checked_utc": "2026-10-25T05:28:04.884036+00:00",
+      "passed": true,
+      "speedup": 1.1405486256447261,
+      "speedup_ci": [
+        1.1234403962600552,
+        1.1576568550293969
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      }
+    },
+    {
+      "experiment": "A2-11",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "cfa8a8670e394f80",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+      "source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+      "source_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+      "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required.",
+      "final": false,
+      "created_utc": "2026-10-25T05:34:56.814047+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 12,
+          "left": 8
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:34:57.342717+00:00",
+      "last_checked_utc": "2026-10-25T05:41:30.112682+00:00",
+      "passed": true,
+      "speedup": 1.1876787560868445,
+      "speedup_ci": [
+        1.1698635747455417,
+        1.2109342502243532
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 13,
+          "left": 7
+        }
+      }
+    },
+    {
+      "experiment": "A2-12",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "b24bbd05419c499a",
+      "candidate": "reviews/attention-v2/mixed_fa3_decode_qhoist.py",
+      "source_commit": "e2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8",
+      "source_sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+      "hypothesis": "Only B1L1 sliding hoists repeated exact Q norm/computed-trig RoPE/factor/finalBF16 into timed per-call buffer; keeps all KV/partition/merge math and other11computations. Target>=15%normalized whole-call cut including extra launch; native correctness first.",
+      "final": false,
+      "created_utc": "2026-10-25T05:49:29.814272+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 13,
+          "left": 7
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_decode_qhoist.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T05:49:30.246168+00:00",
+      "last_checked_utc": "2026-10-25T05:55:30.762498+00:00",
+      "passed": true,
+      "speedup": 1.1734299856044392,
+      "speedup_ci": [
+        1.1558285358203726,
+        1.1910314353885056
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 14,
+          "left": 6
+        }
+      }
+    },
+    {
+      "experiment": "A2-13",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "c2fb7b23433f4888",
+      "candidate": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+      "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+      "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression.",
+      "final": false,
+      "created_utc": "2026-10-25T06:51:04.336687+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 14,
+          "left": 6
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+        "--no-wait",
+        "--json"
+      ],
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T06:51:04.639879+00:00",
+      "last_checked_utc": "2026-10-25T06:56:24.244508+00:00",
+      "passed": true,
+      "speedup": 1.210990803483977,
+      "speedup_ci": [
+        1.1928259414317173,
+        1.2291556655362366
+      ],
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 15,
+          "left": 5
+        }
+      }
+    },
+    {
+      "experiment": "A2-14",
+      "mode": "check",
+      "state": "terminal",
+      "status": "done",
+      "job_id": "6d6019056cbc4f81",
+      "candidate": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+      "source_commit": "2092957b1c8312b1fc90b43f64c3ed5eed8f4658",
+      "source_sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+      "parent_experiment": "A2-13",
+      "parent_job": "c2fb7b23433f4888",
+      "hypothesis": "Only full B32 L1 defers historical denominator reduction; target >=20% normalized latency cut, all 11 controls unchanged; extra register and FP32 work are unmeasured risks.",
+      "created_utc": "2026-10-25T07:44:36.285446+00:00",
+      "quota_before": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 15,
+          "left": 5
+        }
+      },
+      "command": [
+        "bin/okc",
+        "check",
+        "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+        "--no-wait",
+        "--json"
+      ],
+      "max_paid_usd": 0,
+      "approval_scope": "One exact candidate off-board check plus reviewed source/tests/sanitized results to existing private repository; no other new upload.",
+      "sent_utc": "2026-10-25T07:44:40.422851+00:00",
+      "cli_exit_code": 0,
+      "accepted_utc": "2026-10-25T07:44:40.744236+00:00",
+      "last_checked_utc": "2026-10-25T07:50:25.502633+00:00",
+      "passed": true,
+      "speedup": 1.1687086418098815,
+      "speedup_ci": [
+        1.1511780121827333,
+        1.1862392714370296
+      ],
+      "observed_terminal_utc": "2026-10-25T07:50:25.502633+00:00",
+      "quota_after": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 16,
+          "left": 4
+        }
+      },
+      "decision": "rejected_performance",
+      "target_normalized_latency_cut": -0.339263163,
+      "aggregate_relative_change": -0.03491534498234927,
+      "selected": false,
+      "result_report": "A2-14-RESULT.md"
+    }
+  ],
+  "remaining": null,
+  "plans": {
+    "A2-01": {
+      "candidate": "mixed_fa3_verify1.py",
+      "expected_sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+      "final": false,
+      "hypothesis": "Only full B1L8 uses unchanged official FA3 full adapter from E6; target >=20% normalized latency cut; all11controls unchanged",
+      "parent_receipt": "E6-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2
+    },
+    "A2-02": {
+      "candidate": "mixed_fa3_all_verify.py",
+      "expected_sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+      "final": false,
+      "parent_receipt": "A2-01-official-result.json",
+      "target_shapes": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only sliding B16/32 L8 switches to unchanged official sliding FA3 adapter; all10other shapes unchanged; >=15%normalized latency cut each, global gain may remain inconclusive"
+    },
+    "A2-03": {
+      "candidate": "mixed_fa3_decode16.py",
+      "expected_sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+      "final": false,
+      "parent_receipt": "A2-02-official-result.json",
+      "target_shapes": [
+        [
+          "decode 16",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2,
+      "hypothesis": "Only full decodeB16 L1 routes to unchanged official FA3 fulladapter, forwarding supplied scheduler_metadata; all11controls preserved; >=20%normalizedlatencycut"
+    },
+    "A2-04": {
+      "candidate": "mixed_fa3_decode_small.py",
+      "expected_sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+      "final": false,
+      "parent_receipt": "A2-03-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2,
+      "hypothesis": "Only full decodeB1 L1 joins unchanged official FA3 fulladapter and supplied scheduler_metadata; other11paths unchanged, >=20%normalizedlatencycut; totalmaybeinconclusive"
+    },
+    "A2-05": {
+      "candidate": "mixed_fa3_fused_prepare.py",
+      "expected_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+      "final": false,
+      "parent_receipt": "A2-04-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only B1L8sliding replaces separate norm/RoPE+FP8casts+KVwrite with one fusedTritonprologue; sameFA3/output; >=15%normalizedtargetlatencycut, controls unchanged"
+    },
+    "A2-06": {
+      "candidate": "mixed_fa3_fused_verify.py",
+      "expected_sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+      "final": false,
+      "parent_receipt": "A2-05-official-result.json",
+      "target_shapes": [
+        [
+          "verify 16",
+          "sliding"
+        ],
+        [
+          "verify 32",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Extend unchanged native-verified fused prologue to all sliding L8 batches; >=10% normalized latency cut in B16 and32, ten timed controls unchanged; gain may be inside aggregate CI"
+    },
+    "A2-07": {
+      "candidate": "mixed_fa3_fused_full_verify1.py",
+      "expected_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+      "final": false,
+      "parent_receipt": "A2-06-official-result.json",
+      "target_shapes": [
+        [
+          "verify 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only full B1L8 reuses identical fused preprocessing kernel with ROPE=False; preserve FA3/window/scales/schedule/gate and other11timedpaths; target>=10% normalizedlatencycut, longpage64correctness gate"
+    },
+    "A2-08": {
+      "candidate": "mixed_fa3_fused_full_small.py",
+      "expected_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+      "final": false,
+      "parent_receipt": "A2-07-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only full B1L1 joins identical checked ROPE=False prologue/FA3 adapter, preserving supplied scheduler; >=10%normalized targetlatencycut; other11timedpathsunchanged"
+    },
+    "A2-09": {
+      "candidate": "mixed_fa3_local_tickets.py",
+      "expected_sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+      "final": false,
+      "parent_receipt": "A2-08-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": -0.05,
+      "hypothesis": "Remove cross-invocation counter aliasing with per-call zeroed tickets; no math or dispatch changes. Correctness repair, not speed claim. Measure cost on four scored fallback paths; flag >5%normalized path regression. Official check does not prove multistream stress."
+    },
+    "A2-10": {
+      "candidate": "mixed_fa3_decode_merge.py",
+      "expected_sha256": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+      "final": false,
+      "parent_receipt": "A2-09-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.03,
+      "hypothesis": "Only L1 E2 fallback replaces per-call counter init/election with same-stream independent merge, preserving exact chunking/math and invocation-local partials. L8 counter and all FA3 paths unchanged. Target recover >=3%normalized latency on affected paths; retain/reject per-shape, not assumed lower register pressure."
+    },
+    "A2-11": {
+      "candidate": "mixed_fa3_decode_parallel_merge.py",
+      "expected_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+      "final": false,
+      "parent_receipt": "A2-10-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cuts": {
+        "decode 1|sliding": 0.15,
+        "decode 16|sliding": 0.1,
+        "decode 32|sliding": 0.03,
+        "decode 32|full": -0.01
+      },
+      "hypothesis": "Only L1 final merge changes from serial split recurrence to per-query-head FP32 parallel logsumexp; exact partials/partition/FA3/L8 retained. Target sliding B1/B16/B32 cuts>=15/10/3%, fullD32 no>1%regression. Reordered FP32 summation explicit; native correctness required."
+    },
+    "A2-12": {
+      "candidate": "mixed_fa3_decode_qhoist.py",
+      "expected_sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+      "final": false,
+      "parent_receipt": "A2-11-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ]
+      ],
+      "target_latency_cut": 0.15,
+      "hypothesis": "Only B1L1 sliding hoists repeated exact Q norm/computed-trig RoPE/factor/finalBF16 into timed per-call buffer; keeps all KV/partition/merge math and other11computations. Target>=15%normalized whole-call cut including extra launch; native correctness first."
+    },
+    "A2-13": {
+      "candidate": "mixed_fa3_fp8_qk.py",
+      "expected_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+      "final": false,
+      "parent_receipt": "A2-11-official-result.json",
+      "target_shapes": [
+        [
+          "decode 1",
+          "sliding"
+        ],
+        [
+          "decode 16",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "sliding"
+        ],
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.1,
+      "hypothesis": "Only fallback QK operands become E4M3 with unscaled BF16-rounded Q, factor once in logit scale, FP32 precise accumulation request; BF16PV/partition/merge/cache/FA3 unchanged. Native correctness before >=10% target geometric normalized latency cut and no>5%path regression.",
+      "target_goal_mode": "geometric_mean_latency_cut"
+    },
+    "A2-14": {
+      "candidate": "mixed_fa3_deferred_denom.py",
+      "parent_receipt": "A2-13-official-result.json",
+      "target_shapes": [
+        [
+          "decode 32",
+          "full"
+        ]
+      ],
+      "target_latency_cut": 0.2,
+      "target_goal_mode": "each_target",
+      "decision_predeclared": "20% normalized target latency cut; all correctness; investigate >5% controls; do not promote on noisy aggregate alone",
+      "source_sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d"
+    }
+  },
+  "all_requests_terminal": true,
+  "current_phase": "A2-14 complete and privately delivered: 16+12 pass, 1.16870864x; rejected target +33.9263% latency; A2-11 remains selected. Exact upload/push grant consumed.",
+  "projection_checks_remaining": null,
+  "counting_note": "Historical user count ceiling removed. Platform quota remains independent. Current A2-14 exact-payload grant allowed one check and its private push; no unrelated future upload follows.",
+  "selection": {
+    "source": "mixed_fa3_decode_parallel_merge.py",
+    "source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "official_job": "cfa8a8670e394f80",
+    "score": 1.1876787560868445,
+    "ci": [
+      1.1698635747455417,
+      1.2109342502243532
+    ],
+    "reason": "All16+12native pass; all predeclaredtargets met; parallelmergecost reduced, no global completioncounter; +2.761%vsA2-08aggregatewithCIoverlap; bespokeconcurrencyunverified"
+  },
+  "last_platform_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 16,
+      "left": 4
+    }
+  },
+  "quota_observed_utc": "2026-10-25T07:50:53.346544+00:00",
+  "selection_before_A2_02": {
+    "source": "mixed_fa3_verify1.py",
+    "source_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+    "sha256": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357",
+    "official_job": "6e761bdd1d9747ad",
+    "score": 1.0002799616416969,
+    "ci": [
+      0.9852757622170714,
+      1.0152841610663221
+    ],
+    "reason": "Target53.60% normalized latency cut; aggregate6.46% over E6/nonoverlapping CIs; all11controls within5%"
+  },
+  "selection_before_A2_03": {
+    "source": "mixed_fa3_all_verify.py",
+    "source_commit": "790d4256fe311086eb9f899ae88b0915ce0eb5ab",
+    "sha256": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+    "official_job": "3e85261cb8ed4899",
+    "score": 1.012426967691149,
+    "ci": [
+      0.997240563175782,
+      1.0276133722065164
+    ],
+    "reason": "Two target latency cuts21.23/23.42% supported; ten controls no>5%regression; aggregate1.21%vsparent overlapsCI, provisional total improvement",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "selection_before_A2_04": {
+    "source": "mixed_fa3_decode16.py",
+    "source_commit": "c94ec7109d7b5525d2c849d297a3c6c28a886d55",
+    "sha256": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+    "official_job": "bdd11e743365439a",
+    "score": 1.0585245183573702,
+    "ci": [
+      1.0426466505820096,
+      1.0744023861327305
+    ],
+    "reason": "Native full decode16 normalizedlatencycut22.09%; aggregate4.55%vsparent withnonoverlapCI, CIalsoaboveSGLang1.0",
+    "aggregate_vs_parent_inconclusive": false
+  },
+  "handoff_model_request": "Same task resumed by parent; configured model not visible to tools. Critically audited A2-05 before possible admission.",
+  "selection_before_A2_05": {
+    "source": "mixed_fa3_decode_small.py",
+    "source_commit": "28991e79b6062602705bc25463139eec8c154903",
+    "sha256": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+    "official_job": "66b44d7586184708",
+    "score": 1.07706589002702,
+    "ci": [
+      1.060909901676615,
+      1.0932218783774255
+    ],
+    "reason": "Target22.34%latencycut supported, other11controls no>5%regression; total1.75%vsparent hasoverlappingCI, stillaboveSG",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "selection_before_A2_06": {
+    "source": "mixed_fa3_fused_prepare.py",
+    "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+    "sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+    "official_job": "50465a4c440f4b75",
+    "score": 1.1157987383237482,
+    "ci": [
+      1.0990617572488919,
+      1.1386331073714417
+    ],
+    "reason": "Target28.18% normalized latency cut; aggregate3.596% vsparent with nonoverlap intervals, no>5%control regression",
+    "aggregate_vs_parent_inconclusive": false
+  },
+  "selection_before_A2_07": {
+    "source": "mixed_fa3_fused_verify.py",
+    "source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
+    "sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+    "official_job": "05b52e7834064b14",
+    "score": 1.1381117300015302,
+    "ci": [
+      1.121040054051507,
+      1.1598261225179742
+    ],
+    "reason": "Target normalized cuts23.46/19.49% exceed10%goal, no>5%controls; aggregate2.0%CIoverlap, retain qualified target gains",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "selection_before_A2_08": {
+    "source": "mixed_fa3_fused_full_verify1.py",
+    "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+    "sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+    "official_job": "ba9e02c1d6584cc4",
+    "score": 1.150533242033493,
+    "ci": [
+      1.1332752434029907,
+      1.1738497008309647
+    ],
+    "reason": "Target15.77%normalized cut exceeds10%goal; no>5%controls; million-context page64 passes; total1.09%gain has overlappingCI",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "historical_user_check_ceiling": 10,
+  "historical_remaining_at_ceiling_removal": 2,
+  "user_check_ceiling_removed": true,
+  "authorization_update": {
+    "recorded_utc": "2026-10-25T05:10:40.221269+00:00",
+    "user_message": "Sentinel_26cefe33699481919e869a7bce3c3476",
+    "scope": "Free off-board checks for attention and projection no longer have a user count cap; daily platform limits, no paid/Modal/new credentials/ranked entry restrictions remain."
+  },
+  "robustness_baseline": {
+    "source": "mixed_fa3_local_tickets.py",
+    "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
+    "sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "job": "3fb683ba982d448c",
+    "score": 1.1466598820556553,
+    "coverage": "Official sequential graph checks pass; bespoke concurrent graphs unverified"
+  },
+  "selection_before_A2_11": {
+    "source": "mixed_fa3_fused_full_small.py",
+    "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "official_job": "cf979895a3f24685",
+    "score": 1.1557671624359633,
+    "ci": [
+      1.138430654999424,
+      1.1731036698725028
+    ],
+    "reason": "Target12.54%normalized cut exceeds10%goal, no>5%controls; total0.455%gain overlapsCI; complete combined source passes16+12",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "selected_complete_candidate": {
+    "experiment": "A2-11",
+    "candidate": "mixed_fa3_decode_parallel_merge.py",
+    "job_id": "cfa8a8670e394f80",
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "score": 1.1876787560868445
+  },
+  "current_payload_approval": {
+    "experiment": "A2-14",
+    "candidate": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+    "check_consumed": true,
+    "max_new_requests": 1,
+    "private_push_approved": true,
+    "scope": "One exact candidate off-board check plus reviewed source/tests/sanitized results to existing private repository; no other new upload.",
+    "completed_check_id": "6d6019056cbc4f81",
+    "check_status": "terminal",
+    "private_push_status": "completed and verified",
+    "private_push_confirmation": {
+      "verified_utc": "2026-10-25T07:55:09.718391+00:00",
+      "branch": "attention-fa3-sanitized",
+      "remote_sha": "16a8c48296884950e308d8217918444ccefedb99",
+      "visibility": "PRIVATE",
+      "force": false,
+      "meaning": "First verified delivery of the complete A2-14 payload; a later confirmation-only commit may advance the branch. Final current SHA is reported in the task and local push receipt."
+    }
+  },
+  "provisional_fp8_candidate": {
+    "experiment": "A2-13",
+    "source": "mixed_fa3_fp8_qk.py",
+    "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+    "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "job_id": "c2fb7b23433f4888",
+    "score": 1.210990803483977,
+    "ci": [
+      1.1928259414317173,
+      1.2291556655362366
+    ],
+    "selected": false,
+    "reason": "Retain passing FP8 candidate as promising; fullD32 normalized cut12.671%, all4targets faster, but targetgeomean6.096%misses10%, aggregate+1.963%CIoverlap. Preserve A2-11 selection; no extra check authorized by this exact payload approval."
+  }
+}

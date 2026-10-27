@@ -1,0 +1,34 @@
+{
+  "prepared_utc": "2026-10-25T15:50:58.978423+00:00",
+  "program": "reviews/attention-v2/a215/native_diagnostic.py",
+  "program_sha256": "443241f373998e8fae85b2941c014b599e95be6abf344aef028c7316d17f741b",
+  "payload_file_count": 3,
+  "compiler_specialization": {
+    "B": 32,
+    "L": 1,
+    "HQ": 16,
+    "HKV": 2,
+    "D": 64,
+    "stride_tok": 2304,
+    "stride_pt": 86001,
+    "splits": 11,
+    "chunk": 8192,
+    "merge_BS": 16
+  },
+  "candidate_kernels_will_launch": false,
+  "local_validation": {
+    "source_address_tests_passed": 7,
+    "compile_protocol_guards_passed": 6,
+    "syntax_passed": true
+  },
+  "runtime_validation": "not yet run",
+  "previous_cumulative_usd": "1.787819802",
+  "remaining_usd": "0.212180198",
+  "reserve_usd": "0.196609280",
+  "hypothesis": "Only full B32/L1 carries next-page IDs across the historical loop; native scheduling must be inspected before speed claims",
+  "falsification": "No advance of next-page load or early dependency stalls means intended overlap not established; PTX alone does not prove final schedule",
+  "independent_reviews": [
+    "Exact compile contract: passed; reporting hardenings applied",
+    "Payload/transport/cost: passed; active reservation and expiry guards added; same-app shutdown/cost reconciliation required"
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "prepared_utc": "2026-10-25T16:16:23.983133+00:00",
+  "environment": {
+    "system": "Darwin",
+    "machine": "arm64",
+    "python": "3.12.13"
+  },
+  "source_hashes": {
+    "paired_worker.py": "8f7cfd52daf2af5f7b4ea23cb07b88b88668dc4e910ef63c47e07f4d5b7287fc",
+    "test_paired_worker.py": "0162e2c45e669713f9943d60383e70484294a8c51c06500a77d49ec3ea32d9d9",
+    "paired_modal.py": "8780cd9cfbb8eb7a7a655e8e831c0d1c56abfe7a17e3f4df7c7829e919b8ce0e",
+    "PAIRED_PLAN.md": "eb8f7785fcf03e871f12d6c6c04213d86943d7e4405f0df215392fb6184418d2"
+  },
+  "local_tests": {
+    "paired_worker_protocol": 6,
+    "controller_budget_payload_guards": 4,
+    "syntax": 3
+  },
+  "independent_reviews": {
+    "worker_contract": "no blocking fixture/oracle/ABA flaw; bounded timeout may leave partial evidence",
+    "controller": "no launch safety blocker; verify stopped/tasks0 and reconcile reservation before reuse"
+  },
+  "gpu_executed": false,
+  "conservative_reserve_usd": "0.146368320",
+  "remaining_stage_usd": "0.150503782"
+}

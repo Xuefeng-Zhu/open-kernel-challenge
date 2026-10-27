@@ -1,0 +1,123 @@
+{
+  "result_sha256": "576d8e09e41b344d6c262c5bbdeb830e5800c6e3a1e19ed6f1aa8cb266e06868",
+  "worker_sha256": "b4b47a4729fb06b85995c115cb91492bc6d552f5a809653359e38a67cd35f08f",
+  "source_sha256": {
+    "baseline.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "candidate.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0"
+  },
+  "status": "complete",
+  "passed": true,
+  "native_preparation_comparisons": 12,
+  "cases": 6,
+  "concurrent_submissions": 3,
+  "worker_wall_seconds": 70.488964435,
+  "environment": {
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "torch": "2.14.1+cu130",
+    "cuda": "13.0",
+    "triton": "3.8.0",
+    "python": "3.12.3"
+  },
+  "error_type": null,
+  "error": null,
+  "timings": [
+    {
+      "case": "full_B16_L1_scored",
+      "raw_median_us": {
+        "baseline": 264.22399282455444,
+        "candidate": 255.8240070939064
+      },
+      "raw_median_difference_us": 8.39998573064804,
+      "reverse_order_pair_ratios": [
+        1.028364552635034,
+        1.0437351556937575,
+        1.0344775018379657,
+        1.0376746409178454,
+        1.0416610004248612,
+        1.0409759830594387
+      ],
+      "median_pair_ratio": 1.039325311988642,
+      "latency_reduction_from_median_ratio_percent": 3.783734653146964,
+      "positive_pairs": 6,
+      "per_input_version_raw_median_us": {
+        "0": {
+          "baseline": 322.60799407958984,
+          "candidate": 312.048003077507
+        },
+        "1": {
+          "baseline": 207.64800161123276,
+          "candidate": 199.023999273777
+        }
+      },
+      "qualification": "One session, six paired ratios, two inputs; no independent-session interval or official score"
+    },
+    {
+      "case": "full_B16_L8_scored",
+      "raw_median_us": {
+        "baseline": 211.19999885559082,
+        "candidate": 202.70399749279022
+      },
+      "raw_median_difference_us": 8.496001362800598,
+      "reverse_order_pair_ratios": [
+        1.0436610392729908,
+        1.0390309676939244,
+        1.042735073621181,
+        1.0432876273615037,
+        1.042895750659095,
+        1.0363109388808434
+      ],
+      "median_pair_ratio": 1.042815412140138,
+      "latency_reduction_from_median_ratio_percent": 4.105751760253462,
+      "positive_pairs": 6,
+      "per_input_version_raw_median_us": {
+        "0": {
+          "baseline": 211.2800031900406,
+          "candidate": 202.39999890327454
+        },
+        "1": {
+          "baseline": 211.18400245904922,
+          "candidate": 202.70399749279022
+        }
+      },
+      "qualification": "One session, six paired ratios, two inputs; no independent-session interval or official score"
+    },
+    {
+      "case": "full_B32_L8_scored",
+      "raw_median_us": {
+        "baseline": 397.15199172496796,
+        "candidate": 388.44799995422363
+      },
+      "raw_median_difference_us": 8.703991770744324,
+      "reverse_order_pair_ratios": [
+        1.0195874122160535,
+        1.024068954943079,
+        1.0242637941332497,
+        1.0231561815480459,
+        1.027275801757651,
+        1.025135541454898
+      ],
+      "median_pair_ratio": 1.0241663745381644,
+      "latency_reduction_from_median_ratio_percent": 2.3596141348676825,
+      "positive_pairs": 6,
+      "per_input_version_raw_median_us": {
+        "0": {
+          "baseline": 396.12801373004913,
+          "candidate": 388.0000114440918
+        },
+        "1": {
+          "baseline": 398.01599085330963,
+          "candidate": 388.92799615859985
+        }
+      },
+      "qualification": "One session, six paired ratios, two inputs; no independent-session interval or official score"
+    }
+  ],
+  "failed_gates": [],
+  "official_oracle_calls": 42,
+  "checked_timing_replays": 96,
+  "admission": "All native gates complete; assess complete-call benefit before any official check"
+}

@@ -1,0 +1,450 @@
+{
+  "kind": "CPU host-helper execution and analytical/model tests only",
+  "triton_executed": false,
+  "gpu_executed": false,
+  "source_sha256": "3a86e83511725c581f288c4b5b07a8484a50e88cd396466d00a97f330cd2d353",
+  "environment": {
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "cuda_available": false
+  },
+  "cases": [
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 10,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 1,
+        "page": 64
+      },
+      "passed": true,
+      "message": "relative L2 error 7.030e-04 (worst row 7.030e-04) [bound 0.137: 2.5 x the reference's 0.049 with FP8 E4M3 queries + 0.015]",
+      "splits": 16
+    },
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 10,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "page": 64
+      },
+      "passed": true,
+      "message": "relative L2 error 8.448e-04 (worst row 1.008e-03) [bound 0.145: 2.5 x the reference's 0.052 with FP8 E4M3 queries + 0.015]",
+      "splits": 16
+    },
+    {
+      "case": {
+        "batch": 2,
+        "ctx": 2050,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "page": 1,
+        "spread": "mixed",
+        "dist": "edges"
+      },
+      "passed": true,
+      "message": "relative L2 error 8.524e-04 (worst row 1.400e-03) [bound 0.150: 2.5 x the reference's 0.076 with FP8 E4M3 queries + 0.015]",
+      "splits": 16
+    },
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 2048,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "page": 1,
+        "dist": "edges",
+        "kv_scale": 0.015625
+      },
+      "passed": true,
+      "message": "relative L2 error 1.023e-03 (worst row 1.444e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+      "splits": 16
+    },
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 4097,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 1,
+        "page": 1,
+        "dist": "coherent"
+      },
+      "passed": true,
+      "message": "relative L2 error 8.447e-04 (worst row 8.447e-04) [bound 0.150: 2.5 x the reference's 0.055 with FP8 E4M3 queries + 0.015]",
+      "splits": 32
+    },
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 8193,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 8,
+        "page": 1,
+        "dist": "coherent"
+      },
+      "passed": true,
+      "message": "relative L2 error 5.069e-04 (worst row 6.671e-04) [bound 0.128: 2.5 x the reference's 0.045 with FP8 E4M3 queries + 0.015]",
+      "splits": 64
+    },
+    {
+      "case": {
+        "batch": 2,
+        "ctx": 129,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 1,
+        "page": 64,
+        "spread": "mixed",
+        "kv_scale": 0.015625
+      },
+      "passed": true,
+      "message": "relative L2 error 1.252e-03 (worst row 1.394e-03) [bound 0.150: 2.5 x the reference's 0.109 with FP8 E4M3 queries + 0.015]",
+      "splits": 4
+    },
+    {
+      "case": {
+        "batch": 1,
+        "ctx": 65,
+        "heads": "dp",
+        "layer": "full",
+        "q_len": 8,
+        "page": 64,
+        "dist": "soft"
+      },
+      "passed": true,
+      "message": "relative L2 error 1.308e-03 (worst row 1.464e-03) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+      "splits": 1
+    }
+  ],
+  "host_ticket_alias": {
+    "same_object": true,
+    "capacity": 4096,
+    "device": "cpu",
+    "gpu_execution": false
+  },
+  "concurrent_model_counterexamples": {
+    "2": [
+      {
+        "call": "A",
+        "split": 0,
+        "previous_ticket": 0,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 1,
+        "previous_ticket": 1,
+        "elected": true,
+        "missing_splits": [
+          0
+        ]
+      },
+      {
+        "call": "B",
+        "split": 0,
+        "previous_ticket": 0,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 1,
+        "previous_ticket": 1,
+        "elected": true,
+        "missing_splits": []
+      }
+    ],
+    "16": [
+      {
+        "call": "A",
+        "split": 0,
+        "previous_ticket": 0,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 1,
+        "previous_ticket": 1,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 2,
+        "previous_ticket": 2,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 3,
+        "previous_ticket": 3,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 4,
+        "previous_ticket": 4,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 5,
+        "previous_ticket": 5,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 6,
+        "previous_ticket": 6,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 7,
+        "previous_ticket": 7,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 8,
+        "previous_ticket": 8,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 9,
+        "previous_ticket": 9,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 10,
+        "previous_ticket": 10,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 11,
+        "previous_ticket": 11,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 12,
+        "previous_ticket": 12,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 13,
+        "previous_ticket": 13,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 14,
+        "previous_ticket": 14,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 15,
+        "previous_ticket": 15,
+        "elected": true,
+        "missing_splits": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14
+        ]
+      },
+      {
+        "call": "B",
+        "split": 0,
+        "previous_ticket": 0,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 1,
+        "previous_ticket": 1,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 2,
+        "previous_ticket": 2,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 3,
+        "previous_ticket": 3,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 4,
+        "previous_ticket": 4,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 5,
+        "previous_ticket": 5,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 6,
+        "previous_ticket": 6,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 7,
+        "previous_ticket": 7,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 8,
+        "previous_ticket": 8,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 9,
+        "previous_ticket": 9,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 10,
+        "previous_ticket": 10,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 11,
+        "previous_ticket": 11,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 12,
+        "previous_ticket": 12,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 13,
+        "previous_ticket": 13,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "B",
+        "split": 14,
+        "previous_ticket": 14,
+        "elected": false,
+        "missing_splits": []
+      },
+      {
+        "call": "A",
+        "split": 15,
+        "previous_ticket": 15,
+        "elected": true,
+        "missing_splits": []
+      }
+    ]
+  },
+  "concurrent_split_counts_tested": [
+    2,
+    3,
+    5,
+    9,
+    16,
+    24,
+    33,
+    66,
+    132
+  ],
+  "mask_cases": 140,
+  "mask_note": "Analytical set coverage, not Triton address/mask execution; seq0 is extra analytical coverage",
+  "rope_cpu_differences": [
+    {
+      "positions": [
+        80000,
+        86007
+      ],
+      "scope": "published scored sliding-position range",
+      "relative_l2": 0.0008639132720418274
+    },
+    {
+      "positions": [
+        1048576,
+        1048583
+      ],
+      "scope": "extra robustness; published million-context case is full/no-RoPE",
+      "relative_l2": 0.012443450279533863
+    }
+  ],
+  "rope_note": "CPU Torch exp2/log2/trig only; not Triton sin/cos or GPU error bound",
+  "outside_contract_limits": [
+    "window2/L8 omits new-key lower bound",
+    "L17 exceeds BLOCK_L16; new token16 not written"
+  ],
+  "tests_run": 12,
+  "passed": true,
+  "errors": 0,
+  "failures": 0,
+  "historical_test_note": "Original normalization-only assertion expects no compiler fix; it failed as recorded in cpu-constexpr-results.json. Replaced for this gate by exact five-normalizations-plus-one-constexpr test, original test/source untouched.",
+  "log": "test_actual_host_helper_shares_ticket_storage (current_preflight.Preflight.test_actual_host_helper_shares_ticket_storage) ... ok\ntest_concurrent_ticket_counterexample (current_preflight.Preflight.test_concurrent_ticket_counterexample) ... ok\ntest_exact_published_window_masks (current_preflight.Preflight.test_exact_published_window_masks) ... ok\ntest_long_position_rope_cpu_difference (current_preflight.Preflight.test_long_position_rope_cpu_difference) ... ok\ntest_noncontract_generalization_counterexamples (current_preflight.Preflight.test_noncontract_generalization_counterexamples) ... ok\ntest_official_cpu_oracle_against_equation_model (current_preflight.Preflight.test_official_cpu_oracle_against_equation_model) ... ok\ntest_serial_ticket_reset_replays (current_preflight.Preflight.test_serial_ticket_reset_replays) ... ok\ntest_clones_restore_scalars_fp8_and_metadata (harness_tests.InputIsolation.test_clones_restore_scalars_fp8_and_metadata) ... ok\ntest_graph_buffers_cannot_silently_change_shape (harness_tests.InputIsolation.test_graph_buffers_cannot_silently_change_shape) ... ok\ntest_immutable_tensor_and_config_are_checked (harness_tests.InputIsolation.test_immutable_tensor_and_config_are_checked) ... ok\ntest_only_minimal_compiler_repair_after_original_normalization (harness_tests.InputIsolation.test_only_minimal_compiler_repair_after_original_normalization) ... ok\ntest_only_new_cache_rows_may_change (harness_tests.InputIsolation.test_only_new_cache_rows_may_change) ... ok\n\n----------------------------------------------------------------------\nRan 12 tests in 0.300s\n\nOK\n"
+}

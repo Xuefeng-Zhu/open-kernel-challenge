@@ -1,0 +1,35 @@
+{
+  "observed_utc": "2026-10-25T23:47:17.887804+00:00",
+  "app": {
+    "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+    "description": "okc-attention-gluon-overlap-compile",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-25 16:43:22-07:00",
+    "stopped_at": "2026-10-25 16:43:37-07:00"
+  },
+  "app_stopped_zero_tasks": true,
+  "all_listed_apps_stopped_zero_tasks": true,
+  "new_other_app_ids": [],
+  "billing": {
+    "metered_cost": "2.17000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-2.17000000",
+      "network_egress_allowance": "0E-8",
+      "reservation_adjustment": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.17295256"
+    }
+  },
+  "delayed_workspace_gross_delta_usd": "0.01044224",
+  "paid_usd": "0E-8",
+  "per_app_invoice": false,
+  "attribution": "Delayed workspace delta, not an exact app invoice. Other new apps, if any, prevent sole-stage attribution."
+}

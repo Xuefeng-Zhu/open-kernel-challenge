@@ -1,0 +1,54 @@
+{
+  "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+  "source_commit": "43c491e19baa9873a138dc5d0de59329de3f3407",
+  "cutoff_utc": "2026-10-27T03:57:07.058179+00:00",
+  "billing_before": {
+    "metered_cost": "2.49000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "credits": "-2.49000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.48657122",
+      "network_egress": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "billing_after_at_independent_cleanup": {
+    "metered_cost": "2.55000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-2.55000000",
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.55162934"
+    }
+  },
+  "observed_account_gross_delta_usd": "0.06162934",
+  "actual_billed_after_usd": "0E-8",
+  "cost_reserve_usd": "0.70",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "app_created_to_stopped_seconds": 55,
+  "nominal_app_lifetime_times_configured_rate_usd": "0.07178416666666666666666666668",
+  "cost_qualification": "Account-level observed delta is metering-rounded/possibly delayed, not a final per-app invoice; lifetime-rate product is a model, not billed cost",
+  "stop_verified": true,
+  "all_apps_stopped_zero_tasks_at_cutoff": true,
+  "counter_sessions_attempted": 0,
+  "new_official_checks": 0,
+  "credential_actions": 0,
+  "observed_account_ephemeral_breakdown_delta_usd": "0.06505812",
+  "remote_entry_elapsed_seconds": 45.677604417999994,
+  "worker_internal_elapsed_seconds": 43.305699883
+}

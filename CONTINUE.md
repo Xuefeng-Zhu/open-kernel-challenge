@@ -1,698 +1,387 @@
-# Latest: P046 ranked submission complete (2026-10-27)
+# V-stage runtime complete: local benefit, actual FA3 replacement rejected
 
-One authorized ranked Projection job `497a0b5130e548c1` passed 9 prerequisites
-and 30 scored cases: **1.1897129769×**, CI [1.1718672822, 1.2075586715].
-Independent board snapshot: **rank 678/1,114**. Exact selected P046 source remains
-unchanged. One ranked request used, none active/uncertain; platform quota 1/10 used,
-9 remaining, checks 0/20. No new Modal or credential operation.
-See [complete receipt and score calculation](experiments/069-p046-ranked-submission.md).
-The single ranked-action allowance is complete; do not repeat it automatically.
+The [runtime result](reviews/attention-v2/gluon-vstage-probe/RESULTS.md) passed
+30 original-oracle checks plus replay/cache/isolation gates and48 checked
+warmup/timing replays. The publication variant reduced paired prototype
+latency5.0355%/3.8883% on two fresh fixtures,6/6 pairs, but remained3.82×
+actual FA3 latency (raw medians153.424us vs40.064us). The production gate fails;
+no official check, promotion or further incremental scheduling branch follows.
+These are padded nearbyctx4096 calls, not scored80K or whole-suite results.
 
-# P068 native baseline diagnostic complete; P046 preserved
+App `ap-Hy5O3TPhVTVKu0XyfsgJWT` independently stopped/tasks0 at
+2026-10-26 00:40:48.399511UTC; slot released before report polishing.
+No-new-app delayed workspace usage increased$0.05258797,paid$0,not exact invoice.
+Working source3da22a/official1.233633059, A2-11 rollback and Projection remain
+unchanged. Main local research now follows the source-bound B1/sliding
+32-producer/16-merge budget and7.8us/1.7us activity evidence; GQA,FP8QK,
+exact window pruning and fused preparation already exist. New work needs one
+prospective architecture falsifier against actual3da, not a win over a weak
+prototype. Parent assigns serialized GPU slots; P057 owns the next slot.
 
-App `ap-Hw1HKh6pn7adn4Tc5E0lXE` completed 240 timing + 18 activity oracle
-checks and nine traces. Independent 2026-10-27 03:35:45 UTC observation confirms
-stopped/tasks 0, all apps stopped; the GPU slot is released. No official check.
-P046 remains selected at 1.1841399409×, job `41ba778763a5433b`.
-
-QKV M128 and pooler M128 retain vendor GEMM + reduction; pooler M8 has one
-kernel. Instrumented main/reduction medians: 14.058/3.456 and 19.522/3.424 µs.
-Raw A/A graph median drift reaches 1.979%; this is noise evidence, not a gain.
-All samples, launch metadata and seven DSO hashes are retained. Exact vendor
-cubin/tactic, per-CTA assignment and hardware counters remain unknown; do not
-infer Stream-K/occupancy from symbols or grid. No unchanged NCU retry occurred.
-
-Read `experiments/068-baseline-native-collector.md` and
-`results/projection-p068-assessment.json`. Existing auth worked; no renewal.
-Paid usage stays $0. At 03:40:29 UTC, delayed workspace billing rose by $0.02;
-this is not a settled per-app invoice, so retain the $0.5799165 free-credit reserve. The 12-file source freeze is commit `1ffbcdd`; all 51 CPU
-preflight tests pass. Raw traces/logs stay ignored locally; sanitized copies are
-source/hash bound. No new candidate or concurrent-call validation was performed.
-
-## Previous checkpoint (historical)
-
-# P068 collector CPU-tested; Projection paused pending runtime access
-
-P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
-No native/GPU run, official check, credential operation or candidate change.
-Read `experiments/068-baseline-native-collector.md`. The collector and original
-helper/model suites passed 38 CPU tests; independent review fixes are covered.
-
-Dry run: `python -B projection_p068_collector.py plan --output-dir /tmp/p068-baseline`.
-After separately authorized H200 access and billing/app preflight, native entry:
-`python -B projection_p068_collector.py run --output-dir /tmp/p068-baseline`.
-Run only inside an ephemeral Linux H200 container with the 12-file allowlist and
-external app/cost watchdog; stop and verify tasks0 afterward. This collector
-does not provision/stop an app. No run was admitted, so no new uncertain job.
-
-The existing Modal credential expired at 2026-10-26 03:39:46 UTC; do not renew it
-without authorization. Actual vendor binary/work assignment and working counters
-remain unavailable; DSO hashes/activity cannot substitute. No unchanged NCU
-retry or speculative GPU candidate. Stop Projection here pending runtime access.
-
-## Previous checkpoint (historical)
-
-# P067 baseline and Quack audit complete; live profiling blocked
-
-P046 remains selected at official 1.1841399409×, job `41ba778763a5433b`.
-No new GPU/official request, credential action or candidate change in P066/P067.
-Read `experiments/067-baseline-dispatch-and-quack-audit.md` and
-`docs/P067_BASELINE_PROFILING_PROCEDURE.md`. Reproduce the saved-data audit with
-`python -B projection_p067_audit.py --output results/projection-p067-audit.json`.
-It verifies 30 official profiles, six exact-source P046 traces and score arithmetic.
-
-Quack's pinned SM90 design differs from P052/P053 through explicit producer/MMA
-warpgroups, staged buffer ownership and persistent scheduling; P052 already had
-WGMMA overlap. Whether the vendor P046 already has these mechanisms is unknown.
-Quack's SM90 default is static persistent, not automatically dynamic/Stream-K.
-CUTLASS Stream-K class can select ordinary Split-K; DeepGEMM default BF16 can
-select cuBLASLt. Check actual dispatch and package versions before testing names.
-
-Existing Modal credential expired at 2026-10-26 03:39:46 UTC; no renewal attempted.
-No live inventory was queried, so old stopped-app receipts remain historical.
-No P046 vendor SASS/hardware counters are saved, and official status exposes no
-documented native-artifact export. The profiling document is a preregistered
-procedure, not an executed native collector. Do not repeat unchanged NCU timeouts.
-No further speculative performance candidate is ready. P065 rejected only its
-tested direct-load implementation; matched Gluon raw GPU timing remains missing.
-
-## Previous checkpoint (historical)
-
-# P065 completed and rejected; P046 selected
-
-Official off-board job `291edcd1469a414c` is terminal. 9 prerequisites + 30 scored
-cases pass; score 0.8423398309× versus selected P046 1.1841399409×. All 27 controls
-within 5%, targets normalized latency 3.13959/3.52996/7.43012× for pooler M8/16/32.
-No pending/uncertain request. Quota observed at 23:20:48 UTC on 26 Oct: 2/20 used, 18 left.
-
-The explicit Gluon consumer-layout compiler gate passed (no decoded BF16 shared
-roundtrip, BF16 HMMA, FP32 accumulation, zero spills). Native performance failed.
-Do not promote it or infer a general compression result: raw Gluon native timing
-is missing and the direct-load port also removed the automatic async pipeline.
-No extra raw check is justified merely to explain an uncompetitive implementation.
-
-Source commit `5adcb20`; source SHA `9379aaaa9fb36761b5ec1b5c46ef12bb9b5b918ddaa4085d1c9100a7276810ff`.
-See `experiments/065-explicit-consumer-layout.md`, `evidence/p065`,
-`results/projection-p065-assessment.json`, and sanitized full receipt/CSV.
-39 CPU oracle cases,20 source/compiler/policy tests and 5 analysis tests pass.
-No Modal launched; local compiler container removed/engine stopped; GPU slot terminal.
-Attention reuse notes: `docs/OFFLINE_SM90_COMPILATION.md`. Gluon must use its
-`GluonASTSource`, not ordinary `ASTSource`, and produces TTGIR directly.
+Earlier checkpoints below retain their original observations.
 
 ---
 
-# P064 operand-orientation compiler gate failed; P046 preserved
-
-Source freeze `7579660`, candidate `candidates/projection_pooler_codec_kn.py`.
-20 preflight CPU tests passed, including actual integer-decode AST execution on
-all BF16 bit patterns and rectangular/tail/escape cases. These are not GPU tests.
-Both raw and encoded explicit SM90 offline compilations succeeded on local CPU.
-Raw SASS instruction text matches P063 exactly. Encoded registers fell 120→80,
-static sites 944→888, but the decoded BF16 shared materialization/reload remains
-and shared request is unchanged at 18,688 bytes. Both have zero spills and the
-same BF16 HMMA family. The predeclared gate therefore FAILS; no official check.
-
-Read `experiments/064-decoder-operand-orientation.md`, reproduce with
-`python -B assess_p064.py`; full evidence is in `evidence/p064/`.
-Three artifact/gate tests passed. Containers removed and OrbStack restored to
-Stopped after confirming no other containers or Linux machines. Paid cost $0.
-No Modal/credential action or new GPU/official job; P046 remains 1.1841399409×.
-
-Attention reuse: `docs/OFFLINE_SM90_COMPILATION.md` documents the pinned local
-image/wheel and isolation rules. Use unique per-track staging/container/cache,
-not Projection's mutable artifacts or constants; coordinate engine lifecycle.
-
-Next genuinely different compiler-only step would require explicit consumer
-layouts and a matched raw implementation, rather than another expression tweak.
-Do not relax the P064 gate or claim a latency gain from lower register counts.
-The pure inline-asm identity proposal was not tried: pinned compiler source
-traverses pure elementwise operations back to byte loads, so it does not supply
-the proposed barrier to width inference. Preserve this negative finding.
-
-## Previous checkpoint (historical)
-
-# P063 offline SM90 compiler comparison complete; P046 preserved
-
-The compiler access gap is resolved locally, without Modal or GPU. Read
-`experiments/063-offline-compiler-comparison.md`; exact raw/encoded M16 artifacts
-are in `evidence/p063`, assessment in `results/router-p063-offline-assessment.json`.
-The first attempt at `6faa720` failed on unnecessary device-binder discovery;
-`fe2c034` removed that call and both offline compiles passed. No fake GPU or
-credential action. Both disposable local containers exited and were removed.
-OrbStack was restored to its initial stopped state; local dependency/image
-caches are retained for reproduction.
-
-Actual static evidence: raw 38 versus encoded 120 registers, zero spills in both;
-same BF16 HMMA family; Triton shared launch request 10240 versus 18688 bytes.
-Encoded TTGIR materializes the reconstructed BF16 operand through shared memory
-before dot consumption; raw does not need that decoded-operand conversion.
-This supports a focused compiler-only operand-layout repair gate, not a new
-GPU speedup or a general compression win. The raw backend remains behind P046.
-Nine local source/parser/model checks passed; full IR/PTX/SASS retained, including
-hash-bound assembler resource logs and a tamper-rejection regression test.
-
-Next: establish exact decoding and eliminate the identified extra staging in
-offline lowering before considering any substantive official candidate. Do not
-run unchanged logs, tile sweeps or claim that register counts measure occupancy.
-No new official check this phase; P046 remains selected at 1.1841399409×.
-Modal remains expired, but is not needed for CPU-only compilation. See P063 for
-the pinned image/wheel, exact command and limitations versus judge codegen.
-
-## Previous checkpoint (historical)
-
-# P062 raw-consumer diagnostic terminal; P046 preserved
-
-Read `experiments/062-raw-consumer-official-screen.md` and reproduce its analysis
-with `python -B assess_p062.py`. Job `de8dcd1a4d5a43b2` finished 2026-10-26
-22:23:56 UTC: original 9 prerequisites + 30 scored shapes passed, 1.1365058657×.
-The exact P043 raw control was tested once; no source rewrite or compression
-retry. It is 28.5–41.0% slower than selected P046 on target pooler M8/16/32 after
-reference normalization, and 2.23–3.76× faster than historical compressed P043.
-These are cross-run comparisons, not a same-input three-arm causal experiment.
-Evaluator identity matches; unchanged-control drift beyond 5% limits attribution.
-P046 remains selected at 1.1841399409×. Neither post-hoc threshold changes nor
-a new tile sweep are justified.
-
-All samples and profiles are saved; source freeze is `4025e73`, raw SHA
-`8ee5189831d7dcd209284b14a1ed907140d45ad9beba8c266122dc07e93a43de`.
-No active or uncertain Projection job; shared slot terminal. Post-run quota
-at 22:24:04 UTC is 1/20 checks used, 19 left; zero ranked runs. No Modal call,
-credential action or paid spend. The exact compiler/layout comparison remains
-blocked: Mac has no Triton/CUDA and the existing Modal login is expired.
-Do not renew credentials or invent compiler evidence. Next native diagnostic,
-if access is restored, is the exact-source M16 raw/encoded compiler comparison
-specified in P062, followed only by a result-justified fix against actual P046.
-
-## Previous checkpoint (historical)
-
-# P061 local compression audit complete; P046 preserved
-
-Read `experiments/061-compression-consumer-audit.md` and reproduce the immutable
-source/address/score analysis with `python -B projection_compression_audit.py`.
-The exact raw P043 control exists but has no GPU result. P043 already decodes
-inside its dot loop; no new missing fusion is established. Stored-byte savings
-are not measured traffic or latency savings. Three target paths cut by 20%
-would model only +3.024% whole score on current P046.
-
-Decision: do not relaunch unchanged P043 as an optimization. The report specifies
-a three-arm causal protocol only if its attribution changes the next architecture
-decision; no diagnostic is scheduled. P046 and every candidate remain unchanged.
-22 CPU codec/score tests passed in 0.681 s; no Triton/GPU execution. The coordinator
-reported Modal token expiry at 07:27 UTC; do not attempt service calls or credential
-renewal under this local task. Attention holds diagnostic priority. No new app,
-official check, cost or uncertain request was created. The last Projection
-shutdown evidence remains the independently verified P059 record below.
-
-## Previous checkpoint (historical)
-
-# P059 terminal; methods audit prepared; P046 preserved
-
-P059 source freeze `6856cc2cb72d398c88c78b63a375bb3d2e8628e0`, app
-`ap-vbrU0sPpoRjkmN7e7OgK4R`, passed 298 original-oracle comparisons. Actual
-FP32 split-K exists, but paired latency was 0.324% slower than P046 (6/12 wins).
-It beat the no-split ID66 control by 51.804% while also changing tile/custom
-configuration. This is not a split-only causal effect or a project speedup.
-P046 and the native split show the same visible main/reducer symbols; exact
-tactic identity is unproved. P046 remains selected at 1.1841399409×.
-
-Independent 2026-10-26T01:10:24.310883 UTC observation verified the exact app
-stopped/tasks0 and all apps stopped/tasks0. Slot released to the coordinator;
-Attention owns subsequent GPU work. No active or uncertain Projection job,
-official check, new credentials or paid usage. Provisional workspace gross
-increment $0.05740071; reserve $0.55838125 retained, not a settled invoice.
-Reviewed P059 result commit `082827863ded14083c58e9dddcab17a6b4db302e` was
-verified on the PRIVATE remote at 01:15:02.367139 UTC.
-
-Latest user priority is an optimization-methods handoff for ChatGPT, not another
-candidate branch. Finish/read `experiments/060-selected-baseline-methods-audit.md`
-and reproduce its source-bound family/score matrix with
-`python -B projection_baseline_matrix.py`. It records what P046 already does,
-actual phase evidence, failed/confounded proposals and missing vendor instruction
-evidence. Do not rediscover its existing split-K, static layouts, one-BMM pooler
-or one-wide-GEMM router as new capabilities. P058 and P050 remain parked.
-No new GPU or official check from this audit, and no ChatGPT message sent here.
-
-## Previous checkpoint (historical)
-
-# P057 interface passed, performance subset rejected; P046 preserved
-
-Source freeze `5542653`; app `ap-1P4IYSdup9e7ZBjImQj1ZM` completed. Host build
-succeeded and 444 recorded original-oracle comparisons passed. QKV M128 native
-plans were far slower than P046; unpooler M16 was near-flat/noisy or slower.
-No >=10% / >=10-of-12-pair performance gate passed; no official check or promotion.
-P046 remains selected at 1.1841399409×. Read experiment 057 and its full receipts.
-
-Independent status at 2026-10-26T00:46:25.461792 UTC confirmed exact app and all
-apps stopped/tasks 0. GPU slot released; no uncertain request. Paid usage $0,
-workspace billing delta still delayed; retain $0.55838125 reserve.
-
-Next local diagnosis: inspect PyTorch descriptor orientation and precision-safe
-split-K selection versus this no-split subset; do not claim hardware causality
-without missing instruction/activity evidence. No new GPU until coordinated slot.
-P057 terminal results were privately pushed and verified at 5cbe7c6,
-00:49:22 UTC. P058 column orientation is a local parked prototype; historical
-P049 same-source activity favors a separate FP32 split-mask-only test first.
-
-## Previous checkpoint (historical)
-
-# P056 terminal compiler failure; P046 preserved
-
-P056 app `ap-EaioKmzLxCQFWKWwyp9cmP` reached NVCC compilation and failed an
-internal compiler assertion. No native GEMM, oracle check, graph or timing ran.
-Frozen source commit `113e05e`; full receipt and source-bound assessment are in
-experiment 056 and `results/router-p056-assessment.json`. This is not a cuBLASLt
-algorithm or precision rejection. P046 remains selected at 1.1841399409×.
-
-Independent status at 2026-10-26T00:33:36.348385 UTC confirmed exact app stopped,
-tasks 0 and all apps stopped. Slot released; Attention owns subsequent GPU work.
-Paid cost is $0; delayed workspace billing showed no delta, so retain the
-$0.55838125 free-credit reserve. No official quota was consumed or request retried.
-
-P057 local repair preserves the exact native C++ body and uses documented host
-C++ compilation with CUDA headers/linkage. Thirty-three CPU/mock tests and four payload guards pass; native
-compile/link, correctness and performance remain unverified. Complete review and
-source-bound preparation, then await coordinator slot release. Never resend P056.
-P055/P056 code and results were pushed and independently verified PRIVATE at
-fb36441ee9fb9185ae1ffbb813e1fcfb7cbcfa5f, 00:40:46.501381 UTC. P057 remains local.
-
-## Previous checkpoint (historical)
-
-# P056 native interface prepared locally; no GPU admission
-
-P055 audit is committed c52ce10. Official load_inline/nvcc compilation exception
-is verified; original precision, graph/fresh-input and external-access rules
-remain. Read experiments/055-rules-correction-and-leader-gap.md.
-
-P056 owned cuBLASLt probe has 18 local address/metadata/static tests; combined
-policy/model/CPU-contract suite passed33. No native compilation or CUDA result.
-It preserves BF16 operands/output, FP32 compute, full algorithm configuration,
-current PyTorch stream and caller-owned scratch, with initial no-split filtering.
-Read experiments/056-native-cublaslt-interface-local.md for the exact native gate
-and paired-comparison protocol. Attention owns the GPU slot; do not launch a
-Projection app until coordinator release and current billing/auth checks.
-
-P0461.1841399409× remains selected. Last verified private remote is fd1c495 at
-00:11:27UTC; new P055/P056 work remains local. P053 stopped/tasks0 and no uncertain
-Projection request. No new official check, credential or paid action occurred.
-
-## Previous checkpoint (historical)
-
-# P055 rules correction and leader-gap audit complete; P046 preserved
-
-Current official rules explicitly permit load_inline/nvcc native compilation.
-The universal AOT-only assumption in P047/P054 was overstrict; it is superseded,
-not a license for arbitrary subprocesses, network access or evaluator inspection.
-Our preflight now narrowly allows the documented initialization exception.
-Read experiments/055-rules-correction-and-leader-gap.md.
-
-Public leader at 2026-10-26T00:06:43UTC is 1.6238×; P046 remains 1.1841399409×.
-The conditional cut needed is 27.0760% across all paths, or 35.7169% across
-pooler/QKV/unpooler with the rest fixed. This is cross-run score arithmetic,
-not a measured bottleneck or forecast. Next: minimal owned native cuBLASLt
-interface for metadata/precision/graph validation, no broad algorithm rewrite.
-Attention owns the next GPU slot; no Projection compilation/run admitted here.
-
-P053's rejected push was retried once after specific new authorization and
-verified PRIVATE remote fd1c495e3d19a7e965daecd3b5a96045c18fc731 at
-2026-10-26T00:11:27.470752UTC. New P055/P056 preparation is not in that receipt.
-P053 app remains terminal, independently stopped/tasks0; no uncertain request.
-
-## Previous checkpoint (historical)
-
-# P053 terminal — reducer-only rescue rejected; P046 preserved
-
-P053 app ap-UShS6clh30RqRtKHHcoB4A completed with 598 original-oracle checks
-passing. Independent status at 2026-10-25T23:56:28.401787UTC confirmed exact app
-stopped/tasks0 and all workspace apps stopped/tasks0. Measurement slot released;
-no active or uncertain Projection request. No official check was consumed.
-
-M8 weight-first partial-only is still 14.5968% slower than actual P046 whole;
-matched partial gain is only 1.4593% (9/12 pairs). M7 matched partial regresses
-0.9310%. Declared follow-up gates fail: reject reducer-only rescue of this fixed
-route. P046 official 1.1841399409× remains selected; P039 preserved.
-
-All raw samples, tails and 18 separately instrumented traces are saved. No
-subtraction of graph medians, official-score claim or hardware-counter inference.
-Read experiments/053-phase-cost-attribution-local.md and
-results/router-p053-assessment.json. Source freeze e6804b0; code from8ee2fa7.
-
-Paid usage $0; delayed workspace gross delta $0.07830934 is not a settled per-app
-invoice. Conservative reserve $0.45788342 retained. Launcher initially saw a
-transitional stopping/tasks1 state; independent read resolved it without retry.
-
-P054 metadata-only probe remains unexecuted. It is the next eligibility
-prerequisite for the precompiled tactic route, not an assumed legal runtime.
-P050 remains parked. Prior private push was denied before execution, not retried;
-new source/results remain local. Last verified remote f646eae is historical.
-Read experiments/053-private-push-blocked.md before any push attempt.
-
-## Previous checkpoint (historical)
-
-# P053 local diagnostic ready — private push blocked
-
-Source freeze 8ee2fa7; P054 commit ecf2eb2. The reviewed private push was rejected
-by automatic approval review before execution. No upload or retry occurred.
-Read experiments/053-private-push-blocked.md. Last verified remote is f646eae;
-current work remains local. GPU preparation is unaffected; Attention owns slot.
-
-P046 remains selected at official 1.1841399409×; P039 is preserved. P052's
-negative native screen remains rejected. No P053 app or official job exists.
-Attention owns the next GPU slot; wait for explicit coordinator release, then
-refresh existing authentication, credits, paid cap and stopped-app checks.
-
-P053 freezes P051/P052 math and compares whole versus partial-only graphs for
-M8/M7, with actual P046 as the decision control. It is a causal diagnostic,
-not a new submission: 580 planned oracle checks and 18 separate activity traces.
-Read experiments/053-phase-cost-attribution-local.md for exact thresholds,
-source hashes, timing protocol and limits. No counter or pure-compute claim.
-
-65 local CPU/static/mock tests and four payload guards passed. Independent
-worker/controller review found no concrete blocker. One prepared allowlist is
-16 files / 366,448 bytes; reserve floor $0.45788342 free credits, paid limit $0.
-This reserve has not been spent. No automatic retry or concurrent GPU launch.
-
-P054 pinned FlashInfer 0.7.0.post1 source confirms a private tactic interface,
-but JIT-free compatible artifact, reduction precision and exact judge eligibility
-remain unverified. Updated metadata-only probe has 20 passing fixture tests;
-no installed probe, package import, factory, binary load or compilation occurred.
-Read experiments/054-flashinfer-pinned-capability-local.md. P050 stays parked.
-
-## Previous checkpoint (historical)
-
-# P052 complete — correctness passed, performance rejected
-
-Source commit 39fd8cf2538f63ea7511fc2da8f4c88a2473cdc0. Modal app
-ap-tarMKbDOkq7ba0yqmHM3UH is stopped/tasks0; all apps independently verified
-stopped at 23:33:07 UTC. Shared measurement slot released. No uncertain request.
-
-390 original-oracle comparisons passed, including five edge/prerequisite cases,
-fresh inputs, immutable weights and sequential same-address graph A→B→A.
-At M8/M7 the weight-first kernel cuts only 2.2448%/1.7574% versus its matched
-control (9/12 wins each), and is 21.3177%/4.8785% slower than actual P046.
-Reject this narrow variant; no official check or promotion. All samples retained.
-
-P046 stays selected at official 1.1841399409×, P039 rollback. P050 remains parked.
-Read experiments/052-orientation-execution-screen.md and
-results/router-p052-assessment.json; raw evidence is in results/remote-P052-screen/.
-59 local tests pass. Source/body and compiler scheduling changes are verified,
-but achieved overlap, phase costs and hardware bottleneck causality are not.
-
-Paid usage remains $0. Delayed workspace billing is not a per-app invoice; retain
-$0.38609925 reserve. All admitted work is terminal. Do not repeat the screen or
-send this rejected variant to the official runner. Continue bounded local causal
-analysis before another mechanism; a new GPU stage needs coordinator scheduling.
-
-## Previous checkpoint (historical)
-
-# P051 compile gate passed — P046 remains selected
-
-Native app ap-Iu9K2yefCGuDlalnHrLuhd completed and was independently verified
-stopped/tasks0; all apps stopped. Shared measurement slot released. Source
-commit144a0b8e99cdb145acfc3638952c4971012999ae.
-
-Matched operand reversal changes BF16 mma.sync to BF16 WGMMA. Registers42→36,
-shared10→20KiB, driver local allocation0both. Generated loop allows one WGMMA
-group outstanding during next-buffer copies; no actual overlap/speed is measured.
-No generated kernel executed; correctness, replay and performance remain open.
-Read experiments/051-gap-closing-orientation.md and raw hash-bound artifacts
-under results/remote-P051-compile/. The next narrow screen is specified there.
-
-P0461.1841399409× selected; P039 rollback. P050 parked. No official checks used
-in this phase. Delayed gross workspace delta$0.01155627, paid$0, reserve$0.278423;
-billing is not a settled per-app invoice. No active/uncertain Projection app.
-
-## Previous checkpoint (historical)
-
-# P051 — major-gap audit and matched orientation diagnostic
-
-P046 remains selected at official 1.1841399409×; P039 remains the rollback.
-At 2026-10-25 22:54:34 UTC, the public Projection leader was 1.6099×.
-Matching that score requires a modeled 26.4464% uniform effective latency cut,
-or 34.8864% across pooler/QKV/unpooler while all other paths stay fixed.
-These are conditional requirements, not forecasts or measured bottlenecks.
-
-P050 is PARKED by the strategy change. Its reviewed source/harness at aecd1f6
-and 40 passing local tests are preserved; no P050 GPU or official request exists.
-Do not launch it merely because quota remains.
-
-P051 prepares a matched old-R06 versus weight-first GEMM orientation diagnostic.
-Only operand orientation/direct partial-store indexing changes; geometry,
-partition, precision and reducer stay fixed. Compiler eligibility provides a
-specific hypothesis; actual native instructions/resources are still unverified.
-Read experiments/051-gap-closing-orientation.md and the reproducible gap model.
-No new Projection app has been admitted. A bounded compile-only probe is the
-next staged action after reviewed freeze and fresh guardrails; no official check.
-
-Official read-only quota observation at 2026-10-25 23:10:08 UTC:
-Projection checks 6/20 used, 14 left; Attention checks 18/20 used, 2 left.
-Both scored limits are 0/10 used. TASK states reset at 00:00 UTC; the quota
-response itself did not supply a reset timestamp. These are platform limits,
-not a reason to run weak experiments. Re-read before any actual admission.
-
-## Previous checkpoint (historical)
-
-# P050 QKV-only expansion — reviewed local freeze ready
-
-P049 rejected and result push verified at `4c438423a5f8f85ba4a8757326ea05f01c9ce375`
-on22:40:48UTC. P046 stays selected at official1.1841399409×, P039 preserved.
-P050 changes only canonical QKV M>1 to zero-bias addmm; unpooler fully restores
-P046. Candidate SHA256 `b08b6e371fef83851268a8dbfa1159d1b6d5a8e141a410a596dfc3f159e0da8b`.
-Forty local tests and independent reviews passed. Read experiment050 for fixed
-score/latency gates, fresh-input coverage and raw-to-official modeling limits.
-
-Nine-case native screen is ready: five scored QKV targets, nearby127/129,
-unchangedQKV1/unpooler16 controls. Full completion would check728oracle outputs.
-This has not run. No P050 app or official job exists. Attention owns the GPU
-slot; wait for a fresh coordinator grant, then verify existing auth, credits,
-paid cap$0 and stopped apps before one bounded invocation. Approximate reserve
-$0.408freecredits; no new credentials or formal entry. Do not treat prior terminal
-slot records as new authority. Passing native screen would warrant official
-comparison, never automatic selection.
-
-## Previous checkpoint (historical)
-
-# P049 complete — rejected; P046 remains selected
-
-P049 app `ap-qGKwQTPaVfoieaRJxN3Etw` completed and is independently stopped/tasks0;
-all workspace apps were stopped. Slot released at22:37:36UTC. All326oracle
-comparisons passed; QKV M128 paired cut3.7804%, unpooler M16 regression3.5852%,
-two-case geometric cut0.1655%. Declared5%/2%gates fail. Reject, no official check.
-Actual activity changes QKV split-K+reduce to one bias kernel; unpooler keeps one
-main kernel with a bias variant. No claim of hardware causality or whole-score win.
-
-Read experiment049 and results/router-p049-assessment.json. P046 remains selected
-at official1.1841399409×, P039 rollback immutable. P049 source and failed evidence
-are retained. Current quota snapshot6/20checks used14left, historicaltimestamp
-in the ledger; reread before any new check. No active/uncertain Projection request.
-No P049 broad all-shape or official verification is justified by this screen.
-
-Delayed workspace gross delta$0.01641954, paid$0; reserve$0.407635 retained and
-billing may lag. Finish reviewed private result push. Continue bounded local
-next-mechanism review; wait for new coordinator slot before any compute.
-
-## Previous checkpoint (historical)
-
-# P049 local screen ready — P046 remains selected
-
-P046 official 1.1841399409× is the working candidate; P039 remains rollback.
-Its P048 paired confirmation and selection were pushed and remote-verified at
-`26bec37aa5056375eb9dd262424a388a72078511` on 2026-10-25 22:23:49 UTC.
-
-P049 source commit `9374d9c8e3a7dc4ec57ab897b184bd5f1285fe53`, source SHA256
-`4c3b0ed4181cbdc70f8557fd7445b6937c1ae0b236724c87178faf9d02116ad7`.
-Only canonical QKV/unpooler M>1 changes to public zero-bias addmm; 20,992 bytes
-of immutable BF16 zero state, no precision policy or layout change. The actual
-CUDA route and benefit are unverified. Read experiment 049 for fixed gates and
-the two-case paired screen, including its separate route-equivalence control.
-All 34 local candidate/worker/launcher tests passed. No P049 app/check exists.
-
-Attention owns the measurement slot. Wait for coordinator release, then refresh
-credits, paid cap, authentication and active apps before one bounded screen.
-Do not use a terminal historical slot file as a new grant. P047 exact-judge
-FlashInfer capability remains unresolved and is not required by this public API.
-
-## Previous checkpoint (historical)
-
-# P048 complete — P046 selected, GPU slot released
-
-P046 source `candidates/projection_pooler_column_batch2_hybrid.py`, source commit
-`fa56f2b`, SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
-Official job `41ba778763a5433b`,9+30pass,1.1841399409×, CI[1.1663778418,1.2019020400].
-P048 same-device H200 confirmation passed 480 oracle comparisons; three raw paired
-target cuts10.74%/10.87%/9.88%, controls all within 0.7% median movement. All samples
-and long tails retained. Select P046 based on target replication and controls,
-not official CI overlap or the whole-score point alone. P039 stays immutable.
-
-App `ap-lpXZhacMWtQNlM5oksAWRX` stopped/tasks0, all workspace apps stopped with zero tasks. Free-credit
-reserve $0.407635, paid $0; no official check consumed. Latest quota 6/20 used, 14 left
-at the ledger timestamp, reset 00:00 UTC. No active or uncertain Projection job.
-Read experiment048 for raw/correctness/cost limits. P047 capability audit is
-closed unresolved: exact judge image is internal, API/AOT unknown; no import,
-JIT, package install or CPU external inventory occurred. No workaround.
-Finish reviewed result push then continue bounded supported-mechanism research.
-Wait for coordinator's next GPU slot; terminal file is not a new slot grant.
-
-## Previous checkpoint (historical)
-
-# P046 terminal — promising, P039 remains selected
-
-Official job `41ba778763a5433b` passed 9+30 correctness, score 1.184139941×.
-Three targets reproduce gains (11.52%, 8.32%, 8.72%), GM9.53%, target-only
-model+1.553%. Declared gates pass; M128 original route is restored. But unchanged
-O M1/unpooler M1 regress5.62%/10.60% normalized and shift exists before calibration.
-Keep P039 selected at1.173238999× pending direct same-device control comparison.
-Read experiment046 and complete assessment/control artifacts. Never discard
-control samples or claim the aggregate win from its point alone.
-
-Slot released on21:58:55UTC terminal observation. Projection checks6/20used,
-14left; ranked0/10; reset00UTC. No active/uncertain Projection request. Finish
-reviewed result push, then continue localP047cuBLASLt capability audit. Exactjudge
-image isn't externally addressed by known tooling; do not run a different base
-image as proof or triggerFlashInfer import/JIT. Attention owns the nextGPUslot.
-
-## Previous checkpoint (historical)
-
-# P046 check accepted — 2026-10-25 21:57:30 UTC
-
-Track only `41ba778763a5433b`, plan `P2-09-pooler-column-batch2-hybrid`.
-Source `fa56f2b`, SHA256 `001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
-One accepted request; never resend. Follow to terminal and release the shared
-measurement slot before report/push. Pre-admission quota was 5/20 used, 15 left.
-No P046 native result exists yet, and P039 remains selected. Capability research
-P047 is local metadata-only preparation, with no external probe or GPU action.
-
-## Previous checkpoint (historical)
-
-# P046 narrow pooler composition — local ready
-
-P045 is rejected and privately pushed through `7b1ca18`, remote verified at
-21:41:07 UTC. Selected P039 remains 1.173238999×. P046 changes only P045's guard:
-pooler M8/M16/M32 use BMM; M128 and all other paths restore P039.
-Seven bounded CPU tests and independent review passed; source SHA256
-`001ea12e8764564d507de51e433769f5bd9a9916bfc4c014f0f87522c278545e`.
-No P046 native validation, request, reservation or job ID exists.
-
-Read experiment 046 for newly declared three-target gates and explicit lower
-whole-score upside (~1.237% conditional model, not measured). P045's broader
-failure/gates remain unchanged. Current code is local; Attention owns the
-measurement slot for robustness validation. Wait for fresh coordinator release,
-then use committed source and the P2-09 plan with current jobs/quota checks.
-Do not infer slot permission from old terminal records or repeat P045.
-
-## Previous checkpoint (historical)
-
-# P045 complete — preserve P039, measurement slot released
-
-Job `b2c1e6c724144e87` passed all 9 prerequisites and 30 scored shapes;
-score 1.179863621×, interval overlaps selected P039 1.173238999×. Reject promotion:
-four-target normalized geomean gain 4.52% misses 10%; M128 regresses 5.54%;
-target-only modeled score gain 0.964% misses 1.5%. All targets execute one main
-kernel without a listed independent reducer; hardware causality remains unknown.
-See experiment 045 and results/router-p045-official-assessment.json.
-
-One check admitted, now terminal; no uncertain request, retry or active Projection
-GPU job. Slot released at 21:36:40 UTC. Quota then 5/20 used, 15 left; reset 00:00 UTC.
-P045 is preserved as a rejected experiment; P039 remains the selected source.
-Finish reviewed result commit/private push. No immediate small-M rescue check:
-its conditional modeled +1.237% is below the original gate. Next local mechanism
-can examine QKV independent-output batching, with separate tests and a fresh
-coordinator slot before any native measurement. Do not infer a new slot grant
-from this terminal state or modify Attention worktrees.
-
-## Previous checkpoint (historical)
-
-# P045 official check accepted — 2026-10-25 21:34:36 UTC
-
-Track only job `b2c1e6c724144e87`, experiment `P2-08-pooler-column-batch2`.
-One request accepted, no uncertain admission. Source commit `a3aba7b`, SHA256
-`c751d3ec5bff008e9f893f3cc6113184e3a78ae255578e6b398c9d22122d3f58`.
-Do not send again or change the candidate. Read the exact job to terminal,
-then release the shared measurement slot before polishing/pushing results.
-P039 remains selected; no P045 GPU result or speedup exists yet. Pre-admission
-quota was 4/20 used, 16 left; refresh before reporting final availability.
-
-## Previous checkpoint (historical)
-
-# Resume Projection P045 local-ready candidate
-
-P044 diagnostic and private push are complete, remote verified at `aa730b8`.
-P045 source and 13-test bounded CPU preflight are ready; read experiment 045 and
-`prepared_local_candidate` in the index. P039 remains selected and immutable.
-P045 has never run on GPU and has no job ID. Keep its reduced-K model coverage
-separate from required full-size CUDA correctness.
-
-Attention has the serialized measurement slot. Do not dispatch until a fresh
-coordinator release; the old P044 terminal slot record is not a new grant.
-Before dispatch reconcile current account jobs/quota and exact committed source.
-Evaluate one fixed P045 BMM candidate with its predeclared gates; no shard sweep,
-no repeat of unchanged P039, and no fabricated score or split-K elimination.
-
-Earlier P044 launch and push retries both succeeded after explicit approval.
-No denied P044 operation is pending. Do not repeat either operation.
-
-## Historical handoff (superseded)
-
-# Resume Projection after P044
-
-P044 complete and exact app stopped/tasks0. Read experiment044 and published
-assessment. Selected P039 unchanged; no official score/check was produced.
-Finish reviewed result commit/private push, preserving all raw samples and
-sanitization manifest. Current local queue is pooler output-column-sharded BMM
-(API/CPU preflight only), then timing-control audit. Do not start GPU until the
-coordinator releases the slot; attention composition now owns measurements.
-
-Both earlier external denials were pre-execution. The explicit21:04 approval
-covered exact P044 Modal payload/run and reviewed private push. Modal retry has
-completed once; do not launch another. One private push retry remains pending.
-
-## Historical handoff (superseded)
-
-# Resume Projection P044 diagnostic
-
-Read STATUS.md and experiments/044-projection-evidence-diagnostic.md. P039 is
-immutable and selected. P044 compares its five important paths to the official
-baseline without changing candidate code. Current worker/plan tests18passed;
-launcher preparation continues. No P044 app/check admitted. GPU slot released
-to Attention at20:11; do not launch until coordinator grants it again.
-
-Once ready, use the bounded allowlisted existing-image Modal diagnostic, preserve
-all raw samples/traces, verify stopped/tasks0 and cost. Empty trace/resource
-fields are missing evidence, not successful instruction capture. Do not retry
-NCU. No official checks during this diagnostic. Choose the next candidate only
-from its evidence. Local causal math: python3 -B projection_p044_analysis.py.
-
-## Historical handoff (superseded)
-
-# Resume Projection from P043 terminal result
-
-Read STATUS.md, BEST.md and experiments/043-pooler-lossless-codec.md first. Selected P039 is unchanged at1.173238999×. P043 job128378586ebe4730 completed0.898428982× with9+30 correctness pass but severe target regressions; no retry or tile sweep. Exact source commit10baddb and full receipt preserved. The raw matched control has no native measurement.
-
-All official jobs known terminal; current quota snapshot4/20used16left at19:14:36UTC, but reread live quota before a future check. No uncertain admission. Use official runner directly per current workflow; do not launch the deferred Modal diagnostic. Source/result commits are separate. Do not modify attention worktrees.
-
-## Historical handoff (superseded)
-
-# Projection P038 complete — rejected, best preserved
-
-Branch projection-pipeline-preflight, separate from active attention-fa3-local.
-Best source projection_full_composition.py unchangedSHA c34c497b, official
-48b1357016134e52=1.1486499523×. P038 descriptor/TMA source60a8b4b passed real
-H200 compile,9prerequisites+30scored shapes, but job6799753227ed463e only
-1.1120410182×; pooler m256 30.26→54.19us. Reject, preserve full receipt/failure.
-Read experiments/038-pooler-m256-pipeline-local.md and results/P038-official-assessment.json.
-No copy-control GPU run or more tile sweep justified; no pending/uncertain job.
-
-Projection user budget7remaining, daily19/20left at completion; no scored runs.
-Attention's separateE5 passed0.8919466283×,12.07% above E2, source/results in
-primary attention-fa3-local. Attention user1left, daily19/20left. User budgets
-do not reset at UTC midnight. Primary coordinator owns shared GPU slot, terminal.
-
-TMA and matching copy source retained with MIT/Apache text, CPU39each,117full
-regressions/5focused and2coordinator guard tests. Actual new TMA path confirmed by
-profile _pooler_pipeline once; no PTX/SASS/occupancy/counter evidence. CUDA
-published fresh replay passes; nearby GPU fallback/concurrency stress not run.
-No general claim about TMA from this concrete failed implementation.
-
-No push/ranking/paid compute/new credentials/payment/cap/terms change. No Modal app
-launched; cumulativeguard$1.708917914/$2 in primary workspace/shared ignored bridge.
-Old$1.146 projection Modal snapshot is historical, never reset accounting from it.
-A09 BlobCreate401 report remains unavailable; no retry or credential renewal.
+# V-stage native publication gate passes; execution prepared, slot released
+
+The [revised compile result](reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md)
+passes the prospectively declared remaining conversion/shared-publication gate.
+Both arms prefetch raw K and V; no V-load serialization is claimed. Resources
+are166/168 registers,32KiB shared,zero spill/local,3 legal CTA/SM each.
+Compile app `ap-XzBXIhHnYx5BgeBYIoyAkL` independently stopped/tasks0 at
+00:10:53.666428 UTC; delayed workspace delta$0.01044102,paid$0,not exact invoice.
+The older fully-serial contrast remains failed and preserved.
+
+The [runtime worker/card](reviews/attention-v2/gluon-vstage-probe/runtime/CARD.md)
+and independent semantic/controller reviews are ready for source freeze and
+preflight:30 original-oracle checks before48 complete-call timing replays,
+with actual unchanged FA3 as a third arm. Fixtures are padded nearbyctx4096,
+not scored80K; no score or promotion is implied. No numerical job is admitted.
+The parent requested slot handoff to Projection P056; no new GPU launch until
+coordination. Working source3da22a/official1.233633059 and A2-11 rollback stay
+unchanged. B1 route/window budget and rules-compilation audits are local evidence;
+no checker was relaxed and no formal entry was made.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
+# Gluon compile: resource/ownership pass, strict native control fails
+
+The [Gluon attention-core result](reviews/attention-v2/gluon-overlap-probe/RESULTS.md)
+compiled two fixed arms and preserved ten native artifacts. Static precision,
+buffer ownership and resources pass:167/168 registers,32KiB shared, zero
+spill/local and legal maximum3 CTA/SM in both arms. The native control already
+prefetches next K before its QK wait, so the declared fully serial control was
+not retained. Partial V/conversion/store overlap is real codegen evidence;
+no candidate invocation, numerical correctness or performance result follows.
+The failed strict gate is preserved; the execution branch stops pending a
+separately declared interpretation and review.
+
+App `ap-AECevTBOrJ7vVRE4EWgk3R` was independently stopped/tasks0 at
+23:44:21.845040 UTC and the slot released. The23:47:17.887804 UTC no-new-app
+cutoff records delayed detailed workspace delta$0.01044224, paid$0, not an
+exact app invoice. Working fusion+lookahead SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`
+remains selected at1.233633059x; A2-11 rollback and Projection records remain
+unchanged. Main architecture research still covers B1/sliding/full; no missing
+FA3 page1 mechanism or winning performance is claimed. No official quota was
+used by this stage.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
+# Common-PV runtime rejected; broad architecture work continues
+
+The [common-PV native result](reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md)
+passed all 39 original-oracle checks and replay/cache/diagnostic gates. Target
+alpha-one frequency was about 79.29%, but it won 0/6 paired timings; the two
+fresh seeds were 0.54976% and 0.47631% slower. The declared benefit gate failed.
+Stop this alpha-one route; no fresh confirmation or official check follows.
+
+App `ap-wE6ZSXzC1dnP253vX0kM5l` is independently stopped/tasks0 at
+22:51:11.150348 UTC. The closed delayed detailed workspace delta is $0.07047792,
+paid $0; it is not an exact app invoice. Working composition SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`
+remains selected at official 1.233633059x, with A2-11 rollback and Projection
+records preserved.
+
+The main effort now targets broad B1/sliding/full attention architecture and
+mainloop/data movement. The CPU-only [image identity audit](reviews/attention-v2/fa3-next-evidence/image-inventory/IMAGE_RESULT_REVIEW.md)
+confirmed Gluon Hopper APIs and rejected installed XQA for page1. Exact FA3 C++
+revision remains unknown; no missing FA3 mechanism is proved. Its app stopped/tasks0,
+with no GPU request, observed delayed workspace delta $0 and paid $0. A matched
+Gluon serial/overlap microprototype is local preparation, not a production change.
+Use existing free credits with actual paid cap $0, existing credentials and
+serialized measurement slots under the standing project scope.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
+# Alpha-one branch rejected before execution; working source unchanged
+
+The [compile-only alpha-one probe](reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md)
+compiled all four same-geometry units and retrieved 24 hash-verified artifacts,
+but failed its declared resource gate: producer registers rose 96 to 128, and
+V asynchronous buffering was lost. Shared memory stayed 20,480 bytes and spills
+zero. Actual rescale bypass and unchanged merge SASS do not establish a speedup.
+No candidate/merge invocation, frequency run, native correctness test, timing
+or official check followed. This is not a measured slowdown.
+
+App `ap-uY5K1rBNFRR2K8rdo2F8tw` was independently stopped/tasks0 at
+22:06:59.192653 UTC and its measurement slot released. Closed accounting showed
+a detailed delayed workspace delta $0.02871385, paid $0; no exact app invoice
+is claimed. The rejected source SHA256 is
+`e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764`.
+
+Attention still selects composition SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`,
+with official score 1.233633059x; DP two/three-chunk validation remains passing.
+A2-11 rollback, fusion control and Projection records are unchanged. A distinct
+local lowering card considers conditional MUL followed by one common PV, based
+on observed branch/liveness changes. No thresholds are relaxed, no failed
+source is overwritten, and no further test is launched or reserved here.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
+# Attention DP multi-chunk robustness passed
+
+The working fusion-plus-lookahead candidate is unchanged:
+`reviews/attention-v2/fusion-lookahead-probe/candidate.py`, SHA256
+`3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`.
+Its [DP validation](reviews/attention-v2/dp-merge-validation/RESULTS.md) passed
+two native B32/L1 DP cases at ctx8193/SPLITS2 and ctx16385/SPLITS3/mergeBS4:
+15 original-oracle calls, four returning-A checks, twelve K/V byte comparisons
+and four independent-graph isolation checks. Distinct graph pools and disjoint
+outputs/caches were observed; actual hardware overlap and internal scratch
+pointers were not. General serving concurrency remains outside this evidence.
+
+App `ap-gXUKhAM11JBfvrA3h5rip9` was independently stopped/tasks0 at
+21:52:08.731188 UTC; the parent received immediate measurement-slot release.
+At the no-new-app accounting cutoff, delayed detailed credit usage increased
+$0.03730389, paid $0; this is not an exact per-app invoice. No official check
+or timing was performed, so the official score remains 1.233633059x and the
+last observed Attention quota remains two checks. A2-11 rollback and Projection
+records are preserved. The strict alpha==1 historical-numerator-rescale probe
+is next local preparation; it has no compute slot or launched job here.
+
+Earlier checkpoints below retain their original observations.
+
+---
+
+# Working attention selection: fusion plus lookahead
+
+Attention now selects `reviews/attention-v2/fusion-lookahead-probe/candidate.py`
+SHA256 `3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8`,
+frozen at `c9062363c665e37535d3370c1b6bfb54e04fc7c8`, on independent branch
+`attention-fusion-lookahead`. See the [complete report](reviews/attention-v2/fusion-lookahead-probe/RESULTS.md)
+and [selection/rollback record](reviews/attention-v2/fusion-lookahead-probe/WORKING_SELECTION.json).
+Official nonranking check `5090b83f1d63407b` passed 16 prerequisites and 12 shapes,
+score 1.233633059x, 95% interval [1.215128563, 1.252137555]. Native paired target
+latency fell 4.8226% against fusion; official target reference-normalized cross-run
+latency fell 3.8251%, with at most 1.8323% unchanged-path normalized regression.
+This supports a working engineering choice, not universal concurrency safety or
+a proven aggregate statistical difference. No ranked entry was made.
+
+A2-11 remains the immutable rollback source at
+`reviews/attention-v2/mixed_fa3_decode_parallel_merge.py`, SHA256
+`c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0`.
+To roll back, select that path/hash in the attention record; do not overwrite
+either source. Fusion remains the direct experimental control. Projection
+records and original checkout sources are unchanged by this selection.
+
+The native app `ap-EY8FNKYqqFMGgZAatYZXOQ` is independently stopped/tasks0;
+the official job is terminal and its serialized slot released. No new job is
+started by these records. A next local plan covers the actual DP multi-chunk
+lookahead/merge gap; same-address live-metadata replay is already covered.
+Remaining attention quota was 2 checks after this admission; duplicate/no-op
+checks do not follow from that quota. Artificial stage-credit ceilings are
+removed; use existing free credits with live paid cap $0, existing credentials,
+serial measurement slots and reviewed private pushes under the standing project
+scope. No payment, credential renewal, public visibility or formal entry.
+
+Earlier checkpoints below are historical and superseded for attention selection.
+
+---
+
+# Pro research completed; independent review saved
+
+Read [the Pro research review](reviews/attention-v2/next-plan/PRO_RESEARCH_REVIEW.md)
+and its `pro-request-status.json` receipt. The single approved research request
+completed in the user's Mac Chrome, with Pro selected and Response complete
+visible. No duplicate request or browser action is pending. The live conversation
+is https://chatgpt.com/c/6ade40a4-9438-83e8-b546-958708e69fd0.
+
+Pro recommends extending existing fused preparation to full decode B16 and full
+verify B16/B32. Independent source review confirms this needs only a dispatch
+change: the existing helper is already batch-generic. Five to seven microseconds
+saved per complete call would model +0.84–1.19% overall; this is not measured.
+Keep the natural L8/M64 WGMMA idea as a separate compiler-feasibility probe.
+The earlier PLAN.md preserves our original ranking and exact score calculations.
+
+No candidate was changed, GPU job launched, official check consumed or credential
+changed by this research stage. Dedicated batched-full cache/replay validation
+remains necessary. A2-11 remains selected and projection is unchanged. The last
+conservative Modal ledger observed by this task is $1.919496218/$2; this research
+consumed no GPU credit. Do not infer another task's live app state from this file.
+
+The former upload denial was resolved with specific user confirmation. A later
+stop preserved the attached unsent draft; subsequent explicit reauthorization
+permitted exactly one send. See the receipt history for the earlier states.
+
+Earlier checkpoints below are historical.
+
+---
+
+# A2-15 paired diagnostic complete; selected A2-11 unchanged
+
+Read [PAIRED_RESULT.md](reviews/attention-v2/a215/PAIRED_RESULT.md).
+App ap-DjbFQfnZXQjpr1Zgt3rtFK stopped at 2026-10-25 16:17:37 UTC;
+a separate 16:17:56 UTC read verified stopped, zero tasks and no active apps.
+Two B32/L1/full cases (scored-family page1 and page64/scale1/64 boundaries),
+both sources, four graphs: 12 ABA checks plus 32 warmup/timing calls passed.
+Eight ABA checks used the official oracle; four A returns matched exact bytes.
+All checked immutable inputs and untouched cache rows. No concurrency/control/
+full-suite coverage is claimed.
+
+Target raw medians: A2-13 312.032 us, A2-15 295.904 us. Median of six reverse-
+order pair ratios is 1.054731x, a 5.189% latency cut. All 12 measured comparisons
+favored A2-15. This misses the predeclared10% target and is not an official score.
+Holding other paths fixed models only +0.750% overall; selected A2-11 stays.
+
+Frozen worker/protocol source commit: 5cb8db07702dd9a69bd632b2e425198c0dfc5e91.
+Candidate hashes remain unchanged. No additional OKC check or GPU run.
+The 16:18:59 UTC billing snapshot increased $0.07, with $0 paid. This exceeds
+our time model, so conservative accounting uses $0.07: cumulative $1.919496218,
+remaining $0.080503782. Reservation released only after verified shutdown.
+No active/uncertain request. No further run fits the unchanged $0.14637 reserve;
+this bounded Modal cycle ends without spending on another small-score trial.
+
+The completed experiment is being committed and privately exported after review.
+Use the verified remote SHA receipt for delivery status; do not infer push from
+this header. Both earlier native evidence and all historical failures remain.
+
+Earlier checkpoints below are historical.
+
+---
+
+# A2-15 native diagnostic complete; no active GPU work
+
+Modal app `ap-TQMFJknnfH0UZbG8lOBcBe` stopped at 2026-10-25 15:52:43 UTC;
+a separate 15:53:12 UTC read confirmed stopped, zero tasks and no active apps.
+Four exact-source H200 specializations compiled and disassembled. All 25 raw
+files were retrieved and hash-verified. No candidate kernel was executed;
+correctness, graph/cache behavior and performance remain untested for A2-15.
+
+See [NATIVE_RESULT.md](reviews/attention-v2/a215/NATIVE_RESULT.md) and the saved
+native artifacts. The compiler produces page-load/use separation across part
+of PV plus double-buffered K/V, rather than the literal before-QK source order.
+Producer shared memory rises 12,544 to 20,480 bytes; registers remain 96, raw
+spill field 0. Both versions lower quantized FP8 Q/K to FP16 MMA in this
+specialization. Merge SASS is identical. No new score or selection change.
+
+Executed payload commit: 31010ce6b69d54767dc322a53b0cf6894b03d955.
+A2-15 candidate hash remains fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c.
+Post-run local warning hardening is commit aaa801a; it was not uploaded.
+Billing at 16:00:27 UTC shows $1.23 gross and $0 paid, an observed $0.03 rounded
+increase. Keep the larger $0.061676416 model allowance: cumulative $1.849496218,
+remaining $0.150503782 under the $2 stage ceiling. Prior accounting was retained.
+No active reservation, uncertain request, new official check or further GPU run.
+
+The next justified experiment is a full correctness/paired-timing check of the
+unchanged A2-15 source against A2-13, retaining A2-11 as selected best. This
+completed diagnostic does not itself authorize a new launch. The private export
+will include reviewed source, artifact hashes and results; verify delivery from
+the remote SHA receipt rather than assuming it from this status file.
+
+The earlier checkpoints below are historical and superseded by this result.
+
+---
+
+# A2-15: native diagnostic blocked; official capability audit complete
+
+Read reviews/attention-v2/a215/OFFICIAL_CAPABILITY_AUDIT.md and
+NATIVE_ATTEMPT.md. Modal app-list failed `Token has expired` at 08:31:05 UTC;
+no upload or new app, no GPU use, no credential renewal. No launch outcome is
+uncertain. Historical conservative Modal cost stays $1.787819802. Existing
+account credits/cap/apps could not be freshly verified.
+
+OKC read-only access works. At 08:36:21 UTC, attention checks were 16/20 used
+(4 left), projection 3/20 (17 left), scored 0/10 each, all 37 returned jobs
+terminal. No new check was reserved or sent. The inspected documented CLI/API
+and saved receipts expose timings/profiles/logs, not native generated artifacts.
+A timing-only result could assess net benefit but not the intended page-load
+scheduling mechanism. The bounded decision is to preserve quota and prepare
+native comparison when valid access can be established separately.
+
+A2-15 source commit a2c9a91b1dd347d11cb333b2f96b8973951cfa03 and both frozen
+candidate hashes remain unchanged. Seven source/address and three diagnosis
+tests passed previously; no native compilation, GPU correctness or performance
+result exists for A2-15. The narrow diagnostic program is still unimplemented;
+old wrappers package extra files and omit current compile arguments.
+
+The reviewed A2-15 export is being delivered to the existing private
+attention-fa3-sanitized branch. Verify its actual SHA from the push receipt or
+remote before any retry; this file does not assert that a pending push worked.
+Selected A2-11 and projection P039 remain unchanged. No active GPU job or
+uncertain request is introduced by this phase.
+
+The prior completed local checkpoint follows as historical context.
+
+---
+
+# A2-15 local diagnosis and prototype complete; no external operation pending
+
+Read CURRENT_AUTHORIZATION.md. No new OKC/GPU/Modal/push/credential operation
+was attempted or reserved in this phase. Native compilation and execution are
+not available in this Mac environment (no Triton installation). Do not upload
+or launch without a separate exact approval.
+
+Candidate: reviews/attention-v2/mixed_fa3_page_lookahead.py, SHA256
+fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c.
+Parent is preserved A2-13, not rejected A2-14. Only full B32/L1 prefetches next
+page IDs before current QK/PV, consumes them after PV and carries int64 rows.
+Math, scalar denominator, K/V payload loads, merge/cache ownership, geometry and
+all other paths remain the parent. Seven AST/address and three diagnosis tests
+pass. Independent review found no concrete semantic defect; native scheduling,
+resources, correctness and performance remain unverified.
+
+A2-14 diagnosis: denominator state16→1024 FP32 values and full-chunk logical
+multiplies2048→131072, with max reductions unchanged. These are source counts,
+not measured instructions/registers. Producer profile311.1→422.0us; no saved
+candidate-specific compiler artifacts were found. Do not claim proven spilling.
+
+See reviews/attention-v2/a215/README.md, diagnosis.json, preflight.json and
+NATIVE_DIAGNOSTIC_PLAN.md for evidence, commands and the falsification gate.
+The bounded local phase has one candidate; do not start a broader rewrite or
+parameter sweep. Selected A2-11 and projection remain unchanged. Latest actual
+verified private remote tip from the prior phase:
+73d9d1acfa21722415bb0957f3ec9197c75c5855 (attention-fa3-sanitized).
+New A2-15 work is local and unpushed.
+
+The prior completed A2-14 checkpoint follows; its check must never be repeated.
+
+---
+
+# A2-14 complete: reject performance regression
+
+Job `6d6019056cbc4f81` is terminal DONE; do not resubmit. Official H200 passed
+16 prerequisites + 12 timed shapes. Score 1.1687086418×, CI
+[1.1511780122, 1.1862392714]. Target full decode B32 latency 316.412→422.966 µs,
+normalized +33.9263%, versus a 20% reduction goal. Aggregate −3.4915% vs A2-13;
+no unchanged control regressed >5%. Independent analysis confirms rejection.
+
+Frozen source: reviews/attention-v2/mixed_fa3_deferred_denom.py, commit
+2092957b1c8312b1fc90b43f64c3ed5eed8f4658, SHA256
+bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d.
+Full receipt, all 12 timings, six weighted loads, numerical coverage and
+commands are in reviews/attention-v2/A2-14-RESULT.md and associated JSON/CSV.
+Source bytes have not changed after dispatch. Exact-source ABA/concurrency,
+untouched rows and B32 page64/non-unit-scale stress remain unverified. No
+current-candidate register/spill metadata; do not invent a hardware cause.
+
+Selected attention remains A2-11, mixed_fa3_decode_parallel_merge.py,
+job cfa8a8670e394f80, 1.1876787561×. Promising A2-13 FP8 QK remains separately
+preserved, job c2fb7b23433f4888, 1.2109908035×. Projection P039 is unchanged
+in its separate worktree, job d5636ac8d1404abd, 1.1732389990×.
+
+The one exact A2-14 check permission is consumed; no new candidate upload,
+Modal, credentials, paid resource or ranked entry is authorized by it. The
+reviewed A2-14 source/tests/related analysis/sanitized evidence private push
+completed at 07:55:09 UTC, verified first-delivery SHA
+16a8c48296884950e308d8217918444ccefedb99 on attention-fa3-sanitized.
+A confirmation-only commit may advance that branch; the final task/ignored
+receipt records its exact latest SHA. No additional candidate transfer is granted.
+Push verification belongs to the task and ignored local push receipt; inspect
+actual remote state after any interruption, never blindly retry. Never push
+original attention-fa3-local history. No unrelated projection push.
+
+Actual platform snapshot 2026-10-25 07:50:53 UTC: attention16/20 used4left,
+projection3/20 used17left, scored0/10 each. Reset October26 00:00 UTC.
+No active jobs among37returned; zero uncertain requests. These counts are a
+timestamped observation, not a perpetual grant. Historical Modal apps were
+stopped; no Modal action here. Conservative cost remains $1.787819802.

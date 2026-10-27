@@ -1,0 +1,64 @@
+{
+  "observed_utc": "2026-10-25T22:41:14.939825+00:00",
+  "source_sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+  "diagnostic_sha256": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60",
+  "scope": "Local generated source and offline review only; no GPU/service/network/credential/commit operation",
+  "test_command": "python3 reviews/attention-v2/alpha-one-common-pv-probe/runtime/test_diagnostic.py",
+  "test_methods": 5,
+  "test_passed": 5,
+  "independent_source_review_passed": true,
+  "native_diagnostic_executed": false,
+  "full_worker_harness_reviewed_by_this_artifact": false,
+  "statistics_layout": {
+    "dtype": "torch.int32",
+    "device": "CUDA",
+    "contiguous": true,
+    "shape": [
+      "batch*HKV*SPLITS",
+      3
+    ],
+    "row": "(b*HKV+kvh)*SPLITS+split",
+    "columns": [
+      "total",
+      "fast",
+      "slow"
+    ],
+    "prefill_sentinel": -1,
+    "empty_split_stores": [
+      0,
+      0,
+      0
+    ]
+  },
+  "expected_historical_tiles": "ceil(max(0,min(seq,(s+1)*8192)-s*8192)/64)",
+  "files": {
+    "diagnostic.py": {
+      "sha256": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60",
+      "bytes": 41396
+    },
+    "test_diagnostic.py": {
+      "sha256": "70cb800eb8cf08833170fc157d741a56822a10b4d91e05d7eca7b7f08416cdb0",
+      "bytes": 7634
+    },
+    "DIAGNOSTIC.md": {
+      "sha256": "663ebaf31bdf686015c4ed24695e708f2d3f369268a114300a2a1fbb84c37180",
+      "bytes": 4666
+    },
+    "DIAGNOSTIC_REVIEW.md": {
+      "sha256": "d1bc00dee22891eb08b0cbce983cfb85ca7f81830aa61005e940b8ff098910bd",
+      "bytes": 5615
+    }
+  },
+  "secret_scan": {
+    "files": 4,
+    "patterns": 6,
+    "match_counts": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  }
+}

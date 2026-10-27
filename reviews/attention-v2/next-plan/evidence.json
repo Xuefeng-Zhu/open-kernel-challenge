@@ -1,0 +1,1098 @@
+{
+  "kind": "Local planning evidence; scenarios are not achieved scores",
+  "source_sha256": {
+    "next-plan/analyze.py": "c78595719a209082c324288b0447862ff29f8174a79af27e05d09316ec0e96cf",
+    "A2-11-official-result.json": "c3b9f65f1ef118cf1bb928473387b94839d0cdfba6828b3814cbfbbac300bf1b",
+    "A2-13-official-result.json": "4e83463a594e6eb523b8654743dc1f28794f4f409c0f707002dbe3d94b01c084",
+    "a215/paired-analysis.json": "a6ee815651dadc1172b2c9663b424d532235b9b4fe3be389f3349ba63e7dfbef",
+    "a215/paired-result.json": "92b5ba197689c3e17ec3c86cefdefdb1edd4bfe0222171b0bd63bd67f000e867",
+    "a215/native-analysis.json": "62793487c763a1d8af3f1717cabb85e840bae5aaec35f1e7032999bc6e769829"
+  },
+  "preserved": {
+    "A2-11": {
+      "source": {
+        "source": "mixed_fa3_decode_parallel_merge.py",
+        "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+        "commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+        "job": "cfa8a8670e394f80",
+        "receipt_file": "A2-11-official-result.json",
+        "receipt_sha256": "c3b9f65f1ef118cf1bb928473387b94839d0cdfba6828b3814cbfbbac300bf1b",
+        "evaluator": {
+          "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+          "files": {
+            "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+            "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+            "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+            "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+            "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+            "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+            "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+            "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+            "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+            "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+          },
+          "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+        },
+        "machine": {
+          "gpu_before": {
+            "clocks.max.sm": 1980,
+            "clocks.mem": 3201,
+            "clocks.sm": 1980,
+            "driver_version": "580.178.04",
+            "name": "NVIDIA H200",
+            "power.draw": 141.71,
+            "power.limit": 700,
+            "temperature.gpu": 32
+          },
+          "gpu_after": {
+            "clocks.max.sm": 1980,
+            "clocks.mem": 3201,
+            "clocks.sm": 1980,
+            "driver_version": "580.178.04",
+            "name": "NVIDIA H200",
+            "power.draw": 123.58,
+            "power.limit": 700,
+            "temperature.gpu": 37
+          }
+        },
+        "receipt_content_hash": "139ae48909201024424a413bdd3d32f9f4ecf5fd41109bc660b245239d563899"
+      },
+      "measured": {
+        "speedup": 1.1876787560868445,
+        "speedup_ci": [
+          1.1698635747455417,
+          1.2109342502243532
+        ],
+        "score_us": 3171.143695799678,
+        "baseline_us": 3766.3,
+        "prerequisite_passes": 16,
+        "benchmark_passes": 12,
+        "reconstructed_six_load_score": 1.1876787560868445
+      },
+      "loads": {
+        "decode 1": {
+          "candidate_weighted_us": 980.5161919682951,
+          "reference_weighted_us": 1458.7839599698782,
+          "ratio": 1.4877714125674
+        },
+        "decode 16": {
+          "candidate_weighted_us": 3906.4119876651357,
+          "reference_weighted_us": 4468.031958676875,
+          "ratio": 1.1437687506553602
+        },
+        "decode 32": {
+          "candidate_weighted_us": 6773.684604149052,
+          "reference_weighted_us": 7613.024023361504,
+          "ratio": 1.12391179516955
+        },
+        "verify 1": {
+          "candidate_weighted_us": 1235.5940131512625,
+          "reference_weighted_us": 1625.984008423984,
+          "ratio": 1.3159532913866019
+        },
+        "verify 16": {
+          "candidate_weighted_us": 4333.740708895155,
+          "reference_weighted_us": 4638.55997286737,
+          "ratio": 1.0703362947733728
+        },
+        "verify 32": {
+          "candidate_weighted_us": 7496.511190026836,
+          "reference_weighted_us": 7810.623993165791,
+          "ratio": 1.041901198461071
+        }
+      }
+    },
+    "A2-13": {
+      "source": {
+        "source": "mixed_fa3_fp8_qk.py",
+        "sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+        "commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+        "job": "c2fb7b23433f4888",
+        "receipt_file": "A2-13-official-result.json",
+        "receipt_sha256": "4e83463a594e6eb523b8654743dc1f28794f4f409c0f707002dbe3d94b01c084",
+        "evaluator": {
+          "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+          "files": {
+            "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+            "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+            "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+            "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+            "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+            "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+            "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+            "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+            "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+            "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+          },
+          "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+        },
+        "machine": {
+          "gpu_before": {
+            "clocks.max.sm": 1980,
+            "clocks.mem": 3201,
+            "clocks.sm": 1980,
+            "driver_version": "580.159.03",
+            "name": "NVIDIA H200",
+            "power.draw": 145.71,
+            "power.limit": 700,
+            "temperature.gpu": 34
+          },
+          "gpu_after": {
+            "clocks.max.sm": 1980,
+            "clocks.mem": 3201,
+            "clocks.sm": 1980,
+            "driver_version": "580.159.03",
+            "name": "NVIDIA H200",
+            "power.draw": 125.29,
+            "power.limit": 700,
+            "temperature.gpu": 35
+          }
+        },
+        "receipt_content_hash": "9d7174ce110d2b234ec2c9a38fc13fb5e01084e5e17d45795612314c3728352b"
+      },
+      "measured": {
+        "speedup": 1.210990803483977,
+        "speedup_ci": [
+          1.1928259414317173,
+          1.2291556655362366
+        ],
+        "score_us": 3110.097937296048,
+        "baseline_us": 3766.3,
+        "prerequisite_passes": 16,
+        "benchmark_passes": 12,
+        "reconstructed_six_load_score": 1.210990803483977
+      },
+      "loads": {
+        "decode 1": {
+          "candidate_weighted_us": 936.882538038805,
+          "reference_weighted_us": 1436.4159749820828,
+          "ratio": 1.533186836835449
+        },
+        "decode 16": {
+          "candidate_weighted_us": 3859.0071779969844,
+          "reference_weighted_us": 4425.88796839118,
+          "ratio": 1.1468980917232796
+        },
+        "decode 32": {
+          "candidate_weighted_us": 5995.049004118397,
+          "reference_weighted_us": 7582.944054156542,
+          "ratio": 1.2648677348504265
+        },
+        "verify 1": {
+          "candidate_weighted_us": 1265.3222313950778,
+          "reference_weighted_us": 1617.4080455675721,
+          "ratio": 1.278257826691548
+        },
+        "verify 16": {
+          "candidate_weighted_us": 4309.795806987537,
+          "reference_weighted_us": 4601.695921272039,
+          "ratio": 1.0677294534026973
+        },
+        "verify 32": {
+          "candidate_weighted_us": 7510.684231957988,
+          "reference_weighted_us": 7803.328027948737,
+          "ratio": 1.0389636665519166
+        }
+      }
+    }
+  },
+  "scoring": {
+    "load": "46*sliding + 16*full",
+    "score": "geomean of six reference/candidate load ratios"
+  },
+  "a215": {
+    "measured_kind": "same-session whole kernel_fn graph replay, one changed path; not a subkernel benchmark",
+    "measured_raw_medians_us": {
+      "a213": 312.0319992303848,
+      "a215": 295.9040105342865
+    },
+    "paired_raw_ratio": 1.054731137854066,
+    "paired_latency_cut_percent": 5.189108000112796,
+    "historical_A13_official_adjusted_target_us": 316.41180986153694,
+    "historical_target_own_load_share": 0.844461647320441,
+    "modeled_score_gain_percent": 0.7496144344292466,
+    "modeled_score": 1.2200685653465035,
+    "measured_score": false,
+    "calibrated_ratio_sensitivity_gain_percent": 0.7573561178673138,
+    "per_pair_transfer_gain_percent_range": [
+      0.6883758952936248,
+      0.7928465963848996
+    ],
+    "range_is_confidence_interval": false,
+    "target_cut_to_model_1_5_percent_aggregate": 10.11979735886101,
+    "target_cut_to_model_3_percent_aggregate": 19.244893339090535,
+    "official_check_decision": "Defer performance-only confirmation: expected modeled effect is smaller than minimum reported interval; broad correctness coverage remains valuable before any adoption"
+  },
+  "ranked_path_sensitivity": [
+    {
+      "key": "decode 32/full",
+      "candidate_adjusted_us": 316.41180986153694,
+      "reference_adjusted_us": 384.8320050165057,
+      "candidate_raw_median_us": 320.94399631023407,
+      "reference_raw_median_us": 389.15200531482697,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.844461647320441,
+      "harness_floor_us": 126.35477333333334,
+      "profile_activities": [
+        {
+          "name": "_fused",
+          "activity_us": 311.1,
+          "reported_activity_share_percent": 99.2,
+          "calls": 1
+        },
+        {
+          "name": "_merge",
+          "activity_us": 2.6,
+          "reported_activity_share_percent": 0.8,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 1.4812992891223953,
+        "20": 3.1312903542793924,
+        "30": 4.989541640248651
+      }
+    },
+    {
+      "key": "decode 16/full",
+      "candidate_adjusted_us": 200.20907915871928,
+      "reference_adjusted_us": 199.9359978362918,
+      "candidate_raw_median_us": 204.24000173807144,
+      "reference_raw_median_us": 204.19199764728546,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.8300957004703482,
+      "harness_floor_us": 63.17738666666667,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 185.9,
+          "reported_activity_share_percent": 93.8,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 3.4,
+          "reported_activity_share_percent": 1.7,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 4, at::native::g...",
+          "activity_us": 2.9,
+          "reported_activity_share_percent": 1.5,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<8, at::nat...",
+          "activity_us": 2.0,
+          "reported_activity_share_percent": 1.0,
+          "calls": 2
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.5,
+          "reported_activity_share_percent": 0.8,
+          "calls": 1
+        },
+        {
+          "name": "_qk_rms_norm_fwd_kernel",
+          "activity_us": 1.4,
+          "reported_activity_share_percent": 0.7,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...",
+          "activity_us": 1.2,
+          "reported_activity_share_percent": 0.6,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 1.4547845173750407,
+        "20": 3.0719880380766007,
+        "30": 4.888879103411026
+      }
+    },
+    {
+      "key": "verify 32/full",
+      "candidate_adjusted_us": 389.16723182006587,
+      "reference_adjusted_us": 388.9919971115887,
+      "candidate_raw_median_us": 392.92800426483154,
+      "reference_raw_median_us": 393.0239975452423,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.8290424037035835,
+      "harness_floor_us": 126.78485333333334,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 373.9,
+          "reported_activity_share_percent": 95.5,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 3.7,
+          "reported_activity_share_percent": 0.9,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<2, true>(int...",
+          "activity_us": 3.6,
+          "reported_activity_share_percent": 0.9,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 4, at::native::g...",
+          "activity_us": 3.0,
+          "reported_activity_share_percent": 0.8,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<8, at::nat...",
+          "activity_us": 2.3,
+          "reported_activity_share_percent": 0.6,
+          "calls": 2
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...",
+          "activity_us": 2.0,
+          "reported_activity_share_percent": 0.5,
+          "calls": 1
+        },
+        {
+          "name": "_qk_rms_norm_fwd_kernel",
+          "activity_us": 1.9,
+          "reported_activity_share_percent": 0.5,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...",
+          "activity_us": 1.3,
+          "reported_activity_share_percent": 0.3,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 1.4528423881118524,
+        "20": 3.0676494333959248,
+        "30": 4.881525159944244
+      }
+    },
+    {
+      "key": "verify 16/full",
+      "candidate_adjusted_us": 204.4542178733542,
+      "reference_adjusted_us": 204.20799730345607,
+      "candidate_raw_median_us": 208.48000049591064,
+      "reference_raw_median_us": 208.52799713611603,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.7590307366000756,
+      "harness_floor_us": 63.39242666666667,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 189.8,
+          "reported_activity_share_percent": 91.8,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 3.7,
+          "reported_activity_share_percent": 1.8,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::elementwise_kernel<128, 4, at::native::g...",
+          "activity_us": 3.2,
+          "reported_activity_share_percent": 1.5,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<1, true>(int...",
+          "activity_us": 3.1,
+          "reported_activity_share_percent": 1.5,
+          "calls": 1
+        },
+        {
+          "name": "void at::native::vectorized_elementwise_kernel<8, at::nat...",
+          "activity_us": 2.2,
+          "reported_activity_share_percent": 1.1,
+          "calls": 2
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.9,
+          "reported_activity_share_percent": 0.9,
+          "calls": 1
+        },
+        {
+          "name": "_qk_rms_norm_fwd_kernel",
+          "activity_us": 1.7,
+          "reported_activity_share_percent": 0.8,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::store_kvcache_kernel<128l, 128l, 32u, true, ...",
+          "activity_us": 1.2,
+          "reported_activity_share_percent": 0.6,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 1.3243311735786412,
+        "20": 2.7820983779134334,
+        "30": 4.400647392504231
+      }
+    },
+    {
+      "key": "verify 1/sliding",
+      "candidate_adjusted_us": 17.141042738578037,
+      "reference_adjusted_us": 22.656000684946775,
+      "candidate_raw_median_us": 21.376000717282295,
+      "reference_raw_median_us": 26.976000517606735,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.6231519105652986,
+      "harness_floor_us": 0.12458666666666667,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 7.9,
+          "reported_activity_share_percent": 49.7,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 3.9,
+          "reported_activity_share_percent": 24.2,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<1, false>(in...",
+          "activity_us": 1.7,
+          "reported_activity_share_percent": 10.8,
+          "calls": 1
+        },
+        {
+          "name": "_fa3_prepare_fused",
+          "activity_us": 1.3,
+          "reported_activity_share_percent": 8.0,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.2,
+          "reported_activity_share_percent": 7.2,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 1.0781272043119516,
+        "20": 2.2432757118243885,
+        "30": 3.5094649160786417
+      }
+    },
+    {
+      "key": "decode 1/sliding",
+      "candidate_adjusted_us": 10.912013995644584,
+      "reference_adjusted_us": 20.351999904960394,
+      "candidate_raw_median_us": 15.456000342965126,
+      "reference_raw_median_us": 24.960000067949295,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.5357690248453113,
+      "harness_floor_us": 0.11114666666666666,
+      "profile_activities": [
+        {
+          "name": "_fused",
+          "activity_us": 7.8,
+          "reported_activity_share_percent": 82.1,
+          "calls": 1
+        },
+        {
+          "name": "_merge",
+          "activity_us": 1.7,
+          "reported_activity_share_percent": 17.9,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.9219836735532727,
+        "20": 1.9069705636126644,
+        "30": 2.963455940352633
+      }
+    },
+    {
+      "key": "decode 1/full",
+      "candidate_adjusted_us": 27.183118389947133,
+      "reference_adjusted_us": 31.263998709619045,
+      "candidate_raw_median_us": 31.50400146842003,
+      "reference_raw_median_us": 35.551998764276505,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.46423097515468864,
+      "harness_floor_us": 4.268586666666666,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 14.6,
+          "reported_activity_share_percent": 60.9,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 7.3,
+          "reported_activity_share_percent": 30.4,
+          "calls": 1
+        },
+        {
+          "name": "_fa3_prepare_fused",
+          "activity_us": 1.1,
+          "reported_activity_share_percent": 4.4,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.1,
+          "reported_activity_share_percent": 4.4,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.7954000374427395,
+        "20": 1.637313910013738,
+        "30": 2.5310607551996656
+      }
+    },
+    {
+      "key": "verify 1/full",
+      "candidate_adjusted_us": 29.802141588780508,
+      "reference_adjusted_us": 35.95200087875128,
+      "candidate_raw_median_us": 34.11199897527695,
+      "reference_raw_median_us": 40.272001177072525,
+      "weight": 16,
+      "share_of_own_load_candidate": 0.3768480894347013,
+      "harness_floor_us": 4.282026666666667,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 14.9,
+          "reported_activity_share_percent": 54.6,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 7.4,
+          "reported_activity_share_percent": 27.1,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<1, true>(int...",
+          "activity_us": 2.7,
+          "reported_activity_share_percent": 9.9,
+          "calls": 1
+        },
+        {
+          "name": "_fa3_prepare_fused",
+          "activity_us": 1.2,
+          "reported_activity_share_percent": 4.5,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.1,
+          "reported_activity_share_percent": 4.0,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.642274468969739,
+        "20": 1.3145858294396406,
+        "30": 2.019652113931847
+      }
+    },
+    {
+      "key": "verify 16/sliding",
+      "candidate_adjusted_us": 22.576702630736303,
+      "reference_adjusted_us": 29.00799922645092,
+      "candidate_raw_median_us": 26.6720000654459,
+      "reference_raw_median_us": 33.1679992377758,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.24096926339992453,
+      "harness_floor_us": 1.8623146666666668,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 10.6,
+          "reported_activity_share_percent": 54.3,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 3.9,
+          "reported_activity_share_percent": 20.0,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<1, false>(in...",
+          "activity_us": 1.9,
+          "reported_activity_share_percent": 9.7,
+          "calls": 1
+        },
+        {
+          "name": "_fa3_prepare_fused",
+          "activity_us": 1.8,
+          "reported_activity_share_percent": 9.2,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 8, 8, t...",
+          "activity_us": 1.3,
+          "reported_activity_share_percent": 6.9,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.40736092276631997,
+        "20": 0.8266293966230132,
+        "30": 1.2584684783194744
+      }
+    },
+    {
+      "key": "verify 32/sliding",
+      "candidate_adjusted_us": 27.91322875732465,
+      "reference_adjusted_us": 34.33600161224604,
+      "candidate_raw_median_us": 32.1119986474514,
+      "reference_raw_median_us": 38.36800158023834,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.17095759629641638,
+      "harness_floor_us": 3.7246293333333336,
+      "profile_activities": [
+        {
+          "name": "void cutlass::device_kernel<flash::enable_sm90_or_later<f...",
+          "activity_us": 14.8,
+          "reported_activity_share_percent": 59.9,
+          "calls": 1
+        },
+        {
+          "name": "void cutlass::device_kernel<flash::FlashAttnFwdCombine<cu...",
+          "activity_us": 4.2,
+          "reported_activity_share_percent": 16.9,
+          "calls": 1
+        },
+        {
+          "name": "_fa3_prepare_fused",
+          "activity_us": 2.3,
+          "reported_activity_share_percent": 9.2,
+          "calls": 1
+        },
+        {
+          "name": "void flash::prepare_varlen_num_blocks_kernel<2, false>(in...",
+          "activity_us": 1.9,
+          "reported_activity_share_percent": 7.5,
+          "calls": 1
+        },
+        {
+          "name": "void sglang::norm_gate_kernel<__nv_bfloat16, 64l, 16, 4, ...",
+          "activity_us": 1.6,
+          "reported_activity_share_percent": 6.5,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.28780635749561245,
+        "20": 0.5815130026952886,
+        "30": 0.8813486009221272
+      }
+    },
+    {
+      "key": "decode 16/sliding",
+      "candidate_adjusted_us": 14.253519814292959,
+      "reference_adjusted_us": 26.6720000654459,
+      "candidate_raw_median_us": 18.41600053012371,
+      "reference_raw_median_us": 30.896000564098358,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.16990429952965183,
+      "harness_floor_us": 1.6472746666666667,
+      "profile_activities": [
+        {
+          "name": "_fused",
+          "activity_us": 8.7,
+          "reported_activity_share_percent": 82.5,
+          "calls": 1
+        },
+        {
+          "name": "_merge",
+          "activity_us": 1.9,
+          "reported_activity_share_percent": 17.5,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.28601530103349315,
+        "20": 0.5778570430467589,
+        "30": 0.8757495741635424
+      }
+    },
+    {
+      "key": "decode 32/sliding",
+      "candidate_adjusted_us": 20.270870572474028,
+      "reference_adjusted_us": 30.991999432444572,
+      "candidate_raw_median_us": 24.447999894618988,
+      "reference_raw_median_us": 35.08799895644188,
+      "weight": 46,
+      "share_of_own_load_candidate": 0.15553835267955884,
+      "harness_floor_us": 3.2945493333333333,
+      "profile_activities": [
+        {
+          "name": "_fused",
+          "activity_us": 14.4,
+          "reported_activity_share_percent": 87.9,
+          "calls": 1
+        },
+        {
+          "name": "_merge",
+          "activity_us": 2.0,
+          "reported_activity_share_percent": 12.1,
+          "calls": 1
+        }
+      ],
+      "modeled_score_gain_percent_for_path_cut": {
+        "10": 0.2616093558017507,
+        "20": 0.5280859570770291,
+        "30": 0.7996007061775501
+      }
+    }
+  ],
+  "grouped_scenarios": [
+    {
+      "basis": "A2-11",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0280382297367887,
+      "score_gain_percent": 2.803822973678871,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0595182771248033,
+      "score_gain_percent": 5.951827712480329,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.095256914350328,
+      "score_gain_percent": 9.52569143503279,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0428315357699693,
+      "score_gain_percent": 4.283153576996934,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0916927840447068,
+      "score_gain_percent": 9.169278404470681,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.1481482510631063,
+      "score_gain_percent": 14.814825106310625,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0175674602993483,
+      "score_gain_percent": 1.7567460299348303,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0363360438697655,
+      "score_gain_percent": 3.633604386976552,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.0564768626117431,
+      "score_gain_percent": 5.647686261174312,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0305272119414841,
+      "score_gain_percent": 3.052721194148411,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0648586246104266,
+      "score_gain_percent": 6.485862461042657,
+      "measured": false
+    },
+    {
+      "basis": "A2-11",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.1040056777168432,
+      "score_gain_percent": 10.400567771684322,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.027964140063392,
+      "score_gain_percent": 2.7964140063392096,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0593509283643594,
+      "score_gain_percent": 5.93509283643594,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_full_verify_B16_B32",
+      "keys": [
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.0949699126211399,
+      "score_gain_percent": 9.496991262113985,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0429188032172019,
+      "score_gain_percent": 4.291880321720187,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0918940621649662,
+      "score_gain_percent": 9.189406216496621,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_large_full_including_decode_B16",
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.148501667867913,
+      "score_gain_percent": 14.850166786791297,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0178197432284952,
+      "score_gain_percent": 1.7819743228495222,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.0368792141830838,
+      "score_gain_percent": 3.687921418308382,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FA3_sliding_verify_all_batches",
+      "keys": [
+        "verify 1/sliding",
+        "verify 16/sliding",
+        "verify 32/sliding"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.0573585887141328,
+      "score_gain_percent": 5.73585887141328,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 10.0,
+      "score_factor": 1.0300359968109003,
+      "score_gain_percent": 3.00359968109003,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 20.0,
+      "score_factor": 1.063794984107804,
+      "score_gain_percent": 6.379498410780404,
+      "measured": false
+    },
+    {
+      "basis": "A2-13",
+      "group": "FP8_fallback_four_paths",
+      "keys": [
+        "decode 1/sliding",
+        "decode 16/sliding",
+        "decode 32/sliding",
+        "decode 32/full"
+      ],
+      "assumed_whole_path_latency_cut_percent": 30.0,
+      "score_factor": 1.1022671871013785,
+      "score_gain_percent": 10.226718710137849,
+      "measured": false
+    }
+  ],
+  "prologue_saving_models": [
+    {
+      "assumed_saving_us_each": 5,
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "modeled_gain_percent": 0.8434379308212225,
+      "measured": false
+    },
+    {
+      "assumed_saving_us_each": 7,
+      "keys": [
+        "decode 16/full",
+        "verify 16/full",
+        "verify 32/full"
+      ],
+      "modeled_gain_percent": 1.187121801762836,
+      "measured": false
+    }
+  ]
+}

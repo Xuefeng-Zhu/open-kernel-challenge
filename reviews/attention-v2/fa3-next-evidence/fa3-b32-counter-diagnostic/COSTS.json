@@ -1,0 +1,53 @@
+{
+  "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+  "source_commit": "37b21ebc5ec4a3c51a6fdb41ad41b9d54f15880f",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "reserve_usd": "0.70",
+  "app_lifetime_seconds": 80,
+  "nominal_lifetime_times_rate_usd": "0.1044133333333333333333333334",
+  "worker_elapsed_seconds": 61.937419562,
+  "ncu_command_seconds": 19.310275328000003,
+  "billing_before": {
+    "metered_cost": "2.61000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "credits": "-2.61000000",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "network_egress": "0E-8",
+      "ephemeral_apps": "2.60720561",
+      "volumes": "0E-8"
+    }
+  },
+  "independent_billing_cutoff": {
+    "metered_cost": "2.66000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.66000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.66463216",
+      "network_egress": "0E-8"
+    }
+  },
+  "observed_account_ephemeral_delta_at_cutoff_usd": "0.05742655",
+  "actual_billed_usd": "0E-8",
+  "cost_qualification": "Provisional account-wide metering observation, not a final per-app invoice; lifetime-times-rate is a model.",
+  "independent_stopped_zero_tasks": true,
+  "all_apps_stopped_zero_tasks_at_cutoff": true,
+  "candidate_changed": false,
+  "official_checks": 0,
+  "ranked_submissions": 0,
+  "credential_actions": 0
+}

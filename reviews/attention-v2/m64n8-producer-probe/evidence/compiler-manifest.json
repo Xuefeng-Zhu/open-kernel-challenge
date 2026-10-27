@@ -1,0 +1,2169 @@
+{
+  "status": "stopped_on_candidate_resource_gate",
+  "manifest": {
+    "status": "prepared_compile_only_not_executed",
+    "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "kernel_sha256": "eae6ca35c88a5a45612f13ee5fa7696e86dc67b0fcf4fdcb14aceed1b9f43480",
+    "helper_sha256": "f8cc6a6b72a0ba9076d2a4ece018a4ecce2140a9161ac8aa35b4eb9e4442f5fd",
+    "control_sha256": "cfefc9b9a9b2b175945fe7e6990d7c5fe46efb6e752acf88683c0dee4bb05356",
+    "control_contract": {
+      "entry": "_fused",
+      "functions": {
+        "_norm_rope": "970065927be62705da09115c3917f7cb3fd98fe4628bdb1f6575590f0f1579e4",
+        "_fused": "5cd279b82ececbeca2a1d429034afd94986e3e309d610d510882edff8dcfe265"
+      },
+      "imports": {
+        "triton": "triton",
+        "tl": "triton.language"
+      },
+      "runtime_args": [
+        "qkv_ptr",
+        "seq_ptr",
+        "pt_ptr",
+        "loc_ptr",
+        "kc_ptr",
+        "vc_ptr",
+        "ks_ptr",
+        "vs_ptr",
+        "o_ptr",
+        "m_ptr",
+        "l_ptr",
+        "ticket_ptr",
+        "out_ptr",
+        "theta",
+        "eps",
+        "qk_factor",
+        "sm_scale",
+        "window",
+        "page",
+        "stride_tok",
+        "stride_pt"
+      ],
+      "constexpr_args": [
+        "L",
+        "G",
+        "HQ",
+        "HKV",
+        "D",
+        "BLOCK_M",
+        "BLOCK_N",
+        "BLOCK_L",
+        "SPLITS",
+        "ROPE",
+        "WINDOWED",
+        "DOT",
+        "QK_DOT",
+        "CHUNK_SIZE",
+        "SEPARATE_MERGE",
+        "PAGE_LOOKAHEAD"
+      ],
+      "selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "extracted_source_sha256": "cfefc9b9a9b2b175945fe7e6990d7c5fe46efb6e752acf88683c0dee4bb05356",
+      "executed_selected_host_code": false,
+      "qualification": "Exact selected JIT functions plus LOG2E; all host/torch/sgl code excluded"
+    },
+    "candidate_contract": {
+      "entry": "_m64n8_fused",
+      "functions": {
+        "_m64n8_norm_rope": "ff694f7781f328c60984e0661996e0a6cafde9fc4ce10b49cd12cdcbfcae7910",
+        "_m64n8_page_ids": "f90b1e2a72b260d1e2878afcb96c45eacfd75272ae7b127804b4695b54a02f54",
+        "_m64n8_issue_tile": "2021667e03a4ba926987181be31e00a31ca505068805bb0ea6fc8aa1474c7ee1",
+        "_m64n8_fused": "fb388fb05ee509d2a7fac6d5e8b827529f3da84883ea68c010d217dcdd47802c"
+      },
+      "imports": {
+        "_m64n8_gluon": "triton.experimental.gluon",
+        "_m64n8_gl": "triton.experimental.gluon.language",
+        "_m64n8_async_copy": "triton.experimental.gluon.language.nvidia.ampere.async_copy",
+        "_m64n8_mma_v2": "triton.experimental.gluon.language.nvidia.ampere.mma_v2",
+        "_m64n8_fence_async_shared": "triton.experimental.gluon.language.nvidia.hopper.fence_async_shared",
+        "_m64n8_warpgroup_mma": "triton.experimental.gluon.language.nvidia.hopper.warpgroup_mma",
+        "_m64n8_warpgroup_mma_wait": "triton.experimental.gluon.language.nvidia.hopper.warpgroup_mma_wait"
+      },
+      "runtime_args": [
+        "qkv_ptr",
+        "seq_ptr",
+        "pt_ptr",
+        "loc_ptr",
+        "kc_ptr",
+        "vc_ptr",
+        "ks_ptr",
+        "vs_ptr",
+        "o_ptr",
+        "m_ptr",
+        "l_ptr",
+        "ticket_ptr",
+        "out_ptr",
+        "theta",
+        "eps",
+        "qk_factor",
+        "sm_scale",
+        "window",
+        "page",
+        "stride_tok",
+        "stride_pt"
+      ],
+      "constexpr_args": [
+        "L",
+        "G",
+        "HQ",
+        "HKV",
+        "D",
+        "BLOCK_M",
+        "BLOCK_N",
+        "BLOCK_L",
+        "SPLITS",
+        "ROPE",
+        "WINDOWED",
+        "DOT",
+        "QK_DOT",
+        "CHUNK_SIZE",
+        "SEPARATE_MERGE",
+        "PAGE_LOOKAHEAD"
+      ]
+    },
+    "cases": [
+      {
+        "name": "D1slide",
+        "batch": 1,
+        "splits": 16,
+        "grid": [
+          1,
+          2,
+          16
+        ],
+        "scalar_values": {
+          "theta": 500000.0,
+          "eps": 1e-05,
+          "qk_factor": 5.4730064863875,
+          "sm_scale": 0.125,
+          "window": 2048,
+          "page": 1,
+          "stride_tok": 2304,
+          "stride_pt": 80001
+        },
+        "signature_tokens": {
+          "qkv_ptr": "*bf16",
+          "seq_ptr": "*i32",
+          "pt_ptr": "*i32",
+          "loc_ptr": "*i64",
+          "kc_ptr": "*fp8e4nv",
+          "vc_ptr": "*fp8e4nv",
+          "ks_ptr": "*fp32",
+          "vs_ptr": "*fp32",
+          "o_ptr": "*fp32",
+          "m_ptr": "*fp32",
+          "l_ptr": "*fp32",
+          "ticket_ptr": "*bf16",
+          "out_ptr": "*bf16",
+          "theta": "fp32",
+          "eps": "fp32",
+          "qk_factor": "fp32",
+          "sm_scale": "fp32",
+          "window": "i32",
+          "page": "constexpr",
+          "stride_tok": "i32",
+          "stride_pt": "i32",
+          "L": "constexpr",
+          "G": "constexpr",
+          "HQ": "constexpr",
+          "HKV": "constexpr",
+          "D": "constexpr",
+          "BLOCK_M": "constexpr",
+          "BLOCK_N": "constexpr",
+          "BLOCK_L": "constexpr",
+          "SPLITS": "constexpr",
+          "ROPE": "constexpr",
+          "WINDOWED": "constexpr",
+          "DOT": "constexpr",
+          "QK_DOT": "constexpr",
+          "CHUNK_SIZE": "constexpr",
+          "SEPARATE_MERGE": "constexpr",
+          "PAGE_LOOKAHEAD": "constexpr"
+        },
+        "constants_tokens": {
+          "page": 1,
+          "L": 1,
+          "G": 8,
+          "HQ": 16,
+          "HKV": 2,
+          "D": 64,
+          "BLOCK_M": 16,
+          "BLOCK_N": 64,
+          "BLOCK_L": 16,
+          "SPLITS": 16,
+          "ROPE": true,
+          "WINDOWED": true,
+          "DOT": "dtype:bf16",
+          "QK_DOT": "dtype:fp8e4nv",
+          "CHUNK_SIZE": 0,
+          "SEPARATE_MERGE": true,
+          "PAGE_LOOKAHEAD": false
+        },
+        "alignment_attrs": {
+          "0": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "1": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "2": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "3": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "4": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "5": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "6": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "7": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "8": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "9": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "10": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "11": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "12": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "17": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "19": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ]
+        },
+        "qualification": "page=1 is specialized constexpr; floats remain dynamic. Integer/pointer attrs match saved selected full-producer TTGIR; no runtime binder/launch used."
+      },
+      {
+        "name": "D16slide",
+        "batch": 16,
+        "splits": 9,
+        "grid": [
+          16,
+          2,
+          9
+        ],
+        "scalar_values": {
+          "theta": 500000.0,
+          "eps": 1e-05,
+          "qk_factor": 5.4730064863875,
+          "sm_scale": 0.125,
+          "window": 2048,
+          "page": 1,
+          "stride_tok": 2304,
+          "stride_pt": 86001
+        },
+        "signature_tokens": {
+          "qkv_ptr": "*bf16",
+          "seq_ptr": "*i32",
+          "pt_ptr": "*i32",
+          "loc_ptr": "*i64",
+          "kc_ptr": "*fp8e4nv",
+          "vc_ptr": "*fp8e4nv",
+          "ks_ptr": "*fp32",
+          "vs_ptr": "*fp32",
+          "o_ptr": "*fp32",
+          "m_ptr": "*fp32",
+          "l_ptr": "*fp32",
+          "ticket_ptr": "*bf16",
+          "out_ptr": "*bf16",
+          "theta": "fp32",
+          "eps": "fp32",
+          "qk_factor": "fp32",
+          "sm_scale": "fp32",
+          "window": "i32",
+          "page": "constexpr",
+          "stride_tok": "i32",
+          "stride_pt": "i32",
+          "L": "constexpr",
+          "G": "constexpr",
+          "HQ": "constexpr",
+          "HKV": "constexpr",
+          "D": "constexpr",
+          "BLOCK_M": "constexpr",
+          "BLOCK_N": "constexpr",
+          "BLOCK_L": "constexpr",
+          "SPLITS": "constexpr",
+          "ROPE": "constexpr",
+          "WINDOWED": "constexpr",
+          "DOT": "constexpr",
+          "QK_DOT": "constexpr",
+          "CHUNK_SIZE": "constexpr",
+          "SEPARATE_MERGE": "constexpr",
+          "PAGE_LOOKAHEAD": "constexpr"
+        },
+        "constants_tokens": {
+          "page": 1,
+          "L": 1,
+          "G": 8,
+          "HQ": 16,
+          "HKV": 2,
+          "D": 64,
+          "BLOCK_M": 16,
+          "BLOCK_N": 64,
+          "BLOCK_L": 16,
+          "SPLITS": 9,
+          "ROPE": true,
+          "WINDOWED": true,
+          "DOT": "dtype:bf16",
+          "QK_DOT": "dtype:fp8e4nv",
+          "CHUNK_SIZE": 0,
+          "SEPARATE_MERGE": true,
+          "PAGE_LOOKAHEAD": false
+        },
+        "alignment_attrs": {
+          "0": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "1": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "2": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "3": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "4": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "5": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "6": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "7": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "8": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "9": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "10": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "11": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "12": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "17": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "19": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ]
+        },
+        "qualification": "page=1 is specialized constexpr; floats remain dynamic. Integer/pointer attrs match saved selected full-producer TTGIR; no runtime binder/launch used."
+      },
+      {
+        "name": "D32slide",
+        "batch": 32,
+        "splits": 5,
+        "grid": [
+          32,
+          2,
+          5
+        ],
+        "scalar_values": {
+          "theta": 500000.0,
+          "eps": 1e-05,
+          "qk_factor": 5.4730064863875,
+          "sm_scale": 0.125,
+          "window": 2048,
+          "page": 1,
+          "stride_tok": 2304,
+          "stride_pt": 86001
+        },
+        "signature_tokens": {
+          "qkv_ptr": "*bf16",
+          "seq_ptr": "*i32",
+          "pt_ptr": "*i32",
+          "loc_ptr": "*i64",
+          "kc_ptr": "*fp8e4nv",
+          "vc_ptr": "*fp8e4nv",
+          "ks_ptr": "*fp32",
+          "vs_ptr": "*fp32",
+          "o_ptr": "*fp32",
+          "m_ptr": "*fp32",
+          "l_ptr": "*fp32",
+          "ticket_ptr": "*bf16",
+          "out_ptr": "*bf16",
+          "theta": "fp32",
+          "eps": "fp32",
+          "qk_factor": "fp32",
+          "sm_scale": "fp32",
+          "window": "i32",
+          "page": "constexpr",
+          "stride_tok": "i32",
+          "stride_pt": "i32",
+          "L": "constexpr",
+          "G": "constexpr",
+          "HQ": "constexpr",
+          "HKV": "constexpr",
+          "D": "constexpr",
+          "BLOCK_M": "constexpr",
+          "BLOCK_N": "constexpr",
+          "BLOCK_L": "constexpr",
+          "SPLITS": "constexpr",
+          "ROPE": "constexpr",
+          "WINDOWED": "constexpr",
+          "DOT": "constexpr",
+          "QK_DOT": "constexpr",
+          "CHUNK_SIZE": "constexpr",
+          "SEPARATE_MERGE": "constexpr",
+          "PAGE_LOOKAHEAD": "constexpr"
+        },
+        "constants_tokens": {
+          "page": 1,
+          "L": 1,
+          "G": 8,
+          "HQ": 16,
+          "HKV": 2,
+          "D": 64,
+          "BLOCK_M": 16,
+          "BLOCK_N": 64,
+          "BLOCK_L": 16,
+          "SPLITS": 5,
+          "ROPE": true,
+          "WINDOWED": true,
+          "DOT": "dtype:bf16",
+          "QK_DOT": "dtype:fp8e4nv",
+          "CHUNK_SIZE": 0,
+          "SEPARATE_MERGE": true,
+          "PAGE_LOOKAHEAD": false
+        },
+        "alignment_attrs": {
+          "0": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "1": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "2": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "3": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "4": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "5": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "6": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "7": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "8": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "9": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "10": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "11": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "12": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "17": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "19": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ]
+        },
+        "qualification": "page=1 is specialized constexpr; floats remain dynamic. Integer/pointer attrs match saved selected full-producer TTGIR; no runtime binder/launch used."
+      },
+      {
+        "name": "D32full",
+        "batch": 32,
+        "splits": 11,
+        "grid": [
+          32,
+          2,
+          11
+        ],
+        "scalar_values": {
+          "theta": 1.0,
+          "eps": 1e-05,
+          "qk_factor": 5.4730064863875,
+          "sm_scale": 0.125,
+          "window": 0,
+          "page": 1,
+          "stride_tok": 2304,
+          "stride_pt": 86001
+        },
+        "signature_tokens": {
+          "qkv_ptr": "*bf16",
+          "seq_ptr": "*i32",
+          "pt_ptr": "*i32",
+          "loc_ptr": "*i64",
+          "kc_ptr": "*fp8e4nv",
+          "vc_ptr": "*fp8e4nv",
+          "ks_ptr": "*fp32",
+          "vs_ptr": "*fp32",
+          "o_ptr": "*fp32",
+          "m_ptr": "*fp32",
+          "l_ptr": "*fp32",
+          "ticket_ptr": "*bf16",
+          "out_ptr": "*bf16",
+          "theta": "fp32",
+          "eps": "fp32",
+          "qk_factor": "fp32",
+          "sm_scale": "fp32",
+          "window": "i32",
+          "page": "constexpr",
+          "stride_tok": "i32",
+          "stride_pt": "i32",
+          "L": "constexpr",
+          "G": "constexpr",
+          "HQ": "constexpr",
+          "HKV": "constexpr",
+          "D": "constexpr",
+          "BLOCK_M": "constexpr",
+          "BLOCK_N": "constexpr",
+          "BLOCK_L": "constexpr",
+          "SPLITS": "constexpr",
+          "ROPE": "constexpr",
+          "WINDOWED": "constexpr",
+          "DOT": "constexpr",
+          "QK_DOT": "constexpr",
+          "CHUNK_SIZE": "constexpr",
+          "SEPARATE_MERGE": "constexpr",
+          "PAGE_LOOKAHEAD": "constexpr"
+        },
+        "constants_tokens": {
+          "page": 1,
+          "L": 1,
+          "G": 8,
+          "HQ": 16,
+          "HKV": 2,
+          "D": 64,
+          "BLOCK_M": 16,
+          "BLOCK_N": 64,
+          "BLOCK_L": 16,
+          "SPLITS": 11,
+          "ROPE": false,
+          "WINDOWED": false,
+          "DOT": "dtype:bf16",
+          "QK_DOT": "dtype:fp8e4nv",
+          "CHUNK_SIZE": 8192,
+          "SEPARATE_MERGE": true,
+          "PAGE_LOOKAHEAD": true
+        },
+        "alignment_attrs": {
+          "0": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "1": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "2": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "3": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "4": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "5": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "6": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "7": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "8": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "9": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "10": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "11": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "12": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "17": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ],
+          "19": [
+            [
+              "tt.divisibility",
+              16
+            ]
+          ]
+        },
+        "qualification": "page=1 is specialized constexpr; floats remain dynamic. Integer/pointer attrs match saved selected full-producer TTGIR; no runtime binder/launch used."
+      }
+    ],
+    "options": {
+      "num_warps": 4,
+      "num_stages": 3
+    },
+    "target": [
+      "cuda",
+      90,
+      32
+    ],
+    "dependency": {
+      "filename": "triton-3.8.0-cp312-cp312-manylinux_2_27_aarch64.manylinux_2_28_aarch64.whl",
+      "sha256": "a9c404c69ed4a39e8ec632eaf6b9fe058a060bf98979c177f6ef666f06bb8d50",
+      "size": 226474486
+    },
+    "API_source_sha256": {
+      "triton/compiler/compiler.py": "28ff26b7e752df455c410418d72fd0afc5b3bfa952ca4bca95b1cfd5a31a0e2f",
+      "triton/runtime/jit.py": "38b8151fcceec1a0210a696775b7c64d7fac5e9b69eee2dda7e93c1e2a377509",
+      "triton/backends/compiler.py": "c5d3403b88b5bb728f8ac78c55163198e418430f126c842892c68cb4b6baaa78",
+      "triton/backends/nvidia/compiler.py": "e898d9a654e9e51aecb43b263fe61102f7162375c4275307fd1830d18b814eb8",
+      "triton/experimental/gluon/_runtime.py": "739a9c208c3c73ff5d4ec2d38a4051c20140e4f149c442a05cc37010443d5684",
+      "triton/experimental/gluon/language/_layouts.py": "817880af6cd4814150a7312b5fc5484da75c1e876013a95afdc2e045a3d225bb",
+      "triton/experimental/gluon/language/nvidia/hopper/__init__.py": "c427a1f7fa5277d701d6cced0dc05ac3af4e5a32f9dc2675699fa254023a99dc",
+      "triton/experimental/gluon/language/nvidia/ampere/__init__.py": "4d9b5bf15e328cdfde7bb47904f4dba7b431edf3de61c68906097a10f947d1e5",
+      "triton/experimental/gluon/language/nvidia/ampere/async_copy.py": "86e23dfd1231d2709e93a126c91349254440a930ef2196c6d5e3fcefc7e8f623"
+    },
+    "expected_tool_sha256": {
+      "ptxas": "d07db8b5fd19692ad6fc9643ad3449cc27190fad1f1ad6c6b8338fdec95ea72e",
+      "cuobjdump": "892ae8d0a7bd7cee42db000bbc9be72681952e73a2b2921d1ba3de51b4c472f4"
+    },
+    "control_order": [
+      "D1slide",
+      "D16slide",
+      "D32slide",
+      "D32full"
+    ],
+    "candidate_order": [
+      "D32full",
+      "D1slide",
+      "D16slide",
+      "D32slide"
+    ],
+    "stop_rule": "Compile four fixed controls first; stop candidate branch on first compiler/resource failure. No variant retries or changed source/options.",
+    "precision_scope": "Control E4M3 Q/K source unchanged; candidate BF16 MMA after same E4M3 encoding. FP32 state/accumulation and BF16 PV, no performance or correctness claim.",
+    "scalar_policy": "page1 constexpr +pointer/window/stride_tok divisibility16; from saved selected full-producer native TTGIR. Not an official judge binary identity."
+  },
+  "python": "3.12.15",
+  "host_machine": "aarch64",
+  "triton": "3.8.0",
+  "wheel_archive_sha256": "a9c404c69ed4a39e8ec632eaf6b9fe058a060bf98979c177f6ef666f06bb8d50",
+  "compiler_API_source_sha256": {
+    "triton/compiler/compiler.py": "28ff26b7e752df455c410418d72fd0afc5b3bfa952ca4bca95b1cfd5a31a0e2f",
+    "triton/runtime/jit.py": "38b8151fcceec1a0210a696775b7c64d7fac5e9b69eee2dda7e93c1e2a377509",
+    "triton/backends/compiler.py": "c5d3403b88b5bb728f8ac78c55163198e418430f126c842892c68cb4b6baaa78",
+    "triton/backends/nvidia/compiler.py": "e898d9a654e9e51aecb43b263fe61102f7162375c4275307fd1830d18b814eb8",
+    "triton/experimental/gluon/_runtime.py": "739a9c208c3c73ff5d4ec2d38a4051c20140e4f149c442a05cc37010443d5684",
+    "triton/experimental/gluon/language/_layouts.py": "817880af6cd4814150a7312b5fc5484da75c1e876013a95afdc2e045a3d225bb",
+    "triton/experimental/gluon/language/nvidia/hopper/__init__.py": "c427a1f7fa5277d701d6cced0dc05ac3af4e5a32f9dc2675699fa254023a99dc",
+    "triton/experimental/gluon/language/nvidia/ampere/__init__.py": "4d9b5bf15e328cdfde7bb47904f4dba7b431edf3de61c68906097a10f947d1e5",
+    "triton/experimental/gluon/language/nvidia/ampere/async_copy.py": "86e23dfd1231d2709e93a126c91349254440a930ef2196c6d5e3fcefc7e8f623"
+  },
+  "tool_sha256": {
+    "ptxas": "d07db8b5fd19692ad6fc9643ad3449cc27190fad1f1ad6c6b8338fdec95ea72e",
+    "cuobjdump": "892ae8d0a7bd7cee42db000bbc9be72681952e73a2b2921d1ba3de51b4c472f4"
+  },
+  "tool_versions": {
+    "ptxas": "ptxas: NVIDIA (R) Ptx optimizing assembler\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Tue_May_27_02:20:53_PDT_2025\nCuda compilation tools, release 12.9, V12.9.86\nBuild cuda_12.9.r12.9/compiler.36037853_0\n",
+    "cuobjdump": "cuobjdump: NVIDIA (R) fat binary listing tool\nCopyright (c) 2005-2025 NVIDIA Corporation\nBuilt on Fri_Nov__7_07:24:07_PM_PST_2025\nCuda compilation tools, release 13.1, V13.1.80\nBuild cuda_13.1.r13.1/compiler.36836380_0\n"
+  },
+  "units": [
+    {
+      "arm": "control",
+      "case": "D1slide",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 16,
+        "ROPE": true,
+        "WINDOWED": true,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 0,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": false
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        1,
+        2,
+        16
+      ],
+      "metadata": {
+        "name": "_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 12544,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 96,
+        "registers_cuobjdump": 96,
+        "stack_frame_bytes": 32,
+        "stack_cuobjdump_bytes": 32,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 0,
+        "mma_sync_sites": 22,
+        "async_copy_sites": 15,
+        "async_commit_sites": 7,
+        "async_wait_sites": 3,
+        "wgmma_commit_sites": 0,
+        "wgmma_wait_sites": 0,
+        "local_load_sites": 96,
+        "local_store_sites": 64,
+        "sass_local_load_sites": 96,
+        "sass_local_store_sites": 64,
+        "sass_hgmma_sites": 0,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "fda913f4f64b95f1886a949adeb2a4c67c404159473353df576a48aec9579e1c",
+        "llir": "bad8b9f668ee8a44f7cc2805f1c0b682d4481c1642b4e0e578c3b30fcf21a9ba",
+        "ptx": "a7f347a359d1b2835c2c43aff59a5b2dd669d365bd1074c225f11bc830a1faa6",
+        "cubin": "e2ee2543f558a2bc7cc8f8b7dde97ad9cd7adc77e5001eb3e124cde9a82a967f",
+        "ttir": "d9821af24bf423ae72c06579771c197144d2df8ef408b830cfa0082b5c7a1d96",
+        "ptxas.txt": "666179dfbf3061dd58ec8f0673c2df905a19e26fbb9332005ee87d96b062cd86",
+        "resources.txt": "55a3afe435853148302b409f2915d982b27ad3e6758798f8450d52a0b695219c",
+        "sass": "d2719de88be3d44fdc93b8d223105060182e2e48bd3628ce32b92520ad1aad1c"
+      }
+    },
+    {
+      "arm": "control",
+      "case": "D16slide",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 9,
+        "ROPE": true,
+        "WINDOWED": true,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 0,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": false
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        16,
+        2,
+        9
+      ],
+      "metadata": {
+        "name": "_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 12544,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 96,
+        "registers_cuobjdump": 96,
+        "stack_frame_bytes": 32,
+        "stack_cuobjdump_bytes": 32,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 0,
+        "mma_sync_sites": 22,
+        "async_copy_sites": 15,
+        "async_commit_sites": 7,
+        "async_wait_sites": 3,
+        "wgmma_commit_sites": 0,
+        "wgmma_wait_sites": 0,
+        "local_load_sites": 96,
+        "local_store_sites": 64,
+        "sass_local_load_sites": 96,
+        "sass_local_store_sites": 64,
+        "sass_hgmma_sites": 0,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "a70ec61ed440db00fde6785c58c407380c6ac86baba7ab99e760eed7bf7515a6",
+        "llir": "5b50a07567b40350d8d5155d86de1fc1dd6d2c05e4399ae7c2259bf9084c2ebd",
+        "ptx": "b1b0beb5bb037d1ce8fc964589f6b88d6b14327f65effb464359263debfe9ba9",
+        "cubin": "54d32ed8fe04e4813c64cdd803a875e360641f7458feaa17005c848ccef3918f",
+        "ttir": "ee176729ec2ac867c1643920cd325e4dfccadda48b8c5230e3e38c42e9cb665d",
+        "ptxas.txt": "26ba40c4a5be69c33cac6c68c61924ffddd0ea70bec38f65fcc3e55709aafd72",
+        "resources.txt": "55a3afe435853148302b409f2915d982b27ad3e6758798f8450d52a0b695219c",
+        "sass": "9dda7b1e8c79bad1f8a6a5a56961db481150dd1125258edee435b63ecb36edb8"
+      }
+    },
+    {
+      "arm": "control",
+      "case": "D32slide",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 5,
+        "ROPE": true,
+        "WINDOWED": true,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 0,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": false
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        32,
+        2,
+        5
+      ],
+      "metadata": {
+        "name": "_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 12544,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 96,
+        "registers_cuobjdump": 96,
+        "stack_frame_bytes": 32,
+        "stack_cuobjdump_bytes": 32,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 0,
+        "mma_sync_sites": 22,
+        "async_copy_sites": 15,
+        "async_commit_sites": 7,
+        "async_wait_sites": 3,
+        "wgmma_commit_sites": 0,
+        "wgmma_wait_sites": 0,
+        "local_load_sites": 96,
+        "local_store_sites": 64,
+        "sass_local_load_sites": 96,
+        "sass_local_store_sites": 64,
+        "sass_hgmma_sites": 0,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "4d35608853cd82089479af335ba94930b184e8d0c8126dc95bfa89c4787184f6",
+        "llir": "fe6167f1ed4e4a27b98929f2060a97ac07057fbc76eba9f36b6ab43daba6e606",
+        "ptx": "1384d88a7c9ca2ec4699c1fc9a682cb0d3f8593bbc1d4672fbf0994e4c9812d6",
+        "cubin": "a2772771f93ae2fa0044a479dcf63a50d43ec640a0d30b716c60f40acb2cb02a",
+        "ttir": "26e2c9df42c42d93ed8a67788125feefd24156ca5e32b0d4c8b52e96ceb4e9ce",
+        "ptxas.txt": "9cf7c052f8ab2a746a0c03257730c473b24fe56e16c670ea2d13d3acf277e34b",
+        "resources.txt": "55a3afe435853148302b409f2915d982b27ad3e6758798f8450d52a0b695219c",
+        "sass": "96edcc1d4a0a3111741406ed4bc79dcc8eab728d6853ce23355474d30d99314c"
+      }
+    },
+    {
+      "arm": "control",
+      "case": "D32full",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": true
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        32,
+        2,
+        11
+      ],
+      "metadata": {
+        "name": "_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 20480,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 96,
+        "registers_cuobjdump": 96,
+        "stack_frame_bytes": 0,
+        "stack_cuobjdump_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 0,
+        "mma_sync_sites": 22,
+        "async_copy_sites": 18,
+        "async_commit_sites": 6,
+        "async_wait_sites": 2,
+        "wgmma_commit_sites": 0,
+        "wgmma_wait_sites": 0,
+        "local_load_sites": 0,
+        "local_store_sites": 0,
+        "sass_local_load_sites": 0,
+        "sass_local_store_sites": 0,
+        "sass_hgmma_sites": 0,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "b92f0dca8fd840332757ce6ffdc0783f1af696127fb938498d57baa771f44439",
+        "llir": "7fad9f65787aefe1d4f0501841b0efd57d1d22f80f86f69650eae8218db981f4",
+        "ptx": "13f6b8dad2b54f0cd691a2a36d7087060623398cdc17a765638eb620a5e40132",
+        "cubin": "4f5b10b5f5ff83f8949b0d0a8820eb151e0ee84d31fb8b477c8fa2e78ff05ec8",
+        "ttir": "7e48359219ed8b3f1597aa4358d574884ae569450f9b7d57cf4f7bf8b3350168",
+        "ptxas.txt": "576f43ad3481b9439f9b539f7a13a12d926f97cf88f83adf772b1f8ec4f7365e",
+        "resources.txt": "6d4a6f62d88c79c3d089574b1529989e3aa8f662bdbb13bcece6d96e1d48eb81",
+        "sass": "44dc14bbc9a1d2ab246146c7c76d76c9cb7f13b929ad4c900f18c3f3f021e8de"
+      }
+    },
+    {
+      "arm": "candidate",
+      "case": "D32full",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 11,
+        "ROPE": false,
+        "WINDOWED": false,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 8192,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": true
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        32,
+        2,
+        11
+      ],
+      "metadata": {
+        "name": "_m64n8_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 34944,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 74,
+        "registers_cuobjdump": 74,
+        "stack_frame_bytes": 0,
+        "stack_cuobjdump_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 8,
+        "mma_sync_sites": 16,
+        "async_copy_sites": 48,
+        "async_commit_sites": 3,
+        "async_wait_sites": 3,
+        "wgmma_commit_sites": 2,
+        "wgmma_wait_sites": 2,
+        "local_load_sites": 0,
+        "local_store_sites": 0,
+        "sass_local_load_sites": 0,
+        "sass_local_store_sites": 0,
+        "sass_hgmma_sites": 8,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "ada809b53b89fee9f2a17328fc36f0beb2c7695076ba09a12bb9616b6b15257b",
+        "llir": "5ae4148e843ae12f5696e0c773b6f6ac699458fda6cb45c31f155337774ee9b0",
+        "ptx": "f0803402fb85489021ffb0f98d03aba6eecbe7bf77a0c59a763c5ddaf597d6f0",
+        "cubin": "24ad465c1bd695a97d10a5551b27e0a15be526e0f4ee93c8809872e080c3c453",
+        "ptxas.txt": "87a805867712ccfa0d110e4a04f6631774c23ff913dcdc75720695d606cc8a30",
+        "resources.txt": "7a80de1f2f79ca074e551377c47d543e2096a36558070ab9a4a13d10ac3e1dab",
+        "sass": "e35e98d2d24cbf0edf0615a1c46dc30bca148c2bcf3c6c8e1335f4c76c558220"
+      },
+      "resource_gate": {
+        "passed": true,
+        "reasons": [],
+        "compiler_launch_shared_bytes": 34944,
+        "cubin_static_shared_bytes": 1024,
+        "conservative_shared_sum_bytes": 35968,
+        "shared_model_with_at_least1024_static_reserve_bytes": 35968,
+        "qualification": "Declared compile-resource screen only. Launch shared and cubin static shared are recorded separately; no driver loading, achieved occupancy or native mechanism pass."
+      }
+    },
+    {
+      "arm": "candidate",
+      "case": "D1slide",
+      "status": "compiled_pending_native_review",
+      "signature": {
+        "qkv_ptr": "*bf16",
+        "seq_ptr": "*i32",
+        "pt_ptr": "*i32",
+        "loc_ptr": "*i64",
+        "kc_ptr": "*fp8e4nv",
+        "vc_ptr": "*fp8e4nv",
+        "ks_ptr": "*fp32",
+        "vs_ptr": "*fp32",
+        "o_ptr": "*fp32",
+        "m_ptr": "*fp32",
+        "l_ptr": "*fp32",
+        "ticket_ptr": "*bf16",
+        "out_ptr": "*bf16",
+        "theta": "fp32",
+        "eps": "fp32",
+        "qk_factor": "fp32",
+        "sm_scale": "fp32",
+        "window": "i32",
+        "page": "constexpr",
+        "stride_tok": "i32",
+        "stride_pt": "i32",
+        "L": "constexpr",
+        "G": "constexpr",
+        "HQ": "constexpr",
+        "HKV": "constexpr",
+        "D": "constexpr",
+        "BLOCK_M": "constexpr",
+        "BLOCK_N": "constexpr",
+        "BLOCK_L": "constexpr",
+        "SPLITS": "constexpr",
+        "ROPE": "constexpr",
+        "WINDOWED": "constexpr",
+        "DOT": "constexpr",
+        "QK_DOT": "constexpr",
+        "CHUNK_SIZE": "constexpr",
+        "SEPARATE_MERGE": "constexpr",
+        "PAGE_LOOKAHEAD": "constexpr"
+      },
+      "constants": {
+        "page": 1,
+        "L": 1,
+        "G": 8,
+        "HQ": 16,
+        "HKV": 2,
+        "D": 64,
+        "BLOCK_M": 16,
+        "BLOCK_N": 64,
+        "BLOCK_L": 16,
+        "SPLITS": 16,
+        "ROPE": true,
+        "WINDOWED": true,
+        "DOT": "dtype:bf16",
+        "QK_DOT": "dtype:fp8e4nv",
+        "CHUNK_SIZE": 0,
+        "SEPARATE_MERGE": true,
+        "PAGE_LOOKAHEAD": false
+      },
+      "alignment_attrs": {
+        "0": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "1": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "2": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "3": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "4": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "5": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "6": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "7": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "8": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "9": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "10": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "11": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "12": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "17": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ],
+        "19": [
+          [
+            "tt.divisibility",
+            16
+          ]
+        ]
+      },
+      "options": {
+        "num_warps": 4,
+        "num_stages": 3
+      },
+      "grid_not_launched": [
+        1,
+        2,
+        16
+      ],
+      "metadata": {
+        "name": "_m64n8_fused",
+        "num_warps": 4,
+        "num_ctas": 1,
+        "shared": 34944,
+        "global_scratch_size": 0,
+        "global_scratch_align": 1,
+        "tmem_size": 0,
+        "arch": "sm90",
+        "enable_fp_fusion": true
+      },
+      "resources": {
+        "registers_ptxas": 75,
+        "registers_cuobjdump": 75,
+        "stack_frame_bytes": 32,
+        "stack_cuobjdump_bytes": 32,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "local_bytes": 0,
+        "static_shared_bytes": 1024
+      },
+      "instruction_inventory": {
+        "wgmma_m64n8k16_sites": 8,
+        "mma_sync_sites": 16,
+        "async_copy_sites": 48,
+        "async_commit_sites": 3,
+        "async_wait_sites": 3,
+        "wgmma_commit_sites": 2,
+        "wgmma_wait_sites": 2,
+        "local_load_sites": 96,
+        "local_store_sites": 64,
+        "sass_local_load_sites": 96,
+        "sass_local_store_sites": 64,
+        "sass_hgmma_sites": 8,
+        "qualification": "Static sites only; mainloop/tail/pipeline and QK/PV dataflow require independent native review, not performance or executed counts"
+      },
+      "artifact_sha256": {
+        "ttgir": "1672879ce29a102c04e79967a3569c459abf3adc6c4c2e13c58d03a1d50e0ef1",
+        "llir": "f030a01e9d5fe1dd4369ac2864b76e2250c8a7279ee2dc18403602153357e587",
+        "ptx": "98d161d17e5d557b9249dfe94fc31a9237521ea4947a8bccee53aaf254553c9e",
+        "cubin": "9534e49248e5598617c4bd573d15abb602488ea6cfd8bdbcffa7172039d1bc16",
+        "ptxas.txt": "b975619f928c9055d21b68a30a91d109e91dcda97256f55b357fb986497f9748",
+        "resources.txt": "6fc009cf88f837f1e9fa90a192dc51a4dec86f64a7376fec2a7fa3e3ea71f8e8",
+        "sass": "cf2a01173868e89927c4770f8c7c2bdfae96eb2d1e5b6e002d1b83c7a371ee24"
+      },
+      "resource_gate": {
+        "passed": false,
+        "reasons": [
+          "stack_frame_bytes_unknown_or_nonzero",
+          "stack_cuobjdump_bytes_unknown_or_nonzero",
+          "local_load_sites_unknown_or_nonzero",
+          "local_store_sites_unknown_or_nonzero",
+          "sass_local_load_sites_unknown_or_nonzero",
+          "sass_local_store_sites_unknown_or_nonzero"
+        ],
+        "compiler_launch_shared_bytes": 34944,
+        "cubin_static_shared_bytes": 1024,
+        "conservative_shared_sum_bytes": 35968,
+        "shared_model_with_at_least1024_static_reserve_bytes": 35968,
+        "qualification": "Declared compile-resource screen only. Launch shared and cubin static shared are recorded separately; no driver loading, achieved occupancy or native mechanism pass."
+      }
+    }
+  ],
+  "gpu_execution": false,
+  "driver_or_handles_initialized": false,
+  "numerical_correctness": false,
+  "performance": false,
+  "variant_retries": 0,
+  "wall_seconds": 6.281783776999987
+}

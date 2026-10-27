@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T05:49:23.726379+00:00",
+  "experiment": "A2-12",
+  "candidate_sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+  "environment": {
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.13"
+  },
+  "command": ".venv/bin/python -B reviews/attention-v2/test_decode_qhoist.py",
+  "tests_passed": 7,
+  "GPU_or_interpreter_executed": false,
+  "coverage": "Exact source reconstruction; all12scoredroute/nearby staticguards; illustrative FP32/BF16 rounding and changedQ/position checks; notGPU exp2/trig/FMA behavior",
+  "modeled_score_if_target15pct_cut_others_frozen": 1.2049953406956682
+}

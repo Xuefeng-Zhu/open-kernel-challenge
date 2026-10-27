@@ -1,0 +1,140 @@
+{
+  "created_utc": "2026-10-27T05:35:03.445288+00:00",
+  "cpu_tests_passed": 48,
+  "installed_help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+  "profile_argv_cpu": [
+    "/usr/local/cuda/bin/ncu",
+    "--config-file",
+    "0",
+    "--replay-mode",
+    "kernel",
+    "--target-processes",
+    "application-only",
+    "--kernel-name-base",
+    "demangled",
+    "--kernel-name",
+    "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+    "--launch-skip",
+    "1",
+    "--launch-count",
+    "1",
+    "--metrics",
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct,sm__warps_active.avg.pct_of_peak_sustained_active",
+    "--rename-kernels",
+    "0",
+    "--print-kernel-base",
+    "demangled",
+    "--export",
+    "/tmp/attention-fa3-b32-identity-recapture/baseline.ncu-rep",
+    "--import-sass",
+    "off",
+    "--page",
+    "raw",
+    "--csv",
+    "--clock-control",
+    "none",
+    "/Users/frank/Documents/Codex/2026-10-23/task/.venv/bin/python",
+    "/opt/attention-fa3-b32-identity-recapture/worker.py",
+    "--counter-child"
+  ],
+  "import_argv": [
+    "/usr/local/cuda/bin/ncu",
+    "--config-file",
+    "0",
+    "--import",
+    "/tmp/attention-fa3-b32-identity-recapture/baseline.ncu-rep",
+    "--rename-kernels",
+    "0",
+    "--print-kernel-base",
+    "demangled",
+    "--page",
+    "raw",
+    "--csv"
+  ],
+  "target_binding": "Literal complete symbol from prior saved graph used for CPU construction only. Runtime uses the full symbol freshly observed in its own graph trace; no fallback. Python executable is runtime sys.executable.",
+  "cpu_contract": {
+    "used_ncu_flags": [
+      "--clock-control",
+      "--config-file",
+      "--csv",
+      "--export",
+      "--import-sass",
+      "--kernel-name",
+      "--kernel-name-base",
+      "--launch-count",
+      "--launch-skip",
+      "--metrics",
+      "--page",
+      "--print-kernel-base",
+      "--query-metrics",
+      "--query-metrics-mode",
+      "--rename-kernels",
+      "--replay-mode",
+      "--target-processes"
+    ],
+    "all_flags_advertised": true,
+    "known_unsupported_units_absent": true,
+    "help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+    "csv_base_units": "No units override is requested; preserve raw CSV values/unit fields"
+  },
+  "cpu_import_contract": {
+    "used_import_flags": [
+      "--config-file",
+      "--csv",
+      "--import",
+      "--page",
+      "--print-kernel-base",
+      "--rename-kernels"
+    ],
+    "all_flags_advertised": true,
+    "help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+    "offline_only": true
+  },
+  "required_transport_artifacts": {
+    "baseline.ncu-rep": 67108864,
+    "profile-original.csv": 4194304,
+    "profile-imported.csv": 4194304
+  },
+  "source_files": {
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/controller.py": {
+      "bytes": 33541,
+      "sha256": "4b528de5ffc90572edf6aff29e89e8c55ffb54c92dfa59dd5ad688ce830dc053"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/csv_helpers.py": {
+      "bytes": 6245,
+      "sha256": "a00f901febe900e4ed9f48680b990acf813f0c0d76680b1c798a664f017759df"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/test_controller.py": {
+      "bytes": 14060,
+      "sha256": "d8bede8516cc989a2e19dc288ff35901f643376a09b844fe25d112a850151201"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/test_csv_helpers.py": {
+      "bytes": 4846,
+      "sha256": "0424949353c121377c097a2558fe1ab8c77f597ba5e85a62e2b1a6fc3509db19"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/test_report_roundtrip.py": {
+      "bytes": 7310,
+      "sha256": "50f3ef64f0fc53dab3ed1f2dc0dd069d2e0da04457034660b8951d8369a0aac2"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/test_worker.py": {
+      "bytes": 5588,
+      "sha256": "ce3e1496e8e30a7510123420feae83cb38a5dae612ffdd527f5327293618a546"
+    },
+    "reviews/attention-v2/fa3-next-evidence/fa3-b32-identity-recapture/worker.py": {
+      "bytes": 31898,
+      "sha256": "a9d05c9a212f5e4c2ab1e2b5fa4189b6632384d34d2af0442ef39fcfb88e3a01"
+    }
+  },
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "new_gpu_apps": 0,
+  "new_official_checks": 0,
+  "new_ranked_entries": 0,
+  "candidate_changed": false
+}

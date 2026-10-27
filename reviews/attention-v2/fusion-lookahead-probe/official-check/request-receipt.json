@@ -1,0 +1,35 @@
+{
+  "state": "accepted",
+  "mode": "check",
+  "formal_entry": false,
+  "problem": "muse_attention_decode",
+  "experiment": "validated-fusion-plus-A2-15-composition",
+  "source_commit": "c9062363c665e37535d3370c1b6bfb54e04fc7c8",
+  "source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "created_utc": "2026-10-25T21:22:31.397608+00:00",
+  "quota_before": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 17,
+      "left": 3
+    }
+  },
+  "job_id": "5090b83f1d63407b",
+  "command": [
+    "/Users/frank/Documents/Codex/2026-10-23/task/bin/okc",
+    "check",
+    "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-fusion-lookahead/reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+    "--no-wait",
+    "--json"
+  ],
+  "automatic_retries": 0,
+  "cli_exit_code": 0,
+  "accepted_utc": "2026-10-25T21:22:31.910005+00:00",
+  "request_provenance": "Exactsingleacceptedrequest; no retry",
+  "cli_binary_sha256": "01a6b091bc827a54403bdb32db721f275489f07c2d3490199f5457e4da27b4e6"
+}

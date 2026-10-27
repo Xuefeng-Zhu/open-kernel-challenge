@@ -1,0 +1,17 @@
+{
+  "status": "reviewed local source preparation; native compiler acceptance untested",
+  "CPU_tests_passed": 7,
+  "kernel_loaded_or_executed": false,
+  "Docker_or_service_or_Git_actions_by_source_author": false,
+  "hard_gates": "both native64x8 WGMMA; strict precision;zero spill/local. Record all registers/shared, no tiny-probe resource cap.",
+  "files": {
+    "kernel.py": "118cdd776cf0f4668a2e3a31539c56f3f7d449748ae3881f9c0adf500344d033",
+    "offline_compile.py": "e7a489a899d7eae222250ca546d00bfefbb3435cf4ad25c8a79c96d0a099fc37",
+    "test_offline_compile.py": "efa9576cf2c24b48cdeb27b472224e84e1f25a11eefdabc54ef2db1eabb19067",
+    "README.md": "e6c30864ebd522ac641e2a04d2dfec7ad046b24598071eb99cd640aa49be7683",
+    "EXPERIMENT_CARD.md": "15dd2cdb60a0a7dd2edc784d0cf6fb602d2a52325a8ef259c9eda923c472c1f8",
+    "REVIEW.md": "99cc6f94f98d8ab45f24bbebe54663e00ef9063483129263ca31ce5e3fc2a9e1",
+    "API_SOURCE_REVIEW.md": "92720021a3539186f25ab180a30c9bf84826880ce2c567582e0975eba82a8b69"
+  },
+  "independent_review": "PASS: root-appointed source/helper review and separate pinned-API review;7CPUtests; native artifact gate still pending"
+}

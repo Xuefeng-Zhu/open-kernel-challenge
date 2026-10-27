@@ -1,0 +1,25 @@
+{
+  "status": "independently reviewed local worker preparation only; native execution not attempted",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "original_reference_sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+  "original_checks_sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+  "CPU_tests_passed": {
+    "worker": 14,
+    "fixture": 11
+  },
+  "native_execution_attempted": false,
+  "GPU_or_service_or_auth_actions": false,
+  "files": {
+    "worker.py": "c353b5e8682e586526d56273ada331588d518b744c78c7993ee0fd22d59c91f7",
+    "test_worker.py": "2d7c637ec1b226a6ef0618d083e398ffd37964475f873ff6cd044c105debeec0",
+    "fixture.py": "203240b0f4de073b4c6222c62daeeaff20ce0b3de32b519f8d9f59c5528e0e28",
+    "WORKER.md": "b3a33e3c8c5af8e396a35215340f59598f3c5b1a68b0c7a2b6bdbc05529086b7",
+    "REVIEW.md": "b4aebf07bba868ecdd011643ecb3d5a8c4c0e47e14f2db7120ee4475681bfad5"
+  },
+  "independent_review": {
+    "reviewer": "/root/compact_result_analysis/locality_worker_review",
+    "all_local_CPU_tests_passed": 25,
+    "default_CPU_preflight_passed": true,
+    "remote_controller_or_admission_reviewed": false
+  }
+}

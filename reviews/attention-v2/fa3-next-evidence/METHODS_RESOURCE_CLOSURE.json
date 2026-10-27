@@ -1,0 +1,59 @@
+{
+  "recorded_utc": "2026-10-26T01:23:50.135273+00:00",
+  "action": "Read-only supported Modal CLI app list --json; existing profile; no app mutation",
+  "capture": "Sanitized record of tool response. Credential-expiry warning omitted; no credential fields retained.",
+  "returned_apps": [
+    {
+      "app_id": "ap-vbrU0sPpoRjkmN7e7OgK4R",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-1P4IYSdup9e7ZBjImQj1ZM",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-Hy5O3TPhVTVKu0XyfsgJWT",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-EaioKmzLxCQFWKWwyp9cmP",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-UShS6clh30RqRtKHHcoB4A",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-tarMKbDOkq7ba0yqmHM3UH",
+      "state": "stopped",
+      "tasks": 0
+    },
+    {
+      "app_id": "ap-I3MCH1onTGtkhqXUtej9Ru",
+      "state": "stopped",
+      "tasks": 0
+    }
+  ],
+  "all_returned_apps_stopped_tasks0": true,
+  "new_B1_upload": false,
+  "new_B1_admission": false,
+  "new_B1_native_compilation": false,
+  "new_B1_kernel_launch": false,
+  "new_B1_GPU_cost_usd": 0,
+  "limitation": "List response covers currently returned main apps, not every historical deleted app or a billing invoice."
+}

@@ -1,0 +1,201 @@
+{
+  "job_id": "2f5f1fb54b48486d",
+  "mode": "check",
+  "passed": true,
+  "source_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "published_result_sha256": "46f9818a029a68995d6bad8b99c79a72f390ab09e464c01eb9a79b64bb160001",
+  "official_speedup": 1.2255554363764571,
+  "official_speedup_ci": [
+    1.2071721048308102,
+    1.250062192674554
+  ],
+  "reconstructed_speedup": 1.2255554363764571,
+  "official_score_us": 3073.1371982124647,
+  "official_reference_us": 3766.3,
+  "loads": [
+    {
+      "load": "decode 1",
+      "reference_weighted_us": 1480.0000209361315,
+      "candidate_weighted_us": 976.7765886463698,
+      "speedup": 1.5151878516940456
+    },
+    {
+      "load": "decode 16",
+      "reference_weighted_us": 4446.336001157761,
+      "candidate_weighted_us": 3775.059237026695,
+      "speedup": 1.1778188690516485
+    },
+    {
+      "load": "decode 32",
+      "reference_weighted_us": 7583.231809549034,
+      "candidate_weighted_us": 5991.374619172435,
+      "speedup": 1.265691480095844
+    },
+    {
+      "load": "verify 1",
+      "reference_weighted_us": 1637.3439719900489,
+      "candidate_weighted_us": 1264.7971272380994,
+      "speedup": 1.2945506727750633
+    },
+    {
+      "load": "verify 16",
+      "reference_weighted_us": 4625.4399958997965,
+      "candidate_weighted_us": 4218.297426832483,
+      "speedup": 1.096518222370355
+    },
+    {
+      "load": "verify 32",
+      "reference_weighted_us": 7802.111917175353,
+      "candidate_weighted_us": 7382.8180127379965,
+      "speedup": 1.056793206024302
+    }
+  ],
+  "shapes": [
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 11.621168794809567,
+      "same_run_reference_us": 21.21600043028593,
+      "same_run_paired_speedup": 1.8256339620298574,
+      "A2_13_candidate_us": 10.912013995644584,
+      "A2_13_reference_us": 20.351999904960394,
+      "reference_normalized_cross_run_latency_reduction_percent": -2.161784739699213
+    },
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "changed": false,
+      "official_candidate_us": 27.637676505320613,
+      "same_run_reference_us": 31.504000071436167,
+      "same_run_paired_speedup": 1.1398932202340248,
+      "A2_13_candidate_us": 27.183118389947133,
+      "A2_13_reference_us": 31.263998709619045,
+      "reference_normalized_cross_run_latency_reduction_percent": -0.8976559653424143
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 14.46279547878334,
+      "same_run_reference_us": 26.815999299287796,
+      "same_run_paired_speedup": 1.8541366597229687,
+      "A2_13_candidate_us": 14.253519814292959,
+      "A2_13_reference_us": 26.6720000654459,
+      "reference_normalized_cross_run_latency_reduction_percent": -0.9233642019134569
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "changed": true,
+      "official_candidate_us": 194.36066531266633,
+      "same_run_reference_us": 200.80000208690763,
+      "same_run_paired_speedup": 1.033130864024788,
+      "A2_13_candidate_us": 200.20907915871928,
+      "A2_13_reference_us": 199.9359978362918,
+      "reference_normalized_cross_run_latency_reduction_percent": 3.3388649916859414
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 19.915056634386172,
+      "same_run_reference_us": 30.975999776273966,
+      "same_run_paired_speedup": 1.555406060095732,
+      "A2_13_candidate_us": 20.270870572474028,
+      "A2_13_reference_us": 30.991999432444572,
+      "reference_normalized_cross_run_latency_reduction_percent": 1.7045516374129543
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "changed": false,
+      "official_candidate_us": 317.205125874417,
+      "same_run_reference_us": 384.89598874002695,
+      "same_run_paired_speedup": 1.2133977585608409,
+      "A2_13_candidate_us": 316.41180986153694,
+      "A2_13_reference_us": 384.8320050165057,
+      "reference_normalized_cross_run_latency_reduction_percent": -0.2340573112725286
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 17.01704304212712,
+      "same_run_reference_us": 22.92799996212125,
+      "same_run_paired_speedup": 1.3473551136564126,
+      "A2_13_candidate_us": 17.141042738578037,
+      "A2_13_reference_us": 22.656000684946775,
+      "reference_normalized_cross_run_latency_reduction_percent": 1.901145448374808
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "changed": false,
+      "official_candidate_us": 30.125821706265747,
+      "same_run_reference_us": 36.41599835827947,
+      "same_run_paired_speedup": 1.2087968492061232,
+      "A2_13_candidate_us": 29.802141588780508,
+      "A2_13_reference_us": 35.95200087875128,
+      "reference_normalized_cross_run_latency_reduction_percent": 0.20190009353282523
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 22.892704769095868,
+      "same_run_reference_us": 29.295998625457287,
+      "same_run_paired_speedup": 1.2797089256576435,
+      "A2_13_candidate_us": 22.576702630736303,
+      "A2_13_reference_us": 29.00799922645092,
+      "reference_normalized_cross_run_latency_reduction_percent": -0.40285524609475765
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "changed": true,
+      "official_candidate_us": 197.8270629658796,
+      "same_run_reference_us": 204.86400369554758,
+      "same_run_paired_speedup": 1.0355711732468156,
+      "A2_13_candidate_us": 204.4542178733542,
+      "A2_13_reference_us": 204.20799730345607,
+      "reference_normalized_cross_run_latency_reduction_percent": 3.5512243262907695
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "changed": false,
+      "official_candidate_us": 27.459687322206097,
+      "same_run_reference_us": 34.047998022288084,
+      "same_run_paired_speedup": 1.239926646752243,
+      "A2_13_candidate_us": 27.91322875732465,
+      "A2_13_reference_us": 34.33600161224604,
+      "reference_normalized_cross_run_latency_reduction_percent": 0.7926948795231592
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "changed": true,
+      "official_candidate_us": 382.4795247447823,
+      "same_run_reference_us": 389.7440005093813,
+      "same_run_paired_speedup": 1.0189931102049092,
+      "A2_13_candidate_us": 389.16723182006587,
+      "A2_13_reference_us": 388.9919971115887,
+      "reference_normalized_cross_run_latency_reduction_percent": 1.9080984221027553
+    }
+  ],
+  "historical_receipt_hashes": {
+    "A2-11-official-result.json": "c3b9f65f1ef118cf1bb928473387b94839d0cdfba6828b3814cbfbbac300bf1b",
+    "A2-13-official-result.json": "4e83463a594e6eb523b8654743dc1f28794f4f409c0f707002dbe3d94b01c084"
+  },
+  "historical_score_deltas_percent": {
+    "A2-11": 3.189135117176667,
+    "A2-13": 1.2027038397466105
+  },
+  "qualifications": [
+    "Cross-run reference normalization reduces machine drift but is not a paired new-versus-parent experiment.",
+    "Historical A2-11 comparison also includes the pre-existing A2-13 B32 decode QK change.",
+    "Overlapping marginal score intervals are not a significance test of the difference.",
+    "A2-11 remains selected; no ranked entry, adoption, additional Modal job or quota-filling duplicate."
+  ]
+}

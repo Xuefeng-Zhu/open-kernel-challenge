@@ -1,0 +1,206 @@
+{
+  "purpose": "One-time private push export; preserve original research branch and per-experiment commits",
+  "source_branch": "attention-fa3-local",
+  "source_snapshot": "6bfb8dffc072cc1fe44375337a049ea3ebb6e312",
+  "export_branch": "attention-fa3-sanitized",
+  "sanitized_snapshot": "d6fa652a755de1b48197ba52fd6fbd57fee81315",
+  "changes": "Only historical non-secret Modal token identifier in A09 CLI warning replaced; no secret found; current tree/candidates identical",
+  "original_history_preserved": true,
+  "commit_mapping": {
+    "7eea86ba1f63cc18a229d276eb1e917b5b20dc74": "7eea86ba1f63cc18a229d276eb1e917b5b20dc74",
+    "01a79ff5fa367eb1d74429c18f238fe8cad49c9c": "01a79ff5fa367eb1d74429c18f238fe8cad49c9c",
+    "484f3921399cd87d8d7afe8df75c9ef8fc4b1dc4": "484f3921399cd87d8d7afe8df75c9ef8fc4b1dc4",
+    "75a9858a2d0ee5cde8f5cb4f70d21ae1e47085b5": "75a9858a2d0ee5cde8f5cb4f70d21ae1e47085b5",
+    "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32": "05922b7bf0353a3f4a54aaa27f9eef0692a4ee32",
+    "cf36a6686689159dc87a24844b87f243f301cb5c": "cf36a6686689159dc87a24844b87f243f301cb5c",
+    "84e54d66887ff8f51465c3aa5590992c5ed7a20b": "84e54d66887ff8f51465c3aa5590992c5ed7a20b",
+    "3818c7255cd2d9aa5859b2e55ee83f2bd2f057d4": "3818c7255cd2d9aa5859b2e55ee83f2bd2f057d4",
+    "0524fdd06ab26fcf2f83c0b592aa845862896604": "0524fdd06ab26fcf2f83c0b592aa845862896604",
+    "eb0c0953ac5c982b03a64832fca47c64ec584a5b": "eb0c0953ac5c982b03a64832fca47c64ec584a5b",
+    "59e0f6a11b705fa2d964aa5229cecb851e48a977": "59e0f6a11b705fa2d964aa5229cecb851e48a977",
+    "b21b6bd93efc0092bf8430930c010802fb99cb56": "b21b6bd93efc0092bf8430930c010802fb99cb56",
+    "2613417dcd806d64e3744be9e3d8773396692765": "2613417dcd806d64e3744be9e3d8773396692765",
+    "9f2ebdf48a0c0105e51174f727dc578b2c6223c4": "9f2ebdf48a0c0105e51174f727dc578b2c6223c4",
+    "b311e0e3bbf1b6f2bc5e06bbd2182c445529ade0": "b311e0e3bbf1b6f2bc5e06bbd2182c445529ade0",
+    "bcc5847c4bd79dab5e97f1591a4cd5fad0645e2b": "bcc5847c4bd79dab5e97f1591a4cd5fad0645e2b",
+    "c4bf4c72015f474c138fdef8486ef274138d21cb": "c4bf4c72015f474c138fdef8486ef274138d21cb",
+    "268b86fc0e856f6f47daff533412f5fa8ad7cb7e": "268b86fc0e856f6f47daff533412f5fa8ad7cb7e",
+    "f009696f94855114dbd11728c8db3adfd11e2ab5": "f009696f94855114dbd11728c8db3adfd11e2ab5",
+    "a20bc1651224482f87d4d4b8e2bef9597fe4c6e5": "ad5ea76904b6244afab2cf42abe898f5fb194929",
+    "7588adb1d4826d176374a52e4ad5239b6995640a": "218a084211b16f4d0fb3fa034f416c3d831737b7",
+    "c706909eee24733875aa18ec21d431e466d5c890": "b5776aa8dfe728d9b1ff071e2a3e465ba30c81d0",
+    "d26fd7a748d60244267323604d81083e9625cd20": "3de4dccbc9866cd856acb222fb63c15cbc1a5615",
+    "745e0e4efe05edd1f2a771418e51a0d501a353ac": "2a6962b8a1b5d97eb92f41e4b835e09ff092b0bf",
+    "fdd310e5139c58157985c7e730fefb54c5964b62": "0dd46fe0b8983852f8cb271bd604d0fec53a3e8c",
+    "51d7fca04ccc38a972039ef1b086011d8e456264": "f1437fb146015622327a9e8ac0aed8721d4e37f0",
+    "2391d53b112a23919f651337db3750b7213f8a71": "2435f86d84608b5151502f9a934df91210908433",
+    "86b6ed65967ac7276b31301e539a9603a9362c62": "763179c961743aca9a926a2b56423d46b84b7c8a",
+    "505383700dc9166523eeb02b5cabd7045e0d9dc4": "270dd5578e7136837f6c3521e157a7616aec7268",
+    "c5a1dadbf093f07f719b60942e6773a2f2c3efef": "0d0fae345a7c07c221fd2c0220bac3752f734b64",
+    "4ba7a2ff349ddfaba379996f8380c5e9079022d0": "b7af38fe2caa7bf2fe2a6cf0fc420e8da5cca848",
+    "5202cbea994771eebffa1f479e7e88915106ca14": "b7e7cd51477ecb494054098f73a8077daf24d201",
+    "d893c24f90dcd5e1e1a50a85d954895e2cc94c94": "1d0aa177feb67c94c5d42409166daec205570220",
+    "c0f29817f312d2815dce3c6a7a8939ea03f6093d": "4ae346bc0d4116bdaf3cf66176ec32eba47096b8",
+    "030924103fe180b6645122ec3b02b2ed2af10b59": "f4ba931e4b8bee28e753dead866bc53567c40fe6",
+    "9638575cd8382a823eb5fb66a4aca14247bae5d2": "9a96dc0b9eed6928ebf235fff23cdd1be76ff28f",
+    "40329d127c80bc4e5849fa7b9ef18b96666685fb": "9451cb0bf5259b73439705f8b6a25d59d292d4b6",
+    "2b968f5a9aaebc48ebbe2a7597ff55193164c894": "db13737fbe3efa197829774e19d3527979a23dfd",
+    "790d4256fe311086eb9f899ae88b0915ce0eb5ab": "1c4c1d57bf00d470bb5b696555ee70b8341cbc12",
+    "4a34ae3eda8a4d8a1418a515f6dc0feec7596249": "cd1c45b70a0136cc75fcda4c13192966b18f123b",
+    "ec5cdffbe493eacd0cc969953a110e52ba8dec84": "81c67a09007a9244bf45d112f2fea310fd4eb787",
+    "c94ec7109d7b5525d2c849d297a3c6c28a886d55": "9d17ee0c490108903abdca0144d283881dcbd38d",
+    "3a1111db03812e6e4f95844dc9b64a27670acd24": "24537e4f8158127a7ea16ba1fd62d908dd17ec7e",
+    "28991e79b6062602705bc25463139eec8c154903": "98ea8ed4e482f5a2f098bc6d33feb5a5721d1bf7",
+    "a1cebb781db60f3e136bf56ed57b1e331c908498": "112c5fc9f3ffc7af00176d536a0d1fa2d4776eaf",
+    "451b475dccb71e46352f915f0f75167da25540d9": "4983d9d543f5bea900c695832ae6a2f6deb12c9e",
+    "535d602b46db74aae38dcd45ddd676b620837180": "87fad6c73952dc644445d6cfbd589f8173955acd",
+    "8361487efc05791972d5233750532b4c1879e9d9": "44871dd5646b456d3cf9e6d6e544d34f7470e2c7",
+    "c674dc3cf582cd0f4d0c3105f0d5e9a9c653da54": "f6e7c0b8d486b7af746cec00ea152facd2ff719c",
+    "58cf5cf6750900645986e29018606ad18e221f2e": "7aec49ac9a1ff08203a293bb2f1e8e0797675afa",
+    "890a62d52e39778202a4e306d9d3d5f8357f3a85": "d1780c0d8eaa1df1f5bbe812bf51a76e81c8a6c8",
+    "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b": "599addeec6ead15a47056fb1d231247b0be79441",
+    "42deb3ce94932d41a25943cd100d2e3945acc5ef": "e676ba37295b1449a7e0f5c86f1b131f0603a299",
+    "f01799cea791006f109f09bd064f953eff6b584b": "362561fa786234bf7853b63d87dae73af433e7ae",
+    "8c2683e03ce325326ca914bb179a0e750ef9f537": "4ba66af7b669f725918fb1b5affceb6c9aa53801",
+    "ef5f09a8ad4fa01aac57845a9021e0a3846c578c": "5aad23dd18c3c1bbdeca6fd427c91f2c19a4b868",
+    "e03e3b07a99f7381842109e0b5a21f8105390d9b": "c2eb2d8957613609d5a2ef2ddb1be9201682f9d7",
+    "3a3b2af5853bfd085597db3bcbc5e3d933c46f9f": "a424bf23023a77df0e825a20af744f4d3b4f847c",
+    "a0e49b48ed456536a5e72db7d5ee5bb767aa1823": "f22734067c3eb6a914414ae3932ad492c0294efa",
+    "be354ae892b30d08da687810b1f739e83c4b2e46": "5a819d103ed5ebe4979699986dfc15e0cb9e01ae",
+    "4266e22d7fec8e188a64e53438a0e38cd9c3c03b": "f973035571dccdc77ccd4b514c574f67474d9f28",
+    "f65dc0f36b9895771397b66ab4d95f6a25756832": "45115b25c47295d0307d25af3afcb0c5d8b9611e",
+    "7e302d2366b194c32c433f6d6f9cc7b0b59b3928": "1da9037bcc87e7dcd4d859c52d8c94a8bc46d798",
+    "ec97dbc8685757c852e36e4380b3ad03688ab350": "990ada71c6f31e5c436e2c807ff3b43dc1d3decd",
+    "6dcca7a99609634233346cd9ac234b3e40b6ea02": "230e226c58774c68fa46ab8595da1b02ac5b04d5",
+    "e2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8": "73917afa3719b82c540c29ec81322db87607b314",
+    "a1300ae2e29207996ec3c8133d7027f69f7df3fb": "96c00ea3cd98a94cbe85a1ec4364f5927febba89",
+    "8528ec8d3ee3d92583ae4216bda04de8996f4d78": "1aa9d027acab5cddd1a110e3f3477e79341730d0",
+    "2cd0262ee85907d4b4f57f805d35ded5b85cad92": "7a5277b3a89353e89da94378d68009acdf2b4438",
+    "5b7a61cd0556ab1d5b83c2ee0554934f8fabf2dc": "d36fd804e2aa163709d6a048e2bdbc962585b403",
+    "2df670de32f790876420e3b23986b5810f277803": "987ecd2e55394e4989dcd6cc56df51646ba2ef37",
+    "21fefb946524a25d8a06562dd28b631d49cd5175": "df74f02adede607bb570cf4659428d3a2fadeadb",
+    "47d85e3a558401e4f2c5c7504c27c7612587646c": "c57f38a0ab6e2c8a2a70b29097368bf47f640131",
+    "2092957b1c8312b1fc90b43f64c3ed5eed8f4658": "5fbac85899e0c74b64cfee6a4eb55279a30eae05",
+    "c6207e363ca6ab054942f07c641dbc9c3b30c632": "93f10b33519dd4cbd484cd0458170182e38661d3",
+    "0c1ffeacb127105def7a7bc49636e87ec7822ff9": "8313848b086233a32ee688629b605dda3a5af4b3",
+    "639bf0e2f5d9ad768a5a3beecaa134880f6e929a": "327f04ba0c77987f76e38f27cc399fc7fafba4c1",
+    "a2c9a91b1dd347d11cb333b2f96b8973951cfa03": "5b3a769a3471dbacda51a0ccb72dcaf4bbe73675",
+    "6c239da0a671256161070e879a638b6e99f6d4ae": "beb38afc96aba124308972bbcf0889c2e97992d7",
+    "3203c46689c3d75332b86a9fe8f04bcc3ef8be97": "0e79014005459f0812150723c47a384f7b53a893",
+    "73d59f3237de92ff803b7358509c8a86510e969d": "4f523504d7892c77ff5c9cba39b0c3a1a8805474",
+    "31010ce6b69d54767dc322a53b0cf6894b03d955": "1feb0e9fa53403815ac551572fcf0b42ad4ce039",
+    "aaa801a93fbf3cc60e2342370fb16742ee505ed8": "355ce2861e9f2d9ff45292fdd266435932a9eca0",
+    "f76b105f0835896f0f5bf1f84f71bb6d72cbc38b": "08c386e8dba8272e344dfade5c9da7a97b4aeff0",
+    "5cb8db07702dd9a69bd632b2e425198c0dfc5e91": "4f9c2f60ebf194914f754634391323d6c693d371",
+    "9d4a34be6814259db0b9db2d44cbe29667c219bc": "7e677f55c5ec16d16df92ced64496be6fb80016a",
+    "7290d1cf7638581f1b8c594d7fb2b424f3c2f139": "4cd2b82e93cbf165edc228b9be4e6113c452cc7c",
+    "6bfb8dffc072cc1fe44375337a049ea3ebb6e312": "d6fa652a755de1b48197ba52fd6fbd57fee81315"
+  },
+  "historical_redacted_versions": [
+    {
+      "original_commit": "a20bc1651224482f87d4d4b8e2bef9597fe4c6e5",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "7588adb1d4826d176374a52e4ad5239b6995640a",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c706909eee24733875aa18ec21d431e466d5c890",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "d26fd7a748d60244267323604d81083e9625cd20",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "745e0e4efe05edd1f2a771418e51a0d501a353ac",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "fdd310e5139c58157985c7e730fefb54c5964b62",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "2391d53b112a23919f651337db3750b7213f8a71",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "86b6ed65967ac7276b31301e539a9603a9362c62",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "505383700dc9166523eeb02b5cabd7045e0d9dc4",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c5a1dadbf093f07f719b60942e6773a2f2c3efef",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "4ba7a2ff349ddfaba379996f8380c5e9079022d0",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "5202cbea994771eebffa1f479e7e88915106ca14",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "d893c24f90dcd5e1e1a50a85d954895e2cc94c94",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "c0f29817f312d2815dce3c6a7a8939ea03f6093d",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    },
+    {
+      "original_commit": "030924103fe180b6645122ec3b02b2ed2af10b59",
+      "path": "reviews/attention-v2/A09-pipeline-probe-result.json",
+      "identifier_count": 1
+    }
+  ],
+  "candidate_sha256": {
+    "reviews/attention-v2/mixed_fa3.py": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "reviews/attention-v2/mixed_fa3_all_verify.py": "25b35cc748262774a85c3a8ed584ed02b37dbb429b967d437c9372e7afe9037d",
+    "reviews/attention-v2/mixed_fa3_decode16.py": "8e1db32fe3d2c803efecbe62bbff5dd752e133cc093743ef28143352a3d28905",
+    "reviews/attention-v2/mixed_fa3_decode_merge.py": "94cfb257da13daddec1e8eeb5e7c0b9abe768f54029ecfe2bca8733f8088b93f",
+    "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "reviews/attention-v2/mixed_fa3_decode_qhoist.py": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+    "reviews/attention-v2/mixed_fa3_decode_small.py": "5ef5c9e93b56ca382aea363d0022d558a8163f5df0ef8ae5673ba1a854bbf97b",
+    "reviews/attention-v2/mixed_fa3_deferred_denom.py": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+    "reviews/attention-v2/mixed_fa3_fp8_qk.py": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "reviews/attention-v2/mixed_fa3_fused_full_small.py": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "reviews/attention-v2/mixed_fa3_fused_full_verify1.py": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+    "reviews/attention-v2/mixed_fa3_fused_prepare.py": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+    "reviews/attention-v2/mixed_fa3_fused_verify.py": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+    "reviews/attention-v2/mixed_fa3_local_tickets.py": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "reviews/attention-v2/mixed_fa3_page_lookahead.py": "fe09ee9736b3039b7c8edcd02968dc247c4457fe503629930fb41b7ea3c7fb3c",
+    "reviews/attention-v2/mixed_fa3_sliding.py": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+    "reviews/attention-v2/mixed_fa3_verify1.py": "2c7bd6a0456c18555d0579b046e741086e527e2290dc3a11b642f8fb37eea357"
+  },
+  "projection_unrelated_and_unchanged": true,
+  "initial_source_snapshot": "9638575cd8382a823eb5fb66a4aca14247bae5d2",
+  "initial_export_job_note": "A2-01 6e761bdd1d9747ad, no result claimed",
+  "previous_export_tip": "f67c58987cab6416080ef0dcb8f345f9700a95c7",
+  "incremental_related_replay": true,
+  "current_export_note": "Runtime state is in the exported ledgers/reports, not inferred by this local exporter"
+}

@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-10-25T04:48:34.196775+00:00",
+  "daily_reset_utc": "2026-10-26T00:00:00+00:00",
+  "reset_basis": "Official TASK: daily limits reset00:00UTC; calculated next boundary from observedUTC, not a user-budget reset",
+  "problems": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 10,
+        "left": 10
+      }
+    }
+  }
+}

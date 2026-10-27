@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-25T20:09:07.382348+00:00",
+  "command": "/Users/frank/Documents/Codex/2026-10-23/task/.venv/bin/python -B reviews/attention-v2/fused-preparation-probe/test_source.py",
+  "result": "passed",
+  "test_methods": 4,
+  "last_wall_seconds": 2.927,
+  "candidate_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "test_source_sha256": "91c0d8f630ed44521a0e48afe80f920729ecdfbfa1885ae75f2923f973c03832",
+  "cpu_support_manifest_sha256": "e38d7644d7d35207424b8cf73a790596a9597e519ad31472a022fdb53b7a0cd1",
+  "native_execution": false,
+  "gpu_launched": false,
+  "official_check": false,
+  "new_compute_cost_usd": "0",
+  "limitations": "CPU stand-ins, not native Triton/FA3 correctness or performance."
+}

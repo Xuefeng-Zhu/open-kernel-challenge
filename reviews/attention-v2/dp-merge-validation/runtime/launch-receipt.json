@@ -1,0 +1,143 @@
+{
+  "experiment": "attention-dp-merge-validation",
+  "state": "function-terminal",
+  "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+  "created_utc": "2026-10-25T21:50:59.096061+00:00",
+  "source_commit": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
+  "payload_sha256": {
+    "reviews/attention-v2/dp-merge-validation/runtime/worker.py": "4507a19cdaea450415b6d7a40315e9e0021741919f5a33842fed290e0f2af59d",
+    "reviews/attention-v2/fusion-lookahead-probe/baseline.py": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+    "reviews/attention-v2/fusion-lookahead-probe/candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reviews/attention-v2/modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "reviews/attention-v2/official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "reviews/attention-v2/official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "reviews/attention-v2/dp-merge-validation/runtime/controller.py": "0299612f835e68b26ece31f5d5d031c959953988ce4d998d95941ddd9d778f17"
+  },
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "billing_before": {
+    "metered_cost": "1.91000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.91000000"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.90556129",
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8"
+    }
+  },
+  "apps_before": [
+    {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "description": "okc-attention-fusion-lookahead",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:14:54-07:00",
+      "stopped_at": "2026-10-25 14:15:59-07:00"
+    },
+    {
+      "app_id": "ap-pF3Ammg5fT5638UgFJTrox",
+      "description": "okc-projection-p044-diagnostic",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 14:05:38-07:00",
+      "stopped_at": "2026-10-25 14:06:23-07:00"
+    },
+    {
+      "app_id": "ap-SoIIp01s2fzbOD9KKGSw9W",
+      "description": "okc-attention-sliding-unsplit",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:51:49-07:00",
+      "stopped_at": "2026-10-25 13:52:50-07:00"
+    },
+    {
+      "app_id": "ap-I6PNHOGgL6uRL1AjjG2yoV",
+      "description": "okc-attention-fused-preparation",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-25 13:16:14-07:00",
+      "stopped_at": "2026-10-25 13:17:43-07:00"
+    }
+  ],
+  "cost_reserve_usd": "0.58",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "conservative_free_credit_floor_usd": "28.09",
+  "slot_receipt_sha256": "dbe21c0507d45aa62cd83218b508d7b498ad274f84a5385b622a7bbf554626e2",
+  "billing_guardrail_receipt_sha256": "e2657017d4d487e21931e65dca1cd253a7cf053809ae1f1cd151ef553d356312",
+  "paid_limit_usd": "0",
+  "artificial_stage_ceiling_removed": true,
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      2,
+      2
+    ],
+    "memory_mib": [
+      8192,
+      8192
+    ],
+    "max_containers": 1,
+    "worker_deadline": 160,
+    "child_timeout": 170,
+    "function_timeout": 185,
+    "startup_timeout": 20,
+    "watchdog": 210,
+    "retry_policy": 0,
+    "explicit_invocations": 1
+  },
+  "correctness_only": true,
+  "performance_measurement": false,
+  "official_check": false,
+  "formal_entry": false,
+  "accepted_utc": "2026-10-25T21:51:00.846911+00:00",
+  "result_retrieved": true,
+  "exit_code": 0,
+  "worker_status": "passed",
+  "worker_passed": true,
+  "report_sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47",
+  "worker_wall_seconds": 24.927400307000003,
+  "shutdown_observation": {
+    "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+    "description": "okc-attention-dp-merge-validation",
+    "state": "stopping...",
+    "tasks": "1",
+    "created_at": "2026-10-25 14:50:59-07:00",
+    "stopped_at": null
+  },
+  "shutdown_verified": false,
+  "all_apps_stopped_zero_tasks": false,
+  "billing_after": {
+    "metered_cost": "1.91000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "plan_cost": "0E-8",
+      "credits": "-1.91000000",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "ephemeral_apps": "1.90556129",
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8"
+    }
+  },
+  "observed_gross_delta_usd": "0",
+  "paid_after_usd": "0E-8",
+  "explicit_stop": {
+    "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+    "requested_utc": "2026-10-25T21:51:30.788248+00:00",
+    "exit_code": 0
+  },
+  "client_finished_utc": "2026-10-25T21:51:33.410052+00:00",
+  "client_wall_seconds": 34.299875209107995
+}

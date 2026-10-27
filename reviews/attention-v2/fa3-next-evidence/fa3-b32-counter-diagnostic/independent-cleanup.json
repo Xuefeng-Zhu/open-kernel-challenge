@@ -1,0 +1,77 @@
+{
+  "observed_utc": "2026-10-27T05:00:58.264501+00:00",
+  "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+  "own_app": {
+    "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+    "description": "okc-attention-fa3-b32-counter",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-27 04:59:11+00:00",
+    "stopped_at": "2026-10-27 05:00:31+00:00"
+  },
+  "own_stopped_zero_tasks": true,
+  "all_apps_stopped_zero_tasks": true,
+  "apps": [
+    {
+      "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+      "description": "okc-attention-fa3-b32-counter",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:59:11+00:00",
+      "stopped_at": "2026-10-27 05:00:31+00:00"
+    },
+    {
+      "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+      "description": "okc-attention-eager-counter-repair",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:37:28+00:00",
+      "stopped_at": "2026-10-27 04:37:43+00:00"
+    },
+    {
+      "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+      "description": "okc-attention-eager-counter-capability",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:11:09+00:00",
+      "stopped_at": "2026-10-27 04:11:19+00:00"
+    },
+    {
+      "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+      "description": "okc-attention-baseline-runtime-identity",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:55:33+00:00",
+      "stopped_at": "2026-10-27 03:56:28+00:00"
+    },
+    {
+      "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+      "description": "okc-projection-p068-baseline",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:35:00+00:00",
+      "stopped_at": "2026-10-27 03:35:25+00:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "2.66000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "network_egress_allowance": "0E-8",
+      "plan_cost": "0E-8",
+      "reservation_adjustment": "-0E-8",
+      "credits": "-2.66000000",
+      "free_storage": "-0E-8"
+    },
+    "metered_cost_breakdown": {
+      "llm_tokens": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.66463216",
+      "network_egress": "0E-8"
+    }
+  },
+  "observed_account_ephemeral_delta_usd": "0.05742655",
+  "actual_paid_usd": "0E-8",
+  "cost_qualification": "Account-wide delta may include rounding/delayed metering, not final per-app invoice",
+  "new_credential_action": false
+}

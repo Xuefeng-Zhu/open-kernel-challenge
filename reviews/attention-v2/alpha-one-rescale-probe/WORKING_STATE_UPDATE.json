@@ -1,0 +1,43 @@
+{
+  "working_source": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+  "working_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "working_score": 1.2336330588627955,
+  "rejected_probe": {
+    "kind": "compile_only",
+    "status": "rejected_before_candidate_execution",
+    "source_commit": "99185609d7924d18bb07de950c3d689a9ec9e649",
+    "source": "reviews/attention-v2/alpha-one-rescale-probe/candidate.py",
+    "sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+    "app_id": "ap-uY5K1rBNFRR2K8rdo2F8tw",
+    "compile_complete": true,
+    "artifact_files": 24,
+    "candidate_kernel_invocations": 0,
+    "registers": {
+      "control": 96,
+      "candidate": 128
+    },
+    "shared_bytes": {
+      "control": 20480,
+      "candidate": 20480
+    },
+    "driver_spills_raw": {
+      "control": 0,
+      "candidate": 0
+    },
+    "rescale_bypass_observed": true,
+    "original_V_async_buffering_preserved": false,
+    "resource_gate_passed": false,
+    "correctness_tested": false,
+    "performance_tested": false,
+    "official_check": false,
+    "app_stopped": true,
+    "tasks": 0,
+    "closure_utc": "2026-10-25T22:06:59.192653+00:00",
+    "report": "reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md",
+    "reason": "Predeclared register/resource and buffering gates fail; no measured slowdown or hardware bottleneck proof. No onward frequency/correctness/timing admission."
+  },
+  "working_algorithm_changed": false,
+  "projection_record_changed": false,
+  "rollback_changed": false,
+  "formal_entry": false
+}

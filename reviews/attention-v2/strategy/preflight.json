@@ -1,0 +1,48 @@
+{
+  "experiment": "A2-14",
+  "verified_utc": "2026-10-25T07:35:28.738717+00:00",
+  "stage": "local source and CPU model only",
+  "parent_source": "reviews/attention-v2/mixed_fa3_fp8_qk.py",
+  "parent_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+  "parent_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+  "candidate_source": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+  "candidate_sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+  "selected_parent_preserved_sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+  "environment": {
+    "os": "Darwin",
+    "os_release": "25.6.0",
+    "machine": "arm64",
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "cuda_execution": false
+  },
+  "checks": [
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/strategy/test_deferred_denom.py",
+      "exit_code": 0,
+      "result": "Ran 7 tests in 0.894s\nOK"
+    },
+    {
+      "command": ".venv/bin/python -B reviews/attention-v2/strategy/weighted_analysis.py --self-test",
+      "exit_code": 0,
+      "result": "Ran 11 tests in 0.007s\nOK"
+    }
+  ],
+  "independent_review": {
+    "reviewer": "attention_fusion_audit",
+    "scope": "Source isolation, denominator algebra, empty chunks, numerical and resource risks",
+    "outcome": "No concrete semantic defect identified; no native correctness or performance endorsement"
+  },
+  "gpu_execution": false,
+  "gpu_compilation": false,
+  "official_check_sent": false,
+  "upload_attempted": false,
+  "push_attempted": false,
+  "limitations": [
+    "FP32 summation order changes; native exp2/compiler effects untested",
+    "No current candidate register/spill/shared-memory/instruction evidence",
+    "CPU A/B/A does not validate same-address CUDA graphs",
+    "No prerequisite case uses B32 dispatch; native B32 page64/non-unit-scale/nearby-length coverage remains unverified",
+    "No exact-source cache-unchanged-row or overlapping-call GPU test"
+  ]
+}

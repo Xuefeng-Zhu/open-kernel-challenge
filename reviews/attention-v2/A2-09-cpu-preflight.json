@@ -1,0 +1,28 @@
+{
+  "observed_utc": "2026-10-25T05:11:42.364817+00:00",
+  "experiment": "A2-09",
+  "candidate": "mixed_fa3_local_tickets.py",
+  "parent_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+  "environment": {
+    "system": "macOS-26.6.2-arm64-arm-64bit",
+    "python": "3.12.13",
+    "torch": "2.14.1",
+    "CUDA_executed": false
+  },
+  "commands": [
+    ".venv/bin/python -m unittest discover -s reviews/attention-v2 -p test_local_tickets.py -v",
+    ".venv/bin/python -m unittest discover -s reviews/attention-v2 -p test_check_cycle_limits.py -v"
+  ],
+  "results": {
+    "ownership_protocol_and_AST_tests": 5,
+    "admission_tests": 12,
+    "two_call_interleavings_modeled": 96,
+    "passed": true
+  },
+  "limitations": [
+    "No native CUDA or Triton compilation performed locally",
+    "CPU protocol abstraction models publication/increment/merge/reset, not GPU memory ordering",
+    "Native multistream and graph ABA for this complete candidate remain untested",
+    "Mac Torch reports missing NumPy warning; these tests do not require NumPy"
+  ]
+}

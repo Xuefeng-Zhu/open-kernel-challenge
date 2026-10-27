@@ -1,0 +1,176 @@
+{
+  "kind": "Offline review of observed selected B32/L8 baseline counters",
+  "created_utc": "2026-10-27T05:05:04.224036+00:00",
+  "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+  "source_commit": "37b21ebc5ec4a3c51a6fdb41ad41b9d54f15880f",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "case": {
+    "batch": 32,
+    "q_len": 8,
+    "ctx": 80000,
+    "heads": "tp8",
+    "layer": "full",
+    "page": 1,
+    "kv_scale": 1.0,
+    "spread": "agentic",
+    "dist": "coherent",
+    "seed": 135741
+  },
+  "raw_protocol_status": "complete",
+  "raw_protocol_passed": true,
+  "raw_interpretation_status_preserved": "inconclusive_eager_graph_proxy_mismatch",
+  "strict_identity_gate_preserved": {
+    "matches": false,
+    "symbol_equal_after_whitespace_normalization": false,
+    "grid_equal": true,
+    "block_equal": true,
+    "qualification": "Name/grid/block equality is necessary identity evidence, not proof of identical graph/eager scheduling state or split counts.",
+    "exact_symbol_grid_block_match": false,
+    "full_input_fingerprint_match": true,
+    "eager_graph_output_newkv_bytes_match": true,
+    "wrapper_and_mapped_binary_match": true,
+    "opaque_split_policy": "UNKNOWN; identity checks do not prove identical eager/graph internal scheduling state",
+    "necessary_identity_checks_passed": false
+  },
+  "raw_artifacts_modified": false,
+  "ncu": {
+    "sessions_attempted": 1,
+    "actual_kernel_rows": 1,
+    "command_exit_code": 0,
+    "command_wall_seconds": 19.310275328000003,
+    "kernel_name": "void device_kernel<enable_sm90_or_later<FlashAttnFwdSm90<CollectiveMainloopFwdSm90<2, tuple<C<1>, C<1>, C<1>>, tuple<C<64>, C<128>, C<64>>, 64, float_e4m3_t, float, Sm90, 1, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 0, bfloat16_t, 0, 1>, CollectiveEpilogueFwd<tuple<C<64>, C<64>, C<128>>, tuple<C<1>, C<1>, C<1>>, bfloat16_t, Sm90, 128, 1, 1, 1, 1>, VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, 1, 1, 1, 1, 1, 1>>>>(Params)",
+    "grid": [
+      132,
+      1,
+      1
+    ],
+    "block": [
+      256,
+      1,
+      1
+    ],
+    "metrics": {
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": {
+        "value": 11.47,
+        "unit": "%",
+        "raw": "11.47"
+      },
+      "dram__throughput.avg.pct_of_peak_sustained_elapsed": {
+        "value": 36.77,
+        "unit": "%",
+        "raw": "36.77"
+      },
+      "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct": {
+        "value": 43.4,
+        "unit": "%",
+        "raw": "43.40"
+      },
+      "sm__warps_active.avg.pct_of_peak_sustained_active": {
+        "value": 12.49,
+        "unit": "%",
+        "raw": "12.49"
+      }
+    },
+    "range_warnings": [],
+    "permission_denial_observed": false
+  },
+  "whole_call_graph": {
+    "before_median_us": 383.13600420951843,
+    "after_median_us": 381.28000497817993,
+    "before_range_us": [
+      380.47999143600464,
+      385.15201210975647
+    ],
+    "after_range_us": [
+      381.21598958969116,
+      381.3439905643463
+    ],
+    "eviction_bytes": 268435456,
+    "empty_graph_subtraction": false,
+    "before_after_scope": "Before and after the one Torch activity session; both precede NCU",
+    "qualification": "Whole unchanged kernel_fn CUDA graph replays. Instrumented event/counter durations are separate.",
+    "post_counter_median_us": 381.056010723114,
+    "post_counter_range_us": [
+      380.0640106201172,
+      383.9679956436157
+    ],
+    "post_counter_confirmation_complete": true,
+    "before_us": [
+      383.13600420951843,
+      385.15201210975647,
+      380.47999143600464
+    ],
+    "after_torch_activity_us": [
+      381.28000497817993,
+      381.21598958969116,
+      381.3439905643463
+    ],
+    "after_counter_us": [
+      383.9679956436157,
+      380.0640106201172,
+      381.056010723114
+    ],
+    "post_counter_median_change_from_before_pct": -0.5428864589992921,
+    "interpretation": "One fixed fixture with three samples per phase. No candidate comparison, significance claim, empty-graph subtraction or instrumented-overhead subtraction."
+  },
+  "completed_checks": {
+    "main_graph_checks": 14,
+    "main_graph_original_oracles": 3,
+    "main_graph_all_passed": true,
+    "eager_checks": 3,
+    "eager_original_oracles": 2,
+    "eager_all_passed": true,
+    "eager_pre_measured_post_order": [
+      "pre",
+      "measured",
+      "post"
+    ],
+    "all_input_tensor_fingerprints_equal": true,
+    "all_eager_output_newkv_digests_equal_graph": true
+  },
+  "symbol_mismatch": {
+    "graph_symbol_characters": 1380,
+    "ncu_symbol_characters": 425,
+    "graph_symbol_sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711",
+    "ncu_symbol_sha256": "cde43affc2c7836b1e5177403df89475e2bf82f2e1f0451ff1e3e56facf5037a",
+    "exact_symbols_equal": false,
+    "installed_help_excerpt": "  --rename-kernels arg (=1)             Perform simplification on the kernel demangled names.\n                                        Rename demangled names using a config file. By default, searches for \n                                        ncu-kernel-renames.yaml config file in the current working directory and \n                                        \"$HOME/.config/NVIDIA Corporation\" directory. Use --rename-kernels-export \n                                        option to export the simplified demangled names to the config file.",
+    "installed_help_stdout_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+    "observed_default": "--rename-kernels arg (=1)",
+    "inference": "The saved help explicitly describes simplification of demangled names. This is consistent with the lossy NCU name, but does not prove exact eager/graph kernel or scheduling equivalence. No namespace/boolean/type rewriting was used to change the declared gate."
+  },
+  "conditional_hypothesis": {
+    "scope": "The single instrumented eager FA3 launch only; pending graph identity/scheduling confirmation",
+    "lead": "Exposed memory-dependency latency with low active-warp residency is a plausible next hypothesis to test.",
+    "support": [
+      "Long-scoreboard per-active-warp stall metric is 43.40%.",
+      "Measured active warps are 12.49% of peak sustained active.",
+      "DRAM throughput is 36.77% of the reported peak sustained elapsed denominator; tensor active cycles are 11.47% of that metric denominator."
+    ],
+    "limits": [
+      "Long scoreboard is a dependency-stall statistic; 43.40% is not the fraction of whole-call wall time, and does not identify HBM versus cache/page-address dependence.",
+      "Tensor active-cycle percentage is not achieved FLOP percentage.",
+      "Moderate DRAM throughput does not prove bandwidth saturation or rule out memory latency.",
+      "Low measured active-warps does not establish that register count is the cause; persistent scheduling, producer/consumer roles, barriers and other limits remain possible.",
+      "No exact CTA-residency trace, stall source attribution or causal intervention was measured.",
+      "The strict graph/eager symbol gate failed and the bottleneck interpretation for the timed graph remains inconclusive."
+    ]
+  },
+  "next_discriminating_measurement": {
+    "first": "Verify the full unrenamed eager symbol with the installed-help-supported --rename-kernels 0, preserving the same selected source, input bytes, filter, launch geometry and correctness gates. This option was not executed in this run.",
+    "second": "Compare resolved scheduler/partial-allocation and launch-dependency state between graph and eager calls using supported auxiliary/schema evidence; names and grid alone cannot prove automatic split/PDL equivalence.",
+    "then_if_identity_is_established": "Distinguish latency/address-dependency exposure from bandwidth pressure with a small separately justified memory/cache/dependency measurement. Do not change algorithm, splits or register targets from these four counters alone.",
+    "gpu_action_in_this_analysis": false
+  },
+  "closure": {
+    "own_stopped_zero_tasks": true,
+    "all_apps_stopped_zero_tasks_at_cutoff": true,
+    "observed_utc": "2026-10-27T05:00:58.264501+00:00",
+    "actual_paid_usd": "0E-8"
+  },
+  "evidence": {
+    "result_sha256": "3abcaeb2b52b57ccd94f8dd56110c4d2908815e8039b2fb1315f53475c71983b",
+    "independent_cleanup_sha256": "d2f4903432025a1df893b04f8195d51f28e38ceb46d01eacb043ad63d5f31197",
+    "trace_gzip_sha256": "8b8bcf48b431d41f8882a8dda0932a30c363b581f503b501da4b2db49b0625ff"
+  }
+}

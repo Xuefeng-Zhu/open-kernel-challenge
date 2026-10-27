@@ -1,0 +1,69 @@
+{
+  "source_commit": "8e43b227981861b2514f4eb9f366ff923e3d4215",
+  "raw_result_sha256": "91c05d95ba02b797ff12d46c7a57318cdfba0b9741f0d23a430de371dd734d78",
+  "app_id": "ap-I3MCH1onTGtkhqXUtej9Ru",
+  "shutdown_verified": true,
+  "tasks": 0,
+  "actual_paid_usd": "0E-8",
+  "gpu_requested": false,
+  "candidate_kernel_launches": 0,
+  "scope": "CPU-only bounded installed-source eligibility read; not a native correctness/performance finding",
+  "files": {
+    "CONTROLLER.md": {
+      "sha256": "ca25ad48fd6a059fc6f45fbc60d07732725b0f20b3cca581d24c6d67064da85a",
+      "bytes": 5544
+    },
+    "COSTS.json": {
+      "sha256": "6386c7747b10fb3fe868a0d0bee638574c3e61715fa784cbc19611e155aec21f",
+      "bytes": 724
+    },
+    "IMAGE_RESULT_REVIEW.md": {
+      "sha256": "347b417fd0691253f6c271dbd92f22d7b183e3c98d23d0400b54323cd2e6d70e",
+      "bytes": 4929
+    },
+    "REVIEW.md": {
+      "sha256": "069b8b953a176c49e6c25533a36745ebe9b5aedca3e8627a7bc82eb9a863e60e",
+      "bytes": 5727
+    },
+    "SOURCE_REVIEW.md": {
+      "sha256": "7fb500ee236491c03d90aa15f300f3045d63213f817c316496d81e9517b94ac0",
+      "bytes": 6061
+    },
+    "WORKER.md": {
+      "sha256": "5c9a233a94ce2461d1611ab682be7608274130c49fe1530111ba1c5ed27eb373",
+      "bytes": 3113
+    },
+    "accounting-cutoff.json": {
+      "sha256": "507f31d1104b4d160fb5eaaf6d092c81aa13fd16634ffa7dfa5a072a5231403b",
+      "bytes": 1097
+    },
+    "controller.py": {
+      "sha256": "382b62b4a6200a4561b62593cb1b7360c047ea93c01b3cbbeb9e38584bb00783",
+      "bytes": 15527
+    },
+    "launch-receipt.json": {
+      "sha256": "fc4cea7b981e5c42bbe575a2cae1b21b688390f744ec8778689c2c4a69fe7e04",
+      "bytes": 7515
+    },
+    "reconciliation.json": {
+      "sha256": "0d4861005d6e75031cb04746fa87218cbe232b53763bafd60cc56f6a5420a65e",
+      "bytes": 2972
+    },
+    "result.json": {
+      "sha256": "91c05d95ba02b797ff12d46c7a57318cdfba0b9741f0d23a430de371dd734d78",
+      "bytes": 19382
+    },
+    "test_controller.py": {
+      "sha256": "e43f5ed94510be36c48eb08e07e22a931b17599faa61b2ce7b0536b7390afbe5",
+      "bytes": 7999
+    },
+    "test_worker.py": {
+      "sha256": "f9d644813e9a81b538d087614dfd186f45592ba2b42c08ca641e8d50d21e4511",
+      "bytes": 14401
+    },
+    "worker.py": {
+      "sha256": "5a287e350612a5f10356a5645e50689c51cdce80c175bb8d22f017cae1321f23",
+      "bytes": 18714
+    }
+  }
+}

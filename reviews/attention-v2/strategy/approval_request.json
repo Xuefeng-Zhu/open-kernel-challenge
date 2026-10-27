@@ -1,0 +1,52 @@
+{
+  "status": "complete: check rejected for performance; approved private payload push verified",
+  "experiment": "A2-14",
+  "payload": {
+    "file": "reviews/attention-v2/mixed_fa3_deferred_denom.py",
+    "sha256": "bba54e6e5cd779074ad0c372ca60556048085251edd6317463312e4a74cee43d",
+    "only_candidate_source": true
+  },
+  "destination": "https://openkernelchallenge.dev",
+  "operation": "one official off-board H200 check for muse_attention_decode",
+  "proposed_command": "bin/okc check reviews/attention-v2/mixed_fa3_deferred_denom.py --no-wait --json",
+  "max_new_accepted_requests": 1,
+  "paid_cost_limit_usd": 0,
+  "source_confidentiality": "Source leaves the private local environment; challenge terms do not promise confidentiality.",
+  "excluded": [
+    "ranked or formal submission",
+    "Modal launch",
+    "new credentials",
+    "paid compute"
+  ],
+  "preconditions": [
+    "separate explicit payload/destination approval",
+    "supported existing authentication",
+    "fresh read-only platform quota check",
+    "reconcile active and uncertain requests before any dispatch"
+  ],
+  "decision": {
+    "target_normalized_latency_cut_goal": 0.2,
+    "model_score_if_goal_only": 1.2489104,
+    "material_control_regression_threshold": 0.05,
+    "all_correctness_required": true,
+    "small_changes_with_overlapping_intervals": "inconclusive; do not claim adoption"
+  },
+  "approved_utc": "2026-10-25T07:44:36.285446+00:00",
+  "private_push": {
+    "repository": "Xuefeng-Zhu/open-kernel-challenge",
+    "visibility": "PRIVATE",
+    "branch": "attention-fa3-sanitized",
+    "scope": "Reviewed A2-14 source, tests, related analysis and sanitized results only"
+  },
+  "job_id": "6d6019056cbc4f81",
+  "check_permission_consumed": true,
+  "result_report": "../A2-14-RESULT.md",
+  "private_push_confirmation": {
+    "verified_utc": "2026-10-25T07:55:09.718391+00:00",
+    "branch": "attention-fa3-sanitized",
+    "remote_sha": "16a8c48296884950e308d8217918444ccefedb99",
+    "visibility": "PRIVATE",
+    "force": false,
+    "meaning": "First verified delivery of the complete A2-14 payload; a later confirmation-only commit may advance the branch. Final current SHA is reported in the task and local push receipt."
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "state": "accepted",
+  "mode": "check",
+  "problem": "muse_attention_decode",
+  "candidate": "reviews/attention-v2/m64n8-producer-probe/candidate.py",
+  "source_sha256": "96e682db54aae97fd95c4e9b47b263f2322e40bfd11988b504f487dfd5c9c970",
+  "source_commit": "04447c1cc8f64fdb489b74e1e942a64e0fae3cbb",
+  "created_utc": "2026-10-27T02:18:18.909152+00:00",
+  "quota_before": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 0,
+      "left": 20
+    }
+  },
+  "active_jobs_before": 0,
+  "expected_monetary_cost_usd": 0,
+  "formal_entry": false,
+  "Modal_apps_created": 0,
+  "POST_attempts": 1,
+  "job_id": "3e0a7ef51d4849c6",
+  "cli_exit_code": 0,
+  "observed_utc": "2026-10-27T02:18:19.477672+00:00"
+}

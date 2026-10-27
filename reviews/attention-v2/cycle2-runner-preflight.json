@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-25T02:16:00.841449+00:00",
+  "command": ".venv/bin/python reviews/attention-v2/test_check_cycle_limits.py",
+  "exit_code": 0,
+  "output": "test_cross_cycle_active_gpu_guard (__main__.CycleLimits.test_cross_cycle_active_gpu_guard) ... ok\ntest_last_complete_candidate_allowed (__main__.CycleLimits.test_last_complete_candidate_allowed) ... ok\ntest_last_new_check_reserved (__main__.CycleLimits.test_last_new_check_reserved) ... ok\ntest_new_budget_allows_seventh (__main__.CycleLimits.test_new_budget_allows_seventh) ... ok\ntest_new_ten_ceiling (__main__.CycleLimits.test_new_ten_ceiling) ... ok\ntest_old_six_ceiling (__main__.CycleLimits.test_old_six_ceiling) ... ok\ntest_uncertain_request_prevents_post (__main__.CycleLimits.test_uncertain_request_prevents_post) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.012s\n\nOK\n",
+  "network_or_gpu_executed": false,
+  "initial_fixture_failure": "First mock-only run: 5passed/2errors; macOS temporary-directory symlink path mismatch triggered correct canonical-path rejection. Fixed test fixture with Path.resolve(); production source guard unchanged.",
+  "coverage": [
+    "Old6/new10 request ceilings",
+    "New budget admits seventh request",
+    "Final complete candidate reservation",
+    "Cross-cycle active GPU exclusion",
+    "Uncertain request blocks another POST"
+  ]
+}

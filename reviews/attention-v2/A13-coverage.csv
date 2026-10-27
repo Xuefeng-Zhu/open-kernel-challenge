@@ -1,0 +1,8 @@
+case,batch,q_len,requested_ctx,actual_length_min,actual_length_max,page,kv_scale,checked_replays,passed,stable_addresses,changed_lengths_both_arms,restored_A_bitwise,cross_graph_overlap_observed,graph_overlap_us,max_concurrent_graphs
+tiny_full_verify2_local_ticket,2,8,1024,80,3632,64,0.015625,6,True,True,True,True,False,0.0,1
+sliding_decode1,1,1,4096,3841,4142,1,1.0,6,True,True,True,True,False,0.0,1
+tiny_full_verify1_retained_fa3,1,8,1024,80,2711,64,1.0,6,True,True,True,True,False,0.0,1
+sliding_decode16,16,1,4096,3798,4399,1,1.0,6,True,True,True,True,False,0.0,1
+sliding_decode32,32,1,4096,3793,4399,1,1.0,6,True,True,True,True,False,0.0,1
+full_decode32,32,1,8192,7586,8798,1,1.0,6,True,True,True,True,True,133.313,2
+nearby_full_page64_nonunit,2,1,2048,161,7265,64,0.015625,6,True,True,True,True,False,0.0,1

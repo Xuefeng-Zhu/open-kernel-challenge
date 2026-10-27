@@ -1,0 +1,60 @@
+{
+  "created_utc": "2026-10-27T05:43:10.597100+00:00",
+  "source_commit": "8e6ad398d8f89859e570303e66bbcee4086a9d9c",
+  "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+  "status": "FAILED_NO_MATCHED_KERNELS_AND_NO_DURABLE_REPORT",
+  "identity_gate_passed": false,
+  "profiled_kernel_rows": 0,
+  "counter_metrics": null,
+  "permission_denial_observed": false,
+  "capture_exit_code": 0,
+  "capture_reports_no_kernels_profiled": true,
+  "ncu_report_exists": false,
+  "offline_import_attempted": false,
+  "main_checks_passed": 14,
+  "child_checks_passed": 3,
+  "main_all_passed": true,
+  "graph_symbol": {
+    "value": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > > >(flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<2, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cute::tuple<cute::C<64>, cute::C<128>, cute::C<64> >, 64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, true, false, false, true, true, false, false, false, true, true, true, true, false, cutlass::bfloat16_t, false, 1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<64>, cute::C<64>, cute::C<128> >, cute::tuple<cute::C<1>, cute::C<1>, cute::C<1> >, cutlass::bfloat16_t, cutlass::arch::Sm90, 128, true, true, true, true>, flash::VarlenDynamicPersistentTileScheduler<64, 128, 128, 128, true, true, true, true, true, true> > >::Params)",
+    "chars": 1380,
+    "sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711"
+  },
+  "available_ncu_names": [
+    {
+      "value": "void cutlass::device_kernel<flash::enable_sm90_or_later<flash::FlashAttnFwdSm90<flash::CollectiveMainloopFwdSm90<(int)2, cute::tuple<cute::C<(int)1>, cute::C<(int)1>, cute::C<(int)1>>, cute::tuple<cute::C<(int)64>, cute::C<(int)128>, cute::C<(int)64>>, (int)64, cutlass::float_e4m3_t, float, cutlass::arch::Sm90, (bool)1, (bool)0, (bool)0, (bool)1, (bool)1, (bool)0, (bool)0, (bool)0, (bool)1, (bool)1, (bool)1, (bool)1, (bool)0, cutlass::bfloat16_t, (bool)0, (int)1>, flash::CollectiveEpilogueFwd<cute::tuple<cute::C<(int)64>, cute::C<(int)64>, cute::C<(int)128>>, cute::tuple<cute::C<(int)1>, cute::C<(int)1>, cute::C<(int)1>>, cutlass::bfloat16_t, cutlass::arch::Sm90, (int)128, (bool)1, (bool)1, (bool)1, (bool)1>, flash::VarlenDynamicPersistentTileScheduler<(int)64, (int)128, (int)128, (int)128, (bool)1, (bool)1, (bool)1, (bool)1, (bool)1, (bool)1>>>>(T1::Params)",
+      "chars": 870,
+      "sha256": "e74ccf26278f6fddc906194a2a415767a3f139941f63d0bc0cf67caa03ccbe87"
+    }
+  ],
+  "available_names_are_not_profiled_launch_rows": true,
+  "cross_demangler_abi_identity": "UNRESOLVED; no normalization or posthoc gate relaxation",
+  "whole_call": {
+    "before_median_us": 379.2319893836975,
+    "after_median_us": 380.7680010795593,
+    "before_range_us": [
+      379.2000114917755,
+      382.9759955406189
+    ],
+    "after_range_us": [
+      380.41600584983826,
+      381.3120126724243
+    ],
+    "eviction_bytes": 268435456,
+    "empty_graph_subtraction": false,
+    "before_after_scope": "Before and after the one Torch activity session; both precede NCU",
+    "qualification": "Whole unchanged kernel_fn CUDA graph replays. Instrumented event/counter durations are separate.",
+    "post_counter_median_us": 380.44801354408264,
+    "post_counter_range_us": [
+      379.4879913330078,
+      382.52800703048706
+    ],
+    "post_counter_confirmation_complete": true
+  },
+  "frozen_selected_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "selected_changed": false,
+  "new_gpu_invocations": 1,
+  "new_official_checks": 0,
+  "new_ranked_entries": 0,
+  "no_more_gpu_launches": true,
+  "independent_stopped_zero_tasks": true
+}

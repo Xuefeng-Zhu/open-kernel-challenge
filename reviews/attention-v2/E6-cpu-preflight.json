@@ -1,0 +1,71 @@
+{
+  "observed_utc": "2026-10-25T02:08:18.538725+00:00",
+  "source_sha256": "7a3bc5862d117f448879982158554e3a4fd9a80d92c8e6de4c8b91f93acd7755",
+  "parent_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+  "official_contract_files": {
+    "template.py": {
+      "sha256": "18e15dfdfdcebb8251d94530947f4ccfa1c19f598a8240a0b76c6574eddecb6d",
+      "matches_saved": true
+    },
+    "baseline.py": {
+      "sha256": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+      "matches_saved": true
+    },
+    "reference.py": {
+      "sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+      "matches_saved": true
+    },
+    "checks.py": {
+      "sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+      "matches_saved": true
+    }
+  },
+  "local_environment": {
+    "python": "3.12.13",
+    "system": "Darwin",
+    "machine": "arm64",
+    "torch": "2.14.1",
+    "cuda_available": false
+  },
+  "tests": [
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3_sliding.py",
+      "exit_code": 0,
+      "output": "test_cpu_same_address_A_B_A_changed_lengths_and_content (__main__.SlidingFA3.test_cpu_same_address_A_B_A_changed_lengths_and_content) ... ok\ntest_only_one_scored_shape_changes_and_nearby_dispatch (__main__.SlidingFA3.test_only_one_scored_shape_changes_and_nearby_dispatch) ... ok\ntest_parent_functions_unchanged_except_dispatch (__main__.SlidingFA3.test_parent_functions_unchanged_except_dispatch) ... ok\ntest_rope_table_layout_cache_and_constant_bound (__main__.SlidingFA3.test_rope_table_layout_cache_and_constant_bound) ... ok\ntest_window_boundary_cache_zero_scales_and_heads (__main__.SlidingFA3.test_window_boundary_cache_zero_scales_and_heads) ... ok\n\n----------------------------------------------------------------------\nRan 5 tests in 0.218s\n\nOK\n"
+    },
+    {
+      "command": ".venv/bin/python reviews/attention-v2/test_mixed_fa3.py",
+      "exit_code": 0,
+      "output": "test_cpu_in_place_A_B_A_with_changed_lengths (__main__.MixedFA3.test_cpu_in_place_A_B_A_with_changed_lengths) ... ok\ntest_dispatch_only_full_verify_16_32 (__main__.MixedFA3.test_dispatch_only_full_verify_16_32) ... ok\ntest_e2_all_functions_unchanged_except_entrypoint_name (__main__.MixedFA3.test_e2_all_functions_unchanged_except_entrypoint_name) ... ok\ntest_official_call_contract_and_live_slot_zero (__main__.MixedFA3.test_official_call_contract_and_live_slot_zero) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.520s\n\nOK\n"
+    }
+  ],
+  "native_sglang_or_triton_executed": false,
+  "coverage": [
+    "AST all parent functions except added dispatch unchanged",
+    "700 nearby dispatch configurations; exactly one scored path changes",
+    "CPU stand-in BF16 RMSNorm before RoPE then BF16 RoPE/FP8 Q and cache rounding",
+    "causal sliding2048 with ctx0/1/2047/2048/2049; edge and soft distributions",
+    "page1/page64, unit/nonunit scales, tp8/dp heads, live cache row0, immutable inputs/untouched cache",
+    "same-address CPU A-B-A, changed actual lengths/content on page1/page64"
+  ],
+  "limitations": [
+    "No CPU test is native FA3/Triton/CUDA execution",
+    "CPU table reduced to8192 positions; candidate constant2^21 asserted; full512MiB GPU table not locally allocated",
+    "Explicit target GPU A-B-A/page64/nonunit/untouched rows need native evidence; official prerequisites may not enter B1L8 target",
+    "Unchanged E2 fallback retains simultaneous-call ticket limitation"
+  ],
+  "native_source": {
+    "file": "sglang fused_qk_norm.py pinned a55ab7d5",
+    "sha256": "99ed08f1f35bbd4174c4a40becfc7978b7a5ba0a055818e79470254e5c8a2b67",
+    "rounding": "Pinned kernel lines87-106: BF16 RMSNorm -> RoPE -> BF16 Q/K outputs; no query scale until FA3 softmax_scale"
+  },
+  "authentication": "Existing okc whoami verified Xuefeng-Zhu, no credentials changed",
+  "quota": {
+    "scored": {
+      "per_day": 10
+    },
+    "checks": {
+      "per_day": 20
+    }
+  }
+}

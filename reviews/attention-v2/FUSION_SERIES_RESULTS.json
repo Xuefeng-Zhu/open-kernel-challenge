@@ -1,0 +1,810 @@
+{
+  "experiments": [
+    {
+      "experiment": "A2-05",
+      "job_id": "50465a4c440f4b75",
+      "source": "mixed_fa3_fused_prepare.py",
+      "source_commit": "535d602b46db74aae38dcd45ddd676b620837180",
+      "source_sha256": "a7930cda0389cf55f60759ea3f9247f0562bf3412fad00c81dcbfc48520f93de",
+      "passed": true,
+      "score": 1.1157987383237482,
+      "ci": [
+        1.0990617572488919,
+        1.1386331073714417
+      ],
+      "prerequisite_count": 16,
+      "timed_shapes": 12,
+      "timing_sample_counts": [
+        {
+          "shape": [
+            "decode 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "full"
+          ],
+          "candidate": 56,
+          "baseline": 56,
+          "ratios": 56
+        }
+      ],
+      "targets": [
+        {
+          "load": "verify 1",
+          "layer": "sliding",
+          "target": true,
+          "weight": 46,
+          "parent_adjusted_candidate_us": 23.389947033808255,
+          "parent_adjusted_sglang_us": 22.84800074994564,
+          "new_adjusted_candidate_us": 16.822678511868364,
+          "new_adjusted_sglang_us": 22.88000052794814,
+          "parent_raw_candidate_us": 27.23200060427189,
+          "parent_raw_sglang_us": 26.75200067460537,
+          "new_raw_candidate_us": 21.088000386953354,
+          "new_raw_sglang_us": 26.944000273942947,
+          "parent_paired_ratio": 0.9768299482218034,
+          "new_paired_ratio": 1.3600688208959322,
+          "relative_speedup": 1.3923291596165404,
+          "normalized_latency_cut": 0.28177902969768387
+        }
+      ],
+      "controls_over5pct": [],
+      "aggregate_ci_overlap": false,
+      "target_goal_met": true,
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "gpu": "H200",
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 125.17,
+          "power.limit": 700,
+          "temperature.gpu": 35
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 137.47,
+          "power.limit": 700,
+          "temperature.gpu": 34
+        },
+        "node": "n-f4g3z3c7dpp5uvibsnaa266yoh"
+      }
+    },
+    {
+      "experiment": "A2-06",
+      "job_id": "05b52e7834064b14",
+      "source": "mixed_fa3_fused_verify.py",
+      "source_commit": "58cf5cf6750900645986e29018606ad18e221f2e",
+      "source_sha256": "c40127a320442953630276206b0dfd0ebadd550cc58bdbfe124d800b31b13b18",
+      "passed": true,
+      "score": 1.13811173000153,
+      "ci": [
+        1.121040054051507,
+        1.1598261225179742
+      ],
+      "prerequisite_count": 16,
+      "timed_shapes": 12,
+      "timing_sample_counts": [
+        {
+          "shape": [
+            "decode 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "full"
+          ],
+          "candidate": 56,
+          "baseline": 56,
+          "ratios": 56
+        }
+      ],
+      "targets": [
+        {
+          "load": "verify 16",
+          "layer": "sliding",
+          "target": true,
+          "weight": 46,
+          "parent_adjusted_candidate_us": 29.24552749719387,
+          "parent_adjusted_sglang_us": 29.135999735444784,
+          "new_adjusted_candidate_us": 22.48412118490359,
+          "new_adjusted_sglang_us": 29.26400024443865,
+          "parent_raw_candidate_us": 33.24799984693527,
+          "parent_raw_sglang_us": 33.263999968767166,
+          "new_raw_candidate_us": 26.319999247789383,
+          "new_raw_sglang_us": 33.263999968767166,
+          "parent_paired_ratio": 0.996254888486467,
+          "new_paired_ratio": 1.3015407630913873,
+          "relative_speedup": 1.3064335022423001,
+          "normalized_latency_cut": 0.2345572902993932
+        },
+        {
+          "load": "verify 32",
+          "layer": "sliding",
+          "target": true,
+          "weight": 46,
+          "parent_adjusted_candidate_us": 34.57523000320188,
+          "parent_adjusted_sglang_us": 34.52800028026104,
+          "new_adjusted_candidate_us": 27.86080046294516,
+          "new_adjusted_sglang_us": 34.56000005826354,
+          "parent_raw_candidate_us": 38.864001631736755,
+          "parent_raw_sglang_us": 38.656000047922134,
+          "new_raw_candidate_us": 32.207999378442764,
+          "new_raw_sglang_us": 38.656000047922134,
+          "parent_paired_ratio": 0.9986340011928636,
+          "new_paired_ratio": 1.2404525169414393,
+          "relative_speedup": 1.2421492913917658,
+          "normalized_latency_cut": 0.19494379062958667
+        }
+      ],
+      "controls_over5pct": [],
+      "aggregate_ci_overlap": true,
+      "target_goal_met": true,
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "gpu": "H200",
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 122.7,
+          "power.limit": 700,
+          "temperature.gpu": 34
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 141.78,
+          "power.limit": 700,
+          "temperature.gpu": 36
+        },
+        "node": "n-n5ig53xatkvzqcfmh7y7k2a7fu"
+      }
+    },
+    {
+      "experiment": "A2-07",
+      "job_id": "ba9e02c1d6584cc4",
+      "source": "mixed_fa3_fused_full_verify1.py",
+      "source_commit": "f1b3e8c0d89bea39e0bb92f5f05e2b9a5847520b",
+      "source_sha256": "f20126cb295419276c00eb1cb1927c8920a6a96f0c7d3e62f362b10d2176f95d",
+      "passed": true,
+      "score": 1.150533242033493,
+      "ci": [
+        1.1332752434029907,
+        1.1738497008309647
+      ],
+      "prerequisite_count": 16,
+      "timed_shapes": 12,
+      "timing_sample_counts": [
+        {
+          "shape": [
+            "decode 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "full"
+          ],
+          "candidate": 56,
+          "baseline": 56,
+          "ratios": 56
+        }
+      ],
+      "targets": [
+        {
+          "load": "verify 1",
+          "layer": "full",
+          "target": true,
+          "weight": 16,
+          "parent_adjusted_candidate_us": 35.4007048657469,
+          "parent_adjusted_sglang_us": 35.71199905127287,
+          "new_adjusted_candidate_us": 30.484768644540544,
+          "new_adjusted_sglang_us": 36.51200048625469,
+          "parent_raw_candidate_us": 39.68000039458275,
+          "parent_raw_sglang_us": 39.96799886226654,
+          "new_raw_candidate_us": 34.63999927043915,
+          "new_raw_sglang_us": 40.73600098490715,
+          "parent_paired_ratio": 1.0087934459696921,
+          "new_paired_ratio": 1.1977128943307087,
+          "relative_speedup": 1.1872726762012413,
+          "normalized_latency_cut": 0.15773350128837538
+        }
+      ],
+      "controls_over5pct": [],
+      "aggregate_ci_overlap": true,
+      "target_goal_met": true,
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "gpu": "H200",
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 128.44,
+          "power.limit": 700,
+          "temperature.gpu": 42
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.178.04",
+          "name": "NVIDIA H200",
+          "power.draw": 145.8,
+          "power.limit": 700,
+          "temperature.gpu": 42
+        },
+        "node": "n-scsqx5dijepif7d54nrfvvircu"
+      }
+    },
+    {
+      "experiment": "A2-08",
+      "job_id": "cf979895a3f24685",
+      "source": "mixed_fa3_fused_full_small.py",
+      "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+      "source_sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+      "passed": true,
+      "score": 1.1557671624359636,
+      "ci": [
+        1.138430654999424,
+        1.1731036698725028
+      ],
+      "prerequisite_count": 16,
+      "timed_shapes": 12,
+      "timing_sample_counts": [
+        {
+          "shape": [
+            "decode 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "decode 32",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 1",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 16",
+            "full"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "sliding"
+          ],
+          "candidate": 60,
+          "baseline": 60,
+          "ratios": 60
+        },
+        {
+          "shape": [
+            "verify 32",
+            "full"
+          ],
+          "candidate": 56,
+          "baseline": 56,
+          "ratios": 56
+        }
+      ],
+      "targets": [
+        {
+          "load": "decode 1",
+          "layer": "full",
+          "target": true,
+          "weight": 16,
+          "parent_adjusted_candidate_us": 31.874406515088907,
+          "parent_adjusted_sglang_us": 31.728000845760107,
+          "new_adjusted_candidate_us": 27.428827196932613,
+          "new_adjusted_sglang_us": 31.216001138091087,
+          "parent_raw_candidate_us": 36.06399893760681,
+          "parent_raw_sglang_us": 35.79200059175491,
+          "new_raw_candidate_us": 31.66399896144867,
+          "new_raw_sglang_us": 35.440001636743546,
+          "parent_paired_ratio": 0.9954067954407404,
+          "new_paired_ratio": 1.1380727624250007,
+          "relative_speedup": 1.1433242847423917,
+          "normalized_latency_cut": 0.12535750937424095
+        }
+      ],
+      "controls_over5pct": [],
+      "aggregate_ci_overlap": true,
+      "target_goal_met": true,
+      "evaluator": {
+        "code_sha256": "1d519ebf2014fef91b41ffea9bcd7e9c5066784ef5a2a5e2cf06a8cec554d188",
+        "files": {
+          "challenge/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+          "challenge/nvfp4.py": "cfdf37c7bc14b10f7353aba7d4632f4767401b92b4b073941a8030d9a961aaaf",
+          "configs/muse-spark-open.yaml": "98f07230e4e64fe91b7c76d9a3ce04948053c043d494d5f1fae56cfe2de033af",
+          "harness/eval.py": "0051a1bfac67a9f1fad06086b306653c6643b2bb253e15a794aa672312f070a9",
+          "harness/runner.py": "c905e5c80264c6d27620b6fc7d55b162dccdb8ed7282f8a513a4d2e6f2f226f2",
+          "harness/static_checks.py": "c5588b69e9e86229459a525c61b30096f6f13ff2add6cadf98f272c4ac8ca0c2",
+          "harness/worker.py": "950437610f57ddffbc1176b65d9c2ae909c47bf67b1e3fe0716a81946986f568",
+          "problems/muse_attention_decode/baseline.py": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+          "problems/muse_attention_decode/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+          "problems/muse_attention_decode/task.yml": "645f889fbbd52d1d731bf5eb53356aa7ef6eea8fab3073f0a2a3dd582fe6e4bb"
+        },
+        "image": "localhost:30500/kc/judge@sha256:9a7f287b80d772c6f636bbcb57422c619fe326e2aabc53803b85007bca93f68e"
+      },
+      "gpu": "H200",
+      "machine": {
+        "gpu_after": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 121.28,
+          "power.limit": 700,
+          "temperature.gpu": 35
+        },
+        "gpu_before": {
+          "clocks.max.sm": 1980,
+          "clocks.mem": 3201,
+          "clocks.sm": 1980,
+          "driver_version": "580.159.03",
+          "name": "NVIDIA H200",
+          "power.draw": 138.02,
+          "power.limit": 700,
+          "temperature.gpu": 35
+        },
+        "node": "n-djsogg5ih26gwdcnhyhbnqzfkb"
+      }
+    }
+  ],
+  "selected": {
+    "source": "mixed_fa3_fused_full_small.py",
+    "source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "official_job": "cf979895a3f24685",
+    "score": 1.1557671624359633,
+    "ci": [
+      1.138430654999424,
+      1.1731036698725028
+    ],
+    "reason": "Target12.54%normalized cut exceeds10%goal, no>5%controls; total0.455%gain overlapsCI; complete combined source passes16+12",
+    "aggregate_vs_parent_inconclusive": true
+  },
+  "starting_score": 1.07706589002702,
+  "starting_job": "66b44d7586184708",
+  "selected_relative_to_start": 0.07307006297169893,
+  "user_attention_checks_used": 8,
+  "user_attention_checks_left": 2,
+  "actual_platform_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 10,
+      "left": 10
+    }
+  },
+  "quota_observed_utc": "2026-10-25T04:48:34.196775+00:00",
+  "all_admitted_requests_terminal": true,
+  "uncertain_requests": 0,
+  "no_modal_launch_in_series": true,
+  "no_paid_or_scored_operation": true,
+  "model_configuration": "Not exposed to the execution tools; no claim that a model switch caused gains"
+}

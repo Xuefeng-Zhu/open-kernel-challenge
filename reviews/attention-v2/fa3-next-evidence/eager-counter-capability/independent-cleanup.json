@@ -1,0 +1,58 @@
+{
+  "observed_utc": "2026-10-27T04:12:35.304780+00:00",
+  "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+  "own_app": {
+    "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+    "description": "okc-attention-eager-counter-capability",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-27 04:11:09+00:00",
+    "stopped_at": "2026-10-27 04:11:19+00:00"
+  },
+  "own_stopped_zero_tasks": true,
+  "all_apps_stopped_zero_tasks": true,
+  "apps": [
+    {
+      "app_id": "ap-fGzHaSj5oSgilv71oJ8chT",
+      "description": "okc-attention-eager-counter-capability",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:11:09+00:00",
+      "stopped_at": "2026-10-27 04:11:19+00:00"
+    },
+    {
+      "app_id": "ap-G4ZFD70w5GGIZfRCYV4ehw",
+      "description": "okc-attention-baseline-runtime-identity",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:55:33+00:00",
+      "stopped_at": "2026-10-27 03:56:28+00:00"
+    },
+    {
+      "app_id": "ap-Hw1HKh6pn7adn4Tc5E0lXE",
+      "description": "okc-projection-p068-baseline",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 03:35:00+00:00",
+      "stopped_at": "2026-10-27 03:35:25+00:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "2.59000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "reservation_adjustment": "-0E-8",
+      "free_storage": "-0E-8",
+      "credits": "-2.59000000",
+      "plan_cost": "0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "volumes": "0E-8",
+      "llm_tokens": "0E-8",
+      "ephemeral_apps": "2.58797306",
+      "network_egress": "0E-8"
+    }
+  },
+  "new_credential_action": false
+}

@@ -1,0 +1,23 @@
+{
+  "observed_utc": "2026-10-25T21:29:46.059911+00:00",
+  "job_id": "5090b83f1d63407b",
+  "mode": "check",
+  "state": "terminal",
+  "terminal_status": "done",
+  "passed": true,
+  "official_record_counts": {
+    "test": 16,
+    "benchmark": 12,
+    "profile": 12
+  },
+  "raw_response_sha256": "0095903e817e17aa8b252c4310a1b6a140aee1cc3690b82a8b04c40f05283cbc",
+  "published_response_sha256": "a66e15b71116d6758cd1aae75138f19c0a7db4cb2e89ba27394d6d09df2d61cb",
+  "redactions": [],
+  "source_commit": "c9062363c665e37535d3370c1b6bfb54e04fc7c8",
+  "local_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "service_content_hash": "30f364457bdd36bbf7b7e364feb66620985069bf2ef1d631d16c20877d2b75e5",
+  "content_hash_qualification": "Service payload identifier; not asserted identical to local raw source SHA256. ExactcommittedlocalbytesverifiedimmediatelybeforeonesoleacceptedCLIupload.",
+  "slot_released_utc": "2026-10-25T21:27:58.453455+00:00",
+  "extra_Modal_jobs": 0,
+  "formal_entry": false
+}

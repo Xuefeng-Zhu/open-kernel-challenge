@@ -1,0 +1,131 @@
+{
+  "completed_utc": "2026-10-25T00:37:34.842341+00:00",
+  "workflow": "Two research tracks, one coordinator, serialized official GPU checks; no Modal GPU launch",
+  "attention": {
+    "selected_source": "reviews/attention-v2/mixed_fa3.py",
+    "source_commit": "51d7fca04ccc38a972039ef1b086011d8e456264",
+    "source_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+    "job_id": "e0b3cd9474084069",
+    "passed": true,
+    "speedup": 0.8919466283178157,
+    "speedup_ci": [
+      0.8785674288930484,
+      0.9053258277425829
+    ],
+    "score_ratio_vs_E2": 1.12070238024033,
+    "prerequisite_tests": 16,
+    "scored_shapes": 12,
+    "user_requests_remaining": 1,
+    "complete_checked_source_unchanged": true
+  },
+  "projection": {
+    "preserved_best_source": "projection-pipeline-preflight:candidates/projection_full_composition.py",
+    "preserved_best_sha256": "c34c497b8219b7c8e37ee7da754db7444db351a7eb27f04473796fdadc1a57f7",
+    "preserved_best_job": "48b1357016134e52",
+    "preserved_best_speedup": 1.1486499523461586,
+    "experiment_source_commit": "60a8b4bdcdd4f3c48d2b7a8a0db4907c394ba84a",
+    "experiment_sha256": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+    "job_id": "6799753227ed463e",
+    "passed": true,
+    "speedup": 1.1120410181725284,
+    "speedup_ci": [
+      1.0953604028999404,
+      1.1287216334451162
+    ],
+    "decision": "Reject target latency regression, preserve best; copy control not measured",
+    "prerequisite_tests": 9,
+    "scored_shapes": 30,
+    "user_checks_remaining": 7,
+    "result_commit": "73a79d8f28c40dd13bdd3930202990beab94705b"
+  },
+  "platform_snapshot": {
+    "observed_utc": "2026-10-25T00:36:14.613565+00:00",
+    "quotas": {
+      "muse_bf16_proj": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      },
+      "muse_attention_decode": {
+        "scored": {
+          "per_day": 10,
+          "used": 0,
+          "left": 10
+        },
+        "checks": {
+          "per_day": 20,
+          "used": 1,
+          "left": 19
+        }
+      }
+    },
+    "active_own_jobs": []
+  },
+  "modal_snapshot": {
+    "apps": [
+      {
+        "app_id": "ap-R6eHydPQwAqE8eg0p5lSCi",
+        "description": "okc-attention-replay",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-24 15:41:49-07:00",
+        "stopped_at": "2026-10-24 15:42:30-07:00"
+      },
+      {
+        "app_id": "ap-c7hDHYlZH7Ja3VAJNM4Iur",
+        "description": "okc-attention-replay",
+        "state": "stopped",
+        "tasks": "0",
+        "created_at": "2026-10-24 15:33:57-07:00",
+        "stopped_at": "2026-10-24 15:34:32-07:00"
+      }
+    ],
+    "billing": {
+      "metered_cost": "1.15000000",
+      "billed_cost": "0E-8",
+      "adjustments": {
+        "plan_cost": "0E-8",
+        "network_egress_allowance": "0E-8",
+        "free_storage": "-0E-8",
+        "credits": "-1.15000000",
+        "reservation_adjustment": "-0E-8"
+      },
+      "metered_cost_breakdown": {
+        "network_egress": "0E-8",
+        "llm_tokens": "0E-8",
+        "volumes": "0E-8",
+        "ephemeral_apps": "1.15008536"
+      }
+    }
+  },
+  "modal_conservative_cumulative_guard_usd": "1.708917914",
+  "modal_ceiling_usd": 2,
+  "gpu_slot": {
+    "state": "terminal",
+    "problem": "muse_bf16_proj",
+    "experiment": "P2-03-pooler-m256-tma",
+    "job_id": "6799753227ed463e",
+    "source_sha256": "443128591305c4a8f79f2e8669d59b3cc402a5243b9920273676583b825f518d",
+    "updated_utc": "2026-10-25T00:31:31.920604+00:00"
+  },
+  "unresolved_prior_blocker": "A09 app ap-R6eHydPQwAqE8eg0p5lSCi return BlobCreate AuthError401; app stopped/tasks0, no report, no retry or auth/access change",
+  "restrictions_observed": [
+    "No scored entry or push",
+    "No new or renewed credentials",
+    "No paid compute or spend-cap/payment/terms change",
+    "No third-party competitor source execution",
+    "No duplicate uncertain request"
+  ],
+  "verification_limits": [
+    "Attention new native path GPU explicit ABA/page64/nonunit/concurrency not separately exercised; CPU stand-ins are distinct.",
+    "Projection native descriptor path/profile and fresh official graphs verified; PTX/SASS/register mix and nearby/concurrent native stress not observed.",
+    "Separate official runs normalize against same-run SGLang, not directly paired candidates."
+  ]
+}

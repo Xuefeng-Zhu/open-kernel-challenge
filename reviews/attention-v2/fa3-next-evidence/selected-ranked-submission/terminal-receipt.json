@@ -1,0 +1,52 @@
+{
+  "job_id": "2404e0d81bff4441",
+  "track": "muse_attention_decode",
+  "mode": "run",
+  "terminal_status": "done",
+  "created_at_epoch": 1793074390.393042,
+  "started_at_epoch": 1793074724.1460705,
+  "terminal_read_utc": "2026-10-27T04:24:08.548522Z",
+  "passed": true,
+  "returncode": 0,
+  "speedup": 1.242924596353655,
+  "speedup_ci": [
+    1.2242807274083503,
+    1.2615684652989598
+  ],
+  "flags": [],
+  "checks": {
+    "flagged": [],
+    "ok": true,
+    "rejected": []
+  },
+  "counts": {
+    "test": 16,
+    "benchmark": 12,
+    "profile": 12
+  },
+  "all_test_records_passed": true,
+  "leaderboard_observed_utc": "2026-10-27T04:24:24Z",
+  "ranked_teams": 840,
+  "you": {
+    "rank": 707,
+    "team": "Xuefeng-Zhu",
+    "speedup": 1.2429,
+    "first": false,
+    "ahead": 706,
+    "to_first": 2.4391
+  },
+  "leader": {
+    "rank": 1,
+    "team": "pjmullin3",
+    "speedup": 3.0316,
+    "first": true,
+    "ahead": 0
+  },
+  "explicit_submission_attempts": 1,
+  "remaining_ranked_quota": 9,
+  "remaining_check_quota": 19,
+  "source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_changed": false,
+  "paid_resource_requested": false,
+  "readonly_wait_client_exit_code": 0
+}

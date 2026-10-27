@@ -1,0 +1,67 @@
+{
+  "created_utc": "2026-10-25T21:50:29.290867+00:00",
+  "scope": "One bounded correctness-only DP native validation of unchanged selected composition; no officialcheck or newperformanceclaim",
+  "candidate_source": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+  "candidate_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "baseline_sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+  "seeds": [
+    135721,
+    135722
+  ],
+  "worker_tests": 7,
+  "controller_tests": 8,
+  "expected": {
+    "original_oracle_calls": 15,
+    "exact_return_A_checks": 4,
+    "cross_arm_cache_byte_comparisons": 12,
+    "concurrent_original_oracle_calls": 2,
+    "independent_setup_oracle_calls": 1,
+    "post_concurrent_isolation_checks": 4,
+    "extra_candidate_replays": 2
+  },
+  "paid_limit_usd": "0",
+  "free_credit_reserve_usd": ".58",
+  "secret_scan": {
+    "files": 9,
+    "patterns": 6,
+    "matches": 0
+  },
+  "files": {
+    "PLAN.md": {
+      "sha256": "80c54d61920e88afdb58d4b62bb523fe267e6e68b4ba8eba52c442d17316cd53",
+      "bytes": 6755
+    },
+    "EXPERIMENT_CARD.md": {
+      "sha256": "262a862d0a23f23dbeba359b0054cd25fee8b0391fa71cb46b01a6068b1b9e65",
+      "bytes": 3485
+    },
+    "SOURCE_PROTOCOL_AUDIT.md": {
+      "sha256": "f3d56ad4b152b6da46d6534b2476dd19943c2a85180773259d31b090e5fd3868",
+      "bytes": 12873
+    },
+    "REVIEW.md": {
+      "sha256": "8b1d3309382243cf5819c48ef12eeb0f52932f187189706e893997308eb7f1a1",
+      "bytes": 8155
+    },
+    "runtime/worker.py": {
+      "sha256": "4507a19cdaea450415b6d7a40315e9e0021741919f5a33842fed290e0f2af59d",
+      "bytes": 20821
+    },
+    "runtime/test_worker.py": {
+      "sha256": "251afb67be2a3c5f2ad904e32b4573f7799f05522950ccc0c52279f7f9b5d7c1",
+      "bytes": 7579
+    },
+    "runtime/controller.py": {
+      "sha256": "0299612f835e68b26ece31f5d5d031c959953988ce4d998d95941ddd9d778f17",
+      "bytes": 18283
+    },
+    "runtime/test_controller.py": {
+      "sha256": "a78756b5a94f5447c41ecff45f750bc8d8e03f77210ae72975718b0337a7b29b",
+      "bytes": 8409
+    },
+    "runtime/CONTROLLER.md": {
+      "sha256": "97b4e979e0c8ad6f416a3bab8f66ce048e288b9a1cb244ce95abdbb2e6da3bae",
+      "bytes": 5296
+    }
+  }
+}

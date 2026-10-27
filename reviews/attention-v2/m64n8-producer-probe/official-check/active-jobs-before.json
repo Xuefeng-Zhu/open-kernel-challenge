@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-27 02:15:54 UTC",
+  "account_jobs_rows_seen": 46,
+  "active_jobs": [],
+  "scope": "All rows returned by official account jobs CLI; no competitor jobs read",
+  "most_recent_job": {
+    "job_id": "291edcd1469a414c",
+    "problem": "muse_bf16_proj",
+    "status": "done"
+  },
+  "status_counts": {
+    "done": 44,
+    "duplicate": 2
+  }
+}

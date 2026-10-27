@@ -1,0 +1,203 @@
+{
+  "kind": "CPU DRY RUN ONLY",
+  "passed": true,
+  "new_gpu_apps": 0,
+  "native_ncu_report_validated": false,
+  "credential_or_service_calls": 0,
+  "substituted_boundaries": [
+    "NCU executable",
+    "native worker process and remote paths"
+  ],
+  "actual_paths_exercised": [
+    "worker.collect_counter with real subprocess/file I/O",
+    "controller.make_remote_entry artifact packaging",
+    "controller.materialize_result acceptance"
+  ],
+  "source_hashes": {
+    "worker.py": "d3712de360fe435c9a3f8761aa431af899803cd7ebeb92739b51e0bd1adc9c34",
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "counter_helper.py": "d984cbd44691cfead1c889cbb2ae8b0bde2e11e0a1d703bbdd78a7ecf1b30637",
+    "cli_contract.py": "7391280b4577a2d1f242bdffdc42777a26a180b1cdcd6e021dc47c2866c1137a",
+    "trace_helpers.py": "d89e2f6dac4d8afd9105b713ce255407df8e9253c330a1e727d8193a220c5ec8",
+    "cpu_identity.py": "29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92",
+    "csv_helpers.py": "a00f901febe900e4ed9f48680b990acf813f0c0d76680b1c798a664f017759df",
+    "capture_plan.py": "be067afbc933020f41ea12f103c15263bc0e1c991c4a80ec1a1b6c1b763c26db",
+    "expected-native.json": "f0ac3f62f101201d15e66534ce62b1534cbceaa71243d97c72c2865ad2170795",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "controller.py": "46ce63fc7f804f295c9e779e92200929c660d38d02e1906d12004d2b847ea74e"
+  },
+  "fixture_hashes": {
+    "fa3-b32-identity-recapture/result.json": "a611d400b95999274c72dcd1b2b5a7b98b4c2eea92a8a629c370ad7663ece85f",
+    "eager-counter-repair/3-stdout.txt": "176beb19e4618b1c52f6ba737ceaf0d6f5353ea8574a823276530a667763ebef",
+    "fa3-b32-counter-diagnostic/result.json": "3abcaeb2b52b57ccd94f8dd56110c4d2908815e8039b2fb1315f53475c71983b"
+  },
+  "successful_tiny_fixture": {
+    "kernel": "okc_counter_gate",
+    "cycles": 5541.35
+  },
+  "dry_run_source_sha256": "80e84a4be82fcd4f5cce7aa5f5d4b7cf7aabf754bc9770b3af037468538bb55b",
+  "saved_help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+  "saved_help_contract": {
+    "used_ncu_flags": [
+      "--clock-control",
+      "--config-file",
+      "--csv",
+      "--export",
+      "--import-sass",
+      "--kernel-name",
+      "--kernel-name-base",
+      "--launch-count",
+      "--launch-skip",
+      "--metrics",
+      "--page",
+      "--print-kernel-base",
+      "--query-metrics",
+      "--query-metrics-mode",
+      "--rename-kernels",
+      "--replay-mode",
+      "--target-processes"
+    ],
+    "all_flags_advertised": true,
+    "known_unsupported_units_absent": true,
+    "help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+    "csv_base_units": "No units override is requested; preserve raw CSV values/unit fields"
+  },
+  "saved_version": "NVIDIA (R) Nsight Compute Command Line Profiler\nCopyright (c) 2018-2025 NVIDIA Corporation\nVersion 2025.3.1.0 (build 36398880) (public-release)",
+  "native_installed_version_rechecked": false,
+  "qualification": "All new report bytes/signatures/metric combinations are simulated fixture data, not native NCU output or new correctness/timing measurements.",
+  "scenarios": {
+    "pass": {
+      "completion_verified": true,
+      "commands": [
+        [
+          "/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/pass/fake-ncu",
+          "--config-file",
+          "0",
+          "--replay-mode",
+          "kernel",
+          "--target-processes",
+          "application-only",
+          "--kernel-name-base",
+          "demangled",
+          "--kernel-name",
+          "regex:.*FlashAttnFwdSm90.*",
+          "--launch-skip",
+          "1",
+          "--launch-count",
+          "1",
+          "--metrics",
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct,sm__warps_active.avg.pct_of_peak_sustained_active",
+          "--rename-kernels",
+          "0",
+          "--print-kernel-base",
+          "demangled",
+          "--export",
+          "/private/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/pass/baseline.ncu-rep",
+          "--import-sass",
+          "off",
+          "--page",
+          "raw",
+          "--csv",
+          "--clock-control",
+          "none",
+          "/Users/frank/Documents/Codex/2026-10-23/task/.venv/bin/python",
+          "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-fusion-lookahead/reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/worker.py",
+          "--counter-child"
+        ],
+        [
+          "/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/pass/fake-ncu",
+          "--config-file",
+          "0",
+          "--import",
+          "/private/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/pass/baseline.ncu-rep",
+          "--rename-kernels",
+          "0",
+          "--print-kernel-base",
+          "demangled",
+          "--page",
+          "raw",
+          "--csv"
+        ]
+      ],
+      "retained_artifacts": [
+        "baseline.ncu-rep",
+        "profile-imported.csv",
+        "profile-original.csv"
+      ],
+      "trace_retrieved": true,
+      "error": null,
+      "native_identity_accepted": true,
+      "materialized_artifacts": {
+        "baseline.ncu-rep": {
+          "bytes": 1307,
+          "sha256": "d1d0afdba4820dcb4b9e6bdd9fd28d38c8a7d0e29e30833c7604a9ab1d9c789e"
+        },
+        "profile-imported.csv": {
+          "bytes": 1250,
+          "sha256": "309e9a8884646d70967abe14a7549f4eaa37298d126e0e4db3de37d368258409"
+        },
+        "profile-original.csv": {
+          "bytes": 1250,
+          "sha256": "309e9a8884646d70967abe14a7549f4eaa37298d126e0e4db3de37d368258409"
+        }
+      }
+    },
+    "corrupt_transport_rejected": true,
+    "empty": {
+      "completion_verified": false,
+      "commands": [
+        [
+          "/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/empty/fake-ncu",
+          "--config-file",
+          "0",
+          "--replay-mode",
+          "kernel",
+          "--target-processes",
+          "application-only",
+          "--kernel-name-base",
+          "demangled",
+          "--kernel-name",
+          "regex:.*FlashAttnFwdSm90.*",
+          "--launch-skip",
+          "1",
+          "--launch-count",
+          "1",
+          "--metrics",
+          "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed,dram__throughput.avg.pct_of_peak_sustained_elapsed,smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct,sm__warps_active.avg.pct_of_peak_sustained_active",
+          "--rename-kernels",
+          "0",
+          "--print-kernel-base",
+          "demangled",
+          "--export",
+          "/private/var/folders/0k/rqgj4mxn54j3_78wyykw4xnh0000gn/T/attention-capture-cpu-_wm9q4tm/empty/baseline.ncu-rep",
+          "--import-sass",
+          "off",
+          "--page",
+          "raw",
+          "--csv",
+          "--clock-control",
+          "none",
+          "/Users/frank/Documents/Codex/2026-10-23/task/.venv/bin/python",
+          "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-fusion-lookahead/reviews/attention-v2/fa3-next-evidence/fa3-b32-capture-executor/worker.py",
+          "--counter-child"
+        ]
+      ],
+      "retained_artifacts": [
+        "profile-original.csv"
+      ],
+      "trace_retrieved": true,
+      "error": "Counter capture incomplete: {\"csv_header_present\": false, \"durable_report_present\": false, \"exit_zero\": true, \"no_empty_capture_warning\": false, \"passed\": false, \"permission_denial_observed\": false, \"qualification\": \"Exit zero or passing target correctness alone cannot prove a capture.\"}",
+      "native_identity_accepted": false,
+      "materialized_artifacts": {
+        "profile-original.csv": {
+          "bytes": 31827,
+          "sha256": "e7b06eb33263ac19cf7c403d5fe22378eaa92093d64dc1ad358a206e017e6f5b"
+        }
+      }
+    }
+  }
+}

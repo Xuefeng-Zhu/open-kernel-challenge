@@ -1,0 +1,25 @@
+{
+  "observed_utc": "2026-10-25T00:16:14.452017+00:00",
+  "method": "Read pinned official source only, no native import/execution",
+  "files": {
+    "fused_qk_norm.py": {
+      "sha256": "99ed08f1f35bbd4174c4a40becfc7978b7a5ba0a055818e79470254e5c8a2b67",
+      "source": "https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/muse_spark_v12/fused_qk_norm.py"
+    },
+    "kvcache.py": {
+      "sha256": "fe75ca2abad09ee4911f1049f1c054d93f0470578f2a3e234452d19980e0ad81",
+      "source": "https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/kvcache/kvcache.py"
+    },
+    "norm_gate.py": {
+      "sha256": "376f33a77014dd3f6ed160d3b6a46eb7ef50f3f4bde783bafdbcbaa4fe39aed9",
+      "source": "https://github.com/sgl-project/sglang/blob/a55ab7d5ae1bba59ac351e55026fe7f7644ecc5f/python/sglang/kernels/ops/muse_spark_v12/norm_gate.py"
+    }
+  },
+  "findings": [
+    "FusedQKNorm applies no query scale; without kv_store outputs are original BF16 dtype and contiguous per-head norms.",
+    "store_cache treats slot zero as reserved by default; candidate explicitly sets reserved_skip_index=-1.",
+    "rms_norm_gate expects contiguous flat x, supports non-contiguous outer gate stride, eps1e-5 and optional weightNone.",
+    "Config/shape dispatch is static; full verify has no RoPE and scheduler_metadata=None in published inputs."
+  ],
+  "not_new_gpu_evidence": true
+}

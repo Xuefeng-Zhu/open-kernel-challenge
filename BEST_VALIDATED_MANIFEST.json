@@ -1,0 +1,418 @@
+{
+  "observed_utc": "2026-10-25T06:58:36.556736+00:00",
+  "attention": {
+    "selection": "working",
+    "experiment": "preparation fusion plus A2-15 lookahead",
+    "observed_utc": "2026-10-25T21:37:05.089682+00:00",
+    "source": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+    "source_commit": "c9062363c665e37535d3370c1b6bfb54e04fc7c8",
+    "local_branch": "attention-fusion-lookahead",
+    "private_export_branch": "attention-fusion-lookahead",
+    "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "job_id": "5090b83f1d63407b",
+    "mode": "check",
+    "score": 1.2336330588627955,
+    "ci": [
+      1.2151285629798536,
+      1.2521375547457374
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "native_validation": {
+      "app_id": "ap-EY8FNKYqqFMGgZAatYZXOQ",
+      "original_oracle_calls": 32,
+      "exact_return_A": 10,
+      "cross_arm_cache_byte_comparisons": 30,
+      "checked_warmup_measured_replays": 64,
+      "target_paired_latency_reduction_percent": 4.822641703044583,
+      "favorable_target_pairs": 6,
+      "unchanged_control_slowdown_percent": 0.15323574680115026,
+      "app_stopped": true,
+      "tasks": 0
+    },
+    "primary_control": {
+      "source": "reviews/attention-v2/fusion-lookahead-probe/baseline.py",
+      "sha256": "5c3d1c5b00f0e759f1c499b8f567a0f47c77ce0fa38566f3028a571fccc614a0",
+      "job_id": "2f5f1fb54b48486d",
+      "score": 1.2255554363764571,
+      "target_reference_normalized_cross_run_latency_reduction_percent": 3.825075129710631,
+      "max_unchanged_path_reference_normalized_regression_percent": 1.8322712132851082
+    },
+    "report": "reviews/attention-v2/fusion-lookahead-probe/RESULTS.md",
+    "rollback_key": "attention_rollback_A2_11",
+    "restriction": "Best validated working choice, not a ranked entry or proven aggregate statistical superiority. Same-address live metadata ABA and two DP B32 multi-chunk cases (SPLITS2/3, BS2/4) passed. Independent disjoint-cache/output graph submissions and retained-state isolation passed with distinct observed graph pools; actual hardware overlap and internal scratch pointers unmeasured. General serving concurrency/coverage remains unestablished. A2-11 and fusion sources preserved unchanged as rollback/control.",
+    "dp_multichunk_validation": {
+      "observed_utc": "2026-10-25T21:52:08.731188+00:00",
+      "source_commit": "8d38550d061af14df3257afe0d438dbf0fc82f5f",
+      "source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "app_id": "ap-gXUKhAM11JBfvrA3h5rip9",
+      "passed": true,
+      "original_oracle_calls": 15,
+      "exact_return_A": 4,
+      "cross_arm_cache_byte_comparisons": 12,
+      "independent_setup_oracle_calls": 1,
+      "concurrent_original_oracle_calls": 2,
+      "post_concurrent_isolation_checks": 4,
+      "extra_candidate_replays": 2,
+      "DP_heads": [
+        128,
+        16
+      ],
+      "batch": 32,
+      "q_len": 1,
+      "split_counts": [
+        2,
+        3
+      ],
+      "merge_padding": [
+        2,
+        4
+      ],
+      "graph_pool_handles_observed": true,
+      "actual_hardware_overlap_measured": false,
+      "direct_scratch_pointers_observed": false,
+      "app_stopped": true,
+      "tasks": 0,
+      "performance_measurement": false,
+      "official_check": false,
+      "report": "reviews/attention-v2/dp-merge-validation/RESULTS.md",
+      "raw_result_sha256": "3640d3df3c6d31deff277c98d04e1bdc4d685a45d1d5ee35333932301b7cae47"
+    },
+    "last_rejected_compile_probe": {
+      "kind": "compile_only",
+      "status": "rejected_before_candidate_execution",
+      "source_commit": "99185609d7924d18bb07de950c3d689a9ec9e649",
+      "source": "reviews/attention-v2/alpha-one-rescale-probe/candidate.py",
+      "sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+      "app_id": "ap-uY5K1rBNFRR2K8rdo2F8tw",
+      "compile_complete": true,
+      "artifact_files": 24,
+      "candidate_kernel_invocations": 0,
+      "registers": {
+        "control": 96,
+        "candidate": 128
+      },
+      "shared_bytes": {
+        "control": 20480,
+        "candidate": 20480
+      },
+      "driver_spills_raw": {
+        "control": 0,
+        "candidate": 0
+      },
+      "rescale_bypass_observed": true,
+      "original_V_async_buffering_preserved": false,
+      "resource_gate_passed": false,
+      "correctness_tested": false,
+      "performance_tested": false,
+      "official_check": false,
+      "app_stopped": true,
+      "tasks": 0,
+      "closure_utc": "2026-10-25T22:06:59.192653+00:00",
+      "report": "reviews/attention-v2/alpha-one-rescale-probe/RESULTS.md",
+      "reason": "Predeclared register/resource and buffering gates fail; no measured slowdown or hardware bottleneck proof. No onward frequency/correctness/timing admission."
+    },
+    "last_rejected_native_probe": {
+      "kind": "native_correctness_frequency_and_paired_whole_call_timing",
+      "status": "completed_valid_negative_benefit",
+      "source_commit": "032c2ffaf494c4f847e0b9f4bc97b7dd23e627fc",
+      "source": "reviews/attention-v2/alpha-one-common-pv-probe/candidate.py",
+      "sha256": "14a8fa2e3d7b64fa299fe69c8da6569501c069425a62e07cc5f11b1e9b15f3e5",
+      "control_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "diagnostic_sha256": "ee5488bd8c6b8ee1e4bb9b6fccc1184215949136008dd15df11859b876f76c60",
+      "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+      "native_run_complete": true,
+      "execution_failed": false,
+      "correctness_passed": true,
+      "counts": {
+        "original_oracle_calls": 39,
+        "exact_return_A_checks": 12,
+        "cross_arm_cache_byte_comparisons": 36,
+        "concurrent_original_oracle_calls": 2,
+        "independent_setup_oracle_calls": 1,
+        "post_concurrent_isolation_checks": 4,
+        "extra_candidate_replays": 2,
+        "diagnostic_calls": 10,
+        "diagnostic_reference_replays": 10,
+        "cross_arm_output_newkv_ABA_comparisons": 18,
+        "checked_warmup_measured_replays": 64,
+        "cross_arm_output_newkv_timing_comparisons": 32
+      },
+      "scored_frequency_by_fixture": [
+        {
+          "case": "full_B32_L1_scored",
+          "input_version": 0,
+          "total": 79528,
+          "fast": 63056,
+          "slow": 16472,
+          "fast_fraction": 0.7928779800824867
+        },
+        {
+          "case": "full_B32_L1_scored",
+          "input_version": 1,
+          "total": 79604,
+          "fast": 63120,
+          "slow": 16484,
+          "fast_fraction": 0.7929249786442892
+        }
+      ],
+      "performance_tested": true,
+      "target_raw_median_us": {
+        "baseline": 296.207994222641,
+        "candidate": 297.4399924278259
+      },
+      "target_per_fixture_slowdown_percent": [
+        0.5497589680987902,
+        0.476309753904669
+      ],
+      "favorable_target_pairs": 0,
+      "target_pairs": 6,
+      "unchanged_control_raw_median_us": {
+        "baseline": 203.88800650835037,
+        "candidate": 203.91999930143356
+      },
+      "unchanged_control_per_fixture_slowdown_percent": [
+        -0.07786311959876446,
+        0.21449869137610822
+      ],
+      "predeclared_gate": "Each fresh fixture target latency reduction >=2%, all 6 favorable target pairs, unchanged-control slowdown <=2% each fixture.",
+      "benefit_gate_passed": false,
+      "decision": "Reject common-PV candidate and stop exact alpha-one route; no fresh confirmation, official check or selection promotion.",
+      "official_check": false,
+      "formal_entry": false,
+      "working_source_changed": false,
+      "actual_hardware_overlap_measured": false,
+      "direct_scratch_pointers_observed": false,
+      "stage_closed": true,
+      "app_stopped": true,
+      "tasks": 0,
+      "stopped_at_utc": "2026-10-25T22:50:11+00:00",
+      "closure_utc": "2026-10-25T22:51:11.150348+00:00",
+      "all_listed_apps_stopped_zero_tasks": true,
+      "initial_shutdown_observation_preserved": {
+        "app_id": "ap-wE6ZSXzC1dnP253vX0kM5l",
+        "description": "okc-attention-alpha-one-common-pv-native",
+        "state": "stopping...",
+        "tasks": "1",
+        "created_at": "2026-10-25 15:49:09-07:00",
+        "stopped_at": null
+      },
+      "worker_internal_wall_seconds": 51.296041322,
+      "client_wall_seconds": 63.18926241598092,
+      "costs": {
+        "accounting_cutoff_utc": "2026-10-25T22:53:22.201691+00:00",
+        "rounded_workspace_delta_usd": "0.07000000",
+        "detailed_workspace_delta_usd": "0.07047792",
+        "actual_paid_usd": "0E-8",
+        "conservative_closed_allowance_usd": "0.2001130000000000000000000000",
+        "reserved_free_credit_usd": "0.58",
+        "qualification": "Delayed workspace delta, not exact app invoice; initial zero metering was pending. Later apps excluded by closed no-new-app cutoff. No retries/extraofficialchecks."
+      },
+      "report": "reviews/attention-v2/alpha-one-common-pv-probe/RESULTS.md",
+      "independent_review": "reviews/attention-v2/alpha-one-common-pv-probe/runtime/RESULT_REVIEW.md",
+      "raw_result_sha256": "24c7ea033298ea155d31ef161e887ed086a3820860cb077919d8276990e3d0c9",
+      "qualification": "One native session and two fresh fixtures, not an official score or population confidence interval. Predicate frequency does not establish saved issue cycles; precise hardware cause and general serving concurrency remain unmeasured."
+    },
+    "last_architecture_compile_probe": {
+      "source_commit": "605e815462b56768fca9c84c68a8aada639bbb0b",
+      "source": "reviews/attention-v2/gluon-overlap-probe/kernel.py",
+      "sha256": "3d847a290d747c204419fd131c8149a21c4afddbdfb1d0a6130f5f522b81847c",
+      "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+      "compile_complete": true,
+      "artifact_files": 10,
+      "candidate_kernel_invocations": 0,
+      "resource_gate_passed": true,
+      "static_precision_buffer_review_passed": true,
+      "strict_serial_native_control_gate_passed": false,
+      "registers": {
+        "serial": 167,
+        "overlap": 168
+      },
+      "shared_bytes_each": 32768,
+      "spill_and_local_bytes_each": 0,
+      "CUDA_legal_max_CTA_per_SM_each": 3,
+      "actual_residency_measured": false,
+      "correctness_tested": false,
+      "performance_tested": false,
+      "decision": "Preserve partial-overlap codegen finding; declared fully serial native control not retained, so no automatic execution or timing. Diagnose locally without changing the failed gate.",
+      "report": "reviews/attention-v2/gluon-overlap-probe/RESULTS.md",
+      "app_stopped": true,
+      "tasks": 0,
+      "closure_utc": "2026-10-25T23:44:21.845040+00:00",
+      "delayed_workspace_cost_usd": ".01044224",
+      "paid_usd": "0",
+      "exact_app_invoice": false,
+      "official_check": false,
+      "formal_entry": false
+    },
+    "vstage_compile_probe": {
+      "source_commit": "048bd62de599831edbb40b118df9a6047f6f1043",
+      "source": "reviews/attention-v2/gluon-vstage-probe/kernel.py",
+      "sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+      "app_id": "ap-XzBXIhHnYx5BgeBYIoyAkL",
+      "raw_compile_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+      "compile_complete": true,
+      "qualified_native_gate_passed": true,
+      "claim": "Conversion completion and shared publication around QK drain; BOTH arms prefetch K/V. No serialized V-load claim.",
+      "registers": {
+        "v_after_wait": 166,
+        "v_before_wait": 168
+      },
+      "shared_bytes_each": 32768,
+      "spill_local_each": 0,
+      "legal_max_CTA_per_SM_each": 3,
+      "actual_residency_measured": false,
+      "candidate_invocations": 0,
+      "correctness_tested": false,
+      "performance_tested": false,
+      "app_stopped": true,
+      "tasks": 0,
+      "closure_utc": "2026-10-26T00:10:53.666428+00:00",
+      "delayed_workspace_cost_usd": ".01044102",
+      "paid_usd": "0",
+      "report": "reviews/attention-v2/gluon-vstage-probe/COMPILE_RESULT.md",
+      "native_execution_state": "completed native diagnostic; production replacement rejected, no official check",
+      "official_check": false,
+      "formal_entry": false,
+      "runtime_screen": {
+        "source_freeze": "c55d14c507b9d5cc2254441531d4f0e1a18714d5",
+        "raw_result_sha256": "38946bec2ddf7c749f9890fb7bae677cb4bedf11c03a07e55f0b7391b9b74da5",
+        "app_id": "ap-Hy5O3TPhVTVKu0XyfsgJWT",
+        "status": "complete",
+        "original_oracle_calls": 30,
+        "checked_timing_replays": 48,
+        "correctness_replay_cache_passed": true,
+        "mechanism_gate_passed": true,
+        "mechanism_per_seed_reduction_percent": [
+          5.035468439868507,
+          3.888285730090746
+        ],
+        "favorable_mechanism_pairs": 6,
+        "actual_FA3_gate_passed": false,
+        "candidate_over_FA3_paired_latency_ratio_per_seed": [
+          3.8228764720610857,
+          3.8165385561226075
+        ],
+        "favorable_actual_FA3_pairs": 0,
+        "raw_median_us": {
+          "FA3": 40.063999593257904,
+          "v_after_wait": 161.1040011048317,
+          "v_before_wait": 153.4240022301674
+        },
+        "geometry": "B32/L8/TP8/full/page1/noRoPE, nominalctx4096 padded page-table stride86008; not scored80K",
+        "decision": "Production replacement NO-GO; preserve local mechanism, no official check or promotion",
+        "report": "reviews/attention-v2/gluon-vstage-probe/RESULTS.md",
+        "app_stopped": true,
+        "tasks": 0,
+        "closure_utc": "2026-10-26T00:40:48.399511+00:00",
+        "delayed_workspace_cost_usd": ".05258797",
+        "paid_usd": "0",
+        "exact_app_invoice": false,
+        "actual_hardware_overlap_measured": false,
+        "official_check": false,
+        "formal_entry": false
+      }
+    }
+  },
+  "projection": {
+    "source": "candidates/projection_router_m1_fp32_gemv.py",
+    "source_commit": "cdf5bc2eb1d8c066f9a5cbf1e8f40d6605e6f8da",
+    "branch": "projection-pipeline-preflight",
+    "sha256": "0c0c41119ef925b03a33ccab230bc64176cc22c242e3fea77ce01e317376defc",
+    "job_id": "d5636ac8d1404abd",
+    "score": 1.173238998969285,
+    "ci": [
+      1.1556404139847458,
+      1.1908375839538243
+    ],
+    "prerequisites": 9,
+    "timed_shapes": 30,
+    "restriction": "P040 higher point estimate not selected after missed target and overlapping interval; kernel measurements exclude serving integration/collectives."
+  },
+  "scope": "Free off-board checks, not ranked entries; no end-to-end serving performance measured",
+  "attention_counter_local_baseline": {
+    "source": "reviews/attention-v2/mixed_fa3_local_tickets.py",
+    "source_commit": "ef5f09a8ad4fa01aac57845a9021e0a3846c578c",
+    "sha256": "3b5d5d711a16e309cf512fbde2ff1a06c85b3e6fd52a73712cf66a5ffa10ea12",
+    "job_id": "3fb683ba982d448c",
+    "score": 1.1466598820556553,
+    "ci": [
+      1.1294599838248205,
+      1.1690678066480464
+    ],
+    "native_coverage": "16+12 official sequential; bespoke concurrency unverified"
+  },
+  "attention_previous_sequential_best": {
+    "source": "reviews/attention-v2/mixed_fa3_fused_full_small.py",
+    "original_source_commit": "f01799cea791006f109f09bd064f953eff6b584b",
+    "exported_source_commit": "362561fa786234bf7853b63d87dae73af433e7ae",
+    "local_branch": "attention-fa3-local",
+    "private_export_branch": "attention-fa3-sanitized",
+    "sha256": "34b0c6bc67357aac9b3306e32010f5254bd4df2ae14b07b827b8686902fa60e9",
+    "job_id": "cf979895a3f24685",
+    "score": 1.1557671624359636,
+    "ci": [
+      1.138430654999424,
+      1.1731036698725028
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "restriction": "Historical A2-08 passed sequential official validation but shares device-global completion counters. A2-09 repaired ownership; selected A2-11 removes decode counters. Preserved for comparison, not selected."
+  },
+  "active_jobs": [],
+  "last_rejected_attention_experiment": {
+    "experiment": "A2-12",
+    "job_id": "b24bbd05419c499a",
+    "source": "reviews/attention-v2/mixed_fa3_decode_qhoist.py",
+    "source_commit": "e2dc35578f1d4aa8aa151fea27a89ed5bd82bbd8",
+    "sha256": "45003f03d471d484f5451fa35b534ced9819a886a7be8dc6c3bed339d5b45597",
+    "correctness_passed": true,
+    "score": 1.1734299856044392,
+    "reason": "Target normalized whole-call latency increased 8.676%; extra preparation launch did not pay for itself."
+  },
+  "attention_fp8_provisional": {
+    "experiment": "A2-13",
+    "source": "mixed_fa3_fp8_qk.py",
+    "source_commit": "21fefb946524a25d8a06562dd28b631d49cd5175",
+    "source_sha256": "e3d52fbaaa28ae97add209de050834e326671ea278c9caf3247cc20418118b9e",
+    "job_id": "c2fb7b23433f4888",
+    "score": 1.210990803483977,
+    "ci": [
+      1.1928259414317173,
+      1.2291556655362366
+    ],
+    "selected": false,
+    "reason": "Retain passing FP8 candidate as promising; fullD32 normalized cut12.671%, all4targets faster, but targetgeomean6.096%misses10%, aggregate+1.963%CIoverlap. Preserve A2-11 selection; no extra check authorized by this exact payload approval.",
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "coverage": "Officialonly for newsource; explicitABA/concurrency unverified;parentA13nottransferred"
+  },
+  "attention_rollback_A2_11": {
+    "source": "reviews/attention-v2/mixed_fa3_decode_parallel_merge.py",
+    "original_source_commit": "7e302d2366b194c32c433f6d6f9cc7b0b59b3928",
+    "exported_source_commit": "1da9037bcc87e7dcd4d859c52d8c94a8bc46d798",
+    "local_branch": "attention-fa3-local",
+    "private_export_branch": "attention-fa3-sanitized",
+    "sha256": "c9a0847502a0b2fe2be55f546a2b3ea7eefa931c851e328e680302ebd828baf0",
+    "job_id": "cfa8a8670e394f80",
+    "score": 1.1876787560868445,
+    "ci": [
+      1.1698635747455417,
+      1.2109342502243532
+    ],
+    "prerequisites": 16,
+    "timed_shapes": 12,
+    "restriction": "Official 16+12 validation plus A13: 42 bounded-context graph ABA/cache replays pass; true cross-graph overlap observed for full decode B32 only. Other six profiled paths did not overlap; general concurrent safety and same-graph overlap remain unverified.",
+    "native_ownership_probe": {
+      "app_id": "ap-f1GBalg3lZ0sfNmXyjJ7bu",
+      "report": "reviews/attention-v2/A13-RESULT.md",
+      "checked_replays": 42,
+      "passed": 42,
+      "actual_overlap_cases": [
+        "full_decode32"
+      ],
+      "all_paths_concurrency_verified": false
+    },
+    "selection": "rollback"
+  }
+}

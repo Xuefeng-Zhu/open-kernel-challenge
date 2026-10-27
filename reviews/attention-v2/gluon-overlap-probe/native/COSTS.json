@@ -1,0 +1,16 @@
+{
+  "app_id": "ap-AECevTBOrJ7vVRE4EWgk3R",
+  "source_commit": "605e815462b56768fca9c84c68a8aada639bbb0b",
+  "reserve_usd": "0.40",
+  "client_wall_seconds": 15.400791957974434,
+  "worker_wall_seconds": 5.811732621999999,
+  "worker_reported_compile_seconds": 5.1520473970000005,
+  "accounting_cutoff_utc": "2026-10-25T23:47:17.887804+00:00",
+  "delayed_workspace_gross_delta_usd": "0.01044224",
+  "paid_usd": "0E-8",
+  "exact_app_invoice": false,
+  "new_other_app_ids": [],
+  "shutdown_verified": true,
+  "tasks": 0,
+  "qualification": "Delayed workspace credit delta at no-new-app cutoff, not exact per-app invoice. Resource reserve is not the charge."
+}

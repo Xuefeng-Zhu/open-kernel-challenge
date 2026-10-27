@@ -1,0 +1,14 @@
+{
+  "observed_utc": "2026-10-25T00:07:57.378004+00:00",
+  "command": [
+    ".venv/bin/python",
+    "reviews/attention-v2/test_mixed_fa3.py"
+  ],
+  "exit_code": 0,
+  "output": "test_cpu_in_place_A_B_A_with_changed_lengths (__main__.MixedFA3.test_cpu_in_place_A_B_A_with_changed_lengths) ... ok\ntest_dispatch_only_full_verify_16_32 (__main__.MixedFA3.test_dispatch_only_full_verify_16_32) ... ok\ntest_e2_all_functions_unchanged_except_entrypoint_name (__main__.MixedFA3.test_e2_all_functions_unchanged_except_entrypoint_name) ... ok\ntest_official_call_contract_and_live_slot_zero (__main__.MixedFA3.test_official_call_contract_and_live_slot_zero) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.571s\n\nOK\n",
+  "source_sha256": "708d3f06f46bfb24a7a43963022eb51426f3a68bb2155c77dea8e9b6ae255423",
+  "qualification": "CPU stand-ins exercise our host adapter and official numerical oracle. No FA3/FusedQKNorm/store_cache native kernel or CUDA graph executed on this Mac. CPU ABA is not GPU ABA.",
+  "current_official_files_match": true,
+  "user_checks_remaining_before_E5": 2,
+  "daily_checks_remaining_after_reset": 20
+}

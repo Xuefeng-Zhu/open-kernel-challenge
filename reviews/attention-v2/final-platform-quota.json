@@ -1,0 +1,31 @@
+{
+  "observed_utc": "2026-10-24T22:53:38.887477+00:00",
+  "daily_reset": "00:00 UTC",
+  "platform_daily_limits": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 13,
+        "left": 7
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 4,
+        "left": 16
+      }
+    }
+  },
+  "user_budget_note": "Attention four conservatively counted requests of six, three actual new GPU runs plus one duplicate; two local slots unused. Projection user budget still eight remaining, distinct from daily quota."
+}

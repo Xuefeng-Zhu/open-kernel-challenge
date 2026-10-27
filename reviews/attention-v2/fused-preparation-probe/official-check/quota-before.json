@@ -1,0 +1,15 @@
+{
+  "observed_utc": "2026-10-25T20:20:57.795746+00:00",
+  "attention": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 16,
+      "left": 4
+    }
+  }
+}

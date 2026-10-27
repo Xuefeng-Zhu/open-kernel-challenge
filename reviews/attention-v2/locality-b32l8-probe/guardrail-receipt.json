@@ -1,0 +1,11 @@
+{
+  "workspace": "xuefeng-zhu",
+  "observed_utc": "2026-10-27T06:53:33.401610+00:00",
+  "verified_credit_balance_usd": "27.13",
+  "verified_net_spend_cap_usd": "0",
+  "total_usage_usd": "2.87",
+  "total_spend_usd": "0",
+  "changes_made": false,
+  "source": "Fresh read-only Modal Usage limit page: Credits $27.13, credit usage $2.87, charges $0/$0 and Spend limit $0; live CLI increase additionally subtracted.",
+  "url": "https://modal.com/settings/xuefeng-zhu/usage?tab=budgets"
+}

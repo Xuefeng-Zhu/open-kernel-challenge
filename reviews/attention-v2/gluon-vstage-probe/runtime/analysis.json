@@ -1,0 +1,164 @@
+{
+  "source_freeze": "c55d14c507b9d5cc2254441531d4f0e1a18714d5",
+  "app_id": "ap-Hy5O3TPhVTVKu0XyfsgJWT",
+  "source_sha256": {
+    "kernel.py": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+    "config.py": "686bee98df915e75ea938ba3c0cb691718527497fa5e5401ead36e9ef8b59fc0",
+    "fusion-lookahead-probe/candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8"
+  },
+  "frozen_payload_sha256": {
+    "reviews/attention-v2/gluon-vstage-probe/runtime/worker.py": "bc93f136f4943e28ce3fd6be91cf67639ee4172ea9195b715bc762ac80a13d83",
+    "reviews/attention-v2/gluon-vstage-probe/runtime/controller.py": "1c9e664635fc31637e5f5629fc6bf37a03f6121eef69952ef4a8ed6cf401d062",
+    "reviews/attention-v2/gluon-vstage-probe/kernel.py": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+    "reviews/attention-v2/gluon-vstage-probe/config.py": "686bee98df915e75ea938ba3c0cb691718527497fa5e5401ead36e9ef8b59fc0",
+    "reviews/attention-v2/fusion-lookahead-probe/candidate.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "reviews/attention-v2/modal_worker.py": "9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e",
+    "reviews/attention-v2/official/reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "reviews/attention-v2/official/checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+  },
+  "raw_result_sha256": "38946bec2ddf7c749f9890fb7bae677cb4bedf11c03a07e55f0b7391b9b74da5",
+  "launch_receipt_sha256": "b94ed6cfe85403b0a19f5d5f9293dbc07c0406c6e8bd2bd774cfb4ce98197a6b",
+  "reconciliation_sha256": "cb0113b16307c9185bf5ff3281273edb99e5600d2f2662b3f4e490265d323381",
+  "stage_closed": true,
+  "app_stopped": true,
+  "tasks": 0,
+  "closure_observed_utc": "2026-10-26T00:40:48.399511+00:00",
+  "actual_paid_usd": "0E-8",
+  "automatic_performance_admission": false,
+  "official_check": false,
+  "production_replacement_admitted": false,
+  "native_run_complete": true,
+  "execution_failed": false,
+  "outcome": "timed",
+  "counts": {
+    "original_oracle_calls": 30,
+    "exact_return_A_checks": 9,
+    "cross_arm_cache_byte_comparisons": 36,
+    "concurrent_original_oracle_calls": 2,
+    "independent_setup_oracle_calls": 1,
+    "post_concurrent_isolation_checks": 4,
+    "extra_candidate_replays": 2,
+    "prototype_output_newkv_ABA_comparisons": 9,
+    "cross_arm_newkv_ABA_comparisons": 18,
+    "checked_warmup_measured_replays": 48,
+    "prototype_output_newkv_timing_comparisons": 16,
+    "cross_arm_newkv_timing_comparisons": 32
+  },
+  "timing_summary": {
+    "raw_median_us": {
+      "fa3": 40.063999593257904,
+      "v_after_wait": 161.1040011048317,
+      "v_before_wait": 153.4240022301674
+    },
+    "comparisons": {
+      "v_before_wait_vs_v_after_wait": {
+        "reverse_order_pair_geomeans": [
+          1.0473887582548294,
+          1.0399638782669152,
+          1.069185896637739,
+          1.0460622134757724,
+          1.0530247278340972,
+          1.04045589821831
+        ],
+        "pair_input_versions": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "positive_reverse_order_pairs": 6,
+        "per_fixture": {
+          "0": {
+            "pair_ratios": [
+              1.0473887582548294,
+              1.069185896637739,
+              1.0530247278340972
+            ],
+            "median_ratio": 1.0530247278340972,
+            "latency_reduction_percent": 5.035468439868507,
+            "positive_pairs": 3
+          },
+          "1": {
+            "pair_ratios": [
+              1.0399638782669152,
+              1.0460622134757724,
+              1.04045589821831
+            ],
+            "median_ratio": 1.04045589821831,
+            "latency_reduction_percent": 3.888285730090746,
+            "positive_pairs": 3
+          }
+        }
+      },
+      "v_before_wait_vs_fa3": {
+        "reverse_order_pair_geomeans": [
+          0.2639684078350457,
+          0.2650219161759482,
+          0.2615831317878955,
+          0.26201752852614824,
+          0.2592146947561792,
+          0.2616991533137904
+        ],
+        "pair_input_versions": [
+          0,
+          1,
+          0,
+          1,
+          0,
+          1
+        ],
+        "positive_reverse_order_pairs": 0,
+        "per_fixture": {
+          "0": {
+            "pair_ratios": [
+              0.2639684078350457,
+              0.2615831317878955,
+              0.2592146947561792
+            ],
+            "median_ratio": 0.2615831317878955,
+            "latency_reduction_percent": -282.28764720610855,
+            "positive_pairs": 0
+          },
+          "1": {
+            "pair_ratios": [
+              0.2650219161759482,
+              0.26201752852614824,
+              0.2616991533137904
+            ],
+            "median_ratio": 0.26201752852614824,
+            "latency_reduction_percent": -281.65385561226077,
+            "positive_pairs": 0
+          }
+        }
+      }
+    },
+    "qualification": "Raw whole-call events; six reverse-order pairs, three per fresh seed; nearby ctx4096 padded geometry only; no score extrapolation or confidence interval"
+  },
+  "mechanism_gate_passed": true,
+  "actual_fa3_gate_passed": false,
+  "prospective_followup_supported": false,
+  "decision": "Separate mechanism and actual-FA3 point-estimate gates; no automatic production/official admission.",
+  "worker_wall_seconds": 38.56607769,
+  "environment": {
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "cuda": "13.0",
+    "gpu": "NVIDIA H200",
+    "capability": [
+      9,
+      0
+    ],
+    "python": "3.12.3"
+  },
+  "actual_hardware_overlap_measured": false,
+  "internal_scratch_pointers_observed": false,
+  "qualifications": [
+    "Padded nearby ctx4096 geometry only; not an unpadded/80K or official score result.",
+    "Two fresh fixtures and one native session; no population confidence interval or serving-safety claim.",
+    "Adapters include preparation/new-KV/cast/core/output gate; actual FA3 entrypoint remains unchanged."
+  ]
+}

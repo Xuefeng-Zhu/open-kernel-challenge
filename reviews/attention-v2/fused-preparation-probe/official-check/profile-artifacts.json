@@ -1,0 +1,17 @@
+{
+  "profiles/candidate.2f5f1fb54b48486d.json": {
+    "published_as": "official-check/artifacts/candidate.2f5f1fb54b48486d.json",
+    "bytes": 78850,
+    "sha256": "60990f3230a029750932eced894991648d3c58efb70113d221b265fc1500934b"
+  },
+  "profiles/candidate.2f5f1fb54b48486d.log": {
+    "published_as": "official-check/artifacts/candidate.2f5f1fb54b48486d.log",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "profiles/candidate.2f5f1fb54b48486d.txt": {
+    "published_as": "official-check/artifacts/candidate.2f5f1fb54b48486d.txt",
+    "bytes": 10244,
+    "sha256": "3ab2cf3685af1fba292b657e134ea1719176aee15c3cbbff147921759981c54b"
+  }
+}

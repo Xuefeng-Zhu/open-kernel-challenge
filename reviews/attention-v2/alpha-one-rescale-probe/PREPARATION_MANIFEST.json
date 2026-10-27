@@ -1,0 +1,80 @@
+{
+  "created_utc": "2026-10-25T22:05:26.137342+00:00",
+  "scope": "Reviewed first alpha-one compile-only falsifier; no candidateexecution/frequency/correctness/performance/officialclaim",
+  "baseline_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "candidate_sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+  "local_test_methods": {
+    "source": 6,
+    "worker": 10,
+    "controller": 12
+  },
+  "independent_review": "PASS",
+  "kernel_invocations": 0,
+  "compile_units": 4,
+  "expected_artifacts": 24,
+  "paid_limit_usd": "0",
+  "reviewed_free_credit_reserve_usd": ".40",
+  "secret_scan": {
+    "files": 14,
+    "patterns": 6,
+    "matches": 0
+  },
+  "files": {
+    "EXPERIMENT_CARD.md": {
+      "sha256": "040237d21771107fdb448e7ab2f27a117694360aa348685fca25caf1e6b18f84",
+      "bytes": 6470
+    },
+    "SEMANTICS_REVIEW.md": {
+      "sha256": "86cb3e696b6767f138d3b2334d45ec7a79d51762cd61d091e4144463f7ae344b",
+      "bytes": 6314
+    },
+    "SOURCE_AUDIT.md": {
+      "sha256": "e9117ed4d979c49b5a1b6137f5810a5763bb985832cd1b73e6047740def92bf0",
+      "bytes": 7599
+    },
+    "baseline.py": {
+      "sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+      "bytes": 40538
+    },
+    "candidate.py": {
+      "sha256": "e66f502812f10f070170efcc9a41a7ef566576799d7461d27cd860a10c94f764",
+      "bytes": 40947
+    },
+    "local-verification.json": {
+      "sha256": "5276ad8d5ec302ba19a557a26ec44b9e125411ebf73c7b7cd9c39b555e6cd5b4",
+      "bytes": 1588
+    },
+    "native/ADMISSION.md": {
+      "sha256": "cc98e237028eeb5b4fa3ae6f548f8996f1a0042f206a03d82b3e3cbb42ed5b27",
+      "bytes": 5142
+    },
+    "native/CONTROLLER.md": {
+      "sha256": "811e39ccf5a021acfad65d34119a74955aa62588e1ab9ab6ae923ecb648dfb5d",
+      "bytes": 6641
+    },
+    "native/REVIEW.md": {
+      "sha256": "82ec2580cc1f42c653dc1a582126df935b2edaa17fb709fa2ff70ea082766ab4",
+      "bytes": 9770
+    },
+    "native/controller.py": {
+      "sha256": "2ddfab210d7a589826674990a380d657a078b794ac73e175fb0fc5d27e9978bf",
+      "bytes": 23143
+    },
+    "native/test_controller.py": {
+      "sha256": "2fbbdf9018bbe5987801380b8409a70ea36b336178e38c518e0858b2a33a8c54",
+      "bytes": 13441
+    },
+    "native/test_worker.py": {
+      "sha256": "9a07324f07d790c1ffa92cc217a5af89f668927b0dc996c50dd85fab9bfd1956",
+      "bytes": 9450
+    },
+    "native/worker.py": {
+      "sha256": "9e0377dc696518225b5091f65fe7f72ac5e96e6c2b539c399f13bf337a80a585",
+      "bytes": 15023
+    },
+    "test_source.py": {
+      "sha256": "69f38480aeb1da05b972f4eec6dcf5ffb07b4f43b15907cda0b143dca3d80862",
+      "bytes": 5556
+    }
+  }
+}

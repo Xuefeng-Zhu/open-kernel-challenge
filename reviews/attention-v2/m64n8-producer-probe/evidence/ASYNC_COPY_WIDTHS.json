@@ -1,0 +1,20 @@
+{
+  "scope": "Static cp.async instruction copy-size fields only; not executed counts, transferred bytes, stalls or performance",
+  "counts_by_arm_case_bytes": {
+    "control.D32full": {
+      "16": 6,
+      "8": 12
+    },
+    "candidate.D32full": {
+      "4": 48
+    },
+    "control.D1slide": {
+      "4": 3,
+      "16": 4,
+      "8": 8
+    },
+    "candidate.D1slide": {
+      "4": 48
+    }
+  }
+}

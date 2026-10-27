@@ -1,0 +1,26 @@
+{
+  "baseline.ncu-rep": {
+    "raw_bytes": 35756,
+    "raw_sha256": "4104eaf52a0f44bbfc03703af2355902d16cb1f19bebde4816c3b87a58a3b6b6",
+    "compression": "gzip",
+    "gzip_bytes": 10010,
+    "gzip_sha256": "cff5be94e4265813b98384ad16e3599f2bb3cbf8f2b8fa8f1772b603425ef625",
+    "stable_file_snapshot": true
+  },
+  "profile-original.csv": {
+    "raw_bytes": 19879,
+    "raw_sha256": "aed2fe380dd1293d3fcd54ec5c8bf5dc4bf007895c2d13e7987c6578c95115d8",
+    "compression": "gzip",
+    "gzip_bytes": 5616,
+    "gzip_sha256": "cc9d3eff9193aa3c95e4823141d56506d8c47cde88e58ab52501b7b6df535bf1",
+    "stable_file_snapshot": true
+  },
+  "profile-imported.csv": {
+    "raw_bytes": 14387,
+    "raw_sha256": "8ffaa246a5b98a7a6eff8b9d42e8447e21fcfa625ce92e1297e70383385003e8",
+    "compression": "gzip",
+    "gzip_bytes": 3419,
+    "gzip_sha256": "4863b5f15d02b94f3d8050532b1faa92ea509c79afd00db0ac454aabc3326c6c",
+    "stable_file_snapshot": true
+  }
+}

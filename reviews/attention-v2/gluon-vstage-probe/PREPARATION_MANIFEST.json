@@ -1,0 +1,66 @@
+{
+  "scope": "New prospective common-K V-stage scheduling compile-only pair; no fully serial claim or production dispatch change",
+  "kernel_sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+  "CPU_tests": 31,
+  "source_review": "KERNEL_REVIEW.md",
+  "harness_review": "native/REVIEW.md",
+  "gpu_admission": "Parent serialized compile slot after P053 verified stopped/tasks0 2026-10-25T23:56:28UTC",
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "files": {
+    "EXPERIMENT_CARD.md": {
+      "sha256": "209082108de413aeefb114c963096519451f60908934e12ea9aac15c30fefc1d",
+      "bytes": 6854
+    },
+    "KERNEL_REVIEW.md": {
+      "sha256": "0bfd6ed079551ea7a4ff1fb169ef1a1436c3bf9c623591852d7acb47f717d8f6",
+      "bytes": 5150
+    },
+    "config.py": {
+      "sha256": "686bee98df915e75ea938ba3c0cb691718527497fa5e5401ead36e9ef8b59fc0",
+      "bytes": 1558
+    },
+    "kernel.py": {
+      "sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+      "bytes": 6817
+    },
+    "native/CONTROLLER.md": {
+      "sha256": "4cc55c9ac5e9cd6e5449724bf4cf72c1ec3b124383019185ebc6174a76eb59d0",
+      "bytes": 2551
+    },
+    "native/REVIEW.md": {
+      "sha256": "c5d327c3b863af82b7231452b72417b55dfa77e932fe60bcb595e8fe1d2acbcf",
+      "bytes": 6108
+    },
+    "native/controller.py": {
+      "sha256": "4d81fbd625f3674a8929742581e23d5e3738e99e6fc6afe79c35b336da601585",
+      "bytes": 23666
+    },
+    "native/resources.py": {
+      "sha256": "1590dcf51f1c0ce59419d9d90ee397747556e50af8c2fb773f95b5a2fa5f1c59",
+      "bytes": 8400
+    },
+    "native/test_controller.py": {
+      "sha256": "52462142b26ce74a14d1fdea93c2cc3ea4554ec86e9a0bc5294a07fc2c18a33c",
+      "bytes": 13852
+    },
+    "native/test_worker.py": {
+      "sha256": "493b0add8bf4da1b4a0111782048f7e7d330ddb56009a7861804a977c01d6050",
+      "bytes": 6965
+    },
+    "native/worker.py": {
+      "sha256": "19b135581617337b159944e000425d34fe9e0a13a4c7037a2b982f886d02a254",
+      "bytes": 14974
+    },
+    "test_source.py": {
+      "sha256": "156508501f5d48a4f0845caccffa5fee2189b2080b902f2f0689e7382f66824b",
+      "bytes": 10994
+    }
+  }
+}

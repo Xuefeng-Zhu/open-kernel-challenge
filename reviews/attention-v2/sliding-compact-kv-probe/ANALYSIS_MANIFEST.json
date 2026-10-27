@@ -1,0 +1,14 @@
+{
+  "status": "independently reviewed offline analysis preparation; no service or GPU action",
+  "candidate_source_sha256": "c4307029dac71deb6ee67754e09be9aceedd0d7fcfa3c6421837ef5eaab71594",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "CPU_tests_passed": 13,
+  "actual_saved_baseline_CLI_smoke": "score1.2336330588627955;zero target-only gain;performance_rejected",
+  "automatic_promotion": false,
+  "files": {
+    "analyze_official.py": "4a2b33cdcd0973b5dc3345984d10f8c4b33c6b296e89537ca7061532abff3683",
+    "test_analysis.py": "8589c1c4bddc39e60b8fa44701f9482284bc50cfec0942bf8c09ea222518cd66",
+    "ANALYSIS.md": "b2a0bd8ea63bb031932e9ea2dd790d3920104a5f0146a83cc51f98061e453daa",
+    "ANALYSIS_REVIEW.md": "693d2f2173e4ea70ff89cceb6c8331bc4609e114981ee4fa1d113e202a69b0a1"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "encoding": "gzip+base64",
+  "files": {
+    "overlap.core.cubin": {
+      "sha256": "d4408471e42082036b8a4a518900df453eea779b4da8f91b1dc84f97672b6e67",
+      "size": 120320
+    },
+    "overlap.core.llir": {
+      "sha256": "a228f1a8db2f0175a46b58aa6d5a2921d41e831b45911f75824f4d758546a98b",
+      "size": 276155
+    },
+    "overlap.core.ptx": {
+      "sha256": "7767e6065cc191c3aabffc1865ee13e9a82e778a69105cf490df57176410565a",
+      "size": 155138
+    },
+    "overlap.core.sass": {
+      "sha256": "d334f93fc988fcb5f6fc657cdffaa470e6502efef66b779c2f7dd7961156de06",
+      "size": 408873
+    },
+    "overlap.core.ttgir": {
+      "sha256": "e3763bc15b64897a192a8cdc9b7498c61a5ffecf7ecb17d988bd0ade8c677ebc",
+      "size": 34163
+    },
+    "serial.core.cubin": {
+      "sha256": "1725b11e56cb41812e71d7208e838ba2ad557ef604ca7e41cc90e28ad3ff3254",
+      "size": 122112
+    },
+    "serial.core.llir": {
+      "sha256": "c7e740ef7a4a27dec25a4d516e1c9b803c7309b0bd4fa3e15cd0994b439ba84b",
+      "size": 276155
+    },
+    "serial.core.ptx": {
+      "sha256": "f11faa6ad3d8c14248e61811b7c991ed95899ff473f06f057a154e284f45ede9",
+      "size": 155138
+    },
+    "serial.core.sass": {
+      "sha256": "63ef626f4e871b35d49d57bfa43740237383c850f1d87f3952fa903c1f2baadf",
+      "size": 407753
+    },
+    "serial.core.ttgir": {
+      "sha256": "80a0a6fe838e5551098b1f285667dfca23ddf78f97b259ac099b53d30e2089f5",
+      "size": 34163
+    }
+  },
+  "compressed_sha256": "a6fd38fb51bdb5103687ef36579c0c620dc676fbabb7b58ee918bc0430e32bc1",
+  "uncompressed_sha256": "7054917d743194d9292e064380ac95b9d27f6e1c00c6b72bf944e7b604ad1a43",
+  "uncompressed_size": 2653542
+}

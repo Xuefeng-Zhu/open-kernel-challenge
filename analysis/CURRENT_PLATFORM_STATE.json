@@ -1,0 +1,33 @@
+{
+  "observed_utc": "2026-10-25T07:50:53.346544+00:00",
+  "problems": {
+    "muse_bf16_proj": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 3,
+        "left": 17
+      }
+    },
+    "muse_attention_decode": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 16,
+        "left": 4
+      }
+    }
+  },
+  "active_jobs_in_returned_history": [],
+  "jobs_returned": 37,
+  "quota_reset_utc": "2026-10-26T00:00:00Z",
+  "note": "Read-only snapshot after the one approved A2-14 check completed; no new dispatch."
+}

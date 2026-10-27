@@ -1,0 +1,29 @@
+Device NVIDIA H200 (GH100)
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+Metric Name                                                                 Metric Type     Metric Unit     Metric Description                                                    
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+dram__throughput.avg.pct_of_peak_sustained_active                           Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during unit active cycles across all     
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.avg.pct_of_peak_sustained_elapsed                          Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during elapsed cycles across all         
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.max.pct_of_peak_sustained_active                           Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during unit active cycles across all     
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.max.pct_of_peak_sustained_elapsed                          Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during elapsed cycles across all         
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.min.pct_of_peak_sustained_active                           Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during unit active cycles across all     
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.min.pct_of_peak_sustained_elapsed                          Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during elapsed cycles across all         
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.sum.pct_of_peak_sustained_active                           Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during unit active cycles across all     
+                                                                                                            sub-unit instances)                                                   
+dram__throughput.sum.pct_of_peak_sustained_elapsed                          Throughput      %               DRAM throughput (This throughput metric represents the percent of the 
+                                                                                                            peak sustained rate achieved during elapsed cycles across all         
+                                                                                                            sub-unit instances)                                                   
+

@@ -1,0 +1,143 @@
+{
+  "observed_utc": "2026-10-27T04:11:22.918040+00:00",
+  "read_only": true,
+  "submitted": false,
+  "problem": "muse_attention_decode",
+  "selected_source_path": "reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+  "selected_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "source_first_line": "# okc: problem=muse_attention_decode",
+  "selected_source_matches_success_receipt": true,
+  "successful_prior_check": {
+    "job_id": "5090b83f1d63407b",
+    "mode": "check",
+    "status": "done",
+    "passed": true,
+    "flags": [],
+    "speedup": 1.2336330588627955,
+    "speedup_ci": [
+      1.2151285629798536,
+      1.2521375547457374
+    ]
+  },
+  "quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 1,
+      "left": 19
+    }
+  },
+  "duplicate_check": {
+    "own_jobs_returned": 47,
+    "attention_jobs_returned": 25,
+    "attention_modes_returned": [
+      "check"
+    ],
+    "nonterminal_jobs": [],
+    "current_ranked_you": null,
+    "qualification": "CLI jobs is documented as recent; no ranked Attention entry appears in the returned47 rows, and public current you is null. This is not an exhaustive source-identity query across withdrawn historical entries."
+  },
+  "current_problem": {
+    "name": "muse_attention_decode",
+    "gpu": "H200",
+    "benchmarks_count": 12,
+    "tracks": {
+      "ends": "2026-11-20T00:00:00-08:00",
+      "kernels": {
+        "closes": "2026-11-05T00:00:00-08:00",
+        "open": true
+      },
+      "launch": "2026-10-22T11:00:00-07:00",
+      "note": "Kernel submissions close Nov 4 at 11:59 pm PT. The serving track opens Nov 5 at noon PT.",
+      "phase": "kernels",
+      "serving": {
+        "closes": "2026-11-20T00:00:00-08:00",
+        "open": false,
+        "opens": "2026-11-05T12:00:00-08:00"
+      }
+    },
+    "page": {
+      "computation": "# per request b and block token j, at position p = positions[t]\nq, k, v, gate = split(qkv[t])   # the fused projection output\nq = rmsnorm(q) * 5.473;  k = rmsnorm(k)\nq, k = rope(q, p), rope(k, p)   # sliding layers\ncache[cache_loc[t]] = fp8(k), fp8(v)\na = softmax(q @ K.T / 8) @ V    # up to p: window or all\nout = rmsnorm(a) * sigmoid(gate)",
+      "correctness": [
+        "The output: within 2.5\u00d7 the reference's own error when its queries are rounded to FP8 E4M3, plus 1.5%, kept between 3% and 15%, against an FP32 reference.",
+        "The new cache entries: within 8% of the reference's. Your output is checked against the reference attending to your own new entries.",
+        "Some tests put keys at the window's edges.",
+        "Each head's keys share a direction, so attention spreads over many keys. On full layers the low-attention keys' values share a direction too."
+      ],
+      "returns": "bfloat16 [B, L, Hq\u00b764]",
+      "shape_notes": [
+        "B is batch and L is q_len: 1 for a decode step, or 8 for a speculative verify block (causal inside it). Each GPU has 16 query heads and 2 key/value heads (TP8).",
+        "Each load times a sliding-window layer (the last 2,048 tokens, with RoPE) and a full-attention layer (the whole context, no RoPE). Contexts are around 80K tokens.",
+        "The inputs are what SGLang\u2019s attention receives: the fused projection output, plus the step\u2019s positions, cache rows and FA3 lengths, which SGLang builds once per step.",
+        "`scheduler_metadata` is FA3's tile schedule for the step, built from its lengths as SGLang does: set on full-attention decode steps, None on sliding layers and verify blocks. Kernels that don't use FA3 can ignore it.",
+        "The cache is FP8 E4M3. Its page size is 1 in the scored cases and 64 in most tests, so read config[\"page_size\"]. Its scales are 1 in the scored cases and 1/64 in some tests.",
+        "Decode loads are SGLang serving with speculative decoding off; verify loads are its default recipe, which checks each request's 8-token draft in one step."
+      ],
+      "short": "Attention",
+      "summary": "One decode step or 8-token verify block of grouped-query attention over a paged FP8 cache: QK-norm, a 2,048-token sliding window with RoPE or full attention over the whole context, and a gated, normalized output.",
+      "title": "Gated attention decode"
+    },
+    "file_names": [
+      "baseline.py",
+      "checks.py",
+      "reference.py",
+      "template.py"
+    ],
+    "saved_text_comparisons": {
+      "task_md": {
+        "current_show_sha256": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76",
+        "saved_local_sha256": "fdc57e97579dd8579bb6cc284e454578962d30a65b1b7a526719ce220b0bba76",
+        "exact_text_equal": true
+      },
+      "agents_md": {
+        "current_show_sha256": "c01682737af060546f7f17c480cc37309c28e6c2de1cc13c669f3f66307d3476",
+        "saved_local_sha256": "c01682737af060546f7f17c480cc37309c28e6c2de1cc13c669f3f66307d3476",
+        "exact_text_equal": true
+      }
+    },
+    "registered_files": {
+      "baseline.py": {
+        "kind": "string",
+        "bytes": 6178,
+        "sha256": "37f51207283f85a65eb393b1dfb1344759d7df0bdec5450e34d24e7139f56ecc",
+        "same_saved_local": true
+      },
+      "checks.py": {
+        "kind": "string",
+        "bytes": 2484,
+        "sha256": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+        "same_saved_local": true
+      },
+      "reference.py": {
+        "kind": "string",
+        "bytes": 19275,
+        "sha256": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+        "same_saved_local": true
+      },
+      "template.py": {
+        "kind": "string",
+        "bytes": 5564,
+        "sha256": "18e15dfdfdcebb8251d94530947f4ccfa1c19f598a8240a0b76c6574eddecb6d",
+        "same_saved_local": true
+      }
+    }
+  },
+  "entry_conditions": {
+    "read_only_calls_succeeded": true,
+    "new_terms_prompt_observed": false,
+    "new_terms_qualification": "Read-only status/show calls present no acceptance challenge. Stop if actual ranked submit presents new explicit legal terms or material conditions; no acceptance action has been performed."
+  },
+  "ranked_command": [
+    "/Users/frank/Documents/Codex/2026-10-23/task/bin/okc",
+    "submit",
+    "muse_attention_decode",
+    "/Users/frank/Documents/Codex/2026-10-25/task-2/attention-fusion-lookahead/reviews/attention-v2/fusion-lookahead-probe/candidate.py",
+    "--no-wait",
+    "--json"
+  ],
+  "duplicate_prevention": "Root is sole submitter; use exactly one call, save receipt, and reconcile uncertain outcomes before any retry."
+}

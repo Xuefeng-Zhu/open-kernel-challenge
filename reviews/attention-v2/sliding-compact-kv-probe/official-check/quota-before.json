@@ -1,0 +1,19 @@
+{
+  "observed_utc": "2026-10-26T22:29:44.889689+00:00",
+  "attention": {
+    "name": "muse_attention_decode",
+    "title": "Gated attention decode",
+    "limits": {
+      "scored": {
+        "per_day": 10,
+        "used": 0,
+        "left": 10
+      },
+      "checks": {
+        "per_day": 20,
+        "used": 0,
+        "left": 20
+      }
+    }
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "scope": "Reviewed local runtime preparation; no app/job created; waiting for parent GPU serialization after P056",
+  "kernel_sha256": "6a5b1cf73eb2ab20b1f1b22b3666bec92affd452ceee1625b1a194f73adef83e",
+  "raw_compile_sha256": "258c907f54f03c9d301f25724cdf1d393b652cba167957de55cc8819a0a41240",
+  "worker_CPU_tests": 12,
+  "controller_CPU_tests": 11,
+  "actual_native_gate_receipt_validated": true,
+  "runtime_job_admitted": false,
+  "actual_paid_limit_usd": "0",
+  "free_credit_reserve_usd": ".58",
+  "files": {
+    "CARD.md": {
+      "sha256": "2a23d84264fb50d6f996df77a8a05cd0fe6f6fc5d612d7ce24e198fb0ef5adc6",
+      "bytes": 9417
+    },
+    "CONTROLLER.md": {
+      "sha256": "1e8bfa795e04eb73ea7dde9537897ce9de212e51f093817148a125c378b3608c",
+      "bytes": 3806
+    },
+    "CONTROLLER_REVIEW.md": {
+      "sha256": "e0c0e5680efcca1a92d4de088f87ec07e46be9675301b67d82df1f8e987eba67",
+      "bytes": 4025
+    },
+    "REVIEW.md": {
+      "sha256": "19a2a272e2b3640fe8d1847f25355612bec7cc0406cd62cee1555ce0a5b2e7be",
+      "bytes": 7663
+    },
+    "controller.py": {
+      "sha256": "1c9e664635fc31637e5f5629fc6bf37a03f6121eef69952ef4a8ed6cf401d062",
+      "bytes": 24270
+    },
+    "native-gate-receipt.json": {
+      "sha256": "6f773355c8e61b23633eab470f4552d90ff3bccd36eeffdd6824779edd0d270b",
+      "bytes": 1661
+    },
+    "test_controller.py": {
+      "sha256": "96b4f7ccea9965c1096a4a99fd5c2b3b9214f673d79a07d24e5baccf389b648d",
+      "bytes": 13630
+    },
+    "test_worker.py": {
+      "sha256": "df17fa88d7d71244b5603be5c35fc5b6ca0b28cef25195ed1612ce016798fec5",
+      "bytes": 12835
+    },
+    "worker.py": {
+      "sha256": "bc93f136f4943e28ce3fd6be91cf67639ee4172ea9195b715bc762ac80a13d83",
+      "bytes": 30459
+    }
+  }
+}

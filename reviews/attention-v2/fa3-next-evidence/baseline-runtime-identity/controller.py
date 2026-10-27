@@ -1,0 +1,425 @@
+"""Single source-bound baseline identity/activity diagnostic; offline by default.
+
+Only the explicit flattened source allowlist is uploaded. Existing credentials
+stay in the protected local config and never enter the remote closure/payload.
+"""
+import argparse
+import base64
+from datetime import datetime, timezone
+from decimal import Decimal
+import gzip
+import hashlib
+import io
+import json
+import os
+from pathlib import Path
+import re
+import subprocess
+import threading
+import time
+import warnings
+
+HERE = Path(__file__).resolve().parent
+REPO = HERE.parents[3]
+ATTENTION = HERE.parents[1]
+ORIGINAL = Path('/Users/frank/Documents/Codex/2026-10-23/task')
+AUTH = ORIGINAL/'local-notes/modal-auth.toml'
+PYTHON = ORIGINAL/'.venv/bin/python'
+IMAGE = 'im-cPTbGpNiX3RarKResPgX7h'
+EXPERIMENT = 'attention-baseline-runtime-identity'
+WORKER_SECONDS, CHILD_SECONDS = 180, 195
+FUNCTION_SECONDS, STARTUP_SECONDS, WATCHDOG_SECONDS = 210, 20, 240
+MAX_RESULT, MAX_TRACE, MAX_GZIP = 1024*1024, 32*1024*1024, 6*1024*1024
+MAX_TRACE_ENCODING = 8*1024*1024
+RESERVE = Decimal('.70')
+EXPECTED = {
+    'selected.py': '3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8',
+    'reference.py': '386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b',
+    'checks.py': '9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055',
+    'modal_worker.py': '9480d32a40872bb5cfe1e38a09eed4256d00acbcb3431d14006417276768745e',
+    'LICENSE': '1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747',
+    'THIRD_PARTY_NOTICES.md': 'c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b',
+}
+
+
+def now():
+    return datetime.now(timezone.utc).isoformat()
+
+
+def save(path, value):
+    temporary = path.with_suffix('.tmp')
+    temporary.write_text(json.dumps(value, indent=2)+'\n')
+    temporary.replace(path)
+
+
+def payload():
+    return {'worker.py': HERE/'worker.py',
+        'counter_gate.py': HERE/'counter_gate.py',
+        'cpu_identity.py': HERE.parent/'dispatch-identity-cpu/worker.py',
+        'selected.py': ATTENTION/'fusion-lookahead-probe/candidate.py',
+        'reference.py': ATTENTION/'official/reference.py',
+        'checks.py': ATTENTION/'official/checks.py',
+        'modal_worker.py': ATTENTION/'modal_worker.py',
+        'LICENSE': REPO/'LICENSE', 'THIRD_PARTY_NOTICES.md': REPO/'THIRD_PARTY_NOTICES.md'}
+
+
+def frozen_payload(head):
+    if not re.fullmatch(r'[0-9a-f]{40}', head):
+        raise ValueError('Exact reviewed commit required')
+    if subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=REPO, text=True).strip() != head:
+        raise ValueError('HEAD differs from reviewed freeze')
+    paths, hashes = payload(), {}
+    for name, path in [*paths.items(), ('controller.py', Path(__file__))]:
+        if not path.is_file() or path.is_symlink():
+            raise ValueError('Regular frozen payload file required: '+name)
+        raw = path.read_bytes()
+        key = path.relative_to(REPO).as_posix()
+        if raw != subprocess.check_output(['git', 'show', head+':'+key], cwd=REPO):
+            raise ValueError('Committed source mismatch: '+name)
+        hashes[name] = hashlib.sha256(raw).hexdigest()
+        if path.suffix == '.py':
+            compile(raw, name, 'exec')
+    for name, expected in EXPECTED.items():
+        if hashes[name] != expected:
+            raise ValueError('Fixed source/license binding mismatch: '+name)
+    return paths, hashes
+
+
+def timestamp(value):
+    result = datetime.fromisoformat(value.replace('Z', '+00:00'))
+    if result.utcoffset() is None:
+        raise ValueError('Timezone required')
+    return result
+
+
+def validate_slot(slot, head, current=None):
+    current = current or datetime.now(timezone.utc)
+    if not (slot.get('state') == 'granted' and slot.get('experiment') == EXPERIMENT
+            and slot.get('source_commit') == head and slot.get('gpu') == 'H200'):
+        raise ValueError('Source-bound serialized slot receipt required')
+    if not (-5 <= (current-timestamp(slot['granted_utc'])).total_seconds() < 900
+            and (timestamp(slot['expires_utc'])-current).total_seconds() > WATCHDOG_SECONDS):
+        raise ValueError('Slot receipt stale or too short')
+
+
+def gross(billing):
+    return max(Decimal(billing['metered_cost']), sum(
+        (Decimal(v) for v in billing['metered_cost_breakdown'].values()), Decimal(0)))
+
+
+def resource_rate(rates):
+    return (Decimal(rates['gpu_hour_cost_h200'])+2*Decimal(rates['cpu_hour_cost'])
+        +8*Decimal(rates['mem_gib_hour_cost']))/3600
+
+
+def reserve(rate):
+    if rate <= 0 or Decimal(WATCHDOG_SECONDS)*rate*2+Decimal('.02') > RESERVE:
+        raise ValueError('Live resource rate exceeds fixed free-credit reserve')
+    return RESERVE
+
+
+def validate_budget(receipt, billing, current=None):
+    current = current or datetime.now(timezone.utc)
+    if not (receipt.get('workspace') == 'xuefeng-zhu'
+            and Decimal(receipt['verified_net_spend_cap_usd']) == 0
+            and Decimal(receipt['total_spend_usd']) == 0 and receipt.get('changes_made') is False
+            and Decimal(billing['billed_cost']) == 0):
+        raise ValueError('Existing paid-$0 guardrail required')
+    if not -5 <= (current-timestamp(receipt['observed_utc'])).total_seconds() < 900:
+        raise ValueError('Billing observation stale')
+    floor = Decimal(receipt['verified_credit_balance_usd'])-max(
+        Decimal(0), gross(billing)-Decimal(receipt['total_usage_usd']))
+    if floor <= RESERVE:
+        raise ValueError('Verified free-credit floor cannot cover reserve')
+    return floor
+
+
+def stopped(apps):
+    return all(row.get('state') == 'stopped' and int(row.get('tasks', -1)) == 0 for row in apps)
+
+
+def configure_existing_auth():
+    if not (AUTH.is_file() and not AUTH.is_symlink() and AUTH.stat().st_uid == os.getuid()
+            and AUTH.stat().st_mode & 0o777 == 0o600):
+        raise ValueError('Existing protected config required')
+    if any(os.environ.get(key) for key in ('MODAL_TOKEN_ID', 'MODAL_TOKEN_SECRET',
+            'MODAL_OAUTH_REFRESH_TOKEN', 'MODAL_OAUTH_CLIENT_ID', 'MODAL_OAUTH_CLIENT_SECRET')):
+        raise ValueError('Credential environment override forbidden')
+    os.environ['MODAL_CONFIG_PATH'] = str(AUTH)
+    os.environ['MODAL_PROFILE'] = 'xuefeng-zhu'
+
+
+def cli(*args):
+    # Token expiry warnings may contain an identifier; capture without forwarding.
+    code = ('import warnings; from modal.exception import ServerWarning; '
+        'warnings.filterwarnings("ignore",message=r"Your Modal token .* expires",category=ServerWarning); '
+        'from modal.__main__ import main; main()')
+    env = os.environ.copy()
+    env['TZ'] = 'UTC'
+    child = subprocess.run([str(PYTHON), '-c', code, *args], env=env,
+        capture_output=True, text=True, timeout=25)
+    if child.returncode:
+        raise RuntimeError('Supported Modal operation failed: '+' '.join(args[:2]))
+    return json.loads(child.stdout) if '--json' in args else {'exit_code': child.returncode}
+
+
+def verify_existing_auth(current=None):
+    # Read-only CLI status, not credential generation. Never emit raw stdout.
+    env = os.environ.copy()
+    env['TZ'] = 'UTC'
+    child = subprocess.run([str(PYTHON.parent/'modal'), 'token', 'info', '--profile', 'xuefeng-zhu'],
+        env=env, capture_output=True, text=True, timeout=25)
+    if child.returncode:
+        raise RuntimeError('Existing Modal authentication status failed; no renewal')
+    text = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', child.stdout)
+    workspace = re.search(r'^Workspace:\s*([^\s(]+)', text, re.M)
+    expiry = re.search(r'^Expires at:\s*(\d{4}-\d{2}-\d{2} \d{2}:\d{2}:\d{2}) UTC\s*$', text, re.M)
+    if not workspace or workspace.group(1) != 'xuefeng-zhu' or not expiry:
+        raise ValueError('Expected workspace and finite UTC expiry required')
+    expires = datetime.strptime(expiry.group(1), '%Y-%m-%d %H:%M:%S').replace(tzinfo=timezone.utc)
+    current = current or datetime.now(timezone.utc)
+    if (expires-current).total_seconds() <= WATCHDOG_SECONDS+60:
+        raise ValueError('Existing credential expires too soon; no renewal')
+    return {'workspace': 'xuefeng-zhu', 'expires_at_utc': expires.isoformat(), 'status': 'verified'}
+
+
+def make_remote_entry():
+    # Closure-free: protected auth and local billing/slot receipts are absent.
+    def entry():
+        import base64, hashlib, os, signal, subprocess, sys, time
+        from pathlib import Path
+        root, output = Path('/opt/attention-baseline-identity'), Path('/tmp/attention-baseline-identity')
+        log_path = Path('/tmp/attention-baseline-identity-worker.log')
+        started = time.monotonic()
+        with log_path.open('wb') as log:
+            child = subprocess.Popen([sys.executable, str(root/'worker.py'), '--output-dir', str(output),
+                '--deadline', '180'], cwd=root, stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
+            try:
+                code = child.wait(timeout=195)
+            except subprocess.TimeoutExpired:
+                os.killpg(child.pid, signal.SIGKILL)
+                child.wait(timeout=3)
+                code = 124
+        reply = {'exit_code': code, 'worker_wall_seconds': time.monotonic()-started}
+        summary = output/'summary.json'
+        if summary.is_file() and not summary.is_symlink() and summary.stat().st_size <= 1024*1024:
+            raw = summary.read_bytes()
+            reply.update(report_json=raw.decode('utf-8'), report_sha256=hashlib.sha256(raw).hexdigest())
+        else:
+            reply['error'] = 'Missing or oversized summary'
+        trace, compressed = output/'activity-trace.json', output/'activity-trace.json.gz'
+        if trace.exists() or compressed.exists():
+            if (not trace.is_file() or trace.is_symlink() or trace.stat().st_size > 32*1024*1024
+                    or not compressed.is_file() or compressed.is_symlink() or compressed.stat().st_size > 6*1024*1024):
+                reply['artifact_error'] = 'Trace absent or exceeds fixed raw/compressed limit'
+            else:
+                raw, packed = trace.read_bytes(), compressed.read_bytes()
+                encoding = base64.b64encode(packed).decode('ascii')
+                if len(encoding) > 8*1024*1024:
+                    reply['artifact_error'] = 'Trace encoding exceeds transport limit'
+                else:
+                    reply['trace'] = dict(raw_bytes=len(raw), raw_sha256=hashlib.sha256(raw).hexdigest(),
+                        gzip_bytes=len(packed), gzip_sha256=hashlib.sha256(packed).hexdigest(), gzip_base64=encoding)
+        if code:
+            with log_path.open('rb') as stream:
+                stream.seek(max(0, log_path.stat().st_size-4096))
+                reply['worker_log_tail'] = stream.read(4096).decode('utf-8', errors='replace')
+        return reply
+    return entry
+
+
+def verified_result(reply):
+    if not isinstance(reply, dict) or type(reply.get('exit_code')) is not int:
+        raise ValueError('Invalid remote reply')
+    if not isinstance(reply.get('report_json'), str):
+        return None, None, None
+    raw = reply['report_json'].encode('utf-8')
+    if len(raw) > MAX_RESULT or hashlib.sha256(raw).hexdigest() != reply.get('report_sha256'):
+        raise ValueError('Summary source/size digest mismatch')
+    report = json.loads(raw)
+    if not isinstance(report, dict):
+        raise ValueError('Summary must be an object')
+    trace = reply.get('trace')
+    artifact = None
+    if trace is not None:
+        if not isinstance(trace.get('gzip_base64'), str) or len(trace['gzip_base64']) > MAX_TRACE_ENCODING:
+            raise ValueError('Trace transport bound')
+        packed = base64.b64decode(trace['gzip_base64'], validate=True)
+        if (len(packed) > MAX_GZIP or len(packed) != trace.get('gzip_bytes')
+                or hashlib.sha256(packed).hexdigest() != trace.get('gzip_sha256')):
+            raise ValueError('Compressed trace digest mismatch')
+        with gzip.GzipFile(fileobj=io.BytesIO(packed)) as stream:
+            decoded = stream.read(MAX_TRACE+1)
+        if (len(decoded) > MAX_TRACE or len(decoded) != trace.get('raw_bytes')
+                or hashlib.sha256(decoded).hexdigest() != trace.get('raw_sha256')):
+            raise ValueError('Raw trace digest mismatch')
+        artifact = {'gzip': packed, 'raw': decoded,
+            'manifest': {k: v for k, v in trace.items() if k != 'gzip_base64'}}
+    return raw, report, artifact
+
+
+def validate_report(report, hashes, artifact):
+    """Bind completion claims to frozen sources and the verified raw trace.
+
+    The caller saves raw results first, including failed/foreign-source evidence.
+    A partial diagnostic is preserved but cannot satisfy completion admission.
+    """
+    if not isinstance(report, dict):
+        raise ValueError('No diagnostic summary retrieved')
+    expected = {name: digest for name, digest in hashes.items()
+        if name not in ('controller.py', 'worker.py')}
+    if report.get('worker_sha256') != hashes['worker.py'] or report.get('verified_hashes') != expected:
+        raise ValueError('Retrieved worker/source bindings differ from frozen payload')
+    if report.get('passed') is not True or report.get('status') != 'complete':
+        return False
+    if artifact is None:
+        raise ValueError('Complete activity diagnostic must retain its raw trace')
+    trace = report.get('trace_artifacts', {})
+    manifest = artifact['manifest']
+    for name, bytes_key, hash_key in (
+        ('activity-trace.json', 'raw_bytes', 'raw_sha256'),
+        ('activity-trace.json.gz', 'gzip_bytes', 'gzip_sha256')):
+        if trace.get(name) != {'bytes': manifest[bytes_key], 'sha256': manifest[hash_key]}:
+            raise ValueError('Summary trace binding differs from retained artifact')
+    return True
+
+
+def launch(head, slot_path, billing_path):
+    ledger, result_path = HERE/'run.local.json', HERE/'result.json'
+    if ledger.exists() or result_path.exists():
+        raise ValueError('Existing request/result: reconcile; never duplicate')
+    paths, hashes = frozen_payload(head)
+    slot, cap = json.loads(slot_path.read_text()), json.loads(billing_path.read_text())
+    validate_slot(slot, head)
+    configure_existing_auth()
+    auth_status = verify_existing_auth()
+    import modal
+    from modal.exception import ServerWarning
+    warnings.filterwarnings('ignore', message=r'Your Modal token .* expires', category=ServerWarning)
+    if Path(modal.config.user_config_path).resolve() != AUTH.resolve():
+        raise ValueError('Supported config path mismatch')
+    subprocess.run(['git', 'check-ignore', '-q', 'local-notes/modal-auth.toml'], cwd=ORIGINAL, check=True)
+    if subprocess.check_output(['git', 'ls-files', 'local-notes/modal-auth.toml'], cwd=ORIGINAL):
+        raise ValueError('Protected credential config unexpectedly tracked')
+    billing, apps = cli('billing', 'summary', '--json'), cli('app', 'list', '--env', 'main', '--json')
+    if not stopped(apps):
+        raise ValueError('Serialized slot unavailable: existing Modal app/tasks active')
+    rates = cli('billing', 'rates', '--json')
+    rate = resource_rate(rates)
+    cost_reserve, free_floor = reserve(rate), validate_budget(cap, billing)
+    image = modal.Image.from_id(IMAGE)
+    for name, path in paths.items():
+        image = image.add_local_file(path, '/opt/attention-baseline-identity/'+name, copy=False)
+    app = modal.App('okc-attention-baseline-runtime-identity', include_source=False)
+    fn = app.function(image=image, gpu='H200', cpu=(2, 2), memory=(8192, 8192),
+        min_containers=0, max_containers=1, buffer_containers=0, scaledown_window=2,
+        timeout=FUNCTION_SECONDS, startup_timeout=STARTUP_SECONDS, retries=0,
+        serialized=True, include_source=False, block_network=True,
+        restrict_modal_access=True)(make_remote_entry())
+    validate_slot(slot, head)
+    validate_budget(cap, billing)
+    record = dict(experiment=EXPERIMENT, state='reserved', app_id=None, created_utc=now(),
+        source_commit=head, payload_sha256=hashes, base_image=IMAGE,
+        verified_auth=auth_status, billing_before=billing, apps_before=apps,
+        resource_rate_usd_per_second=str(rate), cost_reserve_usd=str(cost_reserve),
+        conservative_free_credit_floor_usd=str(free_floor), paid_limit_usd='0',
+        slot_receipt_sha256=hashlib.sha256(slot_path.read_bytes()).hexdigest(),
+        billing_guardrail_receipt_sha256=hashlib.sha256(billing_path.read_bytes()).hexdigest(),
+        resources=dict(gpu='H200', cpu=[2, 2], memory_mib=[8192, 8192], max_containers=1,
+            worker_deadline=WORKER_SECONDS, child_timeout=CHILD_SECONDS,
+            function_timeout=FUNCTION_SECONDS, startup_timeout=STARTUP_SECONDS,
+            watchdog=WATCHDOG_SECONDS, retries=0, explicit_invocations=1),
+        official_check=False, formal_entry=False, candidate_change=False)
+    with ledger.open('x') as stream:
+        stream.write(json.dumps(record, indent=2)+'\n')
+    started = time.monotonic()
+    lock, expired, stop_result = threading.Lock(), threading.Event(), {}
+
+    def stop():
+        with lock:
+            if not app.app_id or stop_result.get('exit_code') == 0:
+                return
+            # Retry only a failed stop request; never create another app/invocation.
+            stop_result.update(app_id=app.app_id, requested_utc=now())
+            try:
+                stop_result.update(cli('app', 'stop', app.app_id, '--yes', '--env', 'main'))
+            except Exception as exc:
+                stop_result['error_type'] = type(exc).__name__
+
+    def watchdog():
+        expired.set()
+        stop()
+
+    timer = threading.Timer(WATCHDOG_SECONDS, watchdog)
+    timer.daemon = True
+    try:
+        timer.start()
+        with app.run(detach=False, environment_name='main'):
+            record.update(state='accepted', app_id=app.app_id, accepted_utc=now())
+            save(ledger, record)
+            print('Accepted single Attention baseline identity diagnostic '+app.app_id, flush=True)
+            if expired.is_set():
+                raise TimeoutError('Watchdog expired before invocation')
+            reply = fn.remote()
+            raw, report, artifact = verified_result(reply)
+            if raw is not None:
+                with result_path.open('xb') as stream:
+                    stream.write(raw)
+            if artifact is not None:
+                (HERE/'activity-trace.json.gz').write_bytes(artifact['gzip'])
+                save(HERE/'trace-manifest.json', artifact['manifest'])
+            record.update(state='function-terminal', result_retrieved=raw is not None,
+                exit_code=reply['exit_code'], worker_status=(report or {}).get('status'),
+                worker_passed=(report or {}).get('passed'), report_sha256=reply.get('report_sha256'),
+                worker_wall_seconds=reply.get('worker_wall_seconds'), trace_retrieved=artifact is not None,
+                error=reply.get('error'), artifact_error=reply.get('artifact_error'),
+                worker_log_tail=reply.get('worker_log_tail'))
+            # Save unexpected source/partial artifacts before interpreting claims.
+            save(ledger, record)
+            record['completion_verified'] = validate_report(report, hashes, artifact)
+            save(ledger, record)
+            stop()
+    except Exception as exc:
+        record.update(state='needs-reconciliation', app_id=app.app_id, error_type=type(exc).__name__)
+        print('Baseline diagnostic requires reconciliation; do not relaunch.', flush=True)
+    finally:
+        stop()
+        timer.cancel()
+        try:
+            states = cli('app', 'list', '--env', 'main', '--json')
+            exact = next((row for row in states if row.get('app_id') == app.app_id), None)
+            record['shutdown_observation'] = dict(observed_utc=now(), app=exact)
+            record['shutdown_verified'] = bool(exact and stopped([exact]))
+            record['all_apps_stopped_zero_tasks'] = stopped(states)
+            record['billing_after'] = cli('billing', 'summary', '--json')
+            record['observed_gross_delta_usd'] = str(max(Decimal(0), gross(record['billing_after'])-gross(billing)))
+            record['paid_after_usd'] = record['billing_after']['billed_cost']
+            if Decimal(record['paid_after_usd']) != 0:
+                raise ValueError('Paid-$0 invariant failed')
+        except Exception as exc:
+            record.update(shutdown_verified=False, shutdown_error_type=type(exc).__name__)
+        record.update(explicit_stop=stop_result, client_finished_utc=now(),
+            client_wall_seconds=time.monotonic()-started)
+        save(ledger, record)
+        print(json.dumps({key: record.get(key) for key in ('app_id', 'state', 'exit_code',
+            'worker_status', 'worker_passed', 'trace_retrieved', 'shutdown_verified',
+            'all_apps_stopped_zero_tasks', 'observed_gross_delta_usd', 'paid_after_usd')}), flush=True)
+    return 0 if (record.get('exit_code') == 0 and record.get('completion_verified') is True
+        and record.get('worker_passed') is True and record.get('worker_status') == 'complete'
+        and record.get('shutdown_verified')) else 1
+
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--frozen-head', required=True)
+    parser.add_argument('--launch', action='store_true')
+    parser.add_argument('--slot', type=Path)
+    parser.add_argument('--billing-receipt', type=Path)
+    args = parser.parse_args()
+    if args.launch:
+        if args.slot is None or args.billing_receipt is None:
+            parser.error('--launch requires --slot and --billing-receipt')
+        raise SystemExit(launch(args.frozen_head, args.slot, args.billing_receipt))
+    _, hashes = frozen_payload(args.frozen_head)
+    print(json.dumps(dict(mode='offline-preflight', source_commit=args.frozen_head,
+        payload_sha256=hashes, app_created=False, gpu_requested=False), indent=2))
