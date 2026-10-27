@@ -46,7 +46,7 @@ def fixture_csv(expected, successful):
     return stream.getvalue()
 
 
-FAKE_NCU = '''import json,sys
+FAKE_NCU = '''import base64,hashlib,json,sys
 from pathlib import Path
 c=json.loads(Path(__file__).with_suffix('.json').read_text())
 a=sys.argv[1:]
@@ -56,15 +56,24 @@ if '--export' in a:
     assert a[a.index('--config-file')+1]=='0'
     if c['mode']=='pass':
         p=Path(a[a.index('--export')+1])
-        p.write_bytes(b'OFFLINE_SIMULATED_REPORT_NOT_NCU\\n'+json.dumps({'csv':c['csv']}).encode())
-        print(c['csv'],end='')
+        if c.get('native_report_base64'):
+            p.write_bytes(base64.b64decode(c['native_report_base64']))
+            print(c['native_capture_stdout'],end='')
+        else:
+            p.write_bytes(b'OFFLINE_SIMULATED_REPORT_NOT_NCU\\n'+json.dumps({'csv':c['csv']}).encode())
+            print(c['csv'],end='')
     else:
         print(c['failed_stdout'],end='')
 elif '--import' in a:
     raw=Path(a[a.index('--import')+1]).read_bytes()
-    marker=b'OFFLINE_SIMULATED_REPORT_NOT_NCU\\n'
-    assert raw.startswith(marker)
-    print(json.loads(raw[len(marker):])['csv'],end='')
+    if c.get('native_report_base64'):
+        assert hashlib.sha256(raw).hexdigest()==c['native_report_sha256']
+        assert '--print-fp' in a and a[a.index('--print-units')+1]=='base'
+        print(c['native_import_stdout'],end='')
+    else:
+        marker=b'OFFLINE_SIMULATED_REPORT_NOT_NCU\\n'
+        assert raw.startswith(marker)
+        print(json.loads(raw[len(marker):])['csv'],end='')
 else:
     raise SystemExit('Unexpected simulated NCU command')
 '''
@@ -96,7 +105,7 @@ def packaged_reply(controller, payload, output, exit_code):
     return reply
 
 
-def run(destination):
+def run(destination, native_fixtures=False):
     destination = Path(destination).resolve()
     destination.mkdir(parents=True, exist_ok=False)
     worker = load('executor_dry_worker', HERE/'worker.py')
@@ -122,6 +131,16 @@ def run(destination):
     assert tiny['metrics']['sm__cycles_elapsed.avg']['value'] == 5541.35
     failed_stdout = next(c['stdout'] for c in previous['commands'] if '--export' in c['argv'])
     csv_fixture = fixture_csv(expected, successful['counter_report'])
+    native_config = {}
+    if native_fixtures:
+        import base64
+        native = json.loads((HERE/'result.json').read_text())
+        canonical = json.loads((HERE/'OFFLINE_EXPORT.json').read_text())
+        native_config = dict(native_report_base64=base64.b64encode(
+            (HERE/'artifacts/baseline.ncu-rep').read_bytes()).decode('ascii'),
+            native_report_sha256=digest(HERE/'artifacts/baseline.ncu-rep'),
+            native_capture_stdout=next(c['stdout'] for c in native['commands'] if '--export' in c['argv']),
+            native_import_stdout=next(c['stdout'] for c in canonical['commands'] if '--import' in c['argv']))
     results = {}
     with tempfile.TemporaryDirectory(prefix='attention-capture-cpu-') as temporary:
         scratch = Path(temporary)
@@ -132,7 +151,7 @@ def run(destination):
             fake.write_text('#!'+sys.executable+'\n'+FAKE_NCU)
             fake.chmod(0o700)
             fake.with_suffix('.json').write_text(json.dumps(dict(mode=mode,
-                csv=csv_fixture, failed_stdout=failed_stdout)))
+                csv=csv_fixture, failed_stdout=failed_stdout, **native_config)))
             report = copy.deepcopy(previous)
             for key in ('error', 'error_type', 'traceback', 'ncu_report_error',
                     'ncu_report_artifact', 'report_roundtrip', 'counter_report',
@@ -143,6 +162,8 @@ def run(destination):
                 worker_sha256=hashes['worker.py'],
                 verified_hashes={k:v for k,v in hashes.items() if k not in ('worker.py','controller.py')},
                 commands=[], artifact_manifest={}, counter_sessions_attempted=0)
+            if native_fixtures:
+                report['kind'] = 'OFFLINE REPLAY OF SAVED NATIVE ARTIFACTS; NO NEW MEASUREMENT'
             error = None
             try:
                 worker.collect_counter(str(fake), HERE, output, command, parser,
@@ -194,6 +215,11 @@ def run(destination):
         native_installed_version_rechecked=False,
         qualification='All new report bytes/signatures/metric combinations are simulated fixture data, not native NCU output or new correctness/timing measurements.',
         scenarios=results)
+    if native_fixtures:
+        summary.update(kind='CPU REPLAY OF SAVED NATIVE ARTIFACTS',
+            retained_native_report_reused=True,
+            retained_native_report_sha256=native_config['native_report_sha256'],
+            qualification='Replays immutable native capture/report and actual CPU canonical import through the corrected executor. NCU subprocess outputs and native-worker boundary are substituted; no new profiling, correctness or timing measurement occurred.')
     (destination/'DRY_RUN_SUMMARY.json').write_text(json.dumps(summary, indent=2)+'\n')
     return summary
 
@@ -201,6 +227,8 @@ def run(destination):
 if __name__ == '__main__':
     args = argparse.ArgumentParser(description=__doc__)
     args.add_argument('--output-dir', type=Path, required=True)
-    summary = run(args.parse_args().output_dir)
+    args.add_argument('--native-fixtures', action='store_true')
+    options = args.parse_args()
+    summary = run(options.output_dir, options.native_fixtures)
     print(json.dumps({k:summary[k] for k in ('kind','passed','new_gpu_apps',
         'native_ncu_report_validated','credential_or_service_calls')}))

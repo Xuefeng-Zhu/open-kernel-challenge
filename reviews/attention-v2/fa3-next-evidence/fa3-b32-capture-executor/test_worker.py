@@ -104,6 +104,8 @@ class Tests(unittest.TestCase):
             target = str(Path(temporary).resolve()/'baseline.ncu-rep')
             self.assertEqual(capture[capture.index('--export')+1], target)
             self.assertEqual(imported[imported.index('--import')+1], target)
+            self.assertEqual(imported[imported.index('--print-units')+1], 'base')
+            self.assertIn('--print-fp', imported)
             self.assertNotIn('--replay-mode', imported)
             for name in ('baseline.ncu-rep', 'profile-original.csv', 'profile-imported.csv'):
                 self.assertIn(name, result['artifact_manifest'])
@@ -250,6 +252,61 @@ class Tests(unittest.TestCase):
         markers = w.progress_rows(output.getvalue())
         self.assertEqual([row['phase'] for row in markers if row.get('passed') is True],
             ['pre', 'measured', 'post'])
+
+    def test_actual_canonical_imports_are_byte_identical_and_exact_to_capture(self):
+        exported = json.loads((HERE/'OFFLINE_EXPORT.json').read_text())
+        original = json.loads((HERE/'result.json').read_text())
+        first, second = exported['commands'][2:4]
+        self.assertEqual([first['returncode'], second['returncode']], [0, 0])
+        self.assertEqual(first['stdout'].encode(), second['stdout'].encode())
+        self.assertTrue(exported['canonical_stdout_identical'])
+        self.assertEqual(exported['report_before_sha256'], exported['report_after_sha256'])
+        parsed = [reader.parse_ncu_csv(command['stdout'], w.METRICS) for command in (first, second)]
+        capture = original['counter_report']
+        before = dict(bytes=exported['report_bytes'], sha256=exported['report_before_sha256'])
+        after = dict(bytes=exported['report_bytes'], sha256=exported['report_after_sha256'])
+        for item in parsed:
+            self.assertEqual(item['row_count'], 1)
+            self.assertEqual(item['kernel_name'], capture['kernel_name'])
+            self.assertTrue(w.compare_roundtrip(capture, item, before, after)['passed'])
+            self.assertEqual({name: (item['metrics'][name]['value'], item['metrics'][name]['unit'])
+                for name in w.METRICS}, {name: (capture['metrics'][name]['value'], capture['metrics'][name]['unit'])
+                for name in w.METRICS})
+        self.assertEqual(parsed[0], parsed[1])
+
+    def test_legacy_default_import_comparator_still_fails_without_rounding(self):
+        original = json.loads((HERE/'result.json').read_text())
+        self.assertFalse(original['passed'])
+        self.assertFalse(original['report_roundtrip']['passed'])
+        roundtrip = original['report_roundtrip']
+        result = w.compare_roundtrip(original['counter_report'], original['imported_counter_report'],
+            roundtrip['report_before_import'], roundtrip['report_after_import'])
+        self.assertFalse(result['passed'])
+        self.assertFalse(result['metric_values_units_equal'])
+        self.assertTrue(result['report_unchanged'])
+
+    def test_real_import_builder_matches_both_empirically_validated_commands(self):
+        exported = json.loads((HERE/'OFFLINE_EXPORT.json').read_text())
+        for command in exported['commands'][2:4]:
+            argv = command['argv']
+            path = Path(argv[argv.index('--import')+1])
+            self.assertEqual(w.import_argv(argv[0], path), argv)
+            self.assertEqual(argv[argv.index('--print-units')+1], 'base')
+            self.assertIn('--print-fp', argv)
+            for forbidden in ('--units', '--export', '--replay-mode', '--kernel-name'):
+                self.assertNotIn(forbidden, argv)
+
+    def test_actual_installed_help_advertises_canonical_import_flags(self):
+        exported = json.loads((HERE/'OFFLINE_EXPORT.json').read_text())
+        help_text = exported['commands'][1]['stdout']
+        self.assertIn('--print-units', help_text)
+        self.assertIn('--print-fp', help_text)
+        argv = exported['commands'][2]['argv']
+        contract = w.validate_import_help(help_text, argv)
+        self.assertTrue(contract['all_flags_advertised'])
+        self.assertTrue(contract['offline_only'])
+        with self.assertRaises(ValueError):
+            w.validate_import_help(help_text.replace('--print-fp', '--not-print-fp'), argv)
 
 
 if __name__ == '__main__':

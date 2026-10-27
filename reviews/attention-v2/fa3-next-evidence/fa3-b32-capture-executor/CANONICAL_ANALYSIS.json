@@ -1,0 +1,86 @@
+{
+  "created_utc": "2026-10-27T06:24:44.169000+00:00",
+  "verification_scope": "Recovered native report plus two actual CPU-only canonical imports; separate from unchanged frozen executor verdict",
+  "canonical_artifact_verified": true,
+  "checks": {
+    "two_successful_identical_import_commands": true,
+    "unchanged_report_hash": true,
+    "unchanged_report_bytes": true,
+    "canonical_stdout_byte_identical": true,
+    "one_row_each": true,
+    "exact_expected_ncu_signature_and_launch": true,
+    "exact_four_value_raw_strings_and_units": true,
+    "canonical_matches_original_capture_exactly": true,
+    "native_source_binary_fixture_bindings": true,
+    "native_original_correctness": true,
+    "cpu_has_no_gpu_or_target": true
+  },
+  "native_frozen_executor_passed": false,
+  "native_frozen_exact_roundtrip_passed": false,
+  "native_frozen_result_sha256": "2dd7a86c3b8d42599ffdd69becc2e4c6e6c4746a692e1f4f11c3faf260a34ca6",
+  "report_sha256": "4104eaf52a0f44bbfc03703af2355902d16cb1f19bebde4816c3b87a58a3b6b6",
+  "report_bytes": 35756,
+  "native_case": {
+    "batch": 32,
+    "q_len": 8,
+    "ctx": 80000,
+    "heads": "tp8",
+    "layer": "full",
+    "page": 1,
+    "kv_scale": 1.0,
+    "spread": "agentic",
+    "dist": "coherent",
+    "seed": 135741
+  },
+  "canonical_metrics": {
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": {
+      "value": 11.42,
+      "unit": "%",
+      "raw": "11.42"
+    },
+    "dram__throughput.avg.pct_of_peak_sustained_elapsed": {
+      "value": 36.55,
+      "unit": "%",
+      "raw": "36.55"
+    },
+    "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct": {
+      "value": 43.37,
+      "unit": "%",
+      "raw": "43.37"
+    },
+    "sm__warps_active.avg.pct_of_peak_sustained_active": {
+      "value": 12.49,
+      "unit": "%",
+      "raw": "12.49"
+    }
+  },
+  "native_default_import_metrics": {
+    "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": {
+      "value": 11.418343,
+      "unit": "%",
+      "raw": "11.418343"
+    },
+    "dram__throughput.avg.pct_of_peak_sustained_elapsed": {
+      "value": 36.551689,
+      "unit": "%",
+      "raw": "36.551689"
+    },
+    "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct": {
+      "value": 43.36881,
+      "unit": "%",
+      "raw": "43.368810"
+    },
+    "sm__warps_active.avg.pct_of_peak_sustained_active": {
+      "value": 12.494386,
+      "unit": "%",
+      "raw": "12.494386"
+    }
+  },
+  "no_rounding_or_tolerance_applied": true,
+  "graph_abi_equivalence": "UNRESOLVED",
+  "internal_scheduler_split_packing_equivalence": "UNKNOWN",
+  "interpretation": "Four metrics with distinct denominators from one eager mainloop; not whole-call latency shares or proof of HBM saturation/register causality.",
+  "native_gpu_apps": 1,
+  "additional_gpu_apps": 0,
+  "cpu_report_only_apps": 1
+}

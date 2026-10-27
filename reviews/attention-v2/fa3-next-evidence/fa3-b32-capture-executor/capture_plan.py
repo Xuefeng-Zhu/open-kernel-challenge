@@ -52,7 +52,7 @@ def capture_command(ncu, python, worker, report):
 def import_command(ncu, report):
     return [str(ncu), '--config-file', '0', '--import', report_path(report),
         '--rename-kernels', '0', '--print-kernel-base', 'demangled',
-        '--page', 'raw', '--csv']
+        '--print-units', 'base', '--print-fp', '--page', 'raw', '--csv']
 
 
 def mangled_import_command(ncu, report):

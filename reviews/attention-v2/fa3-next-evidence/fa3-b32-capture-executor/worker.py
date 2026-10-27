@@ -47,7 +47,7 @@ EXPECTED = {
     'cpu_identity.py': '29e4f87f294142a38f926a7bf6f57e8032d615be7ab0da4a17e2f0962a50ec92',
     'LICENSE': '1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747',
     'THIRD_PARTY_NOTICES.md': 'c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b',
-    'capture_plan.py': 'be067afbc933020f41ea12f103c15263bc0e1c991c4a80ec1a1b6c1b763c26db',
+    'capture_plan.py': '2b6f7639ca51ca30a299f67a4787a7252debce0d69056dbb944ab67d78eb4c76',
     'expected-native.json': 'f0ac3f62f101201d15e66534ce62b1534cbceaa71243d97c72c2865ad2170795',
 }
 FILES = (*EXPECTED, 'csv_helpers.py')
@@ -111,11 +111,8 @@ def profile_argv(ncu, root, report_path):
 
 
 def import_argv(ncu, report_path):
-    report_path = Path(report_path)
-    if not report_path.is_absolute() or report_path.suffix != '.ncu-rep':
-        raise ValueError('Import must read the same absolute .ncu-rep path')
-    return [str(ncu), '--config-file', '0', '--import', str(report_path), '--rename-kernels', '0',
-        '--print-kernel-base', 'demangled', '--page', 'raw', '--csv']
+    plan = load(Path(__file__).resolve().parent/'capture_plan.py', 'fa3_import_capture_plan')
+    return plan.import_command(ncu, report_path)
 
 
 def load_expected_native(root):

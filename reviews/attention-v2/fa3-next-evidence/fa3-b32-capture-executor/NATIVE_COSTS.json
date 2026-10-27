@@ -1,0 +1,14 @@
+{
+  "native_app_id": "ap-iWkGTqu50RkaYoIsbXg8aq",
+  "cpu_app_id": "ap-1XKhhpozlSiSFkrtthxHp7",
+  "native_observed_account_gross_delta_usd": "0.08000000",
+  "cpu_observed_account_gross_delta_usd": "0",
+  "native_ephemeral_delta_usd": "0.08353064",
+  "cpu_ephemeral_delta_usd": "0E-8",
+  "paid_after_usd": [
+    "0E-8",
+    "0E-8"
+  ],
+  "all_apps_stopped_zero_tasks": true,
+  "qualification": "Account-level provisional readings, not final per-app invoices. Gross readings are rounded; no exact cost is inferred from them."
+}

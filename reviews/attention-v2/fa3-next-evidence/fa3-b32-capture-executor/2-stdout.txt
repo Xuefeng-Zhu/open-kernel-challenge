@@ -1,0 +1,129 @@
+Device NVIDIA H200 (GH100)
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+Metric Name                                                                 Metric Type     Metric Unit     Metric Description                                                    
+--------------------------------------------------------------------------- --------------- --------------- ----------------------------------------------------------------------
+sm__pipe_tensor_cycles_active.avg                                           Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg across all sub-unit instances)                     
+sm__pipe_tensor_cycles_active.avg.peak_sustained                            Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg peak sustained rate across all sub-unit instances) 
+sm__pipe_tensor_cycles_active.avg.peak_sustained_active                     Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg peak sustained rate achieved during unit active    
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.avg.peak_sustained_active.per_second          Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg peak sustained rate achieved during unit active    
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.avg.peak_sustained_elapsed                    Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg peak sustained rate achieved during elapsed        
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.avg.peak_sustained_elapsed.per_second         Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg peak sustained rate achieved during elapsed        
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.avg.per_cycle_active                          Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg of the number of operations per unit active cycle  
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.avg.per_cycle_elapsed                         Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg of the number of operations per elapsed cycle      
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.avg.per_second                                Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg of the number of operations per second across all  
+                                                                                                            sub-unit instances)                                                   
+sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_active              Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg percent of the peak sustained rate achieved        
+                                                                                                            during unit active cycles across all sub-unit instances)              
+sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed             Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the avg percent of the peak sustained rate achieved        
+                                                                                                            during elapsed cycles across all sub-unit instances)                  
+sm__pipe_tensor_cycles_active.max                                           Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max across all sub-unit instances)                     
+sm__pipe_tensor_cycles_active.max.peak_sustained                            Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max peak sustained rate across all sub-unit instances) 
+sm__pipe_tensor_cycles_active.max.peak_sustained_active                     Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max peak sustained rate achieved during unit active    
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.max.peak_sustained_active.per_second          Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max peak sustained rate achieved during unit active    
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.max.peak_sustained_elapsed                    Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max peak sustained rate achieved during elapsed        
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.max.peak_sustained_elapsed.per_second         Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max peak sustained rate achieved during elapsed        
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.max.per_cycle_active                          Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max of the number of operations per unit active cycle  
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.max.per_cycle_elapsed                         Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max of the number of operations per elapsed cycle      
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.max.per_second                                Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max of the number of operations per second across all  
+                                                                                                            sub-unit instances)                                                   
+sm__pipe_tensor_cycles_active.max.pct_of_peak_sustained_active              Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max percent of the peak sustained rate achieved        
+                                                                                                            during unit active cycles across all sub-unit instances)              
+sm__pipe_tensor_cycles_active.max.pct_of_peak_sustained_elapsed             Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the max percent of the peak sustained rate achieved        
+                                                                                                            during elapsed cycles across all sub-unit instances)                  
+sm__pipe_tensor_cycles_active.min                                           Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min across all sub-unit instances)                     
+sm__pipe_tensor_cycles_active.min.peak_sustained                            Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min peak sustained rate across all sub-unit instances) 
+sm__pipe_tensor_cycles_active.min.peak_sustained_active                     Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min peak sustained rate achieved during unit active    
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.min.peak_sustained_active.per_second          Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min peak sustained rate achieved during unit active    
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.min.peak_sustained_elapsed                    Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min peak sustained rate achieved during elapsed        
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.min.peak_sustained_elapsed.per_second         Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min peak sustained rate achieved during elapsed        
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.min.per_cycle_active                          Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min of the number of operations per unit active cycle  
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.min.per_cycle_elapsed                         Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min of the number of operations per elapsed cycle      
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.min.per_second                                Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min of the number of operations per second across all  
+                                                                                                            sub-unit instances)                                                   
+sm__pipe_tensor_cycles_active.min.pct_of_peak_sustained_active              Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min percent of the peak sustained rate achieved        
+                                                                                                            during unit active cycles across all sub-unit instances)              
+sm__pipe_tensor_cycles_active.min.pct_of_peak_sustained_elapsed             Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the min percent of the peak sustained rate achieved        
+                                                                                                            during elapsed cycles across all sub-unit instances)                  
+sm__pipe_tensor_cycles_active.sum                                           Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum across all sub-unit instances)                     
+sm__pipe_tensor_cycles_active.sum.peak_sustained                            Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum peak sustained rate across all sub-unit instances) 
+sm__pipe_tensor_cycles_active.sum.peak_sustained_active                     Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum peak sustained rate achieved during unit active    
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.sum.peak_sustained_active.per_second          Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum peak sustained rate achieved during unit active    
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.sum.peak_sustained_elapsed                    Counter         cycle           # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum peak sustained rate achieved during elapsed        
+                                                                                                            cycles across all sub-unit instances)                                 
+sm__pipe_tensor_cycles_active.sum.peak_sustained_elapsed.per_second         Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum peak sustained rate achieved during elapsed        
+                                                                                                            cycles per second across all sub-unit instances)                      
+sm__pipe_tensor_cycles_active.sum.per_cycle_active                          Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum of the number of operations per unit active cycle  
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.sum.per_cycle_elapsed                         Counter                         # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum of the number of operations per elapsed cycle      
+                                                                                                            across all sub-unit instances)                                        
+sm__pipe_tensor_cycles_active.sum.per_second                                Counter         hz              # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum of the number of operations per second across all  
+                                                                                                            sub-unit instances)                                                   
+sm__pipe_tensor_cycles_active.sum.pct_of_peak_sustained_active              Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum percent of the peak sustained rate achieved        
+                                                                                                            during unit active cycles across all sub-unit instances)              
+sm__pipe_tensor_cycles_active.sum.pct_of_peak_sustained_elapsed             Counter         %               # of cycles where tensor pipe was active (This counter metric         
+                                                                                                            represents the sum percent of the peak sustained rate achieved        
+                                                                                                            during elapsed cycles across all sub-unit instances)                  
+

@@ -1,0 +1,72 @@
+{
+  "observed_utc": "2026-10-27T06:21:34.165294+00:00",
+  "app": {
+    "app_id": "ap-1XKhhpozlSiSFkrtthxHp7",
+    "description": "okc-attention-retained-report-cpu",
+    "state": "stopped",
+    "tasks": "0",
+    "created_at": "2026-10-27 06:21:02+00:00",
+    "stopped_at": "2026-10-27 06:21:14+00:00"
+  },
+  "independent_stopped_zero_tasks": true,
+  "all_apps_stopped_zero_tasks": true,
+  "apps": [
+    {
+      "app_id": "ap-1XKhhpozlSiSFkrtthxHp7",
+      "description": "okc-attention-retained-report-cpu",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 06:21:02+00:00",
+      "stopped_at": "2026-10-27 06:21:14+00:00"
+    },
+    {
+      "app_id": "ap-iWkGTqu50RkaYoIsbXg8aq",
+      "description": "okc-attention-fa3-b32-capture-executor",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 06:07:35+00:00",
+      "stopped_at": "2026-10-27 06:09:12+00:00"
+    },
+    {
+      "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+      "description": "okc-attention-fa3-b32-identity-recapture",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 05:36:49+00:00",
+      "stopped_at": "2026-10-27 05:38:11+00:00"
+    },
+    {
+      "app_id": "ap-FrbiCpeL0XEh1biFdE7zTF",
+      "description": "okc-attention-fa3-b32-counter",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:59:11+00:00",
+      "stopped_at": "2026-10-27 05:00:31+00:00"
+    },
+    {
+      "app_id": "ap-utcDysQOu5e1m3MSYhEZR4",
+      "description": "okc-attention-eager-counter-repair",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-27 04:37:28+00:00",
+      "stopped_at": "2026-10-27 04:37:43+00:00"
+    }
+  ],
+  "billing": {
+    "metered_cost": "2.87000000",
+    "billed_cost": "0E-8",
+    "adjustments": {
+      "plan_cost": "0E-8",
+      "credits": "-2.87000000",
+      "free_storage": "-0E-8",
+      "reservation_adjustment": "-0E-8",
+      "network_egress_allowance": "0E-8"
+    },
+    "metered_cost_breakdown": {
+      "network_egress": "0E-8",
+      "volumes": "0E-8",
+      "ephemeral_apps": "2.86844373",
+      "llm_tokens": "0E-8"
+    }
+  }
+}
