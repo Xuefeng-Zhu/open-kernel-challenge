@@ -1,0 +1,78 @@
+{
+  "audited_utc": "2026-10-27T05:15:58.863405+00:00",
+  "scope": "Local saved-evidence and installed-help audit only; no service/GPU/credential action",
+  "source_report_manifest_sha256": "f2933df8c788018e5caa45112dc21ac2aa6abd32729bf061042fc684c057c0cc",
+  "original_manifest_files_verified": 34,
+  "importable_report_paths_found": [],
+  "original_profile_has_export_option": false,
+  "installed_help_sha256": "ac75d8e8b9801ec2b43d18ffa925b9d9e6917ea5ed0c47634af7d67ae1eae7c9",
+  "installed_help_explicit_temporary_report_removed": true,
+  "offline_reexport_state": "not_executed_missing_required_input",
+  "reason": "Only simplified CSV/JSON and a Torch activity trace were preserved. No retained lossless NCU profile report is available for --import.",
+  "proposed_offline_command_if_input_exists": [
+    "ncu",
+    "--import",
+    "<retained-profile.ncu-rep>",
+    "--rename-kernels",
+    "0",
+    "--print-kernel-base",
+    "demangled",
+    "--page",
+    "raw",
+    "--csv"
+  ],
+  "all_proposed_option_names_advertised_in_actual_help": true,
+  "original_graph_identity_gate_passed": false,
+  "current_graph_identity_gate_passed": false,
+  "graph_symbol_chars": 1380,
+  "csv_symbol_chars": 425,
+  "graph_symbol_sha256": "33239a4fe9825c98df5c44acd8bc412ee2c441fab7b704ffa6124fb68de96711",
+  "csv_symbol_sha256": "cde43affc2c7836b1e5177403df89475e2bf82f2e1f0451ff1e3e56facf5037a",
+  "matching_evidence": {
+    "grid_equal": true,
+    "block_equal": true,
+    "full_input_fingerprint_match": true,
+    "eager_graph_output_newkv_bytes_match": true,
+    "wrapper_and_mapped_binary_match": true
+  },
+  "missing_identity_fields": [
+    "Original unrenamed full/mangled function identity for the exact sampled launch, or retained lossless report enabling its export",
+    "Resolved eager/graph split/packing/launch-dependency state, if claiming equivalent scheduling beyond the same named kernel"
+  ],
+  "metric_denominators": [
+    {
+      "name": "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed",
+      "value": 11.47,
+      "unit": "%",
+      "aggregation": "avg across sub-unit instances; percent of peak sustained rate during elapsed cycles",
+      "not": "useful FLOP rate or a share of whole-call latency"
+    },
+    {
+      "name": "dram__throughput.avg.pct_of_peak_sustained_elapsed",
+      "value": 36.77,
+      "unit": "%",
+      "aggregation": "throughput percent of peak sustained rate during elapsed cycles across sub-unit instances",
+      "not": "direct bytes transferred, HBM-latency proof or percentage of runtime"
+    },
+    {
+      "name": "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct",
+      "value": 43.4,
+      "unit": "%",
+      "aggregation": "ratio of warps per cycle waiting on an L1TEX scoreboard dependency across sub-unit instances",
+      "not": "43.4% of whole-call time, proof the wait reaches HBM, or per-PC attribution"
+    },
+    {
+      "name": "sm__warps_active.avg.pct_of_peak_sustained_active",
+      "value": 12.49,
+      "unit": "%",
+      "aggregation": "avg cumulative warps in flight normalized to peak during unit-active cycles across sub-unit instances",
+      "not": "per-CTA residency/tail trace or proof register pressure caused a limit"
+    }
+  ],
+  "conclusion": "Counter collection remains valid for the sampled eager launch; exact transfer to the timed CUDA graph remains inconclusive. No latency bottleneck is established from the four percentages.",
+  "smallest_justified_followup": "If separately admitted, one targeted same-case measurement attaching the needed counters to full/mangled identity and launch metadata; explicitly --export a bounded durable report and disable --rename-kernels. Re-export that same retained report offline. A name-only later run cannot retroactively validate the old four-counter row.",
+  "new_gpu_launches": 0,
+  "new_apps": 0,
+  "candidate_changes": 0,
+  "ranked_submissions": 0
+}

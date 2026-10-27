@@ -1,0 +1,34 @@
+{
+  "created_utc": "2026-10-27T05:19:11.084625+00:00",
+  "purpose": "Scoped offline analysis addendum; original result/source unchanged",
+  "identity_gate_passed": false,
+  "reexport_state": "not_executed_missing_required_input",
+  "new_gpu_apps": 0,
+  "new_modal_or_official_service_calls": 0,
+  "new_ranked_submissions": 0,
+  "candidate_changes": 0,
+  "versioning": "Reviewed private GitHub push is separate from the local audit; no compute admission",
+  "secret_pattern_counts": [
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "original_result_manifest_sha256": "f2933df8c788018e5caa45112dc21ac2aa6abd32729bf061042fc684c057c0cc",
+  "files": {
+    "OFFLINE_IDENTITY_AUDIT.md": {
+      "bytes": 4518,
+      "sha256": "42451d6470c23991c9b65b2ba9f7d416afb70d3757e513f01422a2da6281ab07"
+    },
+    "OFFLINE_IDENTITY_AUDIT.json": {
+      "bytes": 3902,
+      "sha256": "990e9283776f68ad0a126266ad7141f702e2f825cd99df81395ef1b9b4688047"
+    },
+    "OFFLINE_IDENTITY_REVIEW.md": {
+      "bytes": 6571,
+      "sha256": "b27e60d0082f365fb30af27b65a6c4b73ee8397411bf9b136c1800ee79918657"
+    }
+  }
+}
