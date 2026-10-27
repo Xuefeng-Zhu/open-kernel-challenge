@@ -1,0 +1,255 @@
+{
+  "kernel_sha256": "2ba9de8793745b642af442977985977a316bf2d84fcbdafa26bce1dd9c77b485",
+  "scope": "CPU-only generic SM90 compiler artifacts; no device load, correctness, timings or judge binary equivalence",
+  "stage3_qualification": "Initial stage3 is not the actual stage1 host config; retained only as exploratory resource data",
+  "scalar_qualification": "Original generic i64 strides; host-like i32 strides checked separately. Page remains generic i32; equal1/divisibility specializations not claimed.",
+  "variants": [
+    {
+      "directory": "initial_stage3",
+      "variant": "full_l1_s5",
+      "registers": 168,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "3bf9b3d4ca53525377d7953b69ae5aee015f1f653b26dc38cef37fd35252578e"
+    },
+    {
+      "directory": "initial_stage3",
+      "variant": "full_l8_s5",
+      "registers": 255,
+      "stack_bytes": 1016,
+      "spill_store_bytes": 2400,
+      "spill_load_bytes": 1888,
+      "ptxas_log_sha256": "1e97eac5078624c7ecb2a86fe3f17156033a316c916b722917c12984145ddf64"
+    },
+    {
+      "directory": "initial_stage3",
+      "variant": "full_l8_s9",
+      "registers": 255,
+      "stack_bytes": 1016,
+      "spill_store_bytes": 2400,
+      "spill_load_bytes": 1888,
+      "ptxas_log_sha256": "ce7e37afedb25e9c8b746c37056fd2d92ee9185f858578414e92b7047325a010"
+    },
+    {
+      "directory": "initial_stage3",
+      "variant": "merge_l1_s5",
+      "registers": 28,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "259299041feb8c5174c8084d7b393a71bed347a534c8eed6cdeb8fb13b52e381"
+    },
+    {
+      "directory": "initial_stage3",
+      "variant": "merge_l8_s9",
+      "registers": 28,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "c0dca0c944a1473cf66b266a2984e231eb44ca5845c2718ab9c57add4c49393d"
+    },
+    {
+      "directory": "stage1",
+      "variant": "full_dp_l1_s3",
+      "registers": 178,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "fd5b0cc323dd1be3fe322026c58fbf295bd9446e62f0ce6522280bc307c5a65c"
+    },
+    {
+      "directory": "stage1",
+      "variant": "full_dp_l8_s9",
+      "registers": 255,
+      "stack_bytes": 1232,
+      "spill_store_bytes": 2064,
+      "spill_load_bytes": 1760,
+      "ptxas_log_sha256": "d2af854ca43aa4ea58535d987997342ab24fe12fb62f5e71cf1a73cb5c631bee"
+    },
+    {
+      "directory": "stage1",
+      "variant": "full_l1_s5",
+      "registers": 178,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "0a6c8c4f476ced38814293ce453a7e247ca60eec23c0f7be4cc53d9c1f289fbe"
+    },
+    {
+      "directory": "stage1",
+      "variant": "full_l8_s5",
+      "registers": 255,
+      "stack_bytes": 1232,
+      "spill_store_bytes": 2064,
+      "spill_load_bytes": 1760,
+      "ptxas_log_sha256": "4e8d4738752dad38a9c7360f5cb1304aeb65b366f352ac6d043b2cecad219c47"
+    },
+    {
+      "directory": "stage1",
+      "variant": "full_l8_s9",
+      "registers": 255,
+      "stack_bytes": 1232,
+      "spill_store_bytes": 2064,
+      "spill_load_bytes": 1760,
+      "ptxas_log_sha256": "ec10b0f418583e46a6df0572d544a5b0e67c5d3a206407c15a9061f2eb3b97b6"
+    },
+    {
+      "directory": "stage1",
+      "variant": "merge_l1_s5",
+      "registers": 28,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "cec304e6631ec5658e62250681b38823e726395ead0c1c731bfaaef8570965ee"
+    },
+    {
+      "directory": "stage1",
+      "variant": "merge_l8_s132",
+      "registers": 96,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "8af3e8b831b0a89a0246541422f38a6c08e4ce0021e3cd50308eeed9cb328961"
+    },
+    {
+      "directory": "stage1",
+      "variant": "merge_l8_s9",
+      "registers": 28,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "b4e0b3693900023b30777df28bd25d7e2c84b2177c8bcbbc164d35072be22037"
+    },
+    {
+      "directory": "stage1_w16",
+      "variant": "full_l8_s5_w16",
+      "registers": 32,
+      "stack_bytes": 5656,
+      "spill_store_bytes": 11644,
+      "spill_load_bytes": 12594,
+      "ptxas_log_sha256": "8dbc2d52adfc657f6af60e206ad3e636d1fb3a421b3fc6a0d22902362aabacc1"
+    },
+    {
+      "directory": "stage1_i32",
+      "variant": "full_l1_s5_i32",
+      "registers": 178,
+      "stack_bytes": 0,
+      "spill_store_bytes": 0,
+      "spill_load_bytes": 0,
+      "ptxas_log_sha256": "0e05a711018b09429e5684f281acd5da1a0e58b9ece637d11a49038a91147833"
+    },
+    {
+      "directory": "stage1_i32",
+      "variant": "full_l8_s5_w16_i32",
+      "registers": 32,
+      "stack_bytes": 5656,
+      "spill_store_bytes": 11644,
+      "spill_load_bytes": 12594,
+      "ptxas_log_sha256": "437f311bc99fb26f40e3635c05658640fabfca275b6cfe045c4cd4dd9f2a3157"
+    },
+    {
+      "directory": "stage1_i32",
+      "variant": "full_l8_s5_w8_i32",
+      "registers": 255,
+      "stack_bytes": 1232,
+      "spill_store_bytes": 2064,
+      "spill_load_bytes": 1760,
+      "ptxas_log_sha256": "f9751585226ca1903fbd65ea8bea848e6042097605ad1d84898717b8316f6f4d"
+    }
+  ],
+  "cleanup": {
+    "container": "okc-attention-dualhead-full",
+    "independently_absent": true,
+    "engine_initially_available": true,
+    "engine_left_running": true
+  },
+  "gpu_execution": false,
+  "explicit_2d": {
+    "kernel_sha256": "69fae3a2f522ecf77451011e25649a8a5866ba6f9c213758c155e97e890e2cd3",
+    "options": "num_stages1; L1warps4/L8warps8; mergewarps4; i32 strides; page generic i32",
+    "variants": [
+      {
+        "variant": "full_l1_s5",
+        "registers": 240,
+        "stack_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "ptxas_log_sha256": "86df0a0fe93c822b926e7a42f45bf67bc4cca1dbd84579ed935c963215270b24"
+      },
+      {
+        "variant": "full_l8_s5",
+        "registers": 254,
+        "stack_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "ptxas_log_sha256": "23c3f0943c8452508002a3a8e50ec2d1520f8a573e8a6bd03eed4c65f575741c"
+      },
+      {
+        "variant": "merge_l1_s5",
+        "registers": 27,
+        "stack_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "ptxas_log_sha256": "2fe37243ad7053577d5ff5398564c78317a25f5252a4f26ec82845efb2637d42"
+      },
+      {
+        "variant": "merge_l8_s132",
+        "registers": 96,
+        "stack_bytes": 0,
+        "spill_store_bytes": 0,
+        "spill_load_bytes": 0,
+        "ptxas_log_sha256": "3281b5174178e8195321a6a9171737d92cfe5f3ff39c686fa946b4d5090cb331"
+      }
+    ],
+    "zero_spill_gate_passed_for_tested_variants": true,
+    "qk_codegen": "E4M3 encoded Q/K widened to f16 mma.sync; no native FP8 or WGMMA claim",
+    "precision_qualification": "Compile evidence does not replace native oracle/cache/replay validation.",
+    "remaining_specialization_uncertainty": "Genericpage; equal1 and dynamic pointer divisibility/binder attrs may differ. DP/S9 producer not separately compiled for v2.",
+    "container_independently_absent": true,
+    "closed_utc": "2026-10-27T22:30:46.212811+00:00",
+    "gpu_execution": false,
+    "helper": "offline/v2/compile_kernel.py",
+    "helper_sha256": "227c660a3a0a89b62ee235b3f03051918567c9458907c044a20e1647c22653a8",
+    "source_manifest": "offline/v2/source.json",
+    "source_manifest_sha256": "9c90bb9c721dbcb832cf3cb91e0ff9a69c99616e8027195b09359b320dbeea98",
+    "artifact_manifest": "offline/v2/artifacts/result.json",
+    "artifact_manifest_sha256": "efd7145a976f0ac090e917a544db725ece9bcd869b6ee581ca651fc4b3596ace",
+    "coverage": {
+      "producers": [
+        {
+          "L": 1,
+          "HKV": 2,
+          "SPLITS": 5,
+          "BLOCK_M": 16,
+          "num_warps": 4,
+          "num_stages": 1
+        },
+        {
+          "L": 8,
+          "HKV": 2,
+          "SPLITS": 5,
+          "BLOCK_M": 64,
+          "num_warps": 8,
+          "num_stages": 1
+        }
+      ],
+      "merges": [
+        {
+          "L": 1,
+          "HKV": 2,
+          "SPLITS": 5,
+          "BS": 8
+        },
+        {
+          "L": 8,
+          "HKV": 2,
+          "SPLITS": 132,
+          "BS": 256
+        }
+      ]
+    },
+    "compiler_image": "python@sha256:6a0e06f5ba0b373d051aabd3fffb9b873f27f9a2a3a14bcbe37dee6f0e3bbc70",
+    "triton_wheel_sha256": "a9c404c69ed4a39e8ec632eaf6b9fe058a060bf98979c177f6ef666f06bb8d50"
+  }
+}
