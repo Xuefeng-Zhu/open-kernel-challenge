@@ -202,7 +202,7 @@ class CompileAndAssessmentTests(unittest.TestCase):
     def test_runtime_object_exports_must_match_reviewed_bytes(self):
         class Compiled:
             def __init__(self, payload):
-                self.payload = payload
+                self.__cubin__ = self.__ptx__ = self.__mlir__ = payload
 
             def export_to_c(self, *, object_file_path, function_name):
                 self.asserted_name = function_name
@@ -212,20 +212,19 @@ class CompileAndAssessmentTests(unittest.TestCase):
                      for name in ("serial", "separate", "separate_reduce")}
         plans = {name: Mock(compiled_fn=functions[name]) for name in ("serial", "separate")}
         compile_reduce = Mock(return_value=functions["separate_reduce"])
-        hashes = {name + ".o": hashlib.sha256(obj.payload).hexdigest()
+        hashes = {name + ".cubin": hashlib.sha256(obj.__cubin__).hexdigest()
                   for name, obj in functions.items()}
         with tempfile.TemporaryDirectory() as folder:
             actual = p.verify_runtime_objects(plans, compile_reduce, "bf16",
-                                               Path(folder) / "matching", {"objects": hashes})
+                                               Path(folder) / "matching", {"device_artifacts": hashes})
             self.assertEqual(actual, hashes)
-            self.assertTrue(all(obj.asserted_name == "func" for obj in functions.values()))
             compile_reduce.assert_called_once_with(out_dtype="bf16", split_k=2,
                 add_to_output=False, vec_elems=4, alpha_mode=0, beta_mode=1,
                 c_dtype=None, rowvec_dtype=None, colvec_dtype=None)
-            functions["serial"].payload += b" changed"
+            functions["serial"].__cubin__ += b" changed"
             with self.assertRaisesRegex(RuntimeError, "timing not started"):
                 p.verify_runtime_objects(plans, compile_reduce, "bf16",
-                                         Path(folder) / "mismatch", {"objects": hashes})
+                                         Path(folder) / "mismatch", {"device_artifacts": hashes})
 
     def test_compile_signatures_differ_only_at_intended_finalization_fields(self):
         serial = p.compile_arguments("bf16", "fp32", "SERIAL", "RN")
@@ -283,7 +282,13 @@ class CompileAndAssessmentTests(unittest.TestCase):
                 payload = ("mock object, never executable: " + name).encode()
                 (root / name).write_bytes(payload)
                 objects[name] = hashlib.sha256(payload).hexdigest()
-            receipt = dict(quack_commit=p.PIN, geometry=p.GEOMETRY,
+            devices = {}
+            for arm in ("serial", "separate", "separate_reduce"):
+                for ext in ("cubin", "ptx", "mlir"):
+                    name = arm + "." + ext
+                    (root / name).write_bytes(b"mock")
+                    devices[name] = hashlib.sha256(b"mock").hexdigest()
+            receipt = dict(device_artifacts=devices, quack_commit=p.PIN, geometry=p.GEOMETRY,
                            dependencies={"versions": {"fixture": "1"}},
                            source_hashes={"frozen": "sha"}, objects=objects,
                            implementation_sha256=hashlib.sha256(Path(p.__file__).read_bytes()).hexdigest(),

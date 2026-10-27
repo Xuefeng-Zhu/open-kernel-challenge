@@ -35,7 +35,7 @@ def remote_entry(stage, prior):
         else:
             out.mkdir()
             for name, raw in prior.items():
-                if name not in ('receipt.json', 'serial.o', 'separate.o', 'separate_reduce.o'):
+                if name != 'receipt.json' and name not in {arm+'.'+ext for arm in ('serial','separate','separate_reduce') for ext in ('o','cubin','ptx','mlir')}:
                     raise ValueError('Unexpected prior artifact')
                 (out / name).write_bytes(raw)
             cmd = [sys.executable, '-B', str(root / 'projection_p070_quack_preflight.py'),
@@ -54,16 +54,16 @@ def remote_entry(stage, prior):
             if tool:
                 for name in ('serial', 'separate', 'separate_reduce'):
                     for flag, suffix in (('--dump-resource-usage','resources'),('--dump-sass','sass'),('--dump-ptx','ptx')):
-                        r = subprocess.run([tool,flag,str(out/(name+'.o'))],capture_output=True,timeout=20)
+                        r = subprocess.run([tool,flag,str(out/(name+'.cubin'))],capture_output=True,timeout=20)
                         files[name+'.'+suffix+'.txt'] = r.stdout + r.stderr
-            result['success'] = bool(tool)
+            result['success'] = bool(tool) and all(b'REG:' in files.get(name+'.resources.txt',b'') for name in ('serial','separate','separate_reduce'))
         else:
             result['success'] = child.returncode == 0
     except Exception as error:
         result['error'] = type(error).__name__ + ': ' + str(error)[:500]
         files['traceback.txt'] = traceback.format_exc().encode()
     if out.exists():
-        for name in ('receipt.json','serial.o','separate.o','separate_reduce.o','native.json'):
+        for name in ('receipt.json','native.json',*(arm+'.'+ext for arm in ('serial','separate','separate_reduce') for ext in ('o','cubin','ptx','mlir'))):
             if (out/name).is_file(): files[name]=(out/name).read_bytes()
     files['result.json']=json.dumps(result).encode()
     raw=json.dumps({name:base64.b64encode(data).decode() for name,data in files.items()}).encode()
@@ -89,7 +89,7 @@ def main():
     prior={}
     if args.stage=='native':
         assert args.prior
-        prior={n:(args.prior/n).read_bytes() for n in ('receipt.json','serial.o','separate.o','separate_reduce.o')}
+        prior={n:(args.prior/n).read_bytes() for n in ('receipt.json',*(arm+'.'+ext for arm in ('serial','separate','separate_reduce') for ext in ('o','cubin','ptx','mlir')))}
         receipt=json.loads(prior['receipt.json'])
         assert receipt['quack_commit']==p.PIN and receipt['source_hashes']==p.source_hashes()
         assert receipt.get('review',{}).get('ready_for_execution') is True

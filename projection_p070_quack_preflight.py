@@ -210,6 +210,20 @@ def compile_arguments(bf16, fp32, mode, rounding, separate=False):
         split_k=2, split_k_mode=mode, batched=True, b_kn=False)
 
 
+def export_device(function, directory, name):
+    """Use documented CuTe artifacts, not host-wrapper ELF identity."""
+    hashes = {}
+    for suffix, attr in (("cubin", "__cubin__"), ("ptx", "__ptx__"), ("mlir", "__mlir__")):
+        value = getattr(function, attr, None)
+        if isinstance(value, str): value = value.encode()
+        if not isinstance(value, (bytes, bytearray)) or not value:
+            raise RuntimeError("Missing CuTe device artifact: " + name + "." + suffix)
+        target = Path(directory) / (name + "." + suffix)
+        target.write_bytes(value)
+        hashes[target.name] = hashlib.sha256(value).hexdigest()
+    return hashes
+
+
 def compile_offline(quack_root, destination):
     """Source-supported fake-tensor export only; no device bind or launch.
 
@@ -222,7 +236,8 @@ def compile_offline(quack_root, destination):
     destination = Path(destination)
     destination.mkdir(parents=True, exist_ok=False)
     os.environ.update(CUDA_VISIBLE_DEVICES="", QUACK_ARCH="90",
-                      CUTE_DSL_ARCH="sm_90a", QUACK_CACHE_ENABLED="0")
+                      CUTE_DSL_ARCH="sm_90a", QUACK_CACHE_ENABLED="0",
+                      CUTE_DSL_KEEP="ir,ptx,cubin", CUTE_DSL_DUMP_DIR=str(destination / "dump"))
     sys.path.insert(0, str(root))
     from cutlass import BFloat16, Float32
     from quack.gemm import _compile_gemm
@@ -232,7 +247,7 @@ def compile_offline(quack_root, destination):
     import importlib
     if Path(importlib.import_module("quack.gemm").__file__).resolve() != root / "quack/gemm.py":
         raise RuntimeError("Unexpected imported Quack module")
-    outputs = {}
+    outputs, device_artifacts = {}, {}
     for name, separate, mode in (("serial", False, SplitKMode.SERIAL),
                                  ("separate", True, SplitKMode.SEPARATE)):
         compiled = _compile_gemm(**compile_arguments(BFloat16, Float32, mode,
@@ -240,13 +255,16 @@ def compile_offline(quack_root, destination):
         target = destination / (name + ".o")
         compiled.export_to_c(object_file_path=str(target), function_name="func")
         outputs[target.name] = hashlib.sha256(target.read_bytes()).hexdigest()
+        device_artifacts.update(export_device(compiled, destination, name))
     reducer = _compile_split_k_reduce(out_dtype=BFloat16, split_k=2,
         add_to_output=False, vec_elems=4, alpha_mode=0, beta_mode=1,
         c_dtype=None, rowvec_dtype=None, colvec_dtype=None)
     target = destination / "separate_reduce.o"
     reducer.export_to_c(object_file_path=str(target), function_name="func")
     outputs[target.name] = hashlib.sha256(target.read_bytes()).hexdigest()
-    receipt = dict(quack_commit=PIN, dependencies=dependencies(), objects=outputs, geometry=GEOMETRY,
+    device_artifacts.update(export_device(reducer, destination, "separate_reduce"))
+    receipt = dict(quack_commit=PIN, dependencies=dependencies(), objects=outputs,
+        device_artifacts=device_artifacts, geometry=GEOMETRY,
         implementation_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),
         compile_arguments="Symbolic M/N/K/L; fixed BF16 types/layout/tile/split/mode, intended canonical QKV128",
         cuda_execution=False, generated_stage_layout_resource_gate="not yet inspected",
@@ -276,6 +294,13 @@ def require_compile_review(path):
     for name, digest in receipt["objects"].items():
         if hashlib.sha256((path.parent / name).read_bytes()).hexdigest() != digest:
             raise ValueError("Compiled object changed: " + name)
+    expected_device = {arm + "." + suffix for arm in ("serial", "separate", "separate_reduce")
+                       for suffix in ("cubin", "ptx", "mlir")}
+    if set(receipt.get("device_artifacts", {})) != expected_device:
+        raise ValueError("All device artifacts required")
+    for name, digest in receipt["device_artifacts"].items():
+        if hashlib.sha256((path.parent / name).read_bytes()).hexdigest() != digest:
+            raise ValueError("Device artifact changed: " + name)
     review = receipt.get("review", {})
     if review.get("ready_for_execution") is not True or not all(
             isinstance(review.get(field), str) and review[field].strip()
@@ -301,10 +326,10 @@ def verify_runtime_objects(plans, compile_reduce, bf16, directory, receipt):
         c_dtype=None, rowvec_dtype=None, colvec_dtype=None)
     actual = {}
     for name, function in compiled.items():
-        path = directory / (name + ".o")
-        function.export_to_c(object_file_path=str(path), function_name="func")
-        actual[path.name] = hashlib.sha256(path.read_bytes()).hexdigest()
-    if actual != receipt["objects"]:
+        artifacts = export_device(function, directory, name)
+        actual[name + ".cubin"] = artifacts[name + ".cubin"]
+    expected = {name: digest for name, digest in receipt["device_artifacts"].items() if name.endswith(".cubin")}
+    if actual != expected:
         raise RuntimeError("Runtime compiled exports differ from reviewed artifacts; timing not started")
     return actual
 
@@ -319,7 +344,8 @@ def execute(quack_root, compile_review, report, save, deadline_seconds=120):
         raise RuntimeError("Missing dependencies; no installation is performed")
     report["compile_review"] = require_compile_review(compile_review)
     root = verify_quack(quack_root)
-    os.environ.update(QUACK_ARCH="90", CUTE_DSL_ARCH="sm_90a", QUACK_CACHE_ENABLED="0")
+    os.environ.update(QUACK_ARCH="90", CUTE_DSL_ARCH="sm_90a", QUACK_CACHE_ENABLED="0",
+                      CUTE_DSL_KEEP="ir,ptx,cubin", CUTE_DSL_DUMP_DIR=str(Path(compile_review).parent / "runtime-dump"))
     sys.path.insert(0, str(root))
     import torch
     from quack.gemm import gemm
