@@ -1,0 +1,17 @@
+{
+  "app_id": "ap-Wg106ohTxcewSqroHjDItS",
+  "cost_reserve_usd": "0.70",
+  "paid_limit_usd": "0",
+  "paid_after_usd": "0E-8",
+  "observed_account_gross_delta_usd": "0.09000000",
+  "observed_account_ephemeral_delta_usd": "0.08875238",
+  "resource_rate_usd_per_second": "0.001305166666666666666666666667",
+  "app_created_to_stopped_seconds": 82.0,
+  "duration_model_usd": "0.1070236666666666666666666667",
+  "worker_seconds": 70.94502395800001,
+  "remote_entry_seconds": 72.400744838,
+  "qualification": "Account-level provisional readings, not a final per-app invoice. An earlier prelaunch status query reported gross2.70, while admission reported2.66; backend readings are not demonstrably monotonic. Duration model is not a bill. All observed billed_cost values were0.",
+  "independent_cleanup_utc": "2026-10-27T05:38:54.076767+00:00",
+  "independent_stopped_zero_tasks": true,
+  "all_apps_stopped_zero_tasks": true
+}

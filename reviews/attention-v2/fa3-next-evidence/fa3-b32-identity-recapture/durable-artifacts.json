@@ -1,0 +1,10 @@
+{
+  "profile-original.csv": {
+    "raw_bytes": 31827,
+    "raw_sha256": "e7b06eb33263ac19cf7c403d5fe22378eaa92093d64dc1ad358a206e017e6f5b",
+    "compression": "gzip",
+    "gzip_bytes": 6345,
+    "gzip_sha256": "b483a644ce175bb47a2f297e1b1a522eaa1a7d3e9197b6deb3335485d31e96a5",
+    "stable_file_snapshot": true
+  }
+}
