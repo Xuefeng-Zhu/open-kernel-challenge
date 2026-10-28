@@ -1,0 +1,39 @@
+{
+  "app_id": "ap-w5uTMhngOSKIwYBZ2z8XG0",
+  "state": "function-terminal",
+  "accepted_utc": "2026-10-28T03:25:10.530109+00:00",
+  "client_finished_utc": "2026-10-28T03:26:37.003437+00:00",
+  "exit_code": 0,
+  "worker_status": "complete",
+  "worker_wall_seconds": 73.986188099,
+  "completion_verified": true,
+  "shutdown_verified": true,
+  "all_apps_stopped_zero_tasks": true,
+  "oracle_checks": 86,
+  "main_graph_replays": 264,
+  "total_graph_replays_with_growth": 266,
+  "other_output_cache_preservation_checks": 198,
+  "source_sha256": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v298.py": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "helpers.py": "7fa92eba152f715c995b312b475cf54195aad5ca5a94ddc825727c3bfcd2262f"
+  },
+  "native_result_sha256": "bef423e41d0920c4a5669dc26e5d53c0c7e024fa7e5474c6d84852c6c3936aeb",
+  "shutdown_observation": {
+    "observed_utc": "2026-10-28T03:26:37.003357+00:00",
+    "app": {
+      "app_id": "ap-w5uTMhngOSKIwYBZ2z8XG0",
+      "description": "attention-vjeux-v298-serial-graph-stress",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-28 03:25:08+00:00",
+      "stopped_at": "2026-10-28 03:26:33+00:00"
+    }
+  },
+  "reserve_usd": "2.00",
+  "actual_charge_usd": null,
+  "paid_limit_usd": "0",
+  "fresh_billing_queried": false
+}

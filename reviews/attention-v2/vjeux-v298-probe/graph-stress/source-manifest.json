@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "experiment": "attention-vjeux-v298-serial-graph-stress",
+  "base_image": "im-cPTbGpNiX3RarKResPgX7h",
+  "payload_sha256": {
+    "worker.py": "8cd66b6960979ad3e2d37276fc578fc3b16cbd6f006c2fb79cb21e7da2bc82e2",
+    "helpers.py": "7fa92eba152f715c995b312b475cf54195aad5ca5a94ddc825727c3bfcd2262f",
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v298.py": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b",
+    "UPSTREAM_LICENSE": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+  },
+  "local_sha256": {
+    "controller.py": "cbcf1235e94773a1549c36be8edeba863dfaa75b4a3861dbf1dcf51af3ebf650",
+    "test_controller.py": "bf7eb3840627992439c5e018378d0dd83f38094a50e3f0f03c604739ec54bcd1",
+    "PLAN.md": "fce3f2f0d568019adcf8029c20b0b465b2ab7cb1cf1b703057c476dcf8231ab2",
+    "test_worker.py": "049efdcaa1c891a6fd8f197350fd1ebc6facf5c9f7262a844b3cfab11174c3f4"
+  },
+  "accounting": {
+    "receipt_sha256": "e9ac3d18b558e178fb6b40f9024ed5b59f5b78af0d1069110b173b62feeb7386",
+    "prior_observed_utc": "2026-10-27T06:53:33.401610+00:00",
+    "historical_verified_free_balance_usd": "27.13",
+    "prior_usage_allowance_usd": "10.00",
+    "new_job_reserve_usd": "2.00",
+    "modeled_balance_after_allowances_usd": "15.13",
+    "paid_limit_usd": "0",
+    "fresh_billing_queried": false,
+    "actual_charge_usd": null,
+    "qualification": "Reused historical receipt; allowances and modeled remainder are not measured spend or a live balance."
+  },
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      4,
+      4
+    ],
+    "memory_mib": [
+      16384,
+      16384
+    ],
+    "max_containers": 1,
+    "worker_deadline": 540,
+    "supervisor_timeout": 560,
+    "function_timeout": 580,
+    "startup_timeout": 20,
+    "watchdog": 610,
+    "retries": 0,
+    "invocations": 1
+  },
+  "official_check": false,
+  "formal_entry": false,
+  "candidate_change": false
+}

@@ -1,0 +1,4698 @@
+{
+  "status": "complete",
+  "worker_sha256": "8cd66b6960979ad3e2d37276fc578fc3b16cbd6f006c2fb79cb21e7da2bc82e2",
+  "verified_hashes": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v298.py": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "helpers.py": "7fa92eba152f715c995b312b475cf54195aad5ca5a94ddc825727c3bfcd2262f"
+  },
+  "graph_cases": [
+    {
+      "name": "single-decode-full",
+      "spec": {
+        "name": "single-decode-full",
+        "batch": 1,
+        "q_len": 1,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "spread": "fixed",
+        "dist": "coherent"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.042e-03 (worst row 2.042e-03) [bound 0.055: 2.5 x the reference's 0.016 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47625682288640,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              3,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.614e-03 (worst row 1.614e-03) [bound 0.049: 2.5 x the reference's 0.014 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47624642101248,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              6,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 100,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.716e-03 (worst row 1.716e-03) [bound 0.060: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              7,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 101,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.770e-03 (worst row 1.770e-03) [bound 0.056: 2.5 x the reference's 0.016 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              8,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 102,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.910e-03 (worst row 1.910e-03) [bound 0.057: 2.5 x the reference's 0.017 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              9,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 103,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.908e-03 (worst row 1.908e-03) [bound 0.048: 2.5 x the reference's 0.013 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              10,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 104,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.888e-03 (worst row 1.888e-03) [bound 0.059: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              11,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 105,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.711e-03 (worst row 1.711e-03) [bound 0.056: 2.5 x the reference's 0.016 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              12,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 106,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.926e-03 (worst row 1.926e-03) [bound 0.073: 2.5 x the reference's 0.023 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              13,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 107,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.289e-03 (worst row 2.289e-03) [bound 0.056: 2.5 x the reference's 0.016 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              14,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.488e-03 (worst row 3.488e-03) [bound 0.055: 2.5 x the reference's 0.016 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              30,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.632e-03 (worst row 1.632e-03) [bound 0.049: 2.5 x the reference's 0.014 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 128,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 4,
+                "coop": 0
+              },
+              "default_tuned_override": {
+                "nc": 8,
+                "coop": 1,
+                "n_splits": 252
+              },
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "flat-decode-full",
+      "spec": {
+        "name": "flat-decode-full",
+        "batch": 16,
+        "q_len": 1,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "spread": "agentic",
+        "dist": "coherent"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.031e-03 (worst row 3.765e-03) [bound 0.057: 2.5 x the reference's 0.017 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47628108693504,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.950e-03 (worst row 2.908e-03) [bound 0.065: 2.5 x the reference's 0.020 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47631162146816,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 110,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.888e-03 (worst row 2.186e-03) [bound 0.064: 2.5 x the reference's 0.020 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 111,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.040e-03 (worst row 2.784e-03) [bound 0.067: 2.5 x the reference's 0.021 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 112,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.980e-03 (worst row 2.974e-03) [bound 0.065: 2.5 x the reference's 0.020 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 113,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.959e-03 (worst row 2.425e-03) [bound 0.064: 2.5 x the reference's 0.019 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 114,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.044e-03 (worst row 2.861e-03) [bound 0.061: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 115,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.955e-03 (worst row 2.369e-03) [bound 0.062: 2.5 x the reference's 0.019 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 116,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.886e-03 (worst row 2.311e-03) [bound 0.058: 2.5 x the reference's 0.017 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 117,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.981e-03 (worst row 2.929e-03) [bound 0.062: 2.5 x the reference's 0.019 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80383,
+            78985,
+            77204,
+            84971,
+            75296,
+            74262,
+            78999,
+            79341,
+            74514,
+            76159,
+            79470,
+            77586,
+            82735,
+            80383,
+            77877,
+            80874
+          ],
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.939e-03 (worst row 2.760e-03) [bound 0.059: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 1.980e-03 (worst row 2.373e-03) [bound 0.061: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 256,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              46,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "single-verify-full",
+      "spec": {
+        "name": "single-verify-full",
+        "batch": 1,
+        "q_len": 8,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "spread": "fixed",
+        "dist": "coherent"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.840e-02 (worst row 3.655e-02) [bound 0.086: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47630660927488,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              49,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.510e-02 (worst row 5.084e-02) [bound 0.102: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47630663024640,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              52,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 120,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.266e-02 (worst row 6.959e-02) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            64
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              53,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 121,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.223e-02 (worst row 5.403e-02) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            65
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              54,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 122,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.763e-02 (worst row 4.833e-02) [bound 0.108: 2.5 x the reference's 0.037 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2047
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              55,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 123,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.514e-02 (worst row 5.526e-02) [bound 0.103: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            2048
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              56,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 124,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.427e-02 (worst row 5.076e-02) [bound 0.100: 2.5 x the reference's 0.034 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2049
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              57,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 125,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.783e-02 (worst row 4.700e-02) [bound 0.084: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            80000
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              58,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 126,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.989e-02 (worst row 7.310e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            0
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              59,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 127,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.861e-02 (worst row 4.530e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            1
+          ],
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              60,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.213e-02 (worst row 5.044e-02) [bound 0.095: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              76,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.810e-02 (worst row 4.479e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 1024,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              0,
+              0
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 252,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 8
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "flat-verify-full",
+      "spec": {
+        "name": "flat-verify-full",
+        "batch": 16,
+        "q_len": 8,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "page": 1,
+        "spread": "agentic",
+        "dist": "coherent"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.351e-02 (worst row 9.283e-02) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47630665121792,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              264,
+              0,
+              3
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.206e-02 (worst row 8.817e-02) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47629954187264,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              6
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 130,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.911e-02 (worst row 9.615e-02) [bound 0.114: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              264,
+              0,
+              7
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 131,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.088e-02 (worst row 9.429e-02) [bound 0.118: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              8
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 132,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.046e-02 (worst row 8.432e-02) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              264,
+              0,
+              9
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 133,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.438e-02 (worst row 1.452e-01) [bound 0.123: 2.5 x the reference's 0.043 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              10
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 134,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.941e-02 (worst row 8.794e-02) [bound 0.112: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              264,
+              0,
+              11
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 135,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.228e-02 (worst row 8.171e-02) [bound 0.120: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              12
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 136,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.104e-02 (worst row 8.533e-02) [bound 0.115: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              264,
+              0,
+              13
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 137,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.123e-02 (worst row 1.007e-01) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            86000
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              14
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.074e-02 (worst row 8.627e-02) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              30
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.968e-02 (worst row 7.131e-02) [bound 0.113: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 264,
+                "flat": 1,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "single-decode-sliding",
+      "spec": {
+        "name": "single-decode-sliding",
+        "batch": 1,
+        "q_len": 1,
+        "ctx": 6000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "page": 1,
+        "spread": "fixed",
+        "dist": "edges"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.644e-03 (worst row 2.644e-03) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47633311727616,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 3.986e-03 (worst row 3.986e-03) [bound 0.147: 2.5 x the reference's 0.053 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47633315921920,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 140,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.659e-03 (worst row 4.659e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2047
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 141,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.040e-03 (worst row 6.040e-03) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            2048
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 142,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.647e-03 (worst row 5.647e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2049
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 143,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.461e-03 (worst row 5.461e-03) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            6000
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 144,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 0.000e+00 (worst row 0.000e+00) [bound 0.030: 2.5 x the reference's 0.000 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            0
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 145,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 9.554e-04 (worst row 9.554e-04) [bound 0.031: 2.5 x the reference's 0.007 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            1
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 146,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 2.963e-03 (worst row 2.963e-03) [bound 0.150: 2.5 x the reference's 0.063 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            63
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 147,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 4.259e-03 (worst row 4.259e-03) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            64
+          ],
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.180e-03 (worst row 5.180e-03) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.623e-03 (worst row 5.623e-03) [bound 0.150: 2.5 x the reference's 0.077 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 16,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              92,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 32,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "verify-sliding",
+      "spec": {
+        "name": "verify-sliding",
+        "batch": 16,
+        "q_len": 8,
+        "ctx": 6000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "page": 1,
+        "spread": "agentic",
+        "dist": "soft"
+      },
+      "captures": [
+        {
+          "slot": "A",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.232e-02 (worst row 9.709e-02) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47633320116224,
+          "other_outputs_unchanged": 0,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              95,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.295e-02 (worst row 1.014e-01) [bound 0.150: 2.5 x the reference's 0.062 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "output_pointer": 47633324310528,
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              98,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "serial_checks": [
+        {
+          "slot": "A",
+          "variant": 150,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.234e-02 (worst row 1.066e-01) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              99,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 151,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.922e-02 (worst row 1.154e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              100,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 152,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.863e-02 (worst row 9.438e-02) [bound 0.150: 2.5 x the reference's 0.058 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              101,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 153,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.989e-02 (worst row 1.008e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              102,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 154,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 5.968e-02 (worst row 8.361e-02) [bound 0.150: 2.5 x the reference's 0.058 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              103,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 155,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.271e-02 (worst row 1.001e-01) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              104,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "A",
+          "variant": 156,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.037e-02 (worst row 9.193e-02) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            1.0,
+            1.0
+          ],
+          "seq_lens": [
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              105,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "variant": 157,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.209e-02 (worst row 1.111e-01) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scales": [
+            0.015625,
+            0.015625
+          ],
+          "seq_lens": [
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1,
+            63,
+            64,
+            65,
+            2047,
+            2048,
+            2049,
+            6450,
+            0,
+            1
+          ],
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              106,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ],
+      "burst_checks": [
+        {
+          "slot": "A",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.010e-02 (worst row 1.080e-01) [bound 0.150: 2.5 x the reference's 0.059 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              122,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        },
+        {
+          "slot": "B",
+          "replays": 16,
+          "oracle": {
+            "passed": true,
+            "message": "relative L2 error 6.074e-02 (worst row 1.033e-01) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+            "ownership": true,
+            "fixed_addresses": true
+          },
+          "other_outputs_unchanged": 1,
+          "scratch": {
+            "active_rows": 2048,
+            "accumulator_zero": true,
+            "denominator_zero": true,
+            "pointers": [
+              47624994422784,
+              47624992327680,
+              47624992458752
+            ],
+            "numel": [
+              2097152,
+              32768,
+              32768
+            ],
+            "counter_epochs": [
+              138,
+              0,
+              264,
+              46
+            ],
+            "plan": {
+              "base_shape_plan": {
+                "n_splits": 8,
+                "flat": 0,
+                "cs": 0,
+                "ncl": 1,
+                "nc": 1,
+                "coop": 1
+              },
+              "default_tuned_override": null,
+              "supported": true,
+              "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "cross_shape_checks": [
+    {
+      "family": "single-decode-full",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 1.666e-03 (worst row 1.666e-03) [bound 0.058: 2.5 x the reference's 0.017 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 128,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          139,
+          0,
+          264,
+          46
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 4,
+            "coop": 0
+          },
+          "default_tuned_override": {
+            "nc": 8,
+            "coop": 1,
+            "n_splits": 252
+          },
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "flat-verify-full",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 4.132e-02 (worst row 1.122e-01) [bound 0.117: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 2048,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          139,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 1,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "single-decode-full",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 1.933e-03 (worst row 1.933e-03) [bound 0.051: 2.5 x the reference's 0.014 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 128,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          140,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 4,
+            "coop": 0
+          },
+          "default_tuned_override": {
+            "nc": 8,
+            "coop": 1,
+            "n_splits": 252
+          },
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "verify-sliding",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 5.870e-02 (worst row 9.487e-02) [bound 0.150: 2.5 x the reference's 0.058 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 2048,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          141,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 8,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1,
+            "coop": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "flat-decode-full",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 1.925e-03 (worst row 2.229e-03) [bound 0.060: 2.5 x the reference's 0.018 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 256,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          141,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 1,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "single-decode-sliding",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 1.449e-03 (worst row 1.449e-03) [bound 0.067: 2.5 x the reference's 0.021 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 16,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          141,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 32,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "single-verify-full",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 3.850e-02 (worst row 5.486e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 1024,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          142,
+          264,
+          0,
+          47
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 252,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 8
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "flat-verify-full",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 4.041e-02 (worst row 9.109e-02) [bound 0.116: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 2048,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          142,
+          0,
+          264,
+          48
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 1,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "single-verify-full",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 4.734e-02 (worst row 6.113e-02) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 1024,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          143,
+          0,
+          264,
+          48
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 252,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 8
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "verify-sliding",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 6.129e-02 (worst row 1.008e-01) [bound 0.150: 2.5 x the reference's 0.060 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 2048,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          144,
+          0,
+          264,
+          48
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 8,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1,
+            "coop": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "single-decode-sliding",
+      "slot": "A",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 5.172e-03 (worst row 5.172e-03) [bound 0.150: 2.5 x the reference's 0.057 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 16,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          144,
+          0,
+          264,
+          48
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 32,
+            "flat": 0,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    },
+    {
+      "family": "flat-decode-full",
+      "slot": "B",
+      "oracle": {
+        "passed": true,
+        "message": "relative L2 error 1.952e-03 (worst row 2.462e-03) [bound 0.064: 2.5 x the reference's 0.020 with FP8 E4M3 queries + 0.015]",
+        "ownership": true,
+        "fixed_addresses": true
+      },
+      "other_outputs_unchanged": 11,
+      "scratch": {
+        "active_rows": 256,
+        "accumulator_zero": true,
+        "denominator_zero": true,
+        "pointers": [
+          47624994422784,
+          47624992327680,
+          47624992458752
+        ],
+        "numel": [
+          2097152,
+          32768,
+          32768
+        ],
+        "counter_epochs": [
+          144,
+          0,
+          264,
+          48
+        ],
+        "plan": {
+          "base_shape_plan": {
+            "n_splits": 264,
+            "flat": 1,
+            "cs": 0,
+            "ncl": 1,
+            "nc": 1
+          },
+          "default_tuned_override": null,
+          "supported": true,
+          "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+        }
+      }
+    }
+  ],
+  "optional_growth": {
+    "status": "pass",
+    "spec": {
+      "batch": 33,
+      "q_len": 8,
+      "ctx": 64,
+      "heads": "dp",
+      "layer": "full",
+      "page": 64,
+      "spread": "fixed",
+      "dist": "normal"
+    },
+    "claimed_contest_requirement": false,
+    "old_workspace_pointers": [
+      47624994422784,
+      47624992327680,
+      47624992458752
+    ],
+    "old_workspace_numel": [
+      2097152,
+      32768,
+      32768
+    ],
+    "oracle": {
+      "passed": true,
+      "message": "relative L2 error 6.695e-02 (worst row 9.374e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+      "ownership": true,
+      "fixed_addresses": true
+    },
+    "new_workspace_pointers": [
+      47633139892224,
+      47633156538368,
+      47633156673536
+    ],
+    "new_workspace_numel": [
+      2162688,
+      33792,
+      33792
+    ],
+    "old_python_scratch_alive": [
+      false,
+      false,
+      false
+    ],
+    "old_graph_oracle": {
+      "passed": true,
+      "message": "relative L2 error 4.071e-02 (worst row 8.186e-02) [bound 0.115: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+      "ownership": true,
+      "fixed_addresses": true
+    },
+    "old_used_pointers_unchanged": true
+  },
+  "correctness_complete": true,
+  "candidate_changed": false,
+  "official_check": false,
+  "ranked_submission": false,
+  "concurrent_execution": false,
+  "protocol": {
+    "serial_only": true,
+    "main_families": 6,
+    "independent_graphs_each": 2,
+    "replay_order": [
+      "A",
+      "B",
+      "A",
+      "A",
+      "B",
+      "B",
+      "A",
+      "B"
+    ],
+    "bursts_each": 16,
+    "performance_measurement": false,
+    "original_oracle": true,
+    "v_history_amplitude": 0.25,
+    "growth": "Unscored API-supported extension only; no claim that the contest requires B33 DP"
+  },
+  "runtime": {
+    "gpu": "NVIDIA H200",
+    "sm_count": 132,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "binary_sha256": "222797c195995b4a389b206c308cb130bbb740130b5cd82c4a758df566c75498"
+  },
+  "phase": "complete",
+  "elapsed_seconds": 72.640678938,
+  "serial_complete": true
+}
