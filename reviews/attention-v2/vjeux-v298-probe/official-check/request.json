@@ -1,0 +1,8 @@
+{
+  "source_sha256": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+  "problem": "muse_attention_decode",
+  "mode": "check",
+  "ranked": false,
+  "attempted_utc": "2026-10-28T02:43:22.154846+00:00",
+  "quota_before": 19
+}

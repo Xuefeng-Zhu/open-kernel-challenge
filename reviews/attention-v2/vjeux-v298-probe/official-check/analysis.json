@@ -1,0 +1,194 @@
+{
+  "job_id": "9292ad030b2a4b3d",
+  "mode": "check",
+  "nonduplicate": true,
+  "source_sha256": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+  "official_result_sha256": "dc42f36a9a68b28a6c53b7b2c350061f1c86d4d6f4d8b43dc67a1128914e7b07",
+  "passed": true,
+  "official_speedup": 2.6188042542878844,
+  "speedup_ci": [
+    2.579522190473566,
+    2.6580863181022023
+  ],
+  "score_us": 1438.175455012825,
+  "tests_passed": 16,
+  "benchmark_count": 12,
+  "profile_count": 12,
+  "error": null,
+  "flags": [],
+  "checks": {
+    "flagged": [],
+    "ok": true,
+    "rejected": []
+  },
+  "reconstructed_speedup": 2.6188042542878844,
+  "champion_control_job": "5090b83f1d63407b",
+  "champion_speedup": 1.2336330588627955,
+  "same_evaluator": true,
+  "point_score_gain_percent": 112.28389069777252,
+  "cross_run_qualification": "Different nodes/cluster and all fixture seeds; descriptive reference normalization, not paired v298/champion official comparison.",
+  "created_utc": "2026-10-28T02:43:23.247578+00:00",
+  "started_utc": "2026-10-28T02:43:31.345766+00:00",
+  "finished_utc": "2026-10-28T02:49:06.265150+00:00",
+  "remaining_quota": {
+    "scored": {
+      "per_day": 10,
+      "used": 0,
+      "left": 10
+    },
+    "checks": {
+      "per_day": 20,
+      "used": 2,
+      "left": 18
+    }
+  },
+  "source_modified": false,
+  "selection_changed": false,
+  "ranked_submission": false,
+  "rows": [
+    {
+      "load": "decode 1",
+      "layer": "sliding",
+      "champion_us": 11.47711384229471,
+      "v298_us": 4.912679534839923,
+      "sglang_us": 20.54399996995926,
+      "sglang_same_run_paired_speedup": 4.181831895254831,
+      "raw_latency_reduction_percent": 57.19586298137047,
+      "reference_normalized_cross_run_latency_reduction_percent": 57.12918839274865,
+      "seed": 626503674474088864,
+      "champion_seed": 1967448696517399794
+    },
+    {
+      "load": "decode 1",
+      "layer": "full",
+      "champion_us": 27.031302842677167,
+      "v298_us": 11.035068290637339,
+      "sglang_us": 31.5519985742867,
+      "sglang_same_run_paired_speedup": 2.8592481481113143,
+      "raw_latency_reduction_percent": 59.17670578121334,
+      "reference_normalized_cross_run_latency_reduction_percent": 59.65283715942664,
+      "seed": 626674616640119267,
+      "champion_seed": 1967525636638287405
+    },
+    {
+      "load": "decode 16",
+      "layer": "sliding",
+      "champion_us": 13.92113651627598,
+      "v298_us": 8.37199924645044,
+      "sglang_us": 27.136000338941813,
+      "sglang_same_run_paired_speedup": 3.2412807908991312,
+      "raw_latency_reduction_percent": 39.861237359016876,
+      "reference_normalized_cross_run_latency_reduction_percent": 41.49235844277208,
+      "seed": 626845558806149671,
+      "champion_seed": 1967602576759175017
+    },
+    {
+      "load": "decode 16",
+      "layer": "full",
+      "champion_us": 194.27190912323948,
+      "v298_us": 86.94034172955314,
+      "sglang_us": 201.0720008984208,
+      "sglang_same_run_paired_speedup": 2.312758345531917,
+      "raw_latency_reduction_percent": 55.248114808816155,
+      "reference_normalized_cross_run_latency_reduction_percent": 55.32289874812945,
+      "seed": 627016500972180076,
+      "champion_seed": 1967679516880062630
+    },
+    {
+      "load": "decode 32",
+      "layer": "sliding",
+      "champion_us": 20.10360388661608,
+      "v298_us": 9.998367630129923,
+      "sglang_us": 31.263998709619045,
+      "sglang_same_run_paired_speedup": 3.1269102983776547,
+      "raw_latency_reduction_percent": 50.26579469770438,
+      "reference_normalized_cross_run_latency_reduction_percent": 50.72393894758606,
+      "seed": 627187443138210482,
+      "champion_seed": 1967756457000950244
+    },
+    {
+      "load": "decode 32",
+      "layer": "full",
+      "champion_us": 304.0318931739489,
+      "v298_us": 165.8434508113429,
+      "sglang_us": 384.3360049650073,
+      "sglang_same_run_paired_speedup": 2.3174626618340994,
+      "raw_latency_reduction_percent": 45.45195601684552,
+      "reference_normalized_cross_run_latency_reduction_percent": 45.55868748541432,
+      "seed": 627358385304240889,
+      "champion_seed": 1967833397121837859
+    },
+    {
+      "load": "verify 1",
+      "layer": "sliding",
+      "champion_us": 16.988207220445705,
+      "v298_us": 6.288097383044426,
+      "sglang_us": 22.39999920129776,
+      "sglang_same_run_paired_speedup": 3.5622856703362062,
+      "raw_latency_reduction_percent": 62.985515178573095,
+      "reference_normalized_cross_run_latency_reduction_percent": 61.98083554416882,
+      "seed": 627529327470271297,
+      "champion_seed": 1967910337242725475
+    },
+    {
+      "load": "verify 1",
+      "layer": "full",
+      "champion_us": 29.568835823566065,
+      "v298_us": 14.334019079953512,
+      "sglang_us": 36.55999945476651,
+      "sglang_same_run_paired_speedup": 2.5505756097322765,
+      "raw_latency_reduction_percent": 51.523221389293106,
+      "reference_normalized_cross_run_latency_reduction_percent": 52.859777505225935,
+      "seed": 627700269636301706,
+      "champion_seed": 1967987277363613092
+    },
+    {
+      "load": "verify 16",
+      "layer": "sliding",
+      "champion_us": 21.740249752189822,
+      "v298_us": 11.574369358315712,
+      "sglang_us": 29.56800116226077,
+      "sglang_same_run_paired_speedup": 2.554610125779109,
+      "raw_latency_reduction_percent": 46.76064217178616,
+      "reference_normalized_cross_run_latency_reduction_percent": 48.345152164311855,
+      "seed": 627871211802332116,
+      "champion_seed": 1968064217484500710
+    },
+    {
+      "load": "verify 16",
+      "layer": "full",
+      "champion_us": 197.60213357126437,
+      "v298_us": 100.770474727053,
+      "sglang_us": 206.2399978749454,
+      "sglang_same_run_paired_speedup": 2.0466312025776126,
+      "raw_latency_reduction_percent": 49.00334682332236,
+      "reference_normalized_cross_run_latency_reduction_percent": 49.33171900193864,
+      "seed": 628042153968362527,
+      "champion_seed": 1968141157605388329
+    },
+    {
+      "load": "verify 32",
+      "layer": "sliding",
+      "champion_us": 27.46761932746471,
+      "v298_us": 14.676999969244783,
+      "sglang_us": 34.57600064575672,
+      "sglang_same_run_paired_speedup": 2.3557948298841525,
+      "raw_latency_reduction_percent": 46.566173812634226,
+      "reference_normalized_cross_run_latency_reduction_percent": 46.93706883815012,
+      "seed": 628213096134392939,
+      "champion_seed": 1968218097726275949
+    },
+    {
+      "load": "verify 32",
+      "layer": "full",
+      "champion_us": 380.3807463402613,
+      "v298_us": 184.31699305365726,
+      "sglang_us": 389.82400484383106,
+      "sglang_same_run_paired_speedup": 2.1149650848001182,
+      "raw_latency_reduction_percent": 51.544079234551866,
+      "reference_normalized_cross_run_latency_reduction_percent": 51.768817710826085,
+      "seed": 628384038300423352,
+      "champion_seed": 1968295037847163570
+    }
+  ]
+}

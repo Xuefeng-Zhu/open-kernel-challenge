@@ -1,6 +1,8 @@
+**Official follow-up:** one non-ranked check `9292ad030b2a4b3d` passed at **2.618804×**, CI [2.579522, 2.658086], with all16 tests and12 shapes. See [official result and comparison](official-check/RESULTS.md). Champion selection remains unchanged.
+
 # v298 local comparison
 
-Pristine Apache-2.0 upstream v298 passed the bounded same-H200 comparison. Selected champion remains unchanged (`3da22a16…`); no official check or ranked submission was made.
+Pristine Apache-2.0 upstream v298 passed the bounded same-H200 comparison. Selected champion remains unchanged (`3da22a16…`); the native batch made no official check or ranked submission.
 
 All 16 contract cases passed for both implementations. Across all 12 scored shapes and two fresh fixtures: 176 original-oracle checks, including fixed-address QKV/page-table mutation, and 576 timed graph replays passed. Every shape/fixture won all six reversed pairs.
 
