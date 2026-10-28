@@ -1,0 +1,158 @@
+{
+  "job_id": "7e9aa354da204bdf",
+  "mode": "check",
+  "terminal": "done",
+  "admitted_before_user_no_checks_restriction": true,
+  "source_sha256": "dcfbca2f8e1135762b08c77df931a7f53948f69746e0314797ee3dbef4147e82",
+  "passed": true,
+  "speedup": 1.25282976695078,
+  "speedup_ci95": [
+    1.2340373204465183,
+    1.2716222134550415
+  ],
+  "champion_historical_score": 1.2336330588627955,
+  "score_point_ratio_to_champion": 1.0155611167762322,
+  "same_evaluator": true,
+  "checks": {
+    "flagged": [],
+    "ok": true,
+    "rejected": []
+  },
+  "event_status_counts": {
+    "('test', 'pass')": 16,
+    "('benchmark', 'pass')": 12,
+    "('profile', None)": 12
+  },
+  "created_at": 1793147418.5971186,
+  "started_at": 1793147779.1833832,
+  "finished_at": 1793148089.1056135,
+  "rows": [
+    {
+      "batch": 1,
+      "q_len": 1,
+      "layer": "sliding",
+      "v4_us": 11.485336473103864,
+      "champion_historical_us": 11.47711384229471,
+      "v4_vs_champion_reference_normalized_change_pct": 0.30564225957530056,
+      "baseline_drift_pct": -0.23328552474872755,
+      "changed_source_route": false
+    },
+    {
+      "batch": 1,
+      "q_len": 1,
+      "layer": "full",
+      "v4_us": 27.052342847191774,
+      "champion_historical_us": 27.031302842677167,
+      "v4_vs_champion_reference_normalized_change_pct": 0.4903168316868767,
+      "baseline_drift_pct": -0.4104685326895674,
+      "changed_source_route": false
+    },
+    {
+      "batch": 16,
+      "q_len": 1,
+      "layer": "sliding",
+      "v4_us": 14.861305442075212,
+      "champion_historical_us": 13.92113651627598,
+      "v4_vs_champion_reference_normalized_change_pct": 4.103625346328865,
+      "baseline_drift_pct": 2.545454449243545,
+      "changed_source_route": false
+    },
+    {
+      "batch": 16,
+      "q_len": 1,
+      "layer": "full",
+      "v4_us": 164.53345367206632,
+      "champion_historical_us": 194.27190912323948,
+      "v4_vs_champion_reference_normalized_change_pct": -15.49624148631853,
+      "baseline_drift_pct": 0.22318040879094614,
+      "changed_source_route": true
+    },
+    {
+      "batch": 32,
+      "q_len": 1,
+      "layer": "sliding",
+      "v4_us": 20.189127795252855,
+      "champion_historical_us": 20.10360388661608,
+      "v4_vs_champion_reference_normalized_change_pct": -0.6014352183615901,
+      "baseline_drift_pct": 1.0330642371461973,
+      "changed_source_route": false
+    },
+    {
+      "batch": 32,
+      "q_len": 1,
+      "layer": "full",
+      "v4_us": 317.5694057779738,
+      "champion_historical_us": 304.0318931739489,
+      "v4_vs_champion_reference_normalized_change_pct": 4.3351554998727115,
+      "baseline_drift_pct": 0.1126240805728429,
+      "changed_source_route": true
+    },
+    {
+      "batch": 1,
+      "q_len": 8,
+      "layer": "sliding",
+      "v4_us": 16.64450229678705,
+      "champion_historical_us": 16.988207220445705,
+      "v4_vs_champion_reference_normalized_change_pct": -0.711314066720492,
+      "baseline_drift_pct": -1.321281540846675,
+      "changed_source_route": false
+    },
+    {
+      "batch": 1,
+      "q_len": 8,
+      "layer": "full",
+      "v4_us": 30.17911998347237,
+      "champion_historical_us": 29.568835823566065,
+      "v4_vs_champion_reference_normalized_change_pct": -0.6631233750158949,
+      "baseline_drift_pct": 2.745271734541843,
+      "changed_source_route": false
+    },
+    {
+      "batch": 16,
+      "q_len": 8,
+      "layer": "sliding",
+      "v4_us": 22.355847625173745,
+      "champion_historical_us": 21.740249752189822,
+      "v4_vs_champion_reference_normalized_change_pct": 1.5292167740405427,
+      "baseline_drift_pct": 1.2827712925576717,
+      "changed_source_route": false
+    },
+    {
+      "batch": 16,
+      "q_len": 8,
+      "layer": "full",
+      "v4_us": 198.0364902683835,
+      "champion_historical_us": 197.60213357126437,
+      "v4_vs_champion_reference_normalized_change_pct": 0.12599510218722632,
+      "baseline_drift_pct": 0.09370060847935235,
+      "changed_source_route": false
+    },
+    {
+      "batch": 32,
+      "q_len": 8,
+      "layer": "sliding",
+      "v4_us": 27.60606795899211,
+      "champion_historical_us": 27.46761932746471,
+      "v4_vs_champion_reference_normalized_change_pct": 0.7858349857349678,
+      "baseline_drift_pct": -0.2795947629490425,
+      "changed_source_route": false
+    },
+    {
+      "batch": 32,
+      "q_len": 8,
+      "layer": "full",
+      "v4_us": 382.53612170629384,
+      "champion_historical_us": 380.3807463402613,
+      "v4_vs_champion_reference_normalized_change_pct": 0.05503786512746078,
+      "baseline_drift_pct": 0.5113170113997922,
+      "changed_source_route": false
+    }
+  ],
+  "comparison_limit": "Official within-run paired versus SGLang; champion comparison is historical reference-normalized, not same-session A/B. No promotion.",
+  "queue_seconds": 360.5862646102905,
+  "run_seconds": 309.92223024368286,
+  "max_unchanged_control_normalized_change_abs_pct": 4.103625346328865,
+  "user_check_restriction_utc": "2026-10-28T00:30:31+00:00",
+  "official_admitted_utc": "2026-10-28T00:30:18.597119+00:00",
+  "admitted_before_restriction_seconds": 12.402881383895874
+}

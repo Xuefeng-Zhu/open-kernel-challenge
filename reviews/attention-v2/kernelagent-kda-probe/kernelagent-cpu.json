@@ -1,0 +1,46 @@
+{
+  "upstream_commit": "e0647170da36ef9b059ac0bd3d60103aa4ed378b",
+  "mode": "real CPU components only; no model/GPU test",
+  "upstream_cpu_tests": "27 passed in 0.06s",
+  "champion_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "champion_saved_result": {
+    "job_id": "5090b83f1d63407b",
+    "source": "saved official receipt, no new execution",
+    "prerequisites": 16,
+    "benchmarks": 12,
+    "score": 1.2336330588627957,
+    "score_ci95": [
+      1.2151285629798536,
+      1.2521375547457374
+    ],
+    "receipt_sha256": "a66e15b71116d6758cd1aae75138f19c0a7db4cb2e89ba27394d6d09df2d61cb"
+  },
+  "actual_saved_ncu": {
+    "csv_sha256": "8ffaa246a5b98a7a6eff8b9d42e8447e21fcfa625ce92e1297e70383385003e8",
+    "format": "wide",
+    "numeric_metrics": 4,
+    "gpu_name": "NVIDIA H200",
+    "cc": "9.0",
+    "kernel_name_sha256": "e74ccf26278f6fddc906194a2a415767a3f139941f63d0bc0cf67caa03ccbe87",
+    "metric_values": {
+      "dram__throughput.avg.pct_of_peak_sustained_elapsed": 36.551689,
+      "sm__pipe_tensor_cycles_active.avg.pct_of_peak_sustained_elapsed": 11.418343,
+      "sm__warps_active.avg.pct_of_peak_sustained_active": 12.494386,
+      "smsp__warp_issue_stalled_long_scoreboard_per_warp_active.pct": 43.36881
+    },
+    "limitation": "existing eager capture; not graph latency shares or a new profile"
+  },
+  "actual_h200_specs_lookup": null,
+  "offline_prompt": {
+    "bytes": 21403,
+    "sha256": "76c6dee077cd9bf79ba81471f7e60d095873e714ad4ecec369b0a2183b979a19",
+    "sent": false
+  },
+  "isolated_provider_gate": "No available provider for model 'o4-mini'. Tried providers: ['OpenAIProvider']. Check API keys and dependencies.",
+  "blocked_network_process_or_credential_attempts": [],
+  "new_gpu_jobs": 0,
+  "new_official_checks": 0,
+  "model_calls": 0,
+  "paid_spend_usd": 0,
+  "candidate_generated": false
+}

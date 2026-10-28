@@ -1,0 +1,27 @@
+{
+  "state": "CPU repair verified; native launch paused by latest instruction",
+  "cpu_tests": 40,
+  "cpu_test_seconds": 1.014,
+  "cpu_python_torch": "2.14.1 on macOS CPU",
+  "source_sha256": {
+    "worker.py": "2cc2a417420beab1a224d7fb304103f6097d1b817aa47786fbadc865a7a30bf9",
+    "test_worker.py": "70e35808b758cdf19e26dfa2205fc8ab232957086e6e6a5fa9e68a5160d557e5",
+    "controller.py": "30078d6962d660c7bd7bb853a273714350ab257476b582f74077160e2a912a32",
+    "test_controller.py": "30c5200349b1e2232097ce002e6372450642203b9a4e1ca3e522e71cb8655802",
+    "PLAN.md": "917625755eac96c71149b90ad2c92c8db42130a6ce07e5fe30763b628c276048"
+  },
+  "manifest_sha256": "2a46c6a4354ef23d027afdaf170cc50e4c28eaa61debc457d9864337b617ed3f",
+  "payload_sha256": {
+    "worker.py": "2cc2a417420beab1a224d7fb304103f6097d1b817aa47786fbadc865a7a30bf9",
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v4.py": "dcfbca2f8e1135762b08c77df931a7f53948f69746e0314797ee3dbef4147e82",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055",
+    "LICENSE": "1495e1e757ef4d0925a2350563cf5754bb23c51701a8ec4fb3c5cdcbedae6747",
+    "THIRD_PARTY_NOTICES.md": "c0417e70786e1094b0741a8b569927d8469cc742bf16e63a2fda2d59ad01a88b"
+  },
+  "native_app_created": false,
+  "original_kernel_sources_changed": false,
+  "official_checks_launched_after_restriction": 0,
+  "ranked_submissions": 0
+}

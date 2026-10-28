@@ -1,0 +1,11 @@
+--- worker.native-failed.py
++++ worker.repaired.py
+@@ -231,7 +231,7 @@
+ 
+ def bytes_equal(torch, a, b):
+     return a.shape == b.shape and a.dtype == b.dtype and bool(torch.equal(
+-        a.contiguous().view(torch.uint8), b.contiguous().view(torch.uint8)))
++        a.contiguous().reshape(-1).view(torch.uint8), b.contiguous().reshape(-1).view(torch.uint8)))
+ 
+ 
+ def check_ownership(torch, work, fresh):

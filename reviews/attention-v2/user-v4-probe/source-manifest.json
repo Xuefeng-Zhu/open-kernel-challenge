@@ -1,0 +1,10 @@
+{
+  "library_file_id": "libfile_e700618d014481918ab96f6fee1f54d1",
+  "source_file": "submission_v4.py",
+  "source_bytes": 47598,
+  "source_sha256": "dcfbca2f8e1135762b08c77df931a7f53948f69746e0314797ee3dbef4147e82",
+  "original_unchanged": true,
+  "mode": "check",
+  "champion_source_sha256": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+  "scope": "full decode B16/B32 changed; verify/sliding preserved"
+}

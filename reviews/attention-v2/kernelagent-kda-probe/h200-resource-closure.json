@@ -1,0 +1,25 @@
+{
+  "app_id": "ap-NIeb23lk3RtcAOgTimYjQM",
+  "state": "stopped",
+  "tasks": 0,
+  "server_tasks_raw": "0",
+  "server_observation": {
+    "observed_utc": "2026-10-28T00:48:24.327342+00:00",
+    "app": {
+      "app_id": "ap-NIeb23lk3RtcAOgTimYjQM",
+      "description": "attention-kda-h200-baseline-v4",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-28 00:47:41+00:00",
+      "stopped_at": "2026-10-28 00:48:11+00:00"
+    }
+  },
+  "independent_cli_state_matched": true,
+  "recorded_utc": "2026-10-28T00:51:22.560813+00:00",
+  "original_controller_false_negative": "required int tasks; actual supported CLI returns decimal string",
+  "worker_wall_seconds": 21.219447667,
+  "new_job_reserve_usd": "1.20",
+  "actual_charge_usd": null,
+  "billing_requeried": false,
+  "paid_limit_usd": "0"
+}

@@ -1,0 +1,4 @@
+*-result.json
+profiles/
+*.local.txt
+__pycache__/

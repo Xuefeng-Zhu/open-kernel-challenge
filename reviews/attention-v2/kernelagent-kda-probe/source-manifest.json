@@ -1,0 +1,10 @@
+{
+  "kernelagent_commit": "e0647170da36ef9b059ac0bd3d60103aa4ed378b",
+  "kda_commit": "acdd79343c5e9d0c7cb96289f26fd3f1051ce785",
+  "KernelWiki_commit": "76d27b56f804e7e7295d4c570e1e5d7eef4b0a75",
+  "ncu_report_skill_commit": "d1887948c7d53690cfe6605f59c1329b8a1c6bb5",
+  "failed_native_worker_sha256": "049670a93a2c888bab69c0c1a2804d2400e31b5d0e5cc54e6514058910d22272",
+  "original_sources_and_raw_failure_preserved_locally": true,
+  "repair_native_executed": false,
+  "selected_champion_unchanged": true
+}

@@ -1,0 +1,50 @@
+{
+  "status": "failed",
+  "worker_sha256": "049670a93a2c888bab69c0c1a2804d2400e31b5d0e5cc54e6514058910d22272",
+  "verified_hashes": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v4.py": "dcfbca2f8e1135762b08c77df931a7f53948f69746e0314797ee3dbef4147e82",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+  },
+  "baseline_cases": [],
+  "paired_cases": [],
+  "counter_reports": [],
+  "correctness_complete": false,
+  "timing_complete": false,
+  "counters_complete": false,
+  "candidate_changed": false,
+  "official_check": false,
+  "ranked_submission": false,
+  "protocol": {
+    "eviction_bytes": 268435456,
+    "seeds": [
+      135871,
+      135872
+    ],
+    "reverse_pairs": 6,
+    "graph_timing": "raw whole-call CUDA event graph replay; no fixed-cost subtraction",
+    "counters": "eager isolated kernel replay; not graph internal-state equivalence",
+    "promotion": "not assessed: v4 paired coverage only B16/B32 full decode"
+  },
+  "phase": "baseline-(1, 1, 'sliding')",
+  "elapsed_seconds": 18.90657088,
+  "runtime": {
+    "gpu": "NVIDIA H200",
+    "sm_count": 132,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "operand_types": {
+      "champion": {
+        "qk": "fp8e4nv",
+        "pv": "bf16"
+      },
+      "v4": {
+        "qk": "fp8e4nv",
+        "pv": "bf16"
+      }
+    }
+  },
+  "error": "RuntimeError: self.dim() cannot be 0 to view Float as Byte (different element sizes)",
+  "traceback": "Traceback (most recent call last):\n  File \"/opt/kda-h200-trial/worker.py\", line 415, in run\n    checked = oracle(torch, ref, work, fresh, out, state)\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/kda-h200-trial/worker.py\", line 266, in oracle\n    check_ownership(torch, work, fresh)\n  File \"/opt/kda-h200-trial/worker.py\", line 243, in check_ownership\n    if not bytes_equal(torch, work[key], value):\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/opt/kda-h200-trial/worker.py\", line 234, in bytes_equal\n    a.contiguous().view(torch.uint8), b.contiguous().view(torch.uint8)))\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nRuntimeError: self.dim() cannot be 0 to view Float as Byte (different element sizes)\n"
+}
