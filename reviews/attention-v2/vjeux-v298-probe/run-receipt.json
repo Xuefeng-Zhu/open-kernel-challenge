@@ -1,0 +1,56 @@
+{
+  "app_id": "ap-T7nUZmPwXPU6yYWfNhleVX",
+  "state": "function-terminal",
+  "accepted_utc": "2026-10-28T02:31:38.516582+00:00",
+  "client_finished_utc": "2026-10-28T02:35:38.387871+00:00",
+  "exit_code": 0,
+  "worker_status": "complete",
+  "completion_verified": true,
+  "shutdown_verified": true,
+  "all_apps_stopped_zero_tasks": true,
+  "worker_wall_seconds": 218.687614965,
+  "resources": {
+    "gpu": "H200",
+    "cpu": [
+      4,
+      4
+    ],
+    "memory_mib": [
+      16384,
+      16384
+    ],
+    "max_containers": 1,
+    "worker_deadline": 540,
+    "supervisor_timeout": 560,
+    "function_timeout": 580,
+    "startup_timeout": 20,
+    "watchdog": 610,
+    "retries": 0,
+    "invocations": 1
+  },
+  "accounting": {
+    "historical_receipt_reused": true,
+    "reserve_usd": "2.00",
+    "paid_limit_usd": "0",
+    "actual_charge_usd": null,
+    "fresh_billing_queried": false
+  },
+  "shutdown_observation": {
+    "observed_utc": "2026-10-28T02:35:38.387803+00:00",
+    "app": {
+      "app_id": "ap-T7nUZmPwXPU6yYWfNhleVX",
+      "description": "attention-vjeux-v298-champion-comparison",
+      "state": "stopped",
+      "tasks": "0",
+      "created_at": "2026-10-28 02:31:36+00:00",
+      "stopped_at": "2026-10-28 02:35:32+00:00"
+    }
+  },
+  "source_sha256": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v298.py": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+  },
+  "native_result_sha256": "7ec4f8b989a90f769859898847a0b56bf0299e0427633f4067edb5be26ee54de"
+}

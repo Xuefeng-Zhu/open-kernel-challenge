@@ -1,0 +1,23 @@
+{
+  "commit": "3fa2f6b8c529a1107581dda54cfbb0b818223437",
+  "files": [
+    {
+      "file": "README.md",
+      "bytes": 1675,
+      "sha256": "c8ac3aa68c4ca6b12ad6266bdeeb0851877e3258b294818f06bf651e1dd33022",
+      "url": "https://raw.githubusercontent.com/vjeux/okc-2026/3fa2f6b8c529a1107581dda54cfbb0b818223437/README.md"
+    },
+    {
+      "file": "LICENSE",
+      "bytes": 11357,
+      "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4",
+      "url": "https://raw.githubusercontent.com/vjeux/okc-2026/3fa2f6b8c529a1107581dda54cfbb0b818223437/LICENSE"
+    },
+    {
+      "file": "muse_attention_decode.py",
+      "bytes": 254166,
+      "sha256": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+      "url": "https://raw.githubusercontent.com/vjeux/okc-2026/3fa2f6b8c529a1107581dda54cfbb0b818223437/muse_attention_decode.py"
+    }
+  ]
+}

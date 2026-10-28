@@ -1,0 +1,4456 @@
+{
+  "status": "complete",
+  "worker_sha256": "7fa92eba152f715c995b312b475cf54195aad5ca5a94ddc825727c3bfcd2262f",
+  "verified_hashes": {
+    "selected.py": "3da22a162e3c7567b10ba87713e187f7f086376b1d5198edb972fd9b8d0a7cd8",
+    "v298.py": "0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883",
+    "reference.py": "386f7f67a1d788501e8fb9005d340423d098a0946e23810ba10878228c11a37b",
+    "checks.py": "9a046c3c38db28b325dcd1557baecdf6bc9ef941d2175f9a900ba4c230bb8055"
+  },
+  "prerequisite_cases": [
+    {
+      "index": 1,
+      "case": {
+        "batch": 1,
+        "ctx": 10,
+        "heads": "tp8",
+        "layer": "sliding"
+      },
+      "seed": 135800,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.758e-02 (worst row 4.758e-02) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.647e-03 (worst row 3.647e-03) [bound 0.097: 2.5 x the reference's 0.033 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 2,
+      "case": {
+        "batch": 3,
+        "ctx": 2047,
+        "heads": "tp8",
+        "layer": "sliding"
+      },
+      "seed": 135801,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.727e-02 (worst row 9.249e-02) [bound 0.150: 2.5 x the reference's 0.078 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.496e-03 (worst row 6.753e-03) [bound 0.150: 2.5 x the reference's 0.078 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 3,
+      "case": {
+        "batch": 5,
+        "ctx": 5000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "spread": "mixed",
+        "page": 1
+      },
+      "seed": 135802,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 8.200e-02 (worst row 1.226e-01) [bound 0.150: 2.5 x the reference's 0.081 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 8.089e-02 (worst row 1.245e-01) [bound 0.150: 2.5 x the reference's 0.081 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 4,
+      "case": {
+        "batch": 4,
+        "ctx": 3000,
+        "heads": "tp8",
+        "layer": "full"
+      },
+      "seed": 135803,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.303e-02 (worst row 8.891e-02) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.594e-03 (worst row 5.357e-03) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 5,
+      "case": {
+        "batch": 8,
+        "ctx": 8192,
+        "heads": "dp",
+        "layer": "full",
+        "spread": "mixed"
+      },
+      "seed": 135804,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 8.140e-02 (worst row 9.173e-02) [bound 0.150: 2.5 x the reference's 0.081 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.478e-03 (worst row 6.016e-03) [bound 0.150: 2.5 x the reference's 0.081 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 6,
+      "case": {
+        "batch": 2,
+        "ctx": 100000,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 8,
+        "page": 1
+      },
+      "seed": 135805,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 8.772e-02 (worst row 1.142e-01) [bound 0.150: 2.5 x the reference's 0.086 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 8.764e-02 (worst row 9.997e-02) [bound 0.150: 2.5 x the reference's 0.086 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 7,
+      "case": {
+        "batch": 4,
+        "ctx": 6000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "dist": "edges",
+        "page": 1
+      },
+      "seed": 135806,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.032e-02 (worst row 7.760e-02) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.981e-03 (worst row 5.604e-03) [bound 0.150: 2.5 x the reference's 0.061 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 8,
+      "case": {
+        "batch": 4,
+        "ctx": 6000,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 8,
+        "dist": "edges"
+      },
+      "seed": 135807,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 8.308e-02 (worst row 1.072e-01) [bound 0.150: 2.5 x the reference's 0.083 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 8.274e-02 (worst row 1.105e-01) [bound 0.150: 2.5 x the reference's 0.083 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 9,
+      "case": {
+        "batch": 1,
+        "ctx": 1048576,
+        "heads": "tp8",
+        "layer": "full",
+        "q_len": 8
+      },
+      "seed": 135808,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 9.390e-02 (worst row 1.123e-01) [bound 0.150: 2.5 x the reference's 0.091 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 9.142e-02 (worst row 1.180e-01) [bound 0.150: 2.5 x the reference's 0.091 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 10,
+      "case": {
+        "batch": 3,
+        "ctx": 4000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "page": 1,
+        "kv_scale": 0.015625
+      },
+      "seed": 135809,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 8.213e-02 (worst row 1.106e-01) [bound 0.150: 2.5 x the reference's 0.082 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 8.256e-02 (worst row 1.165e-01) [bound 0.150: 2.5 x the reference's 0.082 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 11,
+      "case": {
+        "batch": 2,
+        "ctx": 9000,
+        "heads": "tp8",
+        "layer": "full",
+        "kv_scale": 0.015625
+      },
+      "seed": 135810,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 1.024e-01 (worst row 1.099e-01) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.109e-03 (worst row 7.402e-03) [bound 0.150: 2.5 x the reference's 0.096 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 12,
+      "case": {
+        "batch": 4,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "spread": "mixed",
+        "dist": "soft"
+      },
+      "seed": 135811,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.205e-02 (worst row 6.476e-02) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.678e-03 (worst row 4.887e-03) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 13,
+      "case": {
+        "batch": 4,
+        "ctx": 6000,
+        "heads": "tp8",
+        "layer": "sliding",
+        "q_len": 8,
+        "dist": "soft",
+        "page": 1
+      },
+      "seed": 135812,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.823e-02 (worst row 1.099e-01) [bound 0.150: 2.5 x the reference's 0.074 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.475e-02 (worst row 1.176e-01) [bound 0.150: 2.5 x the reference's 0.075 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 14,
+      "case": {
+        "batch": 2,
+        "ctx": 20000,
+        "heads": "dp",
+        "layer": "full",
+        "q_len": 8,
+        "dist": "soft"
+      },
+      "seed": 135813,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.824e-02 (worst row 7.651e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.100e-02 (worst row 7.784e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 15,
+      "case": {
+        "batch": 4,
+        "ctx": 80000,
+        "heads": "tp8",
+        "layer": "full",
+        "spread": "mixed",
+        "dist": "coherent",
+        "page": 1
+      },
+      "seed": 135814,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.253e-02 (worst row 5.226e-02) [bound 0.117: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.724e-03 (worst row 4.266e-03) [bound 0.117: 2.5 x the reference's 0.041 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    },
+    {
+      "index": 16,
+      "case": {
+        "batch": 2,
+        "ctx": 20000,
+        "heads": "dp",
+        "layer": "full",
+        "q_len": 8,
+        "dist": "coherent"
+      },
+      "seed": 135815,
+      "arms": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.959e-02 (worst row 4.677e-02) [bound 0.115: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.142e-02 (worst row 5.068e-02) [bound 0.115: 2.5 x the reference's 0.040 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      }
+    }
+  ],
+  "paired_cases": [
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.442e-02 (worst row 7.442e-02) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.793e-03 (worst row 4.793e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.519e-02 (worst row 7.519e-02) [bound 0.150: 2.5 x the reference's 0.074 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 5.692e-03 (worst row 5.692e-03) [bound 0.150: 2.5 x the reference's 0.074 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.442e-02 (worst row 7.442e-02) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.793e-03 (worst row 4.793e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 16.3199994713068,
+          "v298": 9.535999968647957
+        },
+        {
+          "v298": 9.535999968647957,
+          "champion": 16.095999628305435
+        },
+        {
+          "v298": 9.759999811649323,
+          "champion": 43.10400038957596
+        },
+        {
+          "champion": 17.11999997496605,
+          "v298": 10.463999584317207
+        },
+        {
+          "champion": 16.224000602960587,
+          "v298": 10.33599954098463
+        },
+        {
+          "v298": 9.535999968647957,
+          "champion": 15.904000028967857
+        },
+        {
+          "v298": 9.535999968647957,
+          "champion": 16.095999628305435
+        },
+        {
+          "champion": 15.456000342965126,
+          "v298": 9.503999724984169
+        },
+        {
+          "champion": 16.127999871969223,
+          "v298": 9.535999968647957
+        },
+        {
+          "v298": 9.344000369310379,
+          "champion": 15.87199978530407
+        },
+        {
+          "v298": 9.696000255644321,
+          "champion": 16.127999871969223
+        },
+        {
+          "champion": 15.039999969303608,
+          "v298": 9.535999968647957
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 32,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 16.11199975013733,
+        "v298_median_us": 9.535999968647957,
+        "reverse_pair_ratios": [
+          1.6996238076349703,
+          2.6880473052903544,
+          1.617978698660905,
+          1.65680428081866,
+          1.694948614020411,
+          1.6197006024334932
+        ],
+        "median_pair_speedup": 1.6758764474195356,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.428e-02 (worst row 4.428e-02) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.303e-03 (worst row 3.303e-03) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.171e-02 (worst row 4.171e-02) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.383e-03 (worst row 3.383e-03) [bound 0.134: 2.5 x the reference's 0.048 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.428e-02 (worst row 4.428e-02) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.303e-03 (worst row 3.303e-03) [bound 0.131: 2.5 x the reference's 0.046 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 35.071998834609985,
+          "v298": 17.920000478625298
+        },
+        {
+          "v298": 22.752000018954277,
+          "champion": 35.2960005402565
+        },
+        {
+          "v298": 17.855999991297722,
+          "champion": 34.78400036692619
+        },
+        {
+          "champion": 38.176000118255615,
+          "v298": 17.535999417304993
+        },
+        {
+          "champion": 35.360001027584076,
+          "v298": 17.56799966096878
+        },
+        {
+          "v298": 17.40800030529499,
+          "champion": 36.86400130391121
+        },
+        {
+          "v298": 17.72800087928772,
+          "champion": 34.591998904943466
+        },
+        {
+          "champion": 39.744000881910324,
+          "v298": 17.664000391960144
+        },
+        {
+          "champion": 34.78400036692619,
+          "v298": 17.632000148296356
+        },
+        {
+          "v298": 18.592000007629395,
+          "champion": 34.623999148607254
+        },
+        {
+          "v298": 17.791999503970146,
+          "champion": 35.360001027584076
+        },
+        {
+          "champion": 36.57599911093712,
+          "v298": 22.752000018954277
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 4,
+          "coop": 0
+        },
+        "default_tuned_override": {
+          "nc": 8,
+          "coop": 1,
+          "n_splits": 252
+        },
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 35.32800078392029,
+        "v298_median_us": 17.760000191628933,
+        "reverse_pair_ratios": [
+          1.7424655863654412,
+          2.059337962303316,
+          2.06453272294179,
+          2.095314440257307,
+          1.916745850956758,
+          1.787442438350726
+        ],
+        "median_pair_speedup": 1.988041906630037,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.398e-02 (worst row 7.542e-02) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.486e-03 (worst row 5.346e-03) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.359e-02 (worst row 7.537e-02) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.841e-03 (worst row 6.249e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.398e-02 (worst row 7.542e-02) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.485e-03 (worst row 5.346e-03) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 20.896000787615776,
+          "v298": 14.015999622642994
+        },
+        {
+          "v298": 13.69599997997284,
+          "champion": 20.416000857949257
+        },
+        {
+          "v298": 13.856000266969204,
+          "champion": 20.864000543951988
+        },
+        {
+          "champion": 22.23999984562397,
+          "v298": 14.720000326633453
+        },
+        {
+          "champion": 20.255999639630318,
+          "v298": 14.336000196635723
+        },
+        {
+          "v298": 16.48000068962574,
+          "champion": 20.479999482631683
+        },
+        {
+          "v298": 15.168000012636185,
+          "champion": 20.51199972629547
+        },
+        {
+          "champion": 20.416000857949257,
+          "v298": 13.952000066637993
+        },
+        {
+          "champion": 20.447999238967896,
+          "v298": 14.14399966597557
+        },
+        {
+          "v298": 13.856000266969204,
+          "champion": 20.255999639630318
+        },
+        {
+          "v298": 14.08000010997057,
+          "champion": 20.608000457286835
+        },
+        {
+          "champion": 20.35200037062168,
+          "v298": 13.824000023305416
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278
+        ],
+        "seq_len_sum": 1264580,
+        "page_table_shape": [
+          16,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 16,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 20.46399936079979,
+        "v298_median_us": 14.047999866306782,
+        "reverse_pair_ratios": [
+          1.4907609695169761,
+          1.5083194497251282,
+          1.325101663151901,
+          1.4067176729956856,
+          1.4537749800589688,
+          1.4679230383061697
+        ],
+        "median_pair_speedup": 1.4608490091825692,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.637e-02 (worst row 6.311e-02) [bound 0.112: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.060e-03 (worst row 3.971e-03) [bound 0.112: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.638e-02 (worst row 6.100e-02) [bound 0.109: 2.5 x the reference's 0.037 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.948e-03 (worst row 3.465e-03) [bound 0.109: 2.5 x the reference's 0.037 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.637e-02 (worst row 6.311e-02) [bound 0.112: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.060e-03 (worst row 3.971e-03) [bound 0.112: 2.5 x the reference's 0.039 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 204.3839991092682,
+          "v298": 99.20000284910202
+        },
+        {
+          "v298": 100.28800368309021,
+          "champion": 202.33599841594696
+        },
+        {
+          "v298": 99.0080013871193,
+          "champion": 202.5279998779297
+        },
+        {
+          "champion": 202.4960070848465,
+          "v298": 98.75199943780899
+        },
+        {
+          "champion": 202.27199792861938,
+          "v298": 99.7759997844696
+        },
+        {
+          "v298": 99.55199807882309,
+          "champion": 203.3279985189438
+        },
+        {
+          "v298": 98.68799895048141,
+          "champion": 203.36000621318817
+        },
+        {
+          "champion": 202.81599462032318,
+          "v298": 99.29600358009338
+        },
+        {
+          "champion": 208.44799280166626,
+          "v298": 98.68799895048141
+        },
+        {
+          "v298": 99.10400211811066,
+          "champion": 206.496000289917
+        },
+        {
+          "v298": 98.39999675750732,
+          "champion": 205.4399996995926
+        },
+        {
+          "champion": 299.23200607299805,
+          "v298": 129.63199615478516
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278
+        ],
+        "seq_len_sum": 1264580,
+        "page_table_shape": [
+          16,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 203.34400236606598,
+        "v298_median_us": 99.15200248360634,
+        "reverse_pair_ratios": [
+          2.0388237742088737,
+          2.048059988723467,
+          2.03483144480824,
+          2.0515675339787918,
+          2.0978619826801514,
+          2.1952949510664976
+        ],
+        "median_pair_speedup": 2.049813761351129,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.445e-02 (worst row 8.463e-02) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.701e-03 (worst row 5.730e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.487e-02 (worst row 8.107e-02) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.657e-03 (worst row 5.634e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.445e-02 (worst row 8.463e-02) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.701e-03 (worst row 5.730e-03) [bound 0.150: 2.5 x the reference's 0.064 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 27.744000777602196,
+          "v298": 17.472000792622566
+        },
+        {
+          "v298": 16.672000288963318,
+          "champion": 27.103999629616737
+        },
+        {
+          "v298": 17.055999487638474,
+          "champion": 27.456000447273254
+        },
+        {
+          "champion": 26.75200067460537,
+          "v298": 16.896000131964684
+        },
+        {
+          "champion": 27.68000029027462,
+          "v298": 18.015999346971512
+        },
+        {
+          "v298": 17.696000635623932,
+          "champion": 26.559999212622643
+        },
+        {
+          "v298": 16.896000131964684,
+          "champion": 27.07199938595295
+        },
+        {
+          "champion": 26.784000918269157,
+          "v298": 18.848000094294548
+        },
+        {
+          "champion": 27.07199938595295,
+          "v298": 16.863999888300896
+        },
+        {
+          "v298": 17.184000462293625,
+          "champion": 26.784000918269157
+        },
+        {
+          "v298": 16.767999157309532,
+          "champion": 26.59199945628643
+        },
+        {
+          "champion": 27.55199931561947,
+          "v298": 18.751999363303185
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278,
+          81556,
+          81911,
+          75982,
+          77583,
+          76832,
+          82037,
+          84908,
+          84426,
+          76196,
+          81739,
+          79781,
+          83766,
+          82502,
+          77142,
+          84765,
+          80943
+        ],
+        "seq_len_sum": 2556649,
+        "page_table_shape": [
+          32,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 27.07199938595295,
+        "v298_median_us": 17.11999997496605,
+        "reverse_pair_ratios": [
+          1.606704686320913,
+          1.5964901034008214,
+          1.5185543239598513,
+          1.5089446221914862,
+          1.5818141573017317,
+          1.5264677896044485
+        ],
+        "median_pair_speedup": 1.55414097345309,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.896e-02 (worst row 6.374e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.948e-03 (worst row 3.968e-03) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.837e-02 (worst row 6.205e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.999e-03 (worst row 3.546e-03) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.896e-02 (worst row 6.374e-02) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.948e-03 (worst row 3.968e-03) [bound 0.110: 2.5 x the reference's 0.038 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 300.0960052013397,
+          "v298": 179.4240027666092
+        },
+        {
+          "v298": 179.80800569057465,
+          "champion": 300.7040023803711
+        },
+        {
+          "v298": 179.51999604701996,
+          "champion": 300.9920120239258
+        },
+        {
+          "champion": 309.1199994087219,
+          "v298": 179.3919950723648
+        },
+        {
+          "champion": 299.0399897098541,
+          "v298": 178.81600558757782
+        },
+        {
+          "v298": 177.63200402259827,
+          "champion": 304.32000756263733
+        },
+        {
+          "v298": 178.5919964313507,
+          "champion": 299.3600070476532
+        },
+        {
+          "champion": 299.8400032520294,
+          "v298": 179.45599555969238
+        },
+        {
+          "champion": 299.96800422668457,
+          "v298": 181.37599527835846
+        },
+        {
+          "v298": 200.15999674797058,
+          "champion": 299.3920147418976
+        },
+        {
+          "v298": 178.71999740600586,
+          "champion": 300.83200335502625
+        },
+        {
+          "champion": 299.3920147418976,
+          "v298": 178.6240041255951
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278,
+          81556,
+          81911,
+          75982,
+          77583,
+          76832,
+          82037,
+          84908,
+          84426,
+          76196,
+          81739,
+          79781,
+          83766,
+          82502,
+          77142,
+          84765,
+          80943
+        ],
+        "seq_len_sum": 2556649,
+        "page_table_shape": [
+          32,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 300.03200471401215,
+        "v298_median_us": 179.407998919487,
+        "reverse_pair_ratios": [
+          1.672456877599514,
+          1.699742337666951,
+          1.6926457891742188,
+          1.6735230360641762,
+          1.5728200118549334,
+          1.6796764737919794
+        ],
+        "median_pair_speedup": 1.6765997549280778,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.968e-02 (worst row 8.359e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.828e-02 (worst row 7.757e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.922e-02 (worst row 7.771e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.885e-02 (worst row 7.717e-02) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.968e-02 (worst row 8.359e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.828e-02 (worst row 7.757e-02) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 23.231999948620796,
+          "v298": 11.455999687314034
+        },
+        {
+          "v298": 11.42400037497282,
+          "champion": 22.592000663280487
+        },
+        {
+          "v298": 11.744000017642975,
+          "champion": 23.04000034928322
+        },
+        {
+          "champion": 22.143999114632607,
+          "v298": 11.296000331640244
+        },
+        {
+          "champion": 22.816000506281853,
+          "v298": 11.52000017464161
+        },
+        {
+          "v298": 11.296000331640244,
+          "champion": 22.36800082027912
+        },
+        {
+          "v298": 11.392000131309032,
+          "champion": 22.36800082027912
+        },
+        {
+          "champion": 22.624000906944275,
+          "v298": 11.680000461637974
+        },
+        {
+          "champion": 50.56000128388405,
+          "v298": 13.919999822974205
+        },
+        {
+          "v298": 11.615999974310398,
+          "champion": 21.503999829292297
+        },
+        {
+          "v298": 11.42400037497282,
+          "champion": 22.36800082027912
+        },
+        {
+          "champion": 23.00800010561943,
+          "v298": 11.296000331640244
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 33,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 22.60800078511238,
+        "v298_median_us": 11.440000031143427,
+        "reverse_pair_ratios": [
+          2.0026038381601525,
+          1.9610962016930311,
+          1.9803627684311367,
+          1.9501897483789845,
+          2.5930760025419906,
+          1.9970161073225483
+        ],
+        "median_pair_speedup": 1.9886894378768425,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 2.587e-02 (worst row 3.218e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.881e-02 (worst row 3.681e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.781e-02 (worst row 3.385e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.920e-02 (worst row 4.236e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 2.587e-02 (worst row 3.218e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.881e-02 (worst row 3.681e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 38.656000047922134,
+          "v298": 20.031999796628952
+        },
+        {
+          "v298": 20.416000857949257,
+          "champion": 38.40000182390213
+        },
+        {
+          "v298": 19.967999309301376,
+          "champion": 38.015998899936676
+        },
+        {
+          "champion": 38.656000047922134,
+          "v298": 20.479999482631683
+        },
+        {
+          "champion": 38.24000060558319,
+          "v298": 19.90400068461895
+        },
+        {
+          "v298": 19.648000597953796,
+          "champion": 40.64000025391579
+        },
+        {
+          "v298": 19.45599913597107,
+          "champion": 38.24000060558319
+        },
+        {
+          "champion": 38.43199834227562,
+          "v298": 19.58400011062622
+        },
+        {
+          "champion": 37.88800165057182,
+          "v298": 19.999999552965164
+        },
+        {
+          "v298": 19.7759997099638,
+          "champion": 37.91999816894531
+        },
+        {
+          "v298": 20.191999152302742,
+          "champion": 37.98399865627289
+        },
+        {
+          "champion": 38.015998899936676,
+          "v298": 19.840000197291374
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 252,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 8
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 38.24000060558319,
+        "v298_median_us": 19.935999996960163,
+        "reverse_pair_ratios": [
+          1.9051386505022405,
+          1.8956554884616679,
+          1.993454951902668,
+          1.9639388356738003,
+          1.9059029714883136,
+          1.89855441207184
+        ],
+        "median_pair_speedup": 1.905520810995277,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.826e-02 (worst row 1.059e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.796e-02 (worst row 1.088e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.815e-02 (worst row 1.094e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.810e-02 (worst row 1.004e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.826e-02 (worst row 1.059e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.796e-02 (worst row 1.088e-01) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 29.53599952161312,
+          "v298": 16.383999958634377
+        },
+        {
+          "v298": 16.575999557971954,
+          "champion": 28.031999245285988
+        },
+        {
+          "v298": 17.535999417304993,
+          "champion": 28.255999088287354
+        },
+        {
+          "champion": 29.343999922275543,
+          "v298": 16.64000004529953
+        },
+        {
+          "champion": 28.12799997627735,
+          "v298": 16.416000202298164
+        },
+        {
+          "v298": 16.543999314308167,
+          "champion": 28.511999174952507
+        },
+        {
+          "v298": 16.79999940097332,
+          "champion": 28.384000062942505
+        },
+        {
+          "champion": 29.37600016593933,
+          "v298": 16.383999958634377
+        },
+        {
+          "champion": 28.384000062942505,
+          "v298": 16.256000846624374
+        },
+        {
+          "v298": 16.383999958634377,
+          "champion": 28.9280004799366
+        },
+        {
+          "v298": 16.575999557971954,
+          "champion": 28.192000463604927
+        },
+        {
+          "champion": 29.21600081026554,
+          "v298": 16.287999227643013
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278
+        ],
+        "seq_len_sum": 1264580,
+        "page_table_shape": [
+          16,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 28.447999618947506,
+        "v298_median_us": 16.479999758303165,
+        "reverse_pair_ratios": [
+          1.7460353825045383,
+          1.6856719791114765,
+          1.7184200660071867,
+          1.7404779608909149,
+          1.755816726107984,
+          1.746624700582998
+        ],
+        "median_pair_speedup": 1.7432566716977265,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.130e-02 (worst row 5.610e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.007e-02 (worst row 6.644e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.115e-02 (worst row 5.909e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.975e-02 (worst row 6.318e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.130e-02 (worst row 5.610e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.007e-02 (worst row 6.644e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 211.5519940853119,
+          "v298": 110.81600189208984
+        },
+        {
+          "v298": 109.27999764680862,
+          "champion": 209.9519968032837
+        },
+        {
+          "v298": 110.75200140476227,
+          "champion": 212.38400042057037
+        },
+        {
+          "champion": 210.30400693416595,
+          "v298": 108.41599851846695
+        },
+        {
+          "champion": 211.2639993429184,
+          "v298": 109.72800105810165
+        },
+        {
+          "v298": 110.46399921178818,
+          "champion": 210.04800498485565
+        },
+        {
+          "v298": 109.95200276374817,
+          "champion": 210.14399826526642
+        },
+        {
+          "champion": 212.0639979839325,
+          "v298": 116.22399836778641
+        },
+        {
+          "champion": 210.94399690628052,
+          "v298": 110.3999987244606
+        },
+        {
+          "v298": 109.0560033917427,
+          "champion": 211.67999505996704
+        },
+        {
+          "v298": 108.64000022411346,
+          "champion": 210.87999641895294
+        },
+        {
+          "champion": 210.81599593162537,
+          "v298": 110.88000237941742
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278
+        ],
+        "seq_len_sum": 1264580,
+        "page_table_shape": [
+          16,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 210.91199666261673,
+        "v298_median_us": 110.17600074410439,
+        "reverse_pair_ratios": [
+          1.9151243988792488,
+          1.9286889554876028,
+          1.9133874190032423,
+          1.867422080701727,
+          1.9258132504789685,
+          1.921091191844701
+        ],
+        "median_pair_speedup": 1.918107795361975,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.738e-02 (worst row 1.097e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.683e-02 (worst row 1.066e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.722e-02 (worst row 1.120e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.668e-02 (worst row 1.082e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.738e-02 (worst row 1.097e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.683e-02 (worst row 1.066e-01) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 35.999998450279236,
+          "v298": 20.35200037062168
+        },
+        {
+          "v298": 19.872000440955162,
+          "champion": 35.10399907827377
+        },
+        {
+          "v298": 30.592000111937523,
+          "champion": 35.96799820661545
+        },
+        {
+          "champion": 37.376001477241516,
+          "v298": 20.959999412298203
+        },
+        {
+          "champion": 56.73599988222122,
+          "v298": 21.12000063061714
+        },
+        {
+          "v298": 42.65600070357323,
+          "champion": 35.360001027584076
+        },
+        {
+          "v298": 22.39999920129776,
+          "champion": 35.10399907827377
+        },
+        {
+          "champion": 35.45600175857544,
+          "v298": 20.608000457286835
+        },
+        {
+          "champion": 35.58399900794029,
+          "v298": 20.8320003002882
+        },
+        {
+          "v298": 20.160000771284103,
+          "champion": 36.19199991226196
+        },
+        {
+          "v298": 20.800000056624413,
+          "champion": 35.679999738931656
+        },
+        {
+          "champion": 35.64799949526787,
+          "v298": 26.27200074493885
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278,
+          81556,
+          81911,
+          75982,
+          77583,
+          76832,
+          82037,
+          84908,
+          84426,
+          76196,
+          81739,
+          79781,
+          83766,
+          82502,
+          77142,
+          84765,
+          80943
+        ],
+        "seq_len_sum": 2556649,
+        "page_table_shape": [
+          32,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": {
+          "n_splits": 4,
+          "nc": 1,
+          "coop": 1
+        },
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 35.66399961709976,
+        "v298_median_us": 20.8959998562932,
+        "reverse_pair_ratios": [
+          1.7676862887251308,
+          1.4479547299082458,
+          1.4922736145398166,
+          1.642030608136192,
+          1.751148228203526,
+          1.525638925324937
+        ],
+        "median_pair_speedup": 1.5838347667305643,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135901,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.499e-02 (worst row 8.118e-02) [bound 0.084: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.239e-02 (worst row 7.885e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.461e-02 (worst row 7.110e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.218e-02 (worst row 7.564e-02) [bound 0.083: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.499e-02 (worst row 8.118e-02) [bound 0.084: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.239e-02 (worst row 7.885e-02) [bound 0.085: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 395.61599493026733,
+          "v298": 193.50400567054749
+        },
+        {
+          "v298": 193.6960071325302,
+          "champion": 397.3439931869507
+        },
+        {
+          "v298": 191.74399971961975,
+          "champion": 399.23200011253357
+        },
+        {
+          "champion": 398.0799913406372,
+          "v298": 196.70400023460388
+        },
+        {
+          "champion": 397.66401052474976,
+          "v298": 192.80000030994415
+        },
+        {
+          "v298": 191.3280040025711,
+          "champion": 398.0160057544708
+        },
+        {
+          "v298": 191.74399971961975,
+          "champion": 394.3040072917938
+        },
+        {
+          "champion": 397.95199036598206,
+          "v298": 193.02399456501007
+        },
+        {
+          "champion": 395.04000544548035,
+          "v298": 193.79200041294098
+        },
+        {
+          "v298": 194.43200528621674,
+          "champion": 399.6480107307434
+        },
+        {
+          "v298": 206.65599405765533,
+          "champion": 396.2559998035431
+        },
+        {
+          "champion": 396.95999026298523,
+          "v298": 192.28799641132355
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          85175,
+          85459,
+          75418,
+          76094,
+          82315,
+          74819,
+          80686,
+          76418,
+          80480,
+          82400,
+          77859,
+          76995,
+          74644,
+          77458,
+          79082,
+          79278,
+          81556,
+          81911,
+          75982,
+          77583,
+          76832,
+          82037,
+          84908,
+          84426,
+          76196,
+          81739,
+          79781,
+          83766,
+          82502,
+          77142,
+          84765,
+          80943
+        ],
+        "seq_len_sum": 2556649,
+        "page_table_shape": [
+          32,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 397.5040018558502,
+        "v298_median_us": 193.26400011777878,
+        "reverse_pair_ratios": [
+          2.0479291750514634,
+          2.0527230532164022,
+          2.0714078944120695,
+          2.0590381594713327,
+          2.046951565244443,
+          1.9895790685907415
+        ],
+        "median_pair_speedup": 2.0503261141339326,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.545e-02 (worst row 7.545e-02) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.119e-03 (worst row 5.119e-03) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.422e-02 (worst row 7.422e-02) [bound 0.150: 2.5 x the reference's 0.082 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 5.254e-03 (worst row 5.254e-03) [bound 0.150: 2.5 x the reference's 0.082 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.545e-02 (worst row 7.545e-02) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.119e-03 (worst row 5.119e-03) [bound 0.150: 2.5 x the reference's 0.079 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 16.831999644637108,
+          "v298": 9.855999611318111
+        },
+        {
+          "v298": 9.855999611318111,
+          "champion": 16.16000011563301
+        },
+        {
+          "v298": 9.855999611318111,
+          "champion": 16.1920003592968
+        },
+        {
+          "champion": 15.744000673294067,
+          "v298": 9.855999611318111
+        },
+        {
+          "champion": 16.863999888300896,
+          "v298": 11.487999930977821
+        },
+        {
+          "v298": 10.56000031530857,
+          "champion": 16.1920003592968
+        },
+        {
+          "v298": 10.495999827980995,
+          "champion": 17.72800087928772
+        },
+        {
+          "champion": 16.64000004529953,
+          "v298": 10.080000385642052
+        },
+        {
+          "champion": 16.64000004529953,
+          "v298": 10.080000385642052
+        },
+        {
+          "v298": 9.759999811649323,
+          "champion": 16.16000011563301
+        },
+        {
+          "v298": 9.824000298976898,
+          "champion": 16.607999801635742
+        },
+        {
+          "champion": 16.896000131964684,
+          "v298": 9.631999768316746
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 32,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 16.623999923467636,
+        "v298_median_us": 9.855999611318111,
+        "reverse_pair_ratios": [
+          1.673354125390685,
+          1.6199705690559096,
+          1.5002939915911193,
+          1.669799635991536,
+          1.6532638222118288,
+          1.7220596958967678
+        ],
+        "median_pair_speedup": 1.6615317291016822,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.520e-02 (worst row 3.520e-02) [bound 0.101: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.504e-03 (worst row 2.504e-03) [bound 0.101: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.555e-02 (worst row 3.555e-02) [bound 0.100: 2.5 x the reference's 0.034 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.688e-03 (worst row 2.688e-03) [bound 0.100: 2.5 x the reference's 0.034 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.520e-02 (worst row 3.520e-02) [bound 0.101: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.504e-03 (worst row 2.504e-03) [bound 0.101: 2.5 x the reference's 0.035 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 34.78400036692619,
+          "v298": 18.0479995906353
+        },
+        {
+          "v298": 17.696000635623932,
+          "champion": 34.17599946260452
+        },
+        {
+          "v298": 22.752000018954277,
+          "champion": 34.2399999499321
+        },
+        {
+          "champion": 34.46400165557861,
+          "v298": 17.664000391960144
+        },
+        {
+          "champion": 34.55999866127968,
+          "v298": 17.88800023496151
+        },
+        {
+          "v298": 17.791999503970146,
+          "champion": 35.64799949526787
+        },
+        {
+          "v298": 17.75999926030636,
+          "champion": 34.46400165557861
+        },
+        {
+          "champion": 33.984001725912094,
+          "v298": 17.855999991297722
+        },
+        {
+          "champion": 34.912001341581345,
+          "v298": 18.271999433636665
+        },
+        {
+          "v298": 17.59999990463257,
+          "champion": 34.94400158524513
+        },
+        {
+          "v298": 17.920000478625298,
+          "champion": 35.19999980926514
+        },
+        {
+          "champion": 35.0399985909462,
+          "v298": 17.983999103307724
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 4,
+          "coop": 0
+        },
+        "default_tuned_override": {
+          "nc": 8,
+          "coop": 1,
+          "n_splits": 252
+        },
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 34.671999514102936,
+        "v298_median_us": 17.872000113129616,
+        "reverse_pair_ratios": [
+          1.9292933917292143,
+          1.7135445750716454,
+          1.9674838000950012,
+          1.921792745285161,
+          1.947710124127694,
+          1.9563259962345767
+        ],
+        "median_pair_speedup": 1.9385017579284542,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.212e-02 (worst row 9.493e-02) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.022e-03 (worst row 6.419e-03) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.175e-02 (worst row 9.511e-02) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.859e-03 (worst row 6.136e-03) [bound 0.150: 2.5 x the reference's 0.073 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.212e-02 (worst row 9.493e-02) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 5.022e-03 (worst row 6.419e-03) [bound 0.150: 2.5 x the reference's 0.072 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 22.207999601960182,
+          "v298": 14.368000440299511
+        },
+        {
+          "v298": 13.567999936640263,
+          "champion": 20.447999238967896
+        },
+        {
+          "v298": 13.856000266969204,
+          "champion": 20.255999639630318
+        },
+        {
+          "champion": 20.320000126957893,
+          "v298": 14.047999866306782
+        },
+        {
+          "champion": 20.255999639630318,
+          "v298": 14.62399959564209
+        },
+        {
+          "v298": 13.824000023305416,
+          "champion": 21.47199958562851
+        },
+        {
+          "v298": 14.495999552309513,
+          "champion": 20.70399932563305
+        },
+        {
+          "champion": 20.38400061428547,
+          "v298": 15.00799972563982
+        },
+        {
+          "champion": 21.215999498963356,
+          "v298": 13.952000066637993
+        },
+        {
+          "v298": 14.175999909639359,
+          "champion": 21.247999742627144
+        },
+        {
+          "v298": 14.175999909639359,
+          "champion": 20.06400004029274
+        },
+        {
+          "champion": 20.927999168634415,
+          "v298": 13.887999579310417
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186
+        ],
+        "seq_len_sum": 1276037,
+        "page_table_shape": [
+          16,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 16,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 20.575999282300472,
+        "v298_median_us": 14.11199988797307,
+        "reverse_pair_ratios": [
+          1.5262442749773324,
+          1.4541610397396318,
+          1.46677378442804,
+          1.3927922587893686,
+          1.5097174982446853,
+          1.4604137608991312
+        ],
+        "median_pair_speedup": 1.4635937726635855,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 5.189e-02 (worst row 6.876e-02) [bound 0.121: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.257e-03 (worst row 4.383e-03) [bound 0.121: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 5.191e-02 (worst row 6.737e-02) [bound 0.124: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.305e-03 (worst row 3.896e-03) [bound 0.124: 2.5 x the reference's 0.044 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 5.189e-02 (worst row 6.876e-02) [bound 0.121: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.257e-03 (worst row 4.383e-03) [bound 0.121: 2.5 x the reference's 0.042 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 208.76799523830414,
+          "v298": 101.69599950313568
+        },
+        {
+          "v298": 100.63999891281128,
+          "champion": 209.02399718761444
+        },
+        {
+          "v298": 99.96800124645233,
+          "champion": 224.67200458049774
+        },
+        {
+          "champion": 209.60000157356262,
+          "v298": 103.2319962978363
+        },
+        {
+          "champion": 208.8640034198761,
+          "v298": 99.55199807882309
+        },
+        {
+          "v298": 99.67999905347824,
+          "champion": 209.27999913692474
+        },
+        {
+          "v298": 106.4319983124733,
+          "champion": 209.47200059890747
+        },
+        {
+          "champion": 211.13599836826324,
+          "v298": 100.92800110578537
+        },
+        {
+          "champion": 209.05600488185883,
+          "v298": 99.23200309276581
+        },
+        {
+          "v298": 100.03200173377991,
+          "champion": 209.56799387931824
+        },
+        {
+          "v298": 100.00000149011612,
+          "champion": 208.6080014705658
+        },
+        {
+          "champion": 209.27999913692474,
+          "v298": 100.03200173377991
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186
+        ],
+        "seq_len_sum": 1276037,
+        "page_table_shape": [
+          16,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 209.27999913692474,
+        "v298_median_us": 100.03200173377991,
+        "reverse_pair_ratios": [
+          2.0648703511857733,
+          2.1361534825553528,
+          2.0987787501248003,
+          2.0290941050884856,
+          2.100866435164173,
+          2.089103038044666
+        ],
+        "median_pair_speedup": 2.0939408940847333,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 1,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.870e-02 (worst row 1.033e-01) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.581e-03 (worst row 5.825e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.923e-02 (worst row 1.039e-01) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.658e-03 (worst row 6.541e-03) [bound 0.150: 2.5 x the reference's 0.067 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.870e-02 (worst row 1.033e-01) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 4.581e-03 (worst row 5.824e-03) [bound 0.150: 2.5 x the reference's 0.068 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 27.615999802947044,
+          "v298": 17.75999926030636
+        },
+        {
+          "v298": 16.64000004529953,
+          "champion": 26.655999943614006
+        },
+        {
+          "v298": 16.607999801635742,
+          "champion": 27.2000003606081
+        },
+        {
+          "champion": 29.152000322937965,
+          "v298": 16.416000202298164
+        },
+        {
+          "champion": 27.295999228954315,
+          "v298": 16.64000004529953
+        },
+        {
+          "v298": 16.767999157309532,
+          "champion": 27.103999629616737
+        },
+        {
+          "v298": 16.51199907064438,
+          "champion": 26.688000187277794
+        },
+        {
+          "champion": 33.31200033426285,
+          "v298": 17.343999817967415
+        },
+        {
+          "champion": 32.83200040459633,
+          "v298": 17.59999990463257
+        },
+        {
+          "v298": 16.543999314308167,
+          "champion": 27.295999228954315
+        },
+        {
+          "v298": 16.383999958634377,
+          "champion": 35.0399985909462
+        },
+        {
+          "champion": 32.06399828195572,
+          "v298": 16.672000288963318
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186,
+          83317,
+          83264,
+          82395,
+          84076,
+          77404,
+          76467,
+          81564,
+          81013,
+          84126,
+          79484,
+          78749,
+          79336,
+          82720,
+          80284,
+          80558,
+          85508
+        ],
+        "seq_len_sum": 2576302,
+        "page_table_shape": [
+          32,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 27.45599951595068,
+        "v298_median_us": 16.64000004529953,
+        "reverse_pair_ratios": [
+          1.5782643314221727,
+          1.7054001430081005,
+          1.6283543049481488,
+          1.761910785904077,
+          1.7543715922704417,
+          2.0280892106834294
+        ],
+        "median_pair_speedup": 1.729885867639271,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 1,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.819e-02 (worst row 7.266e-02) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.308e-03 (worst row 4.183e-03) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 4.780e-02 (worst row 7.223e-02) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.401e-03 (worst row 5.063e-03) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 4.819e-02 (worst row 7.266e-02) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.308e-03 (worst row 4.183e-03) [bound 0.132: 2.5 x the reference's 0.047 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 300.1280128955841,
+          "v298": 179.4240027666092
+        },
+        {
+          "v298": 183.1039935350418,
+          "champion": 299.8720109462738
+        },
+        {
+          "v298": 180.25599420070648,
+          "champion": 300.927996635437
+        },
+        {
+          "champion": 299.00801181793213,
+          "v298": 180.51199615001678
+        },
+        {
+          "champion": 300.7679879665375,
+          "v298": 180.95999956130981
+        },
+        {
+          "v298": 180.06399273872375,
+          "champion": 299.77598786354065
+        },
+        {
+          "v298": 182.94399976730347,
+          "champion": 300.83200335502625
+        },
+        {
+          "champion": 300.06399750709534,
+          "v298": 180.25599420070648
+        },
+        {
+          "champion": 301.56800150871277,
+          "v298": 180.60800433158875
+        },
+        {
+          "v298": 180.31999468803406,
+          "champion": 298.72000217437744
+        },
+        {
+          "v298": 181.11999332904816,
+          "champion": 302.3039996623993
+        },
+        {
+          "champion": 298.6240088939667,
+          "v298": 179.9360066652298
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186,
+          83317,
+          83264,
+          82395,
+          84076,
+          77404,
+          76467,
+          81564,
+          81013,
+          84126,
+          79484,
+          78749,
+          79336,
+          82720,
+          80284,
+          80558,
+          85508
+        ],
+        "seq_len_sum": 2576302,
+        "page_table_shape": [
+          32,
+          86001
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 300.0960052013397,
+        "v298_median_us": 180.41599541902542,
+        "reverse_pair_ratios": [
+          1.655129783236853,
+          1.6629332514427664,
+          1.6634490196777514,
+          1.6544933293751234,
+          1.663161185568101,
+          1.6643400790365868
+        ],
+        "median_pair_speedup": 1.6630472185054337,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.661e-02 (worst row 7.758e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.589e-02 (worst row 8.199e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.793e-02 (worst row 8.395e-02) [bound 0.150: 2.5 x the reference's 0.065 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.572e-02 (worst row 8.326e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 6.661e-02 (worst row 7.758e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 6.589e-02 (worst row 8.199e-02) [bound 0.150: 2.5 x the reference's 0.066 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 23.615999147295952,
+          "v298": 11.776000261306763
+        },
+        {
+          "v298": 11.296000331640244,
+          "champion": 21.824000403285027
+        },
+        {
+          "v298": 11.552000418305397,
+          "champion": 22.975999861955643
+        },
+        {
+          "champion": 22.272000089287758,
+          "v298": 11.327999643981457
+        },
+        {
+          "champion": 22.943999618291855,
+          "v298": 12.44799979031086
+        },
+        {
+          "v298": 11.327999643981457,
+          "champion": 22.495999932289124
+        },
+        {
+          "v298": 11.52000017464161,
+          "champion": 22.048000246286392
+        },
+        {
+          "champion": 22.52800017595291,
+          "v298": 11.52000017464161
+        },
+        {
+          "champion": 22.71999977529049,
+          "v298": 11.776000261306763
+        },
+        {
+          "v298": 11.327999643981457,
+          "champion": 22.304000332951546
+        },
+        {
+          "v298": 12.223999947309494,
+          "champion": 22.52800017595291
+        },
+        {
+          "champion": 21.63200080394745,
+          "v298": 11.552000418305397
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 33,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 22.512000054121017,
+        "v298_median_us": 11.536000296473503,
+        "reverse_pair_ratios": [
+          1.9683806685816256,
+          1.9774777629545708,
+          1.91320195016118,
+          1.9346100400195956,
+          1.9490367416452505,
+          1.8576949391732556
+        ],
+        "median_pair_speedup": 1.9418233908324232,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 1,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "fixed",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 2.962e-02 (worst row 4.089e-02) [bound 0.084: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.763e-02 (worst row 3.845e-02) [bound 0.084: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.961e-02 (worst row 4.011e-02) [bound 0.087: 2.5 x the reference's 0.029 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 2.914e-02 (worst row 4.163e-02) [bound 0.086: 2.5 x the reference's 0.028 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 2.962e-02 (worst row 4.089e-02) [bound 0.084: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 2.763e-02 (worst row 3.845e-02) [bound 0.084: 2.5 x the reference's 0.027 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 39.68000039458275,
+          "v298": 19.551999866962433
+        },
+        {
+          "v298": 19.807999953627586,
+          "champion": 38.27200084924698
+        },
+        {
+          "v298": 19.58400011062622,
+          "champion": 40.22400081157684
+        },
+        {
+          "champion": 38.30400109291077,
+          "v298": 20.160000771284103
+        },
+        {
+          "champion": 38.047999143600464,
+          "v298": 19.328000023961067
+        },
+        {
+          "v298": 19.840000197291374,
+          "champion": 38.55999931693077
+        },
+        {
+          "v298": 19.58400011062622,
+          "champion": 38.176000118255615
+        },
+        {
+          "champion": 38.015998899936676,
+          "v298": 19.936000928282738
+        },
+        {
+          "champion": 38.176000118255615,
+          "v298": 20.54399996995926
+        },
+        {
+          "v298": 20.06400004029274,
+          "champion": 37.91999816894531
+        },
+        {
+          "v298": 20.06400004029274,
+          "champion": 37.408001720905304
+        },
+        {
+          "champion": 38.46399858593941,
+          "v298": 20.70399932563305
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          80000
+        ],
+        "seq_len_sum": 80000,
+        "page_table_shape": [
+          1,
+          80008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 252,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 8
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 38.2240004837513,
+        "v298_median_us": 19.888000562787056,
+        "reverse_pair_ratios": [
+          1.9802066367704294,
+          1.9754622241723248,
+          1.956005742833873,
+          1.9280073748964286,
+          1.8740367476039828,
+          1.8611166194198014
+        ],
+        "median_pair_speedup": 1.9420065588651507,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.011e-02 (worst row 1.064e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.016e-02 (worst row 1.111e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 6.961e-02 (worst row 1.110e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.101e-02 (worst row 1.027e-01) [bound 0.150: 2.5 x the reference's 0.070 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.011e-02 (worst row 1.064e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.016e-02 (worst row 1.111e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 29.632000252604485,
+          "v298": 16.1920003592968
+        },
+        {
+          "v298": 16.416000202298164,
+          "champion": 29.120000079274178
+        },
+        {
+          "v298": 16.992000862956047,
+          "champion": 29.40800040960312
+        },
+        {
+          "champion": 28.863999992609024,
+          "v298": 16.575999557971954
+        },
+        {
+          "champion": 29.08799983561039,
+          "v298": 19.42400075495243
+        },
+        {
+          "v298": 16.704000532627106,
+          "champion": 29.279999434947968
+        },
+        {
+          "v298": 16.543999314308167,
+          "champion": 28.416000306606293
+        },
+        {
+          "champion": 29.055999591946602,
+          "v298": 16.767999157309532
+        },
+        {
+          "champion": 28.416000306606293,
+          "v298": 17.023999243974686
+        },
+        {
+          "v298": 16.383999958634377,
+          "champion": 29.279999434947968
+        },
+        {
+          "v298": 16.383999958634377,
+          "champion": 29.69600073993206
+        },
+        {
+          "champion": 28.991999104619026,
+          "v298": 16.64000004529953
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186
+        ],
+        "seq_len_sum": 1276037,
+        "page_table_shape": [
+          16,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 29.103999957442284,
+        "v298_median_us": 16.607999801635742,
+        "reverse_pair_ratios": [
+          1.801740510917678,
+          1.7359966460456244,
+          1.6201785227545296,
+          1.7251962732524755,
+          1.7271348269572684,
+          1.7770573071347253
+        ],
+        "median_pair_speedup": 1.7315657365014463,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 16,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.407e-02 (worst row 6.970e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.290e-02 (worst row 6.932e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.368e-02 (worst row 5.906e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.221e-02 (worst row 6.121e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.407e-02 (worst row 6.970e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.290e-02 (worst row 6.932e-02) [bound 0.091: 2.5 x the reference's 0.030 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 213.05599808692932,
+          "v298": 110.55999994277954
+        },
+        {
+          "v298": 111.61600053310394,
+          "champion": 212.89600431919098
+        },
+        {
+          "v298": 111.35999858379364,
+          "champion": 211.13599836826324
+        },
+        {
+          "champion": 211.32799983024597,
+          "v298": 111.87200248241425
+        },
+        {
+          "champion": 212.0320051908493,
+          "v298": 111.00800335407257
+        },
+        {
+          "v298": 113.3119985461235,
+          "champion": 212.92799711227417
+        },
+        {
+          "v298": 110.88000237941742,
+          "champion": 212.70400285720825
+        },
+        {
+          "champion": 212.16000616550446,
+          "v298": 110.27199774980545
+        },
+        {
+          "champion": 211.58400177955627,
+          "v298": 112.41599917411804
+        },
+        {
+          "v298": 110.1439967751503,
+          "champion": 212.12799847126007
+        },
+        {
+          "v298": 109.63200032711029,
+          "champion": 213.3760005235672
+        },
+        {
+          "champion": 210.68799495697021,
+          "v298": 110.52799969911575
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186
+        ],
+        "seq_len_sum": 1276037,
+        "page_table_shape": [
+          16,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 212.14400231838226,
+        "v298_median_us": 110.944002866745,
+        "reverse_pair_ratios": [
+          1.917204301328785,
+          1.8924932973650799,
+          1.894532236081297,
+          1.921145936590837,
+          1.9039078840767947,
+          1.9261400254259278
+        ],
+        "median_pair_speedup": 1.9105560927027898,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 8,
+        "layer": "sliding",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "soft"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.053e-02 (worst row 1.122e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.108e-02 (worst row 1.167e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.091e-02 (worst row 1.227e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 7.105e-02 (worst row 1.169e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 7.053e-02 (worst row 1.122e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 7.108e-02 (worst row 1.167e-01) [bound 0.150: 2.5 x the reference's 0.069 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 36.031998693943024,
+          "v298": 19.840000197291374
+        },
+        {
+          "v298": 20.255999639630318,
+          "champion": 35.232000052928925
+        },
+        {
+          "v298": 20.70399932563305,
+          "champion": 35.42400151491165
+        },
+        {
+          "champion": 34.94400158524513,
+          "v298": 19.967999309301376
+        },
+        {
+          "champion": 35.80800071358681,
+          "v298": 19.840000197291374
+        },
+        {
+          "v298": 20.031999796628952,
+          "champion": 35.392001271247864
+        },
+        {
+          "v298": 20.735999569296837,
+          "champion": 34.912001341581345
+        },
+        {
+          "champion": 35.392001271247864,
+          "v298": 19.840000197291374
+        },
+        {
+          "champion": 34.88000109791756,
+          "v298": 37.31200098991394
+        },
+        {
+          "v298": 20.06400004029274,
+          "champion": 35.711999982595444
+        },
+        {
+          "v298": 20.67199908196926,
+          "champion": 35.26400029659271
+        },
+        {
+          "champion": 35.551998764276505,
+          "v298": 25.248000398278236
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186,
+          83317,
+          83264,
+          82395,
+          84076,
+          77404,
+          76467,
+          81564,
+          81013,
+          84126,
+          79484,
+          78749,
+          79336,
+          82720,
+          80284,
+          80558,
+          85508
+        ],
+        "seq_len_sum": 2576302,
+        "page_table_shape": [
+          32,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 8,
+          "flat": 0,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1,
+          "coop": 1
+        },
+        "default_tuned_override": {
+          "n_splits": 4,
+          "nc": 1,
+          "coop": 1
+        },
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 35.392001271247864,
+        "v298_median_us": 20.15999983996153,
+        "reverse_pair_ratios": [
+          1.7773180403736453,
+          1.7303769772869317,
+          1.7857045596733483,
+          1.7330321103874984,
+          1.2899185882984394,
+          1.549862129872413
+        ],
+        "median_pair_speedup": 1.731704543837215,
+        "favorable_pairs": 6
+      }
+    },
+    {
+      "case": {
+        "batch": 32,
+        "q_len": 8,
+        "layer": "full",
+        "ctx": 80000,
+        "heads": "tp8",
+        "spread": "agentic",
+        "page": 1,
+        "kv_scale": 1.0,
+        "dist": "coherent"
+      },
+      "seed": 135902,
+      "oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.782e-02 (worst row 7.763e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.580e-02 (worst row 6.705e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "mutation_oracle": {
+        "champion": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.789e-02 (worst row 7.836e-02) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "timed": false,
+          "kind": "qkv *=0.93; first two historical page indices swapped; fixed captured addresses",
+          "passed": true,
+          "message": "relative L2 error 3.593e-02 (worst row 6.686e-02) [bound 0.094: 2.5 x the reference's 0.032 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "post_oracle": {
+        "champion": {
+          "passed": true,
+          "message": "relative L2 error 3.782e-02 (worst row 7.763e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        },
+        "v298": {
+          "passed": true,
+          "message": "relative L2 error 3.580e-02 (worst row 6.705e-02) [bound 0.093: 2.5 x the reference's 0.031 with FP8 E4M3 queries + 0.015]",
+          "ownership": true,
+          "fixed_addresses": true
+        }
+      },
+      "samples": [
+        {
+          "champion": 397.72799611091614,
+          "v298": 192.51200556755066
+        },
+        {
+          "v298": 193.08799505233765,
+          "champion": 399.52000975608826
+        },
+        {
+          "v298": 194.07999515533447,
+          "champion": 397.92001247406006
+        },
+        {
+          "champion": 395.904004573822,
+          "v298": 192.73599982261658
+        },
+        {
+          "champion": 398.8800048828125,
+          "v298": 194.7840005159378
+        },
+        {
+          "v298": 194.4960057735443,
+          "champion": 396.7680037021637
+        },
+        {
+          "v298": 192.32000410556793,
+          "champion": 398.144006729126
+        },
+        {
+          "champion": 397.2800076007843,
+          "v298": 193.79200041294098
+        },
+        {
+          "champion": 395.4559862613678,
+          "v298": 193.88799369335175
+        },
+        {
+          "v298": 195.6160068511963,
+          "champion": 395.9360122680664
+        },
+        {
+          "v298": 193.4719979763031,
+          "champion": 396.8319892883301
+        },
+        {
+          "champion": 397.69598841667175,
+          "v298": 195.13599574565887
+        }
+      ],
+      "fixture": {
+        "seq_lens": [
+          77679,
+          75013,
+          81902,
+          79624,
+          75063,
+          77254,
+          75608,
+          85270,
+          83909,
+          77254,
+          80354,
+          84956,
+          83547,
+          84103,
+          80315,
+          74186,
+          83317,
+          83264,
+          82395,
+          84076,
+          77404,
+          76467,
+          81564,
+          81013,
+          84126,
+          79484,
+          78749,
+          79336,
+          82720,
+          80284,
+          80558,
+          85508
+        ],
+        "seq_len_sum": 2576302,
+        "page_table_shape": [
+          32,
+          86008
+        ]
+      },
+      "v298_plan": {
+        "base_shape_plan": {
+          "n_splits": 264,
+          "flat": 1,
+          "cs": 0,
+          "ncl": 1,
+          "nc": 1
+        },
+        "default_tuned_override": null,
+        "supported": true,
+        "qualification": "Unmodified source planning metadata; actual launch grid not profiled"
+      },
+      "summary": {
+        "champion_median_us": 397.487998008728,
+        "v298_median_us": 193.83999705314636,
+        "reverse_pair_ratios": [
+          2.0675489627259602,
+          2.0522063695381734,
+          2.043889771812799,
+          2.060099961167475,
+          2.031813896805602,
+          2.0445662588470843
+        ],
+        "median_pair_speedup": 2.048386314192629,
+        "favorable_pairs": 6
+      }
+    }
+  ],
+  "whole_suite": [
+    {
+      "seed": 135901,
+      "loads": [
+        {
+          "batch": 1,
+          "q_len": 1,
+          "champion_weighted_us": 1306.4000010490417,
+          "v298_reference_normalized_weighted_us": 726.5713848887838,
+          "speedup": 1.7980339278693342
+        },
+        {
+          "batch": 16,
+          "q_len": 1,
+          "champion_weighted_us": 4194.848008453846,
+          "v298_reference_normalized_weighted_us": 2231.6007642906743,
+          "speedup": 1.8797484189727816
+        },
+        {
+          "batch": 32,
+          "q_len": 1,
+          "champion_weighted_us": 6045.82404717803,
+          "v298_reference_normalized_weighted_us": 3664.5291048289155,
+          "speedup": 1.6498229033605367
+        },
+        {
+          "batch": 1,
+          "q_len": 8,
+          "champion_weighted_us": 1651.8080458045006,
+          "v298_reference_normalized_weighted_us": 844.0294739681024,
+          "speedup": 1.9570501940396998
+        },
+        {
+          "batch": 16,
+          "q_len": 8,
+          "champion_weighted_us": 4683.199929073453,
+          "v298_reference_normalized_weighted_us": 2510.0024006128497,
+          "speedup": 1.8658149203084382
+        },
+        {
+          "batch": 32,
+          "q_len": 8,
+          "champion_weighted_us": 8000.608012080193,
+          "v298_reference_normalized_weighted_us": 4137.7818031870565,
+          "speedup": 1.933550001577623
+        }
+      ],
+      "relative_champion_geomean": 1.8444213698893965,
+      "qualification": "Raw whole-call graph times; no fixed replay subtraction. Relative to selected champion, not an official score or SGLang comparison."
+    },
+    {
+      "seed": 135902,
+      "loads": [
+        {
+          "batch": 1,
+          "q_len": 1,
+          "champion_weighted_us": 1319.4559887051582,
+          "v298_reference_normalized_weighted_us": 746.4160269406107,
+          "speedup": 1.7677219420291763
+        },
+        {
+          "batch": 16,
+          "q_len": 1,
+          "champion_weighted_us": 4294.975953176618,
+          "v298_reference_normalized_weighted_us": 2245.8213070202946,
+          "speedup": 1.9124299603671921
+        },
+        {
+          "batch": 32,
+          "q_len": 1,
+          "champion_weighted_us": 6064.512060955167,
+          "v298_reference_normalized_weighted_us": 3617.2837580288783,
+          "speedup": 1.6765375532108728
+        },
+        {
+          "batch": 1,
+          "q_len": 8,
+          "champion_weighted_us": 1647.1360102295876,
+          "v298_reference_normalized_weighted_us": 848.2122184952729,
+          "speedup": 1.9418913973576144
+        },
+        {
+          "batch": 16,
+          "q_len": 8,
+          "champion_weighted_us": 4733.088035136461,
+          "v298_reference_normalized_weighted_us": 2549.769108173264,
+          "speedup": 1.856281033433414
+        },
+        {
+          "batch": 32,
+          "q_len": 8,
+          "champion_weighted_us": 7987.84002661705,
+          "v298_reference_normalized_weighted_us": 4044.9220223741113,
+          "speedup": 1.9747822040655056
+        }
+      ],
+      "relative_champion_geomean": 1.851967841902772,
+      "qualification": "Raw whole-call graph times; no fixed replay subtraction. Relative to selected champion, not an official score or SGLang comparison."
+    }
+  ],
+  "correctness_complete": true,
+  "timing_complete": true,
+  "candidate_changed": false,
+  "official_check": false,
+  "ranked_submission": false,
+  "protocol": {
+    "seeds": [
+      135901,
+      135902
+    ],
+    "reverse_pairs": 6,
+    "eviction_bytes": 268435456,
+    "graph_timing": "raw whole-call CUDA event graph replay; no fixed cost subtraction",
+    "serialization": "Both candidate global scratch and all GPU calls are serialized; no concurrent-stream claim",
+    "counters": false,
+    "promotion": "not assessed; selected champion preserved"
+  },
+  "phase": "complete",
+  "elapsed_seconds": 216.586783892,
+  "runtime": {
+    "gpu": "NVIDIA H200",
+    "sm_count": 132,
+    "torch": "2.14.1+cu130",
+    "triton": "3.8.0",
+    "device_capability": [
+      9,
+      0
+    ],
+    "v298_binary": {
+      "path": "/tmp/vjeux-attention-v298-extensions/okc_attn_v298_90a/okc_attn_v298_90a.so",
+      "sha256": "d2b655d84128473b622016ea3a18f58b017a22574fafe5de3fd012e13aaf70d5",
+      "bytes": 2574616
+    }
+  },
+  "prerequisites_complete": true
+}
