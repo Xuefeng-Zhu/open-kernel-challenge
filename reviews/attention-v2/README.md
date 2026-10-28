@@ -1,3 +1,33 @@
+# Muse Attention
+
+The current optimization control is **pristine vjeux v298**, SHA256 `0cc4a0668acf7553c0d2c6d5c3a2e7d5c85374a70ad774463e9d2fd9e5d0f883`. The original remains immutable; experimental variants have separate directories.
+
+## Baselines and validation
+
+| Version | Role | Verified evidence |
+|---|---|---|
+| [v298 source](vjeux-v298-probe/candidate.py) | Current same-H200 profiling/optimization control | [2.618804× non-ranked check](vjeux-v298-probe/official-check/RESULTS.md), 16+12 passed · [same-H200 comparison](vjeux-v298-probe/RESULTS.md) · [provenance/license](vjeux-v298-probe/ATTRIBUTION.md) |
+| [Fusion + lookahead source](fusion-lookahead-probe/candidate.py), SHA `3da22a16…` | Preserved previous in-house selection | [1.233633× check and selection](fusion-lookahead-probe/RESULTS.md) · [1.242925× ranked receipt](fa3-next-evidence/selected-ranked-submission/RESULTS.md) |
+| [A2-11 source](mixed_fa3_decode_parallel_merge.py) | Earlier rollback baseline | [1.187679× check](A2-11-RESULT.md) |
+
+v298's [serial Graph stress](vjeux-v298-probe/graph-stress/RESULTS.md) passes the original oracle across retained independent captures, live input changes and scratch growth. It does **not** establish simultaneous-stream safety or universal scratch allocation lifetime. The old ranked result is from different source; it is not a ranked v298 score.
+
+## Current profiling and decisions
+
+| Evidence | Scope | Result / limitation |
+|---|---|---|
+| Profile 01 (local evidence; `vjeux-v298-probe/profile-01/RESULTS.md`) | B16/L8 full | Valid baseline NCU report; the original B32 capture was not completed |
+| Profile 02 (local evidence; `vjeux-v298-probe/profile-02-l1/RESULTS.md`) | B16/L1 full | Native traffic and aggregate counters; all-state PC samples have no stall-reason attribution |
+| Profile 03 (local evidence; `vjeux-v298-probe/profile-03-b32-l8/RESULTS.md`) | B32/L8 full | Reason-linked native page-index dependency evidence; eager capture is distinct from Graph timing |
+| Profile 04 (local evidence; `vjeux-v298-probe/profile-04-page-bank-paired/RESULTS.md`) | Matched B32/L8 Graph-node baseline/page-bank | Waits redistributed; no net benefit. Original retained. Per-PC samples are not latency shares |
+
+CTA diagnostics remain in isolated local trial directories. Unpublished evidence is labelled as local rather than linked to absent files; it does not establish a new performance claim or candidate promotion.
+
+[Failed/rejected experiment index](../../FAILED_EXPERIMENTS.md#attention) · [both-track experiment map](../../EXPERIMENTS.md) · [official contract](official/TASK.md).
+
+<details>
+<summary>Historical A2-01–A2-13 ledger — original dated selections and limits</summary>
+
 # Attention experiments
 
 Selected complete file: [mixed_fa3_decode_parallel_merge.py](mixed_fa3_decode_parallel_merge.py).
@@ -63,3 +93,5 @@ E2, not current selection. Old Modal replay coverage does not transfer to new
 sources. After the separately approved A13 run, conservative Modal accounting is $1.787819802/$2; all apps stopped; old A09 report
 retrieval401 unresolved, no restart/renewal. Original local research commit IDs
 map to private sanitized-export commits via analysis/PUSH_EXPORT_MAP.json.
+
+</details>

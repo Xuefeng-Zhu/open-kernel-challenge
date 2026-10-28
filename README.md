@@ -1,3 +1,39 @@
+# Open Kernel Challenge
+
+Start here for the two kernel tracks. Navigation updated **2026-10-28**; scores below are saved official receipts, not live leaderboard standings.
+
+| Track | Working baseline | Validated result | Evidence and next steps |
+|---|---|---|---|
+| Muse Attention | [Pristine vjeux v298](reviews/attention-v2/vjeux-v298-probe/candidate.py) — current profiling and optimization control | **2.618804× check**, 16 prerequisites + 12 timed shapes passed | [Attention guide](reviews/attention-v2/README.md) · [official check](reviews/attention-v2/vjeux-v298-probe/official-check/RESULTS.md) · latest paired profile (local evidence; `reviews/attention-v2/vjeux-v298-probe/profile-04-page-bank-paired/RESULTS.md`) |
+| BF16 Projection | [P046 source][p-source] — maintained on `projection-pipeline-preflight` | **1.189713× ranked**, **1.184140× check**, 9 prerequisites + 30 timed shapes passed | [Selection][p-best] · [current work][p-status] · [ranked result][p-ranked] |
+
+Attention's **2.618804× is not a ranked result**. Its preserved earlier in-house implementation has a separate [1.242925× ranked receipt](reviews/attention-v2/fa3-next-evidence/selected-ranked-submission/RESULTS.md) and [1.233633× check](reviews/attention-v2/fusion-lookahead-probe/RESULTS.md). Source selection, measured performance and concurrency coverage are distinct; see the track guide before reusing a candidate.
+
+## Find the work
+
+- [Experiment index](EXPERIMENTS.md): successful baselines, native comparisons and profiling entry points.
+- [Failed and rejected experiment index](FAILED_EXPERIMENTS.md): short outcomes and links; do not repeat a failed experiment without a new causal distinction.
+- [Attention contract](reviews/attention-v2/official/TASK.md) and [Projection contract](TASK.md): inputs, precision, correctness and scoring.
+- [Licenses and attribution](THIRD_PARTY_NOTICES.md), including [v298 provenance](reviews/attention-v2/vjeux-v298-probe/ATTRIBUTION.md).
+
+| Location | Contents |
+|---|---|
+| `reviews/attention-v2/` | Attention candidates, original contracts, source hashes, receipts and native results |
+| [Projection branch][p-tree] | Current Projection `candidates/`, `experiments/`, `results/`, `BEST.md` and `STATUS.md` |
+| Root `candidates/`, `experiments/`, `results/`, `official/` on this branch | Inherited Projection snapshot; use the current Projection branch for its latest state |
+| `local-notes/` and external trial directories | Machine-local working material, not a public experiment entry point |
+
+Existing source/artifact paths are retained. Historical instructions, budgets and selected-version statements below are dated records, not current execution authority. Current work does not run official check/submit or retry a denied public push.
+
+[p-source]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/d55496b422e996807614a2661346d589144bc1ba/candidates/projection_pooler_column_batch2_hybrid.py
+[p-best]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/d55496b422e996807614a2661346d589144bc1ba/BEST.md
+[p-status]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/d55496b422e996807614a2661346d589144bc1ba/STATUS.md
+[p-ranked]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/blob/d55496b422e996807614a2661346d589144bc1ba/experiments/069-p046-ranked-submission.md
+[p-tree]: https://github.com/Xuefeng-Zhu/open-kernel-challenge/tree/projection-pipeline-preflight
+
+<details>
+<summary>Historical repository overview — preserved snapshot from 2026-10-25</summary>
+
 # Open Kernel Challenge experiments
 
 Current status lives in [CONTINUE.md](CONTINUE.md) and the two per-problem ledgers.
@@ -183,3 +219,5 @@ caches, unrelated downloaded tasks and machine-specific notes are excluded.
 Current performance diagnosis: [GAP_ANALYSIS.md](GAP_ANALYSIS.md), reproduced from
 actual shape timings and explicitly theoretical floor bounds, without new measurements.
 Offline candidate comparisons use `compare_results.py`; they retain cross-run caveats.
+
+</details>
